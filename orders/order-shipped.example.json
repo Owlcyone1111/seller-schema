@@ -1,0 +1,17 @@
+{
+    "shipments": [
+        {
+            "id": "76-s2507",
+            "date": "05-01-2014",
+            "method": "ups-ground",
+            "trackingNumber": "9ba8b3a6ce83",
+            "items": [
+                {
+                    "id": "76-s2507-i1810",
+                    "sellerSku": "15a1010",
+                    "quantity": 2
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,81 @@
+{
+    "id": "9b13bdd68c314d1b9c8b93277dea4da1",
+    "placedOn": "5/1/2014T0:0:0-5:00",
+    "buyer": {
+        "name": "Tony Stark",
+        "phoneNumber": "555-999-9999"
+    },
+    "shippingTo": {
+        "name": "Tony Stark",
+        "address1": "10880 Malibu Point",
+        "address2": "",
+        "city": "Malibu",
+        "state": "CA",
+        "zipCode": "90265",
+        "phoneNumber": "555-999-9999"
+    },
+    "items": [
+        {
+            "id": "8f5ae15b6b414b00a1b9d6ad99166a00",
+            "sellerSku": "B289B4B",
+            "quantity": 2,
+            "taxCode": "",
+            "price": 12.99,
+            "fees": 2.01,
+            "feeAdjustments": [
+                {
+                    "name": "itemPrice",
+                    "value": -1,
+                    "reason": "enjoy! jet.com have a good mood today"
+                },
+                {
+                    "name": "allocatedBasket",
+                    "value": 0,
+                    "reason": ""
+                }
+            ],
+            "name": "",
+            "description": "",
+            "url": ""
+        }
+    ],
+    "shipments": [
+        {
+            "id": "a172ae641c384c57b3a5b58ae4dd3bd6",
+            "fulfillmentCenter": {
+                "name": "west coast",
+                "url": ""
+            },
+            "method": "ups-ground",
+            "shipBy": "05/02/2014",
+            "deliveryBy": "05/10/2014",
+            "box": {
+                "name": "3x4",
+                "description": "",
+                "width": 1.1,
+                "height": 2.2,
+                "length": 2.2,
+                "maxWeight": 140,
+                "url": ""
+            },
+            "items": [
+                {
+                    "id": "9af824b9e4a24854991870db184bbe32",
+                    "sellerSku": "B289B4B",
+                    "quantity": 2
+                }
+            ],
+            "labelUrl": ""
+        }
+    ],
+    "metaData": {
+        "notifiedOn": "5/1/2014T0:0:05-5:00",
+        "state": {
+            "rejected": {
+                "on": "5/1/2014T0:1:0-5:00",
+                "reason": "out of stock"
+            }
+        },
+        "history": []
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "title": "OrderReject",
+    "type": "object",
+    "properties": {
+        "reason": {
+            "type": "string"
+        }
+    }
+}

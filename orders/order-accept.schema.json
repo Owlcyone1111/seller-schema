@@ -1,0 +1,65 @@
+{
+    "title": "OrderAcknowledge",
+    "type": "object",
+    "properties": {
+        "newId": {
+            "type": "string"
+        },
+        "items": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/item"
+            }
+        },
+        "shipments": {
+            "$ref": "#/definitions/shipments"
+        }
+    },
+    "definitions": {
+        "item": {
+            "title": "Item",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "newId": {
+                    "type": "string"
+                }
+            }
+        },
+        "shipments": {
+            "title": "Shipments",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "newId": {
+                        "type": "string"
+                    },
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/definitions/shipmentItem"
+                        }
+                    }
+                }
+            }
+        },
+        "shipmentItem": {
+            "title": "ShipmentItem",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "newId": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

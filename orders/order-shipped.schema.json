@@ -1,0 +1,53 @@
+{
+    "title": "OrderShipped",
+    "type": "object",
+    "properties": {
+        "shipments": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/shipment"
+            }
+        }
+    },
+    "definitions": {
+        "shipment": {
+            "title": "Shipment",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "date": {
+                    "type": "string"
+                },
+                "method": {
+                    "type": "string"
+                },
+                "trackingNumber": {
+                    "type": "string"
+                },
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/shipmentItem"
+                    }
+                }
+            }
+        },
+        "shipmentItem": {
+            "title": "ShipmentItem",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "sellerSku": {
+                    "type": "string"
+                },
+                "qunatity": {
+                    "type": "number"
+                }
+            }
+        }
+    }
+}
