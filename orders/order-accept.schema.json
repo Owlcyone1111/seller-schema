@@ -12,7 +12,10 @@
             }
         },
         "shipments": {
-            "$ref": "#/definitions/shipments"
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/shipment"
+            }
         }
     },
     "definitions": {
@@ -28,23 +31,20 @@
                 }
             }
         },
-        "shipments": {
-            "title": "Shipments",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string"
-                    },
-                    "newId": {
-                        "type": "string"
-                    },
+        "shipment": {
+            "title": "Shipment",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "newId": {
+                    "type": "string"
+                },
+                "items": {
+                    "type": "array",
                     "items": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/definitions/shipmentItem"
-                        }
+                        "$ref": "#/definitions/shipmentItem"
                     }
                 }
             }
