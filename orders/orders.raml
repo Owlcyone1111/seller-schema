@@ -12,8 +12,8 @@ protocols: [HTTPS]
             200:
                 body:
                     application/json:
-                        schema: !include order-schema.json
-                        example: !include order-example.json
+                        schema: !include order.schema.json
+                        example: !include order.example.json
 /{id}:
     get:
 
@@ -21,7 +21,7 @@ protocols: [HTTPS]
         post:
             body:
                 application/json:
-                    schema: !include order-accept-schema.json
+                    schema: !include order-accept.schema.json
 
             responses:
                 200:
@@ -32,7 +32,7 @@ protocols: [HTTPS]
         post:
             body:
                 application/json:
-                    schema: !include order-reject-schema.json
+                    schema: !include order-reject.schema.json
 
             responses:
                 200:
@@ -44,7 +44,7 @@ protocols: [HTTPS]
         post:
             body:
                 application/json:
-                    schema: !include order-shipped-schema.json
+                    schema: !include order-shipped.schema.json
 
             responses:
                 200:
