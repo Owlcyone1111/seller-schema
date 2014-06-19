@@ -1,0 +1,139 @@
+{
+	"title": "SellerSku",
+	"type": "object",
+	"description": "This schema represents a merchant SKU",
+	"properties": {
+		"merchantSku": {
+			"type": "string",
+			"description": "Your unique identifier for each product you sell on Jet"
+		},
+		"productTitle": {
+			"type": "string",
+			"description": "Short product description"
+		},
+		"jetBrowseNodeId": {
+			"type": "integer",
+			"description": "The uniqueID that defines where the product will be found on Jet.com browse structure"
+		},
+		"standardProductCode": {
+			"type": "string",
+			"description": "A standard, unique identifier for a product.  ISBN, UPC, EAN and GTIN-14 are accepted."
+		},
+		"standardProductCodeType": {
+			"type": "string",
+			"description": "Indicate the type of StandardProductCode that was used."
+		},
+		"multipackQuantity": {
+			"type": "int",
+			"description": "Number of items with the given StandardProductCode (UPC) that makes up your Merchant SKU"
+		},
+		"brand": {
+			"type": "string",
+			"description": "Brand of the Merchant SKU"
+		},
+		"manufacturer": {
+			"type": "string",
+			"description": "Manufacturer of the Merchant SKU"
+		},
+		"mfrPartNumber": {
+			"type": "string",
+			"description": "Part number provided by the original manufacturer of the Merchant SKU"
+		},
+		"productDescription": {
+			"type": "string",
+			"description": "Long description of the Merchant SKU"
+		},
+		"bullet1": {
+			"type": "string",
+			"description": "Merchant SKU feature description"
+		},
+		"bullet2": {
+			"type": "string",
+			"description": "Merchant SKU feature description"
+		},
+		"bullet3": {
+			"type": "string",
+			"description": "Merchant SKU feature description"
+		},
+		"bullet4": {
+			"type": "string",
+			"description": "Merchant SKU feature description"
+		},
+		"bullet5": {
+			"type": "string",
+			"description": "Merchant SKU feature description"
+		},
+		"numberUnitsForPricePerUnit": {
+			"type": "string",
+			"description": "For Price Per Unit calculations, the number of units included in the merchant SKU. The unit of measure must be specified in order to indicate what is being measured by the unit-count. "
+		},
+		"typeOfUnitForPricePerUnit": {
+			"type": "string",
+			"description": "The Type of Unit for Price per Unit attribute is a label for the Number Units for Price Per Unit. The price per unit can then be constructed by dividing the selling price by the number of units and appending the text \"per unit value.\" For example, for a six-pack of soda, Number Units for Price per Unit= 6, Type of Unit for Price per Unit= can, price per unit = price per can."
+		},
+		"shippingWeight": {
+			"type": "number",
+			"description": "Weight of the merchant SKU when in its shippable configuration"
+		},
+		"packageLength": {
+			"type": "number",
+			"description": "Length of the merchant SKU when in its shippable configuration"
+		},
+		"packageWidth": {
+			"type": "number",
+			"description": "Width of the merchant SKU when in its shippable configuration"
+		},
+		"packageHeight": {
+			"type": "number",
+			"description": "Height of the merchant SKU when in its shippable configuration"
+		},
+		"parentOrChild": {
+			"type": "string",
+			"description": "Parent or Child"
+		},
+		"parentSku": {
+			"type": "string",
+			"description": "The \"Merchant SKU\" that is the parent for this Merchant SKU which has \"ParentOrChild\" = Child"
+		},
+		"relationship": {
+			"type": "string",
+			"description": "Variation or Accessory"
+		},
+		"variationRefinements": {
+			"type": "string",
+			"description": "The refinements that vary for a set  of Parent/Child Merchant SKUs"
+		},
+		"prop65": {
+			"type": "boolean",
+			"description": "You must tell us if your product is subject to Proposition 65 rules and regulations.  Proposition 65 requires merchants to provide California consumers with special warnings for products that contain chemicals known to cause cancer, birth defects, or other reproductive harm, if those products expose consumers to such materials above certain threshold levels.  The default value for this is \"False,\" so if you do not populate this column, we will assume your product is not subject to this rule.  Please view this Web site for more information: http://www.oehha.ca.gov/."
+		},
+		"legalDisclaimerDescription": {
+			"type": "string",
+			"description": "Any legal language required to be displayed with the product."
+		},
+		"cpsiaCautionaryStatement1": {
+			"type": "string",
+			"description": "Use this field to indicate if a cautionary statement relating to the choking hazards of children's toys and games applies to your product.  These cautionary statements are defined in Section 24 of the Federal Hazardous Substances Act and Section 105 of the Consumer Product Safety Improvement Act of 2008.  They must be displayed on the product packaging and in certain online and catalog advertisements.  You are responsible for determining if a cautionary statement applies to the product.  This can be verified by contacting the product manufacturer or checking the product packaging.   Cautionary statements that you select will be displayed on the product detail page.  If no cautionary statement applies to the product, select \"no_warning_applicable\"."
+		},
+		"cpsiaCautionaryStatement2": {
+			"type": "string",
+			"description": "Use this field to indicate if a cautionary statement relating to the choking hazards of children's toys and games applies to your product.  These cautionary statements are defined in Section 24 of the Federal Hazardous Substances Act and Section 105 of the Consumer Product Safety Improvement Act of 2008.  They must be displayed on the product packaging and in certain online and catalog advertisements.  You are responsible for determining if a cautionary statement applies to the product.  This can be verified by contacting the product manufacturer or checking the product packaging.   Cautionary statements that you select will be displayed on the product detail page.  If no cautionary statement applies to the product, select \"no_warning_applicable\"."
+		},
+		"cpsiaCautionaryStatement3": {
+			"type": "string",
+			"description": "Use this field to indicate if a cautionary statement relating to the choking hazards of children's toys and games applies to your product.  These cautionary statements are defined in Section 24 of the Federal Hazardous Substances Act and Section 105 of the Consumer Product Safety Improvement Act of 2008.  They must be displayed on the product packaging and in certain online and catalog advertisements.  You are responsible for determining if a cautionary statement applies to the product.  This can be verified by contacting the product manufacturer or checking the product packaging.   Cautionary statements that you select will be displayed on the product detail page.  If no cautionary statement applies to the product, select \"no_warning_applicable\"."
+		},
+		"cpsiaCautionaryStatement4": {
+			"type": "string",
+			"description": "Use this field to indicate if a cautionary statement relating to the choking hazards of children's toys and games applies to your product.  These cautionary statements are defined in Section 24 of the Federal Hazardous Substances Act and Section 105 of the Consumer Product Safety Improvement Act of 2008.  They must be displayed on the product packaging and in certain online and catalog advertisements.  You are responsible for determining if a cautionary statement applies to the product.  This can be verified by contacting the product manufacturer or checking the product packaging.   Cautionary statements that you select will be displayed on the product detail page.  If no cautionary statement applies to the product, select \"no_warning_applicable\"."
+		},
+		"countryOfOrigin": {
+			"type": "string",
+			"description": "The country that the item was manufactured in."
+		},
+		"safetyWarning": {
+			"type": "string",
+			"description": "If applicable, use to supply any associated warnings for your product."
+		}
+	}
+}

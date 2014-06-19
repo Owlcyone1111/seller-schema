@@ -1,0 +1,19 @@
+{
+	"title": "Price",
+	"type": "object",
+	"description": "This schema is used to set prices for merchant skus",
+	"properties": {
+		"merchantSku": {
+			"type": "string",
+			"description": "Your unique identifier for each product you sell on Jet"
+		},
+		"price": {
+			"type": "number",
+			"description": "Price of the given Merchant SKU"
+		},
+		"fcPrice": {
+			"type": "number",
+			"description": "If you have multiple shipping locations and want to charge a different price at a given shipping location, provide the price for each FC that varies from what is set in the \"price\" field.  For example, if you have three shipping locations \"West Coast\", \"Central\" and \"East Coast\" and you set \"Price\" = 10.00 but you want to charge 11.00 for the Merchant SKU if it ships from your \"West Coast\" shipping location you would use \"West Coast = 11.00\" for FCPrice.  If you also wanted to charge 9.50 for the \"East Coast\" shipping location you would set West Coast = 11.00 | East Coast = 9.50 for FC Price"
+		},
+	}
+}

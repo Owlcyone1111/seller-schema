@@ -1,0 +1,82 @@
+#%RAML 0.8
+
+title: Seller API - Seller Skus
+baseUri: http://ironman.jet.com/api/{version}
+version: v0.1
+protocols: [HTTPS]
+mediaType: application/json
+
+/seller-skus:
+	get:
+		responses:
+			200:
+				body:
+					application/json:
+						schema: !include seller-skus.schema.json
+						example: !include seller-skus.example.json
+	/{id}:
+		get:
+			responses:
+				200:
+					body:
+						application/json:
+							schema: !include seller-skus.schema.json
+							example: !include seller-skus.example.json
+				404:
+		/inventory:
+			responses:
+				201:
+					body:
+						application/json:
+							schema: !include inventory.schema.json
+							example: !include inventory.example.json
+			/{fcid}:
+				responses:
+					201:
+						body:
+							application/json:
+								schema: !include inventory.schema.json
+								example: !include inventory.example.json
+		/price:
+			responses:
+				201:
+					body:
+						application/json:
+							schema: !include price.schema.json
+							example: !include price.example.json
+			/{fcid}:
+				responses:
+					201:
+						body:
+							application/json:
+								schema: !include price.schema.json
+								example: !include price.example.json
+		/image:
+			/main:
+				responses:
+					201:
+						body:
+							application/json:
+								schema: !include image.schema.json
+								example: !include image.example.json
+			/alternate:
+				responses:
+					201:
+						body:
+							application/json:
+								schema: !include image.schema.json
+								example: !include image.example.json
+			/swatch:
+				responses:
+					201:
+						body:
+							application/json:
+								schema: !include image.schema.json
+								example: !include image.example.json
+		/shippingexception:
+			responses:
+				201:
+					body:
+						application/json:
+							schema: !include shippingexception.schema.json
+							example: !include shippingexception.example.json

@@ -1,0 +1,31 @@
+{
+	"title": "ShippingException",
+	"type": "object",
+	"description": "This object is used to set shipping exceptions for merchant SKUs",
+	"properties": {
+		"merchantSku": {
+			"type": "string",
+			"description": "Your unique identifier for each product you sell on Jet"
+		},
+		"shippingCarrier": {
+			"type": "string",
+			"description": "A shipping carrier, including all that carrier's ShippngMethods e.g. UPS, FedEx, USPS.  Use this field if you want your change to apply to all ShippingMethods of a given carrier."
+		},
+		"shippingMethod": {
+			"type": "string",
+			"description": "A specific shipping method e.g. UPS Ground, UPS Next Day Air, FedEx Home"
+		},
+		"overrideType": {
+			"type": "string",
+			"description": "The type of shipping override, \"Additional Charge\" or \"Override Charge\" (Override Charge could be used to lower shipping)"
+		},
+		"shippingChargeAmount": {
+			"type": "number",
+			"description": "The amount added to default shipping when \"OverrideType\"= \"additional charge\" and the total amount charged when \"OverrideType\" =  \"Override charge\""
+		},
+		"isShippingRestricted": {
+			"type": "boolean",
+			"description": "Indicates whether the SKU can or cannot be shipped using the specified shipping service (ShippingCarrier or ShippingMethod). A value of \"true\" means that the SKU cannot be shipped using the specified shipping service."
+		}
+	}
+}
