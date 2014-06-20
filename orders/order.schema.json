@@ -3,10 +3,12 @@
     "type": "object",
     "properties": {
         "id": {
-            "type": "string"
+            "type": "string",
+            "description" :  "Jet's unique ID for a given order"
         },
         "placedOn": {
-            "type": "string"
+            "type": "string",
+            "description" :  "The date the order was placed in UTC"
         },
         "buyer": {
             "$ref": "#/definitions/buyer"
@@ -41,10 +43,7 @@
                 "phoneNumber": {
                     "type": "string"
                 }
-            },
-            "required": [
-                "name"
-            ]
+            }
         },
         "address": {
             "title": "Address",
