@@ -24,7 +24,7 @@
 			"description": "Indicate the type of StandardProductCode that was used."
 		},
 		"multipackQuantity": {
-			"type": "int",
+			"type": "integer",
 			"description": "Number of items with the given StandardProductCode (UPC) that makes up your Merchant SKU"
 		},
 		"brand": {
