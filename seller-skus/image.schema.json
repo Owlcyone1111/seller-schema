@@ -1,9 +1,9 @@
 {
 	"title": "Image",
 	"type": "object",
-	"description": "This schema is used to set images for merchant skus",
+	"description": "This schema is used to set images for seller skus",
 	"properties": {
-		"merchantSku": {
+		"sellerSku": {
 			"type": "string",
 			"description": "Your unique identifier for each product you sell on Jet"
 		},
