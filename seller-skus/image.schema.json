@@ -5,14 +5,31 @@
 	"properties": {
 		"sellerSku": {
 			"type": "string",
+			"required": true,
 			"description": "Your unique identifier for each product you sell on Jet"
 		},
 		"imageType": {
 			"type": "string",
-			"description": "Whether it is the \"Main Image\" ,\"Alternate Image\" or  a  \"Swatch Image\" for the given SKU that is being added"
+			"required": true,
+			"description": "#DESCRIPTION 
+
+			Whether it is the \"Main Image\" , \"Alternate Image\" or  a  \"Swatch Image\" for the given Seller SKU. 
+
+			##VALID VALUES
+
+			###VALID VALUES
+
+			####VALID VALUES
+
+			*'Main Image' - the primary image used for the give SelerSKU 
+
+			*'Alternate Image' - supporting images for the given MerchantSKU 
+
+			*'Swatch' - an example of a color or fabric of the given MerchantSKU "
 		},
 		"imageUrl": {
 			"type": "string",
+			"required": true,
 			"description": "URL location where Jet.com can access the image"
 		},
 	}
