@@ -1,5 +1,5 @@
 {
-	"title": "SellerSku",
+	"title": "MerchantSku",
 	"type": "object",
 	"description": "This schema represents a merchant SKU",
 	"properties": {
