@@ -8,7 +8,7 @@
 			"required": true,
 			"description": "Your unique identifier for each product you sell on Jet
 
-			##Valid values
+			#Valid values
 
 			Those sellerSKUs that you have set up"
 		},
@@ -21,7 +21,7 @@
 			"type": "number",
 			"description": "If you have multiple shipping locations and want to charge a different price at a given shipping location, provide the price for each FC that varies from what is set in the \"price\" field.  For example, if you have three shipping locations \"West Coast\", \"Central\" and \"East Coast\" and you set \"Price\" = 10.00 but you want to charge 11.00 for the Merchant SKU if it ships from your \"West Coast\" shipping location you would use \"West Coast = 11.00\" for FCPrice.  If you also wanted to charge 9.50 for the \"East Coast\" shipping location you would set West Coast = 11.00 | East Coast = 9.50 for FC Price
 
-			##Logic
+			#Logic
 			
 			'price' must be defined. 'fcPrice' only provides an override of the value set as 'price' for the merchantFCs referenced"	
 
