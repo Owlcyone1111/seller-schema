@@ -6,22 +6,50 @@
 		"merchantSku": {
 			"type": "string",
 			"required": true,
-			"description": "Your unique identifier for each product you sell on Jet"
+			"description": "Your unique identifier for each product you sell on Jet
+
+			#Valid Values
+
+			1 to 40 characters"
 		},
 		"productTitle": {
 			"type": "string",
 			"required": true,
-			"description": "Short product description"
+			"description": "Short product description
+
+			#Valid Values
+
+			1 to 500 alphanumeric characters"
+
 		},
 		"jetBrowseNodeId": {
 			"type": "integer",
 			"required": true,
-			"description": "The uniqueID that defines where the product will be found on Jet.com browse structure"
+			"description": "The uniqueID that defines where the product will be found on Jet.com browse structure
+
+			#Valid Values
+
+			This must be a valid jetBrowseNodeId"
 		},
 		"standardProductCode": {
 			"type": "string",
 			"required": true,
 			"description": "A standard, unique identifier for a product.  ISBN, UPC, EAN and GTIN-14 are accepted.
+
+			#Valid Values
+
+			*If standardProductCodeType is'UPC' - must be 12 digits
+
+			*If standardProductCodeType is 'ISBN' - must be 13 digits
+
+			*If standardProductCodeType is 'EAN' - must be 13 digits
+
+			*If standardProductCodeType is 'GTIN-14' - must be 14 digits"
+		},
+		"standardProductCodeType": {
+			"type": "string",
+			"required": true,
+			"description": "Indicate the type of StandardProductCode that was used.
 
 			#Valid Values
 
@@ -33,11 +61,6 @@
 
 			*GTIN-14"
 		},
-		"standardProductCodeType": {
-			"type": "string",
-			"required": true,
-			"description": "Indicate the type of StandardProductCode that was used."
-		},
 		"multipackQuantity": {
 			"type": "integer",
 			"required": true,
@@ -46,41 +69,77 @@
 		"brand": {
 			"type": "string",
 			"required": true,
-			"description": "Brand of the Merchant SKU"
+			"description": "Brand of the Merchant SKU
+
+			#Valid Values
+
+			1 to 50 characters"
 		},
 		"manufacturer": {
 			"type": "string",
 			"required": true,
-			"description": "Manufacturer of the Merchant SKU"
+			"description": "Manufacturer of the Merchant SKU
+
+			#Valid Values
+
+			1 to 50 characters"
 		},
 		"mfrPartNumber": {
 			"type": "string",
-			"description": "Part number provided by the original manufacturer of the Merchant SKU"
+			"description": "Part number provided by the original manufacturer of the Merchant SKU
+
+			#Valid Values
+
+			maximum of 50 characters"
 		},
 		"productDescription": {
 			"type": "string",
 			"required": true,
-			"description": "Long description of the Merchant SKU"
+			"description": "Long description of the Merchant SKU
+
+			#Valid Values
+
+			1 to 2000 characters"
 		},
 		"bullet1": {
 			"type": "string",
-			"description": "Merchant SKU feature description"
+			"description": "Merchant SKU feature description
+
+			#Valid Values
+
+			maximum of 500 characters"
 		},
 		"bullet2": {
 			"type": "string",
-			"description": "Merchant SKU feature description"
+			"description": "Merchant SKU feature description
+
+			#Valid Values
+
+			maximum of 500 characters"
 		},
 		"bullet3": {
 			"type": "string",
-			"description": "Merchant SKU feature description"
+			"description": "Merchant SKU feature description
+
+			#Valid Values
+
+			maximum of 500 characters"
 		},
 		"bullet4": {
 			"type": "string",
-			"description": "Merchant SKU feature description"
+			"description": "Merchant SKU feature description
+
+			#Valid Values
+
+			maximum of 500 characters"
 		},
 		"bullet5": {
 			"type": "string",
-			"description": "Merchant SKU feature description"
+			"description": "Merchant SKU feature description
+
+			#Valid Values
+
+			maximum of 500 characters"
 		},
 		"numberUnitsForPricePerUnit": {
 			"type": "string",
@@ -93,22 +152,38 @@
 		"shippingWeightPounds": {
 			"type": "number",
 			"required": true,
-			"description": "Weight of the merchant SKU when in its shippable configuration"
+			"description": "Weight of the merchant SKU when in its shippable configuration
+
+			#Valid Values
+
+			A number with 2 decimals"
 		},
 		"packageLengthInches": {
 			"type": "number",
 			"required": true,
-			"description": "Length of the merchant SKU when in its shippable configuration"
+			"description": "Length of the merchant SKU when in its shippable configuration
+
+			#Valid Values
+
+			A number with 2 decimals"
 		},
 		"packageWidthInches": {
 			"type": "number",
 			"required": true,
-			"description": "Width of the merchant SKU when in its shippable configuration"
+			"description": "Width of the merchant SKU when in its shippable configuration
+
+			#Valid Values
+
+			A number with 2 decimals"
 		},
 		"packageHeightInches": {
 			"type": "number",
 			"required": true,
-			"description": "Height of the merchant SKU when in its shippable configuration"
+			"description": "Height of the merchant SKU when in its shippable configuration
+
+			#Valid Values
+
+			A number with 2 decimals"
 		},
 		"parentOrChild": {
 			"type": "string",
@@ -169,7 +244,11 @@
 		},
 		"legalDisclaimerDescription": {
 			"type": "string",
-			"description": "Any legal language required to be displayed with the product."
+			"description": "Any legal language required to be displayed with the product.
+
+			#Valid Values
+
+			maximum of 500 characters"
 		},
 		"cpsiaCautionaryStatement1": {
 			"type": "string",
@@ -253,11 +332,19 @@
 		},
 		"countryOfOrigin": {
 			"type": "string",
-			"description": "The country that the item was manufactured in."
+			"description": "The country that the item was manufactured in.
+
+			#Valid Values
+
+			maximum of 50 characters"
 		},
 		"safetyWarning": {
 			"type": "string",
-			"description": "If applicable, use to supply any associated warnings for your product."
+			"description": "If applicable, use to supply any associated warnings for your product.
+
+			#Valid Values
+
+			maximum of 500 characters"
 		}
 	}
 }
