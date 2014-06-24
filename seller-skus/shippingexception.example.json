@@ -1,8 +1,9 @@
 {
 	"merchantSku": "ABC-123",
+	"serivceLevel": "standard",
 	"shippingCarrier": "UPS",
 	"shippingMethod": "UPS Ground",
 	"overrideType": "AdditionalCharge",
-	"additionalCharge": 3.25,
+	"shippingChargeAmount": 3.25,
 	"isShippingRestricted": false
 }
