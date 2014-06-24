@@ -1,8 +1,0 @@
-{
-	"merchantSku": "ABC-123",
-	"quantity": 54,
-	"fcQuantity": 16,
-	"fcQuantityUpdateType": "CompeteFCList",
-	"startSellingDate": "2014-06-01",
-	"fulfillmentTime": 1
-}

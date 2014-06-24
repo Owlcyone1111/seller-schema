@@ -3,16 +3,7 @@
 	"type": "object",
 	"description": "This schema represents a merchant SKU",
 	"properties": {
-		"merchantSku": {
-			"type": "string",
-			"required": true,
-			"description": "Your unique identifier for each product you sell on Jet
-
-			#Valid Values
-
-			1 to 40 characters"
-		},
-		"productTitle": {
+		"product_title": {
 			"type": "string",
 			"required": true,
 			"description": "Short product description
@@ -22,34 +13,34 @@
 			1 to 500 alphanumeric characters"
 
 		},
-		"jetBrowseNodeId": {
+		"jet_browse_node_id": {
 			"type": "integer",
 			"required": true,
 			"description": "The uniqueID that defines where the product will be found on Jet.com browse structure
 
 			#Valid Values
 
-			This must be a valid jetBrowseNodeId"
+			This must be a valid jet_browse_node_id"
 		},
-		"standardProductCode": {
+		"standard_product_code": {
 			"type": "string",
 			"required": true,
 			"description": "A standard, unique identifier for a product.  ISBN, UPC, EAN and GTIN-14 are accepted.
 
 			#Valid Values
 
-			*If standardProductCodeType is'UPC' - must be 12 digits
+			*If standard_product_code_type is'UPC' - must be 12 digits
 
-			*If standardProductCodeType is 'ISBN' - must be 13 digits
+			*If standard_product_code_type is 'ISBN' - must be 13 digits
 
-			*If standardProductCodeType is 'EAN' - must be 13 digits
+			*If standard_product_code_type is 'EAN' - must be 13 digits
 
-			*If standardProductCodeType is 'GTIN-14' - must be 14 digits"
+			*If standard_product_code_type is 'GTIN-14' - must be 14 digits"
 		},
-		"standardProductCodeType": {
+		"standard_product_code_type": {
 			"type": "string",
 			"required": true,
-			"description": "Indicate the type of StandardProductCode that was used.
+			"description": "Indicate the type of standard_product_code that was used.
 
 			#Valid Values
 
@@ -61,10 +52,10 @@
 
 			*GTIN-14"
 		},
-		"multipackQuantity": {
+		"multipack_quantity": {
 			"type": "integer",
 			"required": true,
-			"description": "Number of items with the given StandardProductCode (UPC) that makes up your Merchant SKU"
+			"description": "Number of items with the given standard_product_code (UPC) that makes up your Merchant SKU"
 		},
 		"brand": {
 			"type": "string",
@@ -84,7 +75,7 @@
 
 			1 to 50 characters"
 		},
-		"mfrPartNumber": {
+		"mfr_part_number": {
 			"type": "string",
 			"description": "Part number provided by the original manufacturer of the Merchant SKU
 
@@ -92,7 +83,7 @@
 
 			maximum of 50 characters"
 		},
-		"productDescription": {
+		"product_description": {
 			"type": "string",
 			"required": true,
 			"description": "Long description of the Merchant SKU
@@ -101,7 +92,7 @@
 
 			1 to 2000 characters"
 		},
-		"bullet1": {
+		"bullet_1": {
 			"type": "string",
 			"description": "Merchant SKU feature description
 
@@ -109,7 +100,7 @@
 
 			maximum of 500 characters"
 		},
-		"bullet2": {
+		"bullet_2": {
 			"type": "string",
 			"description": "Merchant SKU feature description
 
@@ -117,7 +108,7 @@
 
 			maximum of 500 characters"
 		},
-		"bullet3": {
+		"bullet_3": {
 			"type": "string",
 			"description": "Merchant SKU feature description
 
@@ -125,7 +116,7 @@
 
 			maximum of 500 characters"
 		},
-		"bullet4": {
+		"bullet_4": {
 			"type": "string",
 			"description": "Merchant SKU feature description
 
@@ -133,7 +124,7 @@
 
 			maximum of 500 characters"
 		},
-		"bullet5": {
+		"bullet_5": {
 			"type": "string",
 			"description": "Merchant SKU feature description
 
@@ -141,15 +132,15 @@
 
 			maximum of 500 characters"
 		},
-		"numberUnitsForPricePerUnit": {
+		"number_units_for_price_per_unit": {
 			"type": "string",
 			"description": "For Price Per Unit calculations, the number of units included in the merchant SKU. The unit of measure must be specified in order to indicate what is being measured by the unit-count. "
 		},
-		"typeOfUnitForPricePerUnit": {
+		"type_of_unit_for_price_per_unit": {
 			"type": "string",
-			"description": "The Type of Unit for Price per Unit attribute is a label for the Number Units for Price Per Unit. The price per unit can then be constructed by dividing the selling price by the number of units and appending the text \"per unit value.\" For example, for a six-pack of soda, Number Units for Price per Unit= 6, Type of Unit for Price per Unit= can, price per unit = price per can."
+			"description": "The type_of_unit_for_price_per_unit attribute is a label for the number_units_for_price_per_unit. The price per unit can then be constructed by dividing the selling price by the number of units and appending the text \"per unit value.\" For example, for a six-pack of soda, number_units_for_price_per_unit= 6, type_of_unit_for_price_per_unit= can, price per unit = price per can."
 		},
-		"shippingWeightPounds": {
+		"shipping_weight_pounds": {
 			"type": "number",
 			"required": true,
 			"description": "Weight of the merchant SKU when in its shippable configuration
@@ -158,7 +149,7 @@
 
 			A number with 2 decimals"
 		},
-		"packageLengthInches": {
+		"package_length_inches": {
 			"type": "number",
 			"required": true,
 			"description": "Length of the merchant SKU when in its shippable configuration
@@ -167,7 +158,7 @@
 
 			A number with 2 decimals"
 		},
-		"packageWidthInches": {
+		"package_width_inches": {
 			"type": "number",
 			"required": true,
 			"description": "Width of the merchant SKU when in its shippable configuration
@@ -176,7 +167,7 @@
 
 			A number with 2 decimals"
 		},
-		"packageHeightInches": {
+		"package_height_inches": {
 			"type": "number",
 			"required": true,
 			"description": "Height of the merchant SKU when in its shippable configuration
@@ -185,13 +176,13 @@
 
 			A number with 2 decimals"
 		},
-		"parentOrChild": {
+		"parent_or_child": {
 			"type": "string",
 			"description": "Define is sellerSKU is 'Parent' or 'Child'
 
 			#Logic
 
-			This field is required if you are setting up a Variation relationship between a set SellerSKUs
+			This field is required if you are setting up a Variation relationship between a set MerchantSKUs
 
 			##Valid Values
 
@@ -199,13 +190,13 @@
 
 			*Child"
 		},
-		"parentSku": {
+		"parent_sku": {
 			"type": "string",
 			"description": "The \"SellerSKU\" that is the parent for this SellerSKU which has \"ParentOrChild\" = Child
 
 			#Logic
 
-			This field is required if you are setting up a Variation relationship between a set SellerSKUs
+			This field is required if you are setting up a Variation relationship between a set MerchantSKUs
 
 			#Valid Values
 
@@ -218,7 +209,7 @@
 
 			#Logic
 
-			This field is required if you are setting up a Variation relationship between a set SellerSKUs
+			This field is required if you are setting up a Variation relationship between a set MerchantSKUs
 
 			##Valid Values
 
@@ -226,23 +217,23 @@
 
 			*Accessory"
 		},
-		"variationRefinements": {
+		"variation_refinements": {
 			"type": "string",
-			"description": "The refinements that vary for a set  of Parent/Child SellerSKUs
+			"description": "The refinements that vary for a set  of Parent/Child MerchantSKUs
 
 			#Logic
 
-			This field is required if you are setting up a Variation relationship between a set SellerSKUs
+			This field is required if you are setting up a Variation relationship between a set MerchantSKUs
 			
 			#Valid Values
 
-			The valid 'variationRefinements vary depending on the jetBrowseNodeId, see category specific documentation for details"
+			The valid 'variation_refinements vary depending on the jet_browse_node_id, see category specific documentation for details"
 		},
-		"prop65": {
+		"prop_65": {
 			"type": "boolean",
 			"description": "You must tell us if your product is subject to Proposition 65 rules and regulations.  Proposition 65 requires merchants to provide California consumers with special warnings for products that contain chemicals known to cause cancer, birth defects, or other reproductive harm, if those products expose consumers to such materials above certain threshold levels.  The default value for this is \"False,\" so if you do not populate this column, we will assume your product is not subject to this rule.  Please view this Web site for more information: http://www.oehha.ca.gov/."
 		},
-		"legalDisclaimerDescription": {
+		"legal_disclaimer_description": {
 			"type": "string",
 			"description": "Any legal language required to be displayed with the product.
 
@@ -250,7 +241,7 @@
 
 			maximum of 500 characters"
 		},
-		"cpsiaCautionaryStatement1": {
+		"cpsia_cautionary_statement_1": {
 			"type": "string",
 			"description": "Use this field to indicate if a cautionary statement relating to the choking hazards of children's toys and games applies to your product.  These cautionary statements are defined in Section 24 of the Federal Hazardous Substances Act and Section 105 of the Consumer Product Safety Improvement Act of 2008.  They must be displayed on the product packaging and in certain online and catalog advertisements.  You are responsible for determining if a cautionary statement applies to the product.  This can be verified by contacting the product manufacturer or checking the product packaging.   Cautionary statements that you select will be displayed on the product detail page.  If no cautionary statement applies to the product, select \"no_warning_applicable\".
 
@@ -270,7 +261,7 @@
 
 			*no warning applicable"
 		},
-		"cpsiaCautionaryStatement2": {
+		"cpsia_cautionary_statement_2": {
 			"type": "string",
 			"description": "Use this field to indicate if a cautionary statement relating to the choking hazards of children's toys and games applies to your product.  These cautionary statements are defined in Section 24 of the Federal Hazardous Substances Act and Section 105 of the Consumer Product Safety Improvement Act of 2008.  They must be displayed on the product packaging and in certain online and catalog advertisements.  You are responsible for determining if a cautionary statement applies to the product.  This can be verified by contacting the product manufacturer or checking the product packaging.   Cautionary statements that you select will be displayed on the product detail page.  If no cautionary statement applies to the product, select \"no_warning_applicable\".
 
@@ -290,7 +281,7 @@
 
 			*no warning applicable"
 		},
-		"cpsiaCautionaryStatement3": {
+		"cpsia_cautionary_statement_3": {
 			"type": "string",
 			"description": "Use this field to indicate if a cautionary statement relating to the choking hazards of children's toys and games applies to your product.  These cautionary statements are defined in Section 24 of the Federal Hazardous Substances Act and Section 105 of the Consumer Product Safety Improvement Act of 2008.  They must be displayed on the product packaging and in certain online and catalog advertisements.  You are responsible for determining if a cautionary statement applies to the product.  This can be verified by contacting the product manufacturer or checking the product packaging.   Cautionary statements that you select will be displayed on the product detail page.  If no cautionary statement applies to the product, select \"no_warning_applicable\".
 
@@ -310,7 +301,7 @@
 
 			*no warning applicable"
 		},
-		"cpsiaCautionaryStatement4": {
+		"cpsia_cautionary_statement_4": {
 			"type": "string",
 			"description": "Use this field to indicate if a cautionary statement relating to the choking hazards of children's toys and games applies to your product.  These cautionary statements are defined in Section 24 of the Federal Hazardous Substances Act and Section 105 of the Consumer Product Safety Improvement Act of 2008.  They must be displayed on the product packaging and in certain online and catalog advertisements.  You are responsible for determining if a cautionary statement applies to the product.  This can be verified by contacting the product manufacturer or checking the product packaging.   Cautionary statements that you select will be displayed on the product detail page.  If no cautionary statement applies to the product, select \"no_warning_applicable\".
 
@@ -330,7 +321,7 @@
 
 			*no warning applicable"
 		},
-		"countryOfOrigin": {
+		"country_of_origin": {
 			"type": "string",
 			"description": "The country that the item was manufactured in.
 
@@ -338,7 +329,7 @@
 
 			maximum of 50 characters"
 		},
-		"safetyWarning": {
+		"safety_warning": {
 			"type": "string",
 			"description": "If applicable, use to supply any associated warnings for your product.
 
