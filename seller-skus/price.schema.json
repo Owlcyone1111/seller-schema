@@ -15,7 +15,11 @@
 		"price": {
 			"type": "number",
 			"required": true,
-			"description": "Price of the given Merchant SKU"
+			"description": "Price of the given Merchant SKU
+
+			#Valid values
+
+			A number with up to 18 digits allowed to the left of the decimal point and 2 digits to the right of the decimal point. Commas or currency symbols are not allowed."
 		},
 		"fcPrice": {
 			"type": "number",
@@ -23,20 +27,36 @@
 
 			#Logic
 			
-			'price' must be defined. 'fcPrice' only provides an override of the value set as 'price' for the merchantFCs referenced"	
+			'price' must be defined. 'fcPrice' only provides an override of the value set as 'price' for the merchantFCs referenced
+
+			#Valid values
+
+			A number with up to 18 digits allowed to the left of the decimal point and 2 digits to the right of the decimal point. Commas or currency symbols are not allowed."	
 
 		},
 		"msrp": {
 			"type": "number",
-			"description": "Manufacturer's suggested retail price or list price for the product.This is not the same as the offering price, which is specified in the 'price' field."
+			"description": "Manufacturer's suggested retail price or list price for the product.This is not the same as the offering price, which is specified in the 'price' field.
+
+			#Valid values
+
+			A number with up to 18 digits allowed to the left of the decimal point and 2 digits to the right of the decimal point. Commas or currency symbols are not allowed."
 		},
 		"mapPrice": {
 			"type": "number",
-			"description": "For MAP (Minimum Advertised Price) based pricing.  If you don't know what this term means, this function probably does not apply to you."
+			"description": "For MAP (Minimum Advertised Price) based pricing.  If you don't know what this term means, this function probably does not apply to you.
+
+			#Valid values
+
+			A number with up to 18 digits allowed to the left of the decimal point and 2 digits to the right of the decimal point. Commas or currency symbols are not allowed."
 		},
 		"minimumSellingPrice":{
 			"type": "number",
-			"description": "Price that manufacturer has defined as the lowest price for which the item can be sold"
+			"description": "Price that manufacturer has defined as the lowest price for which the item can be sold
+
+			#Valid values
+
+			A number with up to 18 digits allowed to the left of the decimal point and 2 digits to the right of the decimal point. Commas or currency symbols are not allowed."
 		},
 		"productTaxCode": {
 			"type": "string",
@@ -44,7 +64,11 @@
 		},
 		"noReturnFeeAdjustment": {
 			"type": "number",
-			"description": "Overides category level setting for this fee adjustment; this is the increase in commision you are willing to pay on this product if the customer waives their ability to return it.  If you are going to increase the commission you are willing to pay from the base rate of 15% to 17%, then you should enter '.02'"
+			"description": "Overides category level setting for this fee adjustment; this is the increase in commision you are willing to pay on this product if the customer waives their ability to return it.  If you are going to increase the commission you are willing to pay from the base rate of 15% to 17%, then you should enter '.02'
+
+			Valid values
+
+			A mumber with up to 1 digit allowed to the left of the deimal point and 2 digits to the right of the decimal point.  
 		}
 	}
 }
