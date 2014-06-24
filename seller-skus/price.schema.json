@@ -5,15 +5,46 @@
 	"properties": {
 		"merchantSku": {
 			"type": "string",
-			"description": "Your unique identifier for each product you sell on Jet"
+			"required": true,
+			"description": "Your unique identifier for each product you sell on Jet
+
+			##Valid values
+
+			Those sellerSKUs that you have set up"
 		},
 		"price": {
 			"type": "number",
+			"required": true,
 			"description": "Price of the given Merchant SKU"
 		},
 		"fcPrice": {
 			"type": "number",
-			"description": "If you have multiple shipping locations and want to charge a different price at a given shipping location, provide the price for each FC that varies from what is set in the \"price\" field.  For example, if you have three shipping locations \"West Coast\", \"Central\" and \"East Coast\" and you set \"Price\" = 10.00 but you want to charge 11.00 for the Merchant SKU if it ships from your \"West Coast\" shipping location you would use \"West Coast = 11.00\" for FCPrice.  If you also wanted to charge 9.50 for the \"East Coast\" shipping location you would set West Coast = 11.00 | East Coast = 9.50 for FC Price"
+			"description": "If you have multiple shipping locations and want to charge a different price at a given shipping location, provide the price for each FC that varies from what is set in the \"price\" field.  For example, if you have three shipping locations \"West Coast\", \"Central\" and \"East Coast\" and you set \"Price\" = 10.00 but you want to charge 11.00 for the Merchant SKU if it ships from your \"West Coast\" shipping location you would use \"West Coast = 11.00\" for FCPrice.  If you also wanted to charge 9.50 for the \"East Coast\" shipping location you would set West Coast = 11.00 | East Coast = 9.50 for FC Price
+
+			##Logic
+			
+			'price' must be defined. 'fcPrice' only provides an override of the value set as 'price' for the merchantFCs referenced"	
+
 		},
+		"msrp": {
+			"type": "number",
+			"description": "Manufacturer's suggested retail price or list price for the product.This is not the same as the offering price, which is specified in the 'price' field."
+		},
+		"mapPrice": {
+			"type": "number",
+			"description": "For MAP (Minimum Advertised Price) based pricing.  If you don't know what this term means, this function probably does not apply to you."
+		},
+		"minimumSellingPrice":{
+			"type": "number",
+			"description": "Price that manufacturer has defined as the lowest price for which the item can be sold"
+		},
+		"productTaxCode": {
+			"type": "string",
+			"description": "Price that manufacturer has defined as the lowest price for which the item can be sold"
+		},
+		"noReturnFeeAdjustment": {
+			"type": "number",
+			"description": "Overides category level setting for this fee adjustment; this is the increase in commision you are willing to pay on this product if the customer waives their ability to return it.  If you are going to increase the commission you are willing to pay from the base rate of 15% to 17%, then you should enter '.02'"
+		}
 	}
 }

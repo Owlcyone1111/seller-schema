@@ -1,5 +1,10 @@
 {
 	"merchantSku": "ABC-123",
 	"price": 17.99,
-	"fcPrice": 18.66
+	"fcPrice": 18.66,
+	"msrp": 17.00,
+	"mapPrice": 17.00,
+	"minimumSellingPrice": 16.50,
+	"ProductTaxCode": "defualt",
+	"noReturnFeeAdjustment": 0.02
 }
