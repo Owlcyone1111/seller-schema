@@ -66,7 +66,7 @@
 			"type": "number",
 			"description": "Overides category level setting for this fee adjustment; this is the increase in commision you are willing to pay on this product if the customer waives their ability to return it.  If you are going to increase the commission you are willing to pay from the base rate of 15% to 17%, then you should enter '.02'
 
-			Valid values
+			#Valid values
 
 			A mumber with up to 1 digit allowed to the left of the deimal point and 2 digits to the right of the decimal point.  
 		}
