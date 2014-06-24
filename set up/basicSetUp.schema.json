@@ -1,0 +1,50 @@
+{
+	"title": "basic_setup",
+	"type": "object",
+	"description": "This schema is used for basic setup of a seller account",
+	"properties": {
+		"legal_name": {
+			"type": "string",
+			"required": true,
+			"description": "Your company's legal name
+
+			#Logic
+
+			This is only able to be sent one time and will not be overwritten if it is sent again"
+		},
+		"display_name": {
+			"type": "string",
+			"required": true,
+			"description": "the name you want displyaed to customers
+
+			#Valid values
+
+			0 to 50 characters"
+		},
+		"business_address_line_1": {
+			"type": "string",
+			"required": true,
+			"description": "Line 1 of your business address"	
+
+		},
+		"business_address_line_2": {
+			"type": "string",
+			"description": "Line 2 of your business address"
+		},
+		"business_address_city": {
+			"type": "string",
+			"required": true,
+			"description": "business address city"
+		},
+		"business_address_state":{
+			"type": "string",
+			"required": true,
+			"description": "business address state"
+		},
+		"business_address_zip": {
+			"type": "string",
+			"required": true,
+			"description": "business address zip code"
+		}
+	}
+}
