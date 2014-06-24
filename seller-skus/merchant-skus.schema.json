@@ -5,34 +5,52 @@
 	"properties": {
 		"merchantSku": {
 			"type": "string",
+			"required": true,
 			"description": "Your unique identifier for each product you sell on Jet"
 		},
 		"productTitle": {
 			"type": "string",
+			"required": true,
 			"description": "Short product description"
 		},
 		"jetBrowseNodeId": {
 			"type": "integer",
+			"required": true,
 			"description": "The uniqueID that defines where the product will be found on Jet.com browse structure"
 		},
 		"standardProductCode": {
 			"type": "string",
-			"description": "A standard, unique identifier for a product.  ISBN, UPC, EAN and GTIN-14 are accepted."
+			"required": true,
+			"description": "A standard, unique identifier for a product.  ISBN, UPC, EAN and GTIN-14 are accepted.
+
+			#Valid Values
+
+			*UPC
+
+			*ISBN
+
+			*EAN
+
+			*GTIN-14"
 		},
 		"standardProductCodeType": {
 			"type": "string",
+			"required": true,
 			"description": "Indicate the type of StandardProductCode that was used."
 		},
 		"multipackQuantity": {
 			"type": "integer",
+			"required": true,
 			"description": "Number of items with the given StandardProductCode (UPC) that makes up your Merchant SKU"
 		},
 		"brand": {
 			"type": "string",
+			"required": true,
 			"description": "Brand of the Merchant SKU"
 		},
 		"manufacturer": {
 			"type": "string",
+			"required": true,
 			"description": "Manufacturer of the Merchant SKU"
 		},
 		"mfrPartNumber": {
@@ -41,6 +59,7 @@
 		},
 		"productDescription": {
 			"type": "string",
+			"required": true,
 			"description": "Long description of the Merchant SKU"
 		},
 		"bullet1": {
@@ -71,37 +90,78 @@
 			"type": "string",
 			"description": "The Type of Unit for Price per Unit attribute is a label for the Number Units for Price Per Unit. The price per unit can then be constructed by dividing the selling price by the number of units and appending the text \"per unit value.\" For example, for a six-pack of soda, Number Units for Price per Unit= 6, Type of Unit for Price per Unit= can, price per unit = price per can."
 		},
-		"shippingWeight": {
+		"shippingWeightPounds": {
 			"type": "number",
+			"required": true,
 			"description": "Weight of the merchant SKU when in its shippable configuration"
 		},
-		"packageLength": {
+		"packageLengthInches": {
 			"type": "number",
+			"required": true,
 			"description": "Length of the merchant SKU when in its shippable configuration"
 		},
-		"packageWidth": {
+		"packageWidthInches": {
 			"type": "number",
+			"required": true,
 			"description": "Width of the merchant SKU when in its shippable configuration"
 		},
-		"packageHeight": {
+		"packageHeightInches": {
 			"type": "number",
+			"required": true,
 			"description": "Height of the merchant SKU when in its shippable configuration"
 		},
 		"parentOrChild": {
 			"type": "string",
-			"description": "Parent or Child"
+			"description": "Define is sellerSKU is 'Parent' or 'Child'
+
+			#Logic
+
+			This field is required if you are setting up a Variation relationship between a set SellerSKUs
+
+			##Valid Values
+
+			*Parent
+
+			*Child"
 		},
 		"parentSku": {
 			"type": "string",
-			"description": "The \"Merchant SKU\" that is the parent for this Merchant SKU which has \"ParentOrChild\" = Child"
+			"description": "The \"SellerSKU\" that is the parent for this SellerSKU which has \"ParentOrChild\" = Child
+
+			#Logic
+
+			This field is required if you are setting up a Variation relationship between a set SellerSKUs
+
+			#Valid Values
+
+			This should be a 'SellerSKU' with 'parentOrChild' = 'parent'"
+
 		},
 		"relationship": {
 			"type": "string",
-			"description": "Variation or Accessory"
+			"description": "Variation or Accessory
+
+			#Logic
+
+			This field is required if you are setting up a Variation relationship between a set SellerSKUs
+
+			##Valid Values
+
+			*Variation
+
+			*Accessory"
 		},
 		"variationRefinements": {
 			"type": "string",
-			"description": "The refinements that vary for a set  of Parent/Child Merchant SKUs"
+			"description": "The refinements that vary for a set  of Parent/Child SellerSKUs
+
+			#Logic
+
+			This field is required if you are setting up a Variation relationship between a set SellerSKUs
+			
+			#Valid Values
+
+			The valid 'variationRefinements vary depending on the jetBrowseNodeId, see category specific documentation for details"
 		},
 		"prop65": {
 			"type": "boolean",
@@ -113,19 +173,83 @@
 		},
 		"cpsiaCautionaryStatement1": {
 			"type": "string",
-			"description": "Use this field to indicate if a cautionary statement relating to the choking hazards of children's toys and games applies to your product.  These cautionary statements are defined in Section 24 of the Federal Hazardous Substances Act and Section 105 of the Consumer Product Safety Improvement Act of 2008.  They must be displayed on the product packaging and in certain online and catalog advertisements.  You are responsible for determining if a cautionary statement applies to the product.  This can be verified by contacting the product manufacturer or checking the product packaging.   Cautionary statements that you select will be displayed on the product detail page.  If no cautionary statement applies to the product, select \"no_warning_applicable\"."
+			"description": "Use this field to indicate if a cautionary statement relating to the choking hazards of children's toys and games applies to your product.  These cautionary statements are defined in Section 24 of the Federal Hazardous Substances Act and Section 105 of the Consumer Product Safety Improvement Act of 2008.  They must be displayed on the product packaging and in certain online and catalog advertisements.  You are responsible for determining if a cautionary statement applies to the product.  This can be verified by contacting the product manufacturer or checking the product packaging.   Cautionary statements that you select will be displayed on the product detail page.  If no cautionary statement applies to the product, select \"no_warning_applicable\".
+
+			#Valid Values
+
+			*Choking hazard balloon
+
+			*choking hazard contains a marble
+
+			*choking hazard contains a small balloon
+
+			*choking hazard is a marble
+
+			*choking hazard is a small balloon
+
+			*choking hazard small parts
+
+			*no warning applicable"
 		},
 		"cpsiaCautionaryStatement2": {
 			"type": "string",
-			"description": "Use this field to indicate if a cautionary statement relating to the choking hazards of children's toys and games applies to your product.  These cautionary statements are defined in Section 24 of the Federal Hazardous Substances Act and Section 105 of the Consumer Product Safety Improvement Act of 2008.  They must be displayed on the product packaging and in certain online and catalog advertisements.  You are responsible for determining if a cautionary statement applies to the product.  This can be verified by contacting the product manufacturer or checking the product packaging.   Cautionary statements that you select will be displayed on the product detail page.  If no cautionary statement applies to the product, select \"no_warning_applicable\"."
+			"description": "Use this field to indicate if a cautionary statement relating to the choking hazards of children's toys and games applies to your product.  These cautionary statements are defined in Section 24 of the Federal Hazardous Substances Act and Section 105 of the Consumer Product Safety Improvement Act of 2008.  They must be displayed on the product packaging and in certain online and catalog advertisements.  You are responsible for determining if a cautionary statement applies to the product.  This can be verified by contacting the product manufacturer or checking the product packaging.   Cautionary statements that you select will be displayed on the product detail page.  If no cautionary statement applies to the product, select \"no_warning_applicable\".
+
+			#Valid Values
+
+			*Choking hazard ballon
+
+			*choking hazard contains a marble
+
+			*choking hazard contains a small balloon
+
+			*choking hazard is a marble
+
+			*choking hazard is a small balloon
+
+			*choking hazard small parts
+
+			*no warning applicable"
 		},
 		"cpsiaCautionaryStatement3": {
 			"type": "string",
-			"description": "Use this field to indicate if a cautionary statement relating to the choking hazards of children's toys and games applies to your product.  These cautionary statements are defined in Section 24 of the Federal Hazardous Substances Act and Section 105 of the Consumer Product Safety Improvement Act of 2008.  They must be displayed on the product packaging and in certain online and catalog advertisements.  You are responsible for determining if a cautionary statement applies to the product.  This can be verified by contacting the product manufacturer or checking the product packaging.   Cautionary statements that you select will be displayed on the product detail page.  If no cautionary statement applies to the product, select \"no_warning_applicable\"."
+			"description": "Use this field to indicate if a cautionary statement relating to the choking hazards of children's toys and games applies to your product.  These cautionary statements are defined in Section 24 of the Federal Hazardous Substances Act and Section 105 of the Consumer Product Safety Improvement Act of 2008.  They must be displayed on the product packaging and in certain online and catalog advertisements.  You are responsible for determining if a cautionary statement applies to the product.  This can be verified by contacting the product manufacturer or checking the product packaging.   Cautionary statements that you select will be displayed on the product detail page.  If no cautionary statement applies to the product, select \"no_warning_applicable\".
+
+			#Valid Values
+
+			*Choking hazard ballon
+
+			*choking hazard contains a marble
+
+			*choking hazard contains a small balloon
+
+			*choking hazard is a marble
+
+			*choking hazard is a small balloon
+
+			*choking hazard small parts
+
+			*no warning applicable"
 		},
 		"cpsiaCautionaryStatement4": {
 			"type": "string",
-			"description": "Use this field to indicate if a cautionary statement relating to the choking hazards of children's toys and games applies to your product.  These cautionary statements are defined in Section 24 of the Federal Hazardous Substances Act and Section 105 of the Consumer Product Safety Improvement Act of 2008.  They must be displayed on the product packaging and in certain online and catalog advertisements.  You are responsible for determining if a cautionary statement applies to the product.  This can be verified by contacting the product manufacturer or checking the product packaging.   Cautionary statements that you select will be displayed on the product detail page.  If no cautionary statement applies to the product, select \"no_warning_applicable\"."
+			"description": "Use this field to indicate if a cautionary statement relating to the choking hazards of children's toys and games applies to your product.  These cautionary statements are defined in Section 24 of the Federal Hazardous Substances Act and Section 105 of the Consumer Product Safety Improvement Act of 2008.  They must be displayed on the product packaging and in certain online and catalog advertisements.  You are responsible for determining if a cautionary statement applies to the product.  This can be verified by contacting the product manufacturer or checking the product packaging.   Cautionary statements that you select will be displayed on the product detail page.  If no cautionary statement applies to the product, select \"no_warning_applicable\".
+
+			#Valid Values
+
+			*Choking hazard ballon
+
+			*choking hazard contains a marble
+
+			*choking hazard contains a small balloon
+
+			*choking hazard is a marble
+
+			*choking hazard is a small balloon
+
+			*choking hazard small parts
+
+			*no warning applicable"
 		},
 		"countryOfOrigin": {
 			"type": "string",

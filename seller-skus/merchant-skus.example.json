@@ -16,10 +16,10 @@
 	"bullet5": "Bullet Point 5",
 	"numberUnitsForPricePerUnit": 1,
 	"typeOfUnitForPricePerUnit": "each",
-	"shippingWeight": 10,
-	"packageLength": 12,
-	"packageWidth": 12,
-	"packageHeight": 12,
+	"shippingWeightPounds": 10,
+	"packageLengthInches": 12,
+	"packageWidthInches": 12,
+	"packageHeightInches": 12,
 	"parentOrChild": "Child",
 	"parentSku": "AB-122",
 	"relationship": "Variation",
@@ -30,5 +30,6 @@
 	"cpsiaCautionaryStatement2": "Cautionary Statement Line 2",
 	"cpsiaCautionaryStatement3": "Cautionary Statement Line 3",
 	"cpsiaCautionaryStatement4": "Cautionary Statement Line 4",
-	"countryOfOrigin": "U.S.A."
+	"countryOfOrigin": "U.S.A.",
+	"safetyWarning": "warning text goes here"
 }
