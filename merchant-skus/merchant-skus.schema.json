@@ -92,45 +92,16 @@
 
 			1 to 2000 characters"
 		},
-		"bullet_1": {
-			"type": "string",
+		"bullets": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
 			"description": "Merchant SKU feature description
 
 			#Valid Values
 
-			maximum of 500 characters"
-		},
-		"bullet_2": {
-			"type": "string",
-			"description": "Merchant SKU feature description
-
-			#Valid Values
-
-			maximum of 500 characters"
-		},
-		"bullet_3": {
-			"type": "string",
-			"description": "Merchant SKU feature description
-
-			#Valid Values
-
-			maximum of 500 characters"
-		},
-		"bullet_4": {
-			"type": "string",
-			"description": "Merchant SKU feature description
-
-			#Valid Values
-
-			maximum of 500 characters"
-		},
-		"bullet_5": {
-			"type": "string",
-			"description": "Merchant SKU feature description
-
-			#Valid Values
-
-			maximum of 500 characters"
+			maximum of 500 characters each"
 		},
 		"number_units_for_price_per_unit": {
 			"type": "string",
@@ -241,73 +212,16 @@
 
 			maximum of 500 characters"
 		},
-		"cpsia_cautionary_statement_1": {
-			"type": "string",
+		"cpsia_cautionary_statements": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
 			"description": "Use this field to indicate if a cautionary statement relating to the choking hazards of children's toys and games applies to your product.  These cautionary statements are defined in Section 24 of the Federal Hazardous Substances Act and Section 105 of the Consumer Product Safety Improvement Act of 2008.  They must be displayed on the product packaging and in certain online and catalog advertisements.  You are responsible for determining if a cautionary statement applies to the product.  This can be verified by contacting the product manufacturer or checking the product packaging.   Cautionary statements that you select will be displayed on the product detail page.  If no cautionary statement applies to the product, select \"no_warning_applicable\".
 
 			#Valid Values
 
 			*Choking hazard balloon
-
-			*choking hazard contains a marble
-
-			*choking hazard contains a small balloon
-
-			*choking hazard is a marble
-
-			*choking hazard is a small balloon
-
-			*choking hazard small parts
-
-			*no warning applicable"
-		},
-		"cpsia_cautionary_statement_2": {
-			"type": "string",
-			"description": "Use this field to indicate if a cautionary statement relating to the choking hazards of children's toys and games applies to your product.  These cautionary statements are defined in Section 24 of the Federal Hazardous Substances Act and Section 105 of the Consumer Product Safety Improvement Act of 2008.  They must be displayed on the product packaging and in certain online and catalog advertisements.  You are responsible for determining if a cautionary statement applies to the product.  This can be verified by contacting the product manufacturer or checking the product packaging.   Cautionary statements that you select will be displayed on the product detail page.  If no cautionary statement applies to the product, select \"no_warning_applicable\".
-
-			#Valid Values
-
-			*Choking hazard ballon
-
-			*choking hazard contains a marble
-
-			*choking hazard contains a small balloon
-
-			*choking hazard is a marble
-
-			*choking hazard is a small balloon
-
-			*choking hazard small parts
-
-			*no warning applicable"
-		},
-		"cpsia_cautionary_statement_3": {
-			"type": "string",
-			"description": "Use this field to indicate if a cautionary statement relating to the choking hazards of children's toys and games applies to your product.  These cautionary statements are defined in Section 24 of the Federal Hazardous Substances Act and Section 105 of the Consumer Product Safety Improvement Act of 2008.  They must be displayed on the product packaging and in certain online and catalog advertisements.  You are responsible for determining if a cautionary statement applies to the product.  This can be verified by contacting the product manufacturer or checking the product packaging.   Cautionary statements that you select will be displayed on the product detail page.  If no cautionary statement applies to the product, select \"no_warning_applicable\".
-
-			#Valid Values
-
-			*Choking hazard ballon
-
-			*choking hazard contains a marble
-
-			*choking hazard contains a small balloon
-
-			*choking hazard is a marble
-
-			*choking hazard is a small balloon
-
-			*choking hazard small parts
-
-			*no warning applicable"
-		},
-		"cpsia_cautionary_statement_4": {
-			"type": "string",
-			"description": "Use this field to indicate if a cautionary statement relating to the choking hazards of children's toys and games applies to your product.  These cautionary statements are defined in Section 24 of the Federal Hazardous Substances Act and Section 105 of the Consumer Product Safety Improvement Act of 2008.  They must be displayed on the product packaging and in certain online and catalog advertisements.  You are responsible for determining if a cautionary statement applies to the product.  This can be verified by contacting the product manufacturer or checking the product packaging.   Cautionary statements that you select will be displayed on the product detail page.  If no cautionary statement applies to the product, select \"no_warning_applicable\".
-
-			#Valid Values
-
-			*Choking hazard ballon
 
 			*choking hazard contains a marble
 

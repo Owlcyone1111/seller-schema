@@ -8,11 +8,10 @@
 	"manufacturer": "My Product's Manufacturer",
 	"mfr_part_number": "AB-9874",
 	"product_description": "This is a terrific product that everyone should own.",
-	"bullet_1": "Bullet Point 1",
-	"bullet_2": "Bullet Point 2",
-	"bullet_3": "Bullet Point 3",
-	"bullet_4": "Bullet Point 4",
-	"bullet_5": "Bullet Point 5",
+	"bullets": [
+		"This is bullet line 1",
+		"This is bullet line 2"
+	],
 	"number_units_for_price_per_unit": 1,
 	"type_of_unit_for_price_per_unit": "each",
 	"shipping_weight_pounds": 10,
@@ -25,10 +24,10 @@
 	"variation_refinements": "color",
 	"prop_65": true,
 	"legal_disclaimer_description": "Legal stuff goes here",
-	"cpsiaCautionary_statement_1": "Cautionary Statement Line 1",
-	"cpsiaCautionary_statement_2": "Cautionary Statement Line 2",
-	"cpsiaCautionary_statement_3": "Cautionary Statement Line 3",
-	"cpsiaCautionary_statement_4": "Cautionary Statement Line 4",
+	"cpsia_cautionary_statements": [
+		"Cautionary Statement Line 1",
+		"Cautionary Statement Line 2"
+	],
 	"country_of_origin": "U.S.A.",
 	"safety_warning": "warning text goes here"
 }
