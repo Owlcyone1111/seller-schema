@@ -4,7 +4,10 @@
 	"description": "This schema is used to set up locations where you will accpet returns",
 	"properties": {
 		"return_destination": {
-				"$ref": "#/definitions/return_address"
+                "type" :"array",
+                "items":{
+				    "$ref": "#/definitions/return_address"
+                }
 		},
     	"free_returns": {
     		"type": "boolean",
