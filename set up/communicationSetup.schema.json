@@ -1,0 +1,133 @@
+{
+	"title": "communicationSetup",
+	"type": "object",
+	"description": "This schema is used to set up the email addresses and phone numbers for texts for jet to use for communicating with you for various reasons",
+	"properties": {
+		"merchant_order_communication": {
+                "type" :"array",
+                "items":{
+				    "$ref": "#/definitions/merchant_fc_communication_info"
+                }
+		},
+    	"return_communication": {
+                "type" :"array",
+                "items":{
+                    "$ref": "#/definitions/return_destination_communication_info"
+                }
+        },
+        "listing_status_email": {
+    		"type": "array",
+    		"required": true,
+            "items":{
+                "type":"string"
+            },
+    		"description": "email address where you want listing status updates sent"
+    	},
+    	"listing_status_text":{
+            "type": "array",
+            "items":{
+                "type":"string"
+            },
+            "description": "phone number where you want listing status update texted"
+    	},
+    	"product_question_email":{
+            "type": "array",
+            "required": true,
+            "items":{
+                "type":"string"
+            },
+            "description": "email address where want questions about your products sent"
+        },
+        "product_question_text":{
+            "type": "array",
+            "items":{
+                "type":"string"
+            },
+            "description": "phone number where you want questions about your product texted"
+        },
+        "business_update_email":{
+            "type": "array",
+            "required": true,
+            "items":{
+                "type":"string"
+            },
+            "description": "email address where you want business updates sent"
+        },
+        "business_update_text":{
+            "type": "array",
+            "required": true,
+            "items":{
+                "type":"string"
+            },
+            "description": "phone number where you business updates texted"
+        },
+        "technical_notification_email":{
+            "type": "array",
+            "required": true,
+            "items":{
+                "type":"string"
+            },
+            "description": "email address where you want technical notifications sent"
+        },
+        "technical_notification_text":{
+            "type": "array",
+            "required": true,
+            "items":{
+                "type":"string"
+            },
+            "description": "phone number where you want technical notifications texted"
+        }
+    },
+
+    "definitions": {
+        "merchant_fc_communication_info": {
+            "title": "merchant_fc_communication_info",
+ 			"type": "object",
+            "properties": {
+                "merchant_fc"
+                	"type": "sting",
+                	"required": true,
+                	"description" : "name of the given Merchant FC"
+                },
+                "merchant_order_alert_email": {
+                    "type": "string",
+                    "required": true,
+                    "description" : "Email address or addresses where you want merchant order alert emails sent"
+                },
+                "merchant_order_alert_text": {
+                    "type": "string",
+                    "description" : "phone number or phone numbers where you want merchant order alert texts sent"
+                },
+                "merchant_order_cancel_alert_email": {
+                    "type": "string",
+                    "required": true,
+                    "description" : "Email address or addresses where you want merchant order cancel alerts sent"
+                },
+                "merchant_order_cancel_alert_text": {
+                    "type": "string",
+                       "description" : "phone number or phone numbers where you want merhcant order cancel alert texts sent"
+                }
+            },
+        "return_destination_communication_info": {
+            "title": "return_destination_communication_info",
+            "type": "object",
+            "properties": {
+                "return_destination_name"
+                    "type": "sting",
+                    "required": true,
+                    "description" : "name of the given return location"
+                },
+                "return_alert_email": {
+                    "type": "string",
+                    "required": true,
+                    "description" : "Email address or addresses where you want merchant order alert emails sent"
+                },
+                "return_alert_text": {
+                    "type": "string",
+                    "description" : "phone number or phone numbers where you want merchant order alert texts sent"
+                }
+            }
+        }
+
+    	
+}
