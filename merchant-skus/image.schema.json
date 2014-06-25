@@ -3,21 +3,6 @@
 	"type": "object",
 	"description": "This schema is used to set images for seller skus",
 	"properties": {
-		"image_type": {
-			"type": "string",
-			"required": true,
-			"description": "#DESCRIPTION 
-
-			Whether it is the \"Main Image\" , \"Alternate Image\" or  a  \"Swatch Image\" for the given Merchant SKU. 
-
-			#Valid values
-
-			*'Main Image' - the primary image used for the give MerchantSKU 
-
-			*'Alternate Image' - supporting images for the given MerchantSKU 
-
-			*'Swatch' - an example of a color or fabric of the given MerchantSKU "
-		},
 		"image_url": {
 			"type": "string",
 			"required": true,
