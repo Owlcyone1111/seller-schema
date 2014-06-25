@@ -1,0 +1,74 @@
+{
+	"title": "ReturnsSetup",
+	"type": "object",
+	"description": "This schema is used to set up locations where you will accpet returns",
+	"properties": {
+		"return_destination": {
+				"$ref": "#/definitions/return_address"
+		},
+    	"free_returns": {
+    		"type": "boolean",
+    		"required": true,
+    		"description": "Communicate if you offer free returns to your customers so Jet can determine how return shipping will be charged.  'true' - We will charge your carrier account for shipping; you must provide Carrier and AccountNumber.  'false'  Jet.com will pay the return shipping and provide return shipping to the customer at our expense.
+
+    		#Logic
+
+    		If 'true' then 'carrier' and 'account_number' must be provided"
+    	},
+    	"carrier":{
+    		"type": "string",
+    		"description": "Name of the shipping carier used for returns. E.G. USPS, UPS, FedEx
+
+    		#Logic
+
+    		This field is required if 'free_returns' is 'true'"
+    	},
+    	"account_number":{
+    		"type": "string",
+    		"description":"Your account number with the carrier you are using for returns
+
+    		#Logic
+
+    		This field is required if 'free_returns' is 'true'"
+    	},
+    },
+
+    "definitions": {
+        "return_address": {
+            "title": "Return Address",
+ 			"type": "object",
+            "properties": {
+                "return_destination_name"
+                	"type": "sting",
+                	"required": true,
+                	"description" : "Name of the given return_destination"
+                },
+
+                "return_address_line_1": {
+                    "type": "string",
+                    "required": true,
+                    "description" : "Line 1 of the return_address"
+                },
+                "return_address_line_2": {
+                    "type": "string",
+                    "description" : "Line 2 of the return_address"
+                },
+                "return_address_city": {
+                    "type": "string",
+                    "required": true,
+                    "description" : "return address city"
+                },
+                "return_address_state": {
+                    "type": "string",
+                    "required": true,
+                    "description" : "return address state"
+                },
+                "return_address_zip": {
+                    "type": "string",
+                    "required": true,
+                    "description" : "return address zip code"
+                }
+            }
+        }
+    	
+}
