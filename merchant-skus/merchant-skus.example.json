@@ -31,5 +31,10 @@
 	"country_of_origin": "U.S.A.",
 	"safety_warning": "warning text goes here",
 	"start_selling_date": "2014-12-24",
-	"fulfillment_time": 1
+	"fulfillment_time": 1,
+	"msrp": 6.99,
+	"map_price": 6.49,
+	"minimum_selling_price": 5.99,
+	"product_tax_code": "123",
+	"no_return_fee_adjustment": 0.01
 }

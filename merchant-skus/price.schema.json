@@ -11,55 +11,6 @@
 			#Valid values
 
 			A number with up to 18 digits allowed to the left of the decimal point and 2 digits to the right of the decimal point. Commas or currency symbols are not allowed."
-		},
-		"fc_price": {
-			"type": "number",
-			"description": "If you have multiple shipping locations and want to charge a different price at a given shipping location, provide the price for each FC that varies from what is set in the \"price\" field.  For example, if you have three shipping locations \"West Coast\", \"Central\" and \"East Coast\" and you set \"price\" = 10.00 but you want to charge 11.00 for the Merchant SKU if it ships from your \"West Coast\" shipping location you would use \"West Coast = 11.00\" for fc_price.  If you also wanted to charge 9.50 for the \"East Coast\" shipping location you would set West Coast = 11.00 | East Coast = 9.50 for fc_price
-
-			#Logic
-			
-			'price' must be defined. 'fc_price' only provides an override of the value set as 'price' for the merchantFCs referenced
-
-			#Valid values
-
-			A number with up to 18 digits allowed to the left of the decimal point and 2 digits to the right of the decimal point. Commas or currency symbols are not allowed."	
-
-		},
-		"msrp": {
-			"type": "number",
-			"description": "Manufacturer's suggested retail price or list price for the product.This is not the same as the offering price, which is specified in the 'price' field.
-
-			#Valid values
-
-			A number with up to 18 digits allowed to the left of the decimal point and 2 digits to the right of the decimal point. Commas or currency symbols are not allowed."
-		},
-		"map_price": {
-			"type": "number",
-			"description": "For MAP (Minimum Advertised Price) based pricing.  If you don't know what this term means, this function probably does not apply to you.
-
-			#Valid values
-
-			A number with up to 18 digits allowed to the left of the decimal point and 2 digits to the right of the decimal point. Commas or currency symbols are not allowed."
-		},
-		"minimum_selling_price":{
-			"type": "number",
-			"description": "Price that manufacturer has defined as the lowest price for which the item can be sold
-
-			#Valid values
-
-			A number with up to 18 digits allowed to the left of the decimal point and 2 digits to the right of the decimal point. Commas or currency symbols are not allowed."
-		},
-		"product_tax_code": {
-			"type": "string",
-			"description": "Price that manufacturer has defined as the lowest price for which the item can be sold"
-		},
-		"no_return_fee_adjustment": {
-			"type": "number",
-			"description": "Overides category level setting for this fee adjustment; this is the increase in commision you are willing to pay on this product if the customer waives their ability to return it.  If you are going to increase the commission you are willing to pay from the base rate of 15% to 17%, then you should enter '.02'
-
-			#Valid values
-
-			A mumber with up to 1 digit allowed to the left of the deimal point and 2 digits to the right of the decimal point."
 		}
 	}
 }
