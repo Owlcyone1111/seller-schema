@@ -1,0 +1,147 @@
+{
+	"title": "genericShippingLocation",
+	"type": "object",
+	"description": "This schema is used to set up a shipping location that is not tied to a specific known address",
+	"properties": {
+		"shipping_location_name": {
+			"type": "string",
+			"required": true,
+			"description": "Name used to identify the given shipping location
+
+			#Valid Value
+
+			1-30 character limit"
+		},
+		"location_type": {
+			"type": "string",
+			"description": "Communicate whether the shipping facility is operated by you, Amazon or a third party drop shipper
+
+			#Valid Value
+
+			*'seller controlled'
+			*'FBA'
+			*'DropShip'"
+		},
+		"seller_operating_days": {
+			"type": "string",
+			"required": true,
+			"description": "Days of the week that you will process and ship orders for 'location_type' = 'Seller Controlled' 
+
+			Days of the week that you will process and submit orders to the 3rd party fulfiller for 'location_type' =  'FBA' or 'DropShip'  
+
+			Enter all that apply in pipe delimited format. Ex: Mon | Tues| Wed | Thu	
+
+			#Valid Values
+
+			*'sun' - Sunday
+
+			*'mon' - Monday
+
+			*'tue' - Tuesday
+
+			*'wed' - Wednesday
+
+			*'thu' - Thursday
+
+			*'fri' - Friday
+
+			*'sat' - Saturday"
+		},
+		"ds_operating_days": {
+			"type": "string",
+			"description": "Days of the week that the given drop ship location is open for operations.  Enter all that apply in pipe delimited format. Ex: Mon | Tues| Wed | Thu
+
+			#Logic
+
+			This is required if 'location_type' = 'dropship'
+
+			#Valid Values
+
+			*'sun' - Sunday
+
+			*'mon' - Monday
+
+			*'tue' - Tuesday
+
+			*'wed' - Wednesday
+
+			*'thu' - Thursday
+
+			*'fri' - Friday
+
+			*'sat' - Saturday"
+		},
+		"time_to_process": {
+			"type": "integer",
+			"description": "Number of business days from receipt of an order  until it will be transmitted to FBA or Drop Ship location
+
+			#Logic
+
+			This is required if 'location_type - 'fba' or 'dropship'
+
+			#Valid Values
+
+			*'0' - ships the day the order is received
+
+			*'1' - ships one business day after the order is received
+
+			*'2' - ships two business days after the order is received
+
+			*'n' - ships n business days after the order is received"
+		},
+		"order_cutoff_time":{
+			"type": "string",
+			"required": true,
+			"description": "Time that a shipment must be received by in order to count as being received that calendar day for purposes of calculating  'time_to_process' for 'location_type' = 'FBA' or 'DropShip' 
+
+			Time of day that a shipment must be received by in order to count as being received that calendar day for purposes of calculating 'fulfillment_time' for 'location_type' = 'Seller Controlled'"
+		},
+		"fulfillment_time":{
+			"type": "integer",
+			"description" : "Number of business days from receipt of an order until it will be shipped for order that are LocationType = 'Seller Controlled', if it is received before the 'order_cutoff_time' for the given shipping location
+
+			Number of business days that drop shipper will take to fulfill an order once you have notified the drop shipper of the order
+
+			Note: For FBA this field is not required because Amazon fulfillment standards are known
+
+			#Logic
+
+			Required if 'location_type' = 'Seller Controlled' or 'DropShip'
+
+			#Valid Values
+
+			*'0' - ships the day the order is received
+
+			*'1' - ships one business day after the order is received
+
+			*'2' - ships two business days after the order is received
+			
+			*'n' - ships n business days after the order is received"
+		},
+
+		"service_level": {
+			"type":"string",
+			"required": true,
+			"description": "Provide the list of ServiceLevels that are supported for delivery from this location
+
+			#Valid Values
+
+			*'Standard'
+
+			*'Expedited'
+
+			*'Scheduled'
+
+			*'NextDay'
+
+			*'SecondDay'"
+
+
+		
+
+
+
+
+		}
+	}
+}
