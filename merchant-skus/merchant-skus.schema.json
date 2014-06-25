@@ -101,7 +101,11 @@
 
 			#Valid Values
 
-			maximum of 500 characters each"
+			maximum of 500 characters each
+
+			#array limitation
+
+			maximum 5 elements of the 'bullets' array"
 		},
 		"number_units_for_price_per_unit": {
 			"type": "string",
@@ -233,7 +237,11 @@
 
 			*choking hazard small parts
 
-			*no warning applicable"
+			*no warning applicable
+
+			#array limitation
+
+			maximum 4 elements of the 'cpsia_cautionary_statements' array"
 		},
 		"country_of_origin": {
 			"type": "string",
