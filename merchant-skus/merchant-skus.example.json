@@ -29,5 +29,7 @@
 		"Cautionary Statement Line 2"
 	],
 	"country_of_origin": "U.S.A.",
-	"safety_warning": "warning text goes here"
+	"safety_warning": "warning text goes here",
+	"start_selling_date": "2014-12-24",
+	"fulfillment_time": 1
 }

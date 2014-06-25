@@ -250,6 +250,28 @@
 			#Valid Values
 
 			maximum of 500 characters"
+		},
+		"start_selling_date": {
+			"type": "string",
+			"description": "If updating Merchant SKU that has qty=0  at all FCs, date that the inventory in this message should be available for sale on Jet.com.  If inventory already exists, the updated qty in this message will be assumed to take effect immediately
+
+			#Logic
+
+			You should only use this field if the quantity for the sellerSKU is 0 at all SellerFCs."
+		},
+		"fulfillment_time": {
+			"type": "integer",
+			"description": "Number of business days from receipt of an order for the given SKU until it will be shipped (only populate if it is different than your account default.
+
+			#Valid values
+
+			0 = ships the day the OrderMessage is received
+
+			1 = ships one business day after the Seller Order is received
+
+			2= ships two business days after the Seller Order is received
+
+			N = ships N business days after the Seller Order is received"
 		}
 	}
 }
