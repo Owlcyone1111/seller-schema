@@ -6,54 +6,6 @@
 		"quantity": {
 			"type": "integer",
 			"description": "Quantity of the given Merchant SKU.  Use this field if you have a single FC location"
-		},
-		"fc_quantity": {
-			"type": "integer",
-			"description": "If you have multiple shipping locations, provide the quantity for each FC.  Provide FC Name and the Quantity in pipe delimited format:  For example: WestCoast = 3 | EastCoast= 5
-
-			#Logic
-
-			If you provide this data, then 'quantity' should not be sent and 'fcQuantityUpdateType' must have a valid value
-
-			#Valid values
-
-			you must use a sellerFC that you have set up"
-		},
-		"fc_quantityUpdateType": {
-			"type": "string",
-			"description": "Choices are 'Complete FC List' or 'Partial FC List'.  If 'Complete FC List' any FC's of the merchant that are not listed would be assumed to have quantity of 0.  If 'Partial FC List' than the quantities for the FCs listed would be updated but quantities for FCs not listed would not be updated.
-
-			#Logic
-
-			This field is required if 'fcQuantity' is provided
-
-			#Valid values
-
-			*completeFCList
-			
-			*partialFCList"
-		},
-		"start_selling_date": {
-			"type": "string",
-			"description": "If updating Merchant SKU that has qty=0  at all FCs, date that the inventory in this message should be available for sale on Jet.com.  If inventory already exists, the updated qty in this message will be assumed to take effect immediately
-
-			#Logic
-
-			You should only use this field if the quantity for the sellerSKU is 0 at all SellerFCs"
-		},
-		"fulfillment_time": {
-			"type": "integer",
-			"description": "Number of business days from receipt of an order for the given SKU until it will be shipped (only populate if it is different than your account default.
-
-			#Valid values
-
-			0 = ships the day the OrderMessage is received
-
-			1 = ships one business day after the Seller Order is received
-
-			2= ships two business days after the Seller Order is received
-
-			N = ships N business days after the Seller Order is received"
-		},
+		}
 	}
 }
