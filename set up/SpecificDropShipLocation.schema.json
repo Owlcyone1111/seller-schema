@@ -1,0 +1,141 @@
+{
+	"title": "SpecificDropShipLocation",
+	"type": "object",
+	"description": "This schema is used to set up a shipping location for a drop shipper where you know the specific inventory that drop shipper will ship for you and the location the given inventory ships from",
+	"properties": {
+		"dropship_location_name": {
+			"type": "string",
+			"required": true,
+			"description": "Name used to identify the given shipping location
+
+			#Valid Value
+
+			1-30 character limit"
+		},
+		"ds_address_line_1": {
+			"type": "string",
+			"required": true,
+			"description": "Line 1 of the drop ship location address"	
+		},
+		"ds_address_line_2": {
+			"type": "string",
+			"description": "Line 2 of the drop ship location address"
+		},
+		"ds_address_city": {
+			"type": "string",
+			"required": true,
+			"description": "drop ship location address address city"
+		},
+		"ds_address_state":{
+			"type": "string",
+			"required": true,
+			"description": "drop ship location address address state"
+		},
+		"ds_address_zip": {
+			"type": "string",
+			"required": true,
+			"description": "drop ship location address address zip code"
+		},
+		"seller_operating_days": {
+			"type": "string",
+			"required": true,
+			"description": "Days of the week that you will process and submit orders to the Drop Shipper
+
+			Enter all that apply in pipe delimited format. Ex: Mon | Tues| Wed | Thu  	
+
+			#Valid Values
+
+			*'sun' - Sunday
+
+			*'mon' - Monday
+
+			*'tue' - Tuesday
+
+			*'wed' - Wednesday
+
+			*'thu' - Thursday
+
+			*'fri' - Friday
+
+			*'sat' - Saturday"
+		},
+		"ds_operating_days": {
+			"type": "string",
+			"required": true,
+			"description": "Days of the week that the given drop ship location is open for operations.  Enter all that apply in pipe delimited format. Ex: Mon | Tues| Wed | Thu
+
+			#Logic
+
+			This is required if 'location_type' = 'dropship'
+
+			#Valid Values
+
+			*'sun' - Sunday
+
+			*'mon' - Monday
+
+			*'tue' - Tuesday
+
+			*'wed' - Wednesday
+
+			*'thu' - Thursday
+
+			*'fri' - Friday
+
+			*'sat' - Saturday"
+		},
+		"time_to_process": {
+			"type": "integer",
+			"required" : true,
+			"description": "Number of business days from receipt of an order  until it will be transmitted to FBA or Drop Ship location
+
+			#Valid Values
+
+			*'0' - ships the day the order is received
+
+			*'1' - ships one business day after the order is received
+
+			*'2' - ships two business days after the order is received
+
+			*'n' - ships n business days after the order is received"
+		},
+		"order_cutoff_time":{
+			"type": "string",
+			"required": true,
+			"description": "Time of day that a shipment must be received by in order to count as being received that calendar day for purposes of calculating 'time_to_process' for merchant_orders for this dropship_location_name"
+		},
+		"fulfillment_time":{
+			"type": "integer",
+			"required":true,
+			"description" : "Number of business days from when you send order to the drop shipper until it will be shipped
+
+			#Valid Values
+
+			*'0' - ships the day the order is received
+
+			*'1' - ships one business day after the order is received
+
+			*'2' - ships two business days after the order is received
+			
+			*'n' - ships n business days after the order is received"
+		},
+
+		"service_level": {
+			"type":"string",
+			"required": true,
+			"description": "Provide the list of ServiceLevels that are supported for delivery from this location
+
+			#Valid Values
+
+			*'Standard'
+
+			*'Expedited'
+
+			*'Scheduled'
+
+			*'NextDay'
+
+			*'SecondDay'"
+		}
+	}
+}
