@@ -1,0 +1,88 @@
+{
+	"title": "shippingRatesPerItemOrWeight",
+	"type": "object",
+	"description": "This schema is used for setting up shipping rates that vary by number items in the order or by the weight of the order",
+	"properties": {
+		"service_level": {
+			"type": "string",
+			"description": "If ServiceLevel has been defined in your shipping setup and you want to set rates ServiceLevel level use this field.
+
+			#Logic
+
+			This message should be defined by service_level OR shipping_carrier OR shipping_method
+
+			#Valid Values
+
+			*'Standard'
+
+			*'Expedited'
+
+			*'Scheduled'
+
+			*'NextDay'
+
+			*'SecondDay'"
+		},
+		"shipping_carrier": {
+			"type": "string",
+			"description": "A shipping carrier, including all that carrier's ShippngMethods e.g. UPS, FedEx, USPS.  
+
+			If shipping set up has defined the ShippingCarrier level and you are setting up shipping rates at the ShippingCarrier level use this field.
+
+			#Logic
+
+			This message should be defined by service_level OR shipping_carrier OR shipping_method
+
+			#Valid values
+
+			*'UPS'
+
+			*'USPS'
+			
+			*'FedEx'"
+		},
+		"service_method": {
+			"type": "string",
+			"description": "A specific shipping method e.g. UPS Ground, UPS Next Day Air, FedEx Home. If shipping set up has defined ShippingMethod level and you are setting up shipping rates at the ShippingMethod level use this field.
+
+			#Logic
+
+			This message should be defined by service_level OR shipping_carrier OR shipping_method
+
+			#Valid values
+
+			*list of valid ship methods not yet available
+
+			*'all' - use this if the rates should be applied to all values of 'shipping_method'"	
+		},
+		"merchant_order_fixed_charge": {
+			"type": "number",
+			"required":true,
+			"description": "The fixed per order charge in US dollars for shipping an order			
+
+			#Valid values
+
+			A number with up to 18 digits allowed to the left of the decimal point and 2 digits to the right of the decimal point. Commas or currency symbols are not allowed."
+		},
+		"variable_charge_type": {
+			"type": "string",
+			"required": true,
+			"description": "Use this to define whether the variable portion of the shipping charge will be based on the weight (lbs) of the order or the number of items in the order.			
+
+			#Valid values
+			
+			*'per item'
+
+			*'per weight'"
+		},
+		"variable_charge":{
+			"type": "string",
+			"required": true,
+			"description": "The variable charge per item if  'variable_charge_type' = 'per item' or the variable charge per pound if 'variable_charge_type' = 'per weight' 			
+
+			#Valid values
+
+			A number with up to 18 digits allowed to the left of the decimal point and 2 digits to the right of the decimal point. Commas or currency symbols are not allowed."
+		}
+	}
+}
