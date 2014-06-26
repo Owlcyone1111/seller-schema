@@ -36,7 +36,7 @@
 			"required": true,
 			"description": "drop ship location address address zip code"
 		},
-		"seller_operating_days": {
+		"merchant_operating_days": {
 			"type": "string",
 			"required": true,
 			"description": "Days of the week that you will process and submit orders to the Drop Shipper
