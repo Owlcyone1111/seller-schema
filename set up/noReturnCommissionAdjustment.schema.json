@@ -1,0 +1,57 @@
+{
+	"title": "noReturnCommisionAdjustment",
+	"type": "object",
+	"description": "This schema is used to setup a no return commision adjustment for a Jet Product Category",
+	"properties": {
+		"jet_category": {
+			"type": "string",
+			"required": true,
+			"description": "The Jet category for which you defining a a no return commission adjustment
+
+			#Valid values
+
+			*Appliances
+
+			*Arts, Crafts & Hobbies
+
+			*Automotive
+
+			*Baby
+
+			*Clothing, Shoes & Accessories
+
+			*Electronics
+
+			*grocery
+
+			*Health & Beauty
+
+			*Home, Garden, Home Improvement
+
+			*Industrial & Scientific
+
+			*Jewelry and Watches
+
+			*Media - Books, CDs, DVDs
+
+			*Office Products
+
+			*Pet Supplies
+
+			*Sporting Goods
+
+			*Toys & Games"
+		},
+		"fee_adjustment": {
+			"type": "string",
+			"required": true,
+			"description": "This is the increase in commision you are willing to pay for products in given jet category if the customer waives their ability to return them.  
+
+			For example, if you want to increase the commission you are willing to pay from a base rate of 15% to 17%, then you should enter '.02'
+
+			#Valid values
+
+			A mumber with up to 1 digit allowed to the left of the deimal point and 2 digits to the right of the decimal point"
+		}
+	}
+}
