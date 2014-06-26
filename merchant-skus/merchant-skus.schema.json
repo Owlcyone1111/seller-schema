@@ -153,7 +153,7 @@
 		},
 		"parent_or_child": {
 			"type": "string",
-			"description": "Define is sellerSKU is 'Parent' or 'Child'
+			"description": "Define if the merchant_SKU is 'Parent' or 'Child'
 
 			#Logic
 
@@ -167,7 +167,7 @@
 		},
 		"parent_sku": {
 			"type": "string",
-			"description": "The \"SellerSKU\" that is the parent for this SellerSKU which has \"ParentOrChild\" = Child
+			"description": "The \"merchant_SKU\" that is the parent for this merchant_SKU which has \"ParentOrChild\" = Child
 
 			#Logic
 
@@ -175,7 +175,7 @@
 
 			#Valid Values
 
-			This should be a 'SellerSKU' with 'parentOrChild' = 'parent'"
+			This should be a 'merchant_SKU' with 'parentOrChild' = 'parent'"
 
 		},
 		"relationship": {
@@ -265,7 +265,7 @@
 
 			#Logic
 
-			You should only use this field if the quantity for the sellerSKU is 0 at all SellerFCs."
+			You should only use this field if the quantity for the merchant_SKU is 0 at all merchant_fcs."
 		},
 		"fulfillment_time": {
 			"type": "integer",
@@ -275,11 +275,11 @@
 
 			0 = ships the day the OrderMessage is received
 
-			1 = ships one business day after the Seller Order is received
+			1 = ships one business day after the 'merchant_order' is received
 
-			2= ships two business days after the Seller Order is received
+			2= ships two business days after the 'merchant_order' is received
 
-			N = ships N business days after the Seller Order is received"
+			N = ships N business days after the 'merchant_order' is received"
 		},
 		"msrp": {
 			"type": "number",
@@ -311,7 +311,9 @@
 		},
 		"no_return_fee_adjustment": {
 			"type": "number",
-			"description": "Overides category level setting for this fee adjustment; this is the increase in commision you are willing to pay on this product if the customer waives their ability to return it.  If you are going to increase the commission you are willing to pay from the base rate of 15% to 17%, then you should enter '.02'
+			"description": "Overides category level setting for this fee adjustment; this is the increase in commision you are willing to pay on this product if the customer waives their ability to return it.  
+
+			If you want to increase the commission you are willing to pay from a base rate of 15% to 17%, then you should enter '.02'
 
 			#Valid values
 
