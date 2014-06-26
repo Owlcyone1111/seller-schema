@@ -1,6 +1,6 @@
 {
 	"product_title": "My Product",
-	"jet_browse_node_id": "100",
+	"jet_browse_node_id": 100,
 	"standard_product_code": "1234567890123",
 	"standard_product_code_type": "UPC",
 	"multipack_quantity": 6,
@@ -12,7 +12,7 @@
 		"This is bullet line 1",
 		"This is bullet line 2"
 	],
-	"number_units_for_price_per_unit": 1,
+	"number_units_for_price_per_unit": "1",
 	"type_of_unit_for_price_per_unit": "each",
 	"shipping_weight_pounds": 10,
 	"package_length_inches": 12,
