@@ -1,0 +1,66 @@
+{
+	"title": "BasketZoneCommisionAdjustment",
+	"type": "object",
+	"description": "This schema is used to setup commission adustments for a given basket size with specific commision adjustment for each delivery area if desired",
+	"properties": {
+		"order_size_upper_limit": {
+			"type": "number",
+			"required":true,
+			"description": "The value, in US dollars, of the upper limit of an order basket size.  The lower limit of the band will be either zero or the 'order_size_upper_limit that is just below it.  
+
+			Enter 'infinity' for the final band which will define the charge from the largest dollar value 'merchant_order_size_upper_limit' to 'infinity'			
+
+			#Valid values
+
+			*'infinity'
+			*A number with up to 18 digits allowed to the left of the decimal point and 2 digits to the right of the decimal point. Commas or currency symbols are not allowed."
+		},
+		"fee_adjustments": {
+			"type": "array",
+			"required": true,
+				"items":{
+					"delivery_area":{
+						"type":"string",
+						"description":"The delivery area that you are defining the discount/up-charge schedule for based on basket size.  
+
+						You may set this up for 'local pick-up', 'local delivery' or delivery Zones 2-8.
+
+						If you are using only 'generic_shipping_location' and thus delivery zone will not be known, then use 'all zone deliveries' to indicate basket discounts for all 3rd party carriers
+
+						#Valid Values
+
+						*'all zone deliveries'
+
+						*'local pick up'
+
+						*'local delivery'
+
+						*'zone 2'
+
+						*'zone 3'
+
+						*'zone 4'
+
+						*'zone 5'
+
+						*'zone 6'
+
+						*'zone 7'
+
+						*'zone 8'"
+					},
+					"fee_adjustment_percentage":{
+						"type":"number",
+						"description":"This is the increase or descrease in commision you wish to set up for given order size and delivery area combination.  
+
+						For example, if you want to increase the commission you are willing to pay from a base rate of 15% to 17%, then you should enter '0.02'.  
+						If you want to decrease the commission you are wiling to pay from a base rate of 15% to 11%, then you should enter '-0.04'
+
+						#Valid values
+
+						A number with up to 1 digit allowed to the left of the deimal point and 2 digits to the right of the decimal point"
+					}
+
+		}
+	}
+}
