@@ -5,7 +5,7 @@
 	"properties": {
 		"quantity": {
 			"type": "integer",
-			"description": "Quantity of the given Merchant SKU.  Use this field if you have a single FC location"
+			"description": "Quantity of the given Merchant SKU."
 		}
 	}
 }

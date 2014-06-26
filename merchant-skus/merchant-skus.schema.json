@@ -1,7 +1,7 @@
 {
 	"title": "MerchantSku",
 	"type": "object",
-	"description": "This schema represents a merchant SKU",
+	"description": "This schema represents a merchant sku",
 	"properties": {
 		"product_title": {
 			"type": "string",
@@ -16,7 +16,7 @@
 		"jet_browse_node_id": {
 			"type": "integer",
 			"required": true,
-			"description": "The uniqueID that defines where the product will be found on Jet.com browse structure
+			"description": "The uniqueID that defines where the product will be found in the Jet.com browse structure
 
 			#Valid Values
 
@@ -55,12 +55,12 @@
 		"multipack_quantity": {
 			"type": "integer",
 			"required": true,
-			"description": "Number of items with the given standard_product_code (UPC) that makes up your Merchant SKU"
+			"description": "Number of items with the given standard_product_code that makes up your merchant sku"
 		},
 		"brand": {
 			"type": "string",
 			"required": true,
-			"description": "Brand of the Merchant SKU
+			"description": "Brand of the merchant sku
 
 			#Valid Values
 
@@ -69,7 +69,7 @@
 		"manufacturer": {
 			"type": "string",
 			"required": true,
-			"description": "Manufacturer of the Merchant SKU
+			"description": "Manufacturer of the merchant sku
 
 			#Valid Values
 
@@ -77,7 +77,7 @@
 		},
 		"mfr_part_number": {
 			"type": "string",
-			"description": "Part number provided by the original manufacturer of the Merchant SKU
+			"description": "Part number provided by the original manufacturer of the merchant sku
 
 			#Valid Values
 
@@ -86,7 +86,7 @@
 		"product_description": {
 			"type": "string",
 			"required": true,
-			"description": "Long description of the Merchant SKU
+			"description": "Long description of the merchant sku
 
 			#Valid Values
 
@@ -97,7 +97,7 @@
 			"items": {
 				"type": "string"
 			},
-			"description": "Merchant SKU feature description
+			"description": "merchant sku feature description
 
 			#Valid Values
 
@@ -109,7 +109,7 @@
 		},
 		"number_units_for_price_per_unit": {
 			"type": "string",
-			"description": "For Price Per Unit calculations, the number of units included in the merchant SKU. The unit of measure must be specified in order to indicate what is being measured by the unit-count. "
+			"description": "For Price Per Unit calculations, the number of units included in the merchant sku. The unit of measure must be specified in order to indicate what is being measured by the unit-count. "
 		},
 		"type_of_unit_for_price_per_unit": {
 			"type": "string",
@@ -118,7 +118,7 @@
 		"shipping_weight_pounds": {
 			"type": "number",
 			"required": true,
-			"description": "Weight of the merchant SKU when in its shippable configuration
+			"description": "Weight of the merchant sku when in its shippable configuration
 
 			#Valid Values
 
@@ -127,7 +127,7 @@
 		"package_length_inches": {
 			"type": "number",
 			"required": true,
-			"description": "Length of the merchant SKU when in its shippable configuration
+			"description": "Length of the merchant sku when in its shippable configuration
 
 			#Valid Values
 
@@ -136,7 +136,7 @@
 		"package_width_inches": {
 			"type": "number",
 			"required": true,
-			"description": "Width of the merchant SKU when in its shippable configuration
+			"description": "Width of the merchant sku when in its shippable configuration
 
 			#Valid Values
 
@@ -145,7 +145,7 @@
 		"package_height_inches": {
 			"type": "number",
 			"required": true,
-			"description": "Height of the merchant SKU when in its shippable configuration
+			"description": "Height of the merchant sku when in its shippable configuration
 
 			#Valid Values
 
@@ -153,11 +153,11 @@
 		},
 		"parent_or_child": {
 			"type": "string",
-			"description": "Define if the merchant_SKU is 'Parent' or 'Child'
+			"description": "Define if the merchant sku is a 'Parent' or a 'Child'
 
 			#Logic
 
-			This field is required if you are setting up a Variation relationship between a set MerchantSKUs
+			This field is required if you are setting up a Variation relationship between a set merchant skus
 
 			##Valid Values
 
@@ -167,15 +167,15 @@
 		},
 		"parent_sku": {
 			"type": "string",
-			"description": "The \"merchant_SKU\" that is the parent for this merchant_SKU which has \"ParentOrChild\" = Child
+			"description": "The merchant sku that is the parent for this merchant sku which has \"ParentOrChild\" = Child
 
 			#Logic
 
-			This field is required if you are setting up a Variation relationship between a set MerchantSKUs
+			This field is required if you are setting up a 'Variation' relationship between a set of merchant skus
 
 			#Valid Values
 
-			This should be a 'merchant_SKU' with 'parentOrChild' = 'parent'"
+			This should be a merchant sku with 'parentOrChild' = 'parent'"
 
 		},
 		"relationship": {
@@ -184,7 +184,7 @@
 
 			#Logic
 
-			This field is required if you are setting up a Variation relationship between a set MerchantSKUs
+			This field is required if you are setting up a Variation relationship between a set merchant skus
 
 			##Valid Values
 
@@ -194,11 +194,11 @@
 		},
 		"variation_refinements": {
 			"type": "string",
-			"description": "The refinements that vary for a set  of Parent/Child MerchantSKUs
+			"description": "The refinements that vary for a set  of Parent/Child merchant skus
 
 			#Logic
 
-			This field is required if you are setting up a Variation relationship between a set MerchantSKUs
+			This field is required if you are setting up a Variation relationship between a set merchant skus
 			
 			#Valid Values
 
@@ -261,15 +261,15 @@
 		},
 		"start_selling_date": {
 			"type": "string",
-			"description": "If updating Merchant SKU that has qty=0  at all FCs, date that the inventory in this message should be available for sale on Jet.com.  If inventory already exists, the updated qty in this message will be assumed to take effect immediately
+			"description": "If updating merchant sku that has qty=0  at all FCs, date that the inventory in this message should be available for sale on Jet.com.  
 
 			#Logic
 
-			You should only use this field if the quantity for the merchant_SKU is 0 at all merchant_fcs."
+			You should only use this field if the quantity for the merchant sku is 0 at all merchant_fcs."
 		},
 		"fulfillment_time": {
 			"type": "integer",
-			"description": "Number of business days from receipt of an order for the given SKU until it will be shipped (only populate if it is different than your account default.
+			"description": "Number of business days from receipt of an order for the given merchant sku until it will be shipped (only populate if it is different than your account default.
 
 			#Valid values
 
@@ -283,7 +283,7 @@
 		},
 		"msrp": {
 			"type": "number",
-			"description": "Manufacturer's suggested retail price or list price for the product.This is not the same as the offering price, which is specified in the 'price' field.
+			"description": "Manufacturer's suggested retail price or list price for the product.
 
 			#Valid values
 
@@ -311,9 +311,9 @@
 		},
 		"no_return_fee_adjustment": {
 			"type": "number",
-			"description": "Overides category level setting for this fee adjustment; this is the increase in commision you are willing to pay on this product if the customer waives their ability to return it.  
+			"description": "Overides the category level setting for this fee adjustment; this is the increase in commision you are willing to pay on this product if the customer waives their ability to return it.  
 
-			If you want to increase the commission you are willing to pay from a base rate of 15% to 17%, then you should enter '.02'
+			If you want to increase the commission you are willing to pay from a base rate of 15% to 17%, then you should enter '0.02'
 
 			#Valid values
 

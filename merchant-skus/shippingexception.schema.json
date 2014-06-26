@@ -5,7 +5,7 @@
 	"properties": {
 		"service_level": {
 			"type":"string",
-			"description": "If your delivery options are defined by service_level only then use this field
+			"description": "Generic descriptions of shipment delivery times
 
 			#Logic
 
@@ -29,11 +29,12 @@
 
 			#Logic
 
-			If 'shipping_carrier' is populated then 'shipping_method' will be ignored
+			If 'shipping_carrier' is populated then 'shipping_method' will be ignored. 
+			Use this field if you are defining your shipping options by 'shipping_carrier' or 'shipping_method'
 
 			#Valid Values
 
-			*the list of shipping_carriers set up by you
+			*the list of shipping carriers set up by you
 			
 			*'All' - if the changes should apply to all of your shipping_carriers"
 		},
@@ -43,7 +44,9 @@
 
 			#Logic
 
-			this should be used if you want the change to apply to a specific shipping_method.  If shipping_carrier is populated this field will be ignored"
+			this should be used if you want the change to apply to a specific shipping_method.  If shipping_carrier is populated this field will be ignored.
+			Use this field if you are defining your shipping options by 'shipping_method'
+			"
 
 		},
 		"override_type": {
@@ -58,7 +61,7 @@
 		},
 		"shipping_charge_amount": {
 			"type": "number",
-			"description": "The amount added to default shipping when \"OverrideType\"= \"additional charge\" and the total amount charged when \"OverrideType\" =  \"Override charge\"
+			"description": "The amount added to your default shipping charge when \"OverrideType\"= \"additional charge\" and the total amount charged when \"OverrideType\" =  \"Override charge\"
 
 			#Logic
 
@@ -66,16 +69,19 @@
 		},
 		"is_shipping_restricted": {
 			"type": "boolean",
-			"description": "Indicates whether the MercantSKU can or cannot be shipped using the specified shipping service (shipping_carrier, shipping_method or service_level). A value of \"true\" means that the SKU cannot be shipped using the specified shipping service.
+			"description": "Indicates whether the Mercant SKU can or cannot be shipped using the specified shipping service (shipping_carrier, shipping_method or service_level). 
+			A value of \"true\" means that the merchant SKU cannot be shipped using the specified shipping service.
 
 			#Logic
 			You can only populate 'is_shipping_restricted' or 'is_shipping_exclusive'"
 		},
 		"is_shipping_exclusive": {
 			"type": "boolean",
-			"description": "Indicates that the MerchantSKU can ONLY be shipped with specified shipping service (shipping_carrier, shipping_method or service_level). A value of \"true\" means that the SKU can be shipped using ONLY the specified shipping service.
+			"description": "Indicates that the Merchant SKU can ONLY be shipped with the specified shipping option (shipping_carrier, shipping_method or service_level). 
+			A value of \"true\" means that the merchant SKU can be shipped using ONLY the specified shipping option.
 
 			#Logic
+			
 			You can only populate 'is_shipping_restricted' or 'is_shipping_exclusive'"
 		},
 	}
