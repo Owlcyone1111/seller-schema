@@ -1,0 +1,43 @@
+{
+	"title": "returnAcknowldegement",
+	"type": "object",
+	"description": "This schema is used for acknowledgement of a Return notification",
+	"properties": {
+		"return_authorization_id": {
+			"type": "string",
+			"required": true,
+			"description": "Jet.com unique ID for the return"
+		},
+		"merchant_order_id": {
+			"type": "string",
+			"required": true,
+			"description": "Jet's unique ID for a given merchant order"
+		},		
+		"new_id": {
+			"type": "string",
+			"required": true,
+			"description": "Optional Merchant supplied order ID that should have been established in OrderAcknowledgement in order to use in this message"
+		},	
+		"return_date": {
+			"type": "string",
+			"required": true,
+			"description": "The date that the customer requested a return authorization"
+		},			
+		"return_status": {
+			"type": "string",
+			"required": true,
+			"description": "The seller acknowledges the receipt of the ReturnNotification or Communicates to Jet that a refund can be passed without needing to have the customer actually send the item back.
+
+			This must be sent back to Jet immediately so any desire to not have the customer actually sent back must be made based on some automatic logic
+
+			#Valid values
+
+			*'acknowledged'
+			*'refund customer without return'"
+		},
+		"merchant_ra": {
+			"type": "string",
+			"description": "Optional Merchant supplied ID.  Jet will map this ID to the 'return_authorization_id' and this ID will be included on the Return Documentation that Jet gives to the customer"	
+		}
+	}
+}
