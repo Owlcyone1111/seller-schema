@@ -1,5 +1,5 @@
-﻿#r @"bin\debug\RamlConverter.dll"
-#r @"bin\debug\Newtonsoft.Json.dll"
+﻿#r @"RamlConverter.dll"
+#r @"Newtonsoft.Json.dll"
 
 open Json
 open System.IO
@@ -18,22 +18,24 @@ else
 
     let getError = function | Some(Error s) -> s | _ -> []
 
-    files
-    |> Seq.choose(function | Suffix ".example.json" s -> Some (fst s,(Example,snd s)) |  Suffix ".schema.json" s -> Some (fst s, (Schema, snd s)) | _-> None )
-    |> Seq.groupBy fst
-    |> Seq.map (fun (key,s) ->
-        let pair = s |> Seq.map snd |> Map.ofSeq 
-        let schemaResult = pair.TryFind Schema |> Option.map (fun name -> File.ReadAllText(name) |> parseSchema name) 
-        let schema = schemaResult |> Option.bind(function | Validated s -> Some s | _ -> None)
-        [
-            yield! getError schemaResult
-            yield! pair.TryFind Example 
-                   |> Option.map (fun name -> File.ReadAllText(name) |> parseJson schema name) 
-                   |> getError
-        ]
-        )
-    |> Seq.concat
-    |> Seq.iter (printfn "%s\n")
+    let lines = 
+       files
+       |> Seq.choose(function | Suffix ".example.json" s -> Some (fst s,(Example,snd s)) |  Suffix ".schema.json" s -> Some (fst s, (Schema, snd s)) | _-> None )
+       |> Seq.groupBy fst
+       |> Seq.map (fun (key,s) ->
+           let pair = s |> Seq.map snd |> Map.ofSeq 
+           let schemaResult = pair.TryFind Schema |> Option.map (fun name -> File.ReadAllText(name) |> parseSchema name) 
+           let schema = schemaResult |> Option.bind(function | Validated s -> Some s | _ -> None)
+           [
+               yield! getError schemaResult
+               yield! pair.TryFind Example 
+                      |> Option.map (fun name -> File.ReadAllText(name) |> parseJson schema name) 
+                      |> getError
+           ]
+           )
+       |> Seq.concat
+
+    File.WriteAllLines("errors.txt", lines)
 
     
 

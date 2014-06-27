@@ -1,4 +1,4 @@
-﻿#r @"bin\Debug\RamlConverter.dll"
+﻿#r @"RamlConverter.dll"
 
 open System.IO
 open System

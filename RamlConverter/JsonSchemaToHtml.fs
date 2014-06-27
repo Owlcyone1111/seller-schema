@@ -82,6 +82,7 @@ let div cls values =
 
 let row name typ (description : string) =
     div "row" [
+        yield attribute "style" "padding-bottom: 25px;"
         yield div "col-md-3" [ code name ]    
         yield div "col-md-1" [ code typ ]    
         yield div "col-md-8" [ description.Split('\n') |> convertMarkdown |> element "article" ]
