@@ -10,7 +10,9 @@
 
 			#Valid Values
 
-			1 to 500 alphanumeric characters"
+			1 to 500 alphanumeric characters
+
+			"
 
 		},
 		"jet_browse_node_id": {
@@ -20,7 +22,9 @@
 
 			#Valid Values
 
-			This must be a valid jet_browse_node_id"
+			This must be a valid jet_browse_node_id
+
+			"
 		},
 		"standard_product_code": {
 			"type": "string",
@@ -35,7 +39,9 @@
 
 			*If standard_product_code_type is 'EAN' - must be 13 digits
 
-			*If standard_product_code_type is 'GTIN-14' - must be 14 digits"
+			*If standard_product_code_type is 'GTIN-14' - must be 14 digits
+
+			"
 		},
 		"standard_product_code_type": {
 			"type": "string",
@@ -50,12 +56,16 @@
 
 			*EAN
 
-			*GTIN-14"
+			*GTIN-14
+
+			"
 		},
 		"multipack_quantity": {
 			"type": "integer",
 			"required": true,
-			"description": "Number of items with the given standard_product_code that makes up your merchant sku"
+			"description": "Number of items with the given standard_product_code that makes up your merchant sku
+
+			"
 		},
 		"brand": {
 			"type": "string",
@@ -64,7 +74,9 @@
 
 			#Valid Values
 
-			1 to 50 characters"
+			1 to 50 characters
+
+			"
 		},
 		"manufacturer": {
 			"type": "string",
@@ -73,7 +85,9 @@
 
 			#Valid Values
 
-			1 to 50 characters"
+			1 to 50 characters
+
+			"
 		},
 		"mfr_part_number": {
 			"type": "string",
@@ -81,7 +95,9 @@
 
 			#Valid Values
 
-			maximum of 50 characters"
+			maximum of 50 characters
+
+			"
 		},
 		"product_description": {
 			"type": "string",
@@ -90,12 +106,16 @@
 
 			#Valid Values
 
-			1 to 2000 characters"
+			1 to 2000 characters
+
+			"
 		},
 		"bullets": {
 			"type": "array",
 			"items": {
-				"type": "string"
+				"type": "string
+
+				"
 			},
 			"description": "merchant sku feature description
 
@@ -122,7 +142,9 @@
 
 			#Valid Values
 
-			A number with 2 decimals"
+			A number with 2 decimals
+
+			"
 		},
 		"package_length_inches": {
 			"type": "number",
@@ -131,7 +153,9 @@
 
 			#Valid Values
 
-			A number with 2 decimals"
+			A number with 2 decimals
+
+			"
 		},
 		"package_width_inches": {
 			"type": "number",
