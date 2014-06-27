@@ -1,6 +1,6 @@
 #%RAML 0.8
 
-title: Seller API - Merchant Skus
+title: Merchant API - Merchant Skus
 baseUri: http://dev-ironman-webapi.local.jet.com/api
 version: v0.1
 protocols: [HTTPS]
@@ -93,6 +93,15 @@ mediaType: application/json
                         204:
                         400:
                         409:
+                delete:
+                    queryParameters:
+                        merchantId:
+                            description: Merchant Id provided by Jet
+                    description: This method deletes the FC-level price data for the specified merchant SKU
+                    responses:
+                        204:
+                        400:
+                        404:
         /image:
             /main:
                 put:
@@ -100,21 +109,6 @@ mediaType: application/json
                         merchantId:
                             description: Merchant Id provided by Jet
                     description: This method updates the main image for the specified merchant SKU
-                    body:
-                        application/json:
-                            schema: !include image.schema.json
-                            example: !include image.example.json
-                    responses:
-                        201:
-                        204:
-                        400:
-                        409:
-            /alternate:
-                put:
-                    queryParameters:
-                        merchantId:
-                            description: Merchant Id provided by Jet
-                    description: This method updates alternate image data for the specified merchant SKU
                     body:
                         application/json:
                             schema: !include image.schema.json
@@ -139,6 +133,31 @@ mediaType: application/json
                         204:
                         400:
                         409:
+            /alternate:
+                /{slotId}:
+                    put:
+                        queryParameters:
+                            merchantId:
+                                description: Merchant Id provided by Jet
+                        description: This method updates alternate image data in the specified slot for the specified merchant SKU.  Valid slot numbers are 1 through 7
+                        body:
+                            application/json:
+                                schema: !include image.schema.json
+                                example: !include image.example.json
+                        responses:
+                            201:
+                            204:
+                            400:
+                            409:
+                    delete:
+                        queryParameters:
+                            merchantId:
+                                description: Merchant Id provided by Jet
+                            description: This method deletes the alternate image data in the specified slot for the specified merchant SKU.  Valid slot numbers are 1 through 7
+                            responses:
+                                204:
+                                400:
+                                404:
         /shippingexception:
             put:
                 queryParameters:
