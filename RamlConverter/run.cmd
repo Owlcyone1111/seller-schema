@@ -1,0 +1,1 @@
+fsi.exe --exec --nologo script.fsx c:\users\Dmitry\Source\Repos\seller-schema\merchant-skus\merchant-skus.raml
