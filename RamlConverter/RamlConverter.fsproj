@@ -64,16 +64,13 @@
     <Compile Include="Json.fs" />
     <Compile Include="RamlParser.fs" />
     <None Include="App.config" />
-    <None Include="ConvertRaml.fsx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <Compile Include="WadlGen.fs" />
+    <None Include="runValidation.cmd" />
     <None Include="packages.config" />
-    <None Include="run.cmd">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <None Include="ConvertRaml.fsx" />
     <None Include="ValidateSchemas.fsx" />
     <None Include="Install-FS-Tools.ps1" />
+    <None Include="runConverter.cmd" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
