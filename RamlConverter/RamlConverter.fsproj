@@ -65,12 +65,12 @@
     <Compile Include="RamlParser.fs" />
     <None Include="App.config" />
     <Compile Include="WadlGen.fs" />
-    <None Include="runValidation.cmd" />
     <None Include="packages.config" />
     <None Include="ConvertRaml.fsx" />
     <None Include="ValidateSchemas.fsx" />
     <None Include="Install-FS-Tools.ps1" />
-    <None Include="runConverter.cmd" />
+    <None Include="run.cmd" />
+    <None Include="BatchConvert.fsx" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />

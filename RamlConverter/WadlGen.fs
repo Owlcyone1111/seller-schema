@@ -83,4 +83,10 @@ let toXml (api : Api) outputFileName =
     if not <| File.Exists outputFileName 
     then File.WriteAllText(outputFileName, "")
     doc.Save(outputFileName)
-    
+   
+let processRaml source target =
+    match RamlParser.parseAst source with
+    | Validated api -> toXml api target 
+    | Error errors -> 
+        printfn "Can't generate, errors encountered:" 
+        errors |>  Seq.iter (printfn "%s")

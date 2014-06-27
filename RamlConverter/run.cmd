@@ -1,0 +1,1 @@
+fsi.exe --exec --nologo %1 %2
