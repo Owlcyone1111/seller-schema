@@ -48,7 +48,6 @@ and
     description : string option
 }
 
-
 let collectErrors api = 
     let getError str = function | Some(Error s) -> s |> List. map (sprintf "%s : %s" str) |> Some | _ -> None
     [

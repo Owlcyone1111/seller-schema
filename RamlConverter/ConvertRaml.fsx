@@ -1,4 +1,4 @@
-﻿#r @"RamlConverter.dll"
+﻿#r @"bin\Debug\RamlConverter.dll"
 
 open System.IO
 if fsi.CommandLineArgs.Length < 2
