@@ -64,7 +64,7 @@
     <Compile Include="Json.fs" />
     <Compile Include="RamlParser.fs" />
     <None Include="App.config" />
-    <None Include="Script.fsx">
+    <None Include="ConvertRaml.fsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <Compile Include="WadlGen.fs" />
@@ -72,6 +72,8 @@
     <None Include="run.cmd">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="ValidateSchemas.fsx" />
+    <None Include="Install-FS-Tools.ps1" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
