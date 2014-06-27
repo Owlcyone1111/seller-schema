@@ -1,5 +1,5 @@
-﻿#r @"bin\debug\RamlConverter.dll"
-#r @"bin\debug\Newtonsoft.Json.dll"
+﻿#r @"RamlConverter.dll"
+#r @"Newtonsoft.Json.dll"
 
 open Json
 open System.IO
