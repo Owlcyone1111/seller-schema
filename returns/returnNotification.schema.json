@@ -22,22 +22,88 @@
 			"type": "string",
 			"required": true,
 			"description": "The date that the customer requested a return authorization"
-		},			
-		"return_status": {
+		},
+		"merchant_order_item_id": {
 			"type": "string",
 			"required": true,
-			"description": "The seller acknowledges the receipt of the ReturnNotification or Communicates to Jet that a refund can be passed without needing to have the customer actually send the item back.
+			"description": "Jet's unique ID for an item in a merchant order
 
-			This must be sent back to Jet immediately so any desire to not have the customer actually sent back must be made based on some automatic logic
+			#Logic
 
-			#Valid values
-
-			*'acknowledged'
-			*'refund customer without return'"
-		},
-		"merchant_ra": {
+			You must provide either 'merchant_order_item_id' or 'new_item_id'"
+		},		
+		"new_item_id": {
 			"type": "string",
-			"description": "Optional Merchant supplied ID.  Jet will map this ID to the 'return_authorization_id' and this ID will be included on the Return Documentation that Jet gives to the customer"	
-		}
+			"required": true,
+			"description": "Optional Merchant supplied order item ID that should have been established in OrderAcknowledgement in order to use in this message
+
+			#Logic
+
+			You must provide either 'merchant_order_item_id' or 'new_item_id'"
+		},			
+		"return_merchant_SKU": {
+			"type": "array",
+			"items":{
+				   	"merchant_sku":{
+				   		"type":"string",
+				   		"required": true,
+				   		"description":"the 'merchant_sku' that is being returned"
+				   	},
+				   	"merchant_sku_title":{
+				   		"type":"string",
+				   		"required":true,
+				   		"description":"The short description of the 'merchant_sku' that is being returned"
+				   	},
+				   	"return_quantity":{
+				   		"type":"integer",
+				   		"required": true,
+				   		"description":"the quantity of the given 'merchant_sku' that is being returned"
+				   	},
+				   	"reason":{
+				   		"type":"string",
+				   		"required": true,
+				   		"description":"the reason provided by the customer for the return
+
+				   		#Valid Values
+
+				   		*'no longer need/want
+
+				   		*'missed estimated delivery date'
+
+				   		*'different from what was ordered'
+
+				   		*'different from website description'
+
+				   		*'missing parts or accessories'
+
+				   		*'shipping box no damaged BUT item is damaged'
+
+				   		*'shipping box is damaged AND item is damaged'
+
+				   		*'defective/does not work properly'
+
+				   		*'accidental order'
+
+				   		*'unauthorized purchase'"
+				   	}
+				}
+		},		
+		"shipping_method": {
+			"type": "string",
+			"description": "Shipping method used for the given return shipment
+
+			#Logic
+
+			This will be populated with the carrier Jet has chosen if Jet is paying for the return shipping label.  
+			If the merchant pays for the return shipping label, the carrier that merchant uses for returns will be populated"	
+		},
+		"tracking_number": {
+			"type": "string",
+			"description": "tracking number for the given return shipment
+
+			#Logic
+
+			This will be populated with the tracking number of the return shipment if Jet is providing the shipping label"	
+		}		
 	}
 }
