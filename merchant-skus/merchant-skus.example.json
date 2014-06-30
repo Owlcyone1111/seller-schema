@@ -36,5 +36,7 @@
 	"map_price": 6.49,
 	"minimum_selling_price": 5.99,
 	"product_tax_code": "123",
-	"no_return_fee_adjustment": 0.01
+	"no_return_fee_adjustment": 0.01,
+	"exclude_from_fee_adjustments": false,
+	"ships_alone":false
 }

@@ -342,6 +342,15 @@
 			#Valid values
 
 			A mumber with up to 1 digit allowed to the left of the deimal point and 2 digits to the right of the decimal point."
+		},
+		"exclude_from_fee_adjustments": {
+			"type": "boolean",
+			"description": "This SKU will not be subject to any fee adjustment rules that are set up if this field is 'true'"
+		},
+		"ships_alone": {
+			"type": "boolean",
+			"description": "If this field is 'true', it indicates that this 'merchant SKU' will always ship on its own.    
+			A separate 'merchant_order' will always be placed for this 'merchant_SKU', one consequence of this will be that this merchant_sku will never contriube to any basket size fee adjustments with any other merhcant_skus."
 		}
 	}
 }
