@@ -1,7 +1,7 @@
 {
-	"title": "basic_setup",
+	"title": "basicSetup",
 	"type": "object",
-	"description": "This schema is used for basic setup of a seller account",
+	"description": "This schema is used for basic setup of a merchant account",
 	"properties": {
 		"legal_name": {
 			"type": "string",
