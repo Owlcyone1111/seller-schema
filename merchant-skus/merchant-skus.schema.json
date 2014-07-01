@@ -113,9 +113,7 @@
 		"bullets": {
 			"type": "array",
 			"items": {
-				"type": "string
-
-				"
+				"type": "string"
 			},
 			"description": "merchant sku feature description
 
