@@ -33,6 +33,20 @@ mediaType: application/json
                             schema: !include merchant-skus.schema.json
                             example: !include merchant-skus.example.json
                 404:
+        put:
+            queryParameters:
+                merchantId:
+                    description: Merchant Id provided by Jet
+            description: This method will create/update the specified merchant SKU
+            body:
+                application/json:
+                    schema: !include merchant-skus.schema.json
+                    example: !include merchant-skus.example.json
+            responses:
+                201:
+                204:
+                400:
+                409:
         /inventory:
             put:
                 queryParameters:
