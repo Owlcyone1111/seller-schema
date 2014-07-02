@@ -1,6 +1,7 @@
 ﻿module RamlParser 
 
 open System
+open System.Text.RegularExpressions
 
 type token = { num : int; ident : int; name : string; body : string }
 
@@ -28,7 +29,20 @@ let parseDescription = function
     | TryFind "description" body -> List.map unwrapBody body
     | _ -> []
 
-let parseParameters = function
+
+let matchParams = Regex(@"\{([^/]+)\}")
+
+let urlParams url =     
+    matchParams.Matches(url)
+    |> Seq.cast<Match>
+    |> Seq.map (fun c -> 
+        { 
+            Parameter.name = c.Groups.[1].Value
+            description = None
+        })
+    |> List.ofSeq
+
+let queryParams = function
     | TryFind "queryParameters" body ->        
         [
             for t, parts in group (fun _ -> true) body do
@@ -38,6 +52,10 @@ let parseParameters = function
                       }
         ]
     | _ -> []
+
+let parseParameters resourceName parts = 
+    (urlParams resourceName) @ queryParams parts   
+    
     
 let nameInList l t = Seq.exists(fun m -> withName m t) l
 
@@ -60,7 +78,7 @@ let parseBody ramlPath parts =
         example, schema
     | _ -> None, None
 
-let parseResponses ramlPath responses = 
+let parseResponses ramlPath resourceName responses = 
     let isResponse t = t.name |> Seq.forall Char.IsDigit
     [
         for r, innards in group isResponse responses do
@@ -68,14 +86,14 @@ let parseResponses ramlPath responses =
             let example, schema =  parseBody ramlPath parts
             yield {
                 status = Int32.Parse(r.name)
-                parameters = parseParameters parts
+                parameters = parseParameters resourceName parts
                 description = parseDescription parts 
                 example = example
                 schema = schema
             }
     ]
 
-let parseMethods ramlPath innards = 
+let parseMethods ramlPath resourceName innards = 
     let isMethod = "get,post,put,head,delete,trace,connect,options".Split(',') |> nameInList 
     [
         for m, innards in group isMethod innards do
@@ -87,12 +105,12 @@ let parseMethods ramlPath innards =
                     Method.name = m.name
                     request = 
                         {
-                            parameters = parseParameters parts
+                            parameters = parseParameters resourceName parts
                             description = parseDescription parts 
                             example = example
                             schema = schema
                         }
-                    responses = parseResponses ramlPath responses                
+                    responses = parseResponses ramlPath resourceName responses                
                 }        
             | _ -> ()
     ]
@@ -104,7 +122,7 @@ let parseResources ramlPath tokens = [
             yield {
                 path = resource.name
                 title = tryFindByName "displayName" innards
-                methods = parseMethods ramlPath innards
+                methods = parseMethods ramlPath resource.name innards
             }
     ]
 
@@ -118,10 +136,11 @@ let parse (lines : string []) =
         (res,t.ident)::l
     let getToken (pos, id, line : string) = 
         let ident = line |> Seq.takeWhile Char.IsWhiteSpace |> Seq.length
+        let name = line.Substring(ident, pos - ident)
         { 
             num  = id
             ident = ident
-            name = line.Substring(ident, pos - ident)
+            name = name
             body = line.Substring(pos + 1).TrimStart()                
         }
     lines

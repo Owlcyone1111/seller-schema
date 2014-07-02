@@ -1,3 +1,6 @@
+Schema ..\merchant-skus\merchant-skus.schema.json failed with Invalid JSON schema type: string
+
+				
 Schema ..\orders\order-accept.schema.json failed with Could not resolve schema reference for Id '#/definitions/item'.
 Schema ..\orders\order-shipped.schema.json failed with Could not resolve schema reference for Id '#/definitions/shipment'.
 Schema ..\orders\order.schema.json failed with Could not resolve schema reference for Id '#/definitions/buyer'.

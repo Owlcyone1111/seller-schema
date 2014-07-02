@@ -31,14 +31,14 @@ let getMethod (m: Method) =
         yield element "request" [
             let description = JsonSchemaToHtml.article m.request.description m.request.schema
             if description.IsSome then yield doc description.Value
-            for p in m.request.parameters do
-            yield element "param"[
-                yield attribute "name" p.name
-                yield attribute "style" "template"
-                yield attribute "type" "xs:string"
-                yield attribute "required" "true"
-                if p.description.IsSome then yield doc p.description.Value
-            ]
+            for p in m.request.parameters ->
+                element "param"[
+                    yield attribute "name" p.name
+                    yield attribute "style" "template"
+                    yield attribute "type" "xs:string"
+                    yield attribute "required" "true"
+                    if p.description.IsSome then yield doc p.description.Value
+                ]
             yield! representation m.request.example             
         ]
         for response in m.responses do
