@@ -6,15 +6,15 @@
             "type": "string",
             "description" :  "Jet's unique ID for a given order"
         },
-        "placedOn": {
+        "placed_on": {
             "type": "string",
             "description" :  "The date the order was placed in UTC"
         },
         "buyer": {
             "$ref": "#/definitions/buyer"
         },
-        "shippingTo": {
-            "$ref": "#/definitions/shippingAddress"
+        "shipping_to": {
+            "$ref": "#/definitions/shipping_address"
         },
         "items": {
             "type": "array",
@@ -40,7 +40,7 @@
                 "name": {
                     "type": "string"
                 },
-                "phoneNumber": {
+                "phone_number": {
                     "type": "string"
                 }
             }
@@ -61,15 +61,15 @@
                 "state": {
                     "type": "string"
                 },
-                "zipCode": {
+                "zip_code": {
                     "type": "string"
                 }
             }
         },
-        "shippingAddress": {
+        "shipping_address": {
             "title": "Shipping Address",
             "type": "object",
-            "allof": [
+            "all_of": [
                 {
                     "$ref": "#/definitions/buyer"
                 },
@@ -85,13 +85,13 @@
                 "id": {
                     "type": "string"
                 },
-                "sellerSku": {
+                "merchant_sku": {
                     "type": "string"
                 },
                 "quantity": {
                     "type": "integer"
                 },
-                "taxCode": {
+                "tax_code": {
                     "type": "string"
                 },
                 "price": {
@@ -100,10 +100,10 @@
                 "fees": {
                     "type": "number"
                 },
-                "feeAdjustments": {
+                "fee_adjustments": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/feeAdjustment"
+                        "$ref": "#/definitions/fee_adjustment"
                     }
                 },
                 "name": {
@@ -124,33 +124,33 @@
                 "id": {
                     "type": "string"
                 },
-                "fulfillmentCenter": {
-                    "$ref": "#/definitions/fulfillmentCenter"
+                "fulfillment_center": {
+                    "$ref": "#/definitions/fulfillment_center"
                 },
                 "method": {
-                    "$ref": "#/definitions/shippingMethod"
+                    "$ref": "#/definitions/shipping_method"
                 },
-                "shipBy": {
+                "ship_by": {
                     "type": "string"
                 },
-                "deliveryBy": {
+                "delivery_by": {
                     "type": "string"
                 },
                 "box": {
-                    "$ref": "#/definitions/shippingBox"
+                    "$ref": "#/definitions/shipping_box"
                 },
                 "items": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/shippingItem"
+                        "$ref": "#/definitions/shipping_item"
                     }
                 },
-                "labelUrl": {
+                "label_url": {
                     "type": "string"
                 }
             }
         },
-        "feeAdjustment": {
+        "fee_adjustment": {
             "title": "FeeAdjustment",
             "type": "object",
             "properties": {
@@ -165,7 +165,7 @@
                 }
             }
         },
-        "shippingBox": {
+        "shipping_box": {
             "title": "ShippingBox",
             "type": "object",
             "properties": {
@@ -184,7 +184,7 @@
                 "length": {
                     "type": "number"
                 },
-                "maxWeight": {
+                "max_weight": {
                     "type": "number"
                 },
                 "url": {
@@ -192,7 +192,7 @@
                 }
             }
         },
-        "fulfillmentCenter": {
+        "fulfillment_center": {
             "title": "FulfillmentCenter",
             "type": "object",
             "properties": {
@@ -204,18 +204,18 @@
                 }
             }
         },
-        "shippingMethod": {
+        "shipping_method": {
             "title": "ShippingMethod",
             "type": "string"
         },
-        "shippingItem": {
+        "shipping_item": {
             "title": "ShippingItem",
             "type": "object",
             "properties": {
                 "id": {
                     "type": "string"
                 },
-                "sellerSku": {
+                "merchant_sku": {
                     "type": "string"
                 },
                 "quantity": {
@@ -227,7 +227,7 @@
             "title": "Metadata",
             "type": "object",
             "properties": {
-                "notifiedOn": {
+                "notified_on": {
                     "type": "string"
                 },
                 "state": {

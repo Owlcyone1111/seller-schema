@@ -1,13 +1,17 @@
 #%RAML 0.8
 
-title: Test API
+title: Merchant API - Orders
 description: This API provides actions required for processing orders.
-baseUri: http://seller.jet.com/api/{version}/seller/{sellerId}
+baseUri: http://dev-ironman-webapi.local.jet.com/api
 version: v0.1
 protocols: [HTTPS]
+mediaType: application/json
 
 /orders:
-    displayName: Orders
+    queryParameters:
+        merchantId:
+            Merchant Id provided by Jet
+    description: This method will list all orders that have not been acknowledged
     get:
         responses:
             200:
@@ -15,49 +19,43 @@ protocols: [HTTPS]
                     application/json:
                         schema: !include order.schema.json
                         example: !include order.example.json
-/{id}:
-    get:
-
-    /accept:
+            404:
+    /{id}:
+        /accept:
+            description: Marks an order as accepted
+            post:
+                body:
+                    application/json:
+                        schema: !include order-accept.schema.json
+                responses:
+                    200:
+                    404:
+                    409:
+        /reject:
+            description: Marks an order as rejected (i.e. you will not be fulfilling this order)
+            post:
+                body:
+                    application/json:
+                        schema: !include order-reject.schema.json
+                responses:
+                    200:
+                    404:
+                    409:
+        /shipped:
+            description: Marks an order as shipped and provides tracking information to Jet
+            post:
+                body:
+                    application/json:
+                        schema: !include order-shipped.schema.json
+                responses:
+                    200:
+                    404:
+                    409:
+    /refund:
         post:
-            body:
-                application/json:
-                    schema: !include order-accept.schema.json
 
-            responses:
-                200:
-                404:
-                409:
-
-    /reject:
+    /partial-cancel:
         post:
-            body:
-                application/json:
-                    schema: !include order-reject.schema.json
 
-            responses:
-                200:
-                404:
-                409:
-
-
-    /shipped:
-        post:
-            body:
-                application/json:
-                    schema: !include order-shipped.schema.json
-
-            responses:
-                200:
-                404:
-                409:
-
-
-/refund:
-    post:
-
-/PartialCancel:
-    post:
-
-/returns:
-    get:
+    /returns:
+        get:

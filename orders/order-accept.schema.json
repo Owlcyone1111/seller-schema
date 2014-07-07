@@ -2,7 +2,7 @@
     "title": "OrderAcknowledge",
     "type": "object",
     "properties": {
-        "newId": {
+        "new_id": {
             "type": "string"
         },
         "items": {
@@ -26,7 +26,7 @@
                 "id": {
                     "type": "string"
                 },
-                "newId": {
+                "new_id": {
                     "type": "string"
                 }
             }
@@ -38,25 +38,25 @@
                 "id": {
                     "type": "string"
                 },
-                "newId": {
+                "new_id": {
                     "type": "string"
                 },
                 "items": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/shipmentItem"
+                        "$ref": "#/definitions/shipment_item"
                     }
                 }
             }
         },
-        "shipmentItem": {
+        "shipment_item": {
             "title": "ShipmentItem",
             "type": "object",
             "properties": {
                 "id": {
                     "type": "string"
                 },
-                "newId": {
+                "new_id": {
                     "type": "string"
                 }
             }

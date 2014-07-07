@@ -23,28 +23,28 @@
                 "method": {
                     "type": "string"
                 },
-                "trackingNumber": {
+                "tracking_number": {
                     "type": "string"
                 },
                 "items": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/shipmentItem"
+                        "$ref": "#/definitions/shipment_item"
                     }
                 }
             }
         },
-        "shipmentItem": {
+        "shipment_item": {
             "title": "ShipmentItem",
             "type": "object",
             "properties": {
                 "id": {
                     "type": "string"
                 },
-                "sellerSku": {
+                "merchant_sku": {
                     "type": "string"
                 },
-                "qunatity": {
+                "quantity": {
                     "type": "number"
                 }
             }
