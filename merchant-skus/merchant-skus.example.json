@@ -25,8 +25,8 @@
 	"prop_65": true,
 	"legal_disclaimer_description": "Legal stuff goes here",
 	"cpsia_cautionary_statements": [
-		"Cautionary Statement Line 1",
-		"Cautionary Statement Line 2"
+		"Choking hazard balloon",
+		"choking hazard small parts"
 	],
 	"country_of_origin": "U.S.A.",
 	"safety_warning": "warning text goes here",

@@ -35,6 +35,8 @@ else
            )
        |> Seq.concat
 
+    System.Console.Write(lines |> String.concat System.Environment.NewLine);
+
     File.WriteAllLines("errors.txt", lines)
 
     

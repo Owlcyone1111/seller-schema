@@ -1,11 +1,14 @@
 {
+	"$schema" : "http://json-schema.org/draft-03/schema",
 	"title": "MerchantSku",
 	"type": "object",
 	"description": "This schema represents a merchant sku",
+    "additionalProperties" : false,
 	"properties": {
 		"product_title": {
 			"type": "string",
 			"required": true,
+			"maxLength" : 500,
 			"description": "Short product description
 
 			#Valid Values
@@ -29,6 +32,7 @@
 		"standard_product_code": {
 			"type": "string",
 			"required": true,
+			"maxLength" : 14,
 			"description": "A standard, unique identifier for a product.  ISBN, UPC, EAN and GTIN-14 are accepted.
 
 			#Valid Values
@@ -46,6 +50,7 @@
 		"standard_product_code_type": {
 			"type": "string",
 			"required": true,
+			"enum" : ["UPC", "ISBN", "EAN", "GTIN-14"],
 			"description": "Indicate the type of standard_product_code that was used.
 
 			#Valid Values
@@ -70,6 +75,7 @@
 		"brand": {
 			"type": "string",
 			"required": true,
+			"maxLength" : 50,
 			"description": "Brand of the merchant sku
 
 			#Valid Values
@@ -81,6 +87,7 @@
 		"manufacturer": {
 			"type": "string",
 			"required": true,
+			"maxLength" : 50,
 			"description": "Manufacturer of the merchant sku
 
 			#Valid Values
@@ -91,6 +98,7 @@
 		},
 		"mfr_part_number": {
 			"type": "string",
+			"maxLength" : 50,
 			"description": "Part number provided by the original manufacturer of the merchant sku
 
 			#Valid Values
@@ -102,6 +110,7 @@
 		"product_description": {
 			"type": "string",
 			"required": true,
+			"maxLength" : 2000,
 			"description": "Long description of the merchant sku
 
 			#Valid Values
@@ -113,8 +122,10 @@
 		"bullets": {
 			"type": "array",
 			"items": {
-				"type": "string"
+				"type": "string",
+				"maxLength" : 500
 			},
+			"maxItems" : 5,
 			"description": "merchant sku feature description
 
 			#Valid Values
@@ -175,6 +186,7 @@
 		},
 		"parent_or_child": {
 			"type": "string",
+			"enum" : ["Parent", "Child"],
 			"description": "Define if the merchant sku is a 'Parent' or a 'Child'
 
 			#Logic
@@ -202,6 +214,7 @@
 		},
 		"relationship": {
 			"type": "string",
+			"enum" : ["Variation", "Accessory"],			
 			"description": "Variation or Accessory
 
 			#Logic
@@ -232,6 +245,7 @@
 		},
 		"legal_disclaimer_description": {
 			"type": "string",
+			"maxLength" : 500,
 			"description": "Any legal language required to be displayed with the product.
 
 			#Valid Values
@@ -241,8 +255,18 @@
 		"cpsia_cautionary_statements": {
 			"type": "array",
 			"items": {
-				"type": "string"
-			},
+				"type": "string",
+				"enum" : [
+				 			"Choking hazard balloon",
+							"choking hazard contains a marble",
+							"choking hazard contains a small ball",
+							"choking hazard is a marble",
+							"choking hazard is a small ball",
+							"choking hazard small parts",
+							"no warning applicable"
+						]
+			},			
+			"maxItems" : 4,
 			"description": "Use this field to indicate if a cautionary statement relating to the choking hazards of children's toys and games applies to your product.  These cautionary statements are defined in Section 24 of the Federal Hazardous Substances Act and Section 105 of the Consumer Product Safety Improvement Act of 2008.  They must be displayed on the product packaging and in certain online and catalog advertisements.  You are responsible for determining if a cautionary statement applies to the product.  This can be verified by contacting the product manufacturer or checking the product packaging.   Cautionary statements that you select will be displayed on the product detail page.  If no cautionary statement applies to the product, select \"no_warning_applicable\".
 
 			#Valid Values
@@ -267,6 +291,7 @@
 		},
 		"country_of_origin": {
 			"type": "string",
+			"maxLength" : 50,
 			"description": "The country that the item was manufactured in.
 
 			#Valid Values
@@ -275,6 +300,7 @@
 		},
 		"safety_warning": {
 			"type": "string",
+			"maxLength" : 500,
 			"description": "If applicable, use to supply any associated warnings for your product.
 
 			#Valid Values
@@ -291,6 +317,7 @@
 		},
 		"fulfillment_time": {
 			"type": "integer",
+			"minimum" : 0,
 			"description": "Number of business days from receipt of an order for the given merchant sku until it will be shipped (only populate if it is different than your account default.
 
 			#Valid values
