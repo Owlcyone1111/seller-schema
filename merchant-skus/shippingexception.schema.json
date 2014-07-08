@@ -5,6 +5,7 @@
 	"properties": {
 		"service_level": {
 			"type":"string",
+			"enum" : ["Standard", "Expedited", "Scheduled", "NextDay", "SecondDay"],
 			"description": "Generic descriptions of shipment delivery times
 
 			#Logic
@@ -51,6 +52,7 @@
 		},
 		"override_type": {
 			"type": "string",
+			"enum" : ["Additional Charge", "Override Charge"],
 			"description": "The type of shipping override, \"Additional Charge\" or \"Override Charge\" (Override Charge could be used to lower shipping)
 
 			#Valid Values

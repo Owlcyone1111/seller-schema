@@ -85,6 +85,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Script1.fsx" />
+    <None Include="TryingSchema.fsx" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
