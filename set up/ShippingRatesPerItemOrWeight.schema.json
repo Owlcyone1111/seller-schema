@@ -5,6 +5,12 @@
 	"properties": {
 		"service_level": {
 			"type": "string",
+			"enum":[
+					"Standard",
+					"Expedited",
+					"Scheduled",
+					"NextDay",
+					"SecondDay"],
 			"description": "If ServiceLevel has been defined in your shipping setup and you want to set rates ServiceLevel level use this field.
 
 			#Logic
@@ -25,6 +31,7 @@
 		},
 		"shipping_carrier": {
 			"type": "string",
+			"enum": ["UPS","USPS","FedEx"],
 			"description": "A shipping carrier, including all that carrier's ShippngMethods e.g. UPS, FedEx, USPS.  
 
 			If shipping set up has defined the ShippingCarrier level and you are setting up shipping rates at the ShippingCarrier level use this field.
@@ -67,6 +74,7 @@
 		"variable_charge_type": {
 			"type": "string",
 			"required": true,
+			"enum":["per item","per weight"],
 			"description": "Use this to define whether the variable portion of the shipping charge will be based on the weight (lbs) of the order or the number of items in the order.			
 
 			#Valid values

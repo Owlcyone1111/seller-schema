@@ -21,6 +21,17 @@
 				"items":{
 					"delivery_area":{
 						"type":"string",
+						"enum": [
+								"all zone deliveries",
+								"local pick up",
+								"local delivery",
+								"zone" 2,
+								"zone 3",
+								"zone 4",
+								"zone 5",
+								"zone 6",
+								"zone 7",
+								"zone 8"],
 						"description":"The delivery area that you are defining the discount/up-charge schedule for based on basket size.  
 
 						You may set this up for 'local pick-up', 'local delivery' or delivery Zones 2-8.

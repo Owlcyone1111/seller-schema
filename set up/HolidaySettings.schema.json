@@ -33,6 +33,14 @@
             "items":{
                 "type":"string"
             },
+            "enum":[
+            		"New Year's Day",
+            		"MLK Day",
+            		"President's Day",
+            		"Fourth of July",
+            		"Memorial Day",
+            		"Labor Day",
+            		"Christmas Day"],
     		"description": "Provide the standard US Federal Holidays that are not operational days for your operations. It is assumed that these are recurring every year.
 
     		#Valid Values
@@ -71,7 +79,8 @@
 				   	},
 				   	"recurrence":{
 				   		"type":"string",
-				   		"required":"true",
+				   		"required": true,
+				   		"enum" : ["this year","every year"],
 				   		"description":"Choose whether the given day will be a holiday just 'this year' or 'every year'
 				   		
 				   		#Valid Values

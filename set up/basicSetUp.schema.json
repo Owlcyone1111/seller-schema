@@ -15,6 +15,7 @@
 		"display_name": {
 			"type": "string",
 			"required": true,
+			"maxLength": 50,
 			"description": "the name you want displyaed to customers
 
 			#Valid values

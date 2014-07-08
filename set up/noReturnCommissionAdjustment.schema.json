@@ -6,6 +6,23 @@
 		"jet_category": {
 			"type": "string",
 			"required": true,
+			"enum":[
+					"appliances",
+					"Arts, Crafts & Hobbies",
+					"Automotive",
+					"Baby",
+					"Clothing, Shoes & Accessories",
+					"Electronics",
+					"grocery",
+					"Health & Beauty",
+					"Home, Garden, Home Improvement",
+					"Industrial & Scientific",
+					"Jewelry and Watches",
+					"Media - Books, CDs, DVDs",
+					"Office Products",
+					"Pet Supplies",
+					"Sporting Goods",
+					"Toys & Games"],
 			"description": "The Jet category for which you defining a a no return commission adjustment
 
 			#Valid values

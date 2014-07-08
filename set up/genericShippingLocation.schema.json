@@ -6,6 +6,7 @@
 		"shipping_location_name": {
 			"type": "string",
 			"required": true,
+			"maxLength" : 30,
 			"description": "Name used to identify the given shipping location
 
 			#Valid Value
@@ -25,6 +26,14 @@
 		"seller_operating_days": {
 			"type": "string",
 			"required": true,
+			"enum":[
+					"sun",
+					"mon",
+					"tue",
+					"wed",
+					"thu",
+					"fri",
+					"sat"],
 			"description": "Days of the week that you will process and ship orders for 'location_type' = 'Seller Controlled' 
 
 			Days of the week that you will process and submit orders to the 3rd party fulfiller for 'location_type' =  'FBA' or 'DropShip'  
@@ -49,6 +58,14 @@
 		},
 		"ds_operating_days": {
 			"type": "string",
+			"enum":[
+					"sun",
+					"mon",
+					"tue",
+					"wed",
+					"thu",
+					"fri",
+					"sat"],
 			"description": "Days of the week that the given drop ship location is open for operations.  Enter all that apply in pipe delimited format. Ex: Mon | Tues| Wed | Thu
 
 			#Logic
@@ -73,6 +90,7 @@
 		},
 		"time_to_process": {
 			"type": "integer",
+			"minimum" : 0,
 			"description": "Number of business days from receipt of an order  until it will be transmitted to FBA or Drop Ship location
 
 			#Logic
@@ -98,6 +116,7 @@
 		},
 		"fulfillment_time":{
 			"type": "integer",
+			"minimum": 0,
 			"description" : "Number of business days from receipt of an order until it will be shipped for order that are LocationType = 'Seller Controlled', if it is received before the 'order_cutoff_time' for the given shipping location
 
 			Number of business days that drop shipper will take to fulfill an order once you have notified the drop shipper of the order
@@ -122,6 +141,12 @@
 		"service_level": {
 			"type":"string",
 			"required": true,
+			"enum":[
+					"Standard",
+					"Expedited",
+					"Scheduled",
+					"NextDay",
+					"SecondDay"],
 			"description": "Provide the list of ServiceLevels that are supported for delivery from this location
 
 			#Valid Values
