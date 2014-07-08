@@ -137,7 +137,7 @@
 			maximum 5 elements of the 'bullets' array"
 		},
 		"number_units_for_price_per_unit": {
-			"type": "string",
+			"type": "integer",
 			"description": "For Price Per Unit calculations, the number of units included in the merchant sku. The unit of measure must be specified in order to indicate what is being measured by the unit-count. "
 		},
 		"type_of_unit_for_price_per_unit": {
