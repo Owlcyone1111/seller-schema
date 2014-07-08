@@ -231,7 +231,7 @@
                     "type": "string"
                 },
                 "state": {
-                    "type": "object"
+                    "type": "string"
                 },
                 "history": {
                     "type": "array"
