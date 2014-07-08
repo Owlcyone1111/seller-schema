@@ -1,5 +1,5 @@
 {
-	"shipping_location_name": "PAFC",
+	"ship_from_location": "PAFC",
 	"location_type": "seller controlled",
 	"seller_operating_days": "mon|tue|wed|thu|fri",
 	"ds_operating_days": "mon|tue|wed|thu|fri",

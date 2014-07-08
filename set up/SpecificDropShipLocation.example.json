@@ -1,5 +1,5 @@
 {
-	"dropship_location_name": "PAFC",
+	"ship_from_location": "PAFC",
 	"ds_address_line_1": "23 cherry tree ln",
 	"ds_address_line_2":"apt 5a",
 	"ds_address_city":"Binghamton",

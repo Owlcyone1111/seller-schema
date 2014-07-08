@@ -3,7 +3,7 @@
 	"type": "object",
 	"description": "This schema is used to set up a shipping location for a drop shipper where you know the specific inventory that drop shipper will ship for you and the location the given inventory ships from",
 	"properties": {
-		"dropship_location_name": {
+		"ship_from_location": {
 			"type": "string",
 			"required": true,
 			"maxLength":30,

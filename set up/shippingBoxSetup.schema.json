@@ -8,7 +8,7 @@
 			"required": true,
 			"description": "the unique name for the given box in your catalog of boxes"
 		},
-		"Merchant_FC": {
+		"ship_from_location": {
 			"type": "string",
 			"description": "Merchant_FCs where box is valid.  Leave blank if box is in use at all shipping locations.  If box is not in use at all Shipping locations enter the shipping locations where box is in use in pipe delimited form.  EX:  West Coast | East Coast"
 		},

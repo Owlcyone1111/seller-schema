@@ -3,7 +3,7 @@
 	"type": "object",
 	"description": "This schema is used to set up a shipping location that is not tied to a specific known address",
 	"properties": {
-		"shipping_location_name": {
+		"ship_from_location": {
 			"type": "string",
 			"required": true,
 			"maxLength" : 30,

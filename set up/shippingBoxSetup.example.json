@@ -1,6 +1,6 @@
 {
 	"box_name": "BX1",
-	"Merchant_FC": "EastCoast",
+	"ship_from_location": "EastCoast",
 	"box_length_inches": "12.5",
 	"box_width_inches": "10",
 	"box_height_inches": "8.5",
