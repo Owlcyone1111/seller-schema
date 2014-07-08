@@ -31,11 +31,8 @@
                 "$ref": "#/definitions/item"
             }
         },
-        "shipments": {
-            "type": "array",
-            "items": {
-                "$ref": "#/definitions/shipment"
-            }
+        "order_detail": {
+            "$ref": "#/definitions/order_detail"
         },
         "metadata": {
             "$ref": "#/definitions/metadata"
@@ -174,17 +171,10 @@
                 }
             }
         },
-        "shipment": {
-            "title": "shipment",
+        "order_detail": {
+            "title": "order_detail",
             "type": "object",
             "properties": {
-                "shipment_id": {
-                    "type": "string",
-                    "required" : true
-                },
-                "ship_from_location": {
-                    "$ref": "#/definitions/ship_from_location"
-                },
                 "shipping_carrier": {
                     "type" : "string",
                     "required" : false,
@@ -239,29 +229,7 @@
 
                     The ShippingMethod selected should provide delivery by this date as long as you meet shipping requirements you communicated during shipping set up.   If you use Jet provided labels and ship ontime you should meet this date.  If you use your own shipping labels you can choose to use a carrier other than the one suggested by ShippingMethod as long as the DeliveryByDate is met or exceeded."
                 },
-                "shipping_box": {
-                    "type": "string",
-                    "required" : false,
-                    "description" : "Suggested box to use from the merchant's box catalog that is the best fit for the items in the given shipment
-
-                    #Logic
-
-                    This will be sent if the Merchant has registered for Jet Shipping Box guidance and set up their shipping box catalog.  We will then pass them the suggested box in their catalog that best fits the items in their shipment based on our boxing algorithm.
-
-                    #Valid Values
-
-                    The Box Name of the selected box from the box catalog you have created"
-                },
-                "Shipment_items": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/shipping_item"
-                    }
-                },
-                "label_url": {
-                    "type": "string",
-                    "required" : false
-                }
+                
             }
         },
         "fee_adjustment": {
@@ -452,25 +420,7 @@
 
             }
         },
-        "ship_from_location": {
-            "title": "ship_from_location",
-            "type": "object",
-            "properties": {
-                "name": {
-                    "type": "string",
-                    "required" : false,
-                    "description" : " The'ship from location' that you set up from which you should fill and ship the shipment.  
-
-                    #Valid Values
-
-                    List of 'ship from location' that have been set up by you"
-                },
-                "url": {
-                    "type": "string",
-                    "required" : false
-                }
-            }
-        },
+        
         "shipping_method": {
             "title": "Shipping_Method",
             "type": "string",
@@ -484,32 +434,6 @@
             #Valid Values
 
             List of shipping methods the merchant has set up"
-        },
-        "shipping_item": {
-            "title": "Shipping_Item",
-            "type": "object",
-            "properties": {
-                "shipment_item_id": {
-                    "type": "string",
-                    "required" : true,
-                    "description" : "Jet's unique identifier for an item in a shipment"
-
-                },
-                "merchant_sku": {
-                    "type": "string",
-                    "required" : true,
-                    "description" : "The merchant SKU that is in the given shipment
-
-                    #Valid Values
-
-                    List of Merchant SKUs that have been set up by you"
-                },
-                "shipment_sku_quantity": {
-                    "type": "integer",
-                    "required" : true,
-                    "description" : "The quantity of the given merchant SKU that is in the given shipment"
-                }
-            }
         },
         "item_price" : {
             "title" : "Item_price",
@@ -548,7 +472,7 @@
                     "type": "string"
                 },
                 "state": {
-                    "type": "string"
+                    "type": "object"
                 },
                 "history": {
                     "type": "array"
