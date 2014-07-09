@@ -105,7 +105,7 @@
             "title": "Item",
             "type": "object",
             "properties": {
-                "Item_id": {
+                "order_item_id": {
                     "type": "string",
                     "required": true,
                     "description" : "Jet's unique identifier for an item in a merchant order"
@@ -180,7 +180,8 @@
             "properties": {
                 "shipment_id": {
                     "type": "string",
-                    "required" : true
+                    "required" : true,
+                    "description" : "Jet's unique ID for a given shipment"
                 },
                 "ship_from_location": {
                     "$ref": "#/definitions/ship_from_location"
@@ -528,12 +529,12 @@
                 "item_shipping_cost":{
                     "type" : "number",
                     "required": false,
-                    "description" : "The shipping cost that is allocated to this item_id if applicable "
+                    "description" : "The shipping cost that is allocated to this order_item_id if applicable "
                     },
                 "item_shipping_tax":{
                     "type" : "number",
                     "required": false,
-                    "description" : "The tax on shipping cost that is allocated to this item_id if applicable  "
+                    "description" : "The tax on shipping cost that is allocated to this order_item_id if applicable  "
                     }
 
                 }

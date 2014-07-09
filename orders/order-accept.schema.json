@@ -2,8 +2,9 @@
     "title": "OrderAcknowledge",
     "type": "object",
     "properties": {
-        "new_id": {
-            "type": "string"
+        "alt_order_id": {
+            "type": "string",
+            "description" : "Optional Merchant supplied order ID.  Jet will map this ID to Jet's order_id and you can then use this ID in subsequent messages relating to this order."
         },
         "items": {
             "type": "array",
@@ -23,11 +24,13 @@
             "title": "Item",
             "type": "object",
             "properties": {
-                "id": {
-                    "type": "string"
+                "order_item_id": {
+                    "type": "string",
+                    "description" : "Jet's unique identifier for an item in a merchant order"
                 },
-                "new_id": {
-                    "type": "string"
+                "ref_item_id": {
+                    "type": "string",
+                    "description" : "Optional seller supplied ID for an item in an order.  If this value is specified with the Jet's order_item_id, Jet will map the two IDs and you can then use your own order item ID for subsequent feeds relating to that order item."
                 }
             }
         },
@@ -35,13 +38,16 @@
             "title": "Shipment",
             "type": "object",
             "properties": {
-                "id": {
-                    "type": "string"
+                "shipment_id": {
+                    "type": "string",
+                    "description" : "Jet's unique ID for a given shipment"
+                    
                 },
-                "new_id": {
-                    "type": "string"
+                "alt_shipment_id": {
+                    "type": "string",
+                    "description" : "Optional Merchant supplied shipment ID.  Jet will map this ID to the Jet's shipment_id and you can then use this ID in subsequent messages relating to this shipment."
                 },
-                "items": {
+                "shipment_item": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/shipment_item"
@@ -53,11 +59,13 @@
             "title": "ShipmentItem",
             "type": "object",
             "properties": {
-                "id": {
-                    "type": "string"
+                "shipment_item_id": {
+                    "type": "string",
+                    "description" : "Jet's unique identifier for an item in a shipment"
                 },
-                "new_id": {
-                    "type": "string"
+                "alt_shipment_item_id": {
+                    "type": "string",
+                    "description" : "Optional seller supplied ID for an item in a specific shipment.  If this value is specified with Jet's shipment_item_id, Jet will map the two IDs and you can then use your own shipment item ID for subsequent feeds relating to that order item."
                 }
             }
         }
