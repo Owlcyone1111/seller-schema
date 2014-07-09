@@ -66,8 +66,9 @@
 			"
 		},
 		"multipack_quantity": {
-			"type": "integer",
+			"type": "number",
 			"required": true,
+			"minimum" : 0.01,
 			"description": "Number of items with the given standard_product_code that makes up your merchant sku
 
 			"
@@ -138,6 +139,7 @@
 		},
 		"number_units_for_price_per_unit": {
 			"type": "integer",
+			"minimum" : 1,
 			"description": "For Price Per Unit calculations, the number of units included in the merchant sku. The unit of measure must be specified in order to indicate what is being measured by the unit-count. "
 		},
 		"type_of_unit_for_price_per_unit": {
@@ -147,6 +149,7 @@
 		"shipping_weight_pounds": {
 			"type": "number",
 			"required": true,
+			"minimum" : 0.01,
 			"description": "Weight of the merchant sku when in its shippable configuration
 
 			#Valid Values
@@ -158,6 +161,7 @@
 		"package_length_inches": {
 			"type": "number",
 			"required": true,
+			"minimum" : 0.01,
 			"description": "Length of the merchant sku when in its shippable configuration
 
 			#Valid Values
@@ -169,6 +173,7 @@
 		"package_width_inches": {
 			"type": "number",
 			"required": true,
+			"minimum" : 0.01,
 			"description": "Width of the merchant sku when in its shippable configuration
 
 			#Valid Values
@@ -178,6 +183,7 @@
 		"package_height_inches": {
 			"type": "number",
 			"required": true,
+			"minimum" : 0.01,
 			"description": "Height of the merchant sku when in its shippable configuration
 
 			#Valid Values
@@ -332,6 +338,7 @@
 		},
 		"msrp": {
 			"type": "number",
+			"minimum" : 0.01,
 			"description": "Manufacturer's suggested retail price or list price for the product.
 
 			#Valid values
@@ -340,6 +347,7 @@
 		},
 		"map_price": {
 			"type": "number",
+			"minimum" : 0.01,
 			"description": "For MAP (Minimum Advertised Price) based pricing.  If you don't know what this term means, this function probably does not apply to you.
 
 			#Valid values
@@ -348,6 +356,7 @@
 		},
 		"minimum_selling_price":{
 			"type": "number",
+			"minimum" : 0.01,
 			"description": "Price that manufacturer has defined as the lowest price for which the item can be sold
 
 			#Valid values
