@@ -66,9 +66,8 @@
 			"
 		},
 		"multipack_quantity": {
-			"type": "number",
+			"type": "integer",
 			"required": true,
-			"minimum" : 0.01,
 			"description": "Number of items with the given standard_product_code that makes up your merchant sku
 
 			"
@@ -139,17 +138,17 @@
 		},
 		"number_units_for_price_per_unit": {
 			"type": "integer",
-			"minimum" : 1,
-			"description": "For Price Per Unit calculations, the number of units included in the merchant sku. The unit of measure must be specified in order to indicate what is being measured by the unit-count. "
+			"description": "For Price Per Unit calculations, the number of units included in the merchant sku. The unit of measure must be specified in order to indicate what is being measured by the 'number_units_for_price_per_unit' "
 		},
 		"type_of_unit_for_price_per_unit": {
 			"type": "string",
-			"description": "The type_of_unit_for_price_per_unit attribute is a label for the number_units_for_price_per_unit. The price per unit can then be constructed by dividing the selling price by the number of units and appending the text \"per unit value.\" For example, for a six-pack of soda, number_units_for_price_per_unit= 6, type_of_unit_for_price_per_unit= can, price per unit = price per can."
+			"description": "The 'type_of_unit_for_price_per_unit' field is the label for the 'number_units_for_price_per_unit'. 
+			The price per unit can then be constructed by dividing the selling price by the number of units and appending the text 'per unit value' 
+			For example, for a 12 ounce shampoo, number_units_for_price_per_unit= 12, type_of_unit_for_price_per_unit= ounces, price per unit = price per ounce."
 		},
 		"shipping_weight_pounds": {
 			"type": "number",
 			"required": true,
-			"minimum" : 0.01,
 			"description": "Weight of the merchant sku when in its shippable configuration
 
 			#Valid Values
@@ -161,7 +160,6 @@
 		"package_length_inches": {
 			"type": "number",
 			"required": true,
-			"minimum" : 0.01,
 			"description": "Length of the merchant sku when in its shippable configuration
 
 			#Valid Values
@@ -173,7 +171,6 @@
 		"package_width_inches": {
 			"type": "number",
 			"required": true,
-			"minimum" : 0.01,
 			"description": "Width of the merchant sku when in its shippable configuration
 
 			#Valid Values
@@ -183,7 +180,6 @@
 		"package_height_inches": {
 			"type": "number",
 			"required": true,
-			"minimum" : 0.01,
 			"description": "Height of the merchant sku when in its shippable configuration
 
 			#Valid Values
@@ -338,7 +334,6 @@
 		},
 		"msrp": {
 			"type": "number",
-			"minimum" : 0.01,
 			"description": "Manufacturer's suggested retail price or list price for the product.
 
 			#Valid values
@@ -347,7 +342,6 @@
 		},
 		"map_price": {
 			"type": "number",
-			"minimum" : 0.01,
 			"description": "For MAP (Minimum Advertised Price) based pricing.  If you don't know what this term means, this function probably does not apply to you.
 
 			#Valid values
@@ -356,7 +350,6 @@
 		},
 		"minimum_selling_price":{
 			"type": "number",
-			"minimum" : 0.01,
 			"description": "Price that manufacturer has defined as the lowest price for which the item can be sold
 
 			#Valid values
