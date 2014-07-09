@@ -80,11 +80,11 @@
     },
 
     "definitions": {
-        "merchant_fc_communication_info": {
+        "shipping_location_communication_info": {
             "title": "merchant_fc_communication_info",
  			"type": "object",
             "properties": {
-                "merchant_fc"
+                "shipping_location"
                 	"type": "sting",
                 	"required": true,
                 	"description" : "name of the given Merchant FC"

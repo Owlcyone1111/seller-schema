@@ -3,7 +3,7 @@
 	"type": "object",
 	"description": "This schema is used to set up a specific merchant operated shipping location",
 	"properties": {
-		"merchant_fc": {
+		"ship_from_location": {
 			"type": "string",
 			"required": true,
 			"maxLength": 30,

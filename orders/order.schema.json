@@ -1,5 +1,5 @@
 {
-    "title": "Merchant_Order",
+    "title": "MerchantOrder",
     "type": "object",
     "properties": {
         "merchant_order_id": {
@@ -12,7 +12,7 @@
             "required": true,
             "description" :  "The date the merchant order was placed"
         },
-        "Order_Transmission_Date":{
+        "order_transmission_date":{
             "type": "string",
             "required": true,
             "description" : "The date/time the merchant order was sent to the merchant"
@@ -37,7 +37,10 @@
                 "$ref": "#/definitions/shipment"
             }
         },
-        "metadata": {
+        "ship_from_location": {
+                    "$ref": "#/definitions/ship_from_location"
+        },
+		"metadata": {
             "$ref": "#/definitions/metadata"
         }
     },
@@ -120,7 +123,7 @@
                     "required": true,
                     "description" : "The quantity of the given merchant SKU that is in the given merchant order"
                 },
-                "Item_tax_code": {
+                "item_tax_code": {
                     "type": "string",
                     "required" : false,
                     "description" : "the tax code associated with the given merchant SKU
@@ -146,25 +149,25 @@
                 "tax_info": {
                     "type" : "object",
                     "all_of": [
-                {
-                    "$ref": "#/definitions/Tax_Jurisdictions"                
-                },
-                {
-                    "$ref": "#/definitions/Taxable_Amounts"
-                },
-                {
-                    "$ref": "#/definitions/Non_Taxable_Amounts"                
-                },
-                {
-                    "$ref": "#/definitions/Zero_Rated_Amounts"
-                },
-                {
-                    "$ref": "#/definitions/Tax_Collected_Amounts"                
-                },
-                {
-                    "$ref": "#/definitions/Tax_Rates"
-                }
-            ]
+                        {
+                            "$ref": "#/definitions/tax_jurisdictions"                
+                        },
+                        {
+                            "$ref": "#/definitions/taxable_amounts"
+                        },
+                        {
+                            "$ref": "#/definitions/non_taxable_amounts"                
+                        },
+                        {
+                            "$ref": "#/definitions/zero_rated_amounts"
+                        },
+                        {
+                            "$ref": "#/definitions/tax_collected_amounts"                
+                        },
+                        {
+                            "$ref": "#/definitions/tax_rates"
+                        }
+                    ]
                 },
                 "product_title": {
                     "type": "string"
@@ -182,9 +185,6 @@
                     "type": "string",
                     "required" : true,
                     "description" : "Jet's unique ID for a given shipment"
-                },
-                "ship_from_location": {
-                    "$ref": "#/definitions/ship_from_location"
                 },
                 "shipping_carrier": {
                     "type" : "string",
@@ -296,157 +296,157 @@
                 
             }
         },
-        "Tax_Jurisdictions" : {
-            "Title" : "Tax_Jurisdictions",
-            "Type" : "object",
+        "tax_jurisdictions" : {
+            "title" : "TaxJurisdictions",
+            "type" : "object",
             "properties" : {
-                "Tax_Location_Code" : {
+                "tax_location_code" : {
                     "type" : "string",
                     "required" : false,
                     "description" : "Tax location code for the jurisdiction in which tax was collected"
                 },
-                "Tax_City" : {
+                "tax_city" : {
                     "Type" : "string",
                     "required" : false,
                     "description" :"Name of the city in which tax was collected"
                 },
-                "Tax_County" : {
+                "tax_county" : {
                     "Type" : "string",
                     "required" : false,
                     "description" : "Name of the county that tax was collected"
                 },
-                "Tax_State" : {
+                "tax_state" : {
                     "Type" : "string",
                     "required" : false,
                     "descrition" : "Two letter abreviation for the state in which tax was collected"
                 }
             }
         },
-        "Taxable_Amounts" : {
-            "Title" : "Taxable_Amounts",
-            "Type" : "object",
+        "taxable_amounts" : {
+            "title" : "TaxableAmounts",
+            "type" : "object",
             "properties" : {
-                "District_Tax_Amount" : {
+                "district_tax_amount" : {
                     "type" : "number",
                     "required" : false,
                     "description" : "Dollar amount deemed taxable at the district level"
                 },
-                "City_Tax_Amount" : {
-                    "Type" : "number",
+                "city_tax_amount" : {
+                    "type" : "number",
                     "required" : false,
                     "description" :"Dollar amount deemed taxable at the city level"
                 },
-                "County_Tax_Amount" : {
-                    "Type" : "number",
+                "county_tax_amount" : {
+                    "type" : "number",
                     "required" : false,
                     "description" : "Dollar amount deemed taxable at the county level"
                 },
-                "State_Tax_Amount" : {
-                    "Type" : "number",
+                "state_tax_amount" : {
+                    "type" : "number",
                     "required" : false,
                     "descrition" : "Dollar amount deemed taxable at the state level"
                 }
             }
         }, 
-        "Non_Taxable_Amounts" : {
-            "Title" : "Non_Taxable_Amounts",
-            "Type" : "object",
+        "non_taxable_amounts" : {
+            "title" : "NonTaxableAmounts",
+            "type" : "object",
             "properties" : {
-                "District_NonTaxable_Amount" : {
+                "district_non_taxable_amount" : {
                     "type" : "number",
                     "required" : false,
                     "description" : "Dollar amount deemed nontaxable at the district level"
                 },
-                "City_NonTaxable_Amount" : {
+                "city_non_taxable_amount" : {
                     "Type" : "number",
                     "required" : false,
                     "description" :"Dollar amount deemed nontaxable at the city level"
                 },
-                "County_NonTaxable_Amount" : {
+                "county_non_taxable_amount" : {
                     "Type" : "number",
                     "required" : false,
                     "description" : "Dollar amount deemed nontaxable at the county level"
                 },
-                "State_NonTaxable_Amount" : {
+                "state_non_taxable_amount" : {
                     "Type" : "number",
                     "required" : false,
                     "descrition" : "Dollar amount deemed nontaxable at the state level"
                 }
             }
         },
-        "Zero_Rated_Amounts" : {
-            "Title" : "Zero_Rated_Amounts",
-            "Type" : "object",
+        "zero_rated_amounts" : {
+            "title" : "ZeroRatedAmounts",
+            "type" : "object",
             "properties" : {
-                "District_Zero_Rated_Amount" : {
+                "district_zero_rated_amount" : {
                     "type" : "number",
                     "required" : false,
                     "description" : "The amount associated with a 0% tax location at the district level"
                 },
-                "City_Zero_Rated_Amount" : {
-                    "Type" : "number",
+                "city_zero_rated_amount" : {
+                    "type" : "number",
                     "required" : false,
                     "description" :"The amount associated with a 0% tax location at the city level"
                 },
-                "County_Zero_Rated_Amount" : {
-                    "Type" : "number",
+                "county_zero_rated_amount" : {
+                    "type" : "number",
                     "required" : false,
                     "description" : "The amount associated with a 0% tax location at the county level"
                 },
-                "State_Zero_Rated_Amount" : {
-                    "Type" : "number",
+                "state_zero_rated_amount" : {
+                    "type" : "number",
                     "required" : false,
                     "descrition" : "The amount associated with a 0% tax location at the state level"
                 }
             }
         },
-        "Tax_Collected_Amounts" : {
-            "Title" : "Tax_Collected_Amounts",
-            "Type" : "object",
+        "tax_collected_amounts" : {
+            "title" : "TaxCollectedAmounts",
+            "type" : "object",
             "properties" : {
-                "Distict_Tax_Collected" : {
+                "distict_tax_collected" : {
                     "type" : "number",
                     "required" : false,
                     "description" : "Amount of tax collected at the district level"
                 },
-                "City_Tax_Collected" : {
-                    "Type" : "number",
+                "city_tax_collected" : {
+                    "type" : "number",
                     "required" : false,
                     "description" :"Amount of tax collected at the City level"
                 },
-                "County_Tax_Collected" : {
-                    "Type" : "number",
+                "county_tax_collected" : {
+                    "type" : "number",
                     "required" : false,
                     "description" : "Amount of tax collected at the county level"
                 },
-                "State_Tax_Collected" : {
-                    "Type" : "number",
+                "state_tax_collected" : {
+                    "type" : "number",
                     "required" : false,
                     "descrition" : "Amount of tax collected at the state level"
                 }
             }
         },
-        "Tax_Rates" : {
-            "Title" : "Tax_Rates",
-            "Type" : "object",
+        "tax_rates" : {
+            "title" : "TaxRates",
+            "type" : "object",
             "properties" : {
-                "District_Tax_Rate" : {
+                "district_tax_rate" : {
                     "type" : "number",
                     "required" : false,
                     "description" : "District tax rate"
                 },
-                "City_Tax_Rate" : {
-                    "Type" : "number",
+                "city_tax_rate" : {
+                    "type" : "number",
                     "required" : false,
                     "description" :"City tax rate"
                 },
-                "County_Tax_Rate" : {
-                    "Type" : "number",
+                "county_tax_rate" : {
+                    "type" : "number",
                     "required" : false,
                     "description" : "County tax rate"
                 },
-                "State_Tax_Rate" : {
-                    "Type" : "number",
+                "state_tax_rate" : {
+                    "type" : "number",
                     "required" : false,
                     "descrition" : "State tax rate"
                 }
@@ -513,7 +513,7 @@
             }
         },
         "item_price" : {
-            "title" : "Item_price",
+            "title" : "ItemPrice",
             "type" : "object",
             "properties" : {
                 "base_price" : {
