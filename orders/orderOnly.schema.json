@@ -25,10 +25,10 @@
         "shipping_to": {
             "$ref": "#/definitions/shipping_address"
         },
-        "items": {
+        "order_items": {
             "type": "array",
             "items": {
-                "$ref": "#/definitions/item"
+                "$ref": "#/definitions/order_item"
             }
         },
        "order_detail": {
@@ -101,8 +101,8 @@
                 }
             ]
         },
-        "item": {
-            "title": "Item",
+        "order_item": {
+            "title": "OrderItem",
             "type": "object",
             "properties": {
                 "order_item_id": {
@@ -145,26 +145,32 @@
                 },
                 "tax_info": {
                     "type" : "object",
-                    "all_of": [
-                {
-                    "$ref": "#/definitions/tax_jurisdictions"                
-                },
-                {
-                    "$ref": "#/definitions/taxable_amounts"
-                },
-                {
-                    "$ref": "#/definitions/non_taxable_amounts"                
-                },
-                {
-                    "$ref": "#/definitions/zero_rated_amounts"
-                },
-                {
-                    "$ref": "#/definitions/tax_collected_amounts"                
-                },
-                {
-                    "$ref": "#/definitions/tax_rates"
-                }
-            ]
+                    "properties": {
+                        "tax_jurisdictions": { 
+                            "type": "object",
+                            "$ref": "#/definitions/tax_jurisdictions"                
+                        },
+                        "taxable_amounts": {
+                            "type": "object",
+                            "$ref": "#/definitions/amounts"
+                        },
+                        "non_taxable_amounts": {
+                            "type": "object",
+                            "$ref": "#/definitions/amounts"                
+                        },
+                        "zero_rated_amounts": {
+                            "type": "object",
+                            "$ref": "#/definitions/amounts"
+                        },
+                        "tax_collected_amounts": {
+                            "type": "object",
+                            "$ref": "#/definitions/amounts"                
+                        },
+                        "tax_rates": {
+                            "type": "object",
+                            "$ref": "#/definitions/amounts"
+                        }
+                    }
                 },
                 "product_title": {
                     "type": "string"
@@ -292,138 +298,32 @@
                 }
             }
         },
-        "taxable_amounts" : {
-            "title" : "TaxableAmounts",
-            "type" : "object",
-            "properties" : {
-                "district_tax_amount" : {
-                    "type" : "number",
-                    "required" : false,
-                    "description" : "Dollar amount deemed taxable at the district level"
+        "amounts": {
+            "title": "Amounts",
+            "type": "object",
+            "properties": {
+                "district_amount": {
+                    "type": "number",
+                    "required": false,
+                    "description": "Amount at the disctrict level"
                 },
-                "city_tax_amount" : {
-                    "type" : "number",
-                    "required" : false,
-                    "description" :"Dollar amount deemed taxable at the city level"
+                "city_amount": {
+                    "type": "number",
+                    "required": false,
+                    "description": "Amount at the city level"
                 },
-                "county_tax_amount" : {
-                    "type" : "number",
-                    "required" : false,
-                    "description" : "Dollar amount deemed taxable at the county level"
+                "county_amount": {
+                    "type": "number",
+                    "required": false,
+                    "description": "Amount at the county level"
                 },
-                "state_tax_amount" : {
-                    "type" : "number",
-                    "required" : false,
-                    "descrition" : "Dollar amount deemed taxable at the state level"
-                }
-            }
-        }, 
-        "non_taxable_amounts" : {
-            "title" : "NonTaxableAmounts",
-            "type" : "object",
-            "properties" : {
-                "district_non_taxable_amount" : {
-                    "type" : "number",
-                    "required" : false,
-                    "description" : "Dollar amount deemed nontaxable at the district level"
-                },
-                "city_non_taxable_amount" : {
-                    "type" : "number",
-                    "required" : false,
-                    "description" :"Dollar amount deemed nontaxable at the city level"
-                },
-                "county_non_taxable_amount" : {
-                    "type" : "number",
-                    "required" : false,
-                    "description" : "Dollar amount deemed nontaxable at the county level"
-                },
-                "state_non_taxable_amount" : {
-                    "type" : "number",
-                    "required" : false,
-                    "descrition" : "Dollar amount deemed nontaxable at the state level"
+                "state_amount": {
+                    "type": "number",
+                    "required": false,
+                    "description": "Amount at the state level"
                 }
             }
         },
-        "zero_rated_amounts" : {
-            "title" : "ZeroRatedAmounts",
-            "type" : "object",
-            "properties" : {
-                "district_zero_rated_amount" : {
-                    "type" : "number",
-                    "required" : false,
-                    "description" : "The amount associated with a 0% tax location at the district level"
-                },
-                "city_zero_rated_zmount" : {
-                    "type" : "number",
-                    "required" : false,
-                    "description" :"The amount associated with a 0% tax location at the city level"
-                },
-                "county_zero_rated_amount" : {
-                    "type" : "number",
-                    "required" : false,
-                    "description" : "The amount associated with a 0% tax location at the county level"
-                },
-                "state_zero_rated_amount" : {
-                    "type" : "number",
-                    "required" : false,
-                    "descrition" : "The amount associated with a 0% tax location at the state level"
-                }
-            }
-        },
-        "tax_collected_amounts" : {
-            "title" : "TaxCollectedAmounts",
-            "type" : "object",
-            "properties" : {
-                "distict_tax_collected" : {
-                    "type" : "number",
-                    "required" : false,
-                    "description" : "Amount of tax collected at the district level"
-                },
-                "city_tax_collected" : {
-                    "type" : "number",
-                    "required" : false,
-                    "description" :"Amount of tax collected at the City level"
-                },
-                "county_tax_collected" : {
-                    "type" : "number",
-                    "required" : false,
-                    "description" : "Amount of tax collected at the county level"
-                },
-                "state_tax_collected" : {
-                    "type" : "number",
-                    "required" : false,
-                    "descrition" : "Amount of tax collected at the state level"
-                }
-            }
-        },
-        "tax_rates" : {
-            "title" : "TaxRates",
-            "type" : "object",
-            "properties" : {
-                "district_tax_rate" : {
-                    "type" : "number",
-                    "required" : false,
-                    "description" : "District tax rate"
-                },
-                "city_tax_rate" : {
-                    "type" : "number",
-                    "required" : false,
-                    "description" :"City tax rate"
-                },
-                "county_tax_rate" : {
-                    "type" : "number",
-                    "required" : false,
-                    "description" : "County tax rate"
-                },
-                "state_tax_rate" : {
-                    "type" : "number",
-                    "required" : false,
-                    "descrition" : "State tax rate"
-                }
-
-            }
-        },
-        
         "shipping_method": {
             "title": "Shipping_Method",
             "type": "string",
@@ -439,7 +339,7 @@
             List of shipping methods the merchant has set up"
         },
         "item_price" : {
-            "title" : "Item_price",
+            "title" : "ItemPrice",
             "type" : "object",
             "properties" : {
                 "base_price" : {

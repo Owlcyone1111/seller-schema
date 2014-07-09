@@ -25,10 +25,10 @@
         "shipping_to": {
             "$ref": "#/definitions/shipping_address"
         },
-        "items": {
+        "order_items": {
             "type": "array",
             "items": {
-                "$ref": "#/definitions/item"
+                "$ref": "#/definitions/order_item"
             }
         },
         "shipments": {
@@ -104,8 +104,8 @@
                 }
             ]
         },
-        "item": {
-            "title": "Item",
+        "order_item": {
+            "title": "OrderItem",
             "type": "object",
             "properties": {
                 "order_item_id": {
@@ -388,7 +388,7 @@
             List of shipping methods the merchant has set up"
         },
         "shipping_item": {
-            "title": "Shipping_Item",
+            "title": "ShippingItem",
             "type": "object",
             "properties": {
                 "shipment_item_id": {
