@@ -1,5 +1,5 @@
 {
-	"serivce_level": "standard",
+	"service_level": "Standard",
 	"shipping_carrier": "UPS",
 	"shipping_method": "UPS Ground",
 	"override_type": "Additional Charge",

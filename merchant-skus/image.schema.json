@@ -1,7 +1,9 @@
 {
+    "$schema" : "http://json-schema.org/draft-03/schema",	
 	"title": "Image",
 	"type": "object",
 	"description": "This schema is used to set images for merchant skus",
+    "additionalProperties" : false,	
 	"properties": {
 		"image_url": {
 			"type": "string",

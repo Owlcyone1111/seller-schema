@@ -1,10 +1,14 @@
 {
+    "$schema" : "http://json-schema.org/draft-03/schema",
 	"title": "Inventory",
 	"type": "object",
 	"description": "This schema is used to set inventory counts on merchant skus",
+    "additionalProperties" : false,
 	"properties": {
 		"quantity": {
 			"type": "integer",
+            "required": true,
+            "minimum" : 0,
 			"description": "Quantity of the given Merchant SKU."
 		}
 	}

@@ -1,11 +1,14 @@
 {
+    "$schema" : "http://json-schema.org/draft-03/schema",		
 	"title": "Price",
 	"type": "object",
+    "additionalProperties" : false,		
 	"description": "This schema is used to set prices for merchant skus",
 	"properties": {
 		"price": {
 			"type": "number",
 			"required": true,
+			"minimum" : 0.0,
 			"description": "Price of the given Merchant SKU
 
 			#Valid values
