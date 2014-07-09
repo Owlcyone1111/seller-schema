@@ -147,6 +147,7 @@
                     }
                 },
                 "tax_info": {
+					"title": "TaxInfo",
                     "type" : "object",
                     "properties": {
 	                    "tax_jurisdictions": { 
@@ -312,17 +313,17 @@
                     "description" : "Tax location code for the jurisdiction in which tax was collected"
                 },
                 "tax_city" : {
-                    "Type" : "string",
+                    "type" : "string",
                     "required" : false,
                     "description" :"Name of the city in which tax was collected"
                 },
                 "tax_county" : {
-                    "Type" : "string",
+                    "type" : "string",
                     "required" : false,
                     "description" : "Name of the county that tax was collected"
                 },
                 "tax_state" : {
-                    "Type" : "string",
+                    "type" : "string",
                     "required" : false,
                     "descrition" : "Two letter abreviation for the state in which tax was collected"
                 }
