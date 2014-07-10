@@ -7,13 +7,13 @@
         "type" : "array",
         "defintion" : "Contact information for various types of commnications you may want for your organization",
         "items" : {
-            "$ref" : "#/definitions/contact"
+            "$ref" : "#/definitions/general_communication_info"
             }
         },
         "merchant_order_communication": {
                 "type" :"array",
                 "items":{
-				    "$ref": "#/definitions/merchant_fc_communication_info"
+				    "$ref": "#/definitions/shipping_location_communication_info"
                 }
 		},
     	"return_communication": {
@@ -67,8 +67,8 @@
             "title": "merchant_shipping_location_communication_info",
  			"type": "object",
             "properties": {
-                "shipping_location"
-                	"type": "sting",
+                "shipping_location" :{
+                	"type": "string",
                 	"required": true,
                 	"description" : "name of the given merchant's 'ship from location'"
                 },
@@ -90,13 +90,14 @@
                     "type": "string",
                        "description" : "phone number or phone numbers where you want merhcant order cancel alert texts sent"
                 }
-            },
+            }
+        },
         "return_destination_communication_info": {
             "title": "return_destination_communication_info",
             "type": "object",
             "properties": {
-                "return_destination_name"
-                    "type": "sting",
+                "return_destination_name" : {
+                    "type": "string",
                     "required": true,
                     "description" : "name of the given return location"
                 },
@@ -111,6 +112,5 @@
                 }
             }
         }
-
-    	
+    }        
 }

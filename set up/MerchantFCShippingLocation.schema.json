@@ -38,9 +38,10 @@
 			"description": "drop ship location address address zip code"
 		},
 		"merchant_operating_days": {
-			"type": "string",
-			"required": true,
-			"enum":[
+			"type": "array",
+			"items": {
+				"type" : "string",
+				"enum":[
 					"sun",
 					"mon",
 					"tue",
@@ -48,9 +49,9 @@
 					"thu",
 					"fri",
 					"sat"],
+				},
+			"minItems" :1,		
 			"description": "Days of the week that the given shipping location is open for operations.  
-
-			Enter all that apply in pipe delimited format. Ex: Mon | Tues| Wed | Thu  	
 
 			#Valid Values
 
@@ -72,7 +73,7 @@
 			"type": "integer",
 			"required":true,
 			"minimum": 0,
-			"description" : "Number of business days from when you send order to the drop shipper until it will be shipped
+			"description" : "Number of business days from when you receive the order until it will be shipped
 
 			#Valid Values
 
@@ -123,7 +124,7 @@
             "properties": {
                 "local_pickup_day": {
                     "type": "string",
-					"enum":[
+                    "enum":[
 							"sun",
 							"mon",
 							"tue",
@@ -131,7 +132,8 @@
 							"thu",
 							"fri",
 							"sat"],
-                    "description":"The day of the week that you are open for local pickup
+					
+                    "description": "The day of the week that you are open for local pickup
 
                     #Valid Values
 
@@ -148,14 +150,16 @@
 					*'fri' - Friday
 
 					*'sat' - Saturday"                 
+                
                 },
+
                 "local_pickup_open_time": {
                     "type": "string",
-                    "description":"Time that given merchant_fc is open for local pickup on the given local_pickup_day"
+                    "description":"Time that given merchant's 'ship from location' is open for local pickup on the given local_pickup_day"
                 },
                 "local_pickup_close_time":{
                 	"type":"string",
-                	"description":"Time that the given merchant_fc closes for local pickup on the given local_pickup_day"
+                	"description":"Time that the given merchant's 'ship from location' closes for local pickup on the given local_pickup_day"
                 }
             }
         },
@@ -230,7 +234,7 @@
                     "items":{
                     	"shipping_option_day":{
                     		"type":"string",
-                    		"required":"true",
+                    		"required":true,
 							"enum":[
 									"sun",
 									"mon",
@@ -272,4 +276,4 @@
             }
         }
 	}	
-	
+}	

@@ -24,9 +24,10 @@
 			*'DropShip'"
 		},
 		"merchant_operating_days": {
-			"type": "string",
-			"required": true,
-			"enum":[
+			"type": "array",
+			"items" : {
+				"type" : "string",
+				"enum":[
 					"sun",
 					"mon",
 					"tue",
@@ -34,11 +35,11 @@
 					"thu",
 					"fri",
 					"sat"],
+				},
+			"minItems" : 1,
 			"description": "Days of the week that you will process and ship orders for 'location_type' = 'Merchant Controlled' 
 
 			Days of the week that you will process and submit orders to the 3rd party fulfiller for 'location_type' =  'FBA' or 'DropShip'  
-
-			Enter all that apply in pipe delimited format. Ex: Mon | Tues| Wed | Thu	
 
 			#Valid Values
 
@@ -57,8 +58,10 @@
 			*'sat' - Saturday"
 		},
 		"ds_operating_days": {
-			"type": "string",
-			"enum":[
+			"type": "array",
+			"items" : {
+				"type" : "string",
+				"enum":[
 					"sun",
 					"mon",
 					"tue",
@@ -66,9 +69,11 @@
 					"thu",
 					"fri",
 					"sat"],
-			"description": "Days of the week that the given drop ship location is open for operations.  Enter all that apply in pipe delimited format. Ex: Mon | Tues| Wed | Thu
+				},
+		"minItems" : 1,
+		"description": "Days of the week that the given drop ship location is open for operations. 
 
-			#Logic
+		#Logic
 
 			This is required if 'location_type' = 'dropship'
 
@@ -139,14 +144,17 @@
 		},
 
 		"service_level": {
-			"type":"string",
-			"required": true,
-			"enum":[
+			"type":"array",
+			"items": {
+				"type" : "string",
+				"enum":[
 					"Standard",
 					"Expedited",
 					"Scheduled",
 					"NextDay",
 					"SecondDay"],
+				},
+			"minItems" : 1,
 			"description": "Provide the list of ServiceLevels that are supported for delivery from this location
 
 			#Valid Values

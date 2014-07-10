@@ -13,22 +13,22 @@
 			"description": "Merchant_FCs where box is valid.  Leave blank if box is in use at all shipping locations.  If box is not in use at all Shipping locations enter the shipping locations where box is in use in pipe delimited form.  EX:  West Coast | East Coast"
 		},
 		"box_length_inches": {
-			"type": "nubmer",
+			"type": "number",
 			"required": true,
 			"description": "The length of the box in inches"	
 		},
 		"box_width_inches": {
-			"type": "string",
+			"type": "number",
 			"required": true,
 			"description": "The width of the box in inches"
 		},
 		"box_height_inches": {
-			"type": "string",
+			"type": "number",
 			"required": true,
 			"description": "The height of the box in inches"
 		},
 		"max_weight_pounds":{
-			"type": "string",
+			"type": "number",
 			"description": "The maximum weight limit of the given box in pounds"
 		},
 	}

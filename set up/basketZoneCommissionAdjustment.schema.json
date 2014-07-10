@@ -25,7 +25,7 @@
 								"all zone deliveries",
 								"local pick up",
 								"local delivery",
-								"zone" 2,
+								"zone 2",
 								"zone 3",
 								"zone 4",
 								"zone 5",
@@ -71,7 +71,7 @@
 
 						A number with up to 1 digit allowed to the left of the deimal point and 2 digits to the right of the decimal point"
 					}
-
+				}
 		}
 	}
 }

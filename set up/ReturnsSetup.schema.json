@@ -42,8 +42,8 @@
             "title": "Return Address",
  			"type": "object",
             "properties": {
-                "return_destination_name"
-                	"type": "sting",
+                "return_destination_name" :{
+                	"type": "string",
                 	"required": true,
                 	"description" : "Name of the given return_destination"
                 },
@@ -74,5 +74,5 @@
                 }
             }
         }
-    	
+    }	
 }
