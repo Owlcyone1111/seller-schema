@@ -1,0 +1,9 @@
+﻿{
+  "title": "AcceptedToC",
+  "type": "object", 
+  "properties" : {
+    "revision": { "type":  "string", "required" :  true}, 
+    "url": { "type":  "string", "required" :  true }, 
+    "on": { "type":  "string", "required" :  true}
+  }
+}

@@ -1,0 +1,23 @@
+﻿{
+  "title": "AddressVerification",
+  "type": "object", 
+  "properties": {
+      "additionalInfo" : { "type":  "string"},
+      "alternatives": { 
+        "type":  "array",
+        "items" : { "$ref" :  "#/definitions/short-address" }
+    }
+   }, 
+   
+  "definitions" :  {
+      "short-address" :  {
+          "title": "ShortAddress",
+          "type": "object", 
+          "properties": {
+            "line1": { "type":  "string", "required" :  true }, 
+            "line2": { "type":  "string", "required" :  true }, 
+            "zip": { "type":  "string", "required" :  true }
+          }
+        }
+    }
+}
