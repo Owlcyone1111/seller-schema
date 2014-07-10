@@ -1,0 +1,14 @@
+{
+    "title": "OrderLinks",
+    "type": "object",
+    "properties": {
+    	"order_urls": {
+    		"type": "array",
+    		"description": "List of URLs of pending orders",
+    		"items": {
+    			"type": "string",
+    			"description": "The unique resource URL where this pending order can be found"
+    		}
+    	}
+    }
+}
