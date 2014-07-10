@@ -28,7 +28,7 @@
                     "type": "string",
                     "description" : "Jet's unique identifier for an item in a merchant order"
                 },
-                "ref_item_id": {
+                "alt_item_id": {
                     "type": "string",
                     "description" : "Optional seller supplied ID for an item in an order.  If this value is specified with the Jet's order_item_id, Jet will map the two IDs and you can then use your own order item ID for subsequent feeds relating to that order item."
                 }

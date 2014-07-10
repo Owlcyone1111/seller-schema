@@ -10,7 +10,7 @@ let schema = JsonSchema.Parse("""
     "properties": {
 		"a": {
 			"type": "number",
-			"
+			"minimum" : 0.01
 		}
     }
 }
@@ -19,6 +19,6 @@ let schema = JsonSchema.Parse("""
 //let obj = JObject([| JProperty("product_title", String.replicate 501 "a" )  |])
 //let obj = JObject([| JProperty("product_title", "a" ), JProperty("foo", "a" )  |])
 //let obj = JObject([| JProperty("bullets", JArray([|  "a"; "asdf"; "asd"; "asd"; "asd"; "asdasd" |]) ) |])
-let obj = JObject([| JProperty("a", 1) |])
+let obj = JObject([| JProperty("a", -1) |])
 obj.Validate(schema)
 
