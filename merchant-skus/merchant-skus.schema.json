@@ -66,9 +66,9 @@
 			"
 		},
 		"multipack_quantity": {
-			"type": "number",
+			"type": "int",
 			"required": true,
-			"minimum" : 0.01,
+			"minimum" : 1,
 			"description": "Number of items with the given standard_product_code that makes up your merchant sku
 
 			"
@@ -138,8 +138,8 @@
 			maximum 5 elements of the 'bullets' array"
 		},
 		"number_units_for_price_per_unit": {
-			"type": "integer",
-			"minimum" : 1,
+			"type": "number",
+			"minimum" : 0.0,
 			"description": "For Price Per Unit calculations, the number of units included in the merchant sku. The unit of measure must be specified in order to indicate what is being measured by the unit-count. "
 		},
 		"type_of_unit_for_price_per_unit": {
