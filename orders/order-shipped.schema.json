@@ -14,19 +14,19 @@
             "title": "Shipment",
             "type": "object",
             "properties": {
-                "id": {
+                "shipment_id": {
                     "type": "string"
                 },
-                "date": {
+                "shipment_date": {
                     "type": "string"
                 },
-                "method": {
+                "shipment_method": {
                     "type": "string"
                 },
-                "tracking_number": {
+                "shipment_tracking_number": {
                     "type": "string"
                 },
-                "items": {
+                "shipment_items": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/shipment_item"
@@ -38,14 +38,14 @@
             "title": "ShipmentItem",
             "type": "object",
             "properties": {
-                "id": {
+                "shipment_item_id": {
                     "type": "string"
                 },
                 "merchant_sku": {
                     "type": "string"
                 },
-                "quantity": {
-                    "type": "number"
+                "shipment_sku_quantity": {
+                    "type": "integer"
                 }
             }
         }
