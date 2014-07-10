@@ -66,7 +66,7 @@
 			"
 		},
 		"multipack_quantity": {
-			"type": "int",
+			"type": "integer",
 			"required": true,
 			"minimum" : 1,
 			"description": "Number of items with the given standard_product_code that makes up your merchant sku
