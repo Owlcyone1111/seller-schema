@@ -3,7 +3,14 @@
 	"type": "object",
 	"description": "This schema is used to set up the email addresses and phone numbers for texts for jet to use for communicating with you for various reasons",
 	"properties": {
-		"merchant_order_communication": {
+		"general_communication_info" : {
+        "type" : "array",
+        "defintion" : "Contact information for various types of commnications you may want for your organization",
+        "items" : {
+            "$ref" : "#/definitions/contact"
+            }
+        },
+        "merchant_order_communication": {
                 "type" :"array",
                 "items":{
 				    "$ref": "#/definitions/merchant_fc_communication_info"
@@ -15,79 +22,55 @@
                     "$ref": "#/definitions/return_destination_communication_info"
                 }
         },
-        "listing_status_email": {
-    		"type": "array",
-    		"required": true,
-            "items":{
-                "type":"string"
-            },
-    		"description": "email address where you want listing status updates sent"
-    	},
-    	"listing_status_text":{
-            "type": "array",
-            "items":{
-                "type":"string"
-            },
-            "description": "phone number where you want listing status update texted"
-    	},
-    	"product_question_email":{
-            "type": "array",
-            "required": true,
-            "items":{
-                "type":"string"
-            },
-            "description": "email address where want questions about your products sent"
-        },
-        "product_question_text":{
-            "type": "array",
-            "items":{
-                "type":"string"
-            },
-            "description": "phone number where you want questions about your product texted"
-        },
-        "business_update_email":{
-            "type": "array",
-            "required": true,
-            "items":{
-                "type":"string"
-            },
-            "description": "email address where you want business updates sent"
-        },
-        "business_update_text":{
-            "type": "array",
-            "required": true,
-            "items":{
-                "type":"string"
-            },
-            "description": "phone number where you business updates texted"
-        },
-        "technical_notification_email":{
-            "type": "array",
-            "required": true,
-            "items":{
-                "type":"string"
-            },
-            "description": "email address where you want technical notifications sent"
-        },
-        "technical_notification_text":{
-            "type": "array",
-            "required": true,
-            "items":{
-                "type":"string"
-            },
-            "description": "phone number where you want technical notifications texted"
-        }
+        
     },
 
     "definitions": {
+        "general_communication_info": {
+            "type" : "object",
+            "title" : "general_communication_info",
+            "enum" : ["listing status","product questions" , "business updates","technical notifications"],
+            "properties" : {
+                "information_type" :{
+                    "type" : "string",
+                    "description" : "the type of contact that the phone number and email address is for
+
+                    #Valid Values
+
+                    *'listing status' - listing status updates 
+
+                    *'product questions' - questions about your products 
+
+                    *'business update' - where you want business updates 
+
+                    *'technical notifications' - technical notifications and updates"
+                },
+
+                "contact_name" : {
+                    "type" : "string",
+                    "description" : "name of the person who will be contacted for imformation regarding the information type"
+                },
+
+                "contact_text_number" : {
+                    "type" : "string",
+                    "description" : "phone number that should be texted with the information regarding the information type "
+                },
+
+                "contact_email" : {
+                    "type" : "string",
+                    "description" : "email that should be sent the information regarding the information type "
+                }
+            }
+
+        },
         "shipping_location_communication_info": {
-            "title": "merchant_fc_communication_info",
+            "title": "merchant_shipping_location_communication_info",
  			"type": "object",
             "properties": {
                 "shipping_location"
                 	"type": "sting",
                 	"required": true,
-                	"description" : "name of the given Merchant FC"
+                	"description" : "name of the given merchant's 'ship from location'"
                 },
                 "merchant_order_alert_email": {
                     "type": "string",
