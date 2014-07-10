@@ -105,7 +105,7 @@
 			"type": "integer",
 			"required" : true,
 			"minimum": 0,
-			"description": "Number of business days from receipt of an order  until it will be transmitted to FBA or Drop Ship location
+			"description": "Number of business days from receipt of an order  until it will be transmitted to the Drop Ship location
 
 			#Valid Values
 

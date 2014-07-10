@@ -19,11 +19,11 @@
 
 			#Valid Value
 
-			*'seller controlled'
+			*'merchant controlled'
 			*'FBA'
 			*'DropShip'"
 		},
-		"seller_operating_days": {
+		"merchant_operating_days": {
 			"type": "string",
 			"required": true,
 			"enum":[
@@ -34,7 +34,7 @@
 					"thu",
 					"fri",
 					"sat"],
-			"description": "Days of the week that you will process and ship orders for 'location_type' = 'Seller Controlled' 
+			"description": "Days of the week that you will process and ship orders for 'location_type' = 'Merchant Controlled' 
 
 			Days of the week that you will process and submit orders to the 3rd party fulfiller for 'location_type' =  'FBA' or 'DropShip'  
 
@@ -112,12 +112,12 @@
 			"required": true,
 			"description": "Time that a shipment must be received by in order to count as being received that calendar day for purposes of calculating  'time_to_process' for 'location_type' = 'FBA' or 'DropShip' 
 
-			Time of day that a shipment must be received by in order to count as being received that calendar day for purposes of calculating 'fulfillment_time' for 'location_type' = 'Seller Controlled'"
+			Time of day that a shipment must be received by in order to count as being received that calendar day for purposes of calculating 'fulfillment_time' for 'location_type' = 'Merchant Controlled'"
 		},
 		"fulfillment_time":{
 			"type": "integer",
 			"minimum": 0,
-			"description" : "Number of business days from receipt of an order until it will be shipped for order that are LocationType = 'Seller Controlled', if it is received before the 'order_cutoff_time' for the given shipping location
+			"description" : "Number of business days from receipt of an order until it will be shipped for order that are LocationType = 'Merchant Controlled', if it is received before the 'order_cutoff_time' for the given shipping location
 
 			Number of business days that drop shipper will take to fulfill an order once you have notified the drop shipper of the order
 
@@ -125,7 +125,7 @@
 
 			#Logic
 
-			Required if 'location_type' = 'Seller Controlled' or 'DropShip'
+			Required if 'location_type' = 'Merchant Controlled' or 'DropShip'
 
 			#Valid Values
 

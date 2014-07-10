@@ -11,23 +11,7 @@
 
 			You must enter the name of a generic shipping location that you have already set up, for which you have defined 'shipping_location_name'"
 		},
-		"drop_ship_location": {
-			"type": "string",
-			"description": "this the name used to identify a specific drop ship location.  Use this field if you are defining the holidays observed by a specific drop ship location you have set up
-
-			#Valid Value
-
-			You must enter the name of a 'drop_ship_location' that you have already set up"
-		},
-		"merchant_fc": {
-			"type": "string",
-			"description": "this the name used to identify a specific merchant shipping location.  Use this field if you are defining the holidays observed by a merchant FC you have set up
-
-			#Valid Value
-
-			You must enter the name of a 'merchant_fc' that you have already set up'"
-		},
-        "federal_holidays_observed": {
+		"federal_holidays_observed": {
     		"type": "array",
     		"required": true,
             "items":{
@@ -71,7 +55,7 @@
 
 				   		For example the '4th Friday of January'.  
 
-				   		This is entered as 'Relative Day | Day of week three letter abbreviation | Number Mont'  so the above would be entered as '4 | Fri | 1'
+				   		This is entered as 'Relative Day | Day of week three letter abbreviation | Number Month'  so the above would be entered as '4 | Fri | 1'
 
 				   		#Logic
 

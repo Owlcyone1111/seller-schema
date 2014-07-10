@@ -60,15 +60,15 @@
 			*Toys & Games"
 		},
 		"fee_adjustment": {
-			"type": "string",
+			"type": "number",
 			"required": true,
-			"description": "This is the increase in commision you are willing to pay for products in given jet category if the customer waives their ability to return them.  
+			"description": "This is the increase in commision you are willing to pay for products in the given jet category if the customer waives their ability to return them.  
 
 			For example, if you want to increase the commission you are willing to pay from a base rate of 15% to 17%, then you should enter '.02'
 
 			#Valid values
 
-			A mumber with up to 1 digit allowed to the left of the deimal point and 2 digits to the right of the decimal point"
+			A number with up to 1 digit allowed to the left of the deimal point and 2 digits to the right of the decimal point"
 		}
 	}
 }
