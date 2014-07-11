@@ -1,19 +1,19 @@
 {
-    "new_id": "76",
+    "alt_order_id": "232145",
     "items": [
         {
-            "id": "8f5ae15b6b414b00a1b9d6ad99166a00",
-            "new_id": "76-i105"
+            "order_item_id": "8f5ae15b6b414b00a1b9d6ad99166a00",
+            "alt_order_item_id": "76-i105"
         }
     ],
     "shipments": [
         {
-            "id": "a172ae641c384c57b3a5b58ae4dd3bd6",
-            "new_id": "76-s2507",
+            "shiopment_id": "a172ae641c384c57b3a5b58ae4dd3bd6",
+            "alt_shipment_id": "76-s2507",
             "items": [
                 {
-                    "id": "9af824b9e4a24854991870db184bbe32",
-                    "new_id": "76-s2507-i105"
+                    "shipment_item_id": "9af824b9e4a24854991870db184bbe32",
+                    "alt_shiopment_item_id": "76-s2507-i105"
                 }
             ]
         }
