@@ -1,9 +1,11 @@
 {
-    "id": "9b13bdd68c314d1b9c8b93277dea4da1",
-    "placed_on": "5/1/2014T0:0:0-5:00",
+    "merchant_order_id" : "9b13bdd68c314d1b9c8b93277dea4da1",
+    "order_placed_date" : "5/1/2014T0:0:0-5:00",
+    "order_transmission_date" : "5/1/2014T1:0:0-5:00",
+
     "buyer": {
-        "name": "Tony Stark",
-        "phone_number": "555-999-9999"
+        "buyer_name": "Tony Stark",
+        "buyer_phone_number": "555-999-9999"
     },
     "shipping_to": {
         "name": "Tony Stark",
