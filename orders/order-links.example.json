@@ -1,7 +1,7 @@
 {
 	"order_urls": [
-		"http://jet.com/api/orders/123",
-		"http://jet.com/api/orders/124",
-		"http://jet.com/api/orders/125"
+		"/orders/123",
+		"/orders/124",
+		"/orders/125"
 	]
 }
