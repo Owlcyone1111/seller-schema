@@ -1,0 +1,55 @@
+{
+    "$schema" : "http://json-schema.org/draft-03/schema",		
+	"title": "Price",
+	"type": "object",
+    "additionalProperties" : false,		
+	"description": "This schema is used to set variation relationships for merchant skus",
+	"properties": {		
+		"relationship": {
+			"type": "string",
+			"enum" : ["Variation", "Accessory"],
+			"required" : true,			
+			"description": "Variation or Accessory
+
+			#Logic
+
+			This field is required if you are setting up a Variation relationship between a set merchant skus
+
+			##Valid Values
+
+			*Variation
+
+			*Accessory"
+		},
+		"variation_refinements": {
+			"type": "string",
+			"required" : true,
+			"description": "The refinements that vary for a set  of Parent/Child merchant skus
+
+			#Logic
+
+			This field is required if you are setting up a Variation relationship between a set merchant skus
+			
+			#Valid Values
+
+			The valid 'variation_refinements vary depending on the jet_browse_node_id, see category specific documentation for details"
+		},
+		"children_skus": {
+			"type": "array",
+			"required" : true,
+			"items" : {
+					"type" : "string",
+					"description" : "merchant SKU"
+				},
+			"description": "The refinements that vary for a set  of Parent/Child merchant skus
+
+			#Logic
+
+			This field is required if you are setting up a Variation relationship between a set merchant skus
+			
+			#Valid Values
+
+			The valid 'variation_refinements vary depending on the jet_browse_node_id, see category specific documentation for details"
+		}
+	}
+}

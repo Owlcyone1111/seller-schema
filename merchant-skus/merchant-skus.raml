@@ -20,6 +20,21 @@ mediaType: application/json
                         schema: !include merchant-skus.schema.json
                         example: !include merchant-skus.example.json
             404:
+    /relationships/{id}:
+        put:
+            queryParameters:
+                merchantId:
+                    description: Merchant Id provided by Jet
+            description: This method updates variation relationships between merchant skus
+            body:
+                application/json:
+                    schema: !include relationship.schema.json
+                    example: !include relationship.example.json
+            responses:
+                201:
+                204:
+                400:
+                409:            
     /{id}:
         get:
             queryParameters:
@@ -30,8 +45,8 @@ mediaType: application/json
                 200:
                     body:
                         application/json:
-                            schema: !include merchant-skus.schema.json
-                            example: !include merchant-skus.example.json
+                            schema: !include merchant-skus-put.schema.json
+                            example: !include merchant-skus-put.example.json
                 404:
         put:
             queryParameters:
@@ -186,4 +201,4 @@ mediaType: application/json
                     201:
                     204:
                     400:
-                    409:
+                    409:   
