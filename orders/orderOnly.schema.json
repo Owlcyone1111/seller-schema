@@ -20,7 +20,8 @@
 
 
         "buyer": {
-            "$ref": "#/definitions/contact"
+            "$ref": "#/definitions/contact",
+            "description" : "The contact information for the buyer"
         },
         "shipping_to": {
             "$ref": "#/definitions/shipping_address"
@@ -46,12 +47,12 @@
                 "name": {
                     "type": "string",
                     "required": true,
-                    "description" : "Name of the customer"
+                    "description" : "Name of the contact"
                 },
                 "phone_number": {
                     "type": "string",
                     "required": true,
-                    "description" : "Phone number of the customer"
+                    "description" : "Phone number of the contact"
                 }
             }
         },

@@ -50,12 +50,12 @@
                 "name": {
                     "type": "string",
                     "required": true,
-                    "description" : "Name of the customer"
+                    "description" : "Name of the contact"
                 },
                 "phone_number": {
                     "type": "string",
                     "required": true,
-                    "description" : "Phone number of the customer"
+                    "description" : "Phone number of the contact"
                 }
             }
         },
