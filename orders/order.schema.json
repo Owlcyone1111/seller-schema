@@ -20,7 +20,8 @@
 
 
         "buyer": {
-            "$ref": "#/definitions/contact"
+            "$ref": "#/definitions/contact",
+            "description" : "The contact information for the buyer"
         },
         "shipping_to": {
             "$ref": "#/definitions/shipping_address"
@@ -39,9 +40,6 @@
         },
         "ship_from_location": {
             "$ref": "#/definitions/ship_from_location"
-        },
-		"metadata": {
-            "$ref": "#/definitions/metadata"
         }
     },
     "definitions": {
@@ -439,21 +437,7 @@
                 }
             
 
-        },
-        "metadata": {
-            "title": "Metadata",
-            "type": "object",
-            "properties": {
-                "notified_on": {
-                    "type": "string"
-                },
-                "state": {
-                    "type": "string"
-                },
-                "history": {
-                    "type": "array"
-                }
-            }
         }
+        
     }
 }
