@@ -85,7 +85,8 @@ let row name typ (description : string) =
         yield attribute "style" "padding-bottom: 25px;"
         yield div "col-md-3" [ code name ]    
         yield div "col-md-1" [ code typ ]    
-        yield div "col-md-8" [ description.Split('\n') |> convertMarkdown |> element "article" ]
+        if not <| String.IsNullOrWhiteSpace description then
+            yield div "col-md-8" [ description.Split('\n') |> convertMarkdown |> element "article" ]
     ]
 
 let parseProperty (KeyValue(name, prop: JsonSchema)) = 
