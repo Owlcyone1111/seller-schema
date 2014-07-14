@@ -171,7 +171,15 @@
                     }
                 },
                 "product_title": {
-                    "type": "string"
+                    "type": "string",
+                    "maxLength" : 500,
+                    "description": "Short product description
+
+                     #Valid Values
+
+                    1 to 500 alphanumeric characters
+
+                    "
                 },
                 "url": {
                     "type": "string"
