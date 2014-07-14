@@ -1,5 +1,5 @@
 {
-    "title": "MerchantOrder",
+    "title": "MerchantOrderWithShipments",
     "type": "object",
     "properties": {
         "merchant_order_id": {
