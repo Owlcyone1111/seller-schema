@@ -2,6 +2,16 @@
     "title": "OrderShipped",
     "type": "object",
     "properties": {
+        "merchant_order_id": {
+            "type" : "string",
+            "description" : "Jet's unique ID for a given merchant order"
+        },    
+        "alt_order_id": {
+            "type": "string",
+            "description" : "Optional Merchant supplied order ID.  Jet will map this ID to Jet's order_id and you can then use this ID in subsequent messages relating to this order."
+        },
+
+
         "shipments": {
             "type": "array",
             "items": {
@@ -15,17 +25,33 @@
             "type": "object",
             "properties": {
                 "shipment_id": {
-                    "type": "string"
+                    "type": "string",
+                    "description" : "Jet's unique ID for a given shipment"
+                    
                 },
+                "alt_shipment_id": {
+                    "type": "string",
+                    "description" : "Optional Merchant supplied shipment ID.  Jet will map this ID to the Jet's shipment_id and you can then use this ID in subsequent messages relating to this shipment."
+                },
+
+                "shipment_tracking_number": {
+                    "type": "string",
+                    "description" : "packaging tracking number that the carrier is using"
+                },
+
                 "shipment_date": {
-                    "type": "string"
+                    "type": "string",
+                    "description" : "Date/Time that a given shipment was shipped"
                 },
                 "shipment_method": {
-                    "type": "string"
+                    "type": "string",
+                    "description" : "Shipping method used for the given shipment
+
+                    #Valid Values
+
+                    List of ShippingMethods set up by you"
                 },
-                "shipment_tracking_number": {
-                    "type": "string"
-                },
+
                 "shipment_items": {
                     "type": "array",
                     "items": {
@@ -38,14 +64,21 @@
             "title": "OrderShippedShipmentItem",
             "type": "object",
             "properties": {
-                "shipment_item_id": {
-                    "type": "string"
+                 "shipment_item_id": {
+                    "type": "string",
+                    "description" : "Jet's unique identifier for an item in a shipment"
+                },
+                "alt_shipment_item_id": {
+                    "type": "string",
+                    "description" : "Optional seller supplied ID for an item in a specific shipment.  If this value is specified with Jet's shipment_item_id, Jet will map the two IDs and you can then use your own shipment item ID for subsequent feeds relating to that order item."
                 },
                 "merchant_sku": {
-                    "type": "string"
+                    "type": "string",
+                    "description" : "The merchant SKU that is in the given shipment"
                 },
                 "shipment_sku_quantity": {
-                    "type": "integer"
+                    "type": "integer",
+                    "description" : "Quantity of the given SKU that was in the given shipment"
                 }
             }
         }
