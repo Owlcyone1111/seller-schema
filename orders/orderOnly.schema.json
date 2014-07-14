@@ -142,6 +142,7 @@
                     }
                 },
                 "tax_info": {
+                    "title" : "TaxInfo",
                     "type" : "object",
                     "properties": {
                         "tax_jurisdictions": { 
