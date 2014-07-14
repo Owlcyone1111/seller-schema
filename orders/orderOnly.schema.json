@@ -87,7 +87,7 @@
             }
         },
         "shipping_address": {
-            "title": "Shipping_Address",
+            "title": "ShippingAddress",
             "type": "object",
             "properties": {
                 "recipient": {
