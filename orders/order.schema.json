@@ -185,7 +185,7 @@
             }
         },
         "shipment": {
-            "title": "shipment",
+            "title": "Shipment",
             "type": "object",
             "properties": {
                 "shipment_id": {

@@ -9,19 +9,19 @@
         "items": {
             "type": "array",
             "items": {
-                "$ref": "#/definitions/item"
+                "$ref": "#/definitions/order_accept_item"
             }
         },
         "shipments": {
             "type": "array",
             "items": {
-                "$ref": "#/definitions/shipment"
+                "$ref": "#/definitions/order_accept_shipment"
             }
         }
     },
     "definitions": {
-        "item": {
-            "title": "Item",
+        "order_accept_item": {
+            "title": "OrderAcceptItem",
             "type": "object",
             "properties": {
                 "order_item_id": {
@@ -34,8 +34,8 @@
                 }
             }
         },
-        "shipment": {
-            "title": "Shipment",
+        "order_accept_shipment": {
+            "title": "OrderAcceptShipment",
             "type": "object",
             "properties": {
                 "shipment_id": {
@@ -50,13 +50,13 @@
                 "shipment_item": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/shipment_item"
+                        "$ref": "#/definitions/order_accept_shipment_item"
                     }
                 }
             }
         },
-        "shipment_item": {
-            "title": "ShipmentItem",
+        "order_accept_shipment_item": {
+            "title": "OrderAcceptShipmentItem",
             "type": "object",
             "properties": {
                 "shipment_item_id": {

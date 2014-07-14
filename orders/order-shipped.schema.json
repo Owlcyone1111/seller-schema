@@ -10,8 +10,8 @@
         }
     },
     "definitions": {
-        "shipment": {
-            "title": "Shipment",
+        "order_shipped_shipment": {
+            "title": "OrderShippedShipment",
             "type": "object",
             "properties": {
                 "shipment_id": {
@@ -34,8 +34,8 @@
                 }
             }
         },
-        "shipment_item": {
-            "title": "ShipmentItem",
+        "order_shipped_shipment_item": {
+            "title": "OrderShippedShipmentItem",
             "type": "object",
             "properties": {
                 "shipment_item_id": {
