@@ -9,19 +9,18 @@
                 
     },
     "shipping_to": {
-        "shipping_address" : {
-            "recipient" : {
+        "recipient" : {
                 "name" : "Pepper Potts",
                 "phone_number" : " 555-888-8888"
             },
-            "address" : {
+        "address" : {
                 "address1": "10880 Malibu Point",
                 "address2": "",
                 "city": "Malibu",
                 "state": "CA",
                 "zip_code": "90265",
             }
-        }
+        
     },
     "order_items": [
         {
@@ -87,25 +86,15 @@
             "url": ""
         }
     ],
-    "shipments": [
-        {
-            "shipment_id": "a172ae641c384c57b3a5b58ae4dd3bd6",
+    "order_detail": {
             "shipping_carrier" : "UPS",
             "shipping_method" : "UPS_ground",
             "service_level" : "Standard",
             "ship_by": "05/02/2015",
             "delivery_by": "05/10/2014",
-            "shipping_box" : "C01",
-            "shipment_items": [
-                {
-                    "shipment_item_id": "9af824b9e4a24854991870db184bbe32",
-                    "merchant_sku": "B289B4B",
-                    "shipment_sku_quantity": 2
-                }
-            ],
-            "label_url": "1Z12345690876"
-        }
-    ],
+            
+    },
+    
     "ship_from_location" :{
         "name" : "NJ-FC",
         "url" : ""

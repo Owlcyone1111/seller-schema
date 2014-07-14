@@ -36,9 +36,6 @@
         },
         "ship_from_location": {
                     "$ref": "#/definitions/ship_from_location"
-        },
-		"metadata": {
-            "$ref": "#/definitions/metadata"
         }
     },
     "definitions": {
@@ -380,21 +377,6 @@
                 "url": {
                     "type": "string",
                     "required" : false
-                }
-            }
-        },
-		"metadata": {
-            "title": "Metadata",
-            "type": "object",
-            "properties": {
-                "notified_on": {
-                    "type": "string"
-                },
-                "state": {
-                    "type": "object"
-                },
-                "history": {
-                    "type": "array"
                 }
             }
         }

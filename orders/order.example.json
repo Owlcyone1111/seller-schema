@@ -9,19 +9,18 @@
                 
     },
     "shipping_to": {
-        "shipping_address" : {
-            "recipient" : {
+        "recipient" : {
                 "name" : "Pepper Potts",
                 "phone_number" : " 555-888-8888"
             },
-            "address" : {
+        "address" : {
                 "address1": "10880 Malibu Point",
                 "address2": "",
                 "city": "Malibu",
                 "state": "CA",
                 "zip_code": "90265",
             }
-        }
+        
     },
     "order_items": [
         {
