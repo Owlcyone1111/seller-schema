@@ -5,7 +5,7 @@
         "shipments": {
             "type": "array",
             "items": {
-                "$ref": "#/definitions/shipment"
+                "$ref": "#/definitions/order_shipped_shipment"
             }
         }
     },
@@ -29,7 +29,7 @@
                 "shipment_items": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/shipment_item"
+                        "$ref": "#/definitions/order_shipped_shipment_item"
                     }
                 }
             }
