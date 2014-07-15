@@ -373,7 +373,7 @@
     		}
         },
         "ship_from_location": {
-            "title": "ship_from_location",
+            "title": "ShipFromLocation",
             "type": "object",
             "properties": {
                 "name": {

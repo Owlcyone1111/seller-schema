@@ -188,7 +188,7 @@
             }
         },
         "order_detail": {
-            "title": "order_detail",
+            "title": "OrderDetail",
             "type": "object",
             "properties": {
                 "shipping_carrier": {
@@ -372,7 +372,7 @@
 
         },
          "ship_from_location": {
-            "title": "ship_from_location",
+            "title": "ShipFromLocation",
             "type": "object",
             "properties": {
                 "name": {

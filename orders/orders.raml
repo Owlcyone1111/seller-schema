@@ -8,32 +8,47 @@ protocols: [HTTPS]
 mediaType: application/json
 
 /orders:
+    /pending:
+        queryParameters:
+            merchantId:
+                Merchant Id provided by Jet
+        description: This method will provide resource URLs for pending orders
+            responses:
+                200:
+                    body:
+                        application/json:
+                            schema: !include order-links.schema.json
+                            example: !include order-links.example.json
+                404:
+                    description: The requested resource could not be found.  Most likely the Merchant Id is invalid.
     /withShipmentDetail:
-        queryParameters:
-            merchantId:
-                Merchant Id provided by Jet
-        description: This method will list all orders that have not been acknowledged
-        get:
-            responses:
-                200:
-                    body:
-                        application/json:
-                            schema: !include order.schema.json
-                            example: !include order.example.json
-                404:
-    /withNoShipmentDetail:
-        queryParameters:
-            merchantId:
-                Merchant Id provided by Jet
-        description: This method will list all orders that have not been acknowledged
-        get:
-            responses:
-                200:
-                    body:
-                        application/json:
-                            schema: !include orderOnly.schema.json
-                            example: !include orderOnly.example.json
-                404:
+        {id}:
+            queryParameters:
+                merchantId:
+                    Merchant Id provided by Jet
+            description: This method will list all orders that have not been acknowledged
+            get:
+                responses:
+                    200:
+                        body:
+                            application/json:
+                                schema: !include order.schema.json
+                                example: !include order.example.json
+                    404:
+    /withoutShipmentDetail:
+        {id}:
+            queryParameters:
+                merchantId:
+                    Merchant Id provided by Jet
+            description: This method will list all orders that have not been acknowledged
+            get:
+                responses:
+                    200:
+                        body:
+                            application/json:
+                                schema: !include orderOnly.schema.json
+                                example: !include orderOnly.example.json
+                    404:
     /{id}:
         /accept:
             description: Marks an order as accepted
