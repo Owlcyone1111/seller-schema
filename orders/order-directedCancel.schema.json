@@ -1,0 +1,106 @@
+{
+    "title" : "directedCancel",
+    "type" : "object",
+    "properties" : {
+        "merchant_order_id": {
+            "type": "string",
+            "required": true,
+            "description" :  "Jet's unique ID for a given merchant order",
+        },
+        "alt_order_id": {
+            "type": "string",
+            "description" : "Optional Merchant supplied order ID."
+        },
+        "items": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/order_cancel_item"
+            }
+        },
+        "shipments": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/order_cancel_shipment"
+            }
+        }
+    },
+    "definitions": {
+        "order_cancel_item": {
+            "title": "OrderCancelItem",
+            "type": "object",
+            "properties": {
+                "order_item_id": {
+                    "type": "string",
+                    "description" : "Jet's unique identifier for an item in a merchant order
+
+                    #Logic
+
+                    required if cancelling only part of an order and separate shipments were not defined, if an alt_order_item_id has been associated with the order_item_id via the order accept message that may be passed instead."
+                },
+                "alt_order_item_id": {
+                    "type": "string",
+                    "description" : "Optional seller supplied ID for an item in an order."
+                },
+                "order_cancel_qty" : {
+                    "type" : "integer",
+                    "description" : "Quanitity of the given item that should be cancelled
+
+                    #Logic
+
+                    Required if cancelling a specific item to indicate the qty of the given item to be cancelled"
+                }
+            }
+        },
+        "order_cancel_shipment": {
+            "title": "OrderCancelShipment",
+            "type": "object",
+            "properties": {
+                "shipment_id": {
+                    "type": "string",
+                    "description" : "Jet's unique ID for a given shipment
+
+                    #Logic
+
+                    Include if cancelling only part of an order and separte shipments were defined if an alt_shipment_id has been associated with the shipment_id via the order accept message that may be passed instead."
+                    
+                },
+                "alt_shipment_id": {
+                    "type": "string",
+                    "description" : "Optional Merchant supplied shipment ID."
+                },
+                "shipment_item": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/order_cancel_shipment_item"
+                    }
+                }
+            }
+        },
+        "order_cancel_shipment_item": {
+            "title": "OrderCancelShipmentItem",
+            "type": "object",
+            "properties": {
+                "shipment_item_id": {
+                    "type": "string",
+                    "description" : "Jet's unique identifier for an item in a shipment
+
+                    #Logic
+
+                    Required if cancelling only part of a shipment and separate shipments were defined if an alt_shipment_item_id has been associated with the shipment_item_id via the order accept message that may be passed instead. "
+                },
+                "alt_shipment_item_id": {
+                    "type": "string",
+                    "description" : "Optional seller supplied ID for an item in a specific shipment."
+                },
+                "shipment_cancel_qty": {
+                    "type" : "integer",
+                    "description" : "Quanitity of the given item that should be cancelled
+
+                    #Logic
+
+                    Required if cancelling a specific item to indicate the qty of the given item to be cancelled"
+                }
+            }
+        }
+    }
+}
