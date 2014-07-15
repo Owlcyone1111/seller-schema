@@ -1,6 +1,6 @@
 {
 	"$schema" : "http://json-schema.org/draft-03/schema",
-	"title": "MerchantSku",
+	"title": "MerchantSkuView",
 	"type": "object",
 	"description": "This schema represents a merchant sku",
     "additionalProperties" : false,

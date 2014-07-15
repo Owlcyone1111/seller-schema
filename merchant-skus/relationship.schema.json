@@ -1,6 +1,6 @@
 {
     "$schema" : "http://json-schema.org/draft-03/schema",		
-	"title": "Price",
+	"title": "Relationship",
 	"type": "object",
     "additionalProperties" : false,		
 	"description": "This schema is used to set variation relationships for merchant skus",
