@@ -29,26 +29,8 @@
 
 			*'SecondDay'"
 		},
-		"shipping_carrier": {
-			"type": "string",
-			"enum": ["UPS","USPS","FedEx"],
-			"description": "A shipping carrier, including all that carrier's ShippngMethods e.g. UPS, FedEx, USPS.  
-
-			If shipping set up has defined the ShippingCarrier level and you are setting up shipping rates at the ShippingCarrier level use this field.
-
-			#Logic
-
-			This message should be defined by service_level OR shipping_carrier OR shipping_method
-
-			#Valid values
-
-			*'UPS'
-
-			*'USPS'
-			
-			*'FedEx'"
-		},
-		"service_method": {
+		
+		"shipping_method": {
 			"type": "string",
 			"description": "A specific shipping method e.g. UPS Ground, UPS Next Day Air, FedEx Home. If shipping set up has defined ShippingMethod level and you are setting up shipping rates at the ShippingMethod level use this field.
 

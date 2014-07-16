@@ -198,11 +198,7 @@
                 },                
                 "shipping_carrier": {
                     "type": "string",
-                    "enum":["UPS",
-                    		"USPS",
-                    		"FedEx"],
-                    "description":"A shipping carrier, including all that carrier's ShippngMethods e.g. UPS, FedEx, USPS.  Use this field if you want to define your shipping settings at the ShippingCarrier level.
-
+                    "description":"A shipping carrier, including all that carrier's ShippngMethods e.g. UPS, FedEx, USPS.  
                     #Logic
 
                     If 'shipping_carrier' is populated then 'shipping_method' will be ignored
@@ -221,7 +217,7 @@
 
 					#Logic
 
-					This message should be defined by service_level OR shipping_carrier OR shipping_method
+					This message should be defined by service_level OR shipping_method
 
 					#Valid values
 
@@ -264,12 +260,12 @@
                     	"shipping_option_order_cutoff_time"	:{
                     		"type":"string",
                     		"required":true,
-                    		"description":"Time of day (local) that a 'merchant_order' must be received by in order to count as being received that calendar day for purposes of calculating 'fulfillment_time' for the given 'service_level', 'shipping_carrier', or 'shipping_method"
+                    		"description":"Time of day (local) that a 'merchant_order' must be received by in order to count as being received that calendar day for purposes of calculating 'fulfillment_time' for the given 'service_level' or 'shipping_method"
                     	},
                     	"shipping_option_order_pickup_time":{
                     		"type":"string",
                     		"required":true,
-                    		"description":"lastest time of day that a given'service_level', 'shipping_carrier' or shipping_method' is picked up from the 'merchant_fc'"
+                    		"description":"lastest time of day that a given'service_level'or shipping_method' is picked up from the 'merchant_fc'"
                     	}
                     }	
                 }
