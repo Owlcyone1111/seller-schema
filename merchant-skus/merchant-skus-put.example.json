@@ -21,7 +21,7 @@
 	"prop_65": true,
 	"legal_disclaimer_description": "Legal stuff goes here",
 	"cpsia_cautionary_statements": [
-		"Choking hazard balloon",
+		"choking hazard balloon",
 		"choking hazard small parts"
 	],
 	"country_of_origin": "U.S.A.",

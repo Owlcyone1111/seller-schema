@@ -61,8 +61,20 @@ mediaType: application/json
                     201:
                     204:
                     400:
-                    409:            
+                    409:
         /inventory:
+            get:
+                queryParameters:
+                    merchantId:
+                        description: Merchant Id provided by Jet
+                description: This method retrieves inventory data for the specified merchant SKU
+                body:
+                    application/json:
+                        schema: !include inventory.schema.json
+                        example: !include inventory.example.json
+                responses:
+                    200:
+                    404:
             put:
                 queryParameters:
                     merchantId:
@@ -78,6 +90,18 @@ mediaType: application/json
                    400:
                    409:
             /{fcid}:
+                get:
+                    queryParameters:
+                        merchantId:
+                            description: Merchant Id provided by Jet
+                    description: This method retrieves inventory data for the specified merchant SKU
+                    body:
+                        application/json:
+                            schema: !include inventory.schema.json
+                            example: !include inventory.example.json
+                    responses:
+                        200:
+                        404:
                 put:
                     queryParameters:
                         merchantId:
@@ -93,6 +117,18 @@ mediaType: application/json
                        400:
                        409:
         /price:
+            get:
+                queryParameters:
+                    merchantId:
+                        description: Merchant Id provided by Jet
+                description: This method retrieves pricing data for the specified merchant SKU
+                body:
+                    application/json:
+                        schema: !include price.schema.json
+                        example: !include price.example.json
+                responses:
+                    200:
+                    404:
             put:
                 queryParameters:
                         merchantId:
@@ -108,6 +144,18 @@ mediaType: application/json
                    400:
                    409:
             /{fcid}:
+                get:
+                    queryParameters:
+                        merchantId:
+                            description: Merchant Id provided by Jet
+                    description: This method retrieves pricing data for the specified merchant SKU
+                    body:
+                        application/json:
+                            schema: !include price.schema.json
+                            example: !include price.example.json
+                    responses:
+                        200:
+                        404:
                 put:
                     queryParameters:
                         merchantId:
@@ -201,4 +249,4 @@ mediaType: application/json
                     201:
                     204:
                     400:
-                    409:   
+                    409:

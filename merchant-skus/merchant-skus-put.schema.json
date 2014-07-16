@@ -209,7 +209,7 @@
 			"items": {
 				"type": "string",
 				"enum" : [
-				 			"Choking hazard balloon",
+				 			"choking hazard balloon",
 							"choking hazard contains a marble",
 							"choking hazard contains a small ball",
 							"choking hazard is a marble",
