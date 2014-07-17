@@ -264,7 +264,7 @@
 
                     		#Valid Values
 
-			Local 			Time with the current UTC offset as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''-HH:MM' for example 5PM eastern daylight time would be '17:00:00.0000000-04:00' "
+							Local Time with the current UTC offset as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''-HH:MM' for example 5PM eastern daylight time would be '17:00:00.0000000-04:00' "
                     	},
                     	"shipping_option_order_pickup_time":{
                     		"type":"string",
@@ -273,7 +273,7 @@
 
                     		#Valid Values
 
-			Local 			Time with the current UTC offset as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''-HH:MM' for example 5PM eastern daylight time would be '17:00:00.0000000-04:00' 
+							Local Time with the current UTC offset as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''-HH:MM' for example 5PM eastern daylight time would be '17:00:00.0000000-04:00'" 
                     	}
                     }	
                 }
