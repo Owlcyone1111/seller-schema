@@ -1,7 +1,7 @@
 {
-	"service_level": "standard",
-	"shipping_carrier": "UPS",
+	"service_level": "Standard",
 	"shipping_method": "UPS Ground",
-	"merchant_order_size_upper_limit": "50.00",
-	"shipping_charge": ".00"
+	"merchant_order_fixed_charge": 2.00,
+	"variable_charge_type" : "per item",
+	"variable_charge": 1.00
 	}

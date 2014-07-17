@@ -66,7 +66,7 @@
 			*'per weight'"
 		},
 		"variable_charge":{
-			"type": "string",
+			"type": "number",
 			"required": true,
 			"description": "The variable charge per item if  'variable_charge_type' = 'per item' or the variable charge per pound if 'variable_charge_type' = 'per weight' 			
 

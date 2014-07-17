@@ -5,10 +5,10 @@
 	"ds_address_city":"Binghamton",
 	"ds_address_state":"NY",
 	"ds_address_zip":"13901",
-	"merchant_operating_days": "mon|tue|wed|thu|fri",
-	"ds_operating_days": "mon|tue|wed|thu|fri",
-	"time_to_process": "1",
+	"merchant_operating_days": ["mon","tue","wed","thu","fri"],
+	"ds_operating_days": ["mon","tue","wed","thu","fri"],
+	"time_to_process": 1,
 	"order_cutoff_time": "17:00:00",
-	"fulfillment_time": "1",
-	"service_level": "Standard|NextDay"
+	"fulfillment_time": 1,
+	"service_level": ["Standard","NextDay"]
 }

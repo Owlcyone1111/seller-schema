@@ -1,0 +1,10 @@
+{
+	"service_level" : "Standard",
+	"shipping_method" : "UPS Ground",
+	"price_band" : [ 
+	{
+		"merchant_order_size_upper_limit" : 10000.00,
+		"shipping_charge" : 50.00
+	}
+	]
+}

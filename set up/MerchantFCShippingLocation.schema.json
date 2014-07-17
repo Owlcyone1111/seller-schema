@@ -170,7 +170,7 @@
                 "service_level": {
                     "type": "string",
                     "enum":[
-                    		"standard",
+                    		"Standard",
                     		"Expedited",
                     		"Scheduled",
                     		"NextDay",

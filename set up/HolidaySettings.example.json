@@ -1,0 +1,14 @@
+{
+	"ship_from_location" : "NJ FC",
+	"federal_holidays_observed" : ["Labor Day","MLK Day"],
+	"other_holidays" : [
+		{
+		"specific_calendar_day" : "05-04",
+		"recurrrence" : "every year"
+		},
+		{
+		"relative_calendar_day": "4 | Fri | 1",
+		"recurence" : "this year"	}
+	]
+
+}

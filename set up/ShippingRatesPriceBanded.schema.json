@@ -44,27 +44,31 @@
 
 			*'all' - use this if the rates should be applied to all values of 'shipping_method'"	
 		},
-		"merchant_order_size_upper_limit": {
-			"type": "number",
-			"required":true,
-			"description": "The value, in US dollars, of the upper limit of an order basket size.  The lower limit of the band will be either zero or OrderSizeUpperLimit that is just below it.  
+		"price_band" : {
+			"type": "array",
+			"items" : {
+				"merchant_order_size_upper_limit": {
+				"type": "number",
+				"required":true,
+				"description": "The value, in US dollars, of the upper limit of an order basket size.  The lower limit of the band will be either zero or OrderSizeUpperLimit that is just below it.  
 
-			Enter 'infinity' for the final band which will define the charge from the largest dollar value 'merchant_order_size_upper_limit' to 'infinity'			
+				Enter 'infinity' for the final band which will define the charge from the largest dollar value 'merchant_order_size_upper_limit' to 'infinity'			
 
-			#Valid values
+				#Valid values
 
-			*'infinity'
-			*A number with up to 18 digits allowed to the left of the decimal point and 2 digits to the right of the decimal point. Commas or currency symbols are not allowed."
-		},
-		"shipping_charge": {
-			"type": "string",
-			"required": true,
-			"description": "The amount charged, in US dollars, for the given ShippingCarrier, ShippingMethod or ServiceLevel and Price Band			
+				*A number with up to 18 digits allowed to the left of the decimal point and 2 digits to the right of the decimal point. Commas or currency symbols are not allowed."
+				},
+			"shipping_charge": {
+				"type": "string",
+				"required": true,
+				"description": "The amount charged, in US dollars, for the given ShippingCarrier, ShippingMethod or ServiceLevel and Price Band			
 
-			#Valid values
+				#Valid values
 			
-			A number with up to 18 digits allowed to the left of the decimal point and 2 digits to the right of the decimal point. Commas or currency symbols are not allowed."
+				A number with up to 18 digits allowed to the left of the decimal point and 2 digits to the right of the decimal point. Commas or currency symbols are not allowed."
 		
+				}
+			}	
 		}
 	}
 }

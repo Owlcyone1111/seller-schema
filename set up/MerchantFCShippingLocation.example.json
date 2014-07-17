@@ -1,0 +1,22 @@
+{
+	"ship_from_location" : "PA FC",
+	"fc_address_line_1" : "27 Highbrow St.",
+	"fc_address_line_2" : "APT 24",
+	"fc_address_city" : "Taintsville",
+	"fc_address_state" : "FL",
+	"fc_address_zip" : "32765",
+	"merchant_operating_days" : ["mon","tue","wed","thu","fri"],
+	"fulfillment_time" : 2,
+	"shipping_options" : [
+		{
+			"shipping_carrier" : "UPS",
+			"shipping_method" : "UPS Ground",
+			"shipping_days" : ["mon","tue","wed","thu","fri"],
+			"shipping_option_order_cutoff_time" : "17:00:00",
+			"shipping_option_order_pickup_time" : "19:00:00"
+
+		},
+
+	]
+
+}
