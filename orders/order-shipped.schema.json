@@ -41,7 +41,15 @@
 
                 "shipment_date": {
                     "type": "string",
-                    "description" : "Date/Time that a given shipment was shipped"
+                    "description" : "Date/Time that a given shipment was shipped
+
+                    #Valid Values
+
+                    This date should be in ISO 8601 format: yyyy-MM-ddTHH:mm:ss.fffffff-HH:MM
+
+                    Example: 2009-06-15T13:45:30.0000000-07:00
+
+                    "
                 },
                 "shipment_method": {
                     "type": "string",
