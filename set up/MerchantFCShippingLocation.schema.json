@@ -260,12 +260,20 @@
                     	"shipping_option_order_cutoff_time"	:{
                     		"type":"string",
                     		"required":true,
-                    		"description":"Time of day (local) that a 'merchant_order' must be received by in order to count as being received that calendar day for purposes of calculating 'fulfillment_time' for the given 'service_level' or 'shipping_method"
+                    		"description":"Time of day (local) that a 'merchant_order' must be received by in order to count as being received that calendar day for purposes of calculating 'fulfillment_time' for the given 'service_level' or 'shipping_method
+
+                    		#Valid Values
+
+			Local 			Time with the current UTC offset as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''-HH:MM' for example 5PM eastern daylight time would be '17:00:00.0000000-04:00' "
                     	},
                     	"shipping_option_order_pickup_time":{
                     		"type":"string",
                     		"required":true,
-                    		"description":"lastest time of day that a given'service_level'or shipping_method' is picked up from the 'merchant_fc'"
+                    		"description":"lastest time of day that a given'service_level'or shipping_method' is picked up from the 'merchant_fc'
+
+                    		#Valid Values
+
+			Local 			Time with the current UTC offset as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''-HH:MM' for example 5PM eastern daylight time would be '17:00:00.0000000-04:00' 
                     	}
                     }	
                 }

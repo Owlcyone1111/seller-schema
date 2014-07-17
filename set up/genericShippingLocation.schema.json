@@ -117,7 +117,11 @@
 			"required": true,
 			"description": "Time that a shipment must be received by in order to count as being received that calendar day for purposes of calculating  'time_to_process' for 'location_type' = 'FBA' or 'DropShip' 
 
-			Time of day that a shipment must be received by in order to count as being received that calendar day for purposes of calculating 'fulfillment_time' for 'location_type' = 'Merchant Controlled'"
+			Time of day that a shipment must be received by in order to count as being received that calendar day for purposes of calculating 'fulfillment_time' for 'location_type' = 'Merchant Controlled'
+
+			#Valid Values
+
+			Local Time with the current UTC offset as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''-HH:MM' for example 5PM eastern daylight time would be '17:00:00.0000000-04:00' "
 		},
 		"fulfillment_time":{
 			"type": "integer",
