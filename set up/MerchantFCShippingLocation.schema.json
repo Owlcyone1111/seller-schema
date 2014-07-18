@@ -37,6 +37,33 @@
 			"required": true,
 			"description": "drop ship location address address zip code"
 		},
+		"time_zone" : {
+			"type" : "string",
+			"enum" : ["Eastern","Central","Mountain","Pacific"],
+			"required" : true,
+			"description" : "Enter the time_zone your facility or this fulfillment node time will be operating in
+
+			#Valid Values
+
+			*'Eastern - Eastern Standard or Eastern daylight time depending on your daylight_savings time setting
+
+			*'Central - Central Standard or Central dayligt time depending on your dayligt_savings time setting
+
+			*'Mountain - Mountain Standard or Mountain daylight time depending on your daylight_savings time setting
+
+			*'Pacific - Pacific Standard or Pacific daylight time depending on your daylight_savings time setting"
+		},
+		"daylight_savings" : {
+			"type" : "string",
+			"enum" : ["Yes","No"],
+			"required" : true,
+			"description" : "Tells Jet.com if this fulfillment node honors daylight savings time or not
+
+			#VAlid Values
+
+			*'Yes'- You adjust all local times from standar to daylight time each year
+			*'No' - You stay on standard time the entire year and do not shift you local time to daylight"
+		},
 		"merchant_operating_days": {
 			"type": "array",
 			"items": {

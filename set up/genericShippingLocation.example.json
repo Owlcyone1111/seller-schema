@@ -1,6 +1,8 @@
 {
 	"ship_from_location": "PAFC",
 	"location_type": "merchant controlled",
+	"time_zone" : "Eastern",
+	"daylight_savings" : "Yes",
 	"merchant_operating_days": ["mon","tue","wed","thu","fri","sat"],
 	"ds_operating_days": ["mon","tue","wed","thu","fri","sat"],
 	"time_to_process": 1,

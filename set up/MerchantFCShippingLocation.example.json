@@ -5,6 +5,8 @@
 	"fc_address_city" : "Taintsville",
 	"fc_address_state" : "FL",
 	"fc_address_zip" : "32765",
+	"time_zone" : "Eastern",
+	"daylight_savings" : "Yes",
 	"merchant_operating_days" : ["mon","tue","wed","thu","fri"],
 	"fulfillment_time" : 2,
 	"shipping_options" : [

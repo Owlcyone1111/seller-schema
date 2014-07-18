@@ -5,6 +5,8 @@
 	"ds_address_city":"Binghamton",
 	"ds_address_state":"NY",
 	"ds_address_zip":"13901",
+	"time_zone" : "Eastern",
+	"daylight_savings" : "Yes",
 	"merchant_operating_days": ["mon","tue","wed","thu","fri"],
 	"ds_operating_days": ["mon","tue","wed","thu","fri"],
 	"time_to_process": 1,
