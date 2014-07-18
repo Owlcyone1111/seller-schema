@@ -1,6 +1,6 @@
 {
 	"$schema" : "http://json-schema.org/draft-03/schema",
-	"title": "MerchantSkuView",
+	"title": "MerchantSku",
 	"type": "object",
 	"description": "This schema represents a merchant sku",
     "additionalProperties" : false,
@@ -190,61 +190,7 @@
 
 			A number with 2 decimals"
 		},
-		"parent_or_child": {
-			"type": "string",
-			"enum" : ["Parent", "Child"],
-			"description": "Define if the merchant sku is a 'Parent' or a 'Child'
-
-			#Logic
-
-			This field is required if you are setting up a Variation relationship between a set merchant skus
-
-			##Valid Values
-
-			*Parent
-
-			*Child"
-		},
-		"parent_sku": {
-			"type": "string",
-			"description": "The merchant sku that is the parent for this merchant sku which has \"ParentOrChild\" = Child
-
-			#Logic
-
-			This field is required if you are setting up a 'Variation' relationship between a set of merchant skus
-
-			#Valid Values
-
-			This should be a merchant sku with 'parentOrChild' = 'parent'"
-
-		},
-		"relationship": {
-			"type": "string",
-			"enum" : ["Variation", "Accessory"],			
-			"description": "Variation or Accessory
-
-			#Logic
-
-			This field is required if you are setting up a Variation relationship between a set merchant skus
-
-			##Valid Values
-
-			*Variation
-
-			*Accessory"
-		},
-		"variation_refinements": {
-			"type": "string",
-			"description": "The refinements that vary for a set  of Parent/Child merchant skus
-
-			#Logic
-
-			This field is required if you are setting up a Variation relationship between a set merchant skus
-			
-			#Valid Values
-
-			The valid 'variation_refinements vary depending on the jet_browse_node_id, see category specific documentation for details"
-		},
+		
 		"prop_65": {
 			"type": "boolean",
 			"description": "You must tell us if your product is subject to Proposition 65 rules and regulations.  Proposition 65 requires merchants to provide California consumers with special warnings for products that contain chemicals known to cause cancer, birth defects, or other reproductive harm, if those products expose consumers to such materials above certain threshold levels.  The default value for this is \"False,\" so if you do not populate this column, we will assume your product is not subject to this rule.  Please view this Web site for more information: http://www.oehha.ca.gov/."

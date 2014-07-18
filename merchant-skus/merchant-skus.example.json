@@ -17,11 +17,7 @@
 	"shipping_weight_pounds": 10,
 	"package_length_inches": 12,
 	"package_width_inches": 12,
-	"package_height_inches": 12,
-	"parent_or_child": "Child",
-	"parent_sku": "AB-122",
-	"relationship": "Variation",
-	"variation_refinements": "color",
+	"package_height_inches": 12,	
 	"prop_65": true,
 	"legal_disclaimer_description": "Legal stuff goes here",
 	"cpsia_cautionary_statements": [
