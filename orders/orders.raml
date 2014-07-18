@@ -9,10 +9,11 @@ mediaType: application/json
 
 /orders:
     /pending:
-        queryParameters:
-            merchantId:
-                Merchant Id provided by Jet
-        description: This method will provide resource URLs for pending orders
+        get:
+            queryParameters:
+                merchantId:
+                    description: Merchant Id provided by Jet
+            description: This method will provide resource URLs for pending orders
             responses:
                 200:
                     body:
@@ -21,38 +22,39 @@ mediaType: application/json
                             example: !include order-links.example.json
                 404:
                     description: The requested resource could not be found.  Most likely the Merchant Id is invalid.
-    /withShipmentDetail:
-        {id}:
+    /withShipmentDetail/{id}:
+        get:
             queryParameters:
                 merchantId:
-                    Merchant Id provided by Jet
+                    description: Merchant Id provided by Jet
             description: This method will list all orders that have not been acknowledged
-            get:
-                responses:
-                    200:
-                        body:
-                            application/json:
-                                schema: !include order.schema.json
-                                example: !include order.example.json
-                    404:
-    /withoutShipmentDetail:
-        {id}:
+            responses:
+                200:
+                    body:
+                        application/json:
+                            schema: !include order.schema.json
+                            example: !include order.example.json
+                404:
+    /withoutShipmentDetail/{id}:
+        get:
             queryParameters:
                 merchantId:
-                    Merchant Id provided by Jet
+                    description: Merchant Id provided by Jet
             description: This method will list all orders that have not been acknowledged
-            get:
-                responses:
-                    200:
-                        body:
-                            application/json:
-                                schema: !include orderOnly.schema.json
-                                example: !include orderOnly.example.json
-                    404:
+            responses:
+                200:
+                    body:
+                        application/json:
+                            schema: !include orderOnly.schema.json
+                            example: !include orderOnly.example.json
+                404:
     /{id}:
         /accept:
-            description: Marks an order as accepted
             post:
+                queryParameters:
+                    merchantId:
+                        description: Merchant Id provided by Jet
+                description: Marks an order as accepted
                 body:
                     application/json:
                         schema: !include order-accept.schema.json
@@ -61,8 +63,11 @@ mediaType: application/json
                     404:
                     409:
         /reject:
-            description: Marks an order as rejected (i.e. you will not be fulfilling this order)
             post:
+                queryParameters:
+                    merchantId:
+                        description: Merchant Id provided by Jet
+                description: Marks an order as rejected (i.e. you will not be fulfilling this order)
                 body:
                     application/json:
                         schema: !include order-reject.schema.json
@@ -71,8 +76,11 @@ mediaType: application/json
                     404:
                     409:
         /shipped:
-            description: Marks an order as shipped and provides tracking information to Jet
             post:
+                queryParameters:
+                    merchantId:
+                        description: Merchant Id provided by Jet
+                description: Marks an order as shipped and provides tracking information to Jet
                 body:
                     application/json:
                         schema: !include order-shipped.schema.json
@@ -82,9 +90,18 @@ mediaType: application/json
                     409:
     /refund:
         post:
-
+            queryParameters:
+                merchantId:
+                    description: Merchant Id provided by Jet
+    
     /partial-cancel:
         post:
+            queryParameters:
+                merchantId:
+                    description: Merchant Id provided by Jet
 
     /returns:
         get:
+            queryParameters:
+                merchantId:
+                    description: Merchant Id provided by Jet
