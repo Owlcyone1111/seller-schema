@@ -190,7 +190,38 @@
 
 			A number with 2 decimals"
 		},
-		
+		"display_length_inches": {
+			"type": "number",
+			"required": true,
+			"minimum" : 0.01,
+			"description": "Length of the merchant sku when in its fully assempled/usable condition
+
+			#Valid Values
+
+			A number with 2 decimals
+
+			"
+		},
+		"display_width_inches": {
+			"type": "number",
+			"required": true,
+			"minimum" : 0.01,
+			"description": "Width of the merchant sku when in its fully assempled/usable condition
+
+			#Valid Values
+
+			A number with 2 decimals"
+		},
+		"display_height_inches": {
+			"type": "number",
+			"required": true,
+			"minimum" : 0.01,
+			"description": "Height of the merchant sku when in its fully assempled/usable condition
+
+			#Valid Values
+
+			A number with 2 decimals"
+		},
 		"prop_65": {
 			"type": "boolean",
 			"description": "You must tell us if your product is subject to Proposition 65 rules and regulations.  Proposition 65 requires merchants to provide California consumers with special warnings for products that contain chemicals known to cause cancer, birth defects, or other reproductive harm, if those products expose consumers to such materials above certain threshold levels.  The default value for this is \"False,\" so if you do not populate this column, we will assume your product is not subject to this rule.  Please view this Web site for more information: http://www.oehha.ca.gov/."
@@ -300,6 +331,23 @@
 
 			A number with up to 18 digits allowed to the left of the decimal point and 2 digits to the right of the decimal point. Commas or currency symbols are not allowed."
 		},
+		"map_implementation":{
+			"type": "string",
+			"enum" : ["type0","type1","type2","type3","type4"],
+			"description": "The type of rules that need to be followed when displaying Jet savings on item that brings the item's effective price below MAP
+
+			#Valid values
+
+			*'type0'- A user is able to see sub MAP pricing for this item even if they are not logged in
+
+			*'type1'- A user must be logged in to see the savings on this item and that saving may be represented as a lower than MAP price on this item
+			
+			*'type2'- A user must be logged in to see the savings and they need be shown as Jet savings with the price being dispayed as the MAP price
+			
+			*'type3' -A user will never see Jet savings assoicated with this item but if they are logged in and purchase other items savings may be allocated to those other items
+			
+			*'type4' -Never apply any savings associated with this item anywhere"
+		},	
 		"minimum_selling_price":{
 			"type": "number",
 			"minimum" : 0.01,
