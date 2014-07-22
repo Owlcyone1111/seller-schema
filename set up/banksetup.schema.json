@@ -30,12 +30,12 @@
 		"bank_account_number" : {
 			"type" : "integer",
 			"required" : true,
-			"description" : "The account number for you Bank. Your account must be enabled to received deposits through the Automated Clearing Hourse (ARC), Please contact your bank for asssistance."
+			"description" : "The account number for you Bank. Your account must be enabled to received deposits through the Automated Clearing House (ARCH), Please contact your bank for asssistance."
 		},
 		"bank_account_holder_name" : {
 			"type" : "string",
 			"required" : true,
-			"description" : "Bank account holder name. Please mathcn what your bank has on file using ISO basic Latin characters"
+			"description" : "Bank account holder name. Please match what your bank has on file using ISO basic Latin characters"
 		}
 	}
 }
