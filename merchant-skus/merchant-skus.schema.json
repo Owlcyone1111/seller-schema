@@ -348,15 +348,6 @@
 			
 			*'type4' -Never apply any savings associated with this item anywhere"
 		},	
-		"minimum_selling_price":{
-			"type": "number",
-			"minimum" : 0.01,
-			"description": "Price that manufacturer has defined as the lowest price for which the item can be sold
-
-			#Valid values
-
-			A number with up to 18 digits allowed to the left of the decimal point and 2 digits to the right of the decimal point. Commas or currency symbols are not allowed."
-		},
 		"product_tax_code": {
 			"type": "string",
 			"description": "Price that manufacturer has defined as the lowest price for which the item can be sold"
