@@ -131,13 +131,13 @@
 
 			#Valid Values
 
-			*'0' - ships the day the order is received
+			*'0' - transmitted the day the order is received
 
-			*'1' - ships one business day after the order is received
+			*'1' - transmitted  one business day after the order is received
 
-			*'2' - ships two business days after the order is received
+			*'2' - transmitted  two business days after the order is received
 
-			*'n' - ships n business days after the order is received"
+			*'n' - transmitted  n business days after the order is received"
 		},
 		"order_cutoff_time":{
 			"type": "string",

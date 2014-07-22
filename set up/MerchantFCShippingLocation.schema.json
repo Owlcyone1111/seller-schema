@@ -112,18 +112,9 @@
 			
 			*'n' - ships n business days after the order is received"
 		},
-		"local_pickup": {
-            "type": "array",
-            "items": {
-                "$ref": "#/definitions/local_pickup"
-            }
-        },
+		
 
-        "local_pickup_instructions":{
-        	"type":"string",
-        	"description":"Instructions that will be presented to the customer if they choose are using the Local Pick Up option at check out on Jet.com"
-       
-		},
+        
 		"shipping_options": {
             "type": "array",
             "required": true,
@@ -145,51 +136,7 @@
         },
 	},
     "definitions": {
-        "local_pickup": {
-            "title": "local_pickup",
-            "type": "object",
-            "properties": {
-                "local_pickup_day": {
-                    "type": "string",
-                    "enum":[
-							"sun",
-							"mon",
-							"tue",
-							"wed",
-							"thu",
-							"fri",
-							"sat"],
-					
-                    "description": "The day of the week that you are open for local pickup
-
-                    #Valid Values
-
-					*'sun' - Sunday
-
-					*'mon' - Monday
-
-					*'tue' - Tuesday
-
-					*'wed' - Wednesday
-
-					*'thu' - Thursday
-
-					*'fri' - Friday
-
-					*'sat' - Saturday"                 
-                
-                },
-
-                "local_pickup_open_time": {
-                    "type": "string",
-                    "description":"Time that given merchant's 'ship from location' is open for local pickup on the given local_pickup_day"
-                },
-                "local_pickup_close_time":{
-                	"type":"string",
-                	"description":"Time that the given merchant's 'ship from location' closes for local pickup on the given local_pickup_day"
-                }
-            }
-        },
+        
         "shipping_options": {
             "title": "shipping_options",
             "type": "object",
@@ -202,14 +149,14 @@
                     		"Scheduled",
                     		"NextDay",
                     		"SecondDay"],
-                    "description":"If ShippingMethod or ShippingCarrier are provided this provides ability to associate those to the given ServiceLevel.  
+                    "description":"If ShippingMethod or ShippingCarrier are provided this provides ability to associate those to the given ServiceLevel for shipping rate designation only.  
                     (This will allow you then to define shipping rates by ServiceLevel rather than for each ShippingMethod or ShippingCarrier)
 					
 					If only ServiceLevel is provided then it will be treated as the desigination used by Jet to indicate how to send your shipments
 
 					#Logic
 
-					This is required if 'shipping_carrier' and 'shipping_method' are not provided
+					This is required if 'shipping_method' are not provided
 
 					#Valid Values
 
