@@ -132,11 +132,11 @@
 
 			*'sat' - Saturday"
 		},
-		"time_to_process": {
+		"merchant_fulfillment_time": {
 			"type": "integer",
 			"required" : true,
 			"minimum": 0,
-			"description": "Number of business days from receipt of an order  until it will be transmitted to the Drop Ship location
+			"description": "Number of business days from receipt of an order  until it will be transmitted to the Drop Ship location subject to order_cutoff_time
 
 			#Valid Values
 
@@ -157,7 +157,7 @@
 
 			Local Time with the current UTC offset as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''-HH:MM' for example 5PM eastern daylight time would be '17:00:00.0000000-04:00' "
 		},
-		"fulfillment_time":{
+		"third_party_fulfillment_time":{
 			"type": "integer",
 			"required":true,
 			"minimum":0,

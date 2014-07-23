@@ -123,7 +123,7 @@
 		"time_to_process": {
 			"type": "integer",
 			"minimum" : 0,
-			"description": "Number of business days from receipt of an order  until it will be transmitted to FBA or Drop Ship location
+			"description": "Number of business days from receipt of an order  until it will be transmitted to FBA or Drop Ship location subject to order_cutoff_time
 
 			#Logic
 
@@ -150,7 +150,7 @@
 
 			Local Time with the current UTC offset as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''-HH:MM' for example 5PM eastern daylight time would be '17:00:00.0000000-04:00' "
 		},
-		"fulfillment_time":{
+		"third_party_fulfillment_time":{
 			"type": "integer",
 			"minimum": 0,
 			"description" : "Number of business days from receipt of an order until it will be shipped for order that are LocationType = 'Merchant Controlled', if it is received before the 'order_cutoff_time' for the given shipping location

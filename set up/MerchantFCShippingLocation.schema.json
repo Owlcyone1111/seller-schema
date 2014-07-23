@@ -96,11 +96,11 @@
 
 			*'sat' - Saturday"
 		},
-		"fulfillment_time":{
+		"merchant_fulfillment_time":{
 			"type": "integer",
 			"required":true,
 			"minimum": 0,
-			"description" : "Number of business days from when you receive the order until it will be shipped
+			"description" : "Number of business days from when you receive the order until it will be shipped subject to the shipping_option_order_cutoff_time
 
 			#Valid Values
 
@@ -123,17 +123,7 @@
             }
 
         },
-        "local_delivery_zips":{
-        	"type":"array",
-        	"items":{
-                "type":"string"
-            },
-            "description": "Zip Codes where Local Delivery is supported.
-            
-            #Logic
-
-            This is required if 'local delivery' was set up as a 'shipping_method'"
-        },
+        
 	},
     "definitions": {
         

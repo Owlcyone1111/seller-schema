@@ -9,8 +9,8 @@
 	"daylight_savings" : "Yes",
 	"merchant_operating_days": ["mon","tue","wed","thu","fri"],
 	"ds_operating_days": ["mon","tue","wed","thu","fri"],
-	"time_to_process": 1,
+	"merchant_fulfillment_time": 1,
 	"order_cutoff_time": "17:00:00.0000000-04:00",
-	"fulfillment_time": 1,
+	"third_party_fulfillment_time": 1,
 	"service_level": ["Standard","NextDay"]
 }

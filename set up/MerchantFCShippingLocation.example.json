@@ -8,7 +8,7 @@
 	"time_zone" : "Eastern",
 	"daylight_savings" : "Yes",
 	"merchant_operating_days" : ["mon","tue","wed","thu","fri"],
-	"fulfillment_time" : 2,
+	"merchant_fulfillment_time" : 2,
 	"shipping_options" : [
 		{
 			"shipping_carrier" : "UPS",
