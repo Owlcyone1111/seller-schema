@@ -14,7 +14,7 @@
 
              #Valid Values
 
-            Local Time with the current UTC offset as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''-HH:MM' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T17:00:00.0000000-04:00'"
+            The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"
         },
         "order_transmission_date":{
             "type": "string",
@@ -23,7 +23,7 @@
 
              #Valid Values
 
-            Local Time with the current UTC offset as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''-HH:MM' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T17:00:00.0000000-04:00'"
+            The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"
         },
 
 
@@ -257,7 +257,7 @@
 
                     #Valid Values
 
-                    Local Time with the current UTC offset as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''-HH:MM' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T17:00:00.0000000-04:00'"
+                    The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"
                 },
                 "delivery_by": {
                     "type": "string",
@@ -270,7 +270,7 @@
 
                     #Valid Values
 
-                    Local Time with the current UTC offset as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''-HH:MM' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T17:00:00.0000000-04:00'"
+                    The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"
                 },
                 
             }
