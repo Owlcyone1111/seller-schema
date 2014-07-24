@@ -1,7 +1,7 @@
 {
     "merchant_order_id" : "9b13bdd68c314d1b9c8b93277dea4da1",
-    "order_placed_date" : "5/1/2014T0:0:0-5:00",
-    "order_transmission_date" : "5/1/2014T1:0:0-5:00",
+    "order_placed_date" : "2014-07-24T17:00:00.0000000-04:00",
+    "order_transmission_date" : "2014-07-24T17:01:00.0000000-04:00",
 
     "buyer": {
         "name": "Tony Stark",
@@ -90,8 +90,8 @@
             "shipping_carrier" : "UPS",
             "shipping_method" : "UPS_ground",
             "service_level" : "Standard",
-            "ship_by": "05/02/2015",
-            "delivery_by": "05/10/2014",
+            "ship_by": "2014-07-25T00:00:00.0000000-04:00",
+            "delivery_by": "2014-07-27T00:00:00.0000000-04:00",
             
     },
     
