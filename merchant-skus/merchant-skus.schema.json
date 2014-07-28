@@ -192,7 +192,6 @@
 		},
 		"display_length_inches": {
 			"type": "number",
-			"required": true,
 			"minimum" : 0.01,
 			"description": "Length of the merchant sku when in its fully assempled/usable condition
 
@@ -204,7 +203,6 @@
 		},
 		"display_width_inches": {
 			"type": "number",
-			"required": true,
 			"minimum" : 0.01,
 			"description": "Width of the merchant sku when in its fully assempled/usable condition
 
@@ -214,7 +212,6 @@
 		},
 		"display_height_inches": {
 			"type": "number",
-			"required": true,
 			"minimum" : 0.01,
 			"description": "Height of the merchant sku when in its fully assempled/usable condition
 
