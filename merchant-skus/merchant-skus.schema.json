@@ -33,13 +33,15 @@
 			"type": "string",
 			"required": true,
 			"maxLength" : 14,
-			"description": "A standard, unique identifier for a product.  ISBN, UPC, EAN and GTIN-14 are accepted.
+			"description": "A standard, unique identifier for a product.  ISBN-10, ISBN-13, UPC, EAN and GTIN-14 are accepted.
 
 			#Valid Values
 
 			*If standard_product_code_type is'UPC' - must be 12 digits
 
-			*If standard_product_code_type is 'ISBN' - must be 13 digits
+			*If standard_product_code_type is 'ISBN-13' - must be 13 digits
+
+			*If standard_product_code_type is 'ISBN-10' - must be 10 digits
 
 			*If standard_product_code_type is 'EAN' - must be 13 digits
 
@@ -50,14 +52,16 @@
 		"standard_product_code_type": {
 			"type": "string",
 			"required": true,
-			"enum" : ["UPC", "ISBN", "EAN", "GTIN-14"],
+			"enum" : ["UPC", "ISBN-13","ISBN-10", "EAN", "GTIN-14"],
 			"description": "Indicate the type of standard_product_code that was used.
 
 			#Valid Values
 
 			*UPC
 
-			*ISBN
+			*ISBN-13
+
+			*ISBN-10
 
 			*EAN
 
