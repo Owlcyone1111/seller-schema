@@ -1,13 +1,13 @@
 {
 	"general_communication_info" :  [ {
 		
-		"information_type" : "listing_status",
+		"information_type" : "listing status",
 		"contact_name" : "Douglas DeAngelo",
 		"contact_text_number" : "555-545-6789",
 		"contact_email": "dddeangelo@aafun.com"
 		},
 		{
-		"information_type" : "listing_status",
+		"information_type" : "listing status",
 		"contact_name" : "Douglas DeAngelo",
 		"contact_text_number" : "555-545-6789",
 		"contact_email": "dddeangelo@aafun.com"

@@ -37,3 +37,28 @@ let loadFile parser ramlPath (name: string)  =
         let dir = Path.GetDirectoryName(ramlPath)
         let json = Path.Combine (dir, cleanName) |> File.ReadAllText
         parser cleanName json
+
+type JsonType = | Schema | Example
+
+let VerifyAll source =
+    let files = Directory.EnumerateFiles(source, "*.json", SearchOption.AllDirectories )
+
+    let (|Suffix|_|) (suffix:string) (s : string) = match s.LastIndexOf(suffix) with | -1 -> None | p -> Some (s.Substring(0, p), s)
+
+    let getError = function | Some(Error s) -> s | _ -> []
+
+    files
+    |> Seq.choose(function | Suffix ".example.json" s -> Some (fst s,(Example,snd s)) |  Suffix ".schema.json" s -> Some (fst s, (Schema, snd s)) | _-> None )
+    |> Seq.groupBy fst
+    |> Seq.map (fun (key,s) ->
+        let pair = s |> Seq.map snd |> Map.ofSeq 
+        let schemaResult = pair.TryFind Schema |> Option.map (fun name -> File.ReadAllText(name) |> parseSchema name) 
+        let schema = schemaResult |> Option.bind(function | Validated s -> Some s | _ -> None)
+        [
+            yield! getError schemaResult
+            yield! pair.TryFind Example 
+                    |> Option.map (fun name -> File.ReadAllText(name) |> parseJson schema name) 
+                    |> getError
+        ]
+        )
+    |> Seq.concat
