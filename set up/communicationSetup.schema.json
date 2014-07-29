@@ -5,9 +5,9 @@
 	"properties": {
 		"general_communication_info" : {
         "type" : "array",
-        "defintion" : "Contact information for various types of commnications you may want for your organization",
+        "description" : "Contact information for various types of commnications you may want for your organization",
         "items" : {
-            "$ref" : "#/definitions/general_communication_info"
+            "$ref" : "#/definitions/general_communication_info_type"
             }
         },
         "merchant_order_communication": {
@@ -26,7 +26,7 @@
     },
 
     "definitions": {
-        "general_communication_info": {
+        "general_communication_info_type": {
             "type" : "object",
             "title" : "general_communication_info",
             "enum" : ["listing status","product questions" , "business updates","technical notifications"],
