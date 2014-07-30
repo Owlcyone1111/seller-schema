@@ -1,10 +1,7 @@
 ﻿#r @"..\tools\RamlConverter.dll"
-#r @"..\tools\Newtonsoft.Json.dll"
 
 open Json
 open System.IO
-
-type JsonType = | Schema | Example
 
 if fsi.CommandLineArgs.Length < 2
 then  

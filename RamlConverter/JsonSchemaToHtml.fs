@@ -98,6 +98,7 @@ let parseProperty (KeyValue(name, prop: JsonSchema)) =
                     else t.Title
                 sprintf "%s []" itemType
               | _ -> prop.Type.Value.ToString()
+    let name = if prop.Required.HasValue && prop.Required.Value then name + "*" else name
     row name typ prop.Description
 
 let parameters values = div "parameters" values
