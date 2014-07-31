@@ -1,0 +1,188 @@
+{
+	"title" : "MerchantVerification",
+	"type" : "object",
+	"properties" : {
+		"business_information" : {
+			"$ref": "#/definitions/business_information"
+		},
+		"principal_information" : {
+			"$ref": "#/definitions/principal_information"
+		}
+
+
+
+	},
+	"definitions" : {
+		"business_information" : {
+			"title" : "business_information",
+			"type" : "object",
+			"properties" : {
+				"legal_name" : {
+					"type" : "string",
+					"required" : true,
+					"maxLength" : 30,
+					"description" : "The business's name as it appears on your tax returns"
+					},
+				"doing_business_name" : {
+					"type" : "string",
+					"maxLength" : 30,
+					"description" : "Doing Business Name (DBA) or trade name"
+					},
+				"type_of_business": {
+					"type": "string",
+					"enum" : ["Sole Proprietor/Individual","C Corporation","S Corporation","Partnership","Limited Liability Company","Trust/estate"],
+					"description" : "The address provided to the IRS for this business
+
+					#Valid Values
+
+					*'Sole Proprietor/Individual'
+					
+					*'C Corporation'
+
+					*'S Corporation'
+
+					*'Partnership'
+					
+					*'Limited Liability Company'
+					
+					*'Trust/estate'"
+					},
+				"business_address": {
+					"$ref": "#/definitions/address",
+					"description" : "The address provided to the IRS for this business"
+					},
+				"business_phone_number" : {
+					"$ref": "#/definitions/phonenumber",
+					"description" : "The phone number for this business"
+					},
+				"tax_identification_info" : {
+					"$ref" : "#/definitions/tax_id_info",
+					"description" : "The EIN or SSN for this business, please provide the EIN if you have one"
+					}
+
+				}
+				},
+		"principal_information" : {
+			"title" : "principal_information",
+			"type" : "object",
+			"properties" : {
+				"principal_first_name" : {
+					"type" : "string",
+					"required" : true,
+					"maxLength" : 32,
+					"description" : "First name of a company principal or owner"
+					},
+				"principal_last_name" : {
+					"type" : "string",
+					"required" : true,
+					"maxLength" : 32,
+					"description" : "Last name of a company principal or owner"
+					},
+				"principal_middle_initial" : {
+					"type" : "string",
+					"maxLength" : 1,
+					"description" : "Middle name of a company principal or owner"
+					},
+				"date_of_birth" : {
+					"type" : "string",
+					"required" : true,
+					"description" : "Date of birth in MM/DD/YYYY format"
+					},
+				"principal_ssn" : {
+					"type" : "number",
+					"required" : true,
+					"maxLength" : 9, 
+					"description" : "9 digit SSN without dashes"
+					},
+				"drivers_license_state" : {
+					"type" : "string",
+					"maxLength" : 2,
+					"description" : "two letter abreviation for the state issuing the principal's driver's license or state id"
+					},
+				"drivers_license_number" : {
+					"type" : "string",
+					"maxLength" : 15,
+					"description" : "the drivers license number or state issued id number"
+					},
+				"principal_address": {
+					"$ref": "#/definitions/address",
+					"description" : "The home address of the business principal or owner"
+					},
+				"principal_phone_number" : {
+					"$ref": "#/definitions/phonenumber",
+					"description" : "The personal phone number for this business principal or owner"
+					}
+
+				}
+		},
+		 "address": {
+            "title": "Address",
+            "type": "object",
+            "properties": {
+                "street_address": {
+                    "type": "string",
+                    "required": true,
+                    "maxLength" : 32,
+                    "description" : "Line 1 of the address"
+                },
+
+                "city": {
+                    "type": "string",
+                    "required": true,
+                    "maxLength" : 28,
+                    "description" : "city of the address"
+                },
+                "state": {
+                    "type": "string",
+                    "required": true,
+                    "maxLength" : 2,
+                    "description" : "two letter abbreviation of the state for the address"
+                },
+                "zip_code": {
+                    "type": "number",
+                    "required": true,
+                    "maxLength" : 5,
+                    "description" : "zip code of the address"
+                }
+            }
+		},
+		"phonenumber": {
+			"title" : "phonenumber",
+			"type" : "object",
+			"properties" : {
+				"phone_number" :{
+					"type" : "number",
+					"required" : true,
+					"maxLength" : 10,
+					"description" : "Ten digit phone number with no dashes or spaces. It should be principal's personal/home phone number" 
+				}
+			}
+		},
+		"tax_id_info" : {
+			"title" : "tax_id_info",
+			"type" : "object",
+			"properties" : {
+				"tax_identification_number" : {
+					"type" : "number",
+					"required" : true,
+					"maxLength" : 9,
+					"description" : "The nine digit tax identification number you are using, either an SSN or EIN"
+				},
+				"tax_identification_number_type" : {
+					"type" : "string",
+					"required" : true,
+					"enum" : ["SSN","EIN"],
+					"description" : "The type of TIN used 
+
+					#Valid Values
+
+					*'SSN'- Social Security number
+
+					*'EIN' - Employer Identification Number"
+				}
+			}
+		}
+	}
+
+} 
+		

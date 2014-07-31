@@ -1,0 +1,38 @@
+{
+	"business_information" : {
+		"legal_name" : "Fun.com Inc",
+		"doing_business_name" : "Fun.com",
+		"type_of_business" : "S Corporation",
+		"business_address" :{
+			"street_address" : "1 fun way suite 401",
+			"city" : "Oviedo",
+			"state": "FL",
+			"zip_code" : 32765
+		},
+		"business_phone_number" : {
+			"phone_number" : 5551234567,
+		},
+		"tax_identification_info" : {
+			"tax_identification_number" : 987654321,
+			"tax_identification_number_type" : "EIN",
+		}
+	},
+	"principal_information" :{
+		"principal_first_name" : "Douglas",
+		"principal_last_name" : "DeAngelo",
+		"principal_middle_initial" : "R",
+		"date_of_birth" : "1/22/1980",
+		"principal_ssn" : 123456789,
+		"drivers_license_state" : "FL",
+		"drivers_license_number" : "D123456789",
+		"principal_address" : {
+			"street_address" : "34 home street",
+			"city" : "Winter Park",
+			"state": "FL",
+			"zip_code" : 32766
+		},
+		"principal_phone_number" : {
+			"phone_number" : 5557654321,
+		},
+	}
+}
