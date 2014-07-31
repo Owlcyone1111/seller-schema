@@ -21,12 +21,20 @@
 					"type" : "string",
 					"required" : true,
 					"maxLength" : 30,
-					"description" : "The business's name as it appears on your tax returns"
+					"description" : "The business's name as it appears on your tax returns
+
+					#Valid Values
+
+					maximum of 30 characters"
 					},
 				"doing_business_name" : {
 					"type" : "string",
 					"maxLength" : 30,
-					"description" : "Doing Business Name (DBA) or trade name"
+					"description" : "Doing Business Name (DBA) or trade name
+
+					#Valid Values
+
+					maximum of 30 characters"
 					},
 				"type_of_business": {
 					"type": "string",
@@ -70,18 +78,30 @@
 					"type" : "string",
 					"required" : true,
 					"maxLength" : 32,
-					"description" : "First name of a company principal or owner"
+					"description" : "First name of a company principal or owner
+
+					#Valid Values
+
+					maximum of 32 characters"
 					},
 				"principal_last_name" : {
 					"type" : "string",
 					"required" : true,
 					"maxLength" : 32,
-					"description" : "Last name of a company principal or owner"
+					"description" : "Last name of a company principal or owner
+
+					#Valid Values
+
+					maximum of 32 characters"
 					},
 				"principal_middle_initial" : {
 					"type" : "string",
 					"maxLength" : 1,
-					"description" : "Middle name of a company principal or owner"
+					"description" : "Middle name of a company principal or owner
+
+					#Valid Values
+
+					maximum of 1 character"
 					},
 				"date_of_birth" : {
 					"type" : "string",
@@ -92,17 +112,29 @@
 					"type" : "number",
 					"required" : true,
 					"maxLength" : 9, 
-					"description" : "9 digit SSN without dashes"
+					"description" : "9 digit SSN without dashes
+
+					#Valid Values
+
+					maximum of 9 characters"
 					},
 				"drivers_license_state" : {
 					"type" : "string",
 					"maxLength" : 2,
-					"description" : "two letter abreviation for the state issuing the principal's driver's license or state id"
+					"description" : "two letter abreviation for the state issuing the principal's driver's license or state id
+
+					#Valid Values
+
+					maximum of 2 characters"
 					},
 				"drivers_license_number" : {
 					"type" : "string",
 					"maxLength" : 15,
-					"description" : "the drivers license number or state issued id number"
+					"description" : "the drivers license number or state issued id number
+
+					#Valid Values
+
+					maximum of 15 characters"
 					},
 				"principal_address": {
 					"$ref": "#/definitions/address",
@@ -123,26 +155,42 @@
                     "type": "string",
                     "required": true,
                     "maxLength" : 32,
-                    "description" : "Line 1 of the address"
+                    "description" : "Line 1 of the address
+
+                    #Valid Values
+
+					maximum of 32 characters"
                 },
 
                 "city": {
                     "type": "string",
                     "required": true,
                     "maxLength" : 28,
-                    "description" : "city of the address"
+                    "description" : "city of the address
+
+                    #Valid Values
+
+					maximum of 28 characters"
                 },
                 "state": {
                     "type": "string",
                     "required": true,
                     "maxLength" : 2,
-                    "description" : "two letter abbreviation of the state for the address"
+                    "description" : "two letter abbreviation of the state for the address
+
+                    #Valid Values
+
+					maximum of 2 characters"
                 },
                 "zip_code": {
                     "type": "number",
                     "required": true,
                     "maxLength" : 5,
-                    "description" : "zip code of the address"
+                    "description" : "zip code of the address
+
+                    #Valid Values
+
+					maximum of 5 characters"
                 }
             }
 		},
@@ -154,7 +202,11 @@
 					"type" : "number",
 					"required" : true,
 					"maxLength" : 10,
-					"description" : "Ten digit phone number with no dashes or spaces. It should be principal's personal/home phone number" 
+					"description" : "Ten digit phone number with no dashes or spaces. It should be principal's personal/home phone number
+
+					#Valid Values
+
+					maximum of 10 characters" 
 				}
 			}
 		},
@@ -166,7 +218,11 @@
 					"type" : "number",
 					"required" : true,
 					"maxLength" : 9,
-					"description" : "The nine digit tax identification number you are using, either an SSN or EIN"
+					"description" : "The nine digit tax identification number you are using, either an SSN or EIN
+
+					#Valid Values
+
+					maximum of 9 characters"
 				},
 				"tax_identification_number_type" : {
 					"type" : "string",
