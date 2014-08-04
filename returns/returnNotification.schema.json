@@ -2,7 +2,7 @@
 	"title": "returnAcknowldegement",
 	"type": "object",
 	"additionalProperties" : false,
-	"description": "This schema is used for acknowledgement of a Return notification",
+	"description": "This schema is used to inform the Merchant of a Return",
 	"properties": {
 		"return_authorization_id": {
 			"type": "string",
@@ -14,37 +14,55 @@
 			"required": true,
 			"description": "Jet's unique ID for a given merchant order"
 		},		
-		"new_id": {
+		"alt_order_id": {
 			"type": "string",
 			"required": true,
-			"description": "Optional Merchant supplied order ID that should have been established in OrderAcknowledgement in order to use in this message"
+			"description": "Optional Merchant supplied order ID that should have been established in OrderAcknowledgement in order to use in this message
+
+			#Logic
+
+			Jet will provide this field if it has been established"
 		},	
 		"return_date": {
 			"type": "string",
 			"required": true,
-			"description": "The date that the customer requested a return authorization"
+			"description": "The date that the customer requested a return authorization
+
+			#Valid Values
+
+            The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"
 		},
 		"merchant_order_item_id": {
 			"type": "string",
 			"required": true,
-			"description": "Jet's unique ID for an item in a merchant order
-
-			#Logic
-
-			You must provide either 'merchant_order_item_id' or 'new_item_id'"
+			"description": "Jet's unique ID for an item in a merchant order"
 		},		
-		"new_item_id": {
+		"alt_order_item_id": {
 			"type": "string",
 			"required": true,
 			"description": "Optional Merchant supplied order item ID that should have been established in OrderAcknowledgement in order to use in this message
 
 			#Logic
 
-			You must provide either 'merchant_order_item_id' or 'new_item_id'"
+			Jet will provide this field if it has been established"
 		},			
 		"return_merchant_SKU": {
 			"type": "array",
 			"items":{
+				   	"order_item_id": {
+                    	"type": "string",
+                    	"required" : true,
+                    	"description" : "Jet's unique identifier for an item in a merchant order"
+                	},
+                	
+                	"alt_order_item_id": {
+                    	"type": "string",
+                    	"description" : "Required if returning/refunding an item. If an alt_order_item_id has been associated with the order_item_id via the order accept message this may be passed instead of the order_item_id field.
+
+                    	#Logic
+
+                    	Jet will provide this field if it has been established"
+               		},
 				   	"merchant_sku":{
 				   		"type":"string",
 				   		"required": true,
@@ -65,7 +83,10 @@
 				   		"required": true,
 				   		"emum":[
 				   				"no longer need/want",
-				   				"missed estimated delivery date",
+				   				"better price available",
+				   				"unauthorized purchase",
+				   				"missed estimated delivery date (package never arrived)",
+				   				"missed estimated delivery date (package arrived)",
 				   				"different from what was ordered",
 				   				"different from website description",
 				   				"missing parts or accessories",
@@ -79,7 +100,11 @@
 
 				   		*'no longer need/want
 
-				   		*'missed estimated delivery date'
+				   		*'better price available'
+
+				   		*'missed estimated delivery date (package never arrived)'
+
+				   		*'missed estimated delivery date (package arrived)'
 
 				   		*'different from what was ordered'
 
@@ -99,7 +124,7 @@
 				   	}
 				}
 		},		
-		"shipping_method": {
+		"shipping_carrier": {
 			"type": "string",
 			"description": "Shipping method used for the given return shipment
 
@@ -114,7 +139,7 @@
 
 			#Logic
 
-			This will be populated with the tracking number of the return shipment if Jet is providing the shipping label"	
+			This will be populated with the tracking number of the return shipment"	
 		}		
 	}
 }
