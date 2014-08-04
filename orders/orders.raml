@@ -22,6 +22,36 @@ mediaType: application/json
                             example: !include order-links.example.json
                 404:
                     description: The requested resource could not be found.  Most likely the Merchant Id is invalid.
+    /directedCancel:
+        get:
+            queryParameters:
+                merchantId:
+                    description: Merchant Id provided by Jet
+            description: Provides list of orders marked as partially cancelled
+            responses:
+                200:
+                    body:
+                        application/json:
+                            schema: !include order-links.schema.json
+                            example: !include order-links.example.json
+                404:
+                    description: The requested resource could not be found.  Most likely the Merchant Id is invalid.
+
+        /{id}:
+            get:
+                queryParameters:
+                    merchantId:
+                        description: Merchant Id provided by Jet
+                description: Marks part of the order as cancelled and provides reasons, refunds, quantites and shipments cancelled
+                responses:
+                    200:
+                        body:
+                            application/json:
+                                schema: !include order-directedCancel.schema.json
+                                example: !include order-directedCancel.example.json
+                    404:
+                        description: The requested resource could not be found.  
+
     /withShipmentDetail/{id}:
         get:
             queryParameters:
@@ -58,6 +88,7 @@ mediaType: application/json
                 body:
                     application/json:
                         schema: !include order-accept.schema.json
+                        example: !include order-accept.example.json
                 responses:
                     200:
                     404:
@@ -71,6 +102,7 @@ mediaType: application/json
                 body:
                     application/json:
                         schema: !include order-reject.schema.json
+                        example: !include order-reject.example.json
                 responses:
                     200:
                     404:
@@ -84,6 +116,7 @@ mediaType: application/json
                 body:
                     application/json:
                         schema: !include order-shipped.schema.json
+                        schema: !include order-shipped.example.json
                 responses:
                     200:
                     404:
@@ -97,20 +130,9 @@ mediaType: application/json
                 body:
                     application/json:
                         schema: !include order-partialCancel.schema.json
+                        schema: !include order-partialCancel.example.json
                 responses:
                     200:
                     404:
                     409:
-        /directedCancel:
-            post:
-                queryParameters:
-                    merchantId:
-                        description: Merchant Id provided by Jet
-                description: Marks part of the order as cancelled and provides reasons, refunds, quantites and shipments cancelled
-                body:
-                    application/json:
-                        schema: !include order-directedCancel.schema.json
-                responses:
-                    200:
-                    404:
-                    409:   
+       

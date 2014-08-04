@@ -13,9 +13,8 @@
             "description" : "Optional Merchant supplied order ID."
         },
         "jet_request" :{
-        	"type" : "string",
+        	"type" : "boolean",
         	"required" : true,
-        	"enum" : ["Yes","No"],
         	"description" : "Let's Jet know if we requested this cancellation or if you are initiating the cancel
 
         	#Valid Values
