@@ -88,20 +88,29 @@ mediaType: application/json
                     200:
                     404:
                     409:
-    /refund:
-        post:
-            queryParameters:
-                merchantId:
-                    description: Merchant Id provided by Jet
-    
-    /partial-cancel:
-        post:
-            queryParameters:
-                merchantId:
-                    description: Merchant Id provided by Jet
-
-    /returns:
-        get:
-            queryParameters:
-                merchantId:
-                    description: Merchant Id provided by Jet
+        /partialCancel:
+            post:
+                queryParameters:
+                    merchantId:
+                        description: Merchant Id provided by Jet
+                description: Marks part of the order as cancelled and provides reasons, quantites cancelled and refunds
+                body:
+                    application/json:
+                        schema: !include order-partialCancel.schema.json
+                responses:
+                    200:
+                    404:
+                    409:
+        /directedCancel:
+            post:
+                queryParameters:
+                    merchantId:
+                        description: Merchant Id provided by Jet
+                description: Marks part of the order as cancelled and provides reasons, refunds, quantites and shipments cancelled
+                body:
+                    application/json:
+                        schema: !include order-directedCancel.schema.json
+                responses:
+                    200:
+                    404:
+                    409:   
