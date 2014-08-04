@@ -26,13 +26,13 @@
         "items": {
             "type": "array",
             "items": {
-                "$ref": "#/definitions/order_cancel_item"
+                "$ref": "#/definitions/order_partial_cancel_item"
             }
         }
     },
     "definitions": {
-        "order_cancel_item": {
-            "title": "OrderCancelItem",
+        "order_partial_cancel_item": {
+            "title": "OrderPartialCancelItem",
             "additionalProperties" : false,
             "type": "object",
             "properties": {
@@ -90,6 +90,7 @@
                 },
                 "price_adjustment" : {
                 	"title" : "price_adjustment",
+                    "additionalProperties" : false,
                 	"type" : "object",
                 	"properties" : {
                 		"principal" : {
