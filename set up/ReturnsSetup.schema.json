@@ -48,6 +48,7 @@
         "return_address": {
             "title": "Return Address",
  			"type": "object",
+            "additionalProperties" : false,
             "properties": {
                 "return_destination_name" :{
                 	"type": "string",

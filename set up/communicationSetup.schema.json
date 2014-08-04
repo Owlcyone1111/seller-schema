@@ -30,6 +30,7 @@
         "general_communication_info_type": {
             "type" : "object",
             "title" : "general_communication_info",
+            "additionalProperties" : false,
             "properties" : {
                 "information_type" :{
                     "type" : "string",
@@ -71,6 +72,7 @@
         "shipping_location_communication_info": {
             "title": "merchant_shipping_location_communication_info",
  			"type": "object",
+            "additionalProperties" : false,
             "properties": {
                 "shipping_location" :{
                 	"type": "string",
@@ -100,6 +102,7 @@
         "return_destination_communication_info": {
             "title": "return_destination_communication_info",
             "type": "object",
+            "additionalProperties" : false,
             "properties": {
                 "return_destination_name" : {
                     "type": "string",

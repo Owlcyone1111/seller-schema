@@ -17,6 +17,7 @@
 		"business_information" : {
 			"title" : "business_information",
 			"type" : "object",
+			"additionalProperties" : false,
 			"properties" : {
 				"legal_name" : {
 					"type" : "string",
@@ -74,6 +75,7 @@
 		"principal_information" : {
 			"title" : "principal_information",
 			"type" : "object",
+			"additionalProperties" : false,
 			"properties" : {
 				"principal_first_name" : {
 					"type" : "string",
@@ -151,6 +153,7 @@
 		 "address": {
             "title": "Address",
             "type": "object",
+            "additionalProperties" : false,
             "properties": {
                 "street_address": {
                     "type": "string",
@@ -198,6 +201,7 @@
 		"phonenumber": {
 			"title" : "phonenumber",
 			"type" : "object",
+			"additionalProperties" : false,
 			"properties" : {
 				"phone_number" :{
 					"type" : "number",
@@ -214,6 +218,7 @@
 		"tax_id_info" : {
 			"title" : "tax_id_info",
 			"type" : "object",
+			"additionalProperties" : false,
 			"properties" : {
 				"tax_identification_number" : {
 					"type" : "number",

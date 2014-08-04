@@ -2,6 +2,7 @@
 	"title": "returnAcknowldegement",
 	"type": "object",
 	"description": "This schema is used for acknowledgement of a Return notification",
+	"additionalProperties" : false,
 	"properties": {
 		"return_authorization_id": {
 			"type": "string",
