@@ -33,19 +33,27 @@
             "properties": {
                 "order_item_id": {
                     "type": "string",
-                    "description" : "Jet's unique identifier for an item in a merchant order"
-                },
-                "alt_order_item_id": {
-                    "type": "string",
-                    "description" : "Optional merchant supplied ID for an item in an order.
+                    "description" : "Jet's unique identifier for an item in a merchant order
 
                     #Logic
 
-                    If an alt_order_item_id has been associated with the order_item_id via the order accept message this will be passed as well."
+                    required if cancelling only part of an order and separate shipments were not defined, if an alt_order_item_id has been associated with the order_item_id via the order accept message that may be passed instead."
+                },
+                "alt_order_item_id": {
+                    "type": "string",
+                    "description" : "Optional seller supplied ID for an item in an order.
+
+                    #Logic
+
+                    required if cancelling only part of an order and separate shipments were not defined, if an alt_order_item_id has been associated with the order_item_id via the order accept message this may be passed instead of the order_item_id field."
                 },
                 "order_cancel_qty" : {
                     "type" : "integer",
-                    "description" : "Quanitity of the given item that should be cancelled"
+                    "description" : "Quanitity of the given item that should be cancelled
+
+                    #Logic
+
+                    Required if cancelling a specific item to indicate the qty of the given item to be cancelled"
                 }
             }
         },
@@ -60,16 +68,12 @@
 
                     #Logic
 
-                    Include if separte shipments were defined if an alt_shipment_id has been associated with the shipment_id via the order accept message that will be passed as well."
+                    Include if cancelling only part of an order and separte shipments were defined if an alt_shipment_id has been associated with the shipment_id via the order accept message that may be passed instead."
                     
                 },
                 "alt_shipment_id": {
                     "type": "string",
-                    "description" : "Optional Merchant supplied shipment ID.
-
-                    #Logic
-
-                    Jet will provide this field if it has been established"
+                    "description" : "Optional Merchant supplied shipment ID."
                 },
                 "shipment_items": {
                     "type": "array",
@@ -90,19 +94,19 @@
 
                     #Logic
 
-                    Required if separate shipments were defined. If an alt_shipment_item_id has been associated with the shipment_item_id via the order accept message that will be passed as well."
+                    Required if cancelling only part of a shipment and separate shipments were defined if an alt_shipment_item_id has been associated with the shipment_item_id via the order accept message that may be passed instead. "
                 },
                 "alt_shipment_item_id": {
                     "type": "string",
-                    "description" : "Optional merchant supplied ID for an item in a specific shipment.
-
-                    #Logic
-
-                    Jet will provide this field if it has been established"
+                    "description" : "Optional seller supplied ID for an item in a specific shipment."
                 },
                 "shipment_cancel_qty": {
                     "type" : "integer",
-                    "description" : "Quanitity of the given item that should be cancelled"
+                    "description" : "Quanitity of the given item that should be cancelled
+
+                    #Logic
+
+                    Required if cancelling a specific item to indicate the qty of the given item to be cancelled"
                 }
             }
         }
