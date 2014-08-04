@@ -23,6 +23,7 @@
     "definitions": {
         "order_shipped_shipment": {
             "title": "OrderShippedShipment",
+            "additionalProperties" : false,
             "type": "object",
             "properties": {
                 "shipment_id": {
@@ -71,6 +72,7 @@
         },
         "order_shipped_shipment_item": {
             "title": "OrderShippedShipmentItem",
+            "additionalProperties" : false,
             "type": "object",
             "properties": {
                  "shipment_item_id": {

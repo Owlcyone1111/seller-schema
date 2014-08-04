@@ -33,6 +33,7 @@
     "definitions": {
         "order_cancel_item": {
             "title": "OrderCancelItem",
+            "additionalProperties" : false,
             "type": "object",
             "properties": {
                 "order_item_id": {

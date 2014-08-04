@@ -51,6 +51,7 @@
     "definitions": {
         "contact": {
             "title": "Contact",
+            "additionalProperties" : false,
             "type": "object",
             "properties": {
                 "name": {
@@ -67,6 +68,7 @@
         },
         "address": {
             "title": "Address",
+            "additionalProperties" : false,
             "type": "object",
             "properties": {
                 "address1": {
@@ -98,6 +100,7 @@
         },
         "shipping_address": {
             "title": "ShippingAddress",
+            "additionalProperties" : false,
             "type": "object",
             "properties": {
                 "recipient": {
@@ -110,6 +113,7 @@
         },
         "order_item": {
             "title": "OrderItem",
+            "additionalProperties" : false,
             "type": "object",
             "properties": {
                 "order_item_id": {
@@ -153,6 +157,7 @@
                 "tax_info": {
                     "title" : "TaxInfo",
                     "type" : "object",
+                    "additionalProperties" : false,
                     "properties": {
                         "tax_jurisdictions": { 
                             "type": "object",
@@ -199,6 +204,7 @@
         "order_detail": {
             "title": "OrderDetail",
             "type": "object",
+            "additionalProperties" : false,
             "properties": {
                 "shipping_carrier": {
                     "type" : "string",
@@ -279,6 +285,7 @@
         "fee_adjustment": {
             "title": "Fee_Adjustment",
             "type": "object",
+            "additionalProperties" : false,
             "properties": {
                 "adjustment_name": {
                     "type": "string",
@@ -310,6 +317,7 @@
         "tax_jurisdictions" : {
             "title" : "TaxJurisdictions",
             "type" : "object",
+            "additionalProperties" : false,
             "properties" : {
                 "tax_location_code" : {
                     "type" : "string",
@@ -336,6 +344,7 @@
         "amounts": {
             "title": "Amounts",
             "type": "object",
+            "additionalProperties" : false,
             "properties": {
                 "district_amount": {
                     "type": "number",
@@ -362,6 +371,7 @@
         "item_price" : {
             "title" : "ItemPrice",
             "type" : "object",
+            "additionalProperties" : false,
             "properties" : {
                 "base_price" : {
                     "type" : "number",
@@ -390,6 +400,7 @@
         },
          "ship_from_location": {
             "title": "ShipFromLocation",
+            "additionalProperties" : false,
             "type": "object",
             "properties": {
                 "name": {

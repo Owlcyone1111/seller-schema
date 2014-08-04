@@ -28,6 +28,7 @@
     "definitions": {
         "order_cancel_item": {
             "title": "OrderCancelItem",
+            "additionalProperties" : false,
             "type": "object",
             "properties": {
                 "order_item_id": {
@@ -58,6 +59,7 @@
         },
         "order_cancel_shipment": {
             "title": "OrderCancelShipment",
+            "additionalProperties" : false,
             "type": "object",
             "properties": {
                 "shipment_id": {
@@ -73,7 +75,7 @@
                     "type": "string",
                     "description" : "Optional Merchant supplied shipment ID."
                 },
-                "shipment_item": {
+                "shipment_items": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/order_cancel_shipment_item"
@@ -83,6 +85,7 @@
         },
         "order_cancel_shipment_item": {
             "title": "OrderCancelShipmentItem",
+            "additionalProperties" : false,
             "type": "object",
             "properties": {
                 "shipment_item_id": {

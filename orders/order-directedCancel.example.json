@@ -11,12 +11,12 @@
     ],
     "shipments": [
         {
-            "shiopment_id": "a172ae641c384c57b3a5b58ae4dd3bd6",
+            "shipment_id": "a172ae641c384c57b3a5b58ae4dd3bd6",
             "alt_shipment_id": "76-s2507",
-            "items": [
+            "shipment_items": [
                 {
                     "shipment_item_id": "9af824b9e4a24854991870db184bbe32",
-                    "alt_shiopment_item_id": "76-s2507-i105",
+                    "alt_shipment_item_id": "76-s2507-i105",
                     "shipment_cancel_qty" : 1 
                 }
             ]

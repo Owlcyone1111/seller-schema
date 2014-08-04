@@ -23,6 +23,7 @@
     "definitions": {
         "order_accept_item": {
             "title": "OrderAcceptItem",
+            "additionalProperties" : false,
             "type": "object",
             "properties": {
                 "order_item_id": {
@@ -37,6 +38,7 @@
         },
         "order_accept_shipment": {
             "title": "OrderAcceptShipment",
+            "additionalProperties" : false,
             "type": "object",
             "properties": {
                 "shipment_id": {
@@ -48,7 +50,7 @@
                     "type": "string",
                     "description" : "Optional Merchant supplied shipment ID.  Jet will map this ID to the Jet's shipment_id and you can then use this ID in subsequent messages relating to this shipment."
                 },
-                "shipment_item": {
+                "shipment_items": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/order_accept_shipment_item"
@@ -58,6 +60,7 @@
         },
         "order_accept_shipment_item": {
             "title": "OrderAcceptShipmentItem",
+            "additionalProperties" : false,
             "type": "object",
             "properties": {
                 "shipment_item_id": {
