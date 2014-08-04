@@ -144,7 +144,7 @@
                 "item_fees": {
                     "type": "number",
                     "required" : true,
-                    "description" : "The fees paid ot Jet.com for the given quantity of the given merchant SKU in the given merchant order"
+                    "description" : "The fees paid to Jet.com for the given quantity of the given merchant SKU in the given merchant order"
                 },
                 "fee_adjustments": {
                     "type": "array",
