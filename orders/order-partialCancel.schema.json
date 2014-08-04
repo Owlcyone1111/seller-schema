@@ -1,6 +1,7 @@
 {
     "title" : "RefundPartialCancel",
     "type" : "object",
+    "additionalProperties" : false,
     "properties" : {
     	"merchant_order_id": {
             "type": "string",

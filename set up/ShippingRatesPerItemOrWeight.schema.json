@@ -1,6 +1,7 @@
 {
 	"title": "shippingRatesPerItemOrWeight",
 	"type": "object",
+	"additionalProperties" : false,
 	"description": "This schema is used for setting up shipping rates that vary by number items in the order or by the weight of the order",
 	"properties": {
 		"service_level": {

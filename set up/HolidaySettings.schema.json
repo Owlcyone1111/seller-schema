@@ -1,6 +1,7 @@
 {
 	"title": "holiday settings",
 	"type": "object",
+	"additionalProperties" : false,
 	"description": "This schema is used for setting up the holidays observed by your shipping locations, drop shipping location or merchant FC",
 	"properties": {
 		"ship_from_location": {

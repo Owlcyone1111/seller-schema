@@ -1,6 +1,7 @@
 {
 	"title": "creditCard",
 	"type": "object",
+	"additionalProperties" : false,
 	"description": "This schema is used to associate a credit card for use with your merchant account",
 	"properties": {
 		"card_holder_name": {

@@ -1,6 +1,7 @@
 {
 	"title": "noReturnCommisionAdjustment",
 	"type": "object",
+	"additionalProperties" : false,
 	"description": "This schema is used to setup a no return commision adjustment for a Jet Product Category",
 	"properties": {
 		"jet_category": {

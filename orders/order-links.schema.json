@@ -1,6 +1,7 @@
 {
     "title": "OrderLinks",
     "type": "object",
+    "additionalProperties" : false,
     "properties": {
     	"order_urls": {
     		"type": "array",

@@ -1,6 +1,7 @@
 {
 	"title": "shippingBoxSetup",
 	"type": "object",
+	"additionalProperties" : false,
 	"description": "This schema is used to set up a shipping box so jet can help you choose the appropriate box for a given shipment",
 	"properties": {
 		"box_name": {

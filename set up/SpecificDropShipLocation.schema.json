@@ -1,6 +1,7 @@
 {
 	"title": "SpecificDropShipLocation",
 	"type": "object",
+	"additionalProperties" : false,
 	"description": "This schema is used to set up a shipping location for a drop shipper where you know the specific inventory that drop shipper will ship for you and the location the given inventory ships from",
 	"properties": {
 		"ship_from_location": {

@@ -1,6 +1,7 @@
 {
 	"title" : "BankSetup",
 	"type" : "object",
+	"additionalProperties" : false,
 	"properties" : {
 
 		"bank_location_country" : {

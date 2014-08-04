@@ -1,6 +1,7 @@
 {
 "title" : "OrderReject" ,
 "type" : "object",
+"additionalProperties" : false,
 "properties" : {
     "reason": {
     	"type": "string",

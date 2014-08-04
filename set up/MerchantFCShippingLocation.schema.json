@@ -1,6 +1,7 @@
 {
 	"title": "MerchantFcShippingLocation",
 	"type": "object",
+	"additionalProperties" : false,
 	"description": "This schema is used to set up a specific merchant operated shipping location",
 	"properties": {
 		"ship_from_location": {

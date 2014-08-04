@@ -1,6 +1,7 @@
 {
 	"title": "genericShippingLocation",
 	"type": "object",
+	"additionalProperties" : false,
 	"description": "This schema is used to set up a shipping location that is not tied to a specific known address",
 	"properties": {
 		"ship_from_location": {
@@ -120,7 +121,7 @@
 
 			*'sat' - Saturday"
 		},
-		"time_to_process": {
+		"merchant_fulfillment_time": {
 			"type": "integer",
 			"minimum" : 0,
 			"description": "Number of business days from receipt of an order  until it will be transmitted to FBA or Drop Ship location subject to order_cutoff_time

@@ -1,6 +1,7 @@
 {
 	"title" : "MerchantVerification",
 	"type" : "object",
+	"additionalProperties" : false,
 	"properties" : {
 		"business_information" : {
 			"$ref": "#/definitions/business_information"

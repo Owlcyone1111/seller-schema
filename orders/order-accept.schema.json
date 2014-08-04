@@ -1,6 +1,7 @@
 {
     "title": "OrderAcknowledge",
     "type": "object",
+    "additionalProperties" : false,
     "properties": {
         "alt_order_id": {
             "type": "string",

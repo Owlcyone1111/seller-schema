@@ -1,7 +1,8 @@
 {
 	"title": "ReturnsSetup",
 	"type": "object",
-	"description": "This schema is used to set up locations where you will accpet returns",
+	"additionalProperties" : false,
+    "description": "This schema is used to set up locations where you will accpet returns",
 	"properties": {
 		"return_destination": {
                 "type" :"array",
@@ -10,9 +11,8 @@
                 }
 		},
     	"free_returns": {
-    		"type": "string",
-            "enum" : ["true","false"],
-    		"required": true,
+    		"type": "boolean",
+            "required": true,
     		"description": "Communicate if you offer free returns to your customers so Jet can determine how return shipping will be charged.
              'true' - We will charge your carrier account for shipping; you must provide Carrier and AccountNumber.  'false'  Jet.com will pay the return shipping and provide return shipping to the customer at our expense.
 

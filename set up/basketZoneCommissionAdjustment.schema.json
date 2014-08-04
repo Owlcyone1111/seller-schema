@@ -1,6 +1,7 @@
 {
 	"title": "BasketZoneCommisionAdjustment",
 	"type": "object",
+	"additionalProperties" : false,
 	"description": "This schema is used to setup commission adustments for a given basket size with specific commision adjustment for each delivery area if desired",
 	"properties": {
 		"order_size_upper_limit": {

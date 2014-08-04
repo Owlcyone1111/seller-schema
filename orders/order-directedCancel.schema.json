@@ -1,6 +1,7 @@
 {
     "title" : "directedCancel",
     "type" : "object",
+    "additionalProperties" : false,
     "properties" : {
         "merchant_order_id": {
             "type": "string",
@@ -39,7 +40,11 @@
                 },
                 "alt_order_item_id": {
                     "type": "string",
-                    "description" : "Optional seller supplied ID for an item in an order."
+                    "description" : "Optional seller supplied ID for an item in an order.
+
+                    #Logic
+
+                    required if cancelling only part of an order and separate shipments were not defined, if an alt_order_item_id has been associated with the order_item_id via the order accept message this may be passed instead of the order_item_id field."
                 },
                 "order_cancel_qty" : {
                     "type" : "integer",

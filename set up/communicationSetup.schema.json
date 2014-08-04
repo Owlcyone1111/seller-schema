@@ -1,7 +1,8 @@
 {
 	"title": "communicationSetup",
 	"type": "object",
-	"description": "This schema is used to set up the email addresses and phone numbers for texts for jet to use for communicating with you for various reasons",
+	"additionalProperties" : false,
+    "description": "This schema is used to set up the email addresses and phone numbers for texts for jet to use for communicating with you for various reasons",
 	"properties": {
 		"general_communication_info" : {
         "type" : "array",
