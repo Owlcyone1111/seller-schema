@@ -41,7 +41,7 @@
 
                     #Logic
 
-                    required if cancelling only part of an order and separate shipments were not defined, if an alt_order_item_id has been associated with the order_item_id via the order accept message that may be passed instead."
+                    required if cancelling only part of an order if an alt_order_item_id has been associated with the order_item_id via the order accept message that may be passed instead."
                 },
                 "alt_order_item_id": {
                     "type": "string",
