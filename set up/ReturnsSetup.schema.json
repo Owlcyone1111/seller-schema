@@ -10,14 +10,21 @@
                 }
 		},
     	"free_returns": {
-    		"type": "boolean",
+    		"type": "string",
+            "enum" : ["true","false"],
     		"required": true,
     		"description": "Communicate if you offer free returns to your customers so Jet can determine how return shipping will be charged.
              'true' - We will charge your carrier account for shipping; you must provide Carrier and AccountNumber.  'false'  Jet.com will pay the return shipping and provide return shipping to the customer at our expense.
 
     		#Logic
 
-    		If 'true' then 'carrier' and 'account_number' must be provided"
+    		If 'true' then 'carrier' and 'account_number' must be provided
+
+            #Valid Values
+
+            *'true' you have a policy of free returns
+
+            *'false' you do not have a free returns policy"
     	},
     	"carrier":{
     		"type": "string",
