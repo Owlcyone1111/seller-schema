@@ -37,5 +37,18 @@
 	"product_tax_code": "123",
 	"no_return_fee_adjustment": 0.01,
 	"exclude_from_fee_adjustments": false,
-	"ships_alone":false
+	"ships_alone":false,
+	"attributes_node_specific" : [{
+		"attribute_id" : 95,
+		"attribute_value" : "80",
+		"attribute_value_unit" : "count"
+		},
+		{
+		"attribute_id" : 119,
+		"attribute_value" : "aqua",
+		},
+		{
+		"attribute_id" : 2,
+		"attribute_value" : "blue",
+		}]
 }

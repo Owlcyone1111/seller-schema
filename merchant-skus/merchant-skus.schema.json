@@ -371,6 +371,25 @@
 			"type": "boolean",
 			"description": "If this field is 'true', it indicates that this 'merchant SKU' will always ship on its own.    
 			A separate 'merchant_order' will always be placed for this 'merchant_SKU', one consequence of this will be that this merchant_sku will never contriube to any basket size fee adjustments with any other merhcant_skus."
+		},
+		"attributes_node_specific" : {
+			"type" : "array",
+			"maxItems" : 10,
+			"items" : {
+				"attibute_id" : {
+					"type" : "integer",
+					"description" : "the node attribue id number that you get from Jet provided documentation that corresponds with the attribute you are passing"
+				},
+				"attribute_value" : {
+					"type" : "string",
+					"description" : "The value for the attribute. For example if the attribute is size you may pass 'large' or if the the attribute is weight you may pass '22'. For attributes like weight the unit will be passed in the next field"
+				},
+				"attribute_value_unit" : {
+					"type" : "string",
+					"description" : "If the attribute_value requires as unit then you pass the unit here."
+				}
+			}
+
 		}
 	}
 }
