@@ -32,20 +32,6 @@
 
             The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"
 		},
-		"merchant_order_item_id": {
-			"type": "string",
-			"required": true,
-			"description": "Jet's unique ID for an item in a merchant order"
-		},		
-		"alt_order_item_id": {
-			"type": "string",
-			"required": true,
-			"description": "Optional Merchant supplied order item ID that should have been established in OrderAcknowledgement in order to use in this message
-
-			#Logic
-
-			Jet will provide this field if it has been established"
-		},			
 		"return_merchant_SKU": {
 			"type": "array",
 			"items":{
@@ -65,12 +51,10 @@
                		},
 				   	"merchant_sku":{
 				   		"type":"string",
-				   		"required": true,
 				   		"description":"the 'merchant_sku' that is being returned"
 				   	},
 				   	"merchant_sku_title":{
 				   		"type":"string",
-				   		"required":true,
 				   		"description":"The short description of the 'merchant_sku' that is being returned"
 				   	},
 				   	"return_quantity":{
@@ -121,7 +105,30 @@
 				   		*'accidental order'
 
 				   		*'unauthorized purchase'"
-				   	}
+				   	},
+				   	"requested_refund_amount" : {
+                	"title" : "price_adjustment",
+                	"type" : "object",
+                	"additionalProperties" : false,
+                    "properties" : {
+                		"principal" : {
+                			"type" : "number",
+                			"description" : "Amount to be refunded for the given item in USD associated with the item itself. This should be the total cost for this item not the unit cost."
+                		},
+                		"tax" : {
+                			"type" : "number",
+                			"description" : "Amount to be refunded for the given item in USD associated with tax that was charged for the item and "
+                		},
+                		"shipping_cost" : {
+                			"type" : "number",
+                			"description" : "Amount to be refunded for the given item in USD associated with the shipping cost that was allocated to this item"
+                		},
+                		"shipping_tax" : {
+                			"type" : "number",
+                			"description" : "Amount to be refunded for the given item in USD associated with the tax that was charged on shipping"
+                		}
+                	}
+                }
 				}
 		},		
 		"shipping_carrier": {

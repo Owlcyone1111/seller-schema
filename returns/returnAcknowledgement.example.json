@@ -1,5 +1,5 @@
 {
-	"return_authorization_id": "ra jet provides",
+	"return_authorization_id" : "RA123456789",
+	"alt_return_authorization_id" : "987654321",
 	"return_status": "acknowledged",
-	"merchant_ra": "number you provide",
 }

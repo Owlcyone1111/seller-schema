@@ -37,8 +37,8 @@
     "definitions": {
         "order_return_refund_item": {
             "title": "OrderReturnRefundItem",
-            "additionalProperties" : false,
             "type": "object",
+            "additionalProperties" : false,
             "properties": {
                 "order_item_id": {
                     "type": "string",
@@ -73,7 +73,7 @@
 
                 	#Valid Values
 
-                	*'cutomer opened item' 
+                	*'customer opened item' 
 
                 	*'not shipped in original packaging' 
 
