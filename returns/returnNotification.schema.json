@@ -9,6 +9,10 @@
 			"required": true,
 			"description": "Jet.com unique ID for the return"
 		},
+		"refund_without_return" : {
+			"type":"boolean",
+			"description" : "If this is true jet has deemed that this item should not be returned but the customer still should be refunded"
+		},
 		"merchant_order_id": {
 			"type": "string",
 			"required": true,
