@@ -2,7 +2,7 @@
     "merchant_order_id" : "9b13bdd68c314d1b9c8b93277dea4da1",
     "order_placed_date" : "2014-07-24T17:00:00.0000000Z",
     "order_transmission_date" : "2014-07-24T17:01:00.0000000Z",
-
+    "status" : "created",
     "buyer": {
         "name": "Tony Stark",
         "phone_number": "555-999-9999"

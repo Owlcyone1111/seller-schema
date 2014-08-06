@@ -8,6 +8,45 @@
             "required": true,
             "description" :  "Jet's unique ID for a given merchant order"
         },
+        "alt_order_id": {
+            "type": "string",
+            "description" : "Optional Merchant supplied order ID. 
+            #Logic
+
+            If an alt_order_id has been associated with the merchant_order_id via the order accept message this will be passed as well.
+            "
+        },
+        "status" : {
+            "type" : "string",
+            "required" : true,
+            "enum" : ["created", "directCancelled", "accepted", "rejected", "shipped", "partialCancelled"], 
+            "description" : "Current status of the order
+
+            #Valid Values
+            * created - order was created by Jet.com and is available in pending List
+            * directCancelled - order was directly cancelled by Jet.com
+            * accepted - order was accepted by merchant
+            * rejected - order was rejected by merchant
+            * shipped - order was shipped by merchant
+            * partialCancelled - order was partially cancelled by merchant
+            "
+        }, 
+        "reason": {
+            "type": "string",
+            "enum" : ["No Inventory" , "Shipping Address Undeliverable" , "Partial Out Of Stock" , "System Upload Error"],
+            "requiered" : true,
+            "description" : "Rejection reason; present if the order was rejected
+
+            #Valid Values
+
+            *'No Inventory' - Send if unable to fill any part of the order due to not having the inventory in stock
+            
+            *'Shipping Address Undeliverable' - Send if using your own shipping labels your carriers do not deliver to the given address
+            
+            *'Partial Out Of Stock' - Send if you can fulfill some but not all of the order (immediately send an Inventory message to correct your Inventory levels)
+            
+            *'System Upload Error' - Send if there was a technical problem with processing the  Order Message"
+        },      
         "order_placed_date": {
             "type": "string",
             "required": true,
@@ -124,6 +163,14 @@
                     "required": true,
                     "description" : "Jet's unique identifier for an item in a merchant order"
                 },
+                "alt_order_item_id": {
+                    "type": "string",
+                    "description" : "Optional merchant supplied ID for an item in an order.
+
+                    #Logic
+
+                    If an alt_order_item_id has been associated with the order_item_id via the order accept message this will be passed as well."
+                },
                 "merchant_sku": {
                     "type": "string",
                     "required": true,
@@ -134,9 +181,42 @@
                     "required": true,
                     "description" : "The quantity of the given merchant SKU that is in the given merchant order"
                 },
+                "order_cancel_qty" : {
+                    "type": "integer",
+                    "description" : "The quanitity of the given merchant SKU that should be cancelled; present only if directCancelled event occured for the order"
+                },
+                "adjustment_reason" : {
+                    "type" : "string",
+                    "enum" : [
+                                "Price Error",
+                                "Customer Request",
+                                "Jet Request",
+                                "Shipping Address Undeliverable",
+                                "Partial Out Of Stock",
+                                "ship_by Date Cannot Be Met",
+                                "deliver_by Date Cannot Be Met",
+                                "Other"],
+                    "description" : "the reason for the adjustment in quantity; only present if partial cancel message was recieved
+
+                    #Valid Values
+
+                    *'Price Error' - If refunding an amount due to a pricing error you noticed after the transaction was completed
+
+                    *'Customer Request' - If cancelling due to a customer request to do so 
+
+                    *'Shipping Address Undeliverable' - Send if using your own shipping labels and your carriers do not deliver to the given Address
+                    
+                    *'Partial Out Of Stock' - Send if you can fulfill some but not all of the order AND some items from the order have already shipped (immediately send an inventory message to correct your inventory levels)
+
+                    *'ship_by Date Cannot Be Met' Send if you are unable to ship any part of the order by the required ship_by date AND you have not shipped any part of the order
+
+                    *'deliver_by Date Cannot Be Met' Send if you are unable to ensure any part of the order will be delivered by the required deliver_by date AND you have not shipped any part of the order
+
+                    *'other' - use for any use case not address above "
+
+                },
                 "item_tax_code": {
                     "type": "string",
-                    "required" : false,
                     "description" : "the tax code associated with the given merchant SKU
 
                     #Valid Values
@@ -145,6 +225,30 @@
                 },
                 "item_price": {
                     "$ref" : "#/definitions/item_price"
+                },
+                "price_adjustment" : {
+                    "title" : "price_adjustment",
+                    "additionalProperties" : false,
+                    "type" : "object",
+                    "description" : "Price adjustment occured as a result of the partial cancel",
+                    "properties" : {
+                        "principal" : {
+                            "type" : "number",
+                            "description" : "Amount to be refunded/auth that will not be captured for the given item in USD associated with the item itself. This should be the total cost for this item not the unit cost."
+                        },
+                        "tax" : {
+                            "type" : "number",
+                            "description" : "Amount to be refunded/auth that will not be captured for the given item in USD associated with tax that was charged for the item and "
+                        },
+                        "shipping_cost" : {
+                            "type" : "number",
+                            "description" : "Amount to be refunded/auth that will not be captured for the given item in USD associated with the shipping cost that was allocated to this item"
+                        },
+                        "shipping_tax" : {
+                            "type" : "number",
+                            "description" : "Amount to be refunded/auth that will not be captured for the given item in USD associated with the tax that was charged on shipping"
+                        }
+                    }
                 },
                 "item_fees": {
                     "type": "number",
@@ -214,6 +318,14 @@
                     "required" : true,
                     "description" : "Jet's unique ID for a given shipment"
                 },
+                "alt_shipment_id": {
+                    "type": "string",
+                    "description" : "Optional Merchant supplied shipment ID.
+
+                    #Logic
+
+                    Jet will provide this field if it has been established via accept message"
+                },
                 "shipping_carrier": {
                     "type" : "string",
                     "required" : false,
@@ -229,11 +341,10 @@
                     *'USPS'"
 
                 },
-                "shipping_method": {
-                    "title": "Shipping_Method",
+                "shipment_method": {
                     "type": "string",
                     "required" : false,
-                    "description" : "the shipping method for the given shipment_id
+                    "description" : "the shipping method for the given shipment_id; replaced by actual shipment method used in case of Shipped message
 
                     #Logic
 
@@ -242,6 +353,10 @@
                     #Valid Values
 
                     List of shipping methods the merchant has set up"
+                },
+                "shipment_tracking_number": {
+                    "type": "string",
+                    "description" : "packaging tracking number mentioned in Shipped message"
                 },
                 "service_level" : {
                     "type" : "string",
@@ -429,6 +544,14 @@
                     "description" : "Jet's unique identifier for an item in a shipment"
 
                 },
+                 "alt_shipment_item_id": {
+                    "type": "string",
+                    "description" : "Optional merchant supplied ID for an item in a specific shipment.
+
+                    #Logic
+
+                    Jet will provide this field if it has been established by accept message"
+                },
                 "merchant_sku": {
                     "type": "string",
                     "required" : true,
@@ -441,7 +564,11 @@
                 "shipment_sku_quantity": {
                     "type": "integer",
                     "required" : true,
-                    "description" : "The quantity of the given merchant SKU that is in the given shipment"
+                    "description" : "The quantity of the given merchant SKU that is in the given shipment; once Shipped message recieved, contains actual shipped quantity."
+                },
+                 "shipment_cancel_qty": {
+                    "type" : "integer",
+                    "description" : "Quanitity of the given item that should be cancelled according to directed cancel message"
                 }
             }
         },
