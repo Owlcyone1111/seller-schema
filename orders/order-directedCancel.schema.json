@@ -12,7 +12,7 @@
             "type": "string",
             "description" : "Optional Merchant supplied order ID."
         },
-        "items": {
+        "order_items": {
             "type": "array",
             "items": {
                 "$ref": "#/definitions/order_cancel_item"

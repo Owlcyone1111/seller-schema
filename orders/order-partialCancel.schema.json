@@ -23,7 +23,7 @@
 
         	*'false' - This is sent if you did not receive a DirectedCancel message and are initiating the cancel on you own."
         	},
-        "items": {
+        "order_items": {
             "type": "array",
             "items": {
                 "$ref": "#/definitions/order_partial_cancel_item"

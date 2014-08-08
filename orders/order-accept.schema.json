@@ -7,7 +7,7 @@
             "type": "string",
             "description" : "Optional Merchant supplied order ID.  Jet will map this ID to Jet's order_id and you can then use this ID in subsequent messages relating to this order."
         },
-        "items": {
+        "order_items": {
             "type": "array",
             "items": {
                 "$ref": "#/definitions/order_accept_item"
