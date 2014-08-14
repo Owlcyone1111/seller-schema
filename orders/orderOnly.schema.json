@@ -8,6 +8,14 @@
             "required": true,
             "description" :  "Jet's unique ID for a given merchant order"
         },
+        "fulfillment_node" : {
+            "type": "string",
+            "description" : "Optional Merchant-supplied Fulfillment Node Name. 
+            #Logic
+
+            If provided, this field directs merchant to send the order from the fulfillment node set up in Merchant Portal.
+            "
+        },
         "alt_order_id": {
             "type": "string",
             "description" : "Optional Merchant supplied order ID. 
@@ -15,7 +23,7 @@
 
             If an alt_order_id has been associated with the merchant_order_id via the order accept message this will be passed as well.
             "
-        },
+        },        
         "status" : {
             "type" : "string",
             "required" : true,
