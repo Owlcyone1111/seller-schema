@@ -17,8 +17,8 @@ mediaType: application/json
                 description: List of all merchant SKUs
                 body:
                     application/json:
-                        schema: !include merchant-skus.schema.json
-                        example: !include merchant-skus.example.json
+                        schema: !include links.schema.json
+                        example: !include links.example.json
             404:
     /{id}:
         get:

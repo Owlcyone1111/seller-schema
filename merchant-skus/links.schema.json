@@ -3,12 +3,12 @@
     "type": "object",
     "additionalProperties" : false,
     "properties": {
-    	"order_urls": {
+    	"sku_urls": {
     		"type": "array",
     		"description": "List of URLs",
     		"items": {
     			"type": "string",
-    			"description": "The unique resource URL where this order can be found"
+    			"description": "The unique resource URL"
     		}
     	}
     }
