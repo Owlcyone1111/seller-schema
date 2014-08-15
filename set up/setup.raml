@@ -1,0 +1,24 @@
+#%RAML 0.8
+
+title: Merchant API - Set Up
+description: This API provides actions required for setting up and updating information about the merchant.
+baseUri: http://dev-ironman-webapi.test.jet.com/api
+version: v0.1
+protocols: [HTTPS]
+mediaType: application/json
+
+/setup:
+    /bank:       
+        put:
+            queryParameters:
+                merchantId:
+                    description: Merchant Id provided by Jet
+            description: Sets up merchant bank info to Jet.com so it can transfer transaction proceeds to the merchant
+            body:
+                application/json:
+                    schema: !include banksetup.schema.json
+                    example: !include banksetup.example.json
+            responses:
+                200:
+                404:
+                409:        

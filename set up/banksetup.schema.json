@@ -8,7 +8,7 @@
 			"type": "string",
 			"required" : true,
 			"enum": ["United States of America"],
-			"description" : "The name of the country in which the back is locate.
+			"description" : "The name of the country in which the bank is located.
 
 			#Valid Values
 
