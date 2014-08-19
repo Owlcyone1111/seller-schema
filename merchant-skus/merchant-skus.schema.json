@@ -69,6 +69,12 @@
 
 			"
 		},
+		"ASIN" : {
+			"type": "string",
+			"description" : "Amazon standard itdentification number for this merchant SKU if available",
+			"maxLength" : 10,
+			"minLength" : 10,
+		},
 		"multipack_quantity": {
 			"type": "integer",
 			"required": true,
