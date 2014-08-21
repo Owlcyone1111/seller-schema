@@ -1,5 +1,5 @@
 {
-    "title": "OrderShipped",
+    "title": "OrderShippedNotification",
     "type": "object",
     "additionalProperties" : false,
     "properties": {
@@ -11,14 +11,49 @@
             "type": "string",
             "description" : "Optional Merchant supplied order ID.  Jet will map this ID to Jet's order_id and you can then use this ID in subsequent messages relating to this order."
         },
+        "order_items": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/order_items_shipped"
+            }
+        },
         "shipments": {
             "type": "array",
             "items": {
                 "$ref": "#/definitions/order_shipped_shipment"
             }
-        }
+        },
     },
     "definitions": {
+        "order_items_shipped": {
+            "title": "OrderItemsShipped",
+            "additionalProperties" : false,
+            "required" : true,
+            "type": "object",
+            "properties": {
+                "order_item_id": {
+                    "type": "string",
+                    "description" : "Jet's unique ID for a given a order item during when the order is retrieve with the order retrieval API"
+                },
+                "alt_order_item_id": {
+                    "type": "string",
+                    "description" : "Optional Merchant supplied order item ID.  If provided in the order acknowledgement jet has already mapped this value."
+                },
+
+                "merchant_sku": {
+                    "type": "string",
+                    "description" : "The merchant provided product identifier for the order item"
+                },
+                "shipped_order_item_quantity": {
+                    "type": "integer",
+                    "description" : "Quantity of the order item that is shipped"
+                },
+                "cancelled_order_item_quantity": {
+                    "type": "integer",
+                    "description" : "Quantity cancelled of the given order item"
+                },
+            }
+        },
         "order_shipped_shipment": {
             "title": "OrderShippedShipment",
             "additionalProperties" : false,
@@ -87,7 +122,11 @@
                 },
                 "shipment_sku_quantity": {
                     "type": "integer",
-                    "description" : "Quantity of the given SKU that was in the given shipment"
+                    "description" : "Quantity of the given SKU that was shipped in the given shipment"
+                },
+                "cancelled_sku_quantity": {
+                    "type": "integer",
+                    "description" : "Quantity of the given SKU that was cancelled in the given shipment"
                 }
             }
         }

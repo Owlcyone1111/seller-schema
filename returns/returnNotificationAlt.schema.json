@@ -153,12 +153,12 @@
 			This will be populated with the tracking number of the return shipment"	
 		},
 		"merchant_return_charge": {
-			"type": "string",
-			"description": "tracking number for the given return shipment
+			"type": "number",
+			"description": "The charge that the merchant is required to pay jet for the return
 
 			#Logic
 
-			This will be populated with the tracking number of the return shipment"	
+			This is populated with the charge that a merchant will pay jet for a customer return"	
 		}		
 	}
 }

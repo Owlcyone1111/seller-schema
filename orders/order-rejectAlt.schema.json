@@ -1,0 +1,51 @@
+{
+	"title" : "OrderReject" ,
+	"type" : "object",
+	"additionalProperties" : false,
+	"properties" : {
+	    "reason": {
+	    	"type": "string",
+	    	"enum" : [
+		    	"No Inventory" , 
+		    	"Shipping Address Undeliverable", 
+		    	"Ship from location not available",
+		    	"Shipping method not supported",
+		    	"System Upload Error"],
+	    	"requiered" : true,
+	    	"description" : "Enter the reason that the order was rejected
+
+	    	#Valid Values
+
+	    	*'No Inventory' - Send if unable to fill any part of the order due to not having the inventory in stock.  When this status is used, all order items that have no inventory should be returned in order_items_no_inventory.
+			
+			*'Shipping Address Undeliverable' - Send if using your own shipping labels your carriers do not deliver to the given address
+
+			*'Ship from location not available' - the ship to location is invalid
+
+			*'Shipping method not supported' - the adress requested cannot be shipped to
+							
+			*'System Upload Error' - Send if there was a technical problem with processing the  Order Message"
+			
+			
+	    },
+	    "order_items": {
+		    "type": "array",
+		    "items": {
+		        "$ref": "#/definitions/order_items_no_inventory"
+    		}
+    	}
+	},
+	"definitions": {
+        "order_items_no_inventory": {
+    	 	"title": "OrderItemsNoInventory",
+            "additionalProperties" : false,
+            "type": "object",
+            "properties": {
+                "order_item_id": {
+                    "type": "string",
+                    "description" : "Jet's Order Item Id retrieved using order API"
+                }
+            }
+        }
+    }
+}

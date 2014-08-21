@@ -1,0 +1,117 @@
+{
+    "title": "OrderAcknowledgement",
+    "type": "object",
+    "properties": {
+        "acknowledgement_status":{
+            "type": "string",
+            "required": true,
+            "emum":[
+                "accepted",
+                "rejected - unfulfillable address",
+                "rejected - shipping method not supported",
+                "rejected - ship from location not available",
+                "rejected - item level error"],
+            "description" : "Status to let jet know whether you accept or reject the order, errors that occur at the item level should be given the status 'rejected - item level error' 
+
+            #Valid Values
+
+            *'accepted' - all items in the order will be shipped' 
+
+            *'rejected - unfulfillable address' - the address requested cannot be shipped to
+
+            *'rejected - shipping method not supported' - the adress requested cannot be shipped to
+
+            *'rejected - ship from location not available' - the ship to location is invalid
+
+            *'rejected - item level error' - the error occurred at the item level"
+        },
+        "alt_order_id": {
+            "type": "string",
+            "description" : "Optional Merchant supplied order ID.  Jet will map this ID to Jet's order_id and you can then use this ID in subsequent messages relating to this order."
+        },
+        "order_items": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/order_item"
+            }
+        },
+        "shipments": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/order_shipment"
+            }
+        }
+    },
+    "definitions": {
+        "order_item": {
+            "title": "OrderItem",
+            "additionalProperties" : false,
+            "type": "object",
+            "properties": {
+                "order_item_acknowledgement_status":{
+                    "type": "string",
+                    "required": true,
+                    "emum":[
+                        "fulfillable",
+                        "nonfulfillable - no inventory",
+                        "nonfulfillable - invalid merchant sku"],
+                    "description" : "value to send jet the status of each item in the order request 
+
+                    #Valid Values
+
+                    *'fulfillable' - the item in the order can be shipped' 
+
+                    *'nonfulfillable - no inventory' - no inventory for this product is available
+
+                    *'nonfulfillable - invalid vendor sku' - this sku is no recongized as a valid value"
+                    
+                },
+                "order_item_id": {
+                    "type": "string",
+                    "description" : "Jet's unique identifier for an item in a merchant order"
+                },
+                "alt_order_item_id": {
+                    "type": "string",
+                    "description" : "Optional seller supplied ID for an item in an order.  If this value is specified with the Jet's order_item_id, Jet will map the two IDs and you can then use your own order item ID for subsequent feeds relating to that order item."
+                }
+            }
+        },
+        "order_shipment": {
+            "title": "OrderShipment",
+            "additionalProperties" : false,
+            "type": "object",
+            "properties": {
+                "shipment_id": {
+                    "type": "string",
+                    "description" : "Jet's unique ID for a given shipment"
+                    
+                },
+                "alt_shipment_id": {
+                    "type": "string",
+                    "description" : "Optional Merchant supplied shipment ID.  Jet will map this ID to the Jet's shipment_id and you can then use this ID in subsequent messages relating to this shipment."
+                },
+                "shipment_items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/order_shipment_item"
+                    }
+                }
+            }
+        },
+        "order_shipment_item": {
+            "title": "OrderShipmentItem",
+            "additionalProperties" : false,
+            "type": "object",
+            "properties": {
+                "shipment_item_id": {
+                    "type": "string",
+                    "description" : "Jet's unique identifier for an item in a shipment"
+                },
+                "alt_shipment_item_id": {
+                    "type": "string",
+                    "description" : "Optional seller supplied ID for an item in a specific shipment.  If this value is specified with Jet's shipment_item_id, Jet will map the two IDs and you can then use your own shipment item ID for subsequent feeds relating to that order item."
+                }
+            }
+        }
+    }
+}
