@@ -103,6 +103,10 @@
             "additionalProperties" : false,
             "type": "object",
             "properties": {
+                "merchant_sku": {
+                    "type": "string",
+                    "description" : "Merchants unique identifier for a product"
+                },
                 "shipment_item_id": {
                     "type": "string",
                     "description" : "Jet's unique identifier for an item in a shipment"

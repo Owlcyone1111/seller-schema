@@ -14,6 +14,7 @@
             "alt_shipment_id": "76-s2507",
             "shipment_items": [
                 {
+                    "merchant_sku" : "XYZ-001",
                     "shipment_item_id": "9af824b9e4a24854991870db184bbe32",
                     "alt_shipment_item_id": "76-s2507-i105"
                 }
