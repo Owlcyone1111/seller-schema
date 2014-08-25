@@ -1,0 +1,65 @@
+#%RAML 0.8
+
+title: Merchant API - Returns
+description: This API provides actions required for processing orders.
+baseUri: http://dev-ironman-webapi.test.jet.com/api
+version: v0.1
+protocols: [HTTPS]
+mediaType: application/json
+
+/return:
+    /pending:
+        get:
+            queryParameters:
+                merchantId:
+                    description: Merchant Id provided by Jet
+            description: This method will provide resource URLs for pending returns
+            responses:
+                200:
+                    body:
+                        application/json:
+                            schema: !include return-links.schema.json
+                            example: !include return-links.example.json
+                404:
+                    description: The requested resource could not be found.  Most likely the Merchant Id is invalid.
+    /notification/{id}:
+        get:
+            queryParameters:
+                merchantId:
+                    description: Merchant Id provided by Jet
+            description: This method will list all returns that have not been acknowledged
+            responses:
+                200:
+                    body:
+                        application/json:
+                            schema: !include return-notification.schema.json
+                            example: !include return-notification.example.json
+                404:
+    /acknowledgment:
+        post:
+            queryParameters:
+                merchantId:
+                    description: Merchant Id provided by Jet
+            description: Marks as return notification as acklowedged by the merchant
+            body:
+                application/json:
+                    schema: !include return-acknowledgement.schema.json
+                    example: !include return-acknowledgement.example.json
+            responses:
+                200:
+                404:
+                409:
+    /complete:
+        post:
+            queryParameters:
+                merchantId:
+                    description: Merchant Id provided by Jet
+            description: Marks a return as complete and notifies jet how the customer refund should proceed
+            body:
+                application/json:
+                    schema: !include return-orderRefund.schema.json
+                    schema: !include return-orderRefund.example.json
+            responses:
+                200:
+                404:
+                409:

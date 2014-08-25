@@ -11,14 +11,6 @@
             "type": "string",
             "description" : "Optional Merchant supplied order ID."
         },
-        "return_authorization_id": {
-            "type": "string",
-            "description": "Jet.com unique ID for the return. 
-
-             #Logic
-
-            Must supply this number or the alt_return_authorization_id if you have established one in the returnAcknoledgement message"
-        },
         "alt_return_authorization_id": {
             "type": "string",
             "description": "Merchant's unique ID for the return established in the returnAcknoledgement message. 
@@ -32,7 +24,21 @@
             "items": {
                 "$ref": "#/definitions/order_return_refund_item"
             }
-        }
+        },
+        "agree_to_return_charge" : {
+            "type" : "string",
+            "enum" : [
+                        "yes",
+                        "no"
+                     ],
+            "description" : "does the merchant agree to the return charge for the return notification 
+
+            #Valid Values
+
+            *'yes' - the merchant agrees to wholly pay the return charge to jet.com from the return notification
+
+            *'no' - the merchant disagrees with the return charge and will enter a disputed charge with jet.com"
+        },
     },
     "definitions": {
         "order_return_refund_item": {
@@ -116,21 +122,7 @@
                 			"description" : "Amount to be refunded for the given item in USD associated with the tax that was charged on shipping"
                 		}
                 	}
-                },
-                "agree_to_return_charge" : {
-                    "type" : "string",
-                    "enum" : [
-                                "yes",
-                                "no"
-                             ],
-                    "description" : "does the merchant agree to the return charge for the return notification 
-
-                    #Valid Values
-
-                    *'yes' - the merchant agrees to wholly pay the return charge to jet.com from the return notification
-
-                    *'no' - the merchant disagrees with the return charge and will enter a disputed charge with jet.com 
-                },
+                }
             }
         }
     }

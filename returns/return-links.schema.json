@@ -1,0 +1,15 @@
+{
+    "title": "ReturnLinks",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+    	"return_urls": {
+    		"type": "array",
+    		"description": "List of return URLs",
+    		"items": {
+    			"type": "string",
+    			"description": "The unique resource URL where the return can be found"
+    		}
+    	}
+    }
+}

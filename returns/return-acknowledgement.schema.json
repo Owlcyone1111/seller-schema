@@ -4,11 +4,6 @@
 	"description": "This schema is used for acknowledgement of a Return notification",
 	"additionalProperties" : false,
 	"properties": {
-		"return_authorization_id": {
-			"type": "string",
-			"required": true,
-			"description": "Jet.com unique ID for the return"
-		},
 		"alt_return_authorization_id": {
 			"type": "string",
 			"description": "Optional merchant supplied return number, allows you to use this number in future messages instead of return_authorization_id. This ID will be included on the Return Documentation that Jet gives to the customer"
