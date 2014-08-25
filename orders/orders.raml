@@ -63,30 +63,16 @@ mediaType: application/json
                             example: !include orderOnly.example.json
                 404:   
     /{id}:
-        /accept:
+        /acknowledge:
             post:
                 queryParameters:
                     merchantId:
                         description: Merchant Id provided by Jet
-                description: Marks an order as accepted
+                description: Marks an order as acknowledged
                 body:
                     application/json:
-                        schema: !include order-accept.schema.json
-                        example: !include order-accept.example.json
-                responses:
-                    200:
-                    404:
-                    409:
-        /reject:
-            post:
-                queryParameters:
-                    merchantId:
-                        description: Merchant Id provided by Jet
-                description: Marks an order as rejected (i.e. you will not be fulfilling this order)
-                body:
-                    application/json:
-                        schema: !include order-reject.schema.json
-                        example: !include order-reject.example.json
+                        schema: !include order-acknowledgement.schema.json
+                        example: !include order-acknowledgement.example.json
                 responses:
                     200:
                     404:
@@ -96,27 +82,12 @@ mediaType: application/json
                 queryParameters:
                     merchantId:
                         description: Merchant Id provided by Jet
-                description: Marks an order as shipped and provides tracking information to Jet
+                description: Notifies Jet that items in the order where shipped or cancelled
                 body:
                     application/json:
-                        schema: !include order-shipped.schema.json
-                        schema: !include order-shipped.example.json
+                        schema: !include order-shippedNotification.schema.json
+                        schema: !include order-shippedNotification.example.json
                 responses:
                     200:
                     404:
-                    409:
-        /partialCancel:
-            post:
-                queryParameters:
-                    merchantId:
-                        description: Merchant Id provided by Jet
-                description: Marks part of the order as cancelled and provides reasons, quantites cancelled and refunds
-                body:
-                    application/json:
-                        schema: !include order-partialCancel.schema.json
-                        schema: !include order-partialCancel.example.json
-                responses:
-                    200:
-                    404:
-                    409:
-       
+                    409:        

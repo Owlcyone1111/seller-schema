@@ -2,11 +2,7 @@
     "title": "OrderShippedNotification",
     "type": "object",
     "additionalProperties" : false,
-    "properties": {
-        "merchant_order_id": {
-            "type" : "string",
-            "description" : "Jet's unique ID for a given merchant order"
-        },    
+    "properties": {          
         "alt_order_id": {
             "type": "string",
             "description" : "Optional Merchant supplied order ID.  Jet will map this ID to Jet's order_id and you can then use this ID in subsequent messages relating to this order."
