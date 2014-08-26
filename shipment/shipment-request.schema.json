@@ -1,0 +1,242 @@
+{
+    "title": "MerchantOrderWithShipments",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+        "merchant_order_id": {
+            "type": "string",
+            "required": true,
+            "description" :  "Jet's unique ID for a given merchant order"
+        },
+        "order_placed_date": {
+            "type": "string",
+            "required": true,
+            "description" :  "The date the merchant order was placed
+
+            #Valid Values
+
+            The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"
+        },
+        "order_transmission_date":{
+            "type": "string",
+            "required": true,
+            "description" : "The date/time the merchant order was sent to the merchant
+
+            #Valid Values
+
+            The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"
+        },
+        "status" : {
+            "type" : "string",
+            "required" : true,
+            "enum" : ["ready"], 
+            "description" : "Current status of the order
+
+            #Valid Values
+            * ready - order created and ready to be fulfilled
+            "
+        }, 
+        "shipping_to": {
+            "$ref": "#/definitions/shipping_to_address"
+        },
+        "shipping_info": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/shipment_info"
+            }
+        },
+        "order_items": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/order_item"
+            }
+        },
+        "order_fulfillment_charge": {
+        	"type" : "number",
+        	"required" : true,
+        	"description" : "the cost of fulfilling the total order that will be paid to jet.com"
+        },
+        "merchant_paid_ship_cost": {
+            "type": "string",
+            "required": true,
+            "enum" : [
+            	"yes",
+            	"no"
+            ]
+            "description" : "Indicate whether Jet.com pays the shipping cost or the merchant pays shipping cost"
+        }
+    },
+    "definitions": {
+        "shipping_to_address": {
+            "title": "ShippingToAddress",
+            "additionalProperties" : false,
+            "type": "object",
+            "properties": {
+                "recipient": {
+                    "$ref": "#/definitions/contact"
+                },
+                "address": {
+                    "$ref": "#/definitions/address"
+                }
+            }
+        },
+        "contact": {
+            "title": "Contact",
+            "additionalProperties" : false,
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "required": true,
+                    "description" : "Name of the contact"
+                },
+                "phone_number": {
+                    "type": "string",
+                    "required": true,
+                    "description" : "Phone number of the contact"
+                }
+            }
+        },
+        "address": {
+            "title": "Address",
+            "additionalProperties" : false,
+            "type": "object",
+            "properties": {
+                "address1": {
+                    "type": "string",
+                    "required": true,
+                    "description" : "Line 1 of the address"
+                },
+                "address2": {
+                    "type": "string", 
+                    "required": false,
+                    "description" : "line 2 of the address"
+                },
+                "city": {
+                    "type": "string",
+                    "required": true,
+                    "description" : "city of the address"
+                },
+                "state": {
+                    "type": "string",
+                    "required": true,
+                    "description" : "state of the address"
+                },
+                "zip_code": {
+                    "type": "string",
+                    "required": true,
+                    "description" : "zip code of the address"
+                }
+            }
+        },
+        "shipment_info": {
+            "title": "ShipmentInfo",
+            "additionalProperties" : false,
+            "type": "object",
+            "properties": {
+                "shipment_method": {
+                    "type": "string",
+                    "required" : false,
+                    "description" : "the shipping method requested by the merchant, all shipping methods should be configured in jet.com's merchant portal"
+                },
+                "service_level" : {
+                    "type" : "string",
+                    "enum" : ["Standard","Expedited","Scheduled","NextDay","SecondDay"],
+                    "required" : false,
+                    "description" : "service level the customer will receive
+
+                    #Valid Values
+
+                   *'Standard'
+
+                   *'Expedited'
+
+                   *'Scheduled'
+
+                   *'NextDay'
+
+                   *'SecondDay'"
+                },
+                "ship_by": {
+                    "type": "string",
+                    "required": false,
+                    "description" : "Expected date that the shipment will be tendered to the given carrier
+
+                    #Logic
+
+                    This will be calculated based on when the merchant order is sent the Merchant and their given settings for Fulfilment Time, and Order Cutoff data set at either the account level or shipping method level
+
+                    #Valid Values
+
+                    The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"
+                },
+                "delivery_by": {
+                    "type": "string",
+                    "required" : false,
+                    "description" : "Date the customer has been promised delivery 
+
+                    #Logic 
+
+                    The ShippingMethod selected should provide delivery by this date as long as you meet shipping requirements you communicated during shipping set up.   If you use Jet provided labels and ship ontime you should meet this date.  If you use your own shipping labels you can choose to use a carrier other than the one suggested by ShippingMethod as long as the DeliveryByDate is met or exceeded.
+
+                    #Valid Values
+
+                    The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"
+                },
+				"jet_fulfillment_node_id": {
+                    "type": "string",
+                    "required" : false,
+                    "description" : "the fulfillment node that the order ship be fulfilled from, if left blank jet will pick the optimal node"
+                }
+            }
+        },
+        "order_item": {
+            "title": "OrderItem",
+            "additionalProperties" : false,
+            "type": "object",
+            "properties": {
+                "merchant_order_item_id": {
+                    "type": "string",
+                    "required": true,
+                    "description" : "Merchants's unique identifier for an item in the order"
+                },
+                "merchant_sku": {
+                    "type": "string",
+                    "required": true,
+                    "description" : "The merchant SKU associated with the order item id"
+                },
+                "jet_sku": {
+                    "type": "string",
+                    "required": true,
+                    "description" : "The Jet SKU that is associated with the order item id"
+                },                
+                "order_quantity": {
+                    "type": "integer",
+                    "required": true,
+                    "description" : "The quantity of the given merchant SKU that is to be fulfilled by Jet"
+                },
+                "merchant_paid_cogs": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "The cost of the product that the merchant will pay to Jet.com for fulfillment"
+                },
+                "jet_fulfillment_charge": {
+                    "type": "number",
+                    "required" : true,
+                    "description" : "The fees paid to Jet.com for fulfilling the given quantity of goods"
+                },
+                "product_title": {
+                    "type": "string",
+                    "maxLength" : 500,
+                    "description": "Short product description
+
+                    #Valid Values
+
+                    1 to 500 alphanumeric characters
+
+                    "
+                },
+            }
+        }       
+    }
+}

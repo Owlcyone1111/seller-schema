@@ -1,0 +1,15 @@
+{
+    "title": "ShipmentAcknowledgmentLinks",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+    	"shipment_urls": {
+    		"type": "array",
+    		"description": "List of URLs that have a shipment acknowledgment",
+    		"items": {
+    			"type": "string",
+    			"description": "The unique resource URL where this shipment acknowledgment can be found"
+    		}
+    	}
+    }
+}

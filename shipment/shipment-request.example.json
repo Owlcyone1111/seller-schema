@@ -1,0 +1,42 @@
+{
+    "merchant_order_id" : "9b13bdd68c314d1b9c8b93277dea4da1",
+    "order_placed_date" : "2014-07-24T17:00:00.0000000Z",
+    "order_transmission_date" : "2014-07-24T17:01:00.0000000Z",
+    "status" : "created",
+    "shipping_to": {
+        "recipient" : {
+                "name" : "Pepper Potts",
+                "phone_number" : " 555-888-8888"
+            },
+        "address" : {
+                "address1" : "10880 Malibu Point",
+                "address2" : "",
+                "city" : "Malibu",
+                "state" : "CA",
+                "zip_code": "90265",
+            }
+    },
+    "shipping_info": [
+        {
+            "shipment_method" : "UPS_ground",
+            "service_level" : "Standard",
+            "ship_by" : "2014-07-26T:04:00.0000000Z",
+            "delivery_by" : "2014-07-28T04:00:00.0000000Z",
+            "jet_fulfillment_node_id" : "JET-NJ-FC-01"
+        }
+    ],
+    "order_items": [
+        {
+            "merchant_order_item_id" : "8f5ae15b6b414b00a1b9d6ad99166a00",
+            "merchant_sku" : "B289B4B",
+            "jet_sku" : "JET-001",
+            "product_title" : "Ironman action figure speciality edition",
+            "order_quantity" : 2,
+            "merchant_paid_cogs" : 40.65,
+            "jet_fulfillment_charge" : 5.00,
+            
+        }
+    ],
+    "order_fulfillment_charge" : 0.50,
+    "merchant_paid_ship_cost" : "yes"
+}

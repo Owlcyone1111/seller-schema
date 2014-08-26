@@ -1,0 +1,139 @@
+{
+    "title": "ShipmentAcknowledgement",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+        "acknowledgement_status":{
+            "type": "string",
+            "required": true,
+            "emum":[
+                "accepted",
+                "rejected - unfulfillable address",
+                "rejected - shipping method not supported",
+                "rejected - ship from location not available",
+                "rejected - must agree to shipping charge",
+                "rejected - item level error"],
+            "description" : "Status to let merchant know whether the item will ' 
+
+            #Valid Values
+
+            *'accepted' - all items in the order will be shipped' 
+
+            *'rejected - unfulfillable address' - the address requested cannot be shipped to
+
+            *'rejected - shipping method not supported' - the shipping method requested is not supported by Jet.com
+            
+            *'rejected - shipping service level not supported' - the shipping service level is not supported by Jet.com
+
+            *'rejected - ship from location not available' - the ship from location is invalid
+            
+            *'rejected - order fulfillment charge incorrect' - the order fulfillment charge in the ship request does not match contract terms
+            
+            *'rejected - must agree to shipping charge' - the merchant must agree to pay for the shipping charge associated with this shipment
+            
+            *'rejected - item level error' - the error occurred at the item level"
+        },
+        "order_id": {
+            "type": "string",
+            "description" : "Jet order ID assigned to the merchant shipment request"
+        },
+        "alt_order_id": {
+            "type": "string",
+            "description" : "Merchant order ID provided previously in the shipment request"
+        },
+        "order_items": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/ack_order_item"
+            }
+        },
+        "shipments": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/ack_order_shipment"
+            }
+        }
+    },
+    "definitions": {
+        "ack_order_item": {
+            "title": "AckOrderItem",
+            "additionalProperties" : false,
+            "type": "object",
+            "properties": {
+                "order_item_acknowledgement_status":{
+                    "type": "string",
+                    "required": true,
+                    "emum":[
+                        "fulfillable",
+                        "fulfillable - product cogs do not match contract terms",
+                        "fulfillable - merchant fulfillment cost does not match contract terms",
+                        "nonfulfillable - no inventory",
+                        "nonfulfillable - invalid merchant sku",
+                    ],
+                    "description" : "value to send jet the status of each item in the order request 
+
+                    #Valid Values
+
+                    *'fulfillable' - the item in the order can be shipped' 
+                    
+                    *'fulfillable - product cogs do not match contract terms' - the items product cogs do not match the contract terms agree upon with Jet.com' 
+                    
+                    *'fulfillable - merchant fulfillment cost does not match contract terms' - the fulfillment cost for the order item does not match the agreed upon fulfillment cost  
+
+                    *'nonfulfillable - no inventory' - no inventory for this product is available
+
+                    *'nonfulfillable - invalid vendor sku' - this sku is no recongized as a valid value"
+                    
+                },
+                "order_item_id": {
+                    "type": "string",
+                    "description" : "Jet's unique identifier for an item in a merchant shipment request"
+                },
+                "alt_order_item_id": {
+                    "type": "string",
+                    "description" : "Merchant order item id supplied to Jet.com during the shipment request"
+                }
+            }
+        },
+        "ack_order_shipment": {
+            "title": "AckOrderShipment",
+            "additionalProperties" : false,
+            "type": "object",
+            "properties": {
+                "shipment_id": {
+                    "type": "string",
+                    "description" : "Jet's unique ID for a given shipment"
+                },
+                "shipment_items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ack_order_shipment_item"
+                    }
+                },
+                "expected_ship_date": {
+                    "type": "string",
+                    "description" : "The expected date the shipment will ship from the jet.com fulfillment node"
+                },
+                "expected_delivery_date": {
+                    "type": "string",
+                    "description" : "Jet's unique ID for a given shipment"
+                },
+            }
+        },
+        "ack_order_shipment_item": {
+            "title": "AckOrderShipmentItem",
+            "additionalProperties" : false,
+            "type": "object",
+            "properties": {
+                "merchant_sku": {
+                    "type": "string",
+                    "description" : "Merchants unique identifier for a product"
+                },
+                "shipment_item_id": {
+                    "type": "string",
+                    "description" : "Jet's unique identifier for an item in a shipment"
+                },
+            }
+        }
+    }
+}
