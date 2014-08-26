@@ -10,9 +10,6 @@ mediaType: application/json
 /setup:
     /bank:       
         put:
-            queryParameters:
-                merchantId:
-                    description: Merchant Id provided by Jet
             description: Sets up merchant bank info to Jet.com so it can transfer transaction proceeds to the merchant
             body:
                 application/json:

@@ -10,9 +10,6 @@ mediaType: application/json
 /orders:
     /pending:
         get:
-            queryParameters:
-                merchantId:
-                    description: Merchant Id provided by Jet
             description: This method will provide resource URLs for pending orders
             responses:
                 200:
@@ -24,9 +21,6 @@ mediaType: application/json
                     description: The requested resource could not be found.  Most likely the Merchant Id is invalid.
     /directedCancel:
         get:
-            queryParameters:
-                merchantId:
-                    description: Merchant Id provided by Jet
             description: Provides list of orders marked as partially cancelled
             responses:
                 200:
@@ -38,9 +32,6 @@ mediaType: application/json
                     description: The requested resource could not be found.  Most likely the Merchant Id is invalid.    
     /withShipmentDetail/{id}:
         get:
-            queryParameters:
-                merchantId:
-                    description: Merchant Id provided by Jet
             description: This method will list all orders that have not been acknowledged
             responses:
                 200:
@@ -51,9 +42,6 @@ mediaType: application/json
                 404:
     /withoutShipmentDetail/{id}:
         get:
-            queryParameters:
-                merchantId:
-                    description: Merchant Id provided by Jet
             description: This method will list all orders that have not been acknowledged
             responses:
                 200:
@@ -65,9 +53,6 @@ mediaType: application/json
     /{id}:
         /acknowledge:
             post:
-                queryParameters:
-                    merchantId:
-                        description: Merchant Id provided by Jet
                 description: Marks an order as acknowledged
                 body:
                     application/json:
@@ -79,9 +64,6 @@ mediaType: application/json
                     409:
         /shipped:
             post:
-                queryParameters:
-                    merchantId:
-                        description: Merchant Id provided by Jet
                 description: Notifies Jet that items in the order where shipped or cancelled
                 body:
                     application/json:

@@ -1,6 +1,7 @@
 #%RAML 0.8
 
 title: Merchant API - Merchant Skus
+description: This API provides resources related to Merchant SKU set up, price, and inventory 
 baseUri: http://dev-ironman-webapi.test.jet.com/api
 version: v0.1
 protocols: [HTTPS]
@@ -8,9 +9,6 @@ mediaType: application/json
 
 /merchant-skus:
     get:
-        queryParameters:
-            merchantId:
-                description: Merchant Id provided by Jet
         description: This method will list all merchant SKUs
         responses:
             200:
@@ -22,9 +20,6 @@ mediaType: application/json
             404:
     /{id}:
         get:
-            queryParameters:
-                merchantId:
-                    description: Merchant Id provided by Jet
             description: This method will list the specified merchant SKU
             responses:
                 200:
@@ -34,9 +29,6 @@ mediaType: application/json
                             example: !include merchant-skus.example.json
                 404:
         put:
-            queryParameters:
-                merchantId:
-                    description: Merchant Id provided by Jet
             description: This method will create/update the specified merchant SKU
             body:
                 application/json:
@@ -49,9 +41,6 @@ mediaType: application/json
                 409:
         /relationship:
             put:
-                queryParameters:
-                    merchantId:
-                        description: Merchant Id provided by Jet
                 description: This method updates variation relationships between merchant skus
                 body:
                     application/json:
@@ -64,9 +53,6 @@ mediaType: application/json
                     409:
         /inventory:
             get:
-                queryParameters:
-                    merchantId:
-                        description: Merchant Id provided by Jet
                 description: This method retrieves inventory data for the specified merchant SKU
                 body:
                     application/json:
@@ -76,9 +62,6 @@ mediaType: application/json
                     200:
                     404:
             put:
-                queryParameters:
-                    merchantId:
-                        description: Merchant Id provided by Jet
                 description: This method updates inventory data for the specified merchant SKU
                 body:
                     application/json:
@@ -91,9 +74,6 @@ mediaType: application/json
                    409:
             /{fulfillmentNode}:
                 get:
-                    queryParameters:
-                        merchantId:
-                            description: Merchant Id provided by Jet
                     description: This method retrieves inventory data for the specified merchant SKU
                     body:
                         application/json:
@@ -103,9 +83,6 @@ mediaType: application/json
                         200:
                         404:
                 put:
-                    queryParameters:
-                        merchantId:
-                            description: Merchant Id provided by Jet
                     description: This method updates FC-level inventory data for the specified merchant SKU
                     body:
                         application/json:
@@ -118,9 +95,6 @@ mediaType: application/json
                        409:
         /price:
             get:
-                queryParameters:
-                    merchantId:
-                        description: Merchant Id provided by Jet
                 description: This method retrieves pricing data for the specified merchant SKU
                 body:
                     application/json:
@@ -130,9 +104,6 @@ mediaType: application/json
                     200:
                     404:
             put:
-                queryParameters:
-                        merchantId:
-                            description: Merchant Id provided by Jet
                 description: This method updates price data for the specified merchant SKU
                 body:
                     application/json:
@@ -145,9 +116,6 @@ mediaType: application/json
                    409:
             /{fulfillmentNode}:
                 get:
-                    queryParameters:
-                        merchantId:
-                            description: Merchant Id provided by Jet
                     description: This method retrieves pricing data for the specified merchant SKU
                     body:
                         application/json:
@@ -157,9 +125,6 @@ mediaType: application/json
                         200:
                         404:
                 put:
-                    queryParameters:
-                        merchantId:
-                            description: Merchant Id provided by Jet
                     description: This method updates FC-level price data for the specified merchant SKU
                     body:
                         application/json:
@@ -171,9 +136,6 @@ mediaType: application/json
                         400:
                         409:
                 delete:
-                    queryParameters:
-                        merchantId:
-                            description: Merchant Id provided by Jet
                     description: This method deletes the FC-level price data for the specified merchant SKU
                     responses:
                         204:
@@ -182,9 +144,6 @@ mediaType: application/json
         /image:
             /main:
                 put:
-                    queryParameters:
-                        merchantId:
-                            description: Merchant Id provided by Jet
                     description: This method updates the main image for the specified merchant SKU
                     body:
                         application/json:
@@ -197,9 +156,6 @@ mediaType: application/json
                         409:
             /swatch:
                 put:
-                    queryParameters:
-                        merchantId:
-                            description: Merchant Id provided by Jet
                     description: This method updates the swatch image for the specified merchant SKU
                     body:
                         application/json:
@@ -213,9 +169,6 @@ mediaType: application/json
             /alternate:
                 /{slotId}:
                     put:
-                        queryParameters:
-                            merchantId:
-                                description: Merchant Id provided by Jet
                         description: This method updates alternate image data in the specified slot for the specified merchant SKU.  Valid slot numbers are 1 through 7
                         body:
                             application/json:
@@ -227,9 +180,6 @@ mediaType: application/json
                             400:
                             409:
                     delete:
-                        queryParameters:
-                            merchantId:
-                                description: Merchant Id provided by Jet
                             description: This method deletes the alternate image data in the specified slot for the specified merchant SKU.  Valid slot numbers are 1 through 7
                             responses:
                                 204:
@@ -237,9 +187,6 @@ mediaType: application/json
                                 404:
         /shippingexception:
             put:
-                queryParameters:
-                    merchantId:
-                        description: Merchant Id provided by Jet
                 description: This method updates shipping exception data for the specified merchant SKU
                 body:
                     application/json:
