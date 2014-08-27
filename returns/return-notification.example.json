@@ -1,6 +1,6 @@
 {
 	"refund_without_return" : false,
-	"merchant_order_id" : "9b13bdd68c314d1b9c8b93277dea4da1",
+	"order_id" : "9b13bdd68c314d1b9c8b93277dea4da1",
 	"alt_order_id" : "12345678",
 	"return_date" : "2014-11-01T21:19:00.0000000Z",
 	"return_merchant_SKU" : [{
