@@ -8,9 +8,9 @@ protocols: [HTTPS]
 mediaType: application/json
 
 /orders:
-    /pending:
+    /{status}:
         get:
-            description: This method will provide resource URLs for pending orders
+            description: This method will provide order links by the status of the order.  THe order status available to poll are "Created", "Acknowledged", "Shipped", "directCancelled"
             responses:
                 200:
                     body:
@@ -18,18 +18,7 @@ mediaType: application/json
                             schema: !include order-links.schema.json
                             example: !include order-links.example.json
                 404:
-                    description: The requested resource could not be found.  Most likely the Merchant Id is invalid.
-    /directedCancel:
-        get:
-            description: Provides list of orders marked as partially cancelled
-            responses:
-                200:
-                    body:
-                        application/json:
-                            schema: !include order-links.schema.json
-                            example: !include order-links.example.json
-                404:
-                    description: The requested resource could not be found.  Most likely the Merchant Id is invalid.    
+                    description: The requested resource could not be found.
     /withShipmentDetail/{id}:
         get:
             description: This method will list all orders that have not been acknowledged
