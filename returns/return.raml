@@ -19,7 +19,7 @@ mediaType: application/json
                             example: !include return-links.example.json
                 404:
                     description: The requested resource could not be found.  Most likely the Merchant Id is invalid.
-    /notification/{id}:
+    {id}/notification/:
         get:
             description: This method will list all returns that have not been acknowledged
             responses:
@@ -29,7 +29,7 @@ mediaType: application/json
                             schema: !include return-notification.schema.json
                             example: !include return-notification.example.json
                 404:
-    /acknowledgment:
+    {id}/acknowledgment/:
         post:
             description: Marks as return notification as acklowedged by the merchant
             body:
@@ -40,7 +40,7 @@ mediaType: application/json
                 200:
                 404:
                 409:
-    /complete:
+    {id}/complete/:
         post:
             description: Marks a return as complete and notifies jet how the customer refund should proceed
             body:
