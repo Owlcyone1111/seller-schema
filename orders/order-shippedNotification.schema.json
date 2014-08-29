@@ -40,11 +40,11 @@
                     "type": "string",
                     "description" : "The merchant provided product identifier for the order item"
                 },
-                "shipped_order_item_quantity": {
+                "shipped_order_quantity": {
                     "type": "integer",
                     "description" : "Quantity of the order item that is shipped"
                 },
-                "cancelled_order_item_quantity": {
+                "order_cancel_qty": {
                     "type": "integer",
                     "description" : "Quantity cancelled of the given order item"
                 },
@@ -120,7 +120,7 @@
                     "type": "integer",
                     "description" : "Quantity of the given SKU that was shipped in the given shipment"
                 },
-                "cancelled_sku_quantity": {
+                "shipment_cancel_qty": {
                     "type": "integer",
                     "description" : "Quantity of the given SKU that was cancelled in the given shipment"
                 }

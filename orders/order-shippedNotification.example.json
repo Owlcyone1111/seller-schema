@@ -6,7 +6,7 @@
             "alt_order_item_id": "12990012",
             "merchant_sku": "15a1010",
             "shipped_order_item_quantity": 1,
-            "cancelled_order_item_quantity": 1
+            "order_cancel_qty": 1
         }
     ],
     "shipments": [
