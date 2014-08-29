@@ -5,59 +5,6 @@
 	"description": "This schema represents a merchant sku",
     "additionalProperties" : false,
 	"properties": {
-		"merchant_SKU":{
-			"type": "string",
-			"required": true,
-			"maxLength": 40,
-			"minLength": 1,
-			"description": "Your unique identifier for each product you sell on Jet
-
-			#Valid Values
-
-			Can't have duplicates on the same upload
-
-			"
-		},
-		"category":{
-			"type": "string",
-			"description": "Select a Jet Category
-
-			#Valid Values
-
-			Must be a Jet Category
-
-			"
-		},
-		"sub_category_level1":{
-			"type": "string",
-			"description": "Select a Level 1 Sub-Category
-
-			#Valid Values
-
-			Must be a valid sub-category given the Category selection
-
-			"
-		},
-		"sub_category_level2":{
-			"type": "string",
-			"description": "Enter a Level 2 Sub-Category
-
-			#Valid Values
-
-			Must be a valid sub-category given the Level 1 Sub-Category selection
-
-			"
-		},
-		"sub-_category_level3":{
-			"type": "string",
-			"description": "Enter a Level 3 Sub-Category
-
-			#Valid Values
-
-			Must be a valid sub-category given the Level 2 Sub-Category selection
-
-			"
-		},
 		"product_title": {
 			"type": "string",
 			"required": true,
@@ -373,8 +320,6 @@
 
 			N = ships N business days after the 'merchant_order' is received"
 		},
-
-		},
 		"msrp": {
 			"type": "number",
 			"minimum" : 0.01,
@@ -393,23 +338,6 @@
 
 			A number with up to 18 digits allowed to the left of the decimal point and 2 digits to the right of the decimal point. Commas or currency symbols are not allowed."
 		},
-		"quantity":{
-			"type": "integer",
-			"minimum":0
-
-		},
-		"fc_quantity":{
-			"type":"integer",
-			"minimum":0,
-			"description":"FC Name and the Quantity in each pipe delimited:  For example: EFC = 3 | CFC= 5
-
-			*If FC Quantity is provided we will ignore Quantity
-
-			FC names should be validated against the names of Merchant FCs set up by the given merchant
-
-			"
-		},
-
 		"map_implementation":{
 			"type": "string",
 			"enum" : ["type0","type1","type2","type3","type4"],
@@ -426,11 +354,10 @@
 			*'type3' -A user will never see Jet savings assoicated with this item but if they are logged in and purchase other items savings may be allocated to those other items
 			
 			*'type4' -Never apply any savings associated with this item anywhere"
-		},
-
+		},	
 		"product_tax_code": {
 			"type": "string",
-			"description": "Jet's standard code for the tax properties of a given product."
+			"description": "Price that manufacturer has defined as the lowest price for which the item can be sold"
 		},
 		"no_return_fee_adjustment": {
 			"type": "number",
@@ -440,7 +367,7 @@
 
 			#Valid values
 
-			A number with up to 1 digit allowed to the left of the deimal point and 2 digits to the right of the decimal point."
+			A mumber with up to 1 digit allowed to the left of the deimal point and 2 digits to the right of the decimal point."
 		},
 		"exclude_from_fee_adjustments": {
 			"type": "boolean",
@@ -458,83 +385,7 @@
 				"$ref": "#/definitions/attribute"				
 			}
 
-		},
-		"parent_or_child":{
-			"type": "string",
-			"description": "Define if the SKU is the parent or child",
-			"enum":[
-				"parent",
-				"child"
-			]
-		},		
-		"parent_sku":{
-			"type":"string",
-			"description":"Leave blank for a 'parent' merchant SKU.
-			*If 'parent_or_child' = parent, then 'parent' sku = 'merchant sku'
-
-			For a 'child' merchant SKU enter the 'merchant SKU' that its 'parent'"
-		},
-		"relationship":{
-			"type":"string",
-			"enum":[
-				"variation",
-				"accessory"
-			],
-			"description": "Define the type of relationship that exists between a given set of 'parent' and  'child' Merchant SKUs
-
-			'Variation' - Merchant SKUs that are the same accept for varying around one or two 'refinements'
-			'Accessory' - Merchant SKUs that specifically compliment or are compatible with another Merchant SKU"
-		},
-		"variation_refinements":{
-			"type":"string",
-			"required": true,
-			"description":"Different choices of one or two 'refinements' that otherwise identical merchant SKUs vary.  This will vary by Jet Node.
-			
-			*Refinements selection will be required even though they are typically optional.
-			"
-		},
-		"service_level":{
-			"type":"string",
-			"description": "If your delivery options are defined by ServiceLevel only then use this field",
-			"enum":[
-				"Standard",
-				"Expedited",
-				"Scheduled",
-				"Next Day",
-				"Second Day"
-			]
-
-		},
-		"shipping_carrier":{
-			"type":"string",
-			"description":"A shipping carrier, including all that carrier's ShippngMethods e.g. UPS, FedEx, USPS.  Use this field if you want your change to apply to all ShippingMethods of a given carrier. 
-			If your delivery options are defined by ShippingCarrier then use this field"
-		},
-		"shipping_method":{
-			"type":"string",
-			"description":"A specific shipping method e.g. UPS Ground, UPS Next Day Air, FedEx Home. If your delivery options are defined by ShippingMethod  then use this field"
-		},
-		"override_type":{
-			"type":"string",
-			"required":true,
-			"enum":[
-				"addtional charge",
-				"override charge"
-			],
-			"description": "The type of shipping override Additonal Charge or Exclusive Charge, note Exclusive could be used to lower shipping)"
-		},
-		"shipping_amount":{
-			"type":"number",
-			"description":"$ Value or percentage increase (for additional charge only)"
-		},
-		"is_shipping_restricted":{
-			"type":"boolean",
-			"description":"Indicates whether the SellerSKU can or cannot be shipped using the specified shipping service (shippingCarrier, shippingMethod or serviceLevel). A value of ""true"" means that the SKU cannot be shipped using the specified shipping service."
-		},
-		"is_shipping_exclusive":{
-			"type":"boolean",
-			"description":"Indicates that the SellerSKU can ONLY be shipped with specified shipping service (shippingCarrier, shippingMethod or serviceLevel). A value of 'true' means that the SKU can be shipped using ONLY the specified shipping service."
-		},
+		}		
 	},
 	"definitions": {
 			"attribute" : {
