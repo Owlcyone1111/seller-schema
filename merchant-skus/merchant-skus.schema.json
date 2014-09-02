@@ -357,7 +357,7 @@
 		},	
 		"product_tax_code": {
 			"type": "string",
-			"description": "Price that manufacturer has defined as the lowest price for which the item can be sold"
+			"description": "Jet's standard code for the tax properties of a given product."
 		},
 		"no_return_fee_adjustment": {
 			"type": "number",
