@@ -1,4 +1,15 @@
 {
 	"alt_return_authorization_id" : "987654321",
 	"return_status": "acknowledged",
+	"jet_pick_return_location" : "no",
+	"return_location" : [
+		{
+			"location_name" : "Eastern Warehouse",
+			"location_address_1" : "10 Williow St.",
+			"location_address_2" : "Suite 4000",
+			"location_city" : "Montclair",
+			"location_state" : "NJ",
+			"location_postal_code" : "07302"
+		}
+	]
 }

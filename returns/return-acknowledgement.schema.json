@@ -6,12 +6,15 @@
 	"properties": {
 		"alt_return_authorization_id": {
 			"type": "string",
-			"description": "Optional merchant supplied return number, allows you to use this number in future messages instead of return_authorization_id. This ID will be included on the Return Documentation that Jet gives to the customer"
+			"description": "Optional merchant supplied return number, allows the merchant to use this number in future messages instead of return_authorization_id. This ID will be included on the Return Documentation that Jet gives to the customer"
 		},
 		"return_status": {
 			"type": "string",
 			"required": true,
-			"enum":["acknowledged","refund customer without return"],
+			"enum":[
+				 "acknowledged",
+				 "refund customer without return"
+			 ],
 			"description": "The seller acknowledges the receipt of the ReturnNotification or Communicates to Jet that a refund can be passed without needing to have the customer actually send the item back.
 
 			This must be sent back to Jet immediately so any desire to not have the customer actually send back items can be made based on some automatic logic
@@ -19,7 +22,60 @@
 			#Valid values
 
 			*'acknowledged'
+			
 			*'refund customer without return'"
 		},
+		"jet_pick_return_location" : {
+			"type": "string",
+			"required": true,
+			"enum":[
+				 "yes",
+				 "no"
+			 ],
+			"description" : "Lets Jet.com know whether the merchant will determine the return location or Jet.com will determine the return location using your pre-configured return locations.  When this field is 'no' the array return location must be completed."
+		}
+		"return_location" : {
+			"type" : "array",
+        	"$ref" : "#/definitions/jet_return_location"
+		}
+	},
+	"defintions" : {
+		"jet_return_location" : {
+			"title" : "JetReturnLocation",
+            "additionalProperties" : false,
+            "type" : "object",
+            "properties" : {
+    	    	"location_name" : {
+        	    	"type" : "string",
+		        	"required" : false,
+		        	"description" : "This is the name of the return location"
+            	},
+            	"location_address_1" : {
+        	    	"type" : "string",
+		        	"required" : false,
+		        	"description" : "The first address line for the return location"
+            	},
+            	"location_address_2" : {
+        	    	"type" : "string",
+		        	"required" : false,
+		        	"description" : "The second address line for the return location"
+            	},
+            	"location_city" : {
+        	    	"type" : "string",
+		        	"required" : false,
+		        	"description" : "The city, town, or village of the return location"
+            	},
+            	"location_state" : {
+        	    	"type" : "string",
+		        	"required" : false,
+		        	"description" : "The state of the return location"
+            	},
+            	"location_postal_code" : {
+        	    	"type" : "string",
+		        	"required" : false,
+		        	"description" : "The postal code for the return location"
+            	}
+            }
+		}
 	}
 }
