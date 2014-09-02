@@ -40,11 +40,11 @@
                     "type": "string",
                     "description" : "The merchant provided product identifier for the order item"
                 },
-                "shipped_order_quantity": {
+                "response_order_shipped_quantity": {
                     "type": "integer",
                     "description" : "Quantity of the order item that is shipped"
                 },
-                "order_cancel_qty": {
+                "response_order_cancel_qty": {
                     "type": "integer",
                     "description" : "Quantity cancelled of the given order item"
                 },
@@ -69,8 +69,7 @@
                     "type": "string",
                     "description" : "packaging tracking number that the carrier is using"
                 },
-
-                "shipment_date": {
+                "response_shipment_date": {
                     "type": "string",
                     "description" : "Date/Time that a given shipment was shipped
 
@@ -82,7 +81,7 @@
 
                     "
                 },
-                "shipment_method": {
+                "response_shipment_method": {
                     "type": "string",
                     "description" : "Shipping method used for the given shipment
 
@@ -90,7 +89,6 @@
 
                     List of ShippingMethods set up by you"
                 },
-
                 "shipment_items": {
                     "type": "array",
                     "items": {
@@ -116,11 +114,11 @@
                     "type": "string",
                     "description" : "The merchant SKU that is in the given shipment"
                 },
-                "shipment_sku_quantity": {
+                "response_shipment_sku_quantity": {
                     "type": "integer",
                     "description" : "Quantity of the given SKU that was shipped in the given shipment"
                 },
-                "shipment_cancel_qty": {
+                "response_shipment_cancel_qty": {
                     "type": "integer",
                     "description" : "Quantity of the given SKU that was cancelled in the given shipment"
                 }
