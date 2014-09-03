@@ -349,9 +349,9 @@
 
 			*'type1'- A user must be logged in to see the savings on this item and that saving may be represented as a lower than MAP price on this item
 			
-			*'type2'- A user must be logged in to see the savings and they need be shown as Jet savings with the price being dispayed as the MAP price
+			*'type2'- A user must be logged in to see the savings and they need be shown as Jet savings with the price being displayed as the MAP price
 			
-			*'type3' -A user will never see Jet savings assoicated with this item but if they are logged in and purchase other items savings may be allocated to those other items
+			*'type3' -A user will never see Jet savings associated with this item but if they are logged in and purchase other items savings may be allocated to those other items
 			
 			*'type4' -Never apply any savings associated with this item anywhere"
 		},	
