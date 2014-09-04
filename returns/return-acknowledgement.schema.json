@@ -33,17 +33,19 @@
 				 "no"
 			 ],
 			"description" : "Lets Jet.com know whether the merchant will determine the return location or Jet.com will determine the return location using your pre-configured return locations.  When this field is 'no' the array return location must be completed."
-		}
+		},
 		"return_location" : {
 			"type" : "array",
-        	"$ref" : "#/definitions/jet_return_location"
+			"items" : {
+        		"$ref" : "#/defintions/jet_return_location"
+			}
 		}
 	},
 	"defintions" : {
 		"jet_return_location" : {
-			"title" : "JetReturnLocation",
-            "additionalProperties" : false,
+        	"name" : "JetReturnLocation",
             "type" : "object",
+			"additionalProperties" : false,
             "properties" : {
     	    	"location_name" : {
         	    	"type" : "string",
