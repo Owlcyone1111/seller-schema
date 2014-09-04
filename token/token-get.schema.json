@@ -1,0 +1,18 @@
+{
+    "title": "TokenGet",
+    "type": "object",
+    "desciption" : "This method allows the merchant to request a token to use Jet.com's APIs for merchant services",
+    "additionalProperties" : false,
+    "properties": {
+        "user":{
+            "type": "string",
+            "required": true,
+            "description" : "The API user generated in the Jet.com merchant portal.  The API user can be found by clicking 'Get API keys' in the API Integration section of the merchant portal."
+        },
+        "pass": {
+            "type": "string",
+            "required": true,
+            "description" : "This field can be found by clicking 'Get API keys' in the Jet.com merchant portal. The value for this field is generated next to the word 'Secret'."
+        }
+    }
+}

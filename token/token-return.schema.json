@@ -1,0 +1,23 @@
+{
+    "title": "TokenReturn",
+    "type": "object",
+    "desciption" : "This method returns the merchants private tokens for use with Jet.com's orders, returns, and products APIs",
+    "additionalProperties" : false,
+    "properties": {
+        "id_token":{
+            "type": "string",
+            "required": true,
+            "description" : "Returns a token that will be used to authenticate all other services.  This token expires after 10 hours."
+        },
+        "access_token": {
+            "type": "string",
+            "required": true,
+            "description" : "Not required to be used by the merchant at this time"
+        },
+        "token_type": {
+            "type": "string",
+            "required": true,
+            "description" : "Describes the type of token that is returned"
+        }
+    }
+}

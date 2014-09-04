@@ -1,0 +1,24 @@
+#%RAML 0.8
+
+title: Security
+description: This API provides documentation for using your API User and Secret Password to generate an authentication token for use in all other APIs
+baseUri: http://merchant-api.test.jet.com/api
+version: v0.1
+protocols: [HTTPS]
+mediaType: application/json
+
+/Token:
+    post:
+        description: This method will provide resource URLs for pending returns
+        body:
+            application/json:
+                    schema: !include token-get.schema.json
+                    example: !include token-get.example.json
+        responses:
+            200:
+                body:
+                    application/json:
+                        schema: !include token-return.schema.json
+                        example: !include token-return.example.json
+            404:
+                description: The requested resource could not be found.
