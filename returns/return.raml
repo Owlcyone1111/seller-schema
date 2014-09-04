@@ -29,7 +29,7 @@ mediaType: application/json
                             schema: !include return-notification.schema.json
                             example: !include return-notification.example.json
                 404:
-    /acknowledgment:
+    /acknowledgment/{id}:
         post:
             description: Marks as return notification as acklowedged by the merchant
             body:
@@ -40,7 +40,7 @@ mediaType: application/json
                 200:
                 404:
                 409:
-    /complete:
+    /complete/{id}:
         post:
             description: Marks a return as complete and notifies jet how the customer refund should proceed
             body:

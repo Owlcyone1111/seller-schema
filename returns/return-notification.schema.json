@@ -8,7 +8,7 @@
 			"type":"boolean",
 			"description" : "If this is true jet has deemed that this item should not be returned but the customer still should be refunded"
 		},
-		"merchant_order_id": {
+		"order_id": {
 			"type": "string",
 			"required": true,
 			"description": "Jet's unique ID for a given merchant order"

@@ -8,7 +8,7 @@
     		"description": "List of URLs",
     		"items": {
     			"type": "string",
-    			"description": "The unique resource URL where this order can be found"
+    			"description": "The unique resource URI where the order details can be found"
     		}
     	}
     }

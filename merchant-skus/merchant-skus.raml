@@ -1,6 +1,6 @@
 #%RAML 0.8
 
-title: Merchant API - Merchant Skus
+title: Merchant API - Merchant SKUs
 description: This API provides resources related to Merchant SKU set up, price, and inventory 
 baseUri: http://dev-ironman-webapi.test.jet.com/api
 version: v0.1
@@ -52,26 +52,6 @@ mediaType: application/json
                     400:
                     409:
         /inventory:
-            get:
-                description: This method retrieves inventory data for the specified merchant SKU
-                body:
-                    application/json:
-                        schema: !include inventory.schema.json
-                        example: !include inventory.example.json
-                responses:
-                    200:
-                    404:
-            put:
-                description: This method updates inventory data for the specified merchant SKU
-                body:
-                    application/json:
-                        schema: !include inventory.schema.json
-                        example: !include inventory.example.json
-                responses:
-                   201:
-                   204:
-                   400:
-                   409:
             /{fulfillmentNode}:
                 get:
                     description: This method retrieves inventory data for the specified merchant SKU

@@ -1,16 +1,16 @@
 #%RAML 0.8
 
 title: Merchant API - Orders
-description: This API provides actions required for processing orders.
+description: This API provides information about how to process orders placed on Jet.com.  
 baseUri: http://dev-ironman-webapi.test.jet.com/api
 version: v0.1
 protocols: [HTTPS]
 mediaType: application/json
 
 /orders:
-    /pending:
+    /{status}:
         get:
-            description: This method will provide resource URLs for pending orders
+            description: This method will provide order links by the status of the order.  THe order status available to poll are "Created" - When an order is newly created but is not ready to be fulfilled (this should only be used to reserve inventory, ignore if you do not reserve inventory), "Ready" - When an order is ready to be fulfilled by merchant, "directCancelled" - Jet.com is requesting the merchant to cancel the order details capture after requresting the link provided in this API call 
             responses:
                 200:
                     body:
@@ -18,21 +18,10 @@ mediaType: application/json
                             schema: !include order-links.schema.json
                             example: !include order-links.example.json
                 404:
-                    description: The requested resource could not be found.  Most likely the Merchant Id is invalid.
-    /directedCancel:
-        get:
-            description: Provides list of orders marked as partially cancelled
-            responses:
-                200:
-                    body:
-                        application/json:
-                            schema: !include order-links.schema.json
-                            example: !include order-links.example.json
-                404:
-                    description: The requested resource could not be found.  Most likely the Merchant Id is invalid.    
+                    description: The requested resource could not be found.
     /withShipmentDetail/{id}:
         get:
-            description: This method will list all orders that have not been acknowledged
+            description: This method will list all orders that have not been acknowledged with details about how Jet.com expects the items to be shipped (this should only be used when it is agreed between the merchant and Jet.com that Jet.com will provide exact shipping information including tracking number)
             responses:
                 200:
                     body:
@@ -42,18 +31,18 @@ mediaType: application/json
                 404:
     /withoutShipmentDetail/{id}:
         get:
-            description: This method will list all orders that have not been acknowledged
+            description: This method will list all orders that have not been acknowledged without details about how Jet.com expects the order to be shipped (this is the default order schema)
             responses:
                 200:
                     body:
                         application/json:
-                            schema: !include orderOnly.schema.json
-                            example: !include orderOnly.example.json
+                            schema: !include order-only.schema.json
+                            example: !include order-only.example.json
                 404:   
     /{id}:
         /acknowledge:
             post:
-                description: Marks an order as acknowledged
+                description: This method allows the merchant to acknowledge an order as either accepted or rejected.  When acknowledging an order each item in the order should have an advice to tell Jet.com whether the item was fulfillable or unfulfillable.   If any single item in the order is unfulfillable then the entire order should be rejected and sent back to Jet.com. 
                 body:
                     application/json:
                         schema: !include order-acknowledgement.schema.json
@@ -64,7 +53,7 @@ mediaType: application/json
                     409:
         /shipped:
             post:
-                description: Notifies Jet that items in the order where shipped or cancelled
+                description: This method notifies Jet.com that the order has been shipped.  The merchant should provide advice to let Jet.com know how many units have been shipped and/or voided, and all information to track the order for each shipment that the order may split into.
                 body:
                     application/json:
                         schema: !include order-shippedNotification.schema.json

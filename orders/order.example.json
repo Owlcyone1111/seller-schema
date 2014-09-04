@@ -26,14 +26,13 @@
         {
             "order_item_id": "8f5ae15b6b414b00a1b9d6ad99166a00",
             "merchant_sku": "B289B4B",
-            "order_quantity": 2,
+            "request_order_quantity": 2,
             "item_tax_code": "",
             "item_price": {
                 "base_price": 20,
                 "item_tax" : 0.14,
                 "item_shipping_cost" : 5,
                 "item_shipping_tax" : 0.35
-
             },
             "item_fees": 2.01,
             "fee_adjustments": [
@@ -89,20 +88,20 @@
     "shipments": [
         {
             "shipment_id": "a172ae641c384c57b3a5b58ae4dd3bd6",
-            "shipping_carrier" : "UPS",
-            "shipment_method" : "UPS_ground",
-            "service_level" : "Standard",
-            "ship_by": "2014-07-26T:04:00.0000000Z",
-            "delivery_by": "2014-07-28T04:00:00.0000000Z",
-            "shipping_box" : "C01",
+            "request_shipping_carrier" : "UPS",
+            "request_shipment_method" : "UPS_ground",
+            "request_service_level" : "Standard",
+            "request_ship_by": "2014-07-26T:04:00.0000000Z",
+            "request_delivery_by": "2014-07-28T04:00:00.0000000Z",
+            "request_shipping_box" : "C01",
             "shipment_items": [
                 {
                     "shipment_item_id": "9af824b9e4a24854991870db184bbe32",
                     "merchant_sku": "B289B4B",
-                    "shipment_sku_quantity": 2
+                    "request_shipment_sku_quantity": 2
                 }
             ],
-            "label_url": "1Z12345690876"
+            "label_url": "https://jet.com/api/shipment/url/?image=02020200202"
         }
     ],
     "ship_from_location" :{

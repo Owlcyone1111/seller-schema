@@ -184,12 +184,12 @@
                     "required": true,
                     "description" : "The merchant SKU that is in the given merchant order"
                 },
-                "order_quantity": {
+                "request_order_quantity": {
                     "type": "integer",
                     "required": true,
                     "description" : "The quantity of the given merchant SKU that is in the given merchant order"
                 },
-                "order_cancel_qty" : {
+                "request_order_cancel_qty" : {
                     "type": "integer",
                     "description" : "The quanitity of the given merchant SKU that should be cancelled; present only if directCancelled event occured for the order"
                 },
@@ -334,7 +334,7 @@
 
                     Jet will provide this field if it has been established via accept message"
                 },
-                "shipping_carrier": {
+                "request_shipping_carrier": {
                     "type" : "string",
                     "required" : false,
                     "enum" : ["UPS", "FedEx", "USPS"], 
@@ -349,7 +349,7 @@
                     *'USPS'"
 
                 },
-                "shipment_method": {
+                "request_shipment_method": {
                     "type": "string",
                     "required" : false,
                     "description" : "the shipping method for the given shipment_id; replaced by actual shipment method used in case of Shipped message
@@ -362,11 +362,11 @@
 
                     List of shipping methods the merchant has set up"
                 },
-                "shipment_tracking_number": {
+                "request_shipment_tracking_number": {
                     "type": "string",
                     "description" : "packaging tracking number mentioned in Shipped message"
                 },
-                "service_level" : {
+                "request_service_level" : {
                     "type" : "string",
                     "enum" : ["Standard","Expedited","Scheduled","NextDay","SecondDay"],
                     "required" : false,
@@ -384,7 +384,7 @@
 
                    *'SecondDay'"
                 },
-                "ship_by": {
+                "request_ship_by": {
                     "type": "string",
                     "required": false,
                     "description" : "Expected date that the shipment will be tendered to the given carrier
@@ -397,7 +397,7 @@
 
                     The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"
                 },
-                "delivery_by": {
+                "request_delivery_by": {
                     "type": "string",
                     "required" : false,
                     "description" : "Date the customer has been promised delivery 
@@ -410,7 +410,7 @@
 
                     The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"
                 },
-                "shipping_box": {
+                "request_shipping_box": {
                     "type": "string",
                     "required" : false,
                     "description" : "Suggested box to use from the merchant's box catalog that is the best fit for the items in the given shipment
@@ -569,12 +569,12 @@
 
                     List of Merchant SKUs that have been set up by you"
                 },
-                "shipment_sku_quantity": {
+                "request_shipment_sku_quantity": {
                     "type": "integer",
                     "required" : true,
                     "description" : "The quantity of the given merchant SKU that is in the given shipment; once Shipped message recieved, contains actual shipped quantity."
                 },
-                 "shipment_cancel_qty": {
+                "request_shipment_cancel_qty": {
                     "type" : "integer",
                     "description" : "Quanitity of the given item that should be cancelled according to directed cancel message"
                 }
@@ -607,9 +607,7 @@
                     }
 
                 }
-            
-
+            }
         }
-        
     }
 }
