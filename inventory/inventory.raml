@@ -1,0 +1,116 @@
+#%RAML 0.8
+
+title: Merchant API - Inventory
+description: This API provides actions related to the management of inventory with Jet.com
+baseUri: http://dev-ironman-webapi.test.jet.com/api
+version: v0.1
+protocols: [HTTPS]
+mediaType: application/json
+
+/inventory:
+    /advicePartial:
+        /{node}:
+            /{sku}:
+                post:
+                    description: This method will allow a merchant to notify Jet.com of you avaialble inventory levels
+                    body:
+                        application/json:
+                            schema: !include inventory-advicePartial.schema.json
+                            example: !include inventory-advicePartial.example.json
+                    responses:
+                        200:                    
+                        404: description: The requested resource could not be found.
+                get:
+                description: This method will allow a merchant to retrieve available inventory levels from Jet.com
+                responses:
+                    200:
+                        body:
+                            application/json:
+                                schema: !include inventory-advicePartial.schema.json
+                                example: !include inventory-advicePartial.example.json
+                    404:   
+    /requestSendInventory
+        /{node}:
+            post:
+                description: This method will allow a merchant to inject inventory into Jet.com to be fulfilled by Jet.com Fulfillment Services 
+                    application/json:
+                        schema: !include inventory-inbound.schema.json
+                        example: !include inventory-inbound.example.json
+                responses:
+                    200:                    
+                    404: description: The requested resource could not be found.
+    /acknowledgmentLinks:
+        get:
+        description: This method will allow a merchant to retrieve links to acknowledgments for inbound inventory requests 
+        responses:
+            200:
+                body:
+                    application/json:
+                        schema: !include inventory-inboundAcknowledgmentLinks.schema.json
+                        example: !include inventory-inboundAcknowledgmentLinks.example.json
+            404:
+    /acknowledgment
+        /{id}:
+            get:
+            description: This method will allow a merchant to retrieve acknowledgments for links generated and retreived from the inbound acknowledgment links method
+            responses
+                200:    
+                    body:
+                        application/json:
+                            schema: !include inventory-inboundAcknowledgment.schema.json
+                            example: !include inventory-inboundAcknowledgment.example.json
+                404:
+    /receiptLinks
+        get:
+        description: This method will allow a merchant to retrieve acknowledgments for links generated and retreived from the inbound acknowledgment links method
+        responses
+            200:    
+                body:
+                    application/json:
+                        schema: !include inventory-inboundReceiptLinks.schema.json
+                        example: !include inventory-inboundReceiptLinks.example.json
+            404:            
+    /receipt
+        /{id}:
+            get:
+            description: This method will allow a merchant to retrieve receipts for a inbound inventor
+            responses
+                200:    
+                    body:
+                        application/json:
+                        schema: !include inventory-inboundReceipt.schema.json
+                        example: !include inventory-inboundReceipt.example.json
+                404:
+    /receiptAdjustment
+        /{id}:
+            get:
+            description: This method will allow a merchant to retrieve adjustments to a receipt of inventory.  The ID field in the request is the unique id associated with a receipt adjustment event.
+            responses
+                200:    
+                    body:
+                        application/json:
+                        schema: !include inventory-inboundReceiptAdjustment.schema.json
+                        example: !include inventory-inboundReceiptAdjustment.example.json
+                404:
+    /adjustmentAcknowledgment
+        /{id}:
+            post: 
+            description: This method will allow you to acknowledge the adjustement of a receipt from the receipt adjustement transaction
+            body:
+                application/json:
+                    schema: !include inventory-receiptAdjustmentAcknowledgment.schema.json
+                    example: !include inventory-receiptAdjustmentAcknowledgment.example.json
+            responses:
+                200:                    
+                404: description: The requested resource could not be found.
+    /cost
+        /{merchantSku}:
+            get:
+            description: This method will allow you to poll Jet.com owned inventory for the cost that you will pay for Jet.com inventory
+            responses
+                200:    
+                    body:
+                        application/json:
+                        schema: !include inventory-cost.schema.json
+                        example: !include inventory-cost.example.json
+                404:
