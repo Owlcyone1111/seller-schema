@@ -17,7 +17,6 @@
 
 			"
 		},
-
 		"jet_browse_node_id": {
 			"type": "integer",
 			"required": true,
@@ -29,13 +28,11 @@
 
 			"
 		},
-
 		"jet_retail_sku":{
 			"type":"string",
 			"required":true,
 			"description":"The unique ID for an individually selectable product for sale on Jet.com."
 		},
-
 		"amazon_item_type_keyword":{
 			"type":"string",
 			"description":"ItemType allows customers to find your products as they browse to the most specific item types.  Please use the exact selling from Amazon's browse tree guides"
