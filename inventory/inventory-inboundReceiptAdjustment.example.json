@@ -1,0 +1,20 @@
+{
+	"merchant_purchase_order_id" : "PO123456",
+	"receipt_adjustment" : [
+		{
+			"jet_receipt_number" : "JET00000001R",
+			"merchant_inbound_shipment_id" : "09381920SPO",
+			"jet_fulfillment_node_id" : "XXY",
+			"adjustment_date" : "2014-07-24T17:01:00.0000000Z",
+			"adjustment_details" : [
+				{
+					"jet_received_item_id" : "XXY001",
+					"jet_adjustment_item_id" : "ADJ002",
+					"merchant_sku" : "XXY-001",
+					"quantity_adjusted" : 12,
+					"adjustment_reason" : "damaged"								
+				}
+			]
+		}
+	]
+}

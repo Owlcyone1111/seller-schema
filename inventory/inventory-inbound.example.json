@@ -1,0 +1,40 @@
+{
+	"merchant_purchase_order_id" : "PO123456",
+	"inbound_shipment" : [
+		{
+			"merchant_inbound_shipment_id" : "09381920SPO",
+			"ship_to_fulfillment_node_id" : "YYZ",
+			"ship_to_date" : "2014-07-24T17:01:00.0000000Z",
+			"expected_arrival_date" : "2014-07-24T17:01:00.0000000Z",
+			"expected_arrival_carrier" : "UPS FREIGHT",
+			"standard_carrier_alpha_code" : "UPGF",
+			"carrier_contact" : [
+				{
+					"carrier_contact_number" : "555-555-5555",
+					"carrier_contact_name" : "AJ Nead",
+				}
+			],
+			"inbound_shipment_pallet" : [
+				{
+					"merchant_pallent_id" : "PA-001",
+					"p_marks_and_numbers" : "348370934893493248022",
+					"inbound_shipment_case" : [
+						{
+							"merchant_case_id" : "CA-001",
+							"c_marks_and_numbers" : "348370934893493248022",
+							"expiration_date" : "2015-07-24T17:01:00.0000000Z",
+							"lot_code" : "XYZ000001",
+							"inbound_shipment_item" : [
+								{
+									"merchant_sku" : "XXY-001",
+									"jet_sku" : "JET-001",
+									"expected_arrival_qty" : 64								
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

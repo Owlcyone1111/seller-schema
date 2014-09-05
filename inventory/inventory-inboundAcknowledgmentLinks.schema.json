@@ -1,0 +1,15 @@
+{
+    "title": "AcknowledgmentLinks",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+    	"acknowledgment_urls": {
+    		"type": "array",
+    		"description": "List of URLs for the acknowledgment of a request to receive inbound inventory",
+    		"items": {
+    			"type": "string",
+    			"description": "The unique resource URI where an acknowledgment to a request to receive inbound inventory can be found"
+    		}
+    	}
+    }
+}

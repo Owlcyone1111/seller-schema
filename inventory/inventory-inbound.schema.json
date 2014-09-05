@@ -1,0 +1,178 @@
+{
+    "$schema" : "http://json-schema.org/draft-03/schema",
+	"title" : "InboundInventory",
+	"type" : "object",
+    "additionalProperties" : false,
+	"properties" : {		
+        "merchant_purchase_order_id" : {
+        	"type" : "string",
+        	"required" : true,
+        	"description" : "This is the unique purchase order that the merchant identifies the inbound inventory by"	
+        },
+        "inbound_shipment" : {
+        	"type" : "array",
+        	"links" : {
+        		"$ref" : "#/definitions/inbound_shipment_array"
+        	}
+        }
+   },
+   "definitions" : {
+   		"inbound_shipment_array" : {
+            "title" : "InboundShipmentArray",
+            "additionalProperties" : false,
+            "type" : "object",
+            "properties" : {
+				"merchant_inbound_shipment_id" : {
+					"type" : "string",
+		        	"required" : true,
+		        	"description" : "This is a unique merchant shipment identifier for a portion of a inbound purchase order ID"
+				}, 
+		        "ship_to_fulfillment_node_id" : {
+		        	"type" : "string",
+		        	"required" : true,
+		        	"description" : "This is the Jet.com fulfillment node ID that the inbound inventory will be ship"	
+		        },
+		        "ship_to_date" : {
+		        	"type" : "string",
+		        	"required" : true,
+		        	"description" : "The date the inbound inventory is shipped to Jet.com
+
+		        	#Valid Values
+
+            		The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"	
+		        },
+		        "expected_arrival_date" : {
+		        	"type" : "string",
+		        	"required" : true,
+		        	"description" : "The date and time that the inbound inventory is expected to arrive at the Jet.com Fulfillment Node
+
+		        	#Valid Values
+
+            		The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"	
+		        },
+		        "expected_arrival_carrier" : {
+		        	"type" : "string",
+		        	"required" : true,
+		        	"description" : "The carrier delivering the inbound inventory to the Jet.com"	
+		        },
+		        "standard_carrier_alpha_code" : {
+		        	"type" : "string",
+		        	"required" : false,
+		        	"description" : "The standard carrier code associated with the inbound shipment"	
+		        },
+		        "carrier_contect" : {
+		        	"type" : "array",
+		        	"items" : {
+		        		"$ref" : "#/definitions/carrier_contact_array"
+		        	}
+		        },
+		        "inbound_shipment_pallet" : {
+		        	"type" : "array",
+		        	"items" : {
+		        		"$ref" : "#/definitions/inbound_shipment_pallet_array"
+		        	}
+		        }
+   			}
+		},
+		"carrier_contact_array" : {
+            "title" : "CarrierContactArray",
+            "additionalProperties" : false,
+            "type" : "object",
+            "properties" : {
+    	    	"carrier_contact_number" : {
+        	    	"type" : "string",
+		        	"required" : false,
+		        	"description" : "This is the number for the carrier contact that Jet.com can call for information about the inbound shipment"
+            	},
+            	"carrier_contact_name" : {
+        	    	"type" : "string",
+		        	"required" : false,
+		        	"description" : "This is the name of the carrier's contact that Jet.com can call"
+            	}
+            }
+        },
+        "inbound_shipment_pallet_array" : {
+            "title" : "InboundShipmentPalletArray",
+            "additionalProperties" : false,
+            "type" : "object",
+            "properties" : {
+            	"merchant_pallet_id" : {
+        	    	"type" : "string",
+		        	"required" : false,
+		        	"description" : "A unique merchant identifier associated with the pallet sent to jet.com"
+            	},
+            	"p_marks_and_numbers" : {
+        	    	"type" : "string",
+		        	"required" : false,
+		        	"description" : "A unique marks and number (UCC-128) barcode associated with the pallet sent to jet.com"
+            	},
+            	"inbound_shipment_case" : {
+		        	"type" : "array",
+		        	"items" : {
+		        		"$ref" : "#/definitions/inbound_shipment_case_array"
+		        	}
+		        }	
+        	}
+    	},
+        "inbound_shipment_case_array" : {
+            "title" : "ShipmentItemCaseArray",
+            "additionalProperties" : false,
+            "type" : "object",
+            "properties" : {
+            	"merchant_case_id" : {
+        	    	"type" : "string",
+		        	"required" : false,
+		        	"description" : "A unique identifier associated with the pallet sent to jet.com"
+            	},
+            	"c_marks_and_numbers" : {
+        	    	"type" : "string",
+		        	"required" : false,
+		        	"description" : "A unique marks and number (UCC-128) barcode associated with the case sent to jet.com"
+            	},
+            	"expiration_date" : {
+        	    	"type" : "string",
+		        	"required" : false,
+		        	"description" : "The date that the product is set to expire
+
+		        	#Valid Values
+
+            		The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"
+            	},
+            	"lot_code" : {
+        	    	"type" : "string",
+		        	"required" : false,
+		        	"description" : "The manufacturer lot identification code that the case belongs to"
+            	},
+            	"inbound_shipment_item" : {
+		        	"type" : "array",
+		        	"items" : {
+		        		"$ref" : "#/definitions/inbound_shipment_item_array"
+		        	}
+		        }	
+        	}
+    	},    	
+        "inbound_shipment_item_array" : {
+            "title" : "InboundShipmentItemArray",
+            "additionalProperties" : false,
+            "type" : "object",
+            "properties" : {
+            	"merchant_sku" : {
+        	    	"type" : "string",
+		        	"required" : true,
+		        	"description" : "The unique merchant SKU associate with the item being delivered"
+            	},
+            	"jet_sku" : {
+        	    	"type" : "string",
+		        	"required" : false,
+		        	"description" : "The Jet.com SKU associated with the item being delivered"
+            	},
+            	"expected_arrival_qty" : {
+        	    	"type" : "integer",
+		        	"required" : true,
+		        	"description" : "This is the expected number of units that should arrive on this shipment"
+            	}
+            
+            }
+        }   	
+	}
+}

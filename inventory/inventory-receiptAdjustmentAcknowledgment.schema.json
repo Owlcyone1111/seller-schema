@@ -1,0 +1,19 @@
+{
+    "$schema" : "http://json-schema.org/draft-03/schema",
+	"title" : "InboundInventoryReceiptAdjustmentAcknowledgment",
+	"type" : "object",
+    "additionalProperties" : false,
+	"properties" : {		
+        "adjustment_acknowledgment" : {
+        	"type" : "string",
+        	"required" : true,
+        	"description" : "The acknowledgement status from the merchant
+        	
+        	#Valid Values
+        	
+        	*'acknowledged' - The adjustement to inventory has been received
+        	
+        	"	
+        }
+   	}
+}

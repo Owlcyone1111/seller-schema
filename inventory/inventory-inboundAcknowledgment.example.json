@@ -1,0 +1,20 @@
+{
+	"jet_inbound_inventory_id" : "PO123456",
+	"inbound_shipment_ack" : [
+		{
+			"acknowledgment_status" : "accepted",	
+			"jet_fc_contact" : [
+				{
+					"jet_fc_contact_number" : "555-555-5555",
+					"jet_fc_contact_name" : "AJ Nead",
+				}
+			],
+			"inbound_shipment_details_ack" : [
+				{
+					"details_acknowledgment_status" : "receivable",
+					"merchant_sku" : "XXY-001"					
+				}
+			]
+		}
+	]
+}

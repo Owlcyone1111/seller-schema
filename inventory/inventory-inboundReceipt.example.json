@@ -1,0 +1,30 @@
+{
+	"merchant_purchase_order_id" : "PO123456",
+	"inbound_shipment_receipt" : [
+		{
+			"jet_receipt_number" : "JET00000001R",
+			"merchant_inbound_shipment_id" : "09381920SPO",
+			"received_fulfillment_node_id" : "YYZ",
+			"received_date" : "2014-07-24T17:01:00.0000000Z",
+			"receiving_completion_date" : "2014-07-24T17:01:00.0000000Z",
+			"inbound_shipment_pallet_received" : [
+				{
+					"merchant_pallet_id" : "PA-001",
+					"inbound_shipment_case_received" : [
+						{
+							"merchant_case_id" : "CA-001",
+							"inbound_shipment_item_received" : [
+								{
+									"jet_received_item_id" : "XXY001",
+									"merchant_sku" : "XXY-001",
+									"quantity_received" : 64,
+									"received_status" : "sellable"								
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

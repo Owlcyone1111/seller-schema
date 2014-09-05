@@ -1,0 +1,63 @@
+{
+    "$schema" : "http://json-schema.org/draft-03/schema",
+	"title" : "InventoryAdviceFull",
+	"type" : "object",
+	"description" : "This schema is used to set inventory counts on merchant skus",
+    "additionalProperties" : false,
+	"properties" : {
+		"fulfillment_node_id" : {
+            "type" : "string",
+            "required" : true,
+            "description" :  "Jet's unique ID for a given fulfillment node"
+        },
+        "alt_fulfillment_node_id" : {
+            "type" : "string",
+            "required": true,
+            "description" :  "The fulfillment node id that the merchant assigns to a facility"
+        },
+        "fulfillment_node_sku" : {
+            "type" : "array",
+            "items" : {
+                "$ref" : "#/definitions/fulfillment_node_skus"
+            }
+        },
+	},
+	"definitions" : {
+		"fulfillment_node_skus" : {
+            "title" : "FulfillmentNodeSkus",
+            "additionalProperties" : false,
+            "type" : "object",
+            "properties" : {
+                "jet_sku" : {
+                    "type" : "string",
+                    "required" : true,
+                    "description" : "Jet's unique identifier for an product"
+                },
+                "merchant_sku": {
+                    "type": "string",
+                    "required": false,
+                    "description" : "Merchants unique identifier for an product"
+                },
+				"quantity" : {
+            		"type": "integer",
+                    "required": true,
+                    "description" : "The quantity of the mechant sku avaiable"
+            	},
+				"availability_date" : {
+            		"type": "string",
+                    "required": false,
+                    "description" : "The date that the inventory becomes available to send
+
+                    #Valid Values
+
+                    The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"
+            	},
+            	"lead_time" : {
+            		"type": "integer",
+                    "required": false,
+                    "description" : "The number of days that the product takes to fulfill.  This value will be considered with the fulfilltime time of the corresponding fulfillment node"
+            	}   
+            }
+        }
+	}
+}

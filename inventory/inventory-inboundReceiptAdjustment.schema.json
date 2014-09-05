@@ -1,0 +1,90 @@
+{
+    "$schema" : "http://json-schema.org/draft-03/schema",
+	"title" : "InboundInventoryReceiptAdjustment",
+	"type" : "object",
+    "additionalProperties" : false,
+	"properties" : {		
+        "merchant_purchase_order_id" : {
+        	"type" : "string",
+        	"required" : true,
+        	"description" : "This is the unique purchase order that the merchant identifies the inbound inventory by"	
+        },
+        "receipt_adjustment" : {
+        	"type" : "array",
+        	"items" : {
+        		"$ref" : "#/definitions/receipt_adjustment_array"
+        	}
+        }
+   },
+   "definitions" : {
+   		"receipt_adjustment_array" : {
+            "title" : "ReceiptAdjustmentArray",
+            "additionalProperties" : false,
+            "type" : "object",
+            "properties" : {
+				"jet_receipt_number" : {
+                    "type" : "string",
+                    "required" : true,
+                    "description" : "This is the unique identifier that Jet.com records for a receiving event"
+                }, 
+                "merchant_inbound_shipment_id" : {
+					"type" : "string",
+		        	"required" : true,
+		        	"description" : "This is a unique merchant shipment identifier for a portion of a inbound purchase order ID that was received by Jet.com"
+				}, 
+		        "jet_fulfillment_node_id" : {
+		        	"type" : "string",
+		        	"required" : true,
+		        	"description" : "This is the Jet.com fulfillment node ID that the adjustment was made at"	
+		        },
+		        "adjustment_date" : {
+		        	"type" : "string",
+		        	"required" : true,
+		        	"description" : "The date the inbound inventory adjustment occurred
+
+		        	#Valid Values
+
+            		The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"	
+		        },
+		        "adjustment_details" : {
+		        	"type" : "array",
+		        	"items" : {
+		        		"$ref" : "#/definitions/adjustment_details_array"
+		        	}
+		        }
+   			}
+		},
+        "adjustment_details_array" : {
+            "title" : "AdjustementDetailsArray",
+            "additionalProperties" : false,
+            "type" : "object",
+            "properties" : {
+            	"jet_received_item_id" : {
+        	    	"type" : "string",
+		        	"required" : false,
+		        	"description" : "the identifier used by jet.com to record the receiving event, this value was returned to the merchant in the inbound inventory receipt"
+            	},
+                "jet_adjustment_item_id" : {
+                    "type" : "string",
+                    "required" : false,
+                    "description" : "the unique identifier used by jet.com to record this adjustement event"
+                },                
+                "merchant_sku" : {
+                    "type" : "string",
+                    "required" : false,
+                    "description" : "the unique merchant identifier for the item quantity that was adjusted"
+                },
+                "quantity_adjusted" : {
+                    "type" : "integer",
+                    "required" : false,
+                    "description" : "the total number of units that were adjusted by Jet.com into the inventory adjustment reason below"
+                },
+                "adjustment_reason" : {
+                    "type" : "string",
+                    "required" : false,
+                    "description" : "the status of the inventory that was adjusted"
+                },	
+        	}
+    	},	
+	}
+}

@@ -1,0 +1,138 @@
+{
+    "$schema" : "http://json-schema.org/draft-03/schema",
+	"title" : "InboundInventoryReceipt",
+	"type" : "object",
+    "additionalProperties" : false,
+	"properties" : {		
+        "merchant_purchase_order_id" : {
+        	"type" : "string",
+        	"required" : true,
+        	"description" : "This is the unique purchase order that the merchant identifies the inbound inventory by"	
+        },
+        "inbound_shipment_receipt" : {
+        	"type" : "array",
+        	"items" : {
+        		"$ref" : "#/definitions/inbound_shipment_receipt_array"
+        	}
+        }
+   },
+   "definitions" : {
+   		"inbound_shipment_receipt_array" : {
+            "title" : "InboundShipmentReceiptArray",
+            "additionalProperties" : false,
+            "type" : "object",
+            "properties" : {
+				"jet_receipt_number" : {
+                    "type" : "string",
+                    "required" : true,
+                    "description" : "This is the unique identifier that Jet.com records for a receiving event"
+                }, 
+                "merchant_inbound_shipment_id" : {
+					"type" : "string",
+		        	"required" : true,
+		        	"description" : "This is a unique merchant shipment identifier for a portion of a inbound purchase order ID"
+				}, 
+		        "received_fulfillment_node_id" : {
+		        	"type" : "string",
+		        	"required" : true,
+		        	"description" : "This is the Jet.com fulfillment node ID that the inbound inventory will be ship"	
+		        },
+		        "received_date" : {
+		        	"type" : "string",
+		        	"required" : true,
+		        	"description" : "The date the inbound inventory request was received at the Jet.com fulfillment center dock
+
+		        	#Valid Values
+
+            		The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"	
+		        },
+		        "receiving_completion_date" : {
+		        	"type" : "string",
+		        	"required" : true,
+		        	"description" : "The date and time that Jet.com finsihed receiving the inbound inventory request
+
+		        	#Valid Values
+
+            		The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"	
+		        },
+		        "inbound_shipment_pallet_received" : {
+		        	"type" : "array",
+		        	"items" : {
+		        		"$ref" : "#/definitions/inbound_shipment_pallet_received_array"
+		        	}
+		        }
+   			}
+		},
+        "inbound_shipment_pallet_received_array" : {
+            "title" : "ShipmentItemPalletReceivedArray",
+            "additionalProperties" : false,
+            "type" : "object",
+            "properties" : {
+            	"merchant_pallet_id" : {
+        	    	"type" : "string",
+		        	"required" : false,
+		        	"description" : "A unique merchant identifier associated with the pallet sent to Jet.com"
+            	},
+            	"inbound_shipment_case_received" : {
+		        	"type" : "array",
+		        	"items" : {
+		        		"$ref" : "#/definitions/inbound_shipment_case_received_array"
+		        	}
+		        }	
+        	}
+    	},
+        "inbound_shipment_case_received_array" : {
+            "title" : "ShipmentItemCaseReceivedArray",
+            "additionalProperties" : false,
+            "type" : "object",
+            "properties" : {
+            	"merchant_case_id" : {
+        	    	"type" : "string",
+		        	"required" : false,
+		        	"description" : "A unique identifier associated with the case sent to Jet.com"
+            	},
+            	"inbound_shipment_item_received" : {
+		        	"type" : "array",
+		        	"items" : {
+		        		"$ref" : "#/definitions/inbound_shipment_item_received_array"
+		        	}
+		        }	
+        	}
+    	},    	
+        "inbound_shipment_item_received_array" : {
+            "title" : "InboundShipmentReceivedItemArray",
+            "additionalProperties" : false,
+            "type" : "object",
+            "properties" : {
+                "jet_received_item_id" : {
+                    "type" : "string",
+                    "required" : true,
+                    "description" : "A identifier recorded for each SKU received on a inbound inventory request"
+                },
+            	"merchant_sku" : {
+        	    	"type" : "string",
+		        	"required" : true,
+		        	"description" : "The unique merchant SKU associate with the item being delivered"
+            	},
+            	"quantity_received" : {
+        	    	"type" : "integer",
+		        	"required" : true,
+		        	"description" : "This is the expected number of units that should arrive on this shipment"
+            	},
+                "received_status" : {
+                    "type" : "string",
+                    "required" : true,
+                    "description" : "This is the expected number of units that should arrive on this shipment
+
+                    #Valid Values
+
+                    *'sellable' - units received in sellable condition'
+
+                    *'unsellable - damaged' - units received damaged, units are not sellable and should be returned to vendor'                     
+
+                    "
+                }
+            }
+        }   	
+	}
+}

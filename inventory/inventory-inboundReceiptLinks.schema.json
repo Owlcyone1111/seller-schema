@@ -1,0 +1,15 @@
+{
+    "title": "ReceiptLinks",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+    	"receipt_urls": {
+    		"type": "array",
+    		"description": "List of URLs to retrieve inventory receipts for inventory received at a jet.com fulfillment center",
+    		"items": {
+    			"type": "string",
+    			"description": "The unique resource URI where the inbound inventory receipt can be found"
+    		}
+    	}
+    }
+}

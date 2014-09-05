@@ -1,0 +1,13 @@
+{
+	"fulfillment_node_id" : "M1023A",
+	"alt_fulfillment_node_id" : "Eastern",	
+	"fulfillment_node_sku" : [
+		{
+			"jet_sku" : "YYZ",
+			"merchant_sku" : "XYZ",
+			"quantity" : 9,
+			"availability_date" : "2014-07-24T17:01:00.0000000Z",
+			"lead_time" : 0
+		}
+	]
+}

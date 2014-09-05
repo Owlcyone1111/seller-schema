@@ -1,0 +1,89 @@
+{
+    "$schema" : "http://json-schema.org/draft-03/schema",
+	"title" : "InboundInventoryAcknowledgment",
+	"type" : "object",
+    "additionalProperties" : false,
+	"properties" : {		
+        "jet_inbound_inventory_id" : {
+        	"type" : "string",
+        	"required" : true,
+        	"description" : "This is the unique id jet.com has created for the inbound inventory shipment"	
+        },
+        "inbound_shipment_ack" : {
+        	"type" : "array",
+        	"items" : {
+        		"$ref" : "#/definitions/inbound_shipment_ack_array"
+        	}
+        }
+   },
+   "definitions" : {
+   		"inbound_shipment_ack_array" : {
+            "title" : "InboundShipmentAckArray",
+            "additionalProperties" : false,
+            "type" : "object",
+            "properties" : {
+				"acknowledgment_status" : {
+					"type" : "string",
+		        	"required" : true,
+		        	"description" : "This is a unique merchant shipment identifier for a portion of a inbound purchase order ID"
+				}, 
+		        "jet_fc_contact" : {
+		        	"type" : "array",
+		        	"items" : {
+		        		"$ref" : "#/definitions/jet_fc_contact_array"
+		        	}
+		        },
+		        "inbound_shipment_details_ack" : {
+		        	"type" : "array",
+		        	"items" : {
+		        		"$ref" : "#/definitions/inbound_shipment_details_ack_array"
+		        	}
+		        }
+   			}
+		},
+		"jet_fc_contact_array" : {
+            "title" : "FcContactArray",
+            "additionalProperties" : false,
+            "type" : "object",
+            "properties" : {
+    	    	"jet_fc_contact_number" : {
+        	    	"type" : "string",
+		        	"required" : false,
+		        	"description" : "This is the number for the contact at the Jet.com FC that will receive the inbound inventory request"
+            	},
+            	"jet_fc_contact_name" : {
+        	    	"type" : "string",
+		        	"required" : false,
+		        	"description" : "This is the name of the Jet.com contact at the FC that will receive the inbound inventory request"
+            	}
+            }
+        },
+        "inbound_shipment_details_ack_array" : {
+            "title" : "InboundShipmentItemDetailsArray",
+            "additionalProperties" : false,
+            "type" : "object",
+            "properties" : {
+            	"details_acknowledgment_status" : {
+        	    	"type" : "string",
+		        	"required" : false,
+		        	"description" : "This is an acknowledgment of the item being shipped for inbound receiving to Jet.com
+		        	
+		        	#Valid Values
+
+                    *'receivable' - the item can be received as requested' 
+					
+					*'non-receivable' - no SKU set up information available to receive product'
+		        	
+		        	*'non-receivable' - no quantity information sent for the product in receive inbound inventory request'
+		        	
+		        	"
+            	},
+            	"merchant_sku" : {
+        	    	"type" : "string",
+		        	"required" : false,
+		        	"description" : "The merchant sku being shipped to the jet.com fulfillment center"
+            	}
+            }
+        }   	
+	}
+}
