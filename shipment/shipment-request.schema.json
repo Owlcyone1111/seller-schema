@@ -62,7 +62,7 @@
             "enum" : [
             	"yes",
             	"no"
-            ]
+            ],
             "description" : "Indicate whether Jet.com pays the shipping cost or the merchant pays shipping cost"
         }
     },

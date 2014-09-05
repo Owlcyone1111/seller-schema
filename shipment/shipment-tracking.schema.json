@@ -1,0 +1,60 @@
+{
+    "title": "ShipmentTracking",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+        "estimated_delivery_date": {
+            "type": "string",
+            "required": true,
+            "description" :  "The date the merchant order was placed
+
+            #Valid Values
+
+            The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"
+        },
+        "shipment_tracking_status" : {
+            "type" : "string",
+            "required" : true,
+            "enum" : 
+            [
+            	"received",
+            	"acknowledged",
+            	"fulfilling",
+            	"shipped",
+            	"cancelled",
+            	"first scan",
+            	"in transit",
+            	"delivered",
+            	"first attempt made",
+            	"second attempt made",
+            	"final attempt made",
+            	"return to sender",
+            	"damaged in transit",
+            	"delayed",
+            ], 
+            "description" : "Current status of the order
+
+            #Valid Values
+            * 'received' - Jet.com has received the shipment request from the merchant
+            * 'acknowledged' - Jet.com has acknowledged the shipment request
+            * 'fulfilling' - Jet.com is presently fulfilling this shipment request
+            * 'shipped' - Jet.com has shipped the shipment request, a ship notification is available
+            * 'cancelled' - Jet.com has cancelled the shipment request
+            * 'first scan' - the package has the first scan at the carrier distribution center
+            * 'in transit' - the package is in transit for delivery
+            * 'delivered' - the package has been delivered
+            * 'first attempt made' - the first delivery attempt has been made
+            * 'second attempt made' - the second delivery attempt has been made 
+            * 'final attempt made' - the final delivery attempt has been made and shipment will be returned to Jet.com
+            * 'return to sender' - the shipment is being returned to Jet.com
+            * 'damaged in tranist' - the shipment was damaged in transit
+            * 'delayed' - the shipment is delayed in transit
+            "
+        },   
+        "tracking_status_message" : {
+            "type" : "string",
+            "required" : true,
+            "description" : "Free text message associated with the current status of a shipment"
+        }
+    }
+}

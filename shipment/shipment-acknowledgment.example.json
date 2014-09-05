@@ -4,18 +4,19 @@
     "alt_order_id" : "232145",   
     "order_items": [
         {
-            "order_item_acknowledgement_status": "fulfillable",
-            "order_item_id": "8f5ae15b6b414b00a1b9d6ad99166a00",
-            "alt_order_item_id": "76-i105"
+            "order_item_acknowledgement_status" : "fulfillable",
+            "order_item_id" : "8f5ae15b6b414b00a1b9d6ad99166a00",
+            "alt_order_item_id" : "76-i105"
         }
     ],
-    "shipments": [
+    "shipments" : [
         {
-            "shipment_id": "a172ae641c384c57b3a5b58ae4dd3bd6",
-            "shipment_items": [
+            "shipment_id" : "a172ae641c384c57b3a5b58ae4dd3bd6",
+            "shipment_items" : [
                 {
                     "merchant_sku" : "XYZ-001",
                     "shipment_item_id": "9af824b9e4a24854991870db184bbe32",
+                    "alt_order_item_id": "76-i105"
                 }
             ],
             "expected_ship_date" : "2014-07-26T:04:00.0000000Z",

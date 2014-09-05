@@ -1,0 +1,15 @@
+{
+    "title": "ShipmentNotificationLinks",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+    	"notification_urls": {
+    		"type": "array",
+    		"description": "List of URLs that have a shipment notification outstanding",
+    		"items": {
+    			"type": "string",
+    			"description": "The unique resource URL where this shipment notification can be found"
+    		}
+    	}
+    }
+}

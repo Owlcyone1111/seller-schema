@@ -112,12 +112,32 @@
                 },
                 "expected_ship_date": {
                     "type": "string",
-                    "description" : "The expected date the shipment will ship from the jet.com fulfillment node"
+                    "description" : "The expected date that the customer shipment will ship
+
+                    #Valid Values
+
+            		The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"
                 },
                 "expected_delivery_date": {
                     "type": "string",
-                    "description" : "Jet's unique ID for a given shipment"
+                    "description" : "The expected delivery date that the customer should receive the shipment
+
+                    #Valid Values
+
+            		The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"
                 },
+                "jet_fulfillment_node_id": {
+                    "type": "string",
+                    "description" : "The fulfillment node that jet.com will send the order from"
+                },
+                "shipping_method": {
+                    "type": "string",
+                    "description" : "The shipping method that jet.com is fulfulling the order with"
+                },
+                "shipping_cost": {
+                    "type": "number",
+                    "description" : "The cost of shipping the shipment to the customer"
+                },               
             }
         },
         "ack_order_shipment_item": {
@@ -133,6 +153,10 @@
                     "type": "string",
                     "description" : "Jet's unique identifier for an item in a shipment"
                 },
+                "alt_order_item_id": {
+                    "type": "string",
+                    "description" : "Merchant order item id supplied to Jet.com during the shipment request realted to the shipment item"
+                }
             }
         }
     }

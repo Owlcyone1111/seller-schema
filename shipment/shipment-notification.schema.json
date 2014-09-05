@@ -1,0 +1,113 @@
+{
+    "title": "ShipmentNotification",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {          
+        "order_items": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/notification_order_items"
+            }
+        },
+        "shipments": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/notification_shipment"
+            }
+        },
+    },
+    "definitions": {
+        "notification_order_items": {
+            "title": "NotificationOrderItems",
+            "additionalProperties" : false,
+            "required" : true,
+            "type": "object",
+            "properties": {
+                "order_item_id": {
+                    "type": "string",
+                    "description" : "Jet's unique ID for an order item given during when the order is acknlowedged"
+                },
+                "alt_order_item_id": {
+                    "type": "string",
+                    "description" : "Merchant supplied order item ID"
+                },
+                "merchant_sku": {
+                    "type": "string",
+                    "description" : "The merchant provided product identifier for the order item"
+                },
+                "shipped_order_item_quantity": {
+                    "type": "integer",
+                    "description" : "Quantity of the order item that is shipped"
+                },
+                "cancelled_order_item_quantity": {
+                    "type": "integer",
+                    "description" : "Quantity cancelled of the given order item"
+                },
+            }
+        },
+        "notification_shipment": {
+            "title": "NotificationShipment",
+            "additionalProperties" : false,
+            "type": "object",
+            "properties": {
+                "shipment_id": {
+                    "type": "string",
+                    "description" : "Jet's unique ID for a given shipment"
+				},
+                "shipment_tracking_number": {
+                    "type": "string",
+                    "description" : "Package tracking number that the carrier is using"
+                },
+				"shipment_date": {
+                    "type": "string",
+                    "description" : "Date/Time that a given shipment was shipped
+
+                    #Valid Values
+
+            		The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"
+                },
+                "shipment_carrier": {
+                    "type": "string",
+                    "description" : "Shipping carrier used for the given shipment"
+                },
+                "shipment_method": {
+                    "type": "string",
+                    "description" : "Shipping method used for the given shipment"
+                },
+                "shipment_items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/notification_shipment_item"
+                    }
+                }
+            }
+        },
+        "notification_shipment_item": {
+            "title": "NotificationShipmentItem",
+            "additionalProperties" : false,
+            "type": "object",
+            "properties": {
+                 "shipment_item_id": {
+                    "type": "string",
+                    "description" : "Jet's unique identifier for an item in a shipment"
+                },
+                "alt_order_item_id": {
+                    "type": "string",
+                    "description" : "Your identifier for the shipped item used during the original generate order fullfillment request"
+                },
+                "merchant_sku": {
+                    "type": "string",
+                    "description" : "The merchant SKU that is in the given shipment"
+                },
+                "shipment_sku_quantity": {
+                    "type": "integer",
+                    "description" : "Quantity of the given SKU that was shipped in the given shipment"
+                },
+                "cancelled_sku_quantity": {
+                    "type": "integer",
+                    "description" : "Quantity of the given SKU that was cancelled in the given shipment"
+                }
+            }
+        }
+    }
+}

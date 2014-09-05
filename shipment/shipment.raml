@@ -1,0 +1,89 @@
+#%RAML 0.8
+
+title: Merchant API - Orders
+description: This API provides actions to request Jet.com to fulfill an order for a merchant
+baseUri: http://merchant-api.test.jet.com/api
+version: v0.1
+protocols: [HTTPS]
+mediaType: application/json
+
+/shipment:
+    /fulfillment:
+        post:
+            description: This method will create a request to fulfill an order on behave of the merchant
+            body:
+                application/json:
+                    schema: !include shipment-request.schema.json
+                    example: !include shipment-request.example.json
+            responses:
+                200:                    
+                404: description: The requested resource could not be found.
+    /acknowledgmentList:
+        get:
+            description: Provides list of orders that have been acknowledged, acknowledgement's will last for 48 hours or until the item has shipped.
+            responses:
+                200:
+                    body:
+                        application/json:
+                            schema: !include shipment-acknowledgmentLinks.schema.json
+                            example: !include shipment-acknowledgmentLinks.example.json
+                404:
+                    description: The requested resource could not be found.    
+    /acknowledgment:
+        /{id}:
+            get:
+                description: This method will allow the merchant to grab the order acknowledgment by link
+                responses:
+                    200:
+                        body:
+                            application/json:
+                                schema: !include shipment-acknowledgment.schema.json
+                                example: !include shipment-acknowledgment.example.json
+                    404:
+    /notificationLinks:
+        get:
+            description: This method will list all shipments that have been shipped in the last 48 hours
+            responses:
+                200:
+                    body:
+                        application/json:
+                            schema: !include shipment-notificationLinks.schema.json
+                            example: !include shipment-notificationLinks.example.json
+                404:
+                    description: The requested resource could not be found.   
+    
+    /notification:
+        /{id}:
+            get:
+                description: Allows the merchant to grab the shipment details of an order
+                responses:
+                    200:
+                        body:
+                        application/json:
+                            schema: !include shipment-notification.schema.json
+                            example: !include shipment-notification.example.json
+                    404:
+                    409:
+    /tracking:
+        /{id}:
+            get:
+                description: This method will list that status of all shipments that have been acknowledged as accepted
+                responses:
+                    200:
+                        body:
+                            application/json:
+                                schema: !include shipment-tracking.schema.json
+                                example: !include shipment-tracking.example.json
+                    404:
+                        description: The requested resource could not be found.  
+    /preview:
+        /{service}:
+            /{zipCode}
+                /{merchantSku}:
+                    get:
+                        description: This method gives a preview to the cost of fulfillment and the anticipated delivery date by service level or shipping method
+                        200:
+                            body:
+                                application/json:
+                                    schema: !include shipment-preview.schema.json
+                                    example: !include shipment-preview.example.json

@@ -1,0 +1,10 @@
+{
+	"is_fulfillable" : "yes",
+    "shipment_preview": [
+        {
+            "service_level" : "priority",
+            "estimated_delivery_date" : "2014-07-24T17:01:00.0000000Z",
+            "estimated_shipping_fee" : 10.99
+        }
+    ]
+}

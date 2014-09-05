@@ -1,0 +1,68 @@
+{
+    "title": "ShipmentPreview",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+        "is_fulfillable":{
+            "type": "string",
+            "required": true,
+            "emum":[
+                "yes",
+                "no",
+            ],
+            "description" : "Status to let merchant know whether the item will ' 
+
+            #Valid Values
+
+            *'yes' - the item can be fulfilled from Jet.com, a preview is available below 
+
+            *'no' - the item is not available to be fulfilled from Jet.com
+            "
+        },
+        "shipment_preview": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/shipment_preview_array"
+            }
+        }
+    },
+    "definitions": {
+        "shipment_preview_array": {
+            "title": "ShipmentPreviewArray",
+            "additionalProperties" : false,
+            "type": "object",
+            "properties": {
+                "service_level":{
+                    "type": "string",
+                    "required": true,
+                    "emum":[
+                        "level",
+                        "service",
+                    ],
+                    "description" : "The type of shipping service you support.  This is either shipping levels (priority, expedited, standard, etc.) or shipping methods (ups_ground, ups_2nd, etc.)
+
+                    #Valid Values
+
+                    * 'level' - a preview is returned by shipping level (priority, expedited, standard, etc.).  Shipping levels are configured in the Jet.com Merchant Portal.
+
+                    * 'method' - a preview is returned by shipping method (ups_ground, ups_2nd, etc.).  Shipping methods are configured in the Jet.com Merchant Portal. 
+                    "
+                },
+                "estimated_delivery_date": {
+                    "type": "string",
+                    "required": true,
+                    "description" : "The estimated delivery date for the given shipping level or shipping method
+
+                    #Valid Values
+
+                    The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"
+                },
+                "estimated_shipping_fee": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "The estimated cost of shipping the item from a Jet.com fulfillment center"
+                }
+            }
+        }
+    }
+}
