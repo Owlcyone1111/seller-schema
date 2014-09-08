@@ -43,46 +43,15 @@
 			"description":"Please enter a category path using your own product taxonomy"
 		},
 
-		"standard_product_code": {
-			"type": "string",
-			"required": true,
-			"maxLength" : 14,
-			"description": "A standard, unique identifier for a product.  ISBN-10, ISBN-13, UPC, EAN and GTIN-14 are accepted.
+		"standard_product_codes" : {
+			"type" : "array",
+			"minItems" : 1,
+			"items" : {
+				"$ref": "#/definitions/product_codes"				
+			}
 
-			#Valid Values
-
-			*If standard_product_code_type is'UPC' - must be 12 digits
-
-			*If standard_product_code_type is 'ISBN-13' - must be 13 digits
-
-			*If standard_product_code_type is 'ISBN-10' - must be 10 digits
-
-			*If standard_product_code_type is 'EAN' - must be 13 digits
-
-			*If standard_product_code_type is 'GTIN-14' - must be 14 digits
-
-			"
-		},
-		"standard_product_code_type": {
-			"type": "string",
-			"required": true,
-			"enum" : ["UPC", "ISBN-13","ISBN-10", "EAN", "GTIN-14"],
-			"description": "Indicate the type of standard_product_code that was used.
-
-			#Valid Values
-
-			*UPC
-
-			*ISBN-13
-
-			*ISBN-10
-
-			*EAN
-
-			*GTIN-14
-
-			"
-		},
+		},	
+		
 		"ASIN" : {
 			"type": "string",
 			"description" : "Amazon standard itdentification number for this merchant SKU if available",
@@ -420,6 +389,52 @@
 						"description" : "If the attribute_value requires a unit then you pass the unit here."
 					}
 	            }
+			},
+		"product_codes" : {
+			"title" : "ProductCodes",
+			"additionalProperties" : false,
+			"type" : "object",
+			"properties" : {
+				"standard_product_code": {
+					"type": "string",
+					"maxLength" : 14,
+					"description": "A standard, unique identifier for a product.  ISBN-10, ISBN-13, UPC, EAN and GTIN-14 are accepted.
+
+					#Valid Values
+
+					*If standard_product_code_type is'UPC' - must be 12 digits
+
+					*If standard_product_code_type is 'ISBN-13' - must be 13 digits
+
+					*If standard_product_code_type is 'ISBN-10' - must be 10 digits
+
+					*If standard_product_code_type is 'EAN' - must be 13 digits
+
+					*If standard_product_code_type is 'GTIN-14' - must be 14 digits
+
+					"
+				},
+				"standard_product_code_type": {
+					"type": "string",
+					"required": true,
+					"enum" : ["UPC", "ISBN-13","ISBN-10", "EAN", "GTIN-14"],
+					"description": "Indicate the type of standard_product_code that was used.
+
+					#Valid Values
+
+					*UPC
+
+					*ISBN-13
+
+					*ISBN-10
+
+					*EAN
+
+					*GTIN-14
+
+					"
+				},
 			}
+		}
 		}
 }

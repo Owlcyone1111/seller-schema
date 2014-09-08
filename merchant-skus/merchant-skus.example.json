@@ -2,8 +2,10 @@
 	"product_title": "My Product",
 	"jet_browse_node_id": 100,
 	"jet_retail_sku" : "XHDIFF-0101",
-	"standard_product_code": "1234567890123",
-	"standard_product_code_type": "UPC",
+	"standard_product_codes" : [{	
+		"standard_product_code": "1234567890123",
+		"standard_product_code_type": "UPC"
+		}],
 	"multipack_quantity": 6,
 	"brand": "My Product's Brand",
 	"manufacturer": "My Product's Manufacturer",
