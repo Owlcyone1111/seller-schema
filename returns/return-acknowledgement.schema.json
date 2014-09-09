@@ -1,5 +1,5 @@
 {
-	"title": "returnAcknowldegement",
+	"title": "ReturnAcknowldegement",
 	"type": "object",
 	"description": "This schema is used for acknowledgement of a Return notification",
 	"additionalProperties" : false,
@@ -21,29 +21,24 @@
 
 			#Valid values
 
-			*'acknowledged'
-			
+			*'acknowledged'			
 			*'refund customer without return'"
 		},
 		"jet_pick_return_location" : {
-			"type": "string",
+			"type": "boolean",
 			"required": true,
-			"enum":[
-				 "yes",
-				 "no"
-			 ],
-			"description" : "Lets Jet.com know whether the merchant will determine the return location or Jet.com will determine the return location using your pre-configured return locations.  When this field is 'no' the array return location must be completed."
+			"description" : "Lets Jet.com know whether the merchant will determine the return location or Jet.com will determine the return location using your pre-configured return locations.  When this field is 'false' the array return location must be completed."
 		},
 		"return_location" : {
 			"type" : "array",
 			"items" : {
-        		"$ref" : "#/defintions/jet_return_location"
+        		"$ref" : "#/defintions/return_to_location"
 			}
 		}
 	},
 	"defintions" : {
-		"jet_return_location" : {
-        	"name" : "JetReturnLocation",
+		"return_to_location" : {
+        	"name" : "ReturnToLocation",
             "type" : "object",
 			"additionalProperties" : false,
             "properties" : {

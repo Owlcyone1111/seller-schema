@@ -5,7 +5,7 @@
         "acknowledgement_status":{
             "type": "string",
             "required": true,
-            "emum":[
+            "enum":[
                 "accepted",
                 "rejected - unfulfillable address",
                 "rejected - shipping method not supported",

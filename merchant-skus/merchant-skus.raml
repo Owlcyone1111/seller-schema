@@ -20,7 +20,7 @@ mediaType: application/json
             404:
     /{id}:
         get:
-            description: This method will list the specified merchant SKU
+            description: This method will return merchant SKU specified by id
             responses:
                 200:
                     body:
@@ -54,7 +54,7 @@ mediaType: application/json
         /inventory:
             /{fulfillmentNode}:
                 get:
-                    description: This method retrieves inventory data for the specified merchant SKU
+                    description: This method retrieves Fulfillment node-level inventory data for the specified merchant SKU
                     body:
                         application/json:
                             schema: !include inventory.schema.json
@@ -63,7 +63,7 @@ mediaType: application/json
                         200:
                         404:
                 put:
-                    description: This method updates FC-level inventory data for the specified merchant SKU
+                    description: This method updates Fulfillment node-level inventory data for the specified merchant SKU
                     body:
                         application/json:
                             schema: !include inventory.schema.json
@@ -96,7 +96,7 @@ mediaType: application/json
                    409:
             /{fulfillmentNode}:
                 get:
-                    description: This method retrieves pricing data for the specified merchant SKU
+                    description: This method retrieves Fulfillment node-level pricing data for the specified merchant SKU
                     body:
                         application/json:
                             schema: !include price.schema.json
@@ -105,7 +105,7 @@ mediaType: application/json
                         200:
                         404:
                 put:
-                    description: This method updates FC-level price data for the specified merchant SKU
+                    description: This method updates Fulfillment node-level price data for the specified merchant SKU
                     body:
                         application/json:
                             schema: !include price.schema.json
@@ -116,7 +116,7 @@ mediaType: application/json
                         400:
                         409:
                 delete:
-                    description: This method deletes the FC-level price data for the specified merchant SKU
+                    description: This method deletes the Fulfillment node-level price data for the specified merchant SKU
                     responses:
                         204:
                         400:

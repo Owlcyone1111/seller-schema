@@ -27,16 +27,15 @@
         "status" : {
             "type" : "string",
             "required" : true,
-            "enum" : ["created", "directCancelled", "accepted", "rejected", "shipped", "partialCancelled"], 
+            "enum" : ["created", "directCancelled", "ready", "acknowledged", "shipped"], 
             "description" : "Current status of the order
 
             #Valid Values
-            * created - order was created by Jet.com and is available in pending List
+            * created - order was created by Jet.com but not released for fulfillment
+            * ready - order ready to be acknowledgedby merchant
             * directCancelled - order was directly cancelled by Jet.com
-            * accepted - order was accepted by merchant
-            * rejected - order was rejected by merchant
+            * acknowledged - order was acknowledged by merchant
             * shipped - order was shipped by merchant
-            * partialCancelled - order was partially cancelled by merchant
             "
         }, 
         "reason": {

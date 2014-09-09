@@ -18,10 +18,10 @@ mediaType: application/json
                             schema: !include return-links.schema.json
                             example: !include return-links.example.json
                 404:
-                    description: The requested resource could not be found.  Most likely the Merchant Id is invalid.
-    /notification/{id}:
+                    description: The requested resource could not be found. 
+    /{id}:
         get:
-            description: This method will list all returns that have not been acknowledged
+            description: Returns current status of the return
             responses:
                 200:
                     body:
@@ -29,25 +29,25 @@ mediaType: application/json
                             schema: !include return-notification.schema.json
                             example: !include return-notification.example.json
                 404:
-    /acknowledgment/{id}:
-        post:
-            description: Marks as return notification as acklowedged by the merchant
-            body:
-                application/json:
-                    schema: !include return-acknowledgement.schema.json
-                    example: !include return-acknowledgement.example.json
-            responses:
-                200:
-                404:
-                409:
-    /complete/{id}:
-        post:
-            description: Marks a return as complete and notifies jet how the customer refund should proceed
-            body:
-                application/json:
-                    schema: !include return-orderRefund.schema.json
-                    example: !include return-orderRefund.example.json
-            responses:
-                200:
-                404:
-                409:
+        /acknowledgment:
+            post:
+                description: Marks as return notification as acklowedged by the merchant
+                body:
+                    application/json:
+                        schema: !include return-acknowledgement.schema.json
+                        example: !include return-acknowledgement.example.json
+                responses:
+                    200:
+                    404:
+                    409:
+        /complete:
+            post:
+                description: Marks a return as complete and notifies jet how the customer refund should proceed
+                body:
+                    application/json:
+                        schema: !include return-orderRefund.schema.json
+                        example: !include return-orderRefund.example.json
+                responses:
+                    200:
+                    404:
+                    409:

@@ -10,15 +10,7 @@
         "alt_order_id": {
             "type": "string",
             "description" : "Optional Merchant supplied order ID."
-        },
-        "alt_return_authorization_id": {
-            "type": "string",
-            "description": "Merchant's unique ID for the return established in the returnAcknoledgement message. 
-
-             #Logic
-
-            Can supply this instead of return_authorization_id if it has been established"
-        },
+        },     
         "items": {
             "type": "array",
             "items": {
@@ -26,18 +18,14 @@
             }
         },
         "agree_to_return_charge" : {
-            "type" : "string",
-            "enum" : [
-                        "yes",
-                        "no"
-                     ],
+            "type" : "boolean",
             "description" : "does the merchant agree to the return charge for the return notification 
 
             #Valid Values
 
-            *'yes' - the merchant agrees to wholly pay the return charge to jet.com from the return notification
+            *'true' - the merchant agrees to wholly pay the return charge to jet.com from the return notification
 
-            *'no' - the merchant disagrees with the return charge and will enter a disputed charge with jet.com"
+            *'false' - the merchant disagrees with the return charge and will enter a disputed charge with jet.com"
         },
     },
     "definitions": {

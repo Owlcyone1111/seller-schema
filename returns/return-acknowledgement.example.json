@@ -1,7 +1,7 @@
 {
 	"alt_return_authorization_id" : "987654321",
 	"return_status": "acknowledged",
-	"jet_pick_return_location" : "no",
+	"jet_pick_return_location" : false,
 	"return_location" : [
 		{
 			"location_name" : "Eastern Warehouse",
