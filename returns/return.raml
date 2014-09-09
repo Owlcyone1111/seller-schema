@@ -7,10 +7,11 @@ version: v0.1
 protocols: [HTTPS]
 mediaType: application/json
 
-/return:
-    /pending:
+/returns:
+    /{status}:
         get:
-            description: This method will provide resource URLs for pending returns
+            description: This method will provide resource URLs for  returns by status.
+                         Status can be one of the following: "created", acknowledged",  "refund customer without return", "completed by merchant"
             responses:
                 200:
                     body:
@@ -19,9 +20,9 @@ mediaType: application/json
                             example: !include return-links.example.json
                 404:
                     description: The requested resource could not be found. 
-    /{id}:
+    state/{id}:
         get:
-            description: Returns current status of the return
+            description: Returns current state of the return
             responses:
                 200:
                     body:
@@ -29,7 +30,7 @@ mediaType: application/json
                             schema: !include return-notification.schema.json
                             example: !include return-notification.example.json
                 404:
-        /acknowledgment:
+        /acknowledge:
             post:
                 description: Marks as return notification as acklowedged by the merchant
                 body:
