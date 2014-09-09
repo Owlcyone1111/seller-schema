@@ -210,7 +210,7 @@
             }
         },
         "return_notification_location" : {
-            "name" : "ReturnNotificationToLocation",
+            "title" : "ReturnNotificationToLocation",
             "type" : "object",
             "additionalProperties" : false,
             "description" : "This field set be return acknowledgement message.",

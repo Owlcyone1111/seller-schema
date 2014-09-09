@@ -38,7 +38,7 @@
 	},
 	"defintions" : {
 		"return_to_location" : {
-        	"name" : "ReturnToLocation",
+        	"title" : "ReturnToLocation",
             "type" : "object",
 			"additionalProperties" : false,
             "properties" : {
