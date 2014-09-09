@@ -15,7 +15,7 @@
                  "created",
                  "acknowledged",
                  "refund customer without return",
-                 "order refunded"
+                 "completed by merchant"
              ],
             "description": "Current status of the return."
         }, 
