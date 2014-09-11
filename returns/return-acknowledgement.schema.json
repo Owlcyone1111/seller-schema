@@ -17,7 +17,7 @@
 			 ],
 			"description": "The seller acknowledges the receipt of the ReturnNotification or Communicates to Jet that a refund can be passed without needing to have the customer actually send the item back.
 
-			This must be sent back to Jet immediately so any desire to not have the customer actually send back items can be made based on some automatic logic
+			This must be sent back to Jet immediately so any decision to not have the customer actually send back items can be made based on some automatic logic
 
 			#Valid values
 
