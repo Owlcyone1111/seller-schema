@@ -3,7 +3,7 @@
     "type" : "object",
     "additionalProperties" : false,
     "properties" : {
-    	"merchant_order_id": {
+    	"order_id": {
             "type": "string",
             "description" :  "Jet's unique ID for a given merchant order",
         },
