@@ -22,9 +22,8 @@
 			*Accessory"
 		},
 		"variation_refinements": {
-			"type": "string",
-			"required" : true,
-			"description": "The refinements that vary for a set  of Parent/Child merchant skus
+			"type": "number",
+			"description": "The id number for the variation that you get from our documentation
 
 			#Logic
 
@@ -41,15 +40,11 @@
 					"type" : "string",
 					"description" : "merchant SKU"
 				},
-			"description": "The refinements that vary for a set  of Parent/Child merchant skus
-
-			#Logic
-
-			This field is required if you are setting up a Variation relationship between a set merchant skus
-			
+			"description": "The merchant skus that are a the child SKUs
+				
 			#Valid Values
 
-			The valid 'variation_refinements vary depending on the jet_browse_node_id, see category specific documentation for details"
+			Must be a merchant SKU that you have sent us"
 		}
 	}
 }

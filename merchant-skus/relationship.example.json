@@ -1,5 +1,5 @@
 {
 	"relationship": "Variation",
-    "variation_refinements" : "color",
+    "variation_refinements" : 1234,
     "children_skus" : [ "abcd", "efgh" ]
 }
