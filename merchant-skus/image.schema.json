@@ -8,7 +8,7 @@
 		"image_url": {
 			"type": "string",
 			"required": true,
-			"description": "URL location where Jet.com can access the image"
+			"description": "URL location where Jet.com can access the image. Please provide at least 300 x 300 pixels. However please provide the largest size avaialbe up to a file size of 1MB"
 		}
 	}
 }
