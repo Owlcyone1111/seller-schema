@@ -1,7 +1,7 @@
 {
 	"return_urls": [
-		"/return/notification/57e542a613fa42d8b6e8362dbd5911f5?merchantId=d20caa74f6b9403489c7e370c56bb7f8",
-		"/return/notification/a10b4b28467c490984e0b387e1cc2d9a?merchantId=d20caa74f6b9403489c7e370c56bb7f8",
-		"/return/notification/32c05c3230fc498e95f82129efd10213?merchantId=d20caa74f6b9403489c7e370c56bb7f8"
+		"/return/state/57e542a613fa42d8b6e8362dbd5911f5",
+		"/return/state/a10b4b28467c490984e0b387e1cc2d9a",
+		"/return/state/32c05c3230fc498e95f82129efd10213"
 	]
 }
