@@ -41,7 +41,7 @@ mediaType: application/json
                 404:   
     /{id}:
         /acknowledge:
-            post:
+            put:
                 description: This method allows the merchant to acknowledge an order as either accepted or rejected.  When acknowledging an order each item in the order should have an advice to tell Jet.com whether the item was fulfillable or unfulfillable.   If any single item in the order is unfulfillable then the entire order should be rejected and sent back to Jet.com. 
                 body:
                     application/json:
@@ -52,7 +52,7 @@ mediaType: application/json
                     404:
                     409:
         /shipped:
-            post:
+            put:
                 description: This method notifies Jet.com that the order has been shipped.  The merchant should provide advice to let Jet.com know how many units have been shipped and/or voided, and all information to track the order for each shipment that the order may split into.
                 body:
                     application/json:
