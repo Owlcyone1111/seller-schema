@@ -19,7 +19,6 @@
 		},
 		"jet_browse_node_id": {
 			"type": "integer",
-			"required": true,
 			"description": "The uniqueID that defines where the product will be found in the Jet.com browse structure
 
 			#Valid Values
@@ -30,7 +29,6 @@
 		},
 		"jet_retail_sku":{
 			"type":"string",
-			"required":true,
 			"description":"The unique ID for an individually selectable product for sale on Jet.com."
 		},
 		"amazon_item_type_keyword":{
@@ -103,7 +101,6 @@
 		},
 		"product_description": {
 			"type": "string",
-			"required": true,
 			"maxLength" : 2000,
 			"description": "Long description of the merchant sku
 
@@ -141,7 +138,6 @@
 		},
 		"shipping_weight_pounds": {
 			"type": "number",
-			"required": true,
 			"minimum" : 0.01,
 			"description": "Weight of the merchant sku when in its shippable configuration
 
@@ -153,7 +149,6 @@
 		},
 		"package_length_inches": {
 			"type": "number",
-			"required": true,
 			"minimum" : 0.01,
 			"description": "Length of the merchant sku when in its shippable configuration
 
@@ -165,7 +160,6 @@
 		},
 		"package_width_inches": {
 			"type": "number",
-			"required": true,
 			"minimum" : 0.01,
 			"description": "Width of the merchant sku when in its shippable configuration
 
@@ -175,7 +169,6 @@
 		},
 		"package_height_inches": {
 			"type": "number",
-			"required": true,
 			"minimum" : 0.01,
 			"description": "Height of the merchant sku when in its shippable configuration
 
