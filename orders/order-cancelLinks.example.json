@@ -1,0 +1,7 @@
+{
+	"order_cancel_urls": [
+		"/orders/withoutShipmentDetail/57e542a613fa42d8b6e8362dbd5911f5",
+		"/orders/withoutShipmentDetail/a10b4b28467c490984e0b387e1cc2d9a",
+		"/orders/withoutShipmentDetail/32c05c3230fc498e95f82129efd10213"
+	]
+}

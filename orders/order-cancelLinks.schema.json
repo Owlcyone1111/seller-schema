@@ -1,0 +1,15 @@
+{
+    "title": "OrderCancelLinks",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+    	"order_cancel_urls": {
+    		"type": "array",
+    		"description": "List of URLs for orders that are cancelled",
+    		"items": {
+    			"type": "string",
+    			"description": "The unique resource URI where the order details for an order with cancelled items can be found"
+    		}
+    	}
+    }
+}

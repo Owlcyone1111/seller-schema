@@ -1,7 +1,7 @@
 #%RAML 0.8
 
 title: Orders
-description: This API provides information about how to process orders placed on Jet.com.  
+description: The Orders API provides information on how to utilize all API methods to fulfill an order placed on Jet.com.  General information about this API can be found in the API Explanation tab under the Orders section.
 baseUri: http://merchant-api.test.jet.com/api
 version: v0.1
 protocols: [HTTPS]
@@ -39,6 +39,17 @@ mediaType: application/json
                             schema: !include order-only.schema.json
                             example: !include order-only.example.json
                 404:   
+    /directedCancel:
+        get:
+            description: This method will be used by a merchant to poll for orders that Jet.com is requesting to be cancelled.  
+            responses:
+                200: 
+                    body: 
+                        application/json:
+                            schema: !include orders-cancelLinks.schema.json
+                            example: !include orders-cancelLinks.example.json
+                404:
+                    description: The requested resource could not be found. 
     /{id}:
         /acknowledge:
             put:
