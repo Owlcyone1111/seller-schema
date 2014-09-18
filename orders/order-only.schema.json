@@ -27,34 +27,39 @@
         "status" : {
             "type" : "string",
             "required" : true,
-            "enum" : ["created", "directCancelled", "accepted", "rejected", "shipped", "partialCancelled"], 
+            "enum" : ["created", "ready", "acknowledged", "inprogress", "complete"], 
             "description" : "Current status of the order
 
             #Valid Values
-            * created - order was created by Jet.com and is available in pending List
-            * directCancelled - order was directly cancelled by Jet.com
-            * accepted - order was accepted by merchant
-            * rejected - order was rejected by merchant
-            * shipped - order was shipped by merchant
-            * partialCancelled - order was partially cancelled by merchant
+            * created - order was created by Jet.com but not released for fulfillment
+            * ready - order ready to be acknowledgedby merchant
+            * acknowledged - order was acknowledged by merchant
+            * inprogress - one part of the order has been shipped or cancelled
+            * complete - all parts of the order have shipped or cancelled
             "
         },
-        "reason": {
+        "acknowledgement_status":{
             "type": "string",
-            "enum" : ["No Inventory" , "Shipping Address Undeliverable" , "Partial Out Of Stock" , "System Upload Error"],
-            "requiered" : true,
-            "description" : "Rejection reason; present if the order was rejected
+            "enum":[
+                "accepted",
+                "rejected - unfulfillable address",
+                "rejected - shipping method not supported",
+                "rejected - ship from location not available",
+                "rejected - item level error"],
+            "description" : "Status to let jet know whether you accept or reject the order, errors that occur at the item level should be given the status 'rejected - item level error'.  This is return in the order acknowledgement message. 
 
             #Valid Values
 
-            *'No Inventory' - Send if unable to fill any part of the order due to not having the inventory in stock
-            
-            *'Shipping Address Undeliverable' - Send if using your own shipping labels your carriers do not deliver to the given address
-            
-            *'Partial Out Of Stock' - Send if you can fulfill some but not all of the order (immediately send an Inventory message to correct your Inventory levels)
-            
-            *'System Upload Error' - Send if there was a technical problem with processing the  Order Message"
-        }, 
+            *'accepted' - all items in the order will be shipped' 
+
+            *'rejected - unfulfillable address' - the address requested cannot be shipped to
+
+            *'rejected - shipping method not supported' - the adress requested cannot be shipped to
+
+            *'rejected - ship from location not available' - the ship to location is invalid
+
+            *'rejected - item level error' - the error occurred at the item level"
+        },  
         "order_placed_date": {
             "type": "string",
             "required": true,
@@ -180,6 +185,23 @@
                     #Logic
 
                     If an alt_order_item_id has been associated with the order_item_id via the order accept message this will be passed as well."
+                },
+                "order_item_acknowledgement_status":{
+                    "type": "string",
+                    "emum":[
+                        "fulfillable",
+                        "nonfulfillable - no inventory",
+                        "nonfulfillable - invalid merchant sku"],
+                    "description" : "value to send jet the status of each item in the order request. This is returned to Jet.com in the order acknowledgement.
+
+                    #Valid Values
+
+                    *'fulfillable' - the item in the order can be shipped' 
+
+                    *'nonfulfillable - no inventory' - no inventory for this product is available
+
+                    *'nonfulfillable - invalid vendor sku' - this sku is no recongized as a valid value"
+                    
                 },
                 "merchant_sku": {
                     "type": "string",
