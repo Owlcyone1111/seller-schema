@@ -44,6 +44,11 @@
 		"standard_product_codes" : {
 			"type" : "array",
 			"minItems" : 1,
+			"description" : "The barcode or barcode that is associated with the product
+
+			#Logic
+
+			At least one of the following must be provided for each Merchant SKU: Standard Product Code (UPC, GTIN-14 etc.), ASIN, or Brand and Mfr Part Number",
 			"items" : {
 				"$ref": "#/definitions/product_codes"				
 			}
@@ -52,7 +57,11 @@
 		
 		"ASIN" : {
 			"type": "string",
-			"description" : "Amazon standard itdentification number for this merchant SKU if available",
+			"description" : "Amazon standard itdentification number for this merchant SKU if available. 
+
+			#Logic
+
+			At least one of the following must be provided for each Merchant SKU: Standard Product Code (UPC, GTIN-14 etc.), ASIN, or Brand and Mfr Part Number",
 			"maxLength" : 10,
 			"minLength" : 10,
 		},
@@ -73,6 +82,10 @@
 			#Valid Values
 
 			1 to 50 characters
+
+			#Logic
+
+			At least one of the following must be provided for each Merchant SKU: Standard Product Code (UPC, GTIN-14 etc.), ASIN, or Brand and Mfr Part Number
 
 			"
 		},
@@ -96,6 +109,10 @@
 			#Valid Values
 
 			maximum of 50 characters
+
+			#Logic
+
+			At least one of the following must be provided for each Merchant SKU: Standard Product Code (UPC, GTIN-14 etc.), ASIN, or Brand and Mfr Part Number
 
 			"
 		},
