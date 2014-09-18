@@ -27,7 +27,7 @@
         "status" : {
             "type" : "string",
             "required" : true,
-            "enum" : ["created", "directCancelled", "ready", "acknowledged", "shipped"], 
+            "enum" : ["created", "ready", "acknowledged", "inprogress", "complete"], 
             "description" : "Current status of the order
 
             #Valid Values
@@ -37,7 +37,7 @@
             * inprogress - one part of the order has been shipped or cancelled
             * complete - all parts of the order have shipped or cancelled
             "
-        }, 
+        },
         "acknowledgement_status":{
             "type": "string",
             "enum":[
