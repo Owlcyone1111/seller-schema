@@ -7,12 +7,6 @@
             "type": "string",
             "description" : "Optional Merchant supplied order ID.  Jet will map this ID to Jet's order_id and you can then use this ID in subsequent messages relating to this order."
         },
-        "order_items": {
-            "type": "array",
-            "items": {
-                "$ref": "#/definitions/order_items_shipped"
-            }
-        },
         "shipments": {
             "type": "array",
             "items": {
@@ -21,35 +15,6 @@
         },
     },
     "definitions": {
-        "order_items_shipped": {
-            "title": "OrderItemsShipped",
-            "additionalProperties" : false,
-            "required" : true,
-            "type": "object",
-            "properties": {
-                "order_item_id": {
-                    "type": "string",
-                    "description" : "Jet's unique ID for a given a order item during when the order is retrieve with the order retrieval API"
-                },
-                "alt_order_item_id": {
-                    "type": "string",
-                    "description" : "Optional Merchant supplied order item ID.  If provided in the order acknowledgement jet has already mapped this value."
-                },
-
-                "merchant_sku": {
-                    "type": "string",
-                    "description" : "The merchant provided product identifier for the order item"
-                },
-                "response_order_shipped_quantity": {
-                    "type": "integer",
-                    "description" : "Quantity of the order item that is shipped"
-                },
-                "response_order_cancel_qty": {
-                    "type": "integer",
-                    "description" : "Quantity cancelled of the given order item"
-                },
-            }
-        },
         "order_shipped_shipment": {
             "title": "OrderShippedShipment",
             "additionalProperties" : false,
@@ -88,6 +53,26 @@
                     #Valid Values
 
                     List of ShippingMethods set up by you"
+                },
+                "expected_delivery_date": {
+                    "type": "string",
+                    "description" : "Date/Time that the shipment is expected to be delivered to the customer
+
+                    #Valid Values
+
+                    This date should be in ISO 8601 format: yyyy-MM-ddTHH:mm:ss.fffffff-HH:MM
+
+                    Example: 2009-06-15T13:45:30.0000000-07:00
+
+                    "
+                },
+                "ship_from_zip_code": {
+                    "type": "string",
+                    "description" : "The zip code of the locations from which the customer shipment is being shipped from"
+                },
+                "carrier_pick_up_date": {
+                    "type": "string",
+                    "description" : "Date/Time that the carrier pick up the customer shipment from the facility where the shipment originated"
                 },
                 "shipment_items": {
                     "type": "array",

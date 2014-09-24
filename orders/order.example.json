@@ -42,6 +42,7 @@
                     "value": 1.20
                 }
             ],
+            "regulatory_fees" : 0.00,
             "tax_info" : {
                 "tax_jurisdictions" :{
                     "tax_location_code": "100265899",

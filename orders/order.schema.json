@@ -293,6 +293,10 @@
                         "$ref": "#/definitions/fee_adjustment"
                     }
                 },
+                "regulatory_fees" : {
+                	"type" : "number",
+                	"description" : "the regulatory fees charge to the customer for the item purchased."
+                },
                 "tax_info": {
 					"title": "TaxInfo",
                     "type" : "object",
