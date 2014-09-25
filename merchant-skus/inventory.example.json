@@ -1,3 +1,4 @@
 {
-	"quantity": 54
+	"quantities": [54,455],
+	"fulfillment_nodes":[1,2,3]
 }

@@ -5,6 +5,24 @@
     "additionalProperties" : false,		
 	"description": "This schema is used to set prices for merchant skus",
 	"properties": {
+		"prices": {
+			"type": "array",
+			"required": true,
+			"description": "Pricse the merchant SKU can be sold at",
+			"items":{
+				"$ref":"#/definitions/price"
+			}
+		},
+		"fulfillment_nodes":{
+			"type":"array",
+			"required":true,
+			"description":"Fulfillment nodes where a merchant SKU is sold",
+			"items":{
+				"$ref":"#/definitions/fulfillment_node"
+			}
+		},
+	},
+	"definitions":{
 		"price": {
 			"type": "number",
 			"required": true,
@@ -14,6 +32,12 @@
 			#Valid values
 
 			A number with up to 18 digits allowed to the left of the decimal point and 2 digits to the right of the decimal point. Commas or currency symbols are not allowed."
-		}
+		},
+		"fulfillment_node": {
+			"type": "integer",
+            "required": true,
+            "minimum" : 0,
+			"description": "Fulfillment node where a merchant SKU is sold."
+		},
 	}
 }

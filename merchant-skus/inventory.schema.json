@@ -5,11 +5,36 @@
 	"description": "This schema is used to set inventory counts on merchant skus",
     "additionalProperties" : false,
 	"properties": {
+		"quantities":{
+			"type":"array",
+			"required":true,
+			"description":"Quantities for a merchant SKU",
+			"items":{
+				"$ref":"#/definitions/quantity"
+			},
+		},
+		"fulfillment_nodes":{
+			"type":"array",
+			"required":true,
+			"description":"Fulfillment nodes where a merchant SKU is sold",
+			"items":{
+				"$ref":"#/definitions/fulfillment_node"
+			},
+				
+		}
+	},
+	"definitions":{
 		"quantity": {
 			"type": "integer",
             "required": true,
             "minimum" : 0,
 			"description": "Quantity of the given Merchant SKU."
-		}
+		},
+		"fulfillment_node": {
+			"type": "integer",
+            "required": true,
+            "minimum" : 0,
+			"description": "Fulfillment node where a merchant SKU is sold."
+		},
 	}
 }
