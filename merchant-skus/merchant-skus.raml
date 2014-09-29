@@ -122,49 +122,27 @@ mediaType: application/json
                         400:
                         404:
         /image:
-            /main:
-                put:
-                    description: This method updates the main image for the specified merchant SKU
+            put:
+                description: This method is used to provide the links to all images that should be shown to the customer for the Merchant SKU
+                body:
+                    application/json:
+                        schema: !include merchantSkus-imageBatch.schema.json
+                        example: !include merchantSkus-imageBatch.example.json
+                responses:
+                    201:
+                    204:
+                    400:
+                    409:
+            delete:
+                    description: This method deletes any images that were provided to Jet.com
                     body:
                         application/json:
-                            schema: !include image.schema.json
-                            example: !include image.example.json
+                            schema: !include merchantSkus-imageBatch.schema.json
+                            example: !include merchantSkus-imageBatch.example.json
                     responses:
-                        201:
                         204:
                         400:
-                        409:
-            /swatch:
-                put:
-                    description: This method updates the swatch image for the specified merchant SKU
-                    body:
-                        application/json:
-                            schema: !include image.schema.json
-                            example: !include image.example.json
-                    responses:
-                        201:
-                        204:
-                        400:
-                        409:
-            /alternate:
-                /{slotId}:
-                    put:
-                        description: This method updates alternate image data in the specified slot for the specified merchant SKU.  Valid slot numbers are 1 through 7
-                        body:
-                            application/json:
-                                schema: !include image.schema.json
-                                example: !include image.example.json
-                        responses:
-                            201:
-                            204:
-                            400:
-                            409:
-                    delete:
-                            description: This method deletes the alternate image data in the specified slot for the specified merchant SKU.  Valid slot numbers are 1 through 7
-                            responses:
-                                204:
-                                400:
-                                404:
+                        404:
         /shippingexception:
             put:
                 description: This method updates shipping exception data for the specified merchant SKU
