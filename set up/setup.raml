@@ -1,0 +1,21 @@
+#%RAML 0.8
+
+title: Setup
+description: The Setup API provides methods to create and view information required to configure (setup) a merchant to sell on Jet.com.  Merchant configurations can also be edited through the Jet.com Merchant Portal.
+baseUri: http://merchant-api.test.jet.com/api
+version: v0.1
+protocols: [HTTPS]
+mediaType: application/json
+
+/setup:
+    /fulfillmentNode:
+        get:
+            description: This method will provide information about the fulfillment nodes (locations) that the merchant has configured. 
+            responses:
+                200:
+                    body:
+                        application/json:
+                            schema: !include setup-fulfillmentNode.schema.json
+                            example: !include setup-fulfillmentNode.example.json
+                404:
+                    description: The requested resource could not be found. 

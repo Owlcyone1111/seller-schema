@@ -1,0 +1,58 @@
+{
+	"title" : "SetupFulfillmentNode",
+	"type" : "object",
+	"additionalProperties" : false,
+	"properties" : {
+        "fulfillment_nodes": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/fulfillment_node_fields"
+            }
+        }
+	},
+    "definitions": {
+	    "fulfillment_node_fields": {
+	        "title": "FulfillmentNodeFields",
+	        "additionalProperties" : false,
+	        "type": "object",
+	        "properties": {
+				"jet_fulfillment_node_id": {
+                    "type": "string",
+                    "description" : "Jet's unique ID assigned to a fulfillment location upon creation.  This value will not change after fulfillment location creation."
+                },
+				"location_name": {
+                    "type": "string",
+                    "description" : "The name a merchant assigns a fulfillment location during creation.  Merchant may change this field"
+                },
+                "time_zone": {
+                    "type": "string",
+                    "description" : "The time zone of the fulfillment location"
+                },
+                "is_daylight_savings_enabled": {
+                    "type": "boolean",
+                    "description" : "Indicates if the time zone of the fulfillment location observe daylight savings time"
+                },
+                "address_1": {
+                    "type": "string",
+                    "description" : "The first address line for the fulfillment location"
+                },
+                "address_2": {
+                    "type": "string",
+                    "description" : "The second address line for the fulfillment location"
+                },
+                "city": {
+                    "type": "string",
+                    "description" : "The city where the fulfillment location exists"
+                },
+                "state": {
+                    "type": "string",
+                    "description" : "Thes state where the fulfillment location exits"
+                },
+                "zip_code": {
+                    "type": "string",
+                    "description" : "The zip code of the fulfillment location"
+                },
+			}
+		}
+	}
+}

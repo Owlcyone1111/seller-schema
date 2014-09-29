@@ -1,0 +1,14 @@
+{
+	"fulfillment_nodes" : [
+		{
+			"jet_fulfillment_node_id" : "0299d5fe27fc429c9bb11d1d0cc39489",
+			"location_name" : "AJ's Palace",
+			"time_zone" : "Eastern Standard Time",
+			"is_daylight_savings_enabled" : true,
+			"address_1" : "100 Fulfillment Circle",
+			"zip_code" : "10065",
+			"city" : "New York",
+			"state" : "NY"
+		}
+	]
+}
