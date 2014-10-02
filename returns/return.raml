@@ -34,7 +34,7 @@ mediaType: application/json
                         description: The requested resource could not be found.                 
     /{id}:
         /acknowledge:
-            post:
+            put:
                 description: This method allows a merchant to mark a return as acknowledged
                 body:
                     application/json:
@@ -46,7 +46,7 @@ mediaType: application/json
                         description: The requested resource could not be found. 
                     409:
         /complete:
-            post:
+            put:
                 description: This method allows a merchant to notify Jet.com that a return is complete and how the customer should be refunded
                 body:
                     application/json:
