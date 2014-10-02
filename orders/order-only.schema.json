@@ -566,17 +566,15 @@
             "properties": {
                 "alt_shipment_id": {
                     "type": "string",
-                    "description" : "Optional Merchant supplied shipment ID."
+                    "description" : "Optional Merchant supplied shipment ID. (this is provide by merchant in shipment confirmation)"
                 },
-
-                "shipment_tracking_number": {
+				"shipment_tracking_number": {
                     "type": "string",
-                    "description" : "packaging tracking number used"
+                    "description" : "packaging tracking number that the carrier is using (this is provide by merchant in shipment confirmation)"
                 },
-
-                "shipment_date": {
+                "response_shipment_date": {
                     "type": "string",
-                    "description" : "Date/Time that a given shipment was shipped
+                    "description" : "Date/Time that a given shipment was shipped (this is provide by merchant in shipment confirmation)
 
                     #Valid Values
 
@@ -586,13 +584,33 @@
 
                     "
                 },
-                "shipment_method": {
+                "response_shipment_method": {
                     "type": "string",
-                    "description" : "Shipping method used for the given shipment
+                    "description" : "Shipping method used for the given shipment (this is provide by merchant in shipment confirmation)
 
                     #Valid Values
 
                     List of ShippingMethods set up by you"
+                },
+                "expected_delivery_date": {
+                    "type": "string",
+                    "description" : "Date/Time that the shipment is expected to be delivered to the customer (this is provide by merchant in shipment confirmation)
+
+                    #Valid Values
+
+                    This date should be in ISO 8601 format: yyyy-MM-ddTHH:mm:ss.fffffff-HH:MM
+
+                    Example: 2009-06-15T13:45:30.0000000-07:00
+
+                    "
+                },
+                "ship_from_zip_code": {
+                    "type": "string",
+                    "description" : "The zip code of the locations from which the customer shipment is being shipped from (this is provide by merchant in shipment confirmation)"
+                },
+                "carrier_pick_up_date": {
+                    "type": "string",
+                    "description" : "Date/Time that the carrier pick up the customer shipment from the facility where the shipment originated (this is provide by merchant in shipment confirmation)"
                 },
 
                 "shipment_items": {
@@ -608,17 +626,25 @@
             "additionalProperties" : false,
             "type": "object",
             "properties": {
+                "shipment_item_id": {
+                    "type": "string",
+                    "description" : "Jet's unique identifier for an item in a shipment (this is provide by merchant in shipment confirmation)"
+                },
                 "alt_shipment_item_id": {
                     "type": "string",
-                    "description" : "Optional merchant supplied ID."
+                    "description" : "Optional seller supplied ID for an item in a specific shipment.  If this value is specified with Jet's shipment_item_id, Jet will map the two IDs and you can then use your own shipment item ID for subsequent feeds relating to that order item. (this is provide by merchant in shipment confirmation)"
                 },
                 "merchant_sku": {
                     "type": "string",
-                    "description" : "The merchant SKU that is in the given shipment"
+                    "description" : "The merchant SKU that is in the given shipment (this is provide by merchant in shipment confirmation)" 
                 },
-                "request_shipment_sku_quantity": {
+                "response_shipment_sku_quantity": {
                     "type": "integer",
-                    "description" : "Quantity of the given SKU that was in the given shipment"
+                    "description" : "Quantity of the given SKU that was shipped in the given shipment (this is provide by merchant in shipment confirmation)"
+                },
+                "response_shipment_cancel_qty": {
+                    "type": "integer",
+                    "description" : "Quantity of the given SKU that was cancelled in the given shipment (this is provide by merchant in shipment confirmation)"
                 }
             }
         }

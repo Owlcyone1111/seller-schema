@@ -451,6 +451,50 @@
 
                     The Box Name of the selected box from the box catalog you have created"
                 },
+                "shipment_tracking_number": {
+                    "type": "string",
+                    "description" : "packaging tracking number that the carrier is using (this is provide by merchant in shipment confirmation)"
+                },
+                "response_shipment_date": {
+                    "type": "string",
+                    "description" : "Date/Time that a given shipment was shipped (this is provide by merchant in shipment confirmation)
+
+                    #Valid Values
+
+                    This date should be in ISO 8601 format: yyyy-MM-ddTHH:mm:ss.fffffff-HH:MM
+
+                    Example: 2009-06-15T13:45:30.0000000-07:00
+
+                    "
+                },
+                "response_shipment_method": {
+                    "type": "string",
+                    "description" : "Shipping method used for the given shipment (this is provide by merchant in shipment confirmation)
+
+                    #Valid Values
+
+                    List of ShippingMethods set up by you"
+                },
+                "expected_delivery_date": {
+                    "type": "string",
+                    "description" : "Date/Time that the shipment is expected to be delivered to the customer (this is provide by merchant in shipment confirmation)
+
+                    #Valid Values
+
+                    This date should be in ISO 8601 format: yyyy-MM-ddTHH:mm:ss.fffffff-HH:MM
+
+                    Example: 2009-06-15T13:45:30.0000000-07:00
+
+                    "
+                },
+                "ship_from_zip_code": {
+                    "type": "string",
+                    "description" : "The zip code of the locations from which the customer shipment is being shipped from (this is provide by merchant in shipment confirmation)"
+                },
+                "carrier_pick_up_date": {
+                    "type": "string",
+                    "description" : "Date/Time that the carrier pick up the customer shipment from the facility where the shipment originated (this is provide by merchant in shipment confirmation)"
+                },
                 "shipment_items": {
                     "type": "array",
                     "items": {
