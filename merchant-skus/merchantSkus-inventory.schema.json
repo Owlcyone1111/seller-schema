@@ -1,0 +1,35 @@
+{
+    "$schema" : "http://json-schema.org/draft-03/schema",
+	"title": "Inventory",
+	"type": "object",
+	"description": "This schema is used to set inventory counts on merchant skus",
+    "additionalProperties" : false,
+	"properties": {
+		"fulfillment_nodes":{
+			"type":"array",
+			"required":true,
+			"items":{
+				"$ref":"#/definitions/fulfillment_nodes_inventory"
+			},
+		}
+	},
+	"definitions":{
+		"fulfillment_nodes_inventory": {
+            "title": "FulfillmentNodeInventory",
+            "additionalProperties" : false,
+            "type": "object",
+            "properties": {
+                "fulfillment_node_id": {
+                    "type": "string",
+                    "required": true,
+                    "description" : "The fulfillment node assigned in the Jet Merchant Portal for a merchant fulfillment node"
+                },
+                "quantity": {
+                    "type": "number", 
+                    "required": true,
+                    "description" : "The quantity of inventory for the given SKU in a given fulfillment node"
+                }
+            }
+        }
+	}
+}

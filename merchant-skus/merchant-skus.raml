@@ -52,75 +52,51 @@ mediaType: application/json
                     400:
                     409:
         /inventory:
-            /{fulfillmentNode}:
-                get:
-                    description: This method retrieves Fulfillment node-level inventory data for the specified merchant SKU
-                    body:
-                        application/json:
-                            schema: !include inventory.schema.json
-                            example: !include inventory.example.json
-                    responses:
-                        200:
-                        404:
-                put:
-                    description: This method updates Fulfillment node-level inventory data for the specified merchant SKU
-                    body:
-                        application/json:
-                            schema: !include inventory.schema.json
-                            example: !include inventory.example.json
-                    responses:
-                       201:
-                       204:
-                       400:
-                       409:
-        /price:
             get:
-                description: This method retrieves pricing data for the specified merchant SKU
-                body:
-                    application/json:
-                        schema: !include price.schema.json
-                        example: !include price.example.json
+                description: This method retrieves fulfillment node-level inventory data for the specified merchant SKU
                 responses:
                     200:
+                        body:
+                            application/json:
+                                schema: !include merchantSkus-inventory.schema.json
+                            example: !include merchantSkus-inventory.example.json
                     404:
             put:
-                description: This method updates price data for the specified merchant SKU
+                description: This method updates fulfillment node-level inventory data for the specified merchant SKU
                 body:
                     application/json:
-                        schema: !include price.schema.json
-                        example: !include price.example.json
+                        schema: !include merchantSkus-inventory.schema.json
+                        example: !include merchantSkus-inventory.example.json
                 responses:
                    201:
                    204:
                    400:
                    409:
-            /{fulfillmentNode}:
-                get:
-                    description: This method retrieves Fulfillment node-level pricing data for the specified merchant SKU
-                    body:
+        /price:
+            get:
+                description: This method retrieves pricing data for the specified merchant SKU
+                body:
+                    application/json:
+                        schema: !include merchantSkus-price.schema.json
+                        example: !include merchantSkus-price.example.json
+                responses:
+                    200:
+                        body:
                         application/json:
-                            schema: !include price.schema.json
-                            example: !include price.example.json
-                    responses:
-                        200:
-                        404:
-                put:
-                    description: This method updates Fulfillment node-level price data for the specified merchant SKU
-                    body:
-                        application/json:
-                            schema: !include price.schema.json
-                            example: !include price.example.json
-                    responses:
-                        201:
-                        204:
-                        400:
-                        409:
-                delete:
-                    description: This method deletes the Fulfillment node-level price data for the specified merchant SKU
-                    responses:
-                        204:
-                        400:
-                        404:
+                            schema: !include merchantSkus-price.schema.json
+                            example: !include merchantSkus-price.example.json
+                    404:
+            put:
+                description: This method updates price data for the specified merchant SKU
+                body:
+                    application/json:
+                        schema: !include merchantSkus-price.schema.json
+                        example: !include merchantSkus-price.example.json
+                responses:
+                   201:
+                   204:
+                   400:
+                   409:
         /image:
             put:
                 description: This method is used to provide the links to all images that should be shown to the customer for the Merchant SKU
