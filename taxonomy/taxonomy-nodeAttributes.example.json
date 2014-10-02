@@ -1,0 +1,28 @@
+{
+	"attributes" : [
+		{
+			"attribute_id" : 2,
+			"attribute_description" : "Color Map",
+			"free_text" : false,
+			"variant" : false,
+			"values" : [
+				"Beige",
+				"Black",
+				"Blue",
+				"Brown",
+				"Clear",
+				"Gold",
+				"Green",
+				"Grey",
+				"Multi-Colored",
+				"Orange",
+				"Pink",
+				"Purple",
+				"Red",
+				"Silver",
+				"White",
+				"Yellow"
+			],
+		}
+	]
+}

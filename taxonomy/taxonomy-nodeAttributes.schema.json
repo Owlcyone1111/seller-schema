@@ -1,0 +1,81 @@
+{
+	"title": "NodeAttributes",
+	"type": "object",
+	"additionalProperties" : false,
+	"properties":
+	{
+		"attributes":
+		{
+			"type": "array",
+			"description":"The Attribute ID for a particular Jet Node ID",
+			"items":
+			{
+				"$ref": "#/definitions/attribute"
+			}
+		}
+	},
+	"definitions":
+	{
+		"attribute":
+		{
+			"title":"Attribute",
+			"type": "object",
+			"additionalProperties" : false,
+			"properties":
+			{
+				"attribute_id":
+				{
+					"type": "integer",
+					"required":true,
+					"minimum":1,
+					"description": "The ID number for an attribute"
+				},
+				"attribute_description":
+				{
+					"type": "string",
+					"required":true,
+					"description": "The description of the attribute"
+				},
+				"free_text":
+				{
+					"type":"boolean",
+					"required":true,
+				},
+				"variant":
+				{
+					"type":"boolean",
+					"required":true,
+				},
+				"values":
+				{
+					"type": "array",
+					"required":true,
+					"description":"The values accepted for a particular Attribute ID",
+					"items":
+					{
+						"$ref":"#/definitions/value"
+					}
+				},
+				"units":
+				{
+					"type": "array",
+					"description":"The units accepted for a particular Attribute ID",
+					"items":
+					{
+						"$ref":"#/definitions/unit"
+					}
+				},		
+			},
+		},
+		"value":
+		{
+			"type": "string",
+			"description": "A possible value for an Attribute ID",
+		},
+		"unit":
+		{
+			"type":"string",
+			"description": "The unit options for the values for this attribute"
+		},
+	}
+}

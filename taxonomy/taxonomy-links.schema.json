@@ -1,0 +1,15 @@
+{
+    "title": "NodeLinks",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+    	"node_urls": {
+    		"type": "array",
+    		"description": "List of URLs for all Jet Nodes and the description for those nodes",
+    		"items": {
+    			"type": "string",
+    			"description": "The unique resource URI where the node details can be found"
+    		}
+    	}
+    }
+}

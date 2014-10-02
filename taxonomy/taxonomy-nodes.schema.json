@@ -1,0 +1,62 @@
+{
+	"title": "Taxononmy",
+	"type": "object",
+	"additionalProperties": false,
+	"properties":
+	{
+		"jet_node_id":
+		{
+			"type":"integer",
+			"required":true,
+			"minimum":1,
+			"description": "The Jet browse node ID",
+			"minimum":1000000
+		},
+		"jet_node_name":
+		{
+			"type":"string",
+			"required":true,
+			"description":"The name of the Jet Node ID"
+		},
+		"jet_node_path":
+		{
+			"type":"string",
+			"required":true,
+			"description":"The Jet Node Path for the requested node ID"
+		},
+		"amazon_node_id":
+		{
+			"type":"integer",
+			"required":true,
+			"minimum":1,
+			"description": "For reference: the Amazon browse node ID from their browse tree"
+		},
+		"parent_id":
+		{
+			"type":"integer",
+			"required":true,
+			"minimum":1,
+			"description": "The ID of the previous level node that this node is a child to"
+		},
+		"jet_level":
+		{
+			"type": "integer",
+			"required":true,
+			"minimum":0,
+			"description":"How deep the browse node is in the browse tree
+
+			#Valid Values
+
+			* 0 = Category
+			* 1 = Jet Level 1
+			* 2 = Jet Level 2
+
+			"
+		},
+		"suggested_tax_code":
+		{
+			"type" : "string",
+			"description" : "The suggested tax code related to the Jet node"
+		}
+	},
+}
