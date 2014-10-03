@@ -12,35 +12,36 @@
 		},
 		"swatch_image_url": {
 			"type": "string",
+			"required" : "false",
 			"description": "URL location where Jet.com can access an image of a color or fabric for a given merchant SKU. Please provide at least 300 x 300 pixels. However, please provide the largest size avaialbe up to a file size of 1MB"
 		},
-		"alternate_1_image_url": {
-			"type": "string",
-			"description": "URL location where Jet.com can access the image. Please provide at least 300 x 300 pixels. However, please provide the largest size avaialbe up to a file size of 1MB"
+		"alternate_images":{
+			"type":"array",
+			"required":false,
+			"items":{
+				"$ref":"#/definitions/alternate_images"
+			}
 		},
-		"alternate_2_image_url": {
-			"type": "string",
-			"description": "URL location where Jet.com can access the image. Please provide at least 300 x 300 pixels. However, please provide the largest size avaialbe up to a file size of 1MB"
-		},
-		"alternate_3_image_url": {
-			"type": "string",
-			"description": "URL location where Jet.com can access the image. Please provide at least 300 x 300 pixels. However, please provide the largest size avaialbe up to a file size of 1MB"
-		},
-		"alternate_4_image_url": {
-			"type": "string",
-			"description": "URL location where Jet.com can access the image. Please provide at least 300 x 300 pixels. However, please provide the largest size avaialbe up to a file size of 1MB"
-		},
-		"alternate_5_image_url": {
-			"type": "string",
-			"description": "URL location where Jet.com can access the image. Please provide at least 300 x 300 pixels. However, please provide the largest size avaialbe up to a file size of 1MB"
-		},
-		"alternate_6_image_url": {
-			"type": "string",
-			"description": "URL location where Jet.com can access the image. Please provide at least 300 x 300 pixels. However, please provide the largest size avaialbe up to a file size of 1MB"
-		},
-		"alternate_7_image_url": {
-			"type": "string",
-			"description": "URL location where Jet.com can access the image. Please provide at least 300 x 300 pixels. However, please provide the largest size avaialbe up to a file size of 1MB"
-		}
+	},
+	"definitions":{
+        "alternate_images": {
+            "title": "AlternateImages",
+            "additionalProperties" : false,
+            "type": "object",
+            "properties": {
+                "image_slot_id": {
+                    "type": "number",
+                    "required": true,
+                    "minimum" : 1,
+                    "maximum" : 8,
+                    "description" : "The slot that the alternate image should be uploaded to.  Jet.com supports up to 8 images (or 8 image slots)."
+                },
+                "image_url": {
+                    "type": "string", 
+                    "required": true,
+                    "description" : "The absolute location where Jet.com can retrieve the image"
+                }
+            }
+        }
 	}
 }

@@ -1,11 +1,9 @@
 {
-	"main_image_url": "http://www.mydomain.com/images/myImage.png",
-	"swatch_image_url": "http://www.mydomain.com/images/myImage.png",
-	"alternate_1_image_url": "http://www.mydomain.com/images/myImage.png",
-	"alternate_2_image_url": "http://www.mydomain.com/images/myImage.png",
-	"alternate_3_image_url": "http://www.mydomain.com/images/myImage.png",
-	"alternate_4_image_url": "http://www.mydomain.com/images/myImage.png",
-	"alternate_5_image_url": "http://www.mydomain.com/images/myImage.png",
-	"alternate_6_image_url": "http://www.mydomain.com/images/myImage.png",
-	"alternate_7_image_url": "http://www.mydomain.com/images/myImage.png"
+	"main_image_url" : "http://www.mydomain.com/images/myImage.png",
+	"swatch_image_url" : "http://www.mydomain.com/images/myImage.png",
+	"alternate_images" : [
+		{
+			
+		}
+	]
 }
