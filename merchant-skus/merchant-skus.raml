@@ -25,15 +25,15 @@ mediaType: application/json
                 200:
                     body:
                         application/json:
-                            schema: !include merchant-skus.schema.json
-                            example: !include merchant-skus.example.json
+                            schema: !include merchantSkus-get.schema.json
+                            example: !include merchantSkus-get.example.json
                 404:
         put:
             description: This method will create/update the specified merchant SKU
             body:
                 application/json:
-                    schema: !include merchant-skus.schema.json
-                    example: !include merchant-skus.example.json
+                    schema: !include merchantSkus-put.schema.json
+                    example: !include merchantSkus-put.example.json
             responses:
                 201:
                 204:

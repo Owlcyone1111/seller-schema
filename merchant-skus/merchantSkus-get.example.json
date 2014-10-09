@@ -1,0 +1,58 @@
+{
+	"product_title": "My Product",
+	"jet_browse_node_id": 100,
+	"product_status" : "Available For Purchase",
+	"jet_retail_sku" : "XHDIFF-0101",
+	"standard_product_codes" : [{	
+		"standard_product_code": "123456789012",
+		"standard_product_code_type": "UPC"
+		}],
+	"multipack_quantity": 6,
+	"brand": "My Product's Brand",
+	"manufacturer": "My Product's Manufacturer",
+	"mfr_part_number": "AB-9874",
+	"product_description": "This is a terrific product that everyone should own.",
+	"bullets": [
+		"This is bullet line 1",
+		"This is bullet line 2"
+	],
+	"number_units_for_price_per_unit": 1,
+	"type_of_unit_for_price_per_unit": "each",
+	"shipping_weight_pounds": 10,
+	"package_length_inches": 12,
+	"package_width_inches": 12,
+	"package_height_inches": 12,
+	"display_length_inches": 15,
+	"display_width_inches": 12,
+	"display_height_inches": 14,
+	"prop_65": true,
+	"legal_disclaimer_description": "Legal stuff goes here",
+	"cpsia_cautionary_statements": [
+		"choking hazard balloon",
+		"choking hazard small parts"
+	],
+	"country_of_origin": "U.S.A.",
+	"safety_warning": "warning text goes here",
+	"start_selling_date": "2014-12-24",
+	"fulfillment_time": 1,
+	"msrp": 6.99,
+	"map_price": 6.49,
+	"map_implementation" : "type1",
+	"product_tax_code": "123",
+	"no_return_fee_adjustment": 0.01,
+	"exclude_from_fee_adjustments": false,
+	"ships_alone":false,
+	"attributes_node_specific" : [{
+		"attribute_id" : 95,
+		"attribute_value" : "80",
+		"attribute_value_unit" : "count"
+		},
+		{
+		"attribute_id" : 119,
+		"attribute_value" : "aqua",
+		},
+		{
+		"attribute_id" : 2,
+		"attribute_value" : "blue",
+		}]
+}
