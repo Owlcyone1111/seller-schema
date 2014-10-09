@@ -9,16 +9,17 @@ mediaType: application/json
 
 /taxonomy:
     /links:
-        get:
-            description: This method retrieves the URLs to all Jet Nodes that are currently active in the Jet.com browse tree
-            responses:
-                200:
-                    body:
-                        application/json:
-                            schema: !include taxonomy-links.schema.json
-                            example: !include taxonomy-links.example.json
-                404:
-                409:
+        /{version}:
+            get:
+                description: This method retrieves the URLs to all Jet Nodes that are currently active in the Jet.com browse tree
+                responses:
+                    200:
+                        body:
+                            application/json:
+                                schema: !include taxonomy-links.schema.json
+                                example: !include taxonomy-links.example.json
+                    404:
+                    409:
     /nodes:
         get:
             description: This method retrieves the details for each Jet Node ID
