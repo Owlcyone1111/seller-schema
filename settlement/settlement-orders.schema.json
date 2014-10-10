@@ -1,0 +1,160 @@
+{
+    "$schema" : "http://json-schema.org/draft-03/schema",		
+	"title": "SettlementOrdersReport",
+	"type": "object",
+    "additionalProperties" : false,		
+	"description": "This schema provides the fields for a merchant to return a settlement report based on order sales and customer returns on Jet.com",
+	"properties": {
+		"currency": {
+			"type": "string",
+			"required": true,
+			"description": "The currency that all monetary values are represented in for the settlement report retrieved",
+		},
+        "order_balance": {
+            "type": "number",
+            "required": true,
+            "description": "The total value of orders that is settled in this settlement report",
+        },
+		"order_balance_details":{
+			"required": true,
+			"items":{
+				"$ref":"#/definitions/settlement_order_report_details"
+			}
+		},
+        "order_item_balance_details":{
+            "required": true,
+            "items":{
+                "$ref":"#/definitions/settlement_order_report_item_details"
+            }
+        },
+	},
+	"definitions":{
+        "settlement_order_report_details": {
+            "title": "SettlementOrderReportDetails",
+            "additionalProperties" : false,
+            "type": "object",
+            "properties": {
+                "merchant_price": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "The merchant price of the product"
+                },
+                "jet_variable_commission": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "The variable commission charged by Jet or paid to the merchant"
+                },
+                "fixed_commission": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "The fixed commision for a sale"
+                },
+                "tax": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "The tax charged to the customer for buying the item"
+                },
+                "shipping_revenue": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "The shipping revenue charged to the customer for buying the item"
+                },
+                "shipping_tax": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "The tax charged on shipped revenue"
+                },                                                
+                "shipping_charge": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "If the item is sold via DBJ (Distributed By Jet), then this is the charge for shipping the item to the customer"
+                },
+                "fulfillment_fee": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "If the item is sold via DBJ (Distributed By Jet), then this is the charge for Jet to fulfill the customer order"
+                },
+                "product_cost": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "If the item is sold via DBJ (Distributed By Jet), then this is the all in cost of the product sold to the customer"
+                },                
+            }
+        },
+        "settlement_order_report_item_details": {
+            "title": "SettlementOrderItemReportDetails",
+            "additionalProperties" : false,
+            "type": "object",
+            "properties": {
+                "order_item_id" : {
+                    "type": "string",
+                    "required": true,
+                    "description" : "The Order Item ID assigned to an item in an order by Jet.  This can be found in the Orders API."
+                },
+                "alt_order_item_id" : {
+                    "type": "string",
+                    "required": false,
+                    "description" : "The Merchant Order Item ID given to Jet during the order acknowledgment by the merchant"
+                },
+                "fulfillment_method" : {
+                    "type": "string",
+                    "required": false,
+                    "enum" : ["merchant", "dbj"], 
+                    "description" : "How the order was fulfilled. 
+
+                    #Valid Values
+
+                    * merchant - the merchant fulfilled and shipped the order through self operated fulfillment center or drop shippers
+                    * dbj - the order was fulfilled for the merchant by Jet    
+
+                    "
+                },
+                "merchant_price": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "The merchant price of the product"
+                },
+                "jet_variable_commission": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "The variable commission charged by Jet or paid to the merchant"
+                },
+                "fixed_commission": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "The fixed commision for a sale"
+                },
+                "tax": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "The tax charged to the customer for buying the item"
+                },
+                "shipping_revenue": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "The shipping revenue charged to the customer for buying the item"
+                },
+                "shipping_tax": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "The tax charged on shipped revenue"
+                },                                                
+                "shipping_charge": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "If the item is sold via DBJ (Distributed By Jet), then this is the charge for shipping the item to the customer"
+                },
+                "fulfillment_fee": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "If the item is sold via DBJ (Distributed By Jet), then this is the charge for Jet to fulfill the customer order"
+                },
+                "product_cost": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "If the item is sold via DBJ (Distributed By Jet), then this is the all in cost of the product sold to the customer"
+                },                
+            }
+        }
+	}
+}

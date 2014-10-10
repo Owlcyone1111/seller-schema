@@ -1,0 +1,14 @@
+{
+    "title": "SettlementReportLinks",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+    	"settlement_report_urls": {
+    		"type": "array",
+    		"items": {
+    			"type": "string",
+    			"description": "List of URLs Where Settlement Reports may be retrieved"
+    		}
+    	}
+    }
+}

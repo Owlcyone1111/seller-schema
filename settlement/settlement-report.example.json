@@ -1,0 +1,32 @@
+{	
+	"settlement_report_id" : "SETTLEMENTREPORTEXAMPLE",
+	"currency" : "dollars", 
+	"unavailable_balance" : 4102.20,
+	"settlement_period_start" : "2014-07-24T00:00:00.0000000Z",
+	"settlement_period_end" : "2014-07-24T23:59:59.9999999Z",
+	"order_balance_details" : {
+		"merchant_price" : 4012.45,
+		"jet_variable_commission" : -401.25,
+		"fixed_commission" : -120.37,
+		"tax" : 351.09,
+		"shipping_revenue" : 672.00,
+		"shipping_tax" : 58.80,
+		"shipping_charge" : 0.00,
+		"fulfillment_fee" : 0.00,
+		"product_cost" : 0.00		
+	},
+	"order_balance" : 4572.72,
+	"return_balance_details" : 	{
+		"merchant_price" : -325.72,
+		"jet_variable_commission" : 32.57,
+		"fixed_commission" : 13.03,
+		"tax" : -28.50,
+		"shipping_tax" : -7.00,
+		"merchant_return_charge" : 0.00,
+		"return_shipping_charge" : 0.00,
+		"return_processing_fee" : 0.00,
+		"product_cost" : 0.00		
+	},
+	"return_balance" : -315.62,
+	"settlement_value" : 4257.10
+}

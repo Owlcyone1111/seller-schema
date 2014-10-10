@@ -1,0 +1,54 @@
+#%RAML 0.8
+
+title: Settlement
+description: The Settlement API provides methods to retrieve details regarding merchant payment settlement for Jet.com.  
+baseUri: http://merchant-api.test.jet.com/api
+version: v0.1
+protocols: [HTTPS]
+mediaType: application/json
+
+/settlement:
+    /{days}:
+        get:
+            description: This method will allow a merchant to retrieve the links to all settlement reports for the last n days 
+            responses:
+                200:
+                    body:
+                        application/json:
+                            schema: !include settlement-links.schema.json
+                            example: !include settlement-links.example.json
+                404:
+                    description: The requested resource could not be found.
+    /{id}:
+        get:
+            description: This method will allow a merchant to retrieve a settlement report with summary level details for a provided Settlement ID
+            responses:
+                200:
+                    body:
+                        application/json:
+                            schema: !include settlement-report.schema.json
+                            example: !include settlement-report.example.json
+                404:
+                    description: The requested resource could not be found.
+        /orders        
+            get:
+                description: This method will allow a merchant to retrieve a settlement report with order level details for a provided Settlement ID 
+                responses:
+                    200:
+                        body:
+                            application/json:
+                                schema: !include settlement-order.schema.json
+                                example: !include settlement-orders.example.json
+                    404:
+                        description: The requested resource could not be found.
+        /returns
+            get:
+                description: This method will allow a merchant to retrieve a settlement report with return level details for a provided Settlement ID 
+                responses:
+                    200:
+                        body:
+                            application/json:
+                                schema: !include settlement-returns.schema.json
+                                example: !include settlement-returns.example.json
+                    404:
+                        description: The requested resource could not be found.

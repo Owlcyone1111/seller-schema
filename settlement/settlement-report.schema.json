@@ -1,0 +1,177 @@
+{
+    "$schema" : "http://json-schema.org/draft-03/schema",		
+	"title": "SettlementReport",
+	"type": "object",
+    "additionalProperties" : false,		
+	"description": "This schema provides the fields for a merchant to return a settlement report based on order sales and customer returns on Jet.com",
+	"properties": {
+		"settlement_report_id": {
+			"type": "string",
+			"required": true,
+			"description": "The unique ID for this settlement report.  This ID should be referenced when creating a dispute with Jet.com",
+		},
+		"currency": {
+			"type": "string",
+			"required": true,
+			"description": "The currency that all monetary values are represented in for the settlement report retrieved",
+		},
+		"unavailable_balance": {
+			"type": "number",
+			"required": true,
+			"description": "The total value of all sales and returns that are not settled yet.  This value will remain unavailable until settlement occurs.  This value is provide for estimation purposes and is not considered final.",
+		},
+		"settlement_period_start" : {
+			"type" : "string",
+			"required" : "true",
+			"description" : "The start date/time of the settlement report
+
+			#Valid Values
+
+            The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T21:00:00.0000000Z'
+			"
+		},
+		"settlement_period_end" : {
+			"type" : "string",
+			"required" : "true",
+			"description" : "The end date/time of the settlement report
+
+			#Valid Values
+
+            The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T21:00:00.0000000Z'
+			"
+		},
+		"order_balance_details":{
+			"required": true,
+			"items":{
+				"$ref":"#/definitions/settlement_report_order_details"
+			}
+		},
+		"order_balance": {
+			"type": "number",
+			"required": true,
+			"description": "The total value of orders that is settled in this settlement report",
+		},
+		"return_balance_details":{
+			"required": true,
+			"items":{
+				"$ref":"#/definitions/settlement_report_return_details"
+			}
+		},
+		"return_balance": {
+			"type": "number",
+			"required": true,
+			"description": "The total value of orders that is settled in this settlement report",
+		},
+		"settlement_value": {
+			"type": "number",
+			"required": true,
+			"description": "The total value of orders that is settled in this settlement report",
+		},
+	},
+	"definitions":{
+        "settlement_report_order_details": {
+            "title": "SettlementReportOrderDetails",
+            "additionalProperties" : false,
+            "type": "object",
+            "properties": {
+                "merchant_price": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "The merchant price of the product"
+                },
+                "jet_variable_commission": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "The variable commission charged by Jet or paid to the merchant"
+                },
+                "fixed_commission": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "The fixed commision for a sale"
+                },
+                "tax": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "The tax charged to the customer for buying the item"
+                },
+                "shipping_revenue": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "The shipping revenue charged to the customer for buying the item"
+                },
+                "shipping_tax": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "The tax charged on shipped revenue"
+                },                                                
+                "shipping_charge": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "If the item is sold via DBJ (Distributed By Jet), then this is the charge for shipping the item to the customer"
+                },
+                "fulfillment_fee": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "If the item is sold via DBJ (Distributed By Jet), then this is the charge for Jet to fulfill the customer order"
+                },
+                "product_cost": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "If the item is sold via DBJ (Distributed By Jet), then this is the all in cost of the product sold to the customer"
+                },                
+            }
+        },
+        "settlement_report_return_details": {
+            "title": "SettlementReportReturnDetails",
+            "additionalProperties" : false,
+            "type": "object",
+            "properties": {
+                "merchant_price": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "The merchant price of the product being refunded to the customer"
+                },
+                "jet_variable_commission": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "The variable commission that was paid to the merchant or charged by jet"
+                },
+                "fixed_commission": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "The refunded fixed commision for a sale"
+                },
+                "tax": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "The to be returned tax charged to the customer for buying the item"
+                },
+                "shipping_tax": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "The tax charged on shipped revenue to be returned to the customer"
+                },                                                
+                "merchant_return_charge": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "Any charges for the return that the merchant is required to pay"
+                },
+                "return_shipping_charge": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "Any charges for return shipping that the merchant is required to pay"
+                },
+                "return_processing_fee": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "If the item is being returned to Jet fulfillment center, then this is processing fee charged by Jet"
+                },
+                "product_cost": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "If the item is sold via DBJ (Distributed By Jet), then this is cost of the product that will be returned to the merchant"
+                },                
+            }
+        }
+	}
+}
