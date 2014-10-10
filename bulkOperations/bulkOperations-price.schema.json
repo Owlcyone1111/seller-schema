@@ -1,0 +1,45 @@
+{
+    "$schema" : "http://json-schema.org/draft-03/schema",		
+	"title": "BulkOperationsPrice",
+	"type": "object",
+    "additionalProperties" : false,		
+	"description": "This schema is used to set prices for merchant skus.  An overall price must be set for the product and a price can also be further refined by setting the price at the fulfillment node level.",
+	"properties": {
+		"merchant_sku": {
+			"type": "string",
+			"required": true,
+			"description": "The merchant SKU that should be affected by the prices in this object",
+		},
+		"price": {
+			"type": "number",
+			"required": true,
+			"description": "The overall price that the merchant SKU is priced at",
+		},
+		"fulfillment_nodes":{
+			"type":"array",
+			"required":false,
+			"items":{
+				"$ref":"#/definitions/fulfillment_node_prices"
+			}
+		},
+	},
+	"definitions":{
+        "fulfillment_node_prices": {
+            "title": "FulfillmentNodePrice",
+            "additionalProperties" : false,
+            "type": "object",
+            "properties": {
+                "fulfillment_node_id": {
+                    "type": "string",
+                    "required": true,
+                    "description" : "The fulfillment node assigned in the Jet Merchant Portal for a merchant fulfillment node"
+                },
+                "fulfillment_node_price": {
+                    "type": "number", 
+                    "required": true,
+                    "description" : "The price of the Merchant SKU at the fulfillment node level"
+                }
+            }
+        }
+	}
+}

@@ -1,0 +1,63 @@
+{
+	"product_title": "Pampers Swaddlers Diapers Size 1 Economy Pack Plus 216 Count",
+	"jet_browse_node_id": 2000039,
+	"standard_product_codes" : [
+		{	
+			"standard_product_code": "037000863823",
+			"standard_product_code_type": "UPC"
+		}
+	],
+	"ASIN" : "B00DFFT9SQ",
+	"multipack_quantity": 1,
+	"brand": "Iron Man",
+	"manufacturer": "My Product's Manufacturer",
+	"mfr_part_number": "AB-9874",
+	"product_description": "This is a terrific product that everyone should own.",
+	"bullets": [
+		"This is bullet line 1",
+		"This is bullet line 2"
+	],
+	"number_units_for_price_per_unit": 1,
+	"type_of_unit_for_price_per_unit": "each",
+	"shipping_weight_pounds": 13.4,
+	"package_length_inches": 13.3,
+	"package_width_inches": 14.8,
+	"package_height_inches": 12.6,
+	"display_length_inches": 13.3,
+	"display_width_inches": 14.8,
+	"display_height_inches": 12.6,
+	"prop_65": false,
+	"legal_disclaimer_description": "Legal stuff goes here",
+	"country_of_origin": "U.S.A.",
+	"start_selling_date": "2013-01-01",
+	"msrp": 51.86,
+	"map_price": 44.00,
+	"map_implementation" : "type1",
+	"product_tax_code": "ALL_PURPOSE",
+	"no_return_fee_adjustment": 1.00,
+	"exclude_from_fee_adjustments": false,
+	"ships_alone": false,
+	"attributes_node_specific" : [
+		{
+			"attribute_id" : 95,
+			"attribute_value" : "216",
+			"attribute_value_unit" : "_Count"
+		},
+		{
+			"attribute_id" : 81,
+			"attribute_value" : "Size 1",
+		}
+	],
+    "main_image_url": "http://www.mydomain.com/images/myImage.png",
+    "swatch_image_url": "http://www.mydomain.com/images/myImage.png",
+    "alternate_images": [
+    {
+        "image_slot_id": 1,
+        "image_url": "http://www.mydomain.com/images/myImage.png"
+        },
+    {
+        "image_slot_id": 2,
+        "image_url": "http://www.mydomain.com/images/myImage.png"
+        }
+    ]
+}	
