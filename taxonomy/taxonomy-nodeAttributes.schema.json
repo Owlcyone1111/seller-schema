@@ -2,80 +2,92 @@
 	"title": "NodeAttributes",
 	"type": "object",
 	"additionalProperties" : false,
-	"properties":
-	{
-		"attributes":
-		{
+	"properties": {
+		"attributes": {
 			"type": "array",
 			"description":"The Attribute ID for a particular Jet Node ID",
-			"items":
-			{
+			"items": {
 				"$ref": "#/definitions/attribute"
 			}
 		}
 	},
-	"definitions":
-	{
-		"attribute":
-		{
-			"title":"Attribute",
+	"definitions": {
+		"attribute": {
+			"title": "Attribute",
 			"type": "object",
 			"additionalProperties" : false,
-			"properties":
-			{
-				"attribute_id":
-				{
+			"properties": {
+				"attribute_id": {
 					"type": "integer",
 					"required":true,
 					"minimum":1,
 					"description": "The ID number for an attribute"
 				},
-				"attribute_description":
-				{
+				"attribute_description": {
 					"type": "string",
 					"required":true,
 					"description": "The description of the attribute"
 				},
-				"free_text":
-				{
+				"free_text": {
 					"type":"boolean",
 					"required":true,
 				},
-				"variant":
-				{
+				"variant": {
 					"type":"boolean",
 					"required":true,
 				},
-				"values":
-				{
-					"type": "array",
-					"required":true,
-					"description":"The values accepted for a particular Attribute ID",
-					"items":
-					{
+				"values": {
+					"type" : "array",
+					"items":{
 						"$ref":"#/definitions/value"
 					}
 				},
-				"units":
-				{
-					"type": "array",
-					"description":"The units accepted for a particular Attribute ID",
-					"items":
-					{
+				"units": {
+					"items":{
 						"$ref":"#/definitions/unit"
 					}
-				},		
+				},
+				"validation" : {
+					"items":{
+						"$ref":"#/definitions/validation"
+					}
+				}		
 			},
 		},
-		"value":
-		{
+		"value": {
 			"type": "string",
-			"description": "A possible value for an Attribute ID",
+			"description": "The values accepted for a particular Attribute ID",
 		},
-		"unit":
-		{
+		"unit": {
 			"type":"string",
 			"description": "The unit options for the values for this attribute"
+		},
+		"validation": {
+			"title": "Variation",
+			"type": "object",
+			"additionalProperties" : false,
+			"properties": {
+				"data_type": {
+					"type": "string",
+					"description": "The data type of the value field when free text is allowed as the available value"
+				},
+				"max_value": {
+					"type": "integer",
+					"description": "The maximum number value accepted for integer or number data type"
+				},
+				"min_value": {
+					"type": "integer",
+					"description": "The maximum number value accepted for integer or number data type"
+				},				
+				"precision": {
+					"type": "integer",
+					"description": "The number of digits or characters that the data type accepts"
+				},
+				"scale": {
+					"type": "integer",
+					"description": "The number of digits to the right of the decimal accepted for a number of float data type"
+				},
+			}
 		},
 	}
 }

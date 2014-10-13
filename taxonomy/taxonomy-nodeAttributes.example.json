@@ -23,6 +23,17 @@
 				"White",
 				"Yellow"
 			],
+		},
+		{
+			"attribute_id" : 95,
+			"attribute_description" : "Count Size",
+			"free_text" : true,
+			"variant" : true,
+			"validation" : {
+				"data_type" : "integer",
+				"max_value" : 1000000,
+				"min_value" : 1,
+			}
 		}
 	]
 }

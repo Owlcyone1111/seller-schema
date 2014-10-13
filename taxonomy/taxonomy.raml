@@ -18,20 +18,22 @@ mediaType: application/json
                             application/json:
                                 schema: !include taxonomy-links.schema.json
                                 example: !include taxonomy-links.example.json
+                    400:
                     404:
                     409:
     /nodes:
-        get:
-            description: This method retrieves the details for each Jet Node ID
-            responses:
-                200:
-                    body:
-                        application/json:
-                            schema: !include taxonomy-nodeAttributes.schema.json
-                            example: !include taxonomy-nodeAttributes.example.json
-                404:
-                409:
         /{id}:
+            get:
+                description: This method retrieves the details for each Jet Node ID
+                responses:
+                    200:
+                        body:
+                            application/json:
+                                schema: !include taxonomy-nodeAttributes.schema.json
+                                example: !include taxonomy-nodeAttributes.example.json
+                    400:
+                    404:
+                    409:
             /attributes:
             get:
                 description: This method retrieves all the variants and attribute information for a Jet Node ID 
@@ -41,5 +43,6 @@ mediaType: application/json
                             application/json:
                                 schema: !include taxonomy-nodeAttributes.schema.json
                                 example: !include taxonomy-nodeAttributes.example.json
+                    400:
                     404:
                     409:
