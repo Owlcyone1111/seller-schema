@@ -1,0 +1,54 @@
+{
+	"fulfillment_node": [
+		{
+			"fulfillment_node_id" : "XISNDKSANDSFNCSJKFDNFKJHFJD",
+			"shipping_exception" :  [
+				{
+
+					"service_level": "Standard",
+					"shipping_carrier": "UPS",
+					"shipping_method": "UPS Ground",
+					"override_type": "Additional Charge",
+					"shipping_charge_amount": 3.25,
+					"is_shipping_restricted": false,
+					"is_shipping_exclusive": true
+
+				},
+				{
+					"service_level": "Standard",
+					"shipping_carrier": "UPS",
+					"shipping_method": "UPS Ground",
+					"override_type": "Additional Charge",
+					"shipping_charge_amount": 3.25,
+					"is_shipping_restricted": false,
+					"is_shipping_exclusive": true
+				}
+			]
+		},
+		{
+			"fulfillment_node_id" : "1234DKSANDSFNCSJKFDNFKJHFAZ",
+			"shipping_exception" :  [
+				{
+
+					"service_level": "Standard",
+					"shipping_carrier": "UPS",
+					"shipping_method": "UPS Ground",
+					"override_type": "Additional Charge",
+					"shipping_charge_amount": 3.25,
+					"is_shipping_restricted": false,
+					"is_shipping_exclusive": true
+
+				},
+				{
+					"service_level": "Standard",
+					"shipping_carrier": "UPS",
+					"shipping_method": "UPS Ground",
+					"override_type": "Additional Charge",
+					"shipping_charge_amount": 3.25,
+					"is_shipping_restricted": false,
+					"is_shipping_exclusive": true
+				}
+			]
+		}
+	]
+}
