@@ -20,10 +20,12 @@
             "properties": {
                 "fulfillment_node_id": {
                     "type": "string",
+                    "required" : true,
                     "description" : "The fulfillment node assigned in the Jet Merchant Portal for a merchant fulfillment node"
                 },
                 "quantity": {
                     "type": "number",
+                    "required" : true,
                     "description" : "The quantity of inventory for the given SKU in a given fulfillment node"
                 }
             }
