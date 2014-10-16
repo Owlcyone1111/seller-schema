@@ -6,7 +6,6 @@
 		"jet_node_id": {
 			"type":"integer",
 			"required":true,
-			"minimum":1,
 			"description": "The Jet browse node ID",
 			"minimum":1000000
 		},
@@ -29,7 +28,7 @@
 		"parent_id": {
 			"type":"integer",
 			"required":true,
-			"minimum":1,
+			"minimum":1000000,
 			"description": "The ID of the previous level node that this node is a child to"
 		},
 		"jet_level": {
