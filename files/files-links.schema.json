@@ -3,7 +3,7 @@
     "type": "object",
     "additionalProperties" : false,
     "properties": {
-    	"file_urls": {
+    	"files_urls": {
     		"type": "array",
     		"description": "List of URLs",
     		"items": {

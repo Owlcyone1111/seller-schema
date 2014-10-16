@@ -1,6 +1,7 @@
 {
     "url" : "https://jetupload.blob.core.windows.net/merchant-files/dca10a71128940bf80aca9edee52e7cd?sv=2014-02-14&sr=b&sig=PCIQGWiwzHmdBeEQbFTnOeyAdGowKcQYbTg9OPIvEQo%3D&se=2014-10-15T22%3A23%3A28Z&sp=w",
-    "type" : "MerchantSKUs",
+    "file-type" : "MerchantSKUs",
+    "received" : "2014-07-26T:04:00.0000000Z",
     "name" : "dca10a71128940bf80aca9edee52e7cd",
     "status" : "Processed with errors",
     "errors" : [ "Line 345: Invalid json" ]
