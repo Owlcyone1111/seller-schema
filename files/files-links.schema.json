@@ -1,0 +1,15 @@
+{
+    "title": "FileLinks",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+    	"file_urls": {
+    		"type": "array",
+    		"description": "List of URLs",
+    		"items": {
+    			"type": "string",
+    			"description": "The unique resource URL"
+    		}
+    	}
+    }
+}

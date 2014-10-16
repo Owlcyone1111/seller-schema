@@ -1,0 +1,49 @@
+#%RAML 0.8
+
+title: Merchant API - Files
+description: This API facilitates file uploads for Jet.com
+baseUri: http://dev-ironman-webapi.test.jet.com/api
+version: v0.1
+protocols: [HTTPS]
+mediaType: application/json
+
+/files:
+    get:
+        description: Returns list of upload details
+        responses:
+            200:
+                body:
+                    application/json:
+                        schema: !include files-links.schema.json
+                        exmaple: !include files-links.exmaple.json
+    /uploadToken:
+        get:
+            description: Creates upload token which can be used to upload file to Jet.com
+            responses:
+                200:
+                    body:
+                        application/json:
+                            schema: !include files-token.schema.json
+                            exmaple: !include files-token.exmaple.json
+    /uploaded:
+        post:
+            description: This method allows to notify Jet.com about file being uploaded
+            body:
+                application/json:
+                    schema: !include files-uploaded.schema.json
+                    exmaple: !include files-uploaded.exmaple.json
+            responses:
+                200:
+                    body:
+                        application/json:
+                            schema: !include files-status.schema.json
+                            exmaple: !include files-status.exmaple.json
+    /{name}:
+        get:
+            description: Returns details about particular file
+            responses:
+                200:
+                    body:
+                        application/json:
+                            schema: !include files-token.schema.json
+                            exmaple: !include files-token.exmaple.json
