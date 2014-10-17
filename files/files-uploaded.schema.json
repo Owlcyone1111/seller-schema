@@ -7,7 +7,7 @@
             "required": true,
             "description" : "Url for file upload. To upload file, Http PUT request with header 'x-ms-blob-type' : 'BlockBlob' can be issued."
         },
-        "file-type": {
+        "file_type": {
             "type": "string",
             "required": true,
             "enum" : [

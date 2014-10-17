@@ -22,7 +22,7 @@
             * Price
             "
         },
-        "name" : {
+        "file_name" : {
             "type" : "string",
             "required": true,
             "description" : "Name of the file"
