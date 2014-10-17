@@ -20,7 +20,7 @@ mediaType: application/json
             404:
     /{id}:
         get:
-            description: This method will return merchant SKU specified by id
+            description: This method will return merchant SKU specified by ID
             responses:
                 200:
                     body:
@@ -41,7 +41,7 @@ mediaType: application/json
                 409:
         /relationship:
             put:
-                description: This method updates variation relationships between merchant skus
+                description: This method updates variation relationships between merchant SKUs
                 body:
                     application/json:
                         schema: !include relationship.schema.json
@@ -99,7 +99,7 @@ mediaType: application/json
                    409:
         /image:
             put:
-                description: This method is used to provide the links to all images that should be shown to the customer for the Merchant SKU
+                description: This method is used to provide the links to all images that should be shown to the customer for the merchant SKU
                 body:
                     application/json:
                         schema: !include merchantSkus-imageBatch.schema.json

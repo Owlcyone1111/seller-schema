@@ -3,7 +3,7 @@
 	"title": "Relationship",
 	"type": "object",
     "additionalProperties" : false,		
-	"description": "This schema is used to set variation relationships for merchant skus",
+	"description": "This schema is used to set variation relationships for merchant SKUs",
 	"properties": {		
 		"relationship": {
 			"type": "string",
@@ -13,7 +13,7 @@
 
 			#Logic
 
-			This field is required if you are setting up a Variation relationship between a set merchant skus
+			This field is required if you are setting up a Variation relationship between a set merchant SKUs
 
 			##Valid Values
 
@@ -23,9 +23,9 @@
 		},
 		"variation_refinements": {
 			"type": "number",
-			"description": "The id number for the variation that you get from our documentation
+			"description": "The ID number for the variation that you get from our documentation
 
-			This field should only be filled in if you are setting up a Variation relationship between a set merchant skus and you want to let Jet know what you would like to vary those merchant SKUs on. 
+			This field should only be filled in if you are setting up a Variation relationship between a set merchant SKUs and you want to let Jet know what you would like to vary those merchant SKUs on. 
 			
 			#Valid Values
 
@@ -38,7 +38,7 @@
 					"type" : "string",
 					"description" : "merchant SKU"
 				},
-			"description": "The merchant skus that are a the child SKUs
+			"description": "The merchant SKUs that are a the child SKUs
 				
 			#Valid Values
 

@@ -2,7 +2,7 @@
 	"$schema" : "http://json-schema.org/draft-03/schema",
 	"title": "MerchantSku",
 	"type": "object",
-	"description": "This schema represents a merchant sku",
+	"description": "This schema represents a merchant SKU",
     "additionalProperties" : false,
 	"properties": {
 		"product_title": {
@@ -19,7 +19,7 @@
 		},
 		"jet_browse_node_id": {
 			"type": "integer",
-			"description": "The uniqueID that defines where the product will be found in the Jet.com browse structure
+			"description": "The unique ID that defines where the product will be found in the Jet.com browse structure
 
 			#Valid Values
 
@@ -46,7 +46,7 @@
 
 			#Logic
 
-			At least one of the following must be provided for each Merchant SKU: Standard Product Code (UPC, GTIN-14 etc.), ASIN, or Brand and Mfr Part Number",
+			At least one of the following must be provided for each merchant SKU: Standard Product Code (UPC, GTIN-14 etc.), ASIN, or Brand and Manufacturer Part Number",
 			"items" : {
 				"$ref": "#/definitions/product_codes"				
 			}
@@ -54,11 +54,11 @@
 		},	
 		"ASIN" : {
 			"type": "string",
-			"description" : "Amazon standard itdentification number for this merchant SKU if available. 
+			"description" : "Amazon standard identification number for this merchant SKU if available. 
 
 			#Logic
 
-			At least one of the following must be provided for each Merchant SKU: Standard Product Code (UPC, GTIN-14 etc.), ASIN, or Brand and Mfr Part Number",
+			At least one of the following must be provided for each merchant SKU: Standard Product Code (UPC, GTIN-14 etc.), ASIN, or Brand and Manufacturer Part Number",
 			"maxLength" : 10,
 			"minLength" : 10,
 		},
@@ -66,7 +66,7 @@
 			"type": "integer",
 			"required": true,
 			"minimum" : 1,
-			"description": "Number of items with the given standard_product_code that makes up your merchant sku
+			"description": "Number of items with the given Standard Product Code that makes up your merchant SKU
 
 			"
 		},
@@ -74,7 +74,7 @@
 			"type": "string",
 			"required": true,
 			"maxLength" : 50,
-			"description": "Brand of the merchant sku
+			"description": "Brand of the merchant SKU
 
 			#Valid Values
 
@@ -82,7 +82,7 @@
 
 			#Logic
 
-			At least one of the following must be provided for each Merchant SKU: Standard Product Code (UPC, GTIN-14 etc.), ASIN, or Brand and Mfr Part Number
+			At least one of the following must be provided for each merchant SKU: Standard Product Code (UPC, GTIN-14 etc.), ASIN, or Brand and Manufacturer Part Number
 
 			"
 		},
@@ -90,7 +90,7 @@
 			"type": "string",
 			"required": true,
 			"maxLength" : 50,
-			"description": "Manufacturer of the merchant sku
+			"description": "Manufacturer of the merchant SKU
 
 			#Valid Values
 
@@ -101,22 +101,22 @@
 		"mfr_part_number": {
 			"type": "string",
 			"maxLength" : 50,
-			"description": "Part number provided by the original manufacturer of the merchant sku
+			"description": "Part number provided by the original manufacturer of the merchant SKU
 
 			#Valid Values
 
-			maximum of 50 characters
+			Maximum of 50 characters
 
 			#Logic
 
-			At least one of the following must be provided for each Merchant SKU: Standard Product Code (UPC, GTIN-14 etc.), ASIN, or Brand and Mfr Part Number
+			At least one of the following must be provided for each merchant SKU: Standard Product Code (UPC, GTIN-14 etc.), ASIN, or Brand and Manufacturer Part Number
 
 			"
 		},
 		"product_description": {
 			"type": "string",
 			"maxLength" : 2000,
-			"description": "Long description of the merchant sku
+			"description": "Long description of the merchant SKU
 
 			#Valid Values
 
@@ -131,20 +131,20 @@
 				"maxLength" : 500
 			},
 			"maxItems" : 5,
-			"description": "merchant sku feature description
+			"description": "Merchant SKU feature description
 
 			#Valid Values
 
-			maximum of 500 characters each
+			Maximum of 500 characters each
 
-			#array limitation
+			#Array Limitation
 
-			maximum 5 elements of the 'bullets' array"
+			Maximum 5 elements of the 'bullets' array"
 		},
 		"number_units_for_price_per_unit": {
 			"type": "number",
 			"minimum" : 0.0,
-			"description": "For Price Per Unit calculations, the number of units included in the merchant sku. The unit of measure must be specified in order to indicate what is being measured by the unit-count. "
+			"description": "For Price Per Unit calculations, the number of units included in the merchant SKU. The unit of measure must be specified in order to indicate what is being measured by the unit-count."
 		},
 		"type_of_unit_for_price_per_unit": {
 			"type": "string",
@@ -153,7 +153,7 @@
 		"shipping_weight_pounds": {
 			"type": "number",
 			"minimum" : 0.01,
-			"description": "Weight of the merchant sku when in its shippable configuration
+			"description": "Weight of the merchant SKU when in its shippable configuration
 
 			#Valid Values
 
@@ -164,7 +164,7 @@
 		"package_length_inches": {
 			"type": "number",
 			"minimum" : 0.01,
-			"description": "Length of the merchant sku when in its shippable configuration
+			"description": "Length of the merchant SKU when in its shippable configuration
 
 			#Valid Values
 
@@ -175,7 +175,7 @@
 		"package_width_inches": {
 			"type": "number",
 			"minimum" : 0.01,
-			"description": "Width of the merchant sku when in its shippable configuration
+			"description": "Width of the merchant SKU when in its shippable configuration
 
 			#Valid Values
 
@@ -184,7 +184,7 @@
 		"package_height_inches": {
 			"type": "number",
 			"minimum" : 0.01,
-			"description": "Height of the merchant sku when in its shippable configuration
+			"description": "Height of the merchant SKU when in its shippable configuration
 
 			#Valid Values
 
@@ -193,7 +193,7 @@
 		"display_length_inches": {
 			"type": "number",
 			"minimum" : 0.01,
-			"description": "Length of the merchant sku when in its fully assempled/usable condition
+			"description": "Length of the merchant SKU when in its fully assempled/usable condition
 
 			#Valid Values
 
@@ -204,7 +204,7 @@
 		"display_width_inches": {
 			"type": "number",
 			"minimum" : 0.01,
-			"description": "Width of the merchant sku when in its fully assempled/usable condition
+			"description": "Width of the merchant SKU when in its fully assempled/usable condition
 
 			#Valid Values
 
@@ -213,7 +213,7 @@
 		"display_height_inches": {
 			"type": "number",
 			"minimum" : 0.01,
-			"description": "Height of the merchant sku when in its fully assempled/usable condition
+			"description": "Height of the merchant SKU when in its fully assempled/usable condition
 
 			#Valid Values
 
@@ -221,7 +221,7 @@
 		},
 		"prop_65": {
 			"type": "boolean",
-			"description": "You must tell us if your product is subject to Proposition 65 rules and regulations.  Proposition 65 requires merchants to provide California consumers with special warnings for products that contain chemicals known to cause cancer, birth defects, or other reproductive harm, if those products expose consumers to such materials above certain threshold levels.  The default value for this is \"False,\" so if you do not populate this column, we will assume your product is not subject to this rule.  Please view this Web site for more information: http://www.oehha.ca.gov/."
+			"description": "You must tell us if your product is subject to Proposition 65 rules and regulations.  Proposition 65 requires merchants to provide California consumers with special warnings for products that contain chemicals known to cause cancer, birth defects, or other reproductive harm, if those products expose consumers to such materials above certain threshold levels.  The default value for this is \"false,\" so if you do not populate this column, we will assume your product is not subject to this rule.  Please view this website for more information: http://www.oehha.ca.gov/."
 		},
 		"legal_disclaimer_description": {
 			"type": "string",
@@ -265,9 +265,9 @@
 
 			*no warning applicable
 
-			#array limitation
+			#Array Limitation
 
-			maximum 4 elements of the 'cpsia_cautionary_statements' array"
+			Maximum 4 elements of the 'cpsia_cautionary_statements' array"
 		},
 		"country_of_origin": {
 			"type": "string",
@@ -285,20 +285,20 @@
 
 			#Valid Values
 
-			maximum of 500 characters"
+			Maximum of 500 characters"
 		},
 		"start_selling_date": {
 			"type": "string",
-			"description": "If updating merchant sku that has qty=0  at all FCs, date that the inventory in this message should be available for sale on Jet.com.  
+			"description": "If updating merchant SKU that has quantity = 0  at all FCs, date that the inventory in this message should be available for sale on Jet.com.  
 
 			#Logic
 
-			You should only use this field if the quantity for the merchant sku is 0 at all merchant_fcs."
+			You should only use this field if the quantity for the merchant SKU is 0 at all merchant_fcs."
 		},
 		"fulfillment_time": {
 			"type": "integer",
 			"minimum" : 0,
-			"description": "Number of business days from receipt of an order for the given merchant sku until it will be shipped (only populate if it is different than your account default.
+			"description": "Number of business days from receipt of an order for the given merchant SKU until it will be shipped (only populate if it is different than your account default).
 
 			#Valid values
 
@@ -385,15 +385,15 @@
 	            "properties": {
 	            	"attribute_id" : {
 					"type" : "integer",
-					"description" : "the node attribue id number that you get from Jet provided documentation that corresponds with the attribute you are passing"
+					"description" : "The node attribute ID number that you get from Jet provided documentation that corresponds with the attribute you are passing"
 					},
 					"attribute_value" : {
 						"type" : "string",
-						"description" : "The value for the attribute. For example if the attribute is size you may pass 'large' or if the the attribute is weight you may pass '22'. For attributes like weight the unit will be passed in the next field"
+						"description" : "The value for the attribute. For example, if the attribute is size you may pass 'large' or if the the attribute is weight, you may pass '22'. For attributes like weight the unit will be passed in the next field."
 					},
 					"attribute_value_unit" : {
 						"type" : "string",
-						"description" : "If the attribute_value requires a unit then you pass the unit here."
+						"description" : "If the attribute_value requires a unit, then you pass the unit here."
 					}
 	            }
 			},

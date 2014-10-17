@@ -2,7 +2,7 @@
     "$schema" : "http://json-schema.org/draft-03/schema",
 	"title": "Inventory",
 	"type": "object",
-	"description": "This schema is used to set inventory counts on merchant skus",
+	"description": "This schema is used to set inventory counts on merchant SKUs",
     "additionalProperties" : false,
 	"properties": {
 		"fulfillment_nodes":{

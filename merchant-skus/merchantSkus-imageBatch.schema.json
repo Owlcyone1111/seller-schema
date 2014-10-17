@@ -2,18 +2,18 @@
     "$schema" : "http://json-schema.org/draft-03/schema",	
 	"title": "Image Batch",
 	"type": "object",
-	"description": "This schema is used to set images for merchant skus",
+	"description": "This schema is used to set images for merchant SKUs",
     "additionalProperties" : false,	
 	"properties": {
 		"main_image_url": {
 			"type": "string",
 			"required": true,
-			"description": "URL location where Jet.com can access the image. Please provide at least 300 x 300 pixels. However, please provide the largest size avaialbe up to a file size of 1MB"
+			"description": "URL location where Jet.com can access the image. Please provide at least 300 x 300 pixels. However, please provide the largest size available up to a file size of 1MB"
 		},
 		"swatch_image_url": {
 			"type": "string",
 			"required" : "false",
-			"description": "URL location where Jet.com can access an image of a color or fabric for a given merchant SKU. Please provide at least 300 x 300 pixels. However, please provide the largest size avaialbe up to a file size of 1MB"
+			"description": "URL location where Jet.com can access an image of a color or fabric for a given merchant SKU. Please provide at least 300 x 300 pixels. However, please provide the largest size available up to a file size of 1MB"
 		},
 		"alternate_images":{
 			"type":"array",

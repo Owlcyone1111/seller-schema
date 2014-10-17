@@ -52,7 +52,7 @@
 
 					#Logic
 
-					If 'shipping_carrier' is populated then 'shipping_method' will be ignored. 
+					If 'shipping_carrier' is populated, then 'shipping_method' will be ignored. 
 					Use this field if you are defining your shipping options by 'shipping_carrier' or 'shipping_method'
 
 					#Valid Values
@@ -67,7 +67,7 @@
 
 					#Logic
 
-					this should be used if you want the change to apply to a specific shipping_method.  If shipping_carrier is populated this field will be ignored.
+					This should be used if you want the change to apply to a specific shipping_method.  If shipping_carrier is populated, this field will be ignored.
 					Use this field if you are defining your shipping options by 'shipping_method'
 					"
 
@@ -101,7 +101,7 @@
 				},
 				"is_shipping_exclusive": {
 					"type": "boolean",
-					"description": "Indicates that the Merchant SKU can ONLY be shipped with the specified shipping option (shipping_carrier, shipping_method or service_level). 
+					"description": "Indicates that the merchant SKU can ONLY be shipped with the specified shipping option (shipping_carrier, shipping_method or service_level). 
 					A value of \"true\" means that the merchant SKU can be shipped using ONLY the specified shipping option.
 
 					#Logic
