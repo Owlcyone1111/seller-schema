@@ -20,10 +20,13 @@
 			"description":"The Jet Node Path for the requested node ID"
 		},
 		"amazon_node_id": {
-			"type":"integer",
+			"type":"array",
 			"required":true,
-			"minimum":1,
-			"description": "For reference: the Amazon browse node ID from their browse tree"
+			"description": "For reference: the Amazon browse node ID from their browse tree",
+			"items":{
+				"type":"integer",
+				"minimum":1
+			}
 		},
 		"parent_id": {
 			"type":"integer",
