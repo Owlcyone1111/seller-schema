@@ -1,5 +1,5 @@
 {
-    "title": "FileUploadStatus",
+    "title": "FileUploadNotification",
     "type": "object",
     "properties": {
         "url":{
