@@ -5,6 +5,11 @@
 	"description": "This schema represents a merchant sku",
     "additionalProperties" : false,
 	"properties": {
+        "merchant_sku": {
+            "type": "string",
+            "required": true,
+            "description": "The merchant SKU that should be affected by the prices in this object",
+        },
 		"product_title": {
 			"type": "string",
 			"required": true,
