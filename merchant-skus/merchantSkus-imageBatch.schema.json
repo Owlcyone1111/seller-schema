@@ -1,6 +1,6 @@
 {
     "$schema" : "http://json-schema.org/draft-03/schema",	
-	"title": "Image Batch",
+	"title": "ImageBatch",
 	"type": "object",
 	"description": "This schema is used to set images for merchant SKUs",
     "additionalProperties" : false,	

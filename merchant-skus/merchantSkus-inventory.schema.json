@@ -24,7 +24,7 @@
                     "description" : "The fulfillment node assigned in the Jet Merchant Portal for a merchant fulfillment node"
                 },
                 "quantity": {
-                    "type": "number",
+                    "type": "integer",
                     "required" : true,
                     "description" : "The quantity of inventory for the given SKU in a given fulfillment node"
                 }
