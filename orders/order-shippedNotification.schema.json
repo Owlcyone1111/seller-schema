@@ -5,7 +5,7 @@
     "properties": {          
         "alt_order_id": {
             "type": "string",
-            "description" : "Optional Merchant supplied order ID.  Jet will map this ID to Jet's order_id and you can then use this ID in subsequent messages relating to this order."
+            "description" : "Optional merchant supplied order ID.  Jet will map this ID to Jet's order_id and you can then use this ID in subsequent messages relating to this order."
         },
         "shipments": {
             "type": "array",
@@ -27,11 +27,12 @@
                 },
                 "alt_shipment_id": {
                     "type": "string",
-                    "description" : "Optional Merchant supplied shipment ID.  Jet will map this ID to the Jet's shipment_id and you can then use this ID in subsequent messages relating to this shipment."
+                    "description" : "Optional merchant supplied shipment ID.  Jet will map this ID to the Jet's shipment_id and you can then use this ID in subsequent messages relating to this shipment."
                 },
                 "shipment_tracking_number": {
                     "type": "string",
-                    "description" : "packaging tracking number that the carrier is using"
+                    "minLength":3,
+                    "description" : "Packaging tracking number that the carrier is using"
                 },
                 "response_shipment_date": {
                     "type": "string",
@@ -67,7 +68,7 @@
                 },
                 "ship_from_zip_code": {
                     "type": "string",
-                    "description" : "The zip code of the locations from which the customer shipment is being shipped from"
+                    "description" : "The zip code of the locations from which the customer shipment is being shipped"
                 },
                 "carrier_pick_up_date": {
                     "type": "string",
@@ -100,10 +101,12 @@
                 },
                 "response_shipment_sku_quantity": {
                     "type": "integer",
+                    "minimum":0,
                     "description" : "Quantity of the given SKU that was shipped in the given shipment"
                 },
                 "response_shipment_cancel_qty": {
                     "type": "integer",
+                    "minimum":0,
                     "description" : "Quantity of the given SKU that was cancelled in the given shipment"
                 }
             }

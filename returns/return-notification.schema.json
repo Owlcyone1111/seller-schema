@@ -2,11 +2,11 @@
 	"title": "Return",
 	"type": "object",
 	"additionalProperties" : false,
-	"description": "This schema is used to inform the Merchant of a Return",
+	"description": "This schema is used to inform the merchant of a return",
 	"properties": {
 		"refund_without_return" : {
 			"type":"boolean",
-			"description" : "If this is true jet has deemed that this item should not be returned but the customer still should be refunded"
+			"description" : "If this is true, Jet has deemed that this item should not be returned, but the customer still should be refunded"
 		},
         "return_status": {
             "type": "string",
@@ -17,7 +17,7 @@
                  "refund customer without return",
                  "completed by merchant"
              ],
-            "description": "Current status of the return."
+            "description": "Current status of the return"
         }, 
 		"order_id": {
 			"type": "string",
@@ -27,7 +27,7 @@
 		"alt_order_id": {
 			"type": "string",
 			"required": true,
-			"description": "Optional Merchant supplied order ID that should have been established in OrderAcknowledgement in order to use in this message
+			"description": "Optional merchant supplied order ID that should have been established in OrderAcknowledgement in order to use in this message
 
 			#Logic
 
@@ -59,7 +59,7 @@
 		},
 		"tracking_number": {
 			"type": "string",
-			"description": "tracking number for the given return shipment
+			"description": "Tracking number for the given return shipment
 
 			#Logic
 
@@ -67,11 +67,11 @@
 		},
 		"merchant_return_charge": {
 			"type": "number",
-			"description": "The charge that the merchant is required to pay jet for the return
+			"description": "The charge that the merchant is required to pay Jet for the return
 
 			#Logic
 
-			This is populated with the charge that a merchant will pay jet for a customer return"	
+			This is populated with the charge that a merchant will pay Jet for a customer return"	
 		},
         "alt_return_authorization_id": {
             "type": "string",
@@ -101,9 +101,9 @@
 
             #Valid Values
 
-            *'true' - the merchant agrees to wholly pay the return charge to jet.com from the return notification
+            *'true' - The merchant agrees to wholly pay the return charge to Jet.com from the return notification
 
-            *'false' - the merchant disagrees with the return charge and will enter a disputed charge with jet.com"
+            *'false' - The merchant disagrees with the return charge and will enter a disputed charge with Jet.com"
         }		
 	},
 
@@ -121,7 +121,7 @@
                     
                     "alt_order_item_id": {
                         "type": "string",
-                        "description" : "Required if returning/refunding an item. If an alt_order_item_id has been associated with the order_item_id via the order accept message this may be passed instead of the order_item_id field.
+                        "description" : "Required if returning/refunding an item. If an alt_order_item_id has been associated with the order_item_id via the order accept message, this may be passed instead of the order_item_id field.
 
                         #Logic
 
@@ -129,7 +129,7 @@
                     },
                     "merchant_sku":{
                         "type":"string",
-                        "description":"the 'merchant_sku' that is being returned"
+                        "description":"The 'merchant_sku' that is being returned"
                     },
                     "merchant_sku_title":{
                         "type":"string",
@@ -156,11 +156,11 @@
                                 "shipping box is damaged AND item is damaged",
                                 "defective/does no work properly",
                                 "accidental order"],
-                        "description":"the reason provided by the customer for the return
+                        "description":"The reason provided by the customer for the return
 
                         #Valid Values
 
-                        *'no longer need/want
+                        *'no longer need/want'
 
                         *'better price available'
 
@@ -195,7 +195,7 @@
                         },
                         "tax" : {
                             "type" : "number",
-                            "description" : "Amount to be refunded for the given item in USD associated with tax that was charged for the item and "
+                            "description" : "Amount to be refunded for the given item in USD associated with tax that was charged for the item"
                         },
                         "shipping_cost" : {
                             "type" : "number",
@@ -252,11 +252,11 @@
 
                     #Logic
 
-                    Required if returning/refunding an item. If an alt_order_item_id has been associated with the order_item_id via the order accept message that may be passed instead."
+                    Required if returning/refunding an item. If an alt_order_item_id has been associated with the order_item_id via the order accept message, that may be passed instead."
                 },
                 "alt_order_item_id": {
                     "type": "string",
-                    "description" : "Required if returning/refunding an item. If an alt_order_item_id has been associated with the order_item_id via the order accept message this may be passed instead of the order_item_id field."
+                    "description" : "Required if returning/refunding an item. If an alt_order_item_id has been associated with the order_item_id via the order accept message, this may be passed instead of the order_item_id field."
                 },
                 "total_quantity_returned" : {
                     "type" : "integer",
@@ -265,7 +265,7 @@
 
                     #Logic
 
-                    Required to indicate the total quantity of units returned for the order item.  This quantity should only include the units that were returned, any cancalled items shouldn not be included if the items were cancelled before the return"
+                    Required to indicate the total quantity of units returned for the order item.  This quantity should only include the units that were returned.  Any cancelled items should not be included if the items were cancelled before the return"
                 },
                 "order_return_refund_qty" : {
                     "type" : "integer",
@@ -274,7 +274,7 @@
 
                     #Logic
 
-                    Required to indicate the qty of the given item to be returned/refunded. This should only be used if part of the order was shipped BEFORE it was realized that some of the items could not be shipped.  If you are aware that you cannot fill the order completely before a portion has shipped you should send an order-reject message. "
+                    Required to indicate the quantity of the given item to be returned/refunded. This should only be used if part of the order was shipped BEFORE it was realized that some of the items could not be shipped.  If you are aware that you cannot fill the order completely before a portion has shipped, you should send an order-reject message. "
                 },
                 "return_refund_feedback" : {
                     "type" : "string",
@@ -284,7 +284,7 @@
                                 "item damaged",
                                 "other",
                                 ],
-                    "description" : "the reason this refund is less than the full amount 
+                    "description" : "The reason this refund is less than the full amount 
 
                     #Valid Values
 
@@ -292,13 +292,13 @@
 
                     *'not shipped in original packaging' 
 
-                    *'item damaged' - should only be used if the reason for the return was not that it was damaged when the customer received it 
+                    *'item damaged' - Should only be used if the reason for the return was not that it was damaged when the customer received it 
                     
-                    *'other' - please give additional information in the notes field"
+                    *'other' - Please give additional information in the notes field"
                 },
                 "notes" :{
                     "type" : "string",
-                    "description" : "provide additional information about why the item was refunded for lower than the full amount"
+                    "description" : "Provide additional information about why the item was refunded for lower than the full amount"
                 },
                 "refund_amount" : {
                     "title" : "price_adjustment",
@@ -311,7 +311,7 @@
                         },
                         "tax" : {
                             "type" : "number",
-                            "description" : "Amount to be refunded for the given item in USD associated with tax that was charged for the item and "
+                            "description" : "Amount to be refunded for the given item in USD associated with tax that was charged for the item"
                         },
                         "shipping_cost" : {
                             "type" : "number",

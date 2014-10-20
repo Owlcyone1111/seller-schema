@@ -10,15 +10,15 @@
         },
         "fulfillment_node" : {
             "type": "string",
-            "description" : "Optional Merchant-supplied Fulfillment Node Name. 
+            "description" : "Optional merchant-supplied Fulfillment Node Name. 
             #Logic
 
-            If provided, this field directs merchant to send the order from the fulfillment node set up in Merchant Portal.
+            If provided, this field directs merchant to send the order from the fulfillment node set up in merchant portal.
             "
             },
         "alt_order_id": {
             "type": "string",
-            "description" : "Optional Merchant supplied order ID. 
+            "description" : "Optional merchant supplied order ID. 
             #Logic
 
             If an alt_order_id has been associated with the merchant_order_id via the order accept message this will be passed as well.
@@ -46,7 +46,7 @@
                 "rejected - shipping method not supported",
                 "rejected - ship from location not available",
                 "rejected - item level error"],
-            "description" : "Status to let jet know whether you accept or reject the order, errors that occur at the item level should be given the status 'rejected - item level error'.  This is return in the order acknowledgement message.
+            "description" : "Status to let jet know whether you accept or reject the order, errors that occur at the item level should be given the status 'rejected - item level error'.  This is returned in the order acknowledgement message.
 
             #Valid Values
 
@@ -54,7 +54,7 @@
 
             *'rejected - unfulfillable address' - the address requested cannot be shipped to
 
-            *'rejected - shipping method not supported' - the adress requested cannot be shipped to
+            *'rejected - shipping method not supported' - the address requested cannot be shipped to
 
             *'rejected - ship from location not available' - the ship to location is invalid
 
@@ -136,22 +136,22 @@
                 "address2": {
                     "type": "string", 
                     "required": false,
-                    "description" : "line 2 of the address"
+                    "description" : "Line 2 of the address"
                 },
                 "city": {
                     "type": "string",
                     "required": true,
-                    "description" : "city of the address"
+                    "description" : "City of the address"
                 },
                 "state": {
                     "type": "string",
                     "required": true,
-                    "description" : "state of the address"
+                    "description" : "State of the address"
                 },
                 "zip_code": {
                     "type": "string",
                     "required": true,
-                    "description" : "zip code of the address"
+                    "description" : "Zip code of the address"
                 }
             }
         },
@@ -191,16 +191,16 @@
                     "emum":[
                         "fulfillable",
                         "nonfulfillable - no inventory",
-                        "nonfulfillable - invalid merchant sku"],
-                    "description" : "value to send jet the status of each item in the order request. This is returned to Jet.com in the order acknowledgement. 
+                        "nonfulfillable - invalid merchant SKU"],
+                    "description" : "Value to send jet the status of each item in the order request. This is returned to Jet.com in the order acknowledgement. 
 
                     #Valid Values
 
-                    *'fulfillable' - the item in the order can be shipped' 
+                    *'fulfillable' - The item in the order can be shipped' 
 
-                    *'nonfulfillable - no inventory' - no inventory for this product is available
+                    *'nonfulfillable - no inventory' - No inventory for this product is available
 
-                    *'nonfulfillable - invalid vendor sku' - this sku is no recongized as a valid value"
+                    *'nonfulfillable - invalid merchant SKU' - This SKU is not recognized as a valid value"
                     
                 },
                 "merchant_sku": {
@@ -228,7 +228,7 @@
                                 "ship_by Date Cannot Be Met",
                                 "deliver_by Date Cannot Be Met",
                                 "Other"],
-                    "description" : "the reason for the adjustment in quantity; only present if partial cancel message was recieved
+                    "description" : "The reason for the adjustment in quantity; only present if partial cancel message was recieved
 
                     #Valid Values
 
@@ -236,15 +236,15 @@
 
                     *'Customer Request' - If cancelling due to a customer request to do so 
 
-                    *'Shipping Address Undeliverable' - Send if using your own shipping labels and your carriers do not deliver to the given Address
+                    *'Shipping Address Undeliverable' - Send if using your own shipping labels and your carriers do not deliver to the given address
                     
                     *'Partial Out Of Stock' - Send if you can fulfill some but not all of the order AND some items from the order have already shipped (immediately send an inventory message to correct your inventory levels)
 
-                    *'ship_by Date Cannot Be Met' Send if you are unable to ship any part of the order by the required ship_by date AND you have not shipped any part of the order
+                    *'ship_by Date Cannot Be Met' - Send if you are unable to ship any part of the order by the required ship_by date AND you have not shipped any part of the order
 
-                    *'deliver_by Date Cannot Be Met' Send if you are unable to ensure any part of the order will be delivered by the required deliver_by date AND you have not shipped any part of the order
+                    *'deliver_by Date Cannot Be Met' - Send if you are unable to ensure any part of the order will be delivered by the required deliver_by date AND you have not shipped any part of the order
 
-                    *'other' - use for any use case not address above "
+                    *'other' - Use for any use case not addressed above "
 
                 },
                 "item_tax_code": {
@@ -270,7 +270,7 @@
                         },
                         "tax" : {
                             "type" : "number",
-                            "description" : "Amount to be refunded/auth that will not be captured for the given item in USD associated with tax that was charged for the item and "
+                            "description" : "Amount to be refunded/auth that will not be captured for the given item in USD associated with tax that was charged for the item"
                         },
                         "shipping_cost" : {
                             "type" : "number",
@@ -295,7 +295,7 @@
                 },
                 "regulatory_fees" : {
                 	"type" : "number",
-                	"description" : "the regulatory fees charge to the customer for the item purchased."
+                	"description" : "The regulatory fees charge to the customer for the item purchased."
                 },
                 "tax_info": {
 					"title": "TaxInfo",
@@ -356,7 +356,7 @@
                 },
                 "alt_shipment_id": {
                     "type": "string",
-                    "description" : "Optional Merchant supplied shipment ID.
+                    "description" : "Optional merchant supplied shipment ID.
 
                     #Logic
 
@@ -380,7 +380,7 @@
                 "request_shipment_method": {
                     "type": "string",
                     "required" : false,
-                    "description" : "the shipping method for the given shipment_id; replaced by actual shipment method used in case of Shipped message
+                    "description" : "the shipping method for the given shipment_id; replaced by actual shipment method used in case of 'Shipped' message
 
                     #Logic
 
@@ -392,7 +392,7 @@
                 },
                 "request_shipment_tracking_number": {
                     "type": "string",
-                    "description" : "packaging tracking number mentioned in Shipped message"
+                    "description" : "Packaging tracking number mentioned in 'Shipped' message"
                 },
                 "request_service_level" : {
                     "type" : "string",
@@ -419,7 +419,7 @@
 
                     #Logic
 
-                    This will be calculated based on when the merchant order is sent the Merchant and their given settings for Fulfilment Time, and Order Cutoff data set at either the account level or shipping method level
+                    This will be calculated based on when the merchant order is sent to the merchant and the merchant's settings for fulfilment time, and order cutoff data set at either the account level or shipping method level
 
                     #Valid Values
 
@@ -432,7 +432,7 @@
 
                     #Logic 
 
-                    The ShippingMethod selected should provide delivery by this date as long as you meet shipping requirements you communicated during shipping set up.   If you use Jet provided labels and ship ontime you should meet this date.  If you use your own shipping labels you can choose to use a carrier other than the one suggested by ShippingMethod as long as the DeliveryByDate is met or exceeded.
+                    The ShippingMethod selected should provide delivery by this date as long as you meet shipping requirements you communicated during shipping set up.   If you use Jet provided labels and ship on time, you should meet this date.  If you use your own shipping labels, you can choose to use a carrier other than the one suggested by ShippingMethod as long as the DeliveryByDate is met or exceeded.
 
                     #Valid Values
 
@@ -445,11 +445,11 @@
 
                     #Logic
 
-                    This will be sent if the Merchant has registered for Jet Shipping Box guidance and set up their shipping box catalog.  We will then pass them the suggested box in their catalog that best fits the items in their shipment based on our boxing algorithm.
+                    This will be sent if the merchant has registered for Jet Shipping Box guidance and set up their shipping box catalog.  We will then pass them the suggested box in their catalog that best fits the items in their shipment based on our boxing algorithm.
 
                     #Valid Values
 
-                    The Box Name of the selected box from the box catalog you have created"
+                    The 'Box Name' of the selected box from the box catalog you have created"
                 },
                 "shipment_tracking_number": {
                     "type": "string",
@@ -469,7 +469,7 @@
                 },
                 "response_shipment_method": {
                     "type": "string",
-                    "description" : "Shipping method used for the given shipment (this is provide by merchant in shipment confirmation)
+                    "description" : "Shipping method used for the given shipment. (This is provided by merchant in shipment confirmation)
 
                     #Valid Values
 
@@ -477,7 +477,7 @@
                 },
                 "expected_delivery_date": {
                     "type": "string",
-                    "description" : "Date/Time that the shipment is expected to be delivered to the customer (this is provide by merchant in shipment confirmation)
+                    "description" : "Date/Time that the shipment is expected to be delivered to the customer. (This is provided by merchant in shipment confirmation)
 
                     #Valid Values
 
@@ -489,11 +489,11 @@
                 },
                 "ship_from_zip_code": {
                     "type": "string",
-                    "description" : "The zip code of the locations from which the customer shipment is being shipped from (this is provide by merchant in shipment confirmation)"
+                    "description" : "The zip code of the locations from which the customer shipment is being shipped from. (This is provided by merchant in shipment confirmation)"
                 },
                 "carrier_pick_up_date": {
                     "type": "string",
-                    "description" : "Date/Time that the carrier pick up the customer shipment from the facility where the shipment originated (this is provide by merchant in shipment confirmation)"
+                    "description" : "Date/Time that the carrier pick up the customer shipment from the facility where the shipment originated. (This is provided by merchant in shipment confirmation)"
                 },
                 "shipment_items": {
                     "type": "array",
@@ -562,7 +562,7 @@
                 "tax_state" : {
                     "type" : "string",
                     "required" : false,
-                    "descrition" : "Two letter abreviation for the state in which tax was collected"
+                    "descrition" : "Two letter abbreviation for the state in which tax was collected"
                 }
             }
         },
@@ -601,11 +601,11 @@
                 "name": {
                     "type": "string",
                     "required" : false,
-                    "description" : " The'ship from location' that you set up from which you should fill and ship the shipment.  
+                    "description" : " The 'ship from location' that you set up from which you should fill and ship the shipment.  
 
                     #Valid Values
 
-                    List of 'ship from location' that have been set up by you"
+                    List of 'ship from location's that have been set up by you"
                 },
                 "url": {
                     "type": "string",
@@ -639,12 +639,12 @@
 
                     #Valid Values
 
-                    List of Merchant SKUs that have been set up by you"
+                    List of merchant SKUs that have been set up by you"
                 },
                 "request_shipment_sku_quantity": {
                     "type": "integer",
                     "required" : true,
-                    "description" : "The quantity of the given merchant SKU that is in the given shipment; once Shipped message recieved, contains actual shipped quantity."
+                    "description" : "The quantity of the given merchant SKU that is in the given shipment; once 'Shipped' message recieved, contains actual shipped quantity."
                 },
                 "request_shipment_cancel_qty": {
                     "type" : "integer",
@@ -660,22 +660,22 @@
                 "base_price" : {
                     "type" : "number",
                     "required": true,
-                    "description" : "The price for the given quantity of the given merchant SKU in the given merchant order EXCLUDING the allocated shipping, tax and shipping tax  "
+                    "description" : "The price for the given quantity of the given merchant SKU in the given merchant order EXCLUDING the allocated shipping, tax, and shipping tax  "
                     },
                 "item_tax" :{
                     "type" : "number",
                     "required": false,
-                    "description" : "the tax being charged on the base_price if applicable  "
+                    "description" : "the tax being charged on the base_price if applicable"
                     },
                 "item_shipping_cost":{
                     "type" : "number",
                     "required": false,
-                    "description" : "The shipping cost that is allocated to this order_item_id if applicable "
+                    "description" : "The shipping cost that is allocated to this order_item_id if applicable"
                     },
                 "item_shipping_tax":{
                     "type" : "number",
                     "required": false,
-                    "description" : "The tax on shipping cost that is allocated to this order_item_id if applicable  "
+                    "description" : "The tax on shipping cost that is allocated to this order_item_id if applicable"
                     }
 
                 }

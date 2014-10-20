@@ -11,23 +11,23 @@
                 "rejected - shipping method not supported",
                 "rejected - ship from location not available",
                 "rejected - item level error"],
-            "description" : "Status to let jet know whether you accept or reject the order, errors that occur at the item level should be given the status 'rejected - item level error' 
+            "description" : "Status to let Jet know whether you accept or reject the order, errors that occur at the item level should be given the status 'rejected - item level error' 
 
             #Valid Values
 
-            *'accepted' - all items in the order will be shipped' 
+            *'accepted' - All items in the order will be shipped' 
 
-            *'rejected - unfulfillable address' - the address requested cannot be shipped to
+            *'rejected - unfulfillable address' - The address requested cannot be shipped to
 
-            *'rejected - shipping method not supported' - the adress requested cannot be shipped to
+            *'rejected - shipping method not supported' - The address requested cannot be shipped to
 
-            *'rejected - ship from location not available' - the ship to location is invalid
+            *'rejected - ship from location not available' - The ship to location is invalid
 
-            *'rejected - item level error' - the error occurred at the item level"
+            *'rejected - item level error' - The error occurred at the item level"
         },
         "alt_order_id": {
             "type": "string",
-            "description" : "Optional Merchant supplied order ID.  Jet will map this ID to Jet's order_id and you can then use this ID in subsequent messages relating to this order."
+            "description" : "Optional merchant supplied order ID.  Jet will map this ID to Jet's order_id and you can then use this ID in subsequent messages relating to this order."
         },
         "order_items": {
             "type": "array",
@@ -54,16 +54,16 @@
                     "emum":[
                         "fulfillable",
                         "nonfulfillable - no inventory",
-                        "nonfulfillable - invalid merchant sku"],
-                    "description" : "value to send jet the status of each item in the order request 
+                        "nonfulfillable - invalid merchant SKU"],
+                    "description" : "Value to send Jet the status of each item in the order request 
 
                     #Valid Values
 
                     *'fulfillable' - the item in the order can be shipped' 
 
-                    *'nonfulfillable - no inventory' - no inventory for this product is available
+                    *'nonfulfillable - no inventory' - No inventory for this product is available
 
-                    *'nonfulfillable - invalid vendor sku' - this sku is no recongized as a valid value"
+                    *'nonfulfillable - invalid merchant SKU' - This is not recognized as a valid value"
                     
                 },
                 "order_item_id": {
@@ -88,7 +88,7 @@
                 },
                 "alt_shipment_id": {
                     "type": "string",
-                    "description" : "Optional Merchant supplied shipment ID.  Jet will map this ID to the Jet's shipment_id and you can then use this ID in subsequent messages relating to this shipment."
+                    "description" : "Optional merchant supplied shipment ID.  Jet will map this ID to the Jet's shipment_id and you can then use this ID in subsequent messages relating to this shipment."
                 },
                 "shipment_items": {
                     "type": "array",
@@ -105,7 +105,7 @@
             "properties": {
                 "merchant_sku": {
                     "type": "string",
-                    "description" : "Merchants unique identifier for a product"
+                    "description" : "Merchant's unique identifier for a product"
                 },
                 "shipment_item_id": {
                     "type": "string",

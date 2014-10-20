@@ -43,7 +43,7 @@
 
                     #Logic
 
-                    Include if separte shipments were defined if an alt_shipment_id has been associated with the shipment_id via the order accept message that will be passed as well."
+                    Include if separate shipments were defined.  If an alt_shipment_id has been associated with the shipment_id via the order, accept message that will be passed as well."
                     
                 },             
                 "shipment_items": {

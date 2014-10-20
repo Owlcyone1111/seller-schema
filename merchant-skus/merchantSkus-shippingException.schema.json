@@ -57,9 +57,9 @@
 
 					#Valid Values
 
-					*the list of shipping carriers set up by you
+					*The list of shipping carriers set up by you
 					
-					*'All' - if the changes should apply to all of your shipping_carriers"
+					*'All' - If the changes should apply to all of your shipping_carriers"
 				},
 				"shipping_method": {
 					"type": "string",
@@ -79,13 +79,13 @@
 
 					#Valid Values
 
-					*'Additonal Charge' - a charge that is added to the default shipping charge 
-
-					*'Override Charge' - a charge that overrides the default shipping charge"
+					*'Additonal Charge' - A charge that is added to the default shipping charge 
+					
+					*'Override Charge' - A charge that overrides the default shipping charge"
 				},
 				"shipping_charge_amount": {
 					"type": "number",
-					"description": "The amount added to your default shipping charge when \"OverrideType\"= \"additional charge\" and the total amount charged when \"OverrideType\" =  \"Override charge\"
+					"description": "The amount added to your default shipping charge when \"OverrideType\"= \"Additional Charge\" and the total amount charged when \"OverrideType\" =  \"Override Charge\"
 
 					#Logic
 
@@ -93,7 +93,7 @@
 				},
 				"is_shipping_restricted": {
 					"type": "boolean",
-					"description": "Indicates whether the Mercant SKU can or cannot be shipped using the specified shipping service (shipping_carrier, shipping_method or service_level). 
+					"description": "Indicates whether the mercant SKU can or cannot be shipped using the specified shipping service (shipping_carrier, shipping_method or service_level). 
 					A value of \"true\" means that the merchant SKU cannot be shipped using the specified shipping service.
 
 					#Logic

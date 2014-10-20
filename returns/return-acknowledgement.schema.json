@@ -6,7 +6,7 @@
 	"properties": {
 		"alt_return_authorization_id": {
 			"type": "string",
-			"description": "Optional merchant supplied return number, allows the merchant to use this number in future messages instead of return_authorization_id. This ID will be included on the Return Documentation that Jet gives to the customer"
+			"description": "Optional merchant supplied return number, which allows the merchant to use this number in future messages instead of return_authorization_id. This ID will be included on the Return Documentation that Jet gives to the customer"
 		},
 		"return_status": {
 			"type": "string",
@@ -17,9 +17,9 @@
 			 ],
 			"description": "The seller acknowledges the receipt of the ReturnNotification or Communicates to Jet that a refund can be passed without needing to have the customer actually send the item back.
 
-			This must be sent back to Jet immediately so any decision to not have the customer actually send back items can be made based on some automatic logic
+			This must be sent back to Jet immediately, so the decision for the customer to send back items can be made.
 
-			#Valid values
+			#Valid Values
 
 			*'acknowledged'			
 			*'refund customer without return'"
@@ -27,7 +27,7 @@
 		"jet_pick_return_location" : {
 			"type": "boolean",
 			"required": true,
-			"description" : "Lets Jet.com know whether the merchant will determine the return location or Jet.com will determine the return location using your pre-configured return locations.  When this field is 'false' the array return location must be completed."
+			"description" : "Lets Jet.com know whether the merchant will determine the return location or Jet.com will determine the return location using your pre-configured return locations.  When this field is 'false', the array return location must be completed."
 		},
 		"return_location" : {
 			"type" : "array",
