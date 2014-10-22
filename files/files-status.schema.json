@@ -45,14 +45,17 @@
             * Acknowledged - file was accepted by Jet.com for processing
             * Processed successfully - all data in file was processed successfully.
             * Processed with errors - there were errors while processing the file, they are reported in 'details' field.
-            "
+            "        
         },
-        "details" : {
-            "type": "array",
-            "items": {
-                "type": "string",
-            },  
-            "description" : "The list of errors encountered during file processing."
+        "error_count" : {
+            "type": "integer",
+            "required": true,
+            "description" : "Number of errors encountered when processing the file."
+        },
+        "error_url" : {
+            "type": "string",
+            "required": true,
+            "description" : "Url to a file with errors encountered when processing the file."
         }
     } 
 }
