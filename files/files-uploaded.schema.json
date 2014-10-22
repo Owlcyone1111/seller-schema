@@ -21,6 +21,12 @@
             * Inventory
             * Price
             "
+        },
+        "file_name" : {
+            "type": "string",
+            "required": true,
+            "description" : "Original file name"  
         }
+
     }
 }
