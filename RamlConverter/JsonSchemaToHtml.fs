@@ -18,6 +18,7 @@ let otherTypes schema =
             yield schema
             if schema.Properties <> null then
                 for KeyValue(name, prop) in schema.Properties do
+                    if not prop.Type.HasValue then failwithf "%s - %s should have type" schema.Title name 
                     match prop, prop.Type.Value with
                     | ArrayType typ, _ -> yield! loop typ
                     | _, JsonSchemaType.Object -> 
@@ -97,7 +98,9 @@ let parseProperty (KeyValue(name, prop: JsonSchema)) =
                     then t.Type.ToString() 
                     else t.Title
                 sprintf "%s []" itemType
-              | _ -> prop.Type.Value.ToString()
+              | _ -> 
+                if not prop.Type.HasValue then failwithf "%s should have type" name 
+                prop.Type.Value.ToString() 
     let name = if prop.Required.HasValue && prop.Required.Value then name + "*" else name
     row name typ prop.Description
 
