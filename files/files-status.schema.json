@@ -55,7 +55,12 @@
         "error_url" : {
             "type": "string",
             "required": true,
-            "description" : "Url to a file with errors encountered when processing the file."
-        }
+            "description" : "Url to a file with errors."
+        },
+        "error_excerpt" : {
+            "type": "string",
+            "required": true,
+            "description" : "First 20 errors."
+        },
     } 
 }
