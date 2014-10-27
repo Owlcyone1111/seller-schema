@@ -2,10 +2,12 @@
 	"product_title": "My Product",
 	"jet_browse_node_id": 100,
 	"jet_retail_sku" : "XHDIFF-0101",
-	"standard_product_codes" : [{	
-		"standard_product_code": "123456789012",
-		"standard_product_code_type": "UPC"
-		}],
+	"standard_product_codes" : [
+		{	
+			"standard_product_code": "123456789012",
+			"standard_product_code_type": "UPC"
+		}
+	],
 	"multipack_quantity": 6,
 	"brand": "My Product's Brand",
 	"manufacturer": "My Product's Manufacturer",
@@ -41,17 +43,31 @@
 	"no_return_fee_adjustment": 0.01,
 	"exclude_from_fee_adjustments": false,
 	"ships_alone":false,
-	"attributes_node_specific" : [{
-		"attribute_id" : 95,
-		"attribute_value" : "80",
-		"attribute_value_unit" : "count"
+	"attributes_node_specific" : [
+		{
+			"attribute_id" : 95,
+			"attribute_value" : "80",
+			"attribute_value_unit" : "count"
 		},
 		{
-		"attribute_id" : 119,
-		"attribute_value" : "aqua",
+			"attribute_id" : 119,
+			"attribute_value" : "aqua",
 		},
 		{
-		"attribute_id" : 2,
-		"attribute_value" : "blue",
-		}]
+			"attribute_id" : 2,
+			"attribute_value" : "blue",
+		}
+	],
+	"main_image_url" : "http://www.mydomain.com/images/myImage.png",
+	"swatch_image_url" : "http://www.mydomain.com/images/myImage.png",
+	"alternate_images" : [
+		{
+			"image_slot_id" : 1,
+			"image_url" : "http://www.mydomain.com/images/myImage.png"
+		},
+		{
+			"image_slot_id" : 2,
+			"image_url" : "http://www.mydomain.com/images/myImage.png"
+		}
+	]	
 }

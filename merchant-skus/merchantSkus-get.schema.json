@@ -276,7 +276,7 @@
 						]
 			},			
 			"maxItems" : 4,
-			"description": "Use this field to indicate if a cautionary statement relating to the choking hazards of children's toys and games applies to your product.  These cautionary statements are defined in Section 24 of the Federal Hazardous Substances Act and Section 105 of the Consumer Product Safety Improvement Act of 2008.  They must be displayed on the product packaging and in certain online and catalog advertisements.  You are responsible for determining if a cautionary statement applies to the product.  This can be verified by contacting the product manufacturer or checking the product packaging.   Cautionary statements that you select will be displayed on the product detail page.  If no cautionary statement applies to the product, select \"no_warning_applicable\".
+			"description": "Use this field to indicate if a cautionary statement relating to the choking hazards of children's toys and games applies to your product.  These cautionary statements are defined in Section 24 of the Federal Hazardous Substances Act and Section 105 of the Consumer Product Safety Improvement Act of 2008.  They must be displayed on the product packaging and in certain online and catalog advertisements.  You are responsible for determining if a cautionary statement applies to the product.  This can be verified by contacting the product manufacturer or checking the product packaging.   Cautionary statements that you select will be displayed on the product detail page.  If no cautionary statement applies to the product, select \"no warning applicable\".
 
 			#Valid Values
 
@@ -404,28 +404,45 @@
 				"$ref": "#/definitions/attribute"				
 			}
 
-		}		
+		},
+		"main_image_url": {
+			"type": "string",
+			"required": true,
+			"description": "URL location where Jet.com can access the image. Please provide at least 300 x 300 pixels. However, please provide the largest size available up to a file size of 1MB"
+		},
+		"swatch_image_url": {
+			"type": "string",
+			"required" : "false",
+			"description": "URL location where Jet.com can access an image of a color or fabric for a given merchant SKU. Please provide at least 300 x 300 pixels. However, please provide the largest size available up to a file size of 1MB"
+		},
+		"alternate_images":{
+			"type":"array",
+			"required":false,
+			"items":{
+				"$ref":"#/definitions/alternate_images"
+			}
+		},		
 	},
 	"definitions": {
-			"attribute" : {
-				"title": "SkuAttribute",
-	            "additionalProperties" : false,
-	            "type": "object",
-	            "properties": {
-	            	"attribute_id" : {
-					"type" : "integer",
-					"description" : "the node Attribute ID Number that you get from Jet provided documentation that corresponds with the attribute you are passing"
-					},
-					"attribute_value" : {
-						"type" : "string",
-						"description" : "The value for the attribute. For example, if the attribute is size you may pass 'large' or if the the attribute is weight, you may pass '22'. For attributes like weight, the unit will be passed in the next field"
-					},
-					"attribute_value_unit" : {
-						"type" : "string",
-						"description" : "If the attribute_value requires a unit, then you pass the unit here."
-					}
-	            }
-			},
+		"attribute" : {
+			"title": "SkuAttribute",
+            "additionalProperties" : false,
+            "type": "object",
+            "properties": {
+            	"attribute_id" : {
+				"type" : "integer",
+				"description" : "the node Attribute ID Number that you get from Jet provided documentation that corresponds with the attribute you are passing"
+				},
+				"attribute_value" : {
+					"type" : "string",
+					"description" : "The value for the attribute. For example, if the attribute is size you may pass 'large' or if the the attribute is weight, you may pass '22'. For attributes like weight, the unit will be passed in the next field"
+				},
+				"attribute_value_unit" : {
+					"type" : "string",
+					"description" : "If the attribute_value requires a unit, then you pass the unit here."
+				}
+            }
+		},
 		"product_codes" : {
 			"title" : "ProductCodes",
 			"additionalProperties" : false,
@@ -469,8 +486,27 @@
 					*GTIN-14
 
 					"
-				},
+				}
 			}
-		}
-		}
+		},
+		"alternate_images": {
+            "title": "AlternateImages",
+            "additionalProperties" : false,
+            "type": "object",
+            "properties": {
+                "image_slot_id": {
+                    "type": "number",
+                    "required": true,
+                    "minimum" : 1,
+                    "maximum" : 8,
+                    "description" : "The slot that the alternate image should be uploaded to.  Jet.com supports up to 8 images (or 8 image slots)."
+                },
+                "image_url": {
+                    "type": "string", 
+                    "required": true,
+                    "description" : "The absolute location where Jet.com can retrieve the image"
+                }
+            }
+        }
+	}
 }
