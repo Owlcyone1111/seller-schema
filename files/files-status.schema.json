@@ -62,5 +62,9 @@
             "required": true,
             "description" : "First 20 errors."
         },
+        "jet_file_id" : {
+            "type" : "string",
+            "description" : "An identification assigned by Jet to track the file.  This identification is used to retrieve the file upload details including processing errors"
+        }
     } 
 }

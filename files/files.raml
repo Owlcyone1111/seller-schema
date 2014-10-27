@@ -1,21 +1,13 @@
 #%RAML 0.8
 
-title: Files
-description: This API provides all methods required to create a file upload.  These methods should be used to upload file schemas from the bulk operations schema.  
+title: File Upload
+description: This API provides all methods required to create a file upload.  These methods should be used to upload file schemas in the bulk operations schema.  
 baseUri: http://merchant-api.test.jet.com/api
 version: v0.1
 protocols: [HTTPS]
 mediaType: application/json
 
 /files:
-    get:
-        description: Returns list of upload details
-        responses:
-            200:
-                body:
-                    application/json:
-                        schema: !include files-links.schema.json
-                        exmaple: !include files-links.exmaple.json
     /uploadToken:
         get:
             description: Creates upload token which can be used to upload file to Jet.com
@@ -45,5 +37,5 @@ mediaType: application/json
                 200:
                     body:
                         application/json:
-                            schema: !include files-token.schema.json
-                            exmaple: !include files-token.exmaple.json
+                            schema: !include files-status.schema.json
+                            exmaple: !include files-status.exmaple.json

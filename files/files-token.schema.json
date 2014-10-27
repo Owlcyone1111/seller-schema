@@ -10,6 +10,10 @@
         "expires_in_seconds": {
             "type": "integer",
             "description" : "Time till token expiration. If upload cannot be made in time, new token must be requested."
+        },
+        "jet_file_id" : {
+            "type" : "string",
+            "description" : "An identification assigned by Jet to track the file.  This identification is used to retrieve the file upload details including processing errors"
         }
     }
 }
