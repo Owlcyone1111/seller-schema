@@ -41,6 +41,7 @@
 			"
 		},
 		"order_balance_details":{
+            "type" : "object",
 			"required": true,
 			"items":{
 				"$ref":"#/definitions/settlement_report_order_details"
@@ -52,6 +53,7 @@
 			"description": "The total value of orders that is settled in this settlement report",
 		},
 		"return_balance_details":{
+            "type" : "object",
 			"required": true,
 			"items":{
 				"$ref":"#/definitions/settlement_report_return_details"
@@ -62,7 +64,12 @@
 			"required": true,
 			"description": "The total value of orders that is settled in this settlement report",
 		},
-		"settlement_value": {
+		"jet_adjustment": {
+            "type": "number",
+            "required": true,
+            "description": "A credit given to a merchant or fee taken from the merchant",
+        },
+        "settlement_value": {
 			"type": "number",
 			"required": true,
 			"description": "The total value of orders that is settled in this settlement report",

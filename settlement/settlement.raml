@@ -1,7 +1,7 @@
 #%RAML 0.8
 
 title: Settlement
-description: The Settlement API provides methods to retrieve details regarding merchant payment settlement for Jet.com.  
+description: The Settlement API provides methods to retrieve all details regarding merchant payment for sold on Jet.com. This schema also provides settlement information for customer generated returns where Jet must refund the customer.
 baseUri: http://merchant-api.test.jet.com/api
 version: v0.1
 protocols: [HTTPS]
@@ -37,7 +37,7 @@ mediaType: application/json
                     200:
                         body:
                             application/json:
-                                schema: !include settlement-order.schema.json
+                                schema: !include settlement-orders.schema.json
                                 example: !include settlement-orders.example.json
                     404:
                         description: The requested resource could not be found.

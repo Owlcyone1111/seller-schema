@@ -43,11 +43,13 @@
 					}
 				},
 				"units": {
+					"type":"array",
 					"items":{
 						"$ref":"#/definitions/unit"
 					}
 				},
 				"validation" : {
+					"type":"object",
 					"items":{
 						"$ref":"#/definitions/validation"
 					}

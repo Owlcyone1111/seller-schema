@@ -2,7 +2,9 @@
 	"jet_node_id" : 9000218,
 	"jet_node_name" : "Dresses",
 	"jet_node_path" : "Clothing, Shoes & Accessories/Women's Clothing/Dresses",
-	"amazon_node_id" : 9000990,
+	"amazon_node_id" : [ 
+		9000990
+	],
 	"parent_id" : 9000213,
 	"jet_level" : 2,
 	"suggested_tax_code" : "all_purpose"

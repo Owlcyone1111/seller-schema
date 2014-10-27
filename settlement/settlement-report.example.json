@@ -16,7 +16,7 @@
 		"product_cost" : 0.00		
 	},
 	"order_balance" : 4572.72,
-	"return_balance_details" : 	{
+	"return_balance_details" : {
 		"merchant_price" : -325.72,
 		"jet_variable_commission" : 32.57,
 		"fixed_commission" : 13.03,
@@ -28,5 +28,6 @@
 		"product_cost" : 0.00		
 	},
 	"return_balance" : -315.62,
+	"jet_adjustment" : 0.00,
 	"settlement_value" : 4257.10
 }
