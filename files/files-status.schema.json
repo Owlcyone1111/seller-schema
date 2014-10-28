@@ -57,10 +57,14 @@
             "required": true,
             "description" : "Url to a file with errors."
         },
-        "error_excerpt" : {
-            "type": "string",
+         "error_excerpt" : {
+            "type": "array",
             "required": true,
-            "description" : "First 20 errors."
+            "description" : "First 20 errors.",
+            "items": {
+                "type": "string",
+                "description": "Error description with location in file."
+            }
         },
         "jet_file_id" : {
             "type" : "string",
