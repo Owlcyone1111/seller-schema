@@ -377,17 +377,14 @@
 		},
 		"main_image_url": {
 			"type": "string",
-			"required": true,
 			"description": "URL location where Jet.com can access the image. Please provide at least 300 x 300 pixels. However, please provide the largest size available up to a file size of 1MB"
 		},
 		"swatch_image_url": {
 			"type": "string",
-			"required" : "false",
 			"description": "URL location where Jet.com can access an image of a color or fabric for a given merchant SKU. Please provide at least 300 x 300 pixels. However, please provide the largest size available up to a file size of 1MB"
 		},
 		"alternate_images":{
 			"type":"array",
-			"required":false,
 			"items":{
 				"$ref":"#/definitions/alternate_images"
 			}
