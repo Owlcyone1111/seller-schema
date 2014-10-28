@@ -300,7 +300,7 @@
 			"minimum" : 0,
 			"description": "Number of business days from receipt of an order for the given merchant SKU until it will be shipped (only populate if it is different than your account default).
 
-			#Valid values
+			#Valid Values
 
 			0 = ships the day the OrderMessage is received
 
@@ -315,7 +315,7 @@
 			"minimum" : 0.01,
 			"description": "Manufacturer's suggested retail price or list price for the product.
 
-			#Valid values
+			#Valid Values
 
 			A number with up to 18 digits allowed to the left of the decimal point and 2 digits to the right of the decimal point. Commas or currency symbols are not allowed."
 		},
@@ -324,7 +324,7 @@
 			"minimum" : 0.01,
 			"description": "For MAP (Minimum Advertised Price) based pricing.  If you don't know what this term means, this function probably does not apply to you.
 
-			#Valid values
+			#Valid Values
 
 			A number with up to 18 digits allowed to the left of the decimal point and 2 digits to the right of the decimal point. Commas or currency symbols are not allowed."
 		},
@@ -333,7 +333,7 @@
 			"enum" : ["type0","type1","type2","type3","type4"],
 			"description": "The type of rules that need to be followed when displaying Jet savings on item that brings the item's effective price below MAP
 
-			#Valid values
+			#Valid Values
 
 			*'type0'- A user is able to see sub MAP pricing for this item even if they are not logged in
 
@@ -347,7 +347,80 @@
 		},	
 		"product_tax_code": {
 			"type": "string",
-			"description": "Jet's standard code for the tax properties of a given product."
+			"description": "Jet's standard code for the tax properties of a given product.
+
+			#Valid Values
+
+			*'Breast Pumps'
+			*'Car Seats'
+			*'Disposable Infant Diapers'
+			*'Disposable Wipes'
+			*'Infant Clothing'
+			*'Comic Books'
+			*'Textbooks'
+			*'Bathing Suits'
+			*'Costumes'
+			*'Formal Clothing'
+			*'Fur Clothing'
+			*'General Clothing'
+			*'Handkerchiefs'
+			*'Headbands'
+			*'Safety Clothing'
+			*'Shoe Insoles'
+			*'Agricultural Machine Oils'
+			*'Agricultural Machinery'
+			*'Beverages with 51 to 99 Percent Juice'
+			*'Bottled Water Plain'
+			*'Candy'
+			*'Candy with Flour'
+			*'Carbonated Soft Drinks'
+			*'Cocktail Mix'
+			*'Drinks under 50 percent juice'
+			*'General Grocery Items'
+			*'Sparkling Water'
+			*'Adult Diapers'
+			*'Bandages and First Aid Kits'
+			*'Braces and Supports'
+			*'Contact Lens Solution'
+			*'Contraceptives'
+			*'Crutches and Canes'
+			*'Diabeties Supplies'
+			*'Dietary Supplements'
+			*'Feminine Hygiene Products'
+			*'Flouride Toothpaste'
+			*'Medicated Personal Care Items'
+			*'Mobility Aids'
+			*'Oral Care Products'
+			*'OTC Medication'
+			*'Smoking Cessation'
+			*'SPF Suncare Products'
+			*'Thermometers'
+			*'Wheel Chairs'
+			*'Fertilizer'
+			*'Pesticides'
+			*'Plant Seeds'
+			*'Paper Products'
+			*'Toilet Paper'
+			*'Patient Monitoring Products'
+			*'Solar Devices'
+			*'Jet Membership Fee'
+			*'Animal Supplements'
+			*'Livestock Feed'
+			*'OTC Pet Meds'
+			*'Pet Foods'
+			*'Generic Taxable Product'
+			*'Non Taxable Product'
+			*'Computers and Computer Components'
+			*'Energystar Appliances'
+			*'Generators '
+			*'Hurricane Prepardness Supplies'
+			*'Productivity Software'
+			*'School Supplies'
+			*'Watersense Appliances'
+			*'Athletic Clothing'
+			*'Helmets'
+			*'Non-Motorized Boats'
+			*'Warranties'"
 		},
 		"no_return_fee_adjustment": {
 			"type": "number",
@@ -355,7 +428,7 @@
 
 			If you want to increase the commission you are willing to pay from a base rate of 15% to 17%, then you should enter '0.02'
 
-			#Valid values
+			#Valid VSalues
 
 			A mumber with up to 1 digit allowed to the left of the deimal point and 2 digits to the right of the decimal point."
 		},

@@ -10,12 +10,8 @@
         },
         "fulfillment_node" : {
             "type": "string",
-            "description" : "Optional merchant-supplied Fulfillment Node Name. 
-            #Logic
-
-            If provided, this field directs merchant to send the order from the fulfillment node set up in merchant portal.
-            "
-            },
+            "description" : "The fulfillment node that the order should be shipped from"
+        },
         "alt_order_id": {
             "type": "string",
             "description" : "Optional merchant supplied order ID. 
@@ -100,9 +96,6 @@
             "items": {
                 "$ref": "#/definitions/shipment"
             }
-        },
-        "ship_from_location": {
-            "$ref": "#/definitions/ship_from_location"
         }
     },
     "definitions": {
@@ -592,26 +585,6 @@
     				"description": "Amount at the state level"
     			}
     		}
-        },
-        "ship_from_location": {
-            "title": "ShipFromLocation",
-            "additionalProperties" : false,
-            "type": "object",
-            "properties": {
-                "name": {
-                    "type": "string",
-                    "required" : false,
-                    "description" : " The 'ship from location' that you set up from which you should fill and ship the shipment.  
-
-                    #Valid Values
-
-                    List of 'ship from location's that have been set up by you"
-                },
-                "url": {
-                    "type": "string",
-                    "required" : false
-                }
-            }
         },
         "shipping_item": {
             "title": "ShippingItem",

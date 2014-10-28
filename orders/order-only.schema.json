@@ -10,11 +10,7 @@
         },
         "fulfillment_node" : {
             "type": "string",
-            "description" : "Optional merchant-supplied fulfillment node name. 
-            #Logic
-
-            If provided, this field directs merchant to send the order from the fulfillment node set up in merchant portal.
-            "
+            "description" : "The fulfillment node that the order should be shipped from"
         },
         "alt_order_id": {
             "type": "string",
@@ -97,9 +93,6 @@
         },
        "order_detail": {
             "$ref": "#/definitions/order_detail"
-        },
-        "ship_from_location": {
-                    "$ref": "#/definitions/ship_from_location"
         },
         "shipments" : {
           "$ref": "#/definitions/order_only_shipment"  
@@ -535,26 +528,6 @@
                     "type" : "number",
                     "required": false,
                     "description" : "The tax on shipping cost that is allocated to this order_item_id if applicable"
-                }
-            }
-        },
-         "ship_from_location": {
-            "title": "ShipFromLocation",
-            "additionalProperties" : false,
-            "type": "object",
-            "properties": {
-                "name": {
-                    "type": "string",
-                    "required" : false,
-                    "description" : " The'ship from location' that you set up from which you should fill and ship the shipment.  
-
-                    #Valid Values
-
-                    List of 'ship from location' that have been set up by you"
-                },
-                "url": {
-                    "type": "string",
-                    "required" : false
                 }
             }
         },
