@@ -23,7 +23,7 @@
 
             #Valid Values
 
-            *'true' - The merchant agrees to wholly pay the return charge to jet.com from the return notification
+            *'true' - The merchant agrees to wholly pay the return charge to Jet.com from the return notification
 
             *'false' - The merchant disagrees with the return charge and will enter a disputed charge with Jet.com"
         },
@@ -62,7 +62,7 @@
 
                     #Logic
 
-                    Required to indicate the quantity of the given item to be returned/refunded. This should only be used if part of the order was shipped BEFORE it was realized that some of the items could not be shipped.  If you are aware that you cannot fill the order completely before a portion has shipped, you should send an order-reject message. "
+                    Required to indicate the quantity of the given item to be returned/refunded. This should only be used if part of the order was shipped BEFORE it was realized that some of the items could not be shipped.  If you are aware that you cannot fill the order completely before a portion has shipped, you should send an order-reject message."
                 },
                 "return_refund_feedback" : {
                 	"type" : "string",
@@ -86,7 +86,7 @@
                 },
                 "notes" :{
                     "type" : "string",
-                    "description" : "provide additional information about why the item was refunded for lower than the full amount"
+                    "description" : "Provide additional information about why the item was refunded for lower than the full amount"
                 },
                 "refund_amount" : {
                 	"title" : "price_adjustment",

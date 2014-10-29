@@ -97,7 +97,7 @@
         },
         "agree_to_return_charge" : {
             "type" : "boolean",
-            "description" : "This field set be order refund message. Specifies if the merchant agrees to the return charge for the return notification 
+            "description" : "This field set by order refund message. Specifies if the merchant agrees to the return charge for the return notification 
 
             #Valid Values
 
@@ -138,7 +138,7 @@
                     "return_quantity":{
                         "type":"integer",
                         "required": true,
-                        "description":"the quantity of the given 'merchant_sku' that is being returned"
+                        "description":"The quantity of the given 'merchant_sku' that is being returned"
                     },
                     "reason":{
                         "type":"string",
@@ -154,7 +154,7 @@
                                 "missing parts or accessories",
                                 "shipping box not damaged BUT item is damaged",
                                 "shipping box is damaged AND item is damaged",
-                                "defective/does no work properly",
+                                "defective/does not work properly",
                                 "accidental order"],
                         "description":"The reason provided by the customer for the return
 
@@ -163,6 +163,8 @@
                         *'no longer need/want'
 
                         *'better price available'
+
+                        *'unauthorized purchase'
 
                         *'missed estimated delivery date (package never arrived)'
 
@@ -180,9 +182,7 @@
 
                         *'defective/does not work properly'
 
-                        *'accidental order'
-
-                        *'unauthorized purchase'"
+                        *'accidental order'"
                     },
                     "requested_refund_amount" : {
                     "title" : "RequestedRefundAmount",
@@ -261,7 +261,7 @@
                 "total_quantity_returned" : {
                     "type" : "integer",
                     "required" : true,
-                    "description" : "Quanitity of the given item that was cancelled
+                    "description" : "Quantity of the given item that was cancelled
 
                     #Logic
 
@@ -325,6 +325,5 @@
                 }
             }
         }
-
     }
 }
