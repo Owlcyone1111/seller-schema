@@ -10,12 +10,15 @@
             "items": {
                 "title": "ShippingExceptionNodeArray",
                 "type": "object",
-                "fulfillment_node_id": {
-                    "type": "string",
-                    "description": "Jet's unique ID for a given fulfillment node"
-                },
-                "shipping_exceptions": {
-                    "$ref": "#/definitions/shipping_exception_array"
+                "additionalProperties": false,
+                "properties": {
+                    "fulfillment_node_id": {
+                        "type": "string",
+                        "description": "Jet's unique ID for a given fulfillment node"
+                    },
+                    "shipping_exceptions": {
+                        "$ref": "#/definitions/shipping_exception_array"
+                    }
                 }
             }
         }
@@ -24,7 +27,7 @@
         "shipping_exception_array": {
             "type": "array",
             "items": {
-                "title": "ShippingException",
+                "title": "ShippingExceptionItem",
                 "type": "object",
                 "additionalProperties": false,
                 "description": "Shipping exception of particular fulfillment node",
