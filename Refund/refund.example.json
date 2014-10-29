@@ -1,0 +1,18 @@
+{
+	"order_id" : "9b13bdd68c314d1b9c8b93277dea4da1",
+	"alt_order_id" : "12345678",
+	"items" : [{
+		"order_item_id" : "1123456789",
+		"alt_order_item_id" : "A1223456",
+		"total_quantity_returned" : 1,
+		"order_return_refund_qty" : 1,
+		"refund_reason" : "better price available",
+		"refund_amount" : {
+			"principal" : 12.75,
+			"tax" : 0.90,
+			"shipping_cost" : 1.00,
+			"shipping_tax" : 0.07
+		}
+
+	}]
+}
