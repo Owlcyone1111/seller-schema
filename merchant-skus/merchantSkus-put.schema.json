@@ -535,7 +535,7 @@
             "type": "object",
             "properties": {
                 "image_slot_id": {
-                    "type": "number",
+                    "type": "integer",
                     "required": true,
                     "minimum" : 1,
                     "maximum" : 8,
