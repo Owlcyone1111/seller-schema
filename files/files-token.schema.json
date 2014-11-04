@@ -5,11 +5,11 @@
         "url":{
             "type": "string",
             "required": true,
-            "description" : "Url for file upload. To upload file, Http PUT request with header 'x-ms-blob-type' : 'BlockBlob' can be issued."
+            "description" : "URL for file upload. To upload file, Http PUT request with header 'x-ms-blob-type' : 'BlockBlob' can be issued."
         },
         "expires_in_seconds": {
             "type": "integer",
-            "description" : "Time till token expiration. If upload cannot be made in time, new token must be requested."
+            "description" : "Time until token expiration. If upload cannot be made in time, new token must be requested."
         },
         "jet_file_id" : {
             "type" : "string",

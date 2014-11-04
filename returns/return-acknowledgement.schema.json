@@ -19,7 +19,7 @@
 				 "acknowledged",
 				 "refund customer without return"
 			 ],
-			"description": "The seller acknowledges the receipt of the ReturnNotification or Communicates to Jet that a refund can be passed without needing to have the customer actually send the item back.
+			"description": "The seller acknowledges the receipt of the ReturnNotification or communicates to Jet that a refund can be passed without needing to have the customer actually send the item back.
 
 			This must be sent back to Jet immediately, so the decision for the customer to send back items can be made.
 

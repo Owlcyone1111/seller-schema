@@ -5,7 +5,7 @@
         "url":{
             "type": "string",
             "required": true,
-            "description" : "Url for file upload. To upload file, Http PUT request with header 'x-ms-blob-type' : 'BlockBlob' can be issued."
+            "description" : "URL for file upload. To upload file, Http PUT request with header 'x-ms-blob-type' : 'BlockBlob' can be issued."
         },
         "file_type": {
             "type": "string",
@@ -16,7 +16,7 @@
                             "Price"
                         ],
             "description" : "Type of the file uploaded.
-            #Valid values:
+            #Valid Values:
             * MerchantSKUs
             * Inventory
             * Price
@@ -41,10 +41,10 @@
                             "Processed with errors"
                         ],
             "description" : "Status of processing hy Jet.com.
-            #Valid values:
-            * Acknowledged - file was accepted by Jet.com for processing
-            * Processed successfully - all data in file was processed successfully.
-            * Processed with errors - there were errors while processing the file, they are reported in 'details' field.
+            #Valid Values:
+            * Acknowledged - File was accepted by Jet.com for processing.
+            * Processed successfully - All data in file was processed successfully.
+            * Processed with errors - There were errors while processing the file.  They are reported in 'details' field.
             "        
         },
         "error_count" : {
@@ -68,7 +68,7 @@
         },
         "jet_file_id" : {
             "type" : "string",
-            "description" : "An identification assigned by Jet to track the file.  This identification is used to retrieve the file upload details including processing errors"
+            "description" : "An identification assigned by Jet to track the file.  This identification retrieves the file upload details including processing errors"
         }
     } 
 }

@@ -16,20 +16,20 @@
             "type": "array",
             "required":true,
             "items": {
-                "$ref": "#/definitions/order_return_refund_item"
+                "$ref": "#/definitions/order_refund_item"
             }
         },
     },
     "definitions": {
-        "order_return_refund_item": {
-            "title": "OrderReturnRefundItem",
+        "order_refund_item": {
+            "title": "OrderRefundItem",
             "type": "object",
             "additionalProperties" : false,
             "properties": {
                 "order_item_id": {
                     "type": "string",
                     "required":true,
-                    "description" : "Jet's unique identifier for an item in a merchant order"
+                    "description" : "Jet's unique identifier for an item in a merchant order."
                 },
                 "alt_order_item_id": {
                     "type": "string",
@@ -37,16 +37,16 @@
                 },
                 "total_quantity_returned" : {
                     "type" : "integer",
-                    "description" : "Quanitity of the given item that was cancelled
+                    "description" : "Quanitity of the given item that was cancelled.
 
                     #Logic
 
-                    Required to indicate the total quantity of units returned for the order item.  This quantity should only include the units that were returned, any cancelled items should not be included if the items were cancelled before the return"
+                    Required to indicate the total quantity of units returned for the order item.  This quantity should only include the units that were returned. Any cancelled items should not be included if the items were cancelled before the return"
                 },
                 "order_return_refund_qty" : {
                     "type" : "integer",
                     "required" : true,
-                    "description" : "Quanitity of the given item that was returned
+                    "description" : "Quanitity of the given item that was returned.
 
                     #Logic
 
@@ -59,61 +59,64 @@
                                 "no longer need/want",
                                 "better price available",
                                 "unauthorized purchase",
-                                "missed estimated delivery date (package never arrived)",
-                                "missed estimated delivery date (package arrived)",
-                                "different from what was ordered",
-                                "different from website description",
-                                "missing parts or accessories",
-                                "shipping box not damaged BUT item is damaged",
-                                "shipping box is damaged AND item is damaged",
-                                "defective/does not work properly",
+                                "package never arrived",
+                                "package arrived later than promised delivery date",
+                                "item was different than website description",
+                                "shipping box and item are both damaged",
+                                "item is defective/does not work properly",
+                                "item is damaged/broken",
                                 "accidental order",
-                                "item lost in delivery to customer",
-                                "item lost in return to merchant",
-                                "customer initiated return",
-                                "merchant initiated return",
-                                "recall",
-                				"other",
+                                "received wrong item than what was ordered",
                 				],
-                	"description" : "The reason this refund was initiated 
+                	"description" : "The reason this refund was initiated.
 
                 	#Valid Values
 
                     *'no longer need/want'
-
+                    
                     *'better price available'
-
+                    
                     *'unauthorized purchase'
-
-                    *'missed estimated delivery date (package never arrived)'
-
-                    *'missed estimated delivery date (package arrived)'
-
-                    *'different from what was ordered'
-
-                    *'different from website description'
-
-                    *'missing parts or accessories'
-
-                    *'shipping box not damaged BUT item is damaged'
-
-                    *'shipping box is damaged AND item is damaged'
-
-                    *'defective/does not work properly'
-
+                    
+                    *'package never arrived'
+                    
+                    *'package arrived later than promised delivery date'
+                    
+                    *'item was different than website description'
+                    
+                    *'shipping box and item are both damaged'
+                    
+                    *'item is defective/does not work properly'
+                    
+                    *'item is damaged/broken'
+                    
                     *'accidental order'
+                    
+                    *'received wrong item than what was ordered'"
+                },
+                "refund_feedback" : {
+                    "type" : "string",
+                    "enum" : [
+                                "customer opened item",
+                                "not shipped in original packaging",
+                                "item damaged",
+                                "other",
+                                ],
+                    "description" : "The reason this refund is less than the full amount. 
 
-                    *'item lost in delivery to customer'
+                    #Valid Values
 
-                    *'item lost in delivery to merchant'
+                    *'customer opened item' 
 
-                    *'customer initiated return' 
+                    *'not shipped in original packaging' 
 
-                    *'merchant initated return'
-
-                    *'recall'
-
-                    *'other'"
+                    *'item damaged' - should only be used if the reason for the return was not that it was damaged when the customer received it 
+                    
+                    *'other' - please give additional information in the notes field"
+                },
+                "notes" :{
+                    "type" : "string",
+                    "description" : "Provide additional information about why the item was refunded for lower than the full amount."
                 },
                 "refund_amount" : {
                 	"title" : "price_adjustment",
@@ -128,17 +131,17 @@
                 		"tax" : {
                 			"type" : "number",
                             "required":true,
-                			"description" : "Amount to be refunded for the given item in USD associated with tax that was charged for the item"
+                			"description" : "Amount to be refunded for the given item in USD associated with tax that was charged for the item."
                 		},
                 		"shipping_cost" : {
                 			"type" : "number",
                             "required":true,
-                			"description" : "Amount to be refunded for the given item in USD associated with the shipping cost that was allocated to this item"
+                			"description" : "Amount to be refunded for the given item in USD associated with the shipping cost that was allocated to this item."
                 		},
                 		"shipping_tax" : {
                 			"type" : "number",
                             "required":true,
-                			"description" : "Amount to be refunded for the given item in USD associated with the tax that was charged on shipping"
+                			"description" : "Amount to be refunded for the given item in USD associated with the tax that was charged on shipping."
                 		}
                 	}
                 }

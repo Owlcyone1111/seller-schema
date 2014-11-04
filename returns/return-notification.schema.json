@@ -11,7 +11,7 @@
             },
         "refund_without_return" : {
 			"type":"boolean",
-			"description" : "If this is true, Jet has deemed that this item should not be returned, but the customer still should be refunded"
+			"description" : "If this is true, Jet has deemed that this item should not be returned, but the customer still should be refunded."
 		},
         "return_status": {
             "type": "string",
@@ -22,7 +22,7 @@
                  "refund customer without return",
                  "completed by merchant"
              ],
-            "description": "Current status of the return"
+            "description": "Current status of the return."
         }, 
 		"merchant_order_id": {
 			"type": "string",
@@ -33,11 +33,11 @@
             "type": "string",
             "required": true,
             "description" :  "Jet's human readable order ID number that may have a small chance of collision overtime"
-            },		
+        },		
 		"alt_order_id": {
 			"type": "string",
 			"required": true,
-			"description": "Optional merchant supplied order ID that should have been established in OrderAcknowledgement in order to use in this message
+			"description": "Optional merchant supplied order ID that should have been established in OrderAcknowledgement in order to use in this message.
 
 			#Logic
 
@@ -46,7 +46,7 @@
 		"return_date": {
 			"type": "string",
 			"required": true,
-			"description": "The date that the customer requested a return authorization
+			"description": "The date that the customer requested a return authorization.
 
 			#Valid Values
 
@@ -60,12 +60,12 @@
 		},		
 		"shipping_carrier": {
 			"type": "string",
-			"description": "Shipping method used for the given return shipment
+			"description": "Shipping method used for the given return shipment.
 
 			#Logic
 
 			This will be populated with the carrier Jet has chosen if Jet is paying for the return shipping label.  
-			If the merchant pays for the return shipping label, the carrier that merchant uses for returns will be populated"	
+			If the merchant pays for the return shipping label, the carrier that merchant uses for returns will be populated."	
 		},
 		"tracking_number": {
 			"type": "string",
@@ -77,7 +77,7 @@
 		},
 		"merchant_return_charge": {
 			"type": "number",
-			"description": "The charge that the merchant is required to pay Jet for the return
+			"description": "The charge that the merchant is required to pay Jet for the return.
 
 			#Logic
 
@@ -85,7 +85,7 @@
 		},
         "alt_return_authorization_id": {
             "type": "string",
-            "description": "This field is set by return acknowledgement message. Optional merchant supplied return number, allows the merchant to use this number in future messages instead of return_authorization_id. This ID will be included on the Return Documentation that Jet gives to the customer"
+            "description": "This field is set by return acknowledgement message. Optional merchant supplied return number, allows the merchant to use this number in future messages instead of return_authorization_id. This ID will be included on the Return Documentation that Jet gives to the customer."
         },
         "jet_pick_return_location" : {
             "type": "boolean",
@@ -107,7 +107,7 @@
         },
         "agree_to_return_charge" : {
             "type" : "boolean",
-            "description" : "This field set by order refund message. Specifies if the merchant agrees to the return charge for the return notification 
+            "description" : "This field set by order refund message. Specifies if the merchant agrees to the return charge for the return notification. 
 
             #Valid Values
 
@@ -126,7 +126,7 @@
                     "order_item_id": {
                         "type": "string",
                         "required" : true,
-                        "description" : "Jet's unique identifier for an item in a merchant order"
+                        "description" : "Jet's unique identifier for an item in a merchant order."
                     },
                     
                     "alt_order_item_id": {
@@ -139,60 +139,58 @@
                     },
                     "merchant_sku":{
                         "type":"string",
-                        "description":"The 'merchant_sku' that is being returned"
+                        "description":"The merchant SKU that is being returned."
                     },
                     "merchant_sku_title":{
                         "type":"string",
-                        "description":"The short description of the 'merchant_sku' that is being returned"
+                        "description":"The short description of the merchant SKU that is being returned."
                     },
                     "return_quantity":{
                         "type":"integer",
                         "required": true,
-                        "description":"The quantity of the given 'merchant_sku' that is being returned"
+                        "description":"The quantity of the given merchant SKU' that is being returned."
                     },
-                    "reason":{
-                        "type":"string",
-                        "required": true,
-                        "enum":[
-                                "no longer need/want",
-                                "better price available",
-                                "unauthorized purchase",
-                                "missed estimated delivery date (package never arrived)",
-                                "missed estimated delivery date (package arrived)",
-                                "different from what was ordered",
-                                "different from website description",
-                                "missing parts or accessories",
-                                "shipping box not damaged BUT item is damaged",
-                                "shipping box is damaged AND item is damaged",
-                                "defective/does not work properly",
-                                "accidental order"],
-                        "description":"The reason provided by the customer for the return
+                    "reason" : {
+                        "type" : "string",
+                        "required":true,
+                        "enum" : [
+                                    "no longer need/want",
+                                    "better price available",
+                                    "unauthorized purchase",
+                                    "package never arrived",
+                                    "package arrived later than promised delivery date",
+                                    "item was different than website description",
+                                    "shipping box and item are both damaged",
+                                    "item is defective/does not work properly",
+                                    "item is damaged/broken",
+                                    "accidental order",
+                                    "received wrong item than what was ordered",
+                                    ],
+                        "description" : "The reason this return was initiated. 
 
                         #Valid Values
 
                         *'no longer need/want'
-
+                        
                         *'better price available'
-
+                        
                         *'unauthorized purchase'
-
-                        *'missed estimated delivery date (package never arrived)'
-
-                        *'missed estimated delivery date (package arrived)'
-
-                        *'different from what was ordered'
-
-                        *'different from website description'
-
-                        *'missing parts or accessories'
-
-                        *'shipping box not damaged BUT item is damaged'
-
-                        *'shipping box is damaged AND item is damaged'
-
-                        *'defective/does not work properly'
-
-                        *'accidental order'"
+                        
+                        *'package never arrived'
+                        
+                        *'package arrived later than promised delivery date'
+                        
+                        *'item was different than website description'
+                        
+                        *'shipping box and item are both damaged'
+                        
+                        *'item is defective/does not work properly'
+                        
+                        *'item is damaged/broken'
+                        
+                        *'accidental order'
+                        
+                        *'received wrong item than what was ordered'"
                     },
                     "requested_refund_amount" : {
                     "title" : "RequestedRefundAmount",
@@ -205,15 +203,15 @@
                         },
                         "tax" : {
                             "type" : "number",
-                            "description" : "Amount to be refunded for the given item in USD associated with tax that was charged for the item"
+                            "description" : "Amount to be refunded for the given item in USD associated with tax that was charged for the item."
                         },
                         "shipping_cost" : {
                             "type" : "number",
-                            "description" : "Amount to be refunded for the given item in USD associated with the shipping cost that was allocated to this item"
+                            "description" : "Amount to be refunded for the given item in USD associated with the shipping cost that was allocated to this item."
                         },
                         "shipping_tax" : {
                             "type" : "number",
-                            "description" : "Amount to be refunded for the given item in USD associated with the tax that was charged on shipping"
+                            "description" : "Amount to be refunded for the given item in USD associated with the tax that was charged on shipping."
                         }
                     }
                 }                
@@ -227,27 +225,27 @@
             "properties" : {
                 "location_name" : {
                     "type" : "string",
-                    "description" : "This is the name of the return location"
+                    "description" : "This is the name of the return location."
                 },
                 "location_address_1" : {
                     "type" : "string",
-                    "description" : "The first address line for the return location"
+                    "description" : "The first address line for the return location."
                 },
                 "location_address_2" : {
                     "type" : "string",
-                    "description" : "The second address line for the return location"
+                    "description" : "The second address line for the return location."
                 },
                 "location_city" : {
                     "type" : "string",
-                    "description" : "The city, town, or village of the return location"
+                    "description" : "The city, town, or village of the return location."
                 },
                 "location_state" : {
                     "type" : "string",
-                    "description" : "The state of the return location"
+                    "description" : "The state of the return location."
                 },
                 "location_postal_code" : {
                     "type" : "string",
-                    "description" : "The postal code for the return location"
+                    "description" : "The postal code for the return location."
                 }
             }
         },
@@ -271,7 +269,7 @@
                 "total_quantity_returned" : {
                     "type" : "integer",
                     "required" : true,
-                    "description" : "Quantity of the given item that was cancelled
+                    "description" : "Quantity of the given item that was cancelled.
 
                     #Logic
 
@@ -280,7 +278,7 @@
                 "order_return_refund_qty" : {
                     "type" : "integer",
                     "required" : true,
-                    "description" : "Quanitity of the given item that was returned
+                    "description" : "Quanitity of the given item that was returned.
 
                     #Logic
 
@@ -294,7 +292,7 @@
                                 "item damaged",
                                 "other",
                                 ],
-                    "description" : "The reason this refund is less than the full amount 
+                    "description" : "The reason this refund is less than the full amount.
 
                     #Valid Values
 
@@ -302,13 +300,13 @@
 
                     *'not shipped in original packaging' 
 
-                    *'item damaged' - Should only be used if the reason for the return was not that it was damaged when the customer received it 
+                    *'item damaged' - should only be used if the reason for the return was not that it was damaged when the customer received it 
                     
-                    *'other' - Please give additional information in the notes field"
+                    *'other' - please give additional information in the notes field"
                 },
                 "notes" :{
                     "type" : "string",
-                    "description" : "Provide additional information about why the item was refunded for lower than the full amount"
+                    "description" : "Provide additional information about why the item was refunded for lower than the full amount."
                 },
                 "refund_amount" : {
                     "title" : "price_adjustment",
@@ -321,15 +319,15 @@
                         },
                         "tax" : {
                             "type" : "number",
-                            "description" : "Amount to be refunded for the given item in USD associated with tax that was charged for the item"
+                            "description" : "Amount to be refunded for the given item in USD associated with tax that was charged for the item."
                         },
                         "shipping_cost" : {
                             "type" : "number",
-                            "description" : "Amount to be refunded for the given item in USD associated with the shipping cost that was allocated to this item"
+                            "description" : "Amount to be refunded for the given item in USD associated with the shipping cost that was allocated to this item."
                         },
                         "shipping_tax" : {
                             "type" : "number",
-                            "description" : "Amount to be refunded for the given item in USD associated with the tax that was charged on shipping"
+                            "description" : "Amount to be refunded for the given item in USD associated with the tax that was charged on shipping."
                         }
                     }
                 }
