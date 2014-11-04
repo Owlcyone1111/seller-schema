@@ -7,6 +7,7 @@
 		"total_quantity_returned" : 1,
 		"order_return_refund_qty" : 1,
 		"refund_reason" : "better price available",
+		"refund_feedback":"item damaged",
 		"refund_amount" : {
 			"principal" : 12.75,
 			"tax" : 0.90,
