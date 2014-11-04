@@ -12,7 +12,7 @@
                 "rejected - refund conflicts with returns policy",
             ]
         },
-    	"order_id": {
+    	"merchant_order_id": {
             "type": "string",
             "required":true,
             "description" :  "Jet's unique ID for a given merchant order",
