@@ -85,7 +85,6 @@
         },
         "buyer": {
             "$ref": "#/definitions/contact",
-            "description" : "The contact information for the buyer"
         },
         "shipping_to": {
             "$ref": "#/definitions/shipping_address"
@@ -107,6 +106,7 @@
         "contact": {
             "title": "Contact",
             "additionalProperties" : false,
+            "description" : "Contact information",
             "type": "object",
             "properties": {
                 "name": {

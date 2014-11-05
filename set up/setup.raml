@@ -1,21 +1,21 @@
 #%RAML 0.8
 
 title: Setup
-description: The Setup API provides methods to create and view information required to configure (setup) a merchant to sell on Jet.com.  Merchant configurations can also be edited through the Jet.com Merchant Portal.
-baseUri: http://merchant-api.test.jet.com/api
+description: The Setup API provides methods to create and view information required to setup a merchant to sell on Jet.com.  Merchant configurations can also be edited through the Jet.com Merchant Portal.  When looking at the methods for this schema, please ignore "?subscription-key= Your subscription key" in any URLs.
+baseUri: https://merchant-api.test.jet.com/api/setup
 version: v0.1
 protocols: [HTTPS]
 mediaType: application/json
 
-/setup:
-    /fulfillmentNodes:
-        get:
-            description: This method will provide information about the fulfillment nodes (locations) that the merchant has configured. 
-            responses:
-                200:
-                    body:
-                        application/json:
-                            schema: !include setup-fulfillmentNode.schema.json
-                            example: !include setup-fulfillmentNode.example.json
-                404:
-                    description: The requested resource could not be found. 
+
+/fulfillmentNodes:
+    get:
+        description: This method will provide information about the fulfillment nodes (locations) that the merchant has configured. 
+        responses:
+            200:
+                body:
+                    application/json:
+                        schema: !include setup-fulfillmentNode.schema.json
+                        example: !include setup-fulfillmentNode.example.json
+            404:
+                description: The requested resource could not be found. 

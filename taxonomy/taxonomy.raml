@@ -1,48 +1,39 @@
 #%RAML 0.8
 
 title: Taxonomy
-description: The Taxonomy API provides methods to call all browse tree information destinguished by a unique Jet Node ID.  Additionally this API provides the ability to retrieve variant information for each Jet Node ID.
-baseUri: http://merchant-api.test.jet.com/api
+description: The Taxonomy API provides methods to call all browse tree information destinguished by a unique Jet Node ID.  Additionally this API provides the ability to retrieve variant information for each Jet Node ID.  When looking at the methods for this schema, please ignore "?subscription-key= Your subscription key" in any URLs.
+baseUri: https://merchant-api.test.jet.com/api/taxonomy
 version: v0.1
 protocols: [HTTPS]
 mediaType: application/json
 
-/taxonomy:
-    /links:
-        /{version}:
-            get:
-                description: This method retrieves the URLs to all Jet Nodes that are currently active in the Jet.com browse tree
-                responses:
-                    200:
-                        body:
-                            application/json:
-                                schema: !include taxonomy-links.schema.json
-                                example: !include taxonomy-links.example.json
-                    400:
-                    404:
-                    409:
-    /nodes:
-        /{id}:
-            get:
-                description: This method retrieves the details for each Jet Node ID
-                responses:
-                    200:
-                        body:
-                            application/json:
-                                schema: !include taxonomy-nodes.schema.json
-                                example: !include taxonomy-nodes.example.json
-                    400:
-                    404:
-                    409:
-            /attributes:
-            get:
-                description: This method retrieves all the variants and attribute information for a Jet Node ID 
-                responses:
-                    200:
-                        body:
-                            application/json:
-                                schema: !include taxonomy-nodeAttributes.schema.json
-                                example: !include taxonomy-nodeAttributes.example.json
-                    400:
-                    404:
-                    409:
+/links/{version}:
+        put:
+            description: This method retrieves the URLs to all Jet Nodes that are currently active in the Jet.com browse tree
+            responses:
+                200:
+                    body:
+                        application/json:
+                            schema: !include taxonomy-links.schema.json
+                            example: !include taxonomy-links.example.json
+                404:
+/nodes/{id}:
+        get:
+            description: This method retrieves the details for each Jet Node ID
+            responses:
+                200:
+                    body:
+                        application/json:
+                            schema: !include taxonomy-nodes.schema.json
+                            example: !include taxonomy-nodes.example.json
+                404:
+/nodes/{id}/attributes:
+        get:
+            description: This method retrieves all the variants and attribute information for a Jet Node ID 
+            responses:
+                200:
+                    body:
+                        application/json:
+                            schema: !include taxonomy-nodeAttributes.schema.json
+                            example: !include taxonomy-nodeAttributes.example.json
+                404:

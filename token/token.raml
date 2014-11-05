@@ -1,13 +1,13 @@
 #%RAML 0.8
 
 title: Security
-description: This API provides documentation for using your API User and Secret Password to generate an authentication token for use in all other APIs
-baseUri: http://merchant-api.test.jet.com/api
+description: This API provides documentation for using your API User and Secret Password to generate an authentication token for use in all other APIs.  This schema is required to use all other APIs.  When looking at the methods for this schema, please ignore "?subscription-key= Your subscription key" in any URLs.
+baseUri: https://merchant-api.test.jet.com/api/Token
 version: v0.1
 protocols: [HTTPS]
 mediaType: application/json
 
-/Token:
+/:
     post:
         description: This method will provide resource URLs for pending returns
         body:

@@ -1,13 +1,13 @@
 #%RAML 0.8
 
 title: Orders
-description: The Orders API provides information on how to utilize all API methods to fulfill an order placed on Jet.com.  General information about this API can be found in the API Explanation tab under the Orders section.
-baseUri: http://merchant-api.test.jet.com/api
+description: The Orders API provides information on how to utilize all API methods to fulfill an order placed on Jet.com.  General information about this API can be found in the API Explanation tab under the Orders section.  When looking at the methods for this schema, please ignore "?subscription-key= Your subscription key" in any URLs.
+baseUri: https://merchant-api.test.jet.com/api/orders
 version: v0.1
 protocols: [HTTPS]
 mediaType: application/json
 
-/orders:
+
     /{status}:
         get:
             description: This method will provide order links by the status of the order.  The order status available to poll are "Created" - when an order is newly created but is not ready to be fulfilled (this should only be used to reserve inventory, ignore if you do not reserve inventory), "Ready" - when an order is ready to be fulfilled by merchant, "directCancelled" - Jet.com is requesting the merchant to cancel the order details capture after requresting the link provided in this API call 
@@ -50,26 +50,25 @@ mediaType: application/json
                             example: !include order-cancelLinks.example.json
                 404:
                     description: The requested resource could not be found. 
-    /{id}:
-        /acknowledge:
-            put:
-                description: This method allows the merchant to acknowledge an order as either accepted or rejected.  When acknowledging an order, each item in the order should have an advice to tell Jet.com whether the item was fulfillable or unfulfillable.   If any single item in the order is unfulfillable, then the entire order should be rejected and sent back to Jet.com. 
-                body:
-                    application/json:
-                        schema: !include order-acknowledgement.schema.json
-                        example: !include order-acknowledgement.example.json
-                responses:
-                    200:
-                    404:
-                    409:
-        /shipped:
-            put:
-                description: This method notifies Jet.com that the order has been shipped.  The merchant should provide advice to let Jet.com know how many units have been shipped and/or voided, and all information to track the order for each shipment that the order may split into.
-                body:
-                    application/json:
-                        schema: !include order-shippedNotification.schema.json
-                        example: !include order-shippedNotification.example.json
-                responses:
-                    200:
-                    404:
-                    409:        
+    /{id}/acknowledge:
+        put:
+            description: This method allows the merchant to acknowledge an order as either accepted or rejected.  When acknowledging an order, each item in the order should have an advice to tell Jet.com whether the item was fulfillable or unfulfillable.   If any single item in the order is unfulfillable, then the entire order should be rejected and sent back to Jet.com. 
+            body:
+                application/json:
+                    schema: !include order-acknowledgement.schema.json
+                    example: !include order-acknowledgement.example.json
+            responses:
+                200:
+                404:
+                409:
+    /{id}/shipped:
+        put:
+            description: This method notifies Jet.com that the order has been shipped.  The merchant should provide advice to let Jet.com know how many units have been shipped and/or voided, and all information to track the order for each shipment that the order may split into.
+            body:
+                application/json:
+                    schema: !include order-shippedNotification.schema.json
+                    example: !include order-shippedNotification.example.json
+            responses:
+                200:
+                404:
+                409:        
