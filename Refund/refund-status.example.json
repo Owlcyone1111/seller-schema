@@ -1,6 +1,8 @@
 {
+	"reference_return_authorization_id":"1234567890987654321",
 	"refund_status":"accepted",
 	"merchant_order_id" : "9b13bdd68c314d1b9c8b93277dea4da1",
+	"reference_merchant_order_id":"1234567890",
 	"alt_order_id" : "12345678",
 	"items" : [{
 		"order_item_id" : "1123456789",
@@ -9,6 +11,7 @@
 		"order_return_refund_qty" : 1,
 		"refund_reason" : "better price available",
 		"refund_feedback":"item damaged",
+		"notes":"This is where the notes go",
 		"refund_amount" : {
 			"principal" : 12.75,
 			"tax" : 0.90,

@@ -6,7 +6,12 @@
     	"merchant_order_id": {
             "type": "string",
             "required":true,
-            "description" :  "Jet's unique ID for a given merchant order",
+            "description" :  "Jet's unique ID for a given merchant order.",
+        },
+        "reference_merchant_order_id" :{
+            "type": "string",
+            "required": true,
+            "description" :  "Jet's human readable return authorization number that may have a small chance of collision overtime."
         },
         "alt_order_id": {
             "type": "string",

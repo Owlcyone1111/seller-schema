@@ -8,6 +8,7 @@
 		"order_return_refund_qty" : 1,
 		"refund_reason" : "better price available",
 		"refund_feedback":"item damaged",
+		"notes":"This is where the notes go",
 		"refund_amount" : {
 			"principal" : 12.75,
 			"tax" : 0.90,

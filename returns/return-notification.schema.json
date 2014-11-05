@@ -7,7 +7,7 @@
 		"reference_return_authorization_id" :{
             "type": "string",
             "required": true,
-            "description" :  "Jet's human readable return authoization number that may have a small chance of collision overtime"
+            "description" :  "Jet's human readable return authorization number that may have a small chance of collision overtime"
             },
         "refund_without_return" : {
 			"type":"boolean",
