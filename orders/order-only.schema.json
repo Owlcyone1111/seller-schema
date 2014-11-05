@@ -8,10 +8,16 @@
             "required": true,
             "description" :  "Jet's unique ID for a given merchant order"
         },
+        "reference_order_id" :{
+            "type": "string",
+            "required": true,
+            "description" :  "Jet's human readable order ID number that may have a small chance of collision overtime"
+            },
         "fulfillment_node" : {
             "type": "string",
             "description" : "The fulfillment node that the order should be shipped from"
         },
+        
         "alt_order_id": {
             "type": "string",
             "description" : "Optional Merchant supplied order ID. 

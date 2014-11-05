@@ -4,6 +4,10 @@
 	"description": "This schema is used for acknowledgement of a Return notification",
 	"additionalProperties" : false,
 	"properties": {
+		"reference_return_authorization_id" :{
+            "type": "string",
+            "description" :  "Jet's human readable return authoization number that may have a small chance of collision overtime"
+            },
 		"alt_return_authorization_id": {
 			"type": "string",
 			"description": "Optional merchant supplied return number, which allows the merchant to use this number in future messages instead of return_authorization_id. This ID will be included on the Return Documentation that Jet gives to the customer"
@@ -15,7 +19,7 @@
 				 "acknowledged",
 				 "refund customer without return"
 			 ],
-			"description": "The seller acknowledges the receipt of the ReturnNotification or Communicates to Jet that a refund can be passed without needing to have the customer actually send the item back.
+			"description": "The seller acknowledges the receipt of the ReturnNotification or communicates to Jet that a refund can be passed without needing to have the customer actually send the item back.
 
 			This must be sent back to Jet immediately, so the decision for the customer to send back items can be made.
 

@@ -1,8 +1,22 @@
 {
-    "title" : "Refund",
+    "title" : "RefundStatus",
     "type" : "object",
     "additionalProperties" : false,
     "properties" : {
+        "reference_return_authorization_id" :{
+            "type": "string",
+            "required": true,
+            "description" :  "Jet's human readable return authorization number that may have a small chance of collision overtime."
+        },
+        "refund_status":{
+            "required":true,
+            "type":"string",
+            "description": "Jet's return message for whether the refund was accepted.",
+            "enum":[
+                "accepted",
+                "rejected - refund conflicts with returns policy",
+            ]
+        },
     	"merchant_order_id": {
             "type": "string",
             "required":true,
@@ -11,7 +25,7 @@
         "reference_merchant_order_id" :{
             "type": "string",
             "required": true,
-            "description" :  "Jet's human readable return authorization number that may have a small chance of collision overtime."
+            "description" :  "Jet's human readable merchant order ID that may have a small chance of collision overtime."
         },
         "alt_order_id": {
             "type": "string",
@@ -46,7 +60,7 @@
 
                     #Logic
 
-                    Required to indicate the total quantity of units returned for the order item.  This quantity should only include the units that were returned. Any cancelled items should not be included if the items were cancelled before the return"
+                    Required to indicate the total quantity of units returned for the order item.  This quantity should only include the units that were returned.  Any cancelled items should not be included if the items were cancelled before the return"
                 },
                 "order_return_refund_qty" : {
                     "type" : "integer",
@@ -58,9 +72,9 @@
                     Required to indicate the quantity of the given item to be returned/refunded. This should only be used if part of the order was shipped BEFORE it was realized that some of the items could not be shipped.  If you are aware that you cannot fill the order completely before a portion has shipped, you should send an order-reject message."
                 },
                 "refund_reason" : {
-                	"type" : "string",
+                    "type" : "string",
                     "required":true,
-                	"enum" : [
+                    "enum" : [
                                 "no longer need/want",
                                 "better price available",
                                 "unauthorized purchase",
@@ -72,10 +86,10 @@
                                 "item is damaged/broken",
                                 "accidental order",
                                 "received wrong item than what was ordered",
-                				],
-                	"description" : "The reason this refund was initiated.
+                                ],
+                    "description" : "The reason this refund was initiated. 
 
-                	#Valid Values
+                    #Valid Values
 
                     *'no longer need/want'
                     
@@ -122,7 +136,7 @@
                 "notes" :{
                     "type" : "string",
                     "description" : "Provide additional information about why the item was refunded for lower than the full amount."
-                },
+                    },
                 "refund_amount" : {
                 	"title" : "price_adjustment",
                 	"type" : "object",

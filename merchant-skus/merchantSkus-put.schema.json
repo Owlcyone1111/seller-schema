@@ -230,7 +230,7 @@
 
 			#Valid Values
 
-			maximum of 500 characters"
+			Maximum of 500 characters"
 		},
 		"cpsia_cautionary_statements": {
 			"type": "array",
@@ -276,7 +276,7 @@
 
 			#Valid Values
 
-			maximum of 50 characters"
+			Maximum of 50 characters"
 		},
 		"safety_warning": {
 			"type": "string",
@@ -428,7 +428,7 @@
 
 			If you want to increase the commission you are willing to pay from a base rate of 15% to 17%, then you should enter '0.02'
 
-			#Valid VSalues
+			#Valid Values
 
 			A mumber with up to 1 digit allowed to the left of the deimal point and 2 digits to the right of the decimal point."
 		},

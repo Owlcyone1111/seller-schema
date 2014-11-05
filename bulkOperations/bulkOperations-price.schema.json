@@ -3,7 +3,7 @@
 	"title": "BulkOperationsPrice",
 	"type": "object",
     "additionalProperties" : false,		
-	"description": "This schema is used to set prices for merchant skus.  An overall price must be set for the product and a price can also be further refined by setting the price at the fulfillment node level.",
+	"description": "This schema is used to set prices for merchant SKUs.  An overall price must be set for the product and a price can also be further refined by setting the price at the fulfillment node level.",
 	"properties": {
 		"{merchantSku}": {
 			"required": true,
@@ -45,7 +45,7 @@
                 "fulfillment_node_price": {
                     "type": "number", 
                     "required": true,
-                    "description" : "The price of the Merchant SKU at the fulfillment node level"
+                    "description" : "The price of the merchant SKU at the fulfillment node level"
                 }
             }
         }
