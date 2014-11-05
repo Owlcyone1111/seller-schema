@@ -11,7 +11,7 @@
     <AssemblyName>RamlConverter</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <TargetFSharpCoreVersion>4.3.0.0</TargetFSharpCoreVersion>
+    <TargetFSharpCoreVersion>4.3.1.0</TargetFSharpCoreVersion>
     <Name>RamlConverter</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="Ast.fs" />
     <Compile Include="XmlHelper.fs" />
+    <Compile Include="JsonSchema.fs" />
     <Compile Include="JsonSchemaToHtml.fs" />
     <Compile Include="Json.fs" />
     <Compile Include="RamlParser.fs" />
@@ -89,13 +90,25 @@
     <None Include="ValidateSinglePair.fsx" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Marvel.FSharp">
+      <HintPath>packages\Marvel.FSharp.2.0.1-alpha189\lib\net45\Marvel.FSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Marvel.Json.FSharp">
+      <HintPath>packages\Marvel.Json.FSharp.1.0.0-alpha189\lib\net45\Marvel.Json.FSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
-      <HintPath>packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <SpecificVersion>True</SpecificVersion>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.6.0.5\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>packages\NLog.3.1.0.0\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

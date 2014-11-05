@@ -1,15 +1,13 @@
-﻿#I "../tools/"
-#r @"RamlConverter.dll"
+﻿#r @"../tools/Marvel.Fsharp.dll"
+#r @"../tools/Marvel.Json.Fsharp.dll"
+#r @"../tools/RamlConverter.dll"
+
+open Marvel
+open FSharp.Data
+open FSharp.Data.JsonExtensions
+
+let path = @"C:\Users\Dmitry\Source\Repos\seller-schema\merchant-skus\merchantSkus-get.schema.json"
 
 open System.IO
-
-let path = @"C:\Users\Dmitry\Source\Repos\seller-schema\settlement\settlement.raml"
-let ast = RamlParser.parseAst path
-    
-match  ast with
-| Validated api -> 
-    WadlGen.toXml api (path.Replace(".raml", ".wadl"))
-| Error errors -> 
-    printfn "Can't generate, errors encountered:" 
-    errors |>  Seq.iter (printfn "%s")
-
+let schema = File.OpenRead path |> JsonValue.Load
+JsonSchema.Parse Map.empty schema 

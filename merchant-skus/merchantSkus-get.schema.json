@@ -44,7 +44,7 @@
 		"product_sub_status" : {
 			"type": "array",
 			"items": {
-				"type": "string",
+				"type": "string"
 			},	
 			"description" : "The product's sub status.  A product may exist in multiple sub statuses at the same time.
 
@@ -89,7 +89,7 @@
 
 			At least one of the following must be provided for each merchant SKU: Standard Product Code (UPC, GTIN-14 etc.), ASIN, or Brand and Manufacturer Part Number",
 			"maxLength" : 10,
-			"minLength" : 10,
+			"minLength" : 10
 		},
 		"multipack_quantity": {
 			"type": "integer",
