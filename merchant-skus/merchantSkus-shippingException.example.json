@@ -10,9 +10,7 @@
 					"shipping_method": "UPS Ground",
 					"override_type": "Additional Charge",
 					"shipping_charge_amount": 3.25,
-					"is_shipping_restricted": false,
-					"is_shipping_exclusive": true
-
+					"shipping_exception": "restricted"
 				},
 				{
 					"service_level": "Standard",
@@ -20,8 +18,7 @@
 					"shipping_method": "UPS Ground",
 					"override_type": "Additional Charge",
 					"shipping_charge_amount": 3.25,
-					"is_shipping_restricted": false,
-					"is_shipping_exclusive": true
+					"shipping_exception": "exclusive"
 				}
 			]
 		},
@@ -35,9 +32,7 @@
 					"shipping_method": "UPS Ground",
 					"override_type": "Additional Charge",
 					"shipping_charge_amount": 3.25,
-					"is_shipping_restricted": false,
-					"is_shipping_exclusive": true
-
+					"shipping_exception": "restricted"
 				},
 				{
 					"service_level": "Standard",
@@ -45,8 +40,7 @@
 					"shipping_method": "UPS Ground",
 					"override_type": "Additional Charge",
 					"shipping_charge_amount": 3.25,
-					"is_shipping_restricted": false,
-					"is_shipping_exclusive": true
+					"shipping_exception": "exclusive"
 				}
 			]
 		}

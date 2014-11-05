@@ -106,27 +106,13 @@
                         override_type is
                         populated"
                     },
-                    "is_shipping_restricted": {
-                        "type": "boolean",
-                        "description": "Indicates whether the mercant SKU can or cannot be shipped using the specified shipping service (shipping_carrier, shipping_method or service_level).
-                        A value
-                        of \"true\" means that the merchant SKU cannot be shipped using the specified shipping service.
+                    "shipping_exception": {
+                        "type": "string",
+                        "description": "Indicates if you want the product to be shipped exclusively (only with) or restrictively (not including) via the shipping level of shipping method provided
 
-                        #Logic You
-                        can only
-                        populate 'is_shipping_restricted'
-                        or 'is_shipping_exclusive'"
-                    },
-                    "is_shipping_exclusive": {
-                        "type": "boolean",
-                        "description": "Indicates that the merchant SKU can ONLY be shipped with the specified shipping option (shipping_carrier, shipping_method or service_level).
-                        A value
-                        of \"true\" means that the merchant SKU can be shipped using ONLY the specified shipping option.
-
-                        #Logic You
-                        can only
-                        populate 'is_shipping_restricted'
-                        or 'is_shipping_exclusive'"
+                        #Valid Values
+                        * restricted - the product cannot be shipped using the shipping method or shipping level provided
+                        * exclusive - the product should only be shipped using the shipping method or shipping level provided
                     }
                 }
             }
