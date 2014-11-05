@@ -1,0 +1,44 @@
+#%RAML 0.8
+
+title: File Examples
+description: The File Examples Schema provides JSON examples for creating batch files to upload via the File Upload API. More documentation on the flow of information for the file examples in this schema is available in the API Explantions tab of this portal.
+baseUri: http://merchant-api.test.jet.com/api
+version: v0.1
+protocols: [HTTPS]
+mediaType: application/json
+
+/File Template - MerchantSKUs:
+    put:
+        description: This file example shows how to create upload multiple Merchant SKUs         
+        body:
+            application/json:
+                schema: !include bulkOperations-merchantSku.schema.json
+                example: !include bulkOperations-merchantSku.example.json
+        responses:
+            201:
+            401:
+            404:
+/File Template - Inventory: 
+    put:
+        description: This file example shows how to create upload multiple Merchant SKUs         
+        body:
+            application/json:
+                schema: !include bulkOperations-inventory.schema.json
+                example: !include bulkOperations-inventory.example.json
+        responses:
+            200:
+            201:
+            401:
+            404:
+/File Template - Price: 
+    put:
+        description: This file example shows how to create upload multiple Merchant SKUs         
+        body:
+            application/json:
+                schema: !include bulkOperations-price.schema.json
+                example: !include bulkOperations-price.example.json
+        responses:
+            200:
+            201:
+            401:
+            404:

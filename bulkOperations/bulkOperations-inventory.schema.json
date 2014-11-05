@@ -5,21 +5,29 @@
 	"description": "This schema is used to set inventory counts on merchant skus for file uploads",
     "additionalProperties" : false,
 	"properties": {
-        "merchant_sku": {
-            "type": "string",
+        "{merchant_sku}": {
             "required": true,
-            "description": "The merchant SKU that should be affected by the prices in this object",
-        },
-		"fulfillment_nodes":{
-			"type":"array",
-			"required":true,
-			"items":{
-				"$ref":"#/definitions/fulfillment_nodes_inventory"
-			},
-		}
+            "description": "The merchant SKU field should be the merchant's unique product identifier that is being priced in this object",
+            "$ref":"#/definitions/merchant_sku_fulfillment_nodes"
+        }
 	},
 	"definitions":{
-		"fulfillment_nodes_inventory": {
+        "merchant_sku_fulfillment_nodes": {
+            "title": "MerchantSkusFulfillmentNode",
+            "description": "The merchant SKU field should be the merchant's unique product identifier that is being priced in this object",
+            "additionalProperties" : false,
+            "type": "object",
+            "properties": {
+                "fulfillment_nodes":{
+                    "type":"array",
+                    "required":true,
+                    "items":{
+                        "$ref":"#/definitions/fulfillment_nodes_inventory"
+                    }
+                }
+            }
+        },
+        "fulfillment_nodes_inventory": {
             "title": "FulfillmentNodeInventory",
             "additionalProperties" : false,
             "type": "object",

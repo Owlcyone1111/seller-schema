@@ -5,25 +5,33 @@
     "additionalProperties" : false,		
 	"description": "This schema is used to set prices for merchant skus.  An overall price must be set for the product and a price can also be further refined by setting the price at the fulfillment node level.",
 	"properties": {
-		"merchant_sku": {
-			"type": "string",
+		"{merchantSku}": {
 			"required": true,
-			"description": "The merchant SKU that should be affected by the prices in this object",
-		},
-		"price": {
-			"type": "number",
-			"required": true,
-			"description": "The overall price that the merchant SKU is priced at",
-		},
-		"fulfillment_nodes":{
-			"type":"array",
-			"required":false,
-			"items":{
-				"$ref":"#/definitions/fulfillment_node_prices"
-			}
-		},
+			"description": "The merchant SKU that should be affected by the prices in this object. The {merchantSKU} field should be the Merchant SKU that price is being updated for.",
+			"$ref":"#/definitions/merchant_sku_price"
+		}
 	},
 	"definitions":{
+        "merchant_sku_price": {
+            "title": "merchantSkuPrice",
+            "description": "The merchant SKU that should be affected by the prices in this object. The {merchantSKU} field should be the Merchant SKU that price is being updated for.",
+            "additionalProperties" : false,
+            "type": "object",
+            "properties": {
+                "price": {
+					"type": "number",
+					"required": true,
+					"description": "The overall price that the merchant SKU is priced at",
+				},
+				"fulfillment_nodes":{
+					"type":"array",
+					"required":false,
+					"items":{
+						"$ref":"#/definitions/fulfillment_node_prices"
+					}
+				}
+            }
+        },
         "fulfillment_node_prices": {
             "title": "FulfillmentNodePrice",
             "additionalProperties" : false,

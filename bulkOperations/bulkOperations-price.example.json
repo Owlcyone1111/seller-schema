@@ -1,14 +1,28 @@
 {
-	"merchant_sku" : "XYX-001",
-	"price" : 29.99,
-	"fulfillment_nodes" : [
-		{
-			"fulfillment_node_id" : "XISNDKSANDSFNCSJKFDNFKJHFJD",
-			"fulfillment_node_price" : 29.99
-		},
-		{
-			"fulfillment_node_id" : "AKSDKDJIJDISJFIDFJIDSIFFISI",
-			"fulfillment_node_price" : 30.50
-		}
-	]	
+	"{merchantSku}" : { 
+		"price" : 29.99,
+		"fulfillment_nodes" : [
+			{
+				"fulfillment_node_id" : "39b1f29dac134cbe80e7778b55ca5d57",
+				"fulfillment_node_price" : 30.99
+			},
+			{
+				"fulfillment_node_id" : "a64e80e8a8404dfa8cd453a7b3e785ae",
+				"fulfillment_node_price" : 31.99
+			}
+		]
+	},
+	"{merchantSku}" : { 
+		"price" : 10.59,
+		"fulfillment_nodes" : [
+			{
+				"fulfillment_node_id" : "39b1f29dac134cbe80e7778b55ca5d57",
+				"fulfillment_node_price" : 11.99
+			},
+			{
+				"fulfillment_node_id" : "a64e80e8a8404dfa8cd453a7b3e785ae",
+				"fulfillment_node_price" : 11.99
+			}
+		]
+	}	
 }
