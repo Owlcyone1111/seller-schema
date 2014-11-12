@@ -1,0 +1,6 @@
+{
+	"items": [
+		{ "sku" : "ABC", "order_quantity" : 5},
+		{ "sku" : "DEF", "order_quantity" : 5, "order_cancel_quantity" : 2}
+	]
+}

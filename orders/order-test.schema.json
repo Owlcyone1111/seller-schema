@@ -1,0 +1,34 @@
+{
+    "title": "TestOrderSeed",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+    	"items": {
+    		"type": "array",
+            "required" : true,
+    		"description": "List of test order items",
+    		"items": {
+    			"type": "object",         
+                "title" : "TestOrderItem",
+                "additionalProperties" : false,
+    			"description": "Order item",
+                "properties" : {
+                    "sku" : {
+                        "type" : "string",
+                        "required" : true,
+                        "description" : "Merchant sku"
+                    },
+                    "order_quantity" :{
+                        "type" : "integer",
+                        "required" : true,
+                        "description" : "Order quantity"
+                    },
+                    "order_cancel_quantity" :{
+                        "type" : "integer",
+                        "description" : "Order cancel quantity"
+                    }
+                }
+    		}
+    	}
+    }
+}
