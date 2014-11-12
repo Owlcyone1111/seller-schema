@@ -24,6 +24,61 @@
             }
         
     },
+    "order_totals": {
+        "item_price": {
+            "base_price": 20,
+            "item_tax" : 0.14,
+            "item_shipping_cost" : 5,
+            "item_shipping_tax" : 0.35
+        },
+        "item_fees": 2.01,
+        "fee_adjustments": [
+            {
+                "adjustment_name": "itemPrice",
+                "adjustment_type": "item",
+                "value": 1.20
+            }
+        ],
+        "regulatory_fees" : 0.00,
+        "tax_info" : {
+            "tax_jurisdictions" :{
+                "tax_location_code": "100265899",
+                "tax_city" : "Oviedo",
+                "tax_county": "Seminole",
+                "tax_state" : "FL"
+            },
+            "taxable_amounts" : {
+                "district_amount" :0,
+                "city_amount" :0,
+                "county_amount":25.00,
+                "state_amount":25.00
+            },
+            "non_taxable_amounts" : {
+                "district_amount" :25.00,
+                "city_amount" :25.00,
+                "county_amount":0,
+                "state_amount":0
+            },
+            "zero_rated_amounts": {
+                "district_amount" :0,
+                "city_amount" :0,
+                "county_amount":0,
+                "state_amount":0
+            },
+            "tax_collected_amounts" : {
+                "district_amount" :0,
+                "city_amount" :0,
+                "county_amount":1,
+                "state_amount":0.75
+            },
+            "tax_rates" : {
+                "district_amount" :0,
+                "city_amount" : 0,
+                "county_amount":0.04,
+                "state_amount": 0.03
+            }
+        }
+    },
     "order_items": [
         {
             "order_item_id": "8f5ae15b6b414b00a1b9d6ad99166a00",
@@ -35,7 +90,6 @@
                 "item_tax" : 0.14,
                 "item_shipping_cost" : 5,
                 "item_shipping_tax" : 0.35
-
             },
             "item_fees": 2.01,
             "fee_adjustments": [
@@ -52,38 +106,37 @@
                     "tax_city" : "Oviedo",
                     "tax_county": "Seminole",
                     "tax_state" : "FL"
-                    },
+                },
                 "taxable_amounts" : {
                     "district_amount" :0,
                     "city_amount" :0,
                     "county_amount":25.00,
                     "state_amount":25.00
-
-                    },
+                },
                 "non_taxable_amounts" : {
                     "district_amount" :25.00,
                     "city_amount" :25.00,
                     "county_amount":0,
                     "state_amount":0
-                    },
+                },
                 "zero_rated_amounts": {
                     "district_amount" :0,
                     "city_amount" :0,
                     "county_amount":0,
                     "state_amount":0
-                    },
+                },
                 "tax_collected_amounts" : {
                     "district_amount" :0,
                     "city_amount" :0,
                     "county_amount":1,
                     "state_amount":0.75
-                    },
+                },
                 "tax_rates" : {
                     "district_amount" :0,
                     "city_amount" : 0,
                     "county_amount":0.04,
                     "state_amount": 0.03
-                    }
+                }
             },
             "product_title": "blue pair of socks",
             "url": ""

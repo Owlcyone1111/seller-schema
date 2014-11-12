@@ -89,6 +89,9 @@
         "shipping_to": {
             "$ref": "#/definitions/shipping_address"
         },
+        "order_totals": {
+            "$ref": "#/definitions/order_totals_array"
+        },
         "order_items": {
             "type": "array",
             "items": {
@@ -163,6 +166,86 @@
                 },
                 "address": {
                     "$ref": "#/definitions/address"
+                }
+            }
+        },
+        "order_totals_array" : {
+            "title": "OrderTotalsArray",
+            "type": "object",
+            "additionalProperties" : false,
+            "properties": {
+                "item_price": {
+                    "$ref" : "#/definitions/item_price"
+                },
+                "price_adjustment" : {
+                    "title" : "price_adjustment",
+                    "additionalProperties" : false,
+                    "type" : "object",
+                    "description" : "Price adjustment occured as a result of the partial cancel",
+                    "properties" : {
+                        "principal" : {
+                            "type" : "number",
+                            "description" : "Amount to be refunded/auth that will not be captured."
+                        },
+                        "tax" : {
+                            "type" : "number",
+                            "description" : "Amount to be refunded/auth that will not be captured for the given item in USD associated with tax that was charged for the item."
+                        },
+                        "shipping_cost" : {
+                            "type" : "number",
+                            "description" : "Amount to be refunded/auth that will not be captured for the given item in USD associated with the shipping cost that was allocated to this item."
+                        },
+                        "shipping_tax" : {
+                            "type" : "number",
+                            "description" : "Amount to be refunded/auth that will not be captured for the given item in USD associated with the tax that was charged on shipping."
+                        }
+                    }
+                },
+                "item_fees": {
+                    "type": "number",
+                    "required" : true,
+                    "description" : "The fees paid to Jet.com"
+                },
+                "fee_adjustments": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/fee_adjustment"
+                    }
+                },
+                "regulatory_fees" : {
+                    "type" : "number",
+                    "description" : "the regulatory fees charge to the customer"
+                },
+                "tax_info": {
+                    "title": "TaxInfo",
+                    "type" : "object",
+                    "additionalProperties" : false,
+                    "properties": {
+                        "tax_jurisdictions": { 
+                            "type": "object",
+                            "$ref": "#/definitions/tax_jurisdictions"                
+                        },
+                        "taxable_amounts": {
+                            "type": "object",
+                            "$ref": "#/definitions/amounts"
+                        },
+                        "non_taxable_amounts": {
+                            "type": "object",
+                            "$ref": "#/definitions/amounts"                
+                        },
+                        "zero_rated_amounts": {
+                            "type": "object",
+                            "$ref": "#/definitions/amounts"
+                        },
+                        "tax_collected_amounts": {
+                            "type": "object",
+                            "$ref": "#/definitions/amounts"                
+                        },
+                        "tax_rates": {
+                            "type": "object",
+                            "$ref": "#/definitions/amounts"
+                        }
+                    }
                 }
             }
         },
