@@ -3,6 +3,11 @@
     "type": "object",
     "additionalProperties" : false,
     "properties": {
+        "fulfillment_node" : {
+            "type" : "string",
+            "required" : true,
+            "description" : "Fulfillment node Id as provided by Jet"
+            },
     	"items": {
     		"type": "array",
             "required" : true,
