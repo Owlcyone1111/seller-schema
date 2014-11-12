@@ -5,7 +5,7 @@
     "additionalProperties": false,
     "description": "This object is used to set shipping exceptions for merchant SKUs",
     "properties": {
-        "fulfillment_node": {
+        "fulfillment_nodes": {
             "type": "array",
             "items": {
                 "title": "ShippingExceptionNodeArray",
