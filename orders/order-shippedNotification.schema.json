@@ -16,7 +16,7 @@
             "items": {
                 "$ref": "#/definitions/order_shipped_shipment"
             }
-        },
+        }
     },
     "definitions": {
         "order_shipped_shipment": {

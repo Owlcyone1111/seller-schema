@@ -10,7 +10,7 @@
 		"shipping_tax" : 58.80,
 		"shipping_charge" : 0.00,
 		"fulfillment_fee" : 0.00,
-		"product_cost" : 0.00,		
+		"product_cost" : 0.00		
 	},
 	"order_item_balance_details" : [
 		{
@@ -25,7 +25,7 @@
 			"shipping_tax" : 19.60,
 			"shipping_charge" : 0.00,
 			"fulfillment_fee" : 0.00,
-			"product_cost" : 0.00,			 
+			"product_cost" : 0.00			 
 		},
 		{
 			"order_item_id" : "123-456-788",
@@ -39,7 +39,7 @@
 			"shipping_tax" : 19.60,
 			"shipping_charge" : 0.00,
 			"fulfillment_fee" : 0.00,
-			"product_cost" : 0.00,			 
+			"product_cost" : 0.00			 
 		},
 		{
 			"order_item_id" : "123-456-787",
@@ -53,7 +53,7 @@
 			"shipping_tax" : 19.60,
 			"shipping_charge" : 0.00,
 			"fulfillment_fee" : 0.00,
-			"product_cost" : 0.00,
+			"product_cost" : 0.00
 		}
 	]
 }

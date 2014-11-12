@@ -8,7 +8,7 @@
             "required": true,
             "emum":[
                 "yes",
-                "no",
+                "no"
             ],
             "description" : "Status to let merchant know whether the item will ' 
 
@@ -37,7 +37,7 @@
                     "required": true,
                     "emum":[
                         "level",
-                        "service",
+                        "service"
                     ],
                     "description" : "The type of shipping service you support.  This is either shipping levels (priority, expedited, standard, etc.) or shipping methods (ups_ground, ups_2nd, etc.)
 

@@ -41,7 +41,7 @@
     		#Logic
 
     		This field is required if 'free_returns' is 'true'"
-    	},
+    	}
     },
 
     "definitions": {

@@ -9,7 +9,7 @@
             },
         "merchant_order_id": {
             "type": "string",
-            "description" :  "Jet's unique ID for a given merchant order",
+            "description" :  "Jet's unique ID for a given merchant order"
         },
         "reference_order_id" :{
             "type": "string",
@@ -35,7 +35,7 @@
             *'true' - The merchant agrees to wholly pay the return charge to Jet.com from the return notification
 
             *'false' - The merchant disagrees with the return charge and will enter a disputed charge with Jet.com"
-        },
+        }
     },
     "definitions": {
         "order_return_refund_item": {
@@ -79,7 +79,7 @@
                 				"customer opened item",
                 				"not shipped in original packaging",
                 				"item damaged",
-                				"other",
+                				"other"
                 				],
                 	"description" : "The reason this refund is less than the full amount 
 

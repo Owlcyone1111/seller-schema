@@ -51,7 +51,7 @@
                 "zip_code": {
                     "type": "string",
                     "description" : "The zip code of the fulfillment location"
-                },
+                }
 			}
 		}
 	}

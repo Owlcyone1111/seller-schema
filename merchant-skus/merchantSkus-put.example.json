@@ -51,11 +51,11 @@
 		},
 		{
 			"attribute_id" : 119,
-			"attribute_value" : "aqua",
+			"attribute_value" : "aqua"
 		},
 		{
 			"attribute_id" : 2,
-			"attribute_value" : "blue",
+			"attribute_value" : "blue"
 		}
 	],
 	"main_image_url" : "http://www.mydomain.com/images/myImage.png",

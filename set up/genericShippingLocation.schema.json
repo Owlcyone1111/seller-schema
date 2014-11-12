@@ -62,7 +62,7 @@
 					"wed",
 					"thu",
 					"fri",
-					"sat"],
+					"sat"]
 				},
 			"minItems" : 1,
 			"description": "Days of the week that you will process and ship orders for 'location_type' = 'Merchant Controlled' 
@@ -96,7 +96,7 @@
 					"wed",
 					"thu",
 					"fri",
-					"sat"],
+					"sat"]
 				},
 		"minItems" : 1,
 		"description": "Days of the week that the given drop ship location is open for operations. 
@@ -184,7 +184,7 @@
 					"Expedited",
 					"Scheduled",
 					"NextDay",
-					"SecondDay"],
+					"SecondDay"]
 				},
 			"minItems" : 1,
 			"description": "Provide the list of ServiceLevels that are supported for delivery from this location

@@ -22,7 +22,7 @@
 				"Silver",
 				"White",
 				"Yellow"
-			],
+			]
 		},
 		{
 			"attribute_id" : 95,
@@ -32,7 +32,7 @@
 			"validation" : {
 				"data_type" : "integer",
 				"max_value" : 1000000,
-				"min_value" : 1,
+				"min_value" : 1
 			}
 		}
 	]

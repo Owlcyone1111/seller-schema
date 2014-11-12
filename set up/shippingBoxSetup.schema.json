@@ -31,6 +31,6 @@
 		"max_weight_pounds":{
 			"type": "number",
 			"description": "The maximum weight limit of the given box in pounds"
-		},
+		}
 	}
 }

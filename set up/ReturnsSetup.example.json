@@ -5,13 +5,10 @@
 		"return_address_line_1" : "123 Fun Ln",
 		"return_address_city" : "Happytown",
 		"return_address_state" : "NJ",
-		"return_address_zip" : "08691",
+		"return_address_zip" : "08691"
 	}
 	],
 	"free_returns" : true,
 	"carrier" : "UPS",
 	"account_number" : "2W6456"
-
-
-
 }

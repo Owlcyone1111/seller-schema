@@ -76,7 +76,7 @@
 					"wed",
 					"thu",
 					"fri",
-					"sat"],
+					"sat"]
 				},
 			"minItems" :1,		
 			"description": "Days of the week that the given shipping location is open for operations.  
@@ -122,9 +122,7 @@
             "items": {
                 "$ref": "#/definitions/shipping_options"
             }
-
-        },
-        
+        }
 	},
     "definitions": {
         

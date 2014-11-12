@@ -20,7 +20,7 @@
             "items" : {
                 "$ref" : "#/definitions/fulfillment_node_skus"
             }
-        },
+        }
 	},
 	"definitions" : {
 		"fulfillment_node_skus" : {

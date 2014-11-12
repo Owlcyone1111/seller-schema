@@ -9,7 +9,7 @@
 			"required": true,
 			"description": "The merchant SKU field should be replaced with the merchants unique product identifier",
 			"$ref": "#/definitions/merchant_sku_details"				
-        },
+        }
 	},
 	"definitions": {
 		"merchant_sku_details" : {
@@ -73,7 +73,7 @@
 
 					At least one of the following must be provided for each merchant SKU: Standard Product Code (UPC, GTIN-14 etc.), ASIN, or Brand and Mfr Part Number",
 					"maxLength" : 10,
-					"minLength" : 10,
+					"minLength" : 10
 				},
 				"multipack_quantity": {
 					"type": "integer",
@@ -542,7 +542,7 @@
 					*GTIN-14
 
 					"
-				},
+				}
 			}
 		},
 		"alternate_images": {

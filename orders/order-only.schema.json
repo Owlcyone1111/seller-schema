@@ -420,8 +420,7 @@
                     #Valid Values
 
                     The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"
-                },
-                
+                }
             }
         },
         "fee_adjustment": {
@@ -452,8 +451,7 @@
                     "type": "number",
                     "required" : false,
                     "description" : "Dollar amount of the adjustment"
-                },
-                
+                }
             }
         },
         "tax_jurisdictions" : {

@@ -10,11 +10,11 @@
 			"zip_code" : 32765
 		},
 		"business_phone_number" : {
-			"phone_number" : 5551234567,
+			"phone_number" : 5551234567
 		},
 		"tax_identification_info" : {
 			"tax_identification_number" : 987654321,
-			"tax_identification_number_type" : "EIN",
+			"tax_identification_number_type" : "EIN"
 		}
 	},
 	"principal_information" :{
@@ -32,7 +32,7 @@
 			"zip_code" : 32766
 		},
 		"principal_phone_number" : {
-			"phone_number" : 5557654321,
-		},
+			"phone_number" : 5557654321
+		}
 	}
 }

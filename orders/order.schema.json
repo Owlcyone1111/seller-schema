@@ -84,7 +84,7 @@
            "description" :  "This field indicates that one or more items in the order have been requested to be cancelled by Jet.com.   Please see the request_order_cancel_qty to determine which item and how much of the item should be cancelled."
         },
         "buyer": {
-            "$ref": "#/definitions/contact",
+            "$ref": "#/definitions/contact"
         },
         "shipping_to": {
             "$ref": "#/definitions/shipping_address"
@@ -533,8 +533,7 @@
                     "type": "number",
                     "required" : false,
                     "description" : "Dollar amount of the adjustment"
-                },
-                
+                }
             }
         },
         "tax_jurisdictions" : {
@@ -660,4 +659,3 @@
             }
         }
     }
-}

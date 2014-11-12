@@ -8,12 +8,12 @@
 		"currency": {
 			"type": "string",
 			"required": true,
-			"description": "The currency that all monetary values are represented in for the settlement report retrieved",
+			"description": "The currency that all monetary values are represented in for the settlement report retrieved"
 		},
         "return_balance": {
             "type": "number",
             "required": true,
-            "description": "The total value of orders that is settled in this settlement report",
+            "description": "The total value of orders that is settled in this settlement report"
         },
 		"return_balance_details":{
 			"required": true,
@@ -26,7 +26,7 @@
             "items":{
                 "$ref":"#/definitions/settlement_return_item_details_report"
             }
-        },
+        }
 	},
 	"definitions":{
         "settlement_return_details_report": {
@@ -78,7 +78,7 @@
                     "type": "number",
                     "required": true,
                     "description" : "If the item is sold via DBJ (Distributed By Jet), then this is cost of the product that will be returned to the merchant"
-                },                
+                }                
             }
         },
         "settlement_return_item_details_report": {
@@ -158,7 +158,7 @@
                     "type": "number",
                     "required": true,
                     "description" : "If the item is sold via DBJ (Distributed By Jet), then this is cost of the product that will be returned to the merchant"
-                },                
+                }                
             }
         }
 	}

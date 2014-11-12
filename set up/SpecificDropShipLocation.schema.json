@@ -76,7 +76,7 @@
 					"wed",
 					"thu",
 					"fri",
-					"sat"],
+					"sat"]
 				},
 			"minItems" : 1,
 			"description": "Days of the week that you will process and submit orders to the Drop Shipper
@@ -108,7 +108,7 @@
 					"wed",
 					"thu",
 					"fri",
-					"sat"],
+					"sat"]
 				},
 			"minItems" : 1,
 			"description": "Days of the week that the given drop ship location is open for operations.  
@@ -184,7 +184,7 @@
 					"Expedited",
 					"Scheduled",
 					"NextDay",
-					"SecondDay"],
+					"SecondDay"]
 				},
 			"minItems" : 1,
 			"description": "Provide the list of ServiceLevels that are supported for delivery from this location

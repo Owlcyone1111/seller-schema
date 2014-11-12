@@ -68,7 +68,7 @@
                         "fulfillable - product cogs do not match contract terms",
                         "fulfillable - merchant fulfillment cost does not match contract terms",
                         "nonfulfillable - no inventory",
-                        "nonfulfillable - invalid merchant sku",
+                        "nonfulfillable - invalid merchant sku"
                     ],
                     "description" : "value to send jet the status of each item in the order request 
 
@@ -137,7 +137,7 @@
                 "shipping_cost": {
                     "type": "number",
                     "description" : "The cost of shipping the shipment to the customer"
-                },               
+                }               
             }
         },
         "ack_order_shipment_item": {

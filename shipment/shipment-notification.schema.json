@@ -14,7 +14,7 @@
             "items": {
                 "$ref": "#/definitions/notification_shipment"
             }
-        },
+        }
     },
     "definitions": {
         "notification_order_items": {
@@ -42,7 +42,7 @@
                 "cancelled_order_item_quantity": {
                     "type": "integer",
                     "description" : "Quantity cancelled of the given order item"
-                },
+                }
             }
         },
         "notification_shipment": {

@@ -16,9 +16,6 @@
 			"shipping_days" : ["mon","tue","wed","thu","fri"],
 			"shipping_option_order_cutoff_time" : "17:00:00.0000000-04:00",
 			"shipping_option_order_pickup_time" : "19:00:00.0000000-04:00"
-
-		},
-
+		}
 	]
-
 }

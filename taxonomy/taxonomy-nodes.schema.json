@@ -52,5 +52,5 @@
 			"type" : "string",
 			"description" : "The suggested tax code related to the Jet node"
 		}
-	},
+	}
 }

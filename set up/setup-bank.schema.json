@@ -12,7 +12,7 @@
 
 			#Valid Values
 
-			*-'United States of America'",
+			*-'United States of America'"
 			},
 		"bank_name" :{
 			"type" : "string",

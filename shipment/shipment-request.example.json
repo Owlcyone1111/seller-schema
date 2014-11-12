@@ -13,7 +13,7 @@
                 "address2" : "",
                 "city" : "Malibu",
                 "state" : "CA",
-                "zip_code": "90265",
+                "zip_code": "90265"
             }
     },
     "shipping_info": [
@@ -33,7 +33,7 @@
             "product_title" : "Ironman action figure speciality edition",
             "order_quantity" : 2,
             "merchant_paid_cogs" : 40.65,
-            "jet_fulfillment_charge" : 5.00,
+            "jet_fulfillment_charge" : 5.00
             
         }
     ],

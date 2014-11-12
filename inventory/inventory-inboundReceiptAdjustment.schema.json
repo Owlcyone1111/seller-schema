@@ -83,8 +83,8 @@
                     "type" : "string",
                     "required" : false,
                     "description" : "the status of the inventory that was adjusted"
-                },	
+                }	
         	}
-    	},	
+    	}	
 	}
 }

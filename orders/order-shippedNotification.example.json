@@ -16,9 +16,9 @@
                     "shipment_item_id": "76-s2507-i1810",
                     "alt_shipment_item_id": "129900120",
                     "merchant_sku": "15a1010",
-                    "response_shipment_sku_quantity": 1,
+                    "response_shipment_sku_quantity": 1
                 }
             ]
         }
-    ],
+    ]
 }

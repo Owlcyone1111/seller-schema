@@ -21,7 +21,7 @@
                 "price": {
 					"type": "number",
 					"required": true,
-					"description": "The overall price that the merchant SKU is priced at",
+					"description": "The overall price that the merchant SKU is priced at"
 				},
 				"fulfillment_nodes":{
 					"type":"array",

@@ -9,7 +9,7 @@
 			"type":"array",
 			"items":{
 				"$ref":"#/definitions/fulfillment_nodes_inventory"
-			},
+			}
 		}
 	},
 	"definitions":{

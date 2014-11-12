@@ -30,11 +30,11 @@
 				},
 				"free_text": {
 					"type":"boolean",
-					"required":true,
+					"required":true
 				},
 				"variant": {
 					"type":"boolean",
-					"required":true,
+					"required":true
 				},
 				"values": {
 					"type" : "array",
@@ -54,11 +54,11 @@
 						"$ref":"#/definitions/validation"
 					}
 				}		
-			},
+			}
 		},
 		"value": {
 			"type": "string",
-			"description": "The values accepted for a particular Attribute ID",
+			"description": "The values accepted for a particular Attribute ID"
 		},
 		"unit": {
 			"type":"string",
@@ -88,8 +88,8 @@
 				"scale": {
 					"type": "integer",
 					"description": "The number of digits to the right of the decimal accepted for a number of float data type"
-				},
+				}
 			}
-		},
+		}
 	}
 }

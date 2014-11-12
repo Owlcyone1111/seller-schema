@@ -8,17 +8,17 @@
 		"settlement_report_id": {
 			"type": "string",
 			"required": true,
-			"description": "The unique ID for this settlement report.  This ID should be referenced when creating a dispute with Jet.com",
+			"description": "The unique ID for this settlement report.  This ID should be referenced when creating a dispute with Jet.com"
 		},
 		"currency": {
 			"type": "string",
 			"required": true,
-			"description": "The currency that all monetary values are represented in for the settlement report retrieved",
+			"description": "The currency that all monetary values are represented in for the settlement report retrieved"
 		},
 		"unavailable_balance": {
 			"type": "number",
 			"required": true,
-			"description": "The total value of all sales and returns that are not settled yet.  This value will remain unavailable until settlement occurs.  This value is provide for estimation purposes and is not considered final.",
+			"description": "The total value of all sales and returns that are not settled yet.  This value will remain unavailable until settlement occurs.  This value is provide for estimation purposes and is not considered final."
 		},
 		"settlement_period_start" : {
 			"type" : "string",
@@ -50,7 +50,7 @@
 		"order_balance": {
 			"type": "number",
 			"required": true,
-			"description": "The total value of orders that is settled in this settlement report",
+			"description": "The total value of orders that is settled in this settlement report"
 		},
 		"return_balance_details":{
             "type" : "object",
@@ -62,18 +62,18 @@
 		"return_balance": {
 			"type": "number",
 			"required": true,
-			"description": "The total value of orders that is settled in this settlement report",
+			"description": "The total value of orders that is settled in this settlement report"
 		},
 		"jet_adjustment": {
             "type": "number",
             "required": true,
-            "description": "A credit given to a merchant or fee taken from the merchant",
+            "description": "A credit given to a merchant or fee taken from the merchant"
         },
         "settlement_value": {
 			"type": "number",
 			"required": true,
-			"description": "The total value of orders that is settled in this settlement report",
-		},
+			"description": "The total value of orders that is settled in this settlement report"
+		}
 	},
 	"definitions":{
         "settlement_report_order_details": {
@@ -125,7 +125,7 @@
                     "type": "number",
                     "required": true,
                     "description" : "If the item is sold via DBJ (Distributed By Jet), then this is the all in cost of the product sold to the customer"
-                },                
+                }                
             }
         },
         "settlement_report_return_details": {
@@ -177,7 +177,7 @@
                     "type": "number",
                     "required": true,
                     "description" : "If the item is sold via DBJ (Distributed By Jet), then this is cost of the product that will be returned to the merchant"
-                },                
+                }                
             }
         }
 	}
