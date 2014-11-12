@@ -14,13 +14,13 @@
             "description": "Jet's return message for whether the refund was accepted.",
             "enum":[
                 "accepted",
-                "rejected - refund conflicts with returns policy",
+                "rejected - refund conflicts with returns policy"
             ]
         },
     	"merchant_order_id": {
             "type": "string",
             "required":true,
-            "description" :  "Jet's unique ID for a given merchant order.",
+            "description" :  "Jet's unique ID for a given merchant order."
         },
         "reference_merchant_order_id" :{
             "type": "string",
@@ -37,7 +37,7 @@
             "items": {
                 "$ref": "#/definitions/order_refund_item"
             }
-        },
+        }
     },
     "definitions": {
         "order_refund_item": {
@@ -85,7 +85,7 @@
                                 "item is defective/does not work properly",
                                 "item is damaged/broken",
                                 "accidental order",
-                                "received wrong item than what was ordered",
+                                "received wrong item than what was ordered"
                                 ],
                     "description" : "The reason this refund was initiated. 
 
@@ -119,7 +119,7 @@
                                 "customer opened item",
                                 "not shipped in original packaging",
                                 "item damaged",
-                                "other",
+                                "other"
                                 ],
                     "description" : "The reason this refund is less than the full amount. 
 
