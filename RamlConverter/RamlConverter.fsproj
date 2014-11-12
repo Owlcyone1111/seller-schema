@@ -61,7 +61,6 @@
   <ItemGroup>
     <Compile Include="Ast.fs" />
     <Compile Include="XmlHelper.fs" />
-    <Compile Include="JsonSchema.fs" />
     <Compile Include="JsonSchemaToHtml.fs" />
     <Compile Include="Json.fs" />
     <Compile Include="RamlParser.fs" />
@@ -92,11 +91,11 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Marvel.FSharp">
-      <HintPath>packages\Marvel.FSharp.2.0.1-alpha189\lib\net45\Marvel.FSharp.dll</HintPath>
+      <HintPath>packages\Marvel.FSharp.2.0.1-alpha195\lib\net45\Marvel.FSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Marvel.Json.FSharp">
-      <HintPath>packages\Marvel.Json.FSharp.1.0.0-alpha189\lib\net45\Marvel.Json.FSharp.dll</HintPath>
+      <HintPath>packages\Marvel.Json.FSharp.1.0.0-alpha195\lib\net45\Marvel.Json.FSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib" />
