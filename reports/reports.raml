@@ -1,0 +1,22 @@
+#%RAML 0.8
+
+title: Reports
+description: The Reports API provides details on how to download various report types.  When looking at the methods for this schema, please ignore "?subscription-key= Your subscription key" in any URLs.
+baseUri: https://merchant-api.test.jet.com/api/orders
+version: v0.1
+protocols: [HTTPS]
+mediaType: application/json
+
+
+/reports:
+    /{reportType}/{dateFrom}/{dateTo}:
+        get:
+            description: This methods returns links to the requested report type over the request time period
+            responses:
+                200:
+                    body:
+                        application/json:
+                            schema: !include reports-links.schema.json
+                            example: !include reports-links.example.json
+                404:
+                    description: The requested resource could not be found.

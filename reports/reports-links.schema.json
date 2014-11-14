@@ -1,0 +1,15 @@
+{
+    "title": "ReportLinks",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+    	"reports_urls": {
+    		"type": "array",
+    		"description": "List of URLs",
+    		"items": {
+    			"type": "string",
+    			"description": "The unique resource where the report can be downloaded from"
+    		}
+    	}
+    }
+}
