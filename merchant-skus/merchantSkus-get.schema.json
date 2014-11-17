@@ -101,7 +101,6 @@
 		},
 		"brand": {
 			"type": "string",
-			"required": true,
 			"maxLength" : 50,
 			"description": "Brand of the merchant SKU
 
@@ -117,7 +116,6 @@
 		},
 		"manufacturer": {
 			"type": "string",
-			"required": true,
 			"maxLength" : 50,
 			"description": "Manufacturer of the merchant SKU
 
@@ -521,6 +519,7 @@
 				"standard_product_code": {
 					"type": "string",
 					"maxLength" : 14,
+					"required": true,
 					"description": "A standard, unique identifier for a product.  ISBN-10, ISBN-13, UPC, EAN and GTIN-14 are accepted.
 
 					#Valid Values
