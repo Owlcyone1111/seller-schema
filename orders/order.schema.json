@@ -61,6 +61,24 @@
 
             *'rejected - item level error' - the error occurred at the item level"
         },    
+        "exception_state":{
+            "type": "string",
+            "enum":[
+                "resolved",
+                "exception - order rejected",
+                "exception - too many units shipped",
+            ],
+            "description" :  "signifies that something unexpected has occurred for this order.  For example, too many units shipped by merchant, merchant failed to accept order.
+
+            #Valid Values
+
+            *'resolved' 
+
+            *'exception - order rejected' 
+
+            *'exception - too many units shipped'
+            "
+        },
         "order_placed_date": {
             "type": "string",
             "required": true,
