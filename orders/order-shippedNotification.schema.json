@@ -77,7 +77,6 @@
                 },
                 "carrier" : {
                     "type": "string",
-                    "required" : true,
                     "enum" : [
                         "UPS",
                         "USPS",
