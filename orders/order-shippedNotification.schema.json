@@ -13,6 +13,7 @@
             },
         "shipments": {
             "type": "array",
+            "required" : true,
             "items": {
                 "$ref": "#/definitions/order_shipped_shipment"
             }
@@ -74,12 +75,60 @@
                     "type": "string",
                     "description" : "The zip code of the locations from which the customer shipment is being shipped"
                 },
-                "carrier_pick_up_date": {
+                "carrier" : {
+                    "type": "string",
+                    "required" : true,
+                    "enum" : [
+                        "UPS",
+                        "USPS",
+                        "FedEx",
+                        "OnTrac",
+                        "Laser Ship",
+                        "A1",
+                        "Eastern Connection",
+                        "UDS",
+                        "UES",
+                        "CEVA",
+                        "ABF",
+                        "DHL",
+                        "APEX",
+                        "Pilot",
+                        "Prestige",
+                        "Spee Dee",
+                        "Lone Star",
+                        "Other",
+                    ],
+                    "description" : "The carrier that will complete final delivery of the shipment.   The tracking number should be for this carrier. Must be one of the valid values.
+
+                    #Valid Values
+
+                    * 'UPS'
+                    * 'USPS'
+                    * 'FedEx'
+                    * 'OnTrac'
+                    * 'Laser Ship'
+                    * 'A1'
+                    * 'Eastern Connection'
+                    * 'UDS' - United Delivery Service
+                    * 'UES' - United Express System
+                    * 'CEVA'
+                    * 'ABF'
+                    * 'DHL'
+                    * 'APEX'
+                    * 'Pilot'
+                    * 'Prestige'
+                    * 'Spee Dee'
+                    * 'Lone Star'
+                    * 'Other' - Any carrier not listed above
+                    "
+                },
+                "carrier_pick_up_date" : {
                     "type": "string",
                     "description" : "Date/Time that the carrier pick up the customer shipment from the facility where the shipment originated"
                 },
                 "shipment_items": {
                     "type": "array",
+                    "required" : true,
                     "items": {
                         "$ref": "#/definitions/order_shipped_shipment_item"
                     }
@@ -101,6 +150,7 @@
                 },
                 "merchant_sku": {
                     "type": "string",
+                    "required" : true,
                     "description" : "The merchant SKU that is in the given shipment"
                 },
                 "response_shipment_sku_quantity": {
