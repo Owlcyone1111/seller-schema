@@ -30,26 +30,39 @@
 				},
 				"free_text": {
 					"type":"boolean",
-					"required":true
+					"required":true,
+					"description":"This field indicates whether the field accepts free text.  If the attribute does not accept free text, it will be validated against a list of values
+					#Valid Values
+					* 0 = Attribute does not accept free text
+					* 1 = Attribute accepts free text
+					"
 				},
 				"variant": {
 					"type":"boolean",
-					"required":true
+					"required":true,
+					"description":"This field indicates whether the attribute is also a variant
+
+					#Valid Values
+					* 0 = Not a variant
+					* 1 = Variant"
 				},
 				"values": {
 					"type" : "array",
+					"description":"A list of possible attribute values if free text is not accepted",
 					"items":{
 						"$ref":"#/definitions/value"
 					}
 				},
 				"units": {
 					"type":"array",
+					"description":"A list of possible units associated with the attribute",
 					"items":{
 						"$ref":"#/definitions/unit"
 					}
 				},
 				"validation" : {
 					"type":"object",
+					"description":"Additional validation rules if the attribute is free text",
 					"items":{
 						"$ref":"#/definitions/validation"
 					}
