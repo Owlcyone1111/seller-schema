@@ -2,7 +2,7 @@
 	"product_title": "My Product",
 	"jet_browse_node_id": 100,
 	"product_status" : "Available For Purchase",
-	"jet_retail_sku" : "XHDIFF-0101",
+	"jet_retail_sku" : "ac62a44553734370b7ec90ee320f6eca",
 	"standard_product_codes" : [
 		{	
 			"standard_product_code": "123456789012",
@@ -35,7 +35,7 @@
 	],
 	"country_of_origin": "U.S.A.",
 	"safety_warning": "warning text goes here",
-	"start_selling_date": "2014-12-24",
+	"start_selling_date": "1988-01-01T01:43:30.0000000-07:00",
 	"fulfillment_time": 1,
 	"msrp": 6.99,
 	"map_price": 6.49,

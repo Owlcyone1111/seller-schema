@@ -79,7 +79,6 @@
 			"items" : {
 				"$ref": "#/definitions/product_codes"				
 			}
-
 		},	
 		"ASIN" : {
 			"type": "string",
@@ -320,7 +319,9 @@
 
 			#Logic
 
-			You should only use this field if the quantity for the merchant SKU is 0 at all merchant_fcs."
+			You should only use this field if the quantity for the merchant SKU is 0 at all merchant_fcs. This date should be in ISO 8601 format: yyyy-MM-ddTHH:mm:ss.fffffff-HH:MM
+
+            Example: 1988-01-01T01:43:30.0000000-07:00"
 		},
 		"fulfillment_time": {
 			"type": "integer",

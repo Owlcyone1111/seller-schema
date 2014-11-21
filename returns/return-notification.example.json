@@ -7,7 +7,7 @@
 	"alt_order_id" : "12345678",
 	"return_date" : "2014-11-01T21:19:00.0000000Z",
 	"return_merchant_SKUs" : [{
-		"order_item_id" : "1123456789",
+		"order_item_id" : "ac62a44553734370b7ec90ee320f6eca",
 		"alt_order_item_id" : "A1223456",
 		"merchant_sku" : "AB12345",
 		"merchant_sku_title" : "red bottle",
