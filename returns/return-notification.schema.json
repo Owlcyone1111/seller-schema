@@ -20,9 +20,20 @@
                  "created",
                  "acknowledged",
                  "refund customer without return",
-                 "completed by merchant"
+                 "completed by merchant",
+                 "jet refunded"
              ],
-            "description": "Current status of the return."
+            "description": "Current status of the return.
+
+            #Valid Values
+
+            * 'created' - A return has been created for the merchant to acknowledge
+            * 'acknowledged' - The merchant has acknowledged the inbound return and will notify Jet when the return is complete
+            * 'refund customer without return' - The merchant acknowledges the return and authorizes Jet to refund the customer without the return being complete
+            * 'completed by merchant' - The item was received by the merchant and the return is now complete
+            * 'jet refunded' - Jet refunded the customer without the item being returned.  This may be used for damaged consumable products or other items where the return should not be sent back to the merchant.
+
+            "
         }, 
 		"merchant_order_id": {
 			"type": "string",
@@ -128,7 +139,6 @@
                         "required" : true,
                         "description" : "Jet's unique identifier for an item in a merchant order."
                     },
-                    
                     "alt_order_item_id": {
                         "type": "string",
                         "description" : "Required if returning/refunding an item. If an alt_order_item_id has been associated with the order_item_id via the order accept message, this may be passed instead of the order_item_id field.

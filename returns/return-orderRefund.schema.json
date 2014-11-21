@@ -3,10 +3,6 @@
     "type" : "object",
     "additionalProperties" : false,
     "properties" : {
-    	"reference_return_authorization_id" :{
-            "type": "string",
-            "description" :  "Jet's human readable return authoization number that may have a small chance of collision overtime"
-            },
         "merchant_order_id": {
             "type": "string",
             "description" :  "Jet's unique ID for a given merchant order"

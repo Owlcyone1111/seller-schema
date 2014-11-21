@@ -1,21 +1,21 @@
 {
-	"reference_return_authorization_id" :"123456789012-01",
 	"merchant_order_id" : "9b13bdd68c314d1b9c8b93277dea4da1",
 	"reference_order_id" : "123456789012",
 	"alt_order_id" : "12345678",
-	"items" : [{
-		"order_item_id" : "1123456789",
-		"alt_order_item_id" : "A1223456",
-		"total_quantity_returned" : 1,
-		"order_return_refund_qty" : 1,
-		"return_refund_feedback" : "customer opened item",
-		"refund_amount" : {
-			"principal" : 12.75,
-			"tax" : 0.89,
-			"shipping_cost" : 1.00,
-			"shipping_tax" : 0.07
+	"items" : [
+		{
+			"order_item_id" : "ac62a44553734370b7ec90ee320f6eca",
+			"alt_order_item_id" : "A1223456",
+			"total_quantity_returned" : 1,
+			"order_return_refund_qty" : 1,
+			"return_refund_feedback" : "customer opened item",
+			"refund_amount" : {
+				"principal" : 12.75,
+				"tax" : 0.89,
+				"shipping_cost" : 1.00,
+				"shipping_tax" : 0.07
+			}
 		}
-
-	}],
+	],
 	"agree_to_return_charge" : true
 }

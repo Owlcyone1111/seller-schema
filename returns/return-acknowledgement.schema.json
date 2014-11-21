@@ -4,10 +4,6 @@
 	"description": "This schema is used for acknowledgement of a Return notification",
 	"additionalProperties" : false,
 	"properties": {
-		"reference_return_authorization_id" :{
-            "type": "string",
-            "description" :  "Jet's human readable return authoization number that may have a small chance of collision overtime"
-            },
 		"alt_return_authorization_id": {
 			"type": "string",
 			"description": "Optional merchant supplied return number, which allows the merchant to use this number in future messages instead of return_authorization_id. This ID will be included on the Return Documentation that Jet gives to the customer"
@@ -35,6 +31,7 @@
 		},
 		"return_location" : {
 			"type" : "array",
+			"required": false,
 			"items" : {
         		"$ref" : "#/defintions/return_to_location"
 			}
@@ -46,14 +43,19 @@
             "type" : "object",
 			"additionalProperties" : false,
             "properties" : {
+            	"order_item_id": {
+                    "type": "string",
+                    "required" : true,
+                    "description" : "Jet's unique identifier for an item in a merchant order."
+                },
     	    	"location_name" : {
         	    	"type" : "string",
-		        	"required" : false,
+		        	"required" : true,
 		        	"description" : "This is the name of the return location"
             	},
             	"location_address_1" : {
         	    	"type" : "string",
-		        	"required" : false,
+		        	"required" : true,
 		        	"description" : "The first address line for the return location"
             	},
             	"location_address_2" : {
@@ -63,17 +65,17 @@
             	},
             	"location_city" : {
         	    	"type" : "string",
-		        	"required" : false,
+		        	"required" : true,
 		        	"description" : "The city, town, or village of the return location"
             	},
             	"location_state" : {
         	    	"type" : "string",
-		        	"required" : false,
+		        	"required" : true,
 		        	"description" : "The state of the return location"
             	},
             	"location_postal_code" : {
         	    	"type" : "string",
-		        	"required" : false,
+		        	"required" : true,
 		        	"description" : "The postal code for the return location"
             	}
             }

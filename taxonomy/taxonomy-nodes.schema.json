@@ -19,7 +19,7 @@
 			"required":true,
 			"description":"The Jet Node Path for the requested node ID"
 		},
-		"amazon_node_id": {
+		"amazon_node_ids": {
 			"type":"array",
 			"required":true,
 			"description": "For reference: the Amazon browse node ID from their browse tree",
