@@ -4,16 +4,21 @@
 	"additionalProperties" : false,
 	"description": "This schema is used to inform the merchant of a return",
 	"properties": {
-		"reference_return_authorization_id" :{
+		"merchant_return_authorization_id":{
+            "type": "string",
+            "required": true,
+            "description" :  "Jet generated return authorization ID that is used in URL"
+        },
+        "reference_return_authorization_id":{
             "type": "string",
             "required": true,
             "description" :  "Jet's human readable return authorization number that may have a small chance of collision overtime"
-            },
-        "refund_without_return" : {
+        },
+        "refund_without_return":{
 			"type":"boolean",
 			"description" : "If this is true, Jet has deemed that this item should not be returned, but the customer still should be refunded."
 		},
-        "return_status": {
+        "return_status":{
             "type": "string",
             "required": true,
             "enum":[
@@ -35,17 +40,17 @@
 
             "
         }, 
-		"merchant_order_id": {
+		"merchant_order_id":{
 			"type": "string",
 			"required": false,
 			"description": "Jet's unique ID for a given merchant order"
 		},
-        "reference_order_id" :{
+        "reference_order_id":{
             "type": "string",
             "required": false,
             "description" :  "Jet's human readable order ID number that may have a small chance of collision overtime"
         },		
-		"alt_order_id": {
+		"alt_order_id":{
 			"type": "string",
 			"required": false,
 			"description": "Optional merchant supplied order ID that should have been established in OrderAcknowledgement in order to use in this message.
