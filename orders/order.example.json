@@ -42,37 +42,66 @@
         "regulatory_fees" : 0.00,
         "tax_info" : {
             "tax_jurisdictions" :{
-                "tax_location_code": "100265899",
-                "tax_city" : "Oviedo",
+                "tax_district" : [
+                    {
+                        "tax_location_code": "100265899"
+                    }
+                ],             
+               "tax_city" : "Oviedo",
                 "tax_county": "Seminole",
                 "tax_state" : "FL"
             },
             "taxable_amounts" : {
-                "district_amount" :0,
+                "tax_district" : [
+                    {
+                        "tax_location_code": "100265899",
+                        "district_amount" :0,
+                    }
+                ],
                 "city_amount" :0,
                 "county_amount":25.00,
                 "state_amount":25.00
             },
             "non_taxable_amounts" : {
-                "district_amount" :25.00,
+                "tax_district" : [
+                    {
+                        "tax_location_code": "100265899",
+                        "district_amount" :0,
+                    }
+                ],
                 "city_amount" :25.00,
                 "county_amount":0,
                 "state_amount":0
             },
             "zero_rated_amounts": {
-                "district_amount" :0,
+                "tax_district" : [
+                    {
+                        "tax_location_code": "100265899",
+                        "district_amount" :0,
+                    }
+                ],
                 "city_amount" :0,
                 "county_amount":0,
                 "state_amount":0
             },
             "tax_collected_amounts" : {
-                "district_amount" :0,
+                "tax_district" : [
+                    {
+                        "tax_location_code": "100265899",
+                        "district_amount" :0,
+                    }
+                ],
                 "city_amount" :0,
                 "county_amount":1,
                 "state_amount":0.75
             },
             "tax_rates" : {
-                "district_amount" :0,
+                "tax_district" : [
+                    {
+                        "tax_location_code": "100265899",
+                        "district_amount" :0,
+                    }
+                ],
                 "city_amount" : 0,
                 "county_amount":0.04,
                 "state_amount": 0.03
@@ -102,42 +131,70 @@
             "regulatory_fees" : 0.00,
             "tax_info" : {
                 "tax_jurisdictions" :{
-                    "tax_location_code": "100265899",
-                    "tax_city" : "Oviedo",
+                    "tax_district" : [
+                        {
+                            "tax_location_code": "100265899"
+                        }
+                    ],             
+                   "tax_city" : "Oviedo",
                     "tax_county": "Seminole",
                     "tax_state" : "FL"
-                    },
+                },
                 "taxable_amounts" : {
-                    "district_amount" :0,
+                    "tax_district" : [
+                        {
+                            "tax_location_code": "100265899",
+                            "district_amount" :0,
+                        }
+                    ],
                     "city_amount" :0,
                     "county_amount":25.00,
                     "state_amount":25.00
-
-                    },
+                },
                 "non_taxable_amounts" : {
-                    "district_amount" :25.00,
+                    "tax_district" : [
+                        {
+                            "tax_location_code": "100265899",
+                            "district_amount" :0,
+                        }
+                    ],
                     "city_amount" :25.00,
                     "county_amount":0,
                     "state_amount":0
-                    },
+                },
                 "zero_rated_amounts": {
-                    "district_amount" :0,
+                    "tax_district" : [
+                        {
+                            "tax_location_code": "100265899",
+                            "district_amount" :0,
+                        }
+                    ],
                     "city_amount" :0,
                     "county_amount":0,
                     "state_amount":0
-                    },
+                },
                 "tax_collected_amounts" : {
-                    "district_amount" :0,
+                    "tax_district" : [
+                        {
+                            "tax_location_code": "100265899",
+                            "district_amount" :0,
+                        }
+                    ],
                     "city_amount" :0,
                     "county_amount":1,
                     "state_amount":0.75
-                    },
+                },
                 "tax_rates" : {
-                    "district_amount" :0,
+                    "tax_district" : [
+                        {
+                            "tax_location_code": "100265899",
+                            "district_amount" :0,
+                        }
+                    ],
                     "city_amount" : 0,
                     "county_amount":0.04,
                     "state_amount": 0.03
-                    }
+                }
             },
             "product_title": "blue pair of socks",
             "url": ""

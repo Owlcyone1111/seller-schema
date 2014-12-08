@@ -561,10 +561,9 @@
             "type" : "object",
             "additionalProperties" : false,
             "properties" : {
-                "tax_location_code" : {
-                    "type" : "string",
-                    "required" : false,
-                    "description" : "Tax location code for the jurisdiction in which tax was collected"
+                "tax_district" : {
+                    "type": "object",
+                    "$ref": "#/definitions/tax_districts_array" 
                 },
                 "tax_city" : {
                     "type" : "string",
@@ -588,10 +587,9 @@
             "type": "object",
             "additionalProperties" : false,
             "properties": {
-                "district_amount": {
-                    "type": "number",
-                    "required": false,
-                    "description": "Amount at the disctrict level"
+                "tax_district" : {
+                    "type": "object",
+                    "$ref": "#/definitions/tax_districts_array" 
                 },
                 "city_amount": {
                     "type": "number",
@@ -607,6 +605,22 @@
                     "type": "number",
                     "required": false,
                     "description": "Amount at the state level"
+                }
+            }
+        },
+        "tax_districts_array": {
+            "title": "TaxDistrictsArray",
+            "type": "object",
+            "additionalProperties" : false,
+            "properties": {
+                "tax_district" : {
+                    "type": "object",
+                    "$ref": "#/definitions/tax_districts" 
+                },
+                "district_amount": {
+                    "type": "number",
+                    "required": false,
+                    "description": "The amount that corresponds to the district in the array"
                 }
             }
         },
