@@ -3,10 +3,10 @@
     "type" : "object",
     "additionalProperties" : false,
     "properties" : {
-        "reference_return_authorization_id" :{
+        "reference_refund_authorization_id" :{
             "type": "string",
             "required": true,
-            "description" :  "Jet's human readable return authorization number that may have a small chance of collision overtime."
+            "description" :  "Jet's human readable refund authorization number that may have a small chance of collision overtime."
         },
         "refund_status":{
             "required":true,
@@ -14,7 +14,9 @@
             "description": "Jet's return message for whether the refund was accepted.",
             "enum":[
                 "accepted",
-                "rejected - refund conflicts with returns policy"
+                "rejected - refund conflicts with returns policy",
+                "rejected - customer card not valid",
+                "rejected - other"
             ]
         },
     	"merchant_order_id": {

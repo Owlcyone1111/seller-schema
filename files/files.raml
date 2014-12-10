@@ -15,20 +15,20 @@ mediaType: application/json
                 body:
                     application/json:
                         schema: !include files-token.schema.json
-                        exmaple: !include files-token.exmaple.json
+                        exmaple: !include files-token.example.json
 /uploaded:
     post:
         description: This method allows to notify Jet.com about file being uploaded
         body:
             application/json:
                 schema: !include files-uploaded.schema.json
-                exmaple: !include files-uploaded.exmaple.json
+                exmaple: !include files-uploaded.example.json
         responses:
             200:
                 body:
                     application/json:
                         schema: !include files-status.schema.json
-                        exmaple: !include files-status.exmaple.json
+                        exmaple: !include files-status.example.json
 /{jet_file_id}:
     get:
         description: Returns details about particular file
@@ -37,4 +37,4 @@ mediaType: application/json
                 body:
                     application/json:
                         schema: !include files-status.schema.json
-                        exmaple: !include files-status.exmaple.json
+                        exmaple: !include files-status.example.json
