@@ -95,18 +95,22 @@
                     "properties" : {
                 		"principal" : {
                 			"type" : "number",
+                            "required" : true,
                 			"description" : "Amount to be refunded for the given item in USD associated with the item itself. This should be the total cost for this item not the unit cost"
                 		},
                 		"tax" : {
                 			"type" : "number",
+                            "required" : true,
                 			"description" : "Amount to be refunded for the given item in USD associated with tax that was charged for the item"
                 		},
                 		"shipping_cost" : {
                 			"type" : "number",
+                            "required" : true,
                 			"description" : "Amount to be refunded for the given item in USD associated with the shipping cost that was allocated to this item"
                 		},
                 		"shipping_tax" : {
                 			"type" : "number",
+                            "required" : true,
                 			"description" : "Amount to be refunded for the given item in USD associated with the tax that was charged on shipping"
                 		}
                 	}
