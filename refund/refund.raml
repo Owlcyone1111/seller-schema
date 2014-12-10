@@ -10,16 +10,12 @@ mediaType: application/json
 /refunds:
     post:
         description: This method will create a refund in Jet.com's system and return a refund authorization ID in a message
-        body:
-            application/json:
-                schema: !include refund.schema.json
-                example: !include refund.example.json
         responses:
             200:
                 body:
                     application/json:
-                        schema: !include refund-response.schema.json
-                        example: !include refund-response.exmaple.json
+                        schema: !include refund.schema.json
+                        example: !include refund.example.json
             404:
                 description: The requested resource could not be found. 
     /{id}:
