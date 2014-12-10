@@ -1,0 +1,24 @@
+{
+    "title" : "RefundResponse",
+    "type" : "object",
+    "additionalProperties" : false,
+    "properties" : {
+        "refund_authorization_id" :{
+            "type": "string",
+            "required": true,
+            "description" :  "The Jet.com generated refund ID for a merchant-posted refund"
+        },
+        "refund_status":{
+            "required":true,
+            "type":"string",
+            "description": "Jet's return message for whether the refund was accepted.",
+            "enum":[
+                "accepted",
+                "processing",
+                "rejected - refund conflicts with returns policy",
+                "rejected - customer card not valid",
+                "rejected - other"
+            ]
+        },
+    }
+}
