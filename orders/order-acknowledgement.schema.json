@@ -32,6 +32,7 @@
         "order_items": {
             "type": "array",
             "minItems": 1,
+            "required": true,
             "items": {
                 "$ref": "#/definitions/order_acknowledgement_item"
             }
