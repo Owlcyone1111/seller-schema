@@ -63,7 +63,7 @@
                     "type": "number",
                     "required": true,
                     "description" : "The tax charged on shipped revenue"
-                },                                                
+                }, 
                 "shipping_charge": {
                     "type": "number",
                     "required": true,
@@ -104,8 +104,7 @@
 
                     #Valid Values
 
-                    * merchant - the merchant fulfilled and shipped the order through self operated fulfillment center or drop shippers
-                    * dbj - the order was fulfilled for the merchant by Jet    
+                    * merchant - the merchant fulfilled and shipped the order through self operated fulfillment center or drop shippers   
 
                     "
                 },
@@ -124,21 +123,52 @@
                     "required": true,
                     "description" : "The fixed commision for a sale"
                 },
-                "tax": {
-                    "type": "number",
-                    "required": true,
-                    "description" : "The tax charged to the customer for buying the item"
-                },
                 "shipping_revenue": {
                     "type": "number",
                     "required": true,
                     "description" : "The shipping revenue charged to the customer for buying the item"
                 },
+                "tax": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "The tax charged to the customer for buying the item"
+                },
                 "shipping_tax": {
                     "type": "number",
                     "required": true,
                     "description" : "The tax charged on shipped revenue"
-                },                                                
+                },
+                "tax_info": {
+                    "title": "SettlementItemTaxInfo",
+                    "type" : "object",
+                    "additionalProperties" : false,
+                    "properties": {
+                        "tax_jurisdictions": { 
+                            "type": "object",
+                            "$ref": "#/definitions/settlement_tax_jurisdictions"                
+                        },
+                        "taxable_amounts": {
+                            "type": "object",
+                            "$ref": "#/definitions/settlement_amounts"
+                        },
+                        "non_taxable_amounts": {
+                            "type": "object",
+                            "$ref": "#/definitions/settlement_amounts"                
+                        },
+                        "zero_rated_amounts": {
+                            "type": "object",
+                            "$ref": "#/definitions/settlement_amounts"
+                        },
+                        "tax_collected_amounts": {
+                            "type": "object",
+                            "$ref": "#/definitions/settlement_amounts"                
+                        },
+                        "tax_rates": {
+                            "type": "object",
+                            "$ref": "#/definitions/settlement_amounts"
+                        }
+                    }
+                },                                                      
                 "shipping_charge": {
                     "type": "number",
                     "required": true,
@@ -154,6 +184,78 @@
                     "required": true,
                     "description" : "If the item is sold via DBJ (Distributed By Jet), then this is the all in cost of the product sold to the customer"
                 }                
+            }
+        },
+        "settlement_tax_jurisdictions" : {
+            "title" : "SettlementItemTaxJurisdictions",
+            "type" : "object",
+            "additionalProperties" : false,
+            "properties" : {
+                "tax_district" : {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/tax_districts_array" 
+                    }
+                },
+                "tax_city" : {
+                    "type" : "string",
+                    "required" : false,
+                    "description" :"Name of the city in which tax was collected"
+                },
+                "tax_county" : {
+                    "type" : "string",
+                    "required" : false,
+                    "description" : "Name of the county that tax was collected"
+                },
+                "tax_state" : {
+                    "type" : "string",
+                    "required" : false,
+                    "descrition" : "Two letter abbreviation for the state in which tax was collected"
+                }
+            }
+        },
+        "settlement_amounts": {
+            "title": "SettlementTaxItemAmounts",
+            "type": "object",
+            "additionalProperties" : false,
+            "properties": {
+                "tax_district" : {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/tax_districts_array" 
+                    }
+                },
+                "city_amount": {
+                    "type": "number",
+                    "required": false,
+                    "description": "Amount at the city level"
+                },
+                "county_amount": {
+                    "type": "number",
+                    "required": false,
+                    "description": "Amount at the county level"
+                },
+                "state_amount": {
+                    "type": "number",
+                    "required": false,
+                    "description": "Amount at the state level"
+                }
+            }
+        },
+        "tax_districts_array": {
+            "title": "SettlmentItemTaxDistrictsArray",
+            "type": "object",
+            "additionalProperties" : false,
+            "properties": {
+                "tax_location" : {
+                    "type": "string",
+                    "description" : "The district that tax is collected for"
+                },
+                "district_amount": {
+                    "type": "number",
+                    "required": false,
+                    "description": "The amount that corresponds to the district in the array"
+                }
             }
         }
 	}

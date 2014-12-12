@@ -14,46 +14,247 @@
 	},
 	"order_item_balance_details" : [
 		{
-			"order_item_id" : "123-456-789",
+			"order_item_id" : "7e9b536f0d41472ea26a43faa442b0e8",
 			"alt_order_item_id" : "123456789",
 			"fulfillment_method" : "merchant",
 			"merchant_price" : 1337.48,
 			"jet_variable_commission" : -133.75,
 			"fixed_commission" : -40.12,
-			"tax" : 117.03,
 			"shipping_revenue" : 224.00,
+			"tax" : 117.03,
 			"shipping_tax" : 19.60,
+			"tax_info" : {
+            	"tax_jurisdictions" :{
+                	"tax_district" : [
+	                    {
+	                        "tax_location": "NY - METROPOLITAN COMMUTER TRANSPORTATION DISTRICT (NEW YORK), DISTRICT SALES/USE TAX"
+	                    }
+	                ],             
+	                "tax_city" : "Oviedo",
+	                "tax_county": "Seminole",
+	                "tax_state" : "FL"
+            	},
+	            "taxable_amounts" : {
+	                "tax_district" : [
+	                    {
+	                        "tax_location": "NY - METROPOLITAN COMMUTER TRANSPORTATION DISTRICT (NEW YORK), DISTRICT SALES/USE TAX",
+	                        "district_amount" :0,
+	                    }
+	                ],
+	                "city_amount" :0,
+	                "county_amount":25.00,
+	                "state_amount":25.00
+	            },
+	            "non_taxable_amounts" : {
+	                "tax_district" : [
+	                    {
+	                        "tax_location": "NY - METROPOLITAN COMMUTER TRANSPORTATION DISTRICT (NEW YORK), DISTRICT SALES/USE TAX",
+	                        "district_amount" :0,
+	                    }
+	                ],
+	                "city_amount" :25.00,
+	                "county_amount":0,
+	                "state_amount":0
+	            },
+	            "zero_rated_amounts": {
+	                "tax_district" : [
+	                    {
+	                        "tax_location": "NY - METROPOLITAN COMMUTER TRANSPORTATION DISTRICT (NEW YORK), DISTRICT SALES/USE TAX",
+	                        "district_amount" :0,
+	                    }
+	                ],
+	                "city_amount" :0,
+	                "county_amount":0,
+	                "state_amount":0
+	            },
+	            "tax_collected_amounts" : {
+	                "tax_district" : [
+	                    {
+	                        "tax_location": "NY - METROPOLITAN COMMUTER TRANSPORTATION DISTRICT (NEW YORK), DISTRICT SALES/USE TAX",
+	                        "district_amount" :0,
+	                    }
+	                ],
+	                "city_amount" :0,
+	                "county_amount":1,
+	                "state_amount":0.75
+	            },
+	            "tax_rates" : {
+	                "tax_district" : [
+	                    {
+	                        "tax_location": "NY - METROPOLITAN COMMUTER TRANSPORTATION DISTRICT (NEW YORK), DISTRICT SALES/USE TAX",
+	                        "district_amount" :0,
+	                    }
+	                ],
+	                "city_amount" : 0,
+	                "county_amount":0.04,
+	                "state_amount": 0.03
+	            }
+	        },
 			"shipping_charge" : 0.00,
 			"fulfillment_fee" : 0.00,
 			"product_cost" : 0.00			 
 		},
 		{
-			"order_item_id" : "123-456-788",
-			"alt_order_item_id" : "123456788",
+			"order_item_id" : "8feb6d8bcfd34fa98467da177bde3c9a",
+			"alt_order_item_id" : "123456789",
 			"fulfillment_method" : "merchant",
 			"merchant_price" : 1337.48,
 			"jet_variable_commission" : -133.75,
 			"fixed_commission" : -40.12,
-			"tax" : 117.03,
 			"shipping_revenue" : 224.00,
+			"tax" : 117.03,
 			"shipping_tax" : 19.60,
+			"tax_info" : {
+            	"tax_jurisdictions" :{
+                	"tax_district" : [
+	                    {
+	                        "tax_location": "NY - METROPOLITAN COMMUTER TRANSPORTATION DISTRICT (NEW YORK), DISTRICT SALES/USE TAX"
+	                    }
+	                ],             
+	                "tax_city" : "Oviedo",
+	                "tax_county": "Seminole",
+	                "tax_state" : "FL"
+            	},
+	            "taxable_amounts" : {
+	                "tax_district" : [
+	                    {
+	                        "tax_location": "NY - METROPOLITAN COMMUTER TRANSPORTATION DISTRICT (NEW YORK), DISTRICT SALES/USE TAX",
+	                        "district_amount" :0,
+	                    }
+	                ],
+	                "city_amount" :0,
+	                "county_amount":25.00,
+	                "state_amount":25.00
+	            },
+	            "non_taxable_amounts" : {
+	                "tax_district" : [
+	                    {
+	                        "tax_location": "NY - METROPOLITAN COMMUTER TRANSPORTATION DISTRICT (NEW YORK), DISTRICT SALES/USE TAX",
+	                        "district_amount" :0,
+	                    }
+	                ],
+	                "city_amount" :25.00,
+	                "county_amount":0,
+	                "state_amount":0
+	            },
+	            "zero_rated_amounts": {
+	                "tax_district" : [
+	                    {
+	                        "tax_location": "NY - METROPOLITAN COMMUTER TRANSPORTATION DISTRICT (NEW YORK), DISTRICT SALES/USE TAX",
+	                        "district_amount" :0,
+	                    }
+	                ],
+	                "city_amount" :0,
+	                "county_amount":0,
+	                "state_amount":0
+	            },
+	            "tax_collected_amounts" : {
+	                "tax_district" : [
+	                    {
+	                        "tax_location": "NY - METROPOLITAN COMMUTER TRANSPORTATION DISTRICT (NEW YORK), DISTRICT SALES/USE TAX",
+	                        "district_amount" :0,
+	                    }
+	                ],
+	                "city_amount" :0,
+	                "county_amount":1,
+	                "state_amount":0.75
+	            },
+	            "tax_rates" : {
+	                "tax_district" : [
+	                    {
+	                        "tax_location": "NY - METROPOLITAN COMMUTER TRANSPORTATION DISTRICT (NEW YORK), DISTRICT SALES/USE TAX",
+	                        "district_amount" :0,
+	                    }
+	                ],
+	                "city_amount" : 0,
+	                "county_amount":0.04,
+	                "state_amount": 0.03
+	            }
+	        },
 			"shipping_charge" : 0.00,
 			"fulfillment_fee" : 0.00,
 			"product_cost" : 0.00			 
 		},
 		{
-			"order_item_id" : "123-456-787",
-			"alt_order_item_id" : "123456787",
+			"order_item_id" : "f7bbba9039a24d7fb4bc26c38e9c4c27",
+			"alt_order_item_id" : "123456789",
 			"fulfillment_method" : "merchant",
 			"merchant_price" : 1337.48,
 			"jet_variable_commission" : -133.75,
 			"fixed_commission" : -40.12,
-			"tax" : 117.03,
 			"shipping_revenue" : 224.00,
+			"tax" : 117.03,
 			"shipping_tax" : 19.60,
+			"tax_info" : {
+            	"tax_jurisdictions" :{
+                	"tax_district" : [
+	                    {
+	                        "tax_location": "NY - METROPOLITAN COMMUTER TRANSPORTATION DISTRICT (NEW YORK), DISTRICT SALES/USE TAX"
+	                    }
+	                ],             
+	                "tax_city" : "Oviedo",
+	                "tax_county": "Seminole",
+	                "tax_state" : "FL"
+            	},
+	            "taxable_amounts" : {
+	                "tax_district" : [
+	                    {
+	                        "tax_location": "NY - METROPOLITAN COMMUTER TRANSPORTATION DISTRICT (NEW YORK), DISTRICT SALES/USE TAX",
+	                        "district_amount" :0,
+	                    }
+	                ],
+	                "city_amount" :0,
+	                "county_amount":25.00,
+	                "state_amount":25.00
+	            },
+	            "non_taxable_amounts" : {
+	                "tax_district" : [
+	                    {
+	                        "tax_location": "NY - METROPOLITAN COMMUTER TRANSPORTATION DISTRICT (NEW YORK), DISTRICT SALES/USE TAX",
+	                        "district_amount" :0,
+	                    }
+	                ],
+	                "city_amount" :25.00,
+	                "county_amount":0,
+	                "state_amount":0
+	            },
+	            "zero_rated_amounts": {
+	                "tax_district" : [
+	                    {
+	                        "tax_location": "NY - METROPOLITAN COMMUTER TRANSPORTATION DISTRICT (NEW YORK), DISTRICT SALES/USE TAX",
+	                        "district_amount" :0,
+	                    }
+	                ],
+	                "city_amount" :0,
+	                "county_amount":0,
+	                "state_amount":0
+	            },
+	            "tax_collected_amounts" : {
+	                "tax_district" : [
+	                    {
+	                        "tax_location": "NY - METROPOLITAN COMMUTER TRANSPORTATION DISTRICT (NEW YORK), DISTRICT SALES/USE TAX",
+	                        "district_amount" :0,
+	                    }
+	                ],
+	                "city_amount" :0,
+	                "county_amount":1,
+	                "state_amount":0.75
+	            },
+	            "tax_rates" : {
+	                "tax_district" : [
+	                    {
+	                        "tax_location": "NY - METROPOLITAN COMMUTER TRANSPORTATION DISTRICT (NEW YORK), DISTRICT SALES/USE TAX",
+	                        "district_amount" :0,
+	                    }
+	                ],
+	                "city_amount" : 0,
+	                "county_amount":0.04,
+	                "state_amount": 0.03
+	            }
+	        },
 			"shipping_charge" : 0.00,
 			"fulfillment_fee" : 0.00,
-			"product_cost" : 0.00
+			"product_cost" : 0.00	
 		}
 	]
 }

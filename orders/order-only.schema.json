@@ -562,8 +562,10 @@
             "additionalProperties" : false,
             "properties" : {
                 "tax_district" : {
-                    "type": "object",
-                    "$ref": "#/definitions/tax_districts_array" 
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/tax_districts_array" 
+                    }
                 },
                 "tax_city" : {
                     "type" : "string",
@@ -588,8 +590,10 @@
             "additionalProperties" : false,
             "properties": {
                 "tax_district" : {
-                    "type": "object",
-                    "$ref": "#/definitions/tax_districts_array" 
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/tax_districts_array" 
+                    }
                 },
                 "city_amount": {
                     "type": "number",
@@ -613,9 +617,9 @@
             "type": "object",
             "additionalProperties" : false,
             "properties": {
-                "tax_district" : {
-                    "type": "object",
-                    "$ref": "#/definitions/tax_districts" 
+                "tax_location" : {
+                    "type": "string",
+                    "description" : "The district that tax is collected for"
                 },
                 "district_amount": {
                     "type": "number",

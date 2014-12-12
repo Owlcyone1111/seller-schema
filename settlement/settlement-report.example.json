@@ -1,5 +1,6 @@
 {	
-	"settlement_report_id" : "SETTLEMENTREPORTEXAMPLE",
+	"settlement_report_id" : "002d7b66c1794190b3d2985826462893",
+	"settlement_state" : "deposited",
 	"currency" : "dollars", 
 	"unavailable_balance" : 4102.20,
 	"settlement_period_start" : "2014-07-24T00:00:00.0000000Z",

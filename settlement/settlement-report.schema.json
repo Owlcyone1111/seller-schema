@@ -10,6 +10,20 @@
 			"required": true,
 			"description": "The unique ID for this settlement report.  This ID should be referenced when creating a dispute with Jet.com"
 		},
+        "settlement_state": {
+            "type": "string",
+            "required": true,
+            "enum" : ["deposited", "pending", "rejected"], 
+            "description": "The status of the current settlement
+
+            #Valid Values
+
+            * submitted - the payment has been submitted to your bank and is awaiting deposited
+            * deposited - the payment has been deposited to your bank
+            * rejected - the payment was rejected by your bank.  Please check your deposit information.
+
+            "
+        },
 		"currency": {
 			"type": "string",
 			"required": true,
