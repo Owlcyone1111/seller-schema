@@ -58,7 +58,7 @@
                     "type": "number",
                     "required": true,
                     "description" : "The tax charged on shipped revenue to be returned to the customer"
-                },                                                
+                },                                                         
                 "merchant_return_charge": {
                     "type": "number",
                     "required": true,
@@ -138,7 +138,38 @@
                     "type": "number",
                     "required": true,
                     "description" : "The tax charged on shipped revenue to be returned to the customer"
-                },                                                
+                },  
+                "tax_info": {
+                    "title": "SettlementReturnTaxInfo",
+                    "type" : "object",
+                    "additionalProperties" : false,
+                    "properties": {
+                        "tax_jurisdictions": { 
+                            "type": "object",
+                            "$ref": "#/definitions/settlement_tax_jurisdictions"                
+                        },
+                        "taxable_amounts": {
+                            "type": "object",
+                            "$ref": "#/definitions/settlement_amounts"
+                        },
+                        "non_taxable_amounts": {
+                            "type": "object",
+                            "$ref": "#/definitions/settlement_amounts"                
+                        },
+                        "zero_rated_amounts": {
+                            "type": "object",
+                            "$ref": "#/definitions/settlement_amounts"
+                        },
+                        "tax_collected_amounts": {
+                            "type": "object",
+                            "$ref": "#/definitions/settlement_amounts"                
+                        },
+                        "tax_rates": {
+                            "type": "object",
+                            "$ref": "#/definitions/settlement_amounts"
+                        }
+                    }
+                },                                               
                 "merchant_return_charge": {
                     "type": "number",
                     "required": true,
@@ -159,6 +190,78 @@
                     "required": true,
                     "description" : "If the item is sold via DBJ (Distributed By Jet), then this is cost of the product that will be returned to the merchant"
                 }                
+            }
+        },
+        "settlement_tax_jurisdictions" : {
+            "title" : "SettlementReturnTaxJurisdictions",
+            "type" : "object",
+            "additionalProperties" : false,
+            "properties" : {
+                "tax_district" : {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/tax_districts_array" 
+                    }
+                },
+                "tax_city" : {
+                    "type" : "string",
+                    "required" : false,
+                    "description" :"Name of the city in which tax was collected"
+                },
+                "tax_county" : {
+                    "type" : "string",
+                    "required" : false,
+                    "description" : "Name of the county that tax was collected"
+                },
+                "tax_state" : {
+                    "type" : "string",
+                    "required" : false,
+                    "descrition" : "Two letter abbreviation for the state in which tax was collected"
+                }
+            }
+        },
+        "settlement_amounts": {
+            "title": "SettlementTaxReturnAmounts",
+            "type": "object",
+            "additionalProperties" : false,
+            "properties": {
+                "tax_district" : {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/tax_districts_array" 
+                    }
+                },
+                "city_amount": {
+                    "type": "number",
+                    "required": false,
+                    "description": "Amount at the city level"
+                },
+                "county_amount": {
+                    "type": "number",
+                    "required": false,
+                    "description": "Amount at the county level"
+                },
+                "state_amount": {
+                    "type": "number",
+                    "required": false,
+                    "description": "Amount at the state level"
+                }
+            }
+        },
+        "tax_districts_array": {
+            "title": "SettlmentItemTaxDistrictsArray",
+            "type": "object",
+            "additionalProperties" : false,
+            "properties": {
+                "tax_location" : {
+                    "type": "string",
+                    "description" : "The district that tax is collected for"
+                },
+                "district_amount": {
+                    "type": "number",
+                    "required": false,
+                    "description": "The amount that corresponds to the district in the array"
+                }
             }
         }
 	}
