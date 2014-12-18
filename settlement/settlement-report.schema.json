@@ -13,7 +13,7 @@
         "settlement_state": {
             "type": "string",
             "required": true,
-            "enum" : ["deposited", "pending", "rejected"], 
+            "enum" : ["deposited", "submitted", "rejected"], 
             "description": "The status of the current settlement
 
             #Valid Values
