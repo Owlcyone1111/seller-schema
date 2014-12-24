@@ -1,9 +1,9 @@
 {
     "$schema" : "http://json-schema.org/draft-03/schema",		
-	"title": "SettlementReport",
+	"title": "SettlementReturnsReport",
 	"type": "object",
     "additionalProperties" : false,		
-	"description": "This schema provides the fields for a merchant to return a settlement report based on order sales and customer returns on Jet.com",
+	"description": "This schema provides the fields for a merchant to return a settlement report based on customer returns on Jet.com",
 	"properties": {
 		"currency": {
 			"type": "string",
@@ -13,7 +13,7 @@
         "return_balance": {
             "type": "number",
             "required": true,
-            "description": "The total value of orders that is settled in this settlement report"
+            "description": "The total value of returns that is settled in this settlement report"
         },
 		"return_balance_details":{
 			"required": true,

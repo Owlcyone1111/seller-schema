@@ -76,7 +76,7 @@
 		"return_balance": {
 			"type": "number",
 			"required": true,
-			"description": "The total value of orders that is settled in this settlement report"
+			"description": "The total value of returns that is settled in this settlement report"
 		},
 		"jet_adjustment": {
             "type": "number",
