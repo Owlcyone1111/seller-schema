@@ -19,7 +19,7 @@ mediaType: application/json
                             example: !include settlement-links.example.json
                 404:
                     description: The requested resource could not be found.
-    /{id}:
+    /report/{id}:
         get:
             description: This method will allow a merchant to retrieve a settlement report with summary level details for a provided Settlement ID
             responses:
