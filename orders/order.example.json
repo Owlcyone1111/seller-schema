@@ -42,7 +42,7 @@
         "regulatory_fees" : 0.00,
         "tax_info" : {
             "tax_jurisdictions" :{
-                "tax_district" : [
+                "tax_districts" : [
                     {
                         "tax_location": "NY - METROPOLITAN COMMUTER TRANSPORTATION DISTRICT (NEW YORK), DISTRICT SALES/USE TAX"
                     }
@@ -52,7 +52,7 @@
                 "tax_state" : "FL"
             },
             "taxable_amounts" : {
-                "tax_district" : [
+                "tax_districts" : [
                     {
                         "tax_location": "NY - METROPOLITAN COMMUTER TRANSPORTATION DISTRICT (NEW YORK), DISTRICT SALES/USE TAX",
                         "district_amount" :0,
@@ -63,7 +63,7 @@
                 "state_amount":25.00
             },
             "non_taxable_amounts" : {
-                "tax_district" : [
+                "tax_districts" : [
                     {
                         "tax_location": "NY - METROPOLITAN COMMUTER TRANSPORTATION DISTRICT (NEW YORK), DISTRICT SALES/USE TAX",
                         "district_amount" :0,
@@ -74,7 +74,7 @@
                 "state_amount":0
             },
             "zero_rated_amounts": {
-                "tax_district" : [
+                "tax_districts" : [
                     {
                         "tax_location": "NY - METROPOLITAN COMMUTER TRANSPORTATION DISTRICT (NEW YORK), DISTRICT SALES/USE TAX",
                         "district_amount" :0,
@@ -85,7 +85,7 @@
                 "state_amount":0
             },
             "tax_collected_amounts" : {
-                "tax_district" : [
+                "tax_districts" : [
                     {
                         "tax_location": "NY - METROPOLITAN COMMUTER TRANSPORTATION DISTRICT (NEW YORK), DISTRICT SALES/USE TAX",
                         "district_amount" :0,
@@ -96,7 +96,7 @@
                 "state_amount":0.75
             },
             "tax_rates" : {
-                "tax_district" : [
+                "tax_districts" : [
                     {
                         "tax_location": "NY - METROPOLITAN COMMUTER TRANSPORTATION DISTRICT (NEW YORK), DISTRICT SALES/USE TAX",
                         "district_amount" :0,
@@ -131,7 +131,7 @@
             "regulatory_fees" : 0.00,
             "tax_info" : {
                 "tax_jurisdictions" :{
-                    "tax_district" : [
+                    "tax_districts" : [
                         {
                             "tax_location": "NY - METROPOLITAN COMMUTER TRANSPORTATION DISTRICT (NEW YORK), DISTRICT SALES/USE TAX"
                         }
@@ -141,7 +141,7 @@
                     "tax_state" : "FL"
                 },
                 "taxable_amounts" : {
-                    "tax_district" : [
+                    "tax_districts" : [
                         {
                             "tax_location": "NY - METROPOLITAN COMMUTER TRANSPORTATION DISTRICT (NEW YORK), DISTRICT SALES/USE TAX",
                             "district_amount" :0,
@@ -152,7 +152,7 @@
                     "state_amount":25.00
                 },
                 "non_taxable_amounts" : {
-                    "tax_district" : [
+                    "tax_districts" : [
                         {
                             "tax_location": "NY - METROPOLITAN COMMUTER TRANSPORTATION DISTRICT (NEW YORK), DISTRICT SALES/USE TAX",
                             "district_amount" :0,
@@ -163,7 +163,7 @@
                     "state_amount":0
                 },
                 "zero_rated_amounts": {
-                    "tax_district" : [
+                    "tax_districts" : [
                         {
                             "tax_location": "NY - METROPOLITAN COMMUTER TRANSPORTATION DISTRICT (NEW YORK), DISTRICT SALES/USE TAX",
                             "district_amount" :0,
@@ -174,7 +174,7 @@
                     "state_amount":0
                 },
                 "tax_collected_amounts" : {
-                    "tax_district" : [
+                    "tax_districts" : [
                         {
                             "tax_location": "NY - METROPOLITAN COMMUTER TRANSPORTATION DISTRICT (NEW YORK), DISTRICT SALES/USE TAX",
                             "district_amount" :0,
@@ -185,7 +185,7 @@
                     "state_amount":0.75
                 },
                 "tax_rates" : {
-                    "tax_district" : [
+                    "tax_districts" : [
                         {
                             "tax_location": "NY - METROPOLITAN COMMUTER TRANSPORTATION DISTRICT (NEW YORK), DISTRICT SALES/USE TAX",
                             "district_amount" :0,

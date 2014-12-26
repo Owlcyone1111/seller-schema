@@ -561,7 +561,7 @@
             "type" : "object",
             "additionalProperties" : false,
             "properties" : {
-                "tax_district" : {
+                "tax_districts" : {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/tax_districts_array" 
@@ -589,7 +589,7 @@
             "type": "object",
             "additionalProperties" : false,
             "properties": {
-                "tax_district" : {
+                "tax_districts" : {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/tax_districts_array" 
