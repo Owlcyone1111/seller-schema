@@ -53,7 +53,7 @@
                 "order_item_acknowledgement_status":{
                     "type": "string",
                     "required": true,
-                    "emum":[
+                    "enum":[
                         "fulfillable",
                         "nonfulfillable - no inventory",
                         "nonfulfillable - invalid merchant SKU"],
