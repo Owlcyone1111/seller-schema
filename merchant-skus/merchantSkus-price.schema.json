@@ -10,6 +10,11 @@
 			"required": true,
 			"description": "The overall price that the merchant SKU is priced at"
 		},
+		"thor_current_price": {
+			"type": "number",
+			"required": true,
+			"description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED"
+		},
 		"fulfillment_nodes":{
 			"type":"array",
 			"required":false,
@@ -33,7 +38,12 @@
                     "type": "number", 
                     "required": true,
                     "description" : "The price of the merchant SKU at the fulfillment node level"
-                }
+                },
+                "thor_current_price_node": {
+					"type": "number",
+					"required": true,
+					"description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED"
+				}
             }
         }
 	}
