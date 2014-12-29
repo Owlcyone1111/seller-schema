@@ -452,7 +452,7 @@
                 "shipment_id": {
                     "type": "string",
                     "required" : true,
-                    "description" : "Jet's unique ID for a given shipment"
+                    "description" : "Jet's unique ID for a given shipment. This is defined by Jet."
                 },
                 "alt_shipment_id": {
                     "type": "string",

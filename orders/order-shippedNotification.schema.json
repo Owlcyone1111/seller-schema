@@ -23,7 +23,7 @@
             "properties": {
                 "shipment_id": {
                     "type": "string",
-                    "description" : "Jet's unique ID for a given shipment"
+                    "description" : "Jet's unique ID for a given shipment.  This is defined by Jet."
                     
                 },
                 "alt_shipment_id": {
