@@ -177,11 +177,6 @@
                     "required": true,
                     "description" : "Any charges for the return that the merchant is required to pay"
                 },
-                "return_shipping_charge": {
-                    "type": "number",
-                    "required": true,
-                    "description" : "Any charges for return shipping that the merchant is required to pay"
-                },
                 "return_processing_fee": {
                     "type": "number",
                     "required": true,
