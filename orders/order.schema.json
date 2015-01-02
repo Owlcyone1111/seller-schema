@@ -718,7 +718,7 @@
                 "shipment_item_id": {
                     "type": "string",
                     "required" : true,
-                    "description" : "Jet's unique identifier for an item in a shipment"
+                    "description" : "Jet's unique identifier for an item in a shipment. This is defined by Jet."
 
                 },
                  "alt_shipment_item_id": {
