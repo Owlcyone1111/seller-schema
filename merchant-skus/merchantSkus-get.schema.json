@@ -352,7 +352,7 @@
 			"minimum" : 0.01,
 			"description": "For MAP (Minimum Advertised Price) based pricing.  If you don't know what this term means, this function probably does not apply to you.
 
-			#Valid values
+			#Valid Values
 
 			A number with up to 18 digits allowed to the left of the decimal point and 2 digits to the right of the decimal point. Commas or currency symbols are not allowed."
 		},
