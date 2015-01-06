@@ -318,36 +318,6 @@
                     "type": "integer",
                     "description" : "The quanitity of the given merchant SKU that should be cancelled; present only if directCancelled event occured for the order"
                 },
-                "adjustment_reason" : {
-                    "type" : "string",
-                    "enum" : [
-                                "Price Error",
-                                "Customer Request",
-                                "Jet Request",
-                                "Shipping Address Undeliverable",
-                                "Partial Out Of Stock",
-                                "ship_by Date Cannot Be Met",
-                                "deliver_by Date Cannot Be Met",
-                                "Other"],
-                    "description" : "The reason for the adjustment in quantity; only present if partial cancel message was recieved
-
-                    #Valid Values
-
-                    *'Price Error' - If refunding an amount due to a pricing error you noticed after the transaction was completed
-
-                    *'Customer Request' - If cancelling due to a customer request to do so 
-
-                    *'Shipping Address Undeliverable' - Send if using your own shipping labels and your carriers do not deliver to the given address
-                    
-                    *'Partial Out Of Stock' - Send if you can fulfill some but not all of the order AND some items from the order have already shipped (immediately send an inventory message to correct your inventory levels)
-
-                    *'ship_by Date Cannot Be Met' - Send if you are unable to ship any part of the order by the required ship_by date AND you have not shipped any part of the order
-
-                    *'deliver_by Date Cannot Be Met' - Send if you are unable to ensure any part of the order will be delivered by the required deliver_by date AND you have not shipped any part of the order
-
-                    *'other' - Use for any use case not addressed above "
-
-                },
                 "item_tax_code": {
                     "type": "string",
                     "description" : "The tax code associated with the given merchant SKU
