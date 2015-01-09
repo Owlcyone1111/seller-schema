@@ -37,43 +37,23 @@
                         "enum": [ "Standard", "Expedited", "Scheduled", "NextDay", "SecondDay" ],
                         "description": "Generic descriptions of shipment delivery times
 
-                        #Logic This
-                        field should
-                        be used
-                        if you
-                        are defining
-                        your shipping
-                        options by
-                        service_level #Valid
-                        Values *Standard
-
-                        *Expedited *Scheduled
-
-                        *NextDay *SecondDay"
+                        #Logic 
+                        This field should be used if you are defining your shipping options by service_level 
+                        
+                        #Valid Values 
+                        *Standard
+                        *Expedited 
+                        *Scheduled
+                        *NextDay 
+                        *SecondDay"
                     },
                     "shipping_method": {
                         "type": "string",
                         "description": "A specific shipping method e.g. UPS Ground, UPS Next Day Air, FedEx Home
 
-                        #Logic This
-                        should be
-                        used if
-                        you want
-                        the change
-                        to apply
-                        to a
-                        specific shipping_method.
-                        If shipping_carrier
-                        is populated,
-                        this field
-                        will be
-                        ignored. Use
-                        this field
-                        if you
-                        are defining
-                        your shipping
-                        options by
-                        'shipping_method' "
+                        #Logic 
+                        This should be used if you want the change to apply to a specific shipping_method.  If shipping_carrier is populated, this field will be ignored. Use this field if you are defining your shipping
+                        options by 'shipping_method' "
 
                     },
                     "override_type": {
@@ -83,18 +63,8 @@
 
                         #Valid Values
 
-                        *'Additional Charge'
-                        - A
-                        charge that
-                        is added
-                        to the
-                        default shipping
-                        charge *'Override
-                        Charge' -
-                        A charge
-                        that overrides
-                        the default
-                        shipping charge"
+                        *'Additional Charge' - A charge that is added to the default shipping charge 
+                        *'Override Charge' - A charge that overrides the default shipping charge"
                     },
                     "shipping_charge_amount": {
                         "type": "number",
@@ -111,8 +81,8 @@
                         "description": "Indicates if you want the product to be shipped exclusively (only with) or restrictively (not including) via the shipping level of shipping method provided
 
                         #Valid Values
-                        * restricted - the product cannot be shipped using the shipping method or shipping level provided
-                        * exclusive - the product should only be shipped using the shipping method or shipping level provided
+                        * restricted - The product cannot be shipped using the shipping method or shipping level provided
+                        * exclusive - The product should only be shipped using the shipping method or shipping level provided
                         "
                     }
                 }
