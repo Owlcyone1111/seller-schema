@@ -18,7 +18,8 @@
             }
         },
         "agree_to_return_charge" : {
-            "type" : "boolean",
+            "type":"boolean",
+            "required":true,
             "description" : "Does the merchant agree to the return charge for the return notification? 
 
             #Valid Values
@@ -49,7 +50,7 @@
                 "total_quantity_returned" : {
                     "type" : "integer",
                     "required" : true,
-                    "description" : "Quanitity of the given item that was cancelled
+                    "description" : "Quanitity of the given item that was returned
 
                     #Logic
 
@@ -58,11 +59,11 @@
                 "order_return_refund_qty" : {
                     "type" : "integer",
                     "required" : true,
-                    "description" : "Quanitity of the given item that was returned
+                    "description" : "Quanitity of the given item that was refunded
 
                     #Logic
 
-                    Required to indicate the quantity of the given item to be returned/refunded. This should only be used if part of the order was shipped BEFORE it was realized that some of the items could not be shipped.  If you are aware that you cannot fill the order completely before a portion has shipped, you should send an order-reject message"
+                    Required to indicate the quantity of the given item to be refunded to the customer."
                 },
                 "return_refund_feedback" : {
                 	"type" : "string",
@@ -95,18 +96,22 @@
                     "properties" : {
                 		"principal" : {
                 			"type" : "number",
+                            "required":true,
                 			"description" : "Amount to be refunded for the given item in USD associated with the item itself. This should be the total cost for this item not the unit cost"
                 		},
                 		"tax" : {
                 			"type" : "number",
+                            "required":true,
                 			"description" : "Amount to be refunded for the given item in USD associated with tax that was charged for the item"
                 		},
                 		"shipping_cost" : {
                 			"type" : "number",
+                            "required":true,
                 			"description" : "Amount to be refunded for the given item in USD associated with the shipping cost that was allocated to this item"
                 		},
                 		"shipping_tax" : {
                 			"type" : "number",
+                            "required":true,
                 			"description" : "Amount to be refunded for the given item in USD associated with the tax that was charged on shipping"
                 		}
                 	}
