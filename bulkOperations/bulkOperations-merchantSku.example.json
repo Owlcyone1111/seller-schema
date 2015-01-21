@@ -33,7 +33,7 @@
 		"start_selling_date": "2013-01-01",
 		"msrp": 51.86,
 		"map_price": 44.00,
-		"map_implementation" : "type1",
+		"map_implementation" : "101",
 		"product_tax_code": "ALL_PURPOSE",
 		"no_return_fee_adjustment": 1.00,
 		"exclude_from_fee_adjustments": false,
@@ -61,5 +61,60 @@
 	        "image_url": "http://www.mydomain.com/images/myImage.png"
 	        }
 	    ]
-	}
+	},
+	"{merchant_sku}" : {
+		"product_title": "Huggies Snug and Dry Diapers, Size 4, Economy Plus Pack, 192 Count",
+		"jet_browse_node_id": 2000039,
+		"standard_product_codes" : [
+			{	
+				"standard_product_code": "036000365474",
+				"standard_product_code_type": "UPC"
+			}
+		],
+		"ASIN" : "B00BCXF7MU",
+		"multipack_quantity": 1,
+		"brand": "Huggies",
+		"manufacturer": "Kimberly Clark",
+		"product_description": "HUGGIES Snug & Dry Diapers with SureFit design and stretchy waistband bring your baby the dryness and comfort they deserve. The design adds protection around their thighs and waist, a more flexible absorbent pad, and a softer outer diaper cover, so your baby can spend up to 12 hours playing with complete leak protection.",
+		"bullets": [
+			"Fits babies from 22 to 37 lbs",
+			"Only Huggies Snug & Dry Diapers have all new SureFit* Design for up to 12 hours of leakage protection for your baby",
+			"Now more conforming, gap-free fit for all-around protection for your baby",
+			"Trusted Leak Lock System with quick-absorbing layers and long-lasting core to lock in wetness",
+			"SnugFit* Waistband on our Size 4 diapers have a more flexible absorbent diaper pad to move with your baby?s twists and turns and softer outer diaper cover with adorable Mickey & Friends Disney designs",
+		],
+		"number_units_for_price_per_unit": 1,
+		"type_of_unit_for_price_per_unit": "each",
+		"shipping_weight_pounds": 13.6,
+		"package_length_inches": 9.2,
+		"package_width_inches": 18,
+		"package_height_inches": 14.4,
+		"display_length_inches": 9.2,
+		"display_width_inches": 18,
+		"display_height_inches": 14.4,
+		"prop_65": false,
+		"legal_disclaimer_description": "Actual product packaging and materials may contain more and different information than what is shown on our website. We recommend that you do not rely solely on the information presented and that you always read labels, warnings, and directions before using or consuming a product. Please see our full disclaimer below.",
+		"country_of_origin": "USA",
+		"safety_warning": "Caution: Keep away from any source of flame.",
+		"map_price":12.1,
+		"map_implementation" : "type1",
+		"product_tax_code": "Disposable Infant Diapers",
+		"exclude_from_fee_adjustments": false,
+		"ships_alone": false,
+		"attributes_node_specific" : [
+			{
+				"attribute_id" : 95,
+				"attribute_value" : "192",
+				"attribute_value_unit" : "count"
+			},
+			{
+				"attribute_id" : 81,
+				"attribute_value" : "Size 4",
+			},
+			{
+				"attribute_id" : 125,
+				"attribute_value" : "Size 4",
+			}
+		]
+	}	
 }	
