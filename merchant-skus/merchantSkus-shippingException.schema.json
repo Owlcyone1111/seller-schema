@@ -63,8 +63,8 @@
 
                         #Valid Values
 
-                        *'Additional Charge' - A charge that is added to the default shipping charge 
-                        *'Override Charge' - A charge that overrides the default shipping charge"
+                        *'Additional charge' - A charge that is added to the default shipping charge 
+                        *'Override charge' - A charge that overrides the default shipping charge"
                     },
                     "shipping_charge_amount": {
                         "type": "number",

@@ -350,28 +350,26 @@
 		"map_price": {
 			"type": "number",
 			"minimum" : 0.01,
-			"description": "For MAP (Minimum Advertised Price) based pricing.  If you don't know what this term means, this function probably does not apply to you.
+			"description": "Retailer price for the product for which member savings will be applied (if applicable, see map_implementation)
 
 			#Valid Values
 
-			A number with up to 18 digits allowed to the left of the decimal point and 2 digits to the right of the decimal point. Commas or currency symbols are not allowed."
+			A number up to 9 digits in total, which consists of up to 7 digits to the left of the decimal point and 2 digits to the right of the decimal point.  Commas or currency symbols are not allowed."
 		},
 		"map_implementation":{
 			"type": "string",
-			"enum" : ["type0","type1","type2","type3","type4"],
-			"description": "The type of rules that need to be followed when displaying Jet savings on item that brings the item's effective price below MAP
+			"enum" : ["type0","type1","type2","type3","type4","101","102","103"],
+			"description": "The type of rule that indicates how Jet member savings are allowed to be applied to an item’s base price (which is referred to as map_price in the API documentation)
 
 			#Valid Values
 
-			*'type0'- A user is able to see sub MAP pricing for this item even if they are not logged in
+			*'101' = no restrictions on product based pricing
 
-			*'type1'- A user must be logged in to see the savings on this item and that saving may be represented as a lower than MAP price on this item
-			
-			*'type2'- A user must be logged in to see the savings and they need be shown as Jet savings with the price being displayed as the MAP price
-			
-			*'type3' -A user will never see Jet savings associated with this item but if they are logged in and purchase other items savings may be allocated to those other items
-			
-			*'type4' -Never apply any savings associated with this item anywhere"
+			*'102' = Jet member savings on product only visible to logged in Jet members
+
+			*'103' = Jet member savings never applied to product
+
+			"
 		},	
 		"product_tax_code": {
 			"type": "string",

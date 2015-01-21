@@ -38,7 +38,7 @@
 	"fulfillment_time": 1,
 	"msrp": 6.99,
 	"map_price": 6.49,
-	"map_implementation" : "type1",
+	"map_implementation" : "101",
 	"product_tax_code": "123",
 	"no_return_fee_adjustment": 0.01,
 	"exclude_from_fee_adjustments": false,
