@@ -70,5 +70,8 @@
 			"image_slot_id" : 2,
 			"image_url" : "http://www.mydomain.com/images/myImage.png"
 		}
-	]
+	],
+	"relationship": "Variation",
+    "variation_refinements" : 1234,
+    "children_skus" : [ "abcd", "efgh" ]
 }
