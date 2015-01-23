@@ -68,6 +68,7 @@
                 "resolved",
                 "exception - order rejected",
                 "exception - too many units shipped",
+                "exception - jet manual canceled to complete state"
             ],
             "description" :  "signifies that something unexpected has occurred for this order.  For example, too many units shipped by merchant, merchant failed to accept order.
 
@@ -78,6 +79,8 @@
             *'exception - order rejected' 
 
             *'exception - too many units shipped'
+            
+            *'exception - jet manual canceled to complete state'
             "
         },
         "order_placed_date": {
