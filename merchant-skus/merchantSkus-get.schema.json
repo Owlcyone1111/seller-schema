@@ -469,7 +469,6 @@
 		"relationship": {
 			"type": "string",
 			"enum" : ["Variation", "Accessory"],
-			"required" : true,			
 			"description": "Variation or Accessory
 
 			#Logic
@@ -494,7 +493,6 @@
 		},
 		"children_skus": {
 			"type": "array",
-			"required" : true,
 			"items" : {
 					"type" : "string",
 					"description" : "merchant SKU"
