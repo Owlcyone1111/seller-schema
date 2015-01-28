@@ -69,7 +69,9 @@
                 },
                 "ship_from_zip_code": {
                     "type": "string",
-                    "description" : "The zip code of the locations from which the customer shipment is being shipped"
+                    "description" : "The zip code of the locations from which the customer shipment is being shipped",
+                    "minLength":5,
+                    "maxLength":5
                 },
                 "carrier" : {
                     "type": "string",

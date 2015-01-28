@@ -76,7 +76,9 @@
             	"location_postal_code" : {
         	    	"type" : "string",
 		        	"required" : true,
-		        	"description" : "The postal code for the return location"
+		        	"description" : "The postal code for the return location",
+		        	"minLength":5,
+		        	"maxLength":5
             	}
             }
 		}
