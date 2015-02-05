@@ -18,6 +18,17 @@ mediaType: application/json
                         schema: !include links.schema.json
                         example: !include links.example.json
             404:
+    /bystatus/{MerchantSkuStatus}/{StartPoint}/{ResultsToReturn}:
+        get:
+            description: This method will list all merchant SKUs by merchantSku Status
+            responses:
+                200:
+                    description: List of all merchant SKUs
+                    body:
+                        application/json:
+                            schema: !include merchantSkus-returnByStatus.schema.json
+                            example: !include merchantSkus-returnByStatus.example.json
+                404:
     /{id}:
         get:
             description: This method will return merchant SKU specified by ID

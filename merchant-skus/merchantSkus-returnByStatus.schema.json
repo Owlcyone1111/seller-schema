@@ -1,5 +1,5 @@
 {
-    "title": "MerchantSkuLinks",
+    "title": "MerchantSkuStatusLinks",
     "type": "object",
     "additionalProperties" : false,
     "properties": {
