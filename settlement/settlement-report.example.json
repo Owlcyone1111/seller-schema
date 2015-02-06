@@ -24,7 +24,6 @@
 		"tax" : -28.50,
 		"shipping_tax" : -7.00,
 		"merchant_return_charge" : 0.00,
-		"return_shipping_charge" : 0.00,
 		"return_processing_fee" : 0.00,
 		"product_cost" : 0.00		
 	},

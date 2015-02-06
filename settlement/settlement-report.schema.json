@@ -57,9 +57,7 @@
 		"order_balance_details":{
             "type" : "object",
 			"required": true,
-			"items":{
-				"$ref":"#/definitions/settlement_report_order_details"
-			}
+			"$ref":"#/definitions/settlement_report_order_details"
 		},
 		"order_balance": {
 			"type": "number",
@@ -69,9 +67,7 @@
 		"return_balance_details":{
             "type" : "object",
 			"required": true,
-			"items":{
-				"$ref":"#/definitions/settlement_report_return_details"
-			}
+			"$ref":"#/definitions/settlement_report_return_details"
 		},
 		"return_balance": {
 			"type": "number",
