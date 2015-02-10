@@ -70,6 +70,7 @@
                 },
                 "order_item_id": {
                     "type": "string",
+                    "required":true,
                     "description" : "Jet's unique identifier for an item in a merchant order"
                 },
                 "alt_order_item_id": {
