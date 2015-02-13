@@ -1,0 +1,42 @@
+{
+    "title": "ActiveRuleSummary",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+    	"category_id":{
+    		"type":"string",
+    		"required":true,
+    		"min":1000000,
+    		"description":"The Jet browse node ID that the base commission is being applied to"
+    	},
+    	"active_rules":{
+    		"$ref": "#/definitions/active_rules_array"
+    	}
+    },
+    "definitions": {
+        "active_rules_array": {
+            "title": "ActiveRulesArray",
+            "additionalProperties" : false,
+            "description" : "Returns summary of all active rules used to calculate range of variable commissions",
+            "type": "object",
+            "properties": {
+                "rule_type":{
+		    		"type":"string",
+		    		"enum":[
+		    			"returns",
+		    			"distance",
+		    			"email",
+		    			"volume"
+		    		],
+		    		"description":"Defines the type of rule the partner will set"
+    			},
+                "min_adjustment":{
+                	"type":"number",
+                	"description":"The minimum adjustment for this particular rule type"
+                },
+                "max_adjustment":{
+                	"type":"number",
+                	"description":"The minimum adjustment for this particular rule type"
+                },
+            },
+}

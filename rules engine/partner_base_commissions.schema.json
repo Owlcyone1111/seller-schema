@@ -1,0 +1,46 @@
+{
+    "title": "PartnerBaseCommissions",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+    	"base_commission_id":{
+    		"type":"string",
+    		"required":true,
+    		"description":"Unique ID for base commission setting partner-category
+
+    		* Probably should be a parameter {id}
+    		"
+    	},
+    	"merchant_id":{
+    		"type":"string",
+    		"required":true,
+    		"description":"The partner's unique ID"
+    	},
+    	"category_id":{
+    		"type":"string",
+    		"required":true,
+    		"min":1000000,
+    		"description":"The Jet browse node ID that the base commission is being applied to"
+    	},
+    	"base_commission":{
+    		"type":"number",
+    		"required":true,
+    		"min":0,
+    		"description":"Jet's recommended base commission for this partner's category (in %)"
+    	},
+    	"active":{
+    		"type":"boolean",
+    		"required":true,
+    		"description":"If active, this is the partner's current base commission
+
+    		#Logic
+    		* One base commission rule active per category_id
+    		* For all distinct categories where SKU is ready to list, base_commission > 0
+    		"
+    	},
+        "old_commission_id":{
+            "type":"string",
+            "description":"The last commission ID used"
+        }
+    }
+}
