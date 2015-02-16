@@ -1,0 +1,199 @@
+{
+    "title": "PartnerVariableCommissions",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+    	"rule_id":{
+    		"type":"string",
+    		"required":true,
+    		"description":"The rule's unique ID assigned by Jet.com"
+    	},
+    	"rule_name":{
+    		"type":"string",
+    		"required":true,
+            "maxLength":50,
+    		"description":"This rule's current name to be set by the partner"
+    	},
+    	"merchant_id":{
+    		"type":"string",
+    		"required":true,
+    		"description":"The partner's unique ID assigned by Jet.com"
+    	},
+        "start_date_time":{
+            "type":"string",
+            "required":true,
+            "description":"The starting date and time the rule is scheduled to run
+
+            #Valid Values
+
+            The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on January 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"
+        },
+        "end_date_time":{
+            "type":"string",
+            "required":true,
+            "description":"The ending date and time the rule is scheduled to run
+
+            #Valid Values
+
+            The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on January 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"
+        },
+        "recurrence":{
+            "type":"boolean",
+            "required":true,
+            "description":"If true, this rule will be scheduled to run again at the same start and end date time"
+        },
+        "recurrence_type":{
+
+        },
+        "variable_commission_type":{
+            "type":"string",
+            "required":true,
+            "enum":[
+                "returns",
+                "distance",
+                "email",
+                "volume"
+            ],
+            "description":"The type of variable commission or rule being uploaded
+
+            #Valid Values
+
+            * returns - a rule applied to returns that affects variable commission by jet category (browse node).  The 'type_returns' object must be completed for this variable commission type.
+            * distance - a rule that applies to a distance that a product will ship to the customer by jet category (browse node).  The 'type_shipping' object must be completed for this variable commission type.
+            * email - a rule that pays the customer for giving an email for marketing and promotions.  The 'type_email' object must be completed for this variable commission type.
+            * volume - a rule that adjust variable commission and encourages customers to build larger baskets.  The 'type_volume' object must be completed for this variable commission type.
+
+            "
+        },
+    	"type_returns": {
+            "type":"array",
+            "minItems":1,
+            "items" : {
+                "$ref":"#/definitions/type_returns_array"
+            }
+        },
+        "type_shipping": {
+            "type":"array",
+            "minItems":1,
+            "items" : {
+                "$ref":"#/definitions/type_shipping_array"
+            }
+        },
+        "type_email": {
+            "type":"number",
+            "description":"The USD amount to pay a customer for an email to use for marketing and promotions. Only valid if variable_commission_type is email."
+        },
+        "type_volume": {
+            "type":"array",
+            "minItems":1,
+            "items" : {
+                "$ref":"#/definitions/type_shipping_array"
+            }
+        }
+    },
+    "definitions": {
+        "type_returns_array": {
+            "title": "TypeReturnsObject",
+            "type": "object",
+            "additionalProperties" : false,
+            "properties": {
+                "category_id":{
+                    "type":"string",
+                    "required":true,
+                    "min":1000000,
+                    "description":"The Jet browse node ID that the variable commission or rule is being applied to"
+                },
+                "adjustment": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "The adjustment to the base commission in %"
+                }
+            },
+        "type_shipping_array": {
+            "title": "TypeShippingObject",
+            "type": "object",
+            "additionalProperties" : false,
+            "properties": {
+                "category_id":{
+                    "type":"string",
+                    "required":true,
+                    "min":1000000,
+                    "description":"The Jet browse node ID that the variable commission or rule is being applied to"
+                },
+                "shipping_zones":{
+                	"type":"array",
+                    "minItems":1,
+                	"maxItems":7,
+                	"items":{
+	                	"$ref": "#/definitions/shipping_zones_array"
+	                }
+                },
+            }
+        },
+        "shipping_zones_array": {
+            "title": "ShippingZonesObject",
+            "type": "object",
+            "additionalProperties" : false,
+            "properties": {
+                "zone_id":{
+                    "type":"integer",
+                    "min":2,
+                    "max":8,
+                    "description":"The zone number that the variable commission or rule will be set for"
+                },
+                "adjustment": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "The adjustment to the base commission in %"
+                }
+            }
+        },
+        "type_volume_array": {
+            "title": "TypeVolumeObject",
+            "type": "object",
+            "additionalProperties" : false,
+            "properties": {
+                "category_id":{
+                    "type":"string",
+                    "required":true,
+                    "min":1000000,
+                    "description":"The Jet browse node ID that the variable commission or rule is being applied to"
+                },
+                "volume_bands":{
+                	"type":"array",
+                	"minItems":1,
+                	"items":{
+	                	"$ref": "#/definitions/volume_band_array"
+	                }
+                }
+            }
+        },
+        "volume_band_array": {
+            "title": "VolumeBandObject",
+            "type": "object",
+            "additionalProperties" : false,
+            "properties": {
+                "min_band":{
+                	"type":"number",
+                	"min":0,
+                	"description":"The lower bound of the pricing band"
+                },
+                "max_band": {
+                    "type": "number",
+                    "exlusiveMin":0,
+                    "description" : "The upper bound of the pricing band"
+                },
+                "volume_minimum": {
+                    "type": "number",
+                    "exlusiveMin":0,
+                    "description" : "The minimum number items needed to achieve the discount"
+                },
+                "adjustment": {
+                    "type": "number",
+                    "required": true,
+                    "description" : "The adjustment to the base commission in %"
+                }
+            }
+        },
+    }
+}
