@@ -1,0 +1,75 @@
+{
+    "title": "PartnerBaseCommissions",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+    	"base_commission_id":{
+    		"type":"string",
+    		"required":true,
+    		"description":"Unique ID for base commission setting assigned by Jet.com"
+    	},
+    	"merchant_id":{
+    		"type":"string",
+    		"required":true,
+    		"description":"The partner's unique ID"
+    	},
+        "active":{
+            "type":"boolean",
+            "required":true,
+            "description":"If true, this is the partner's current base commission"
+        },
+        "settlement_only" : {
+            "type":"boolean",
+            "required":true,
+            "description":"If true, the partner product is viewed by the Jet.com pricing alogrithm with at current base rate but base commission will be charged according to agrred to commissions in settlement"
+        },
+        "start_date":{
+            "type": "string",
+            "required": true,
+            "description" : "The data/time when the base commissions should go into affect
+
+            #Valid Values
+
+            The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on January 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"
+        },
+        "end_date":{
+            "type": "string",
+            "required": true,
+            "description" : "The data/time when the base commissions are no longer applicable, if null this rate does not expire
+
+            #Valid Values
+
+            The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on January 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"
+        },
+        "base_commissions" : {
+            "type":"array",
+            "required":true,
+            "minItems": 1,
+            "items" : {
+                "$ref": "#/definitions/base_commission_array"
+            }
+        }
+    },
+    "definitions": {
+        "base_commission_array": {
+            "title": "BaseCommissionObject",
+            "additionalProperties" : false,
+            "type": "object",
+            "properties": {
+                "category_id":{
+                    "type":"string",
+                    "required":true,
+                    "min":1000000,
+                    "description":"The Jet browse node ID that the base commission is being applied to"
+                },
+                "base_commission":{
+                    "type":"number",
+                    "required":true,
+                    "min":0,
+                    "max":30,
+                    "description":"Jet's the base commission that Jet will charge for selling products on Jet.com"
+                }
+            }
+        }
+    }
+}
