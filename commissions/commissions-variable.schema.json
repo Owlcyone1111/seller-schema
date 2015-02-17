@@ -43,7 +43,36 @@
             "description":"If true, this rule will be scheduled to run again at the same start and end date time"
         },
         "recurrence_type":{
+            "title": "RecurrentTypeObject",
+            "type": "object",
+            "additionalProperties" : false,
+            "properties": {
+                "repeat_type":{
+                    "type":"string",  
+                    "enum":[
+                        "yearly",
+                        "monthly",
+                        "daily",
+                    ],                 
+                    "description":"How the rule is scheduled to repeat
 
+                    #Valid Values
+
+                    * year - the rule will run every year according to the repeat_interval 
+                    * month - the rule will run every month according to the repeat_interval 
+                    * daily - the rule will run daily according to the repeat_interval 
+                    
+                    "
+                },
+                "repeat_interval": {
+                    "type":"string",                   
+                    "description":"The interval that the variable commission rule should repeat. Values vary based on the repeat_type."
+                },
+                "repeat_on": {
+                    "type":"string",                   
+                    "description":"The moment that the variable commission rule should run according to the repeat_interval."
+                }
+            }
         },
         "variable_commission_type":{
             "type":"string",
@@ -108,7 +137,8 @@
                     "required": true,
                     "description" : "The adjustment to the base commission in %"
                 }
-            },
+            }
+        },
         "type_shipping_array": {
             "title": "TypeShippingObject",
             "type": "object",
