@@ -3,21 +3,11 @@
     "type": "object",
     "additionalProperties" : false,
     "properties": {
-    	"base_commission_id":{
-    		"type":"string",
-    		"required":true,
-    		"description":"Unique ID for base commission setting assigned by Jet.com"
-    	},
     	"merchant_id":{
     		"type":"string",
     		"required":true,
     		"description":"The partner's unique ID"
     	},
-        "active":{
-            "type":"boolean",
-            "required":true,
-            "description":"If true, this is the partner's current base commission"
-        },
         "settlement_only" : {
             "type":"boolean",
             "required":true,
