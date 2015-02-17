@@ -40,10 +40,10 @@
         "recurrence":{
             "type":"boolean",
             "required":true,
-            "description":"If true, this rule will be scheduled to run again at the same start and end date time"
+            "description":"If true, this rule will be scheduled to run during according to the speifications provided in the recurrence_type"
         },
         "recurrence_type":{
-            "title": "RecurrentTypeObject",
+            "title": "RecurrenceTypeObject",
             "type": "object",
             "additionalProperties" : false,
             "properties": {
@@ -157,7 +157,7 @@
                 	"items":{
 	                	"$ref": "#/definitions/shipping_zones_array"
 	                }
-                },
+                }
             }
         },
         "shipping_zones_array": {
@@ -224,6 +224,6 @@
                     "description" : "The adjustment to the base commission in %"
                 }
             }
-        },
+        }
     }
 }
