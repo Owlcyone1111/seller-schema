@@ -3,11 +3,6 @@
     "type": "object",
     "additionalProperties" : false,
     "properties": {
-    	"merchant_id":{
-    		"type":"string",
-    		"required":true,
-    		"description":"The partner's unique ID"
-    	},
         "settlement_only" : {
             "type":"boolean",
             "required":true,
