@@ -8,12 +8,12 @@
 		"main_image_url": {
 			"type": "string",
 			"required": true,
-			"description": "URL location where Jet.com can access the image. The images should be 1500 x 1500 pixels or larger. There is no limit to image size."
+			"description": "URL location where Jet.com can access the image. The images should be 1500 x 1500 pixels or larger, but anything 500 x 500 pixels or larger is acceptable. There is no limit to image size."
 		},
 		"swatch_image_url": {
 			"type": "string",
 			"required" : "false",
-			"description": "URL location where Jet.com can access an image of a color or fabric for a given merchant SKU. The images should be 1500 x 1500 pixels or larger. There is no limit to image size."
+			"description": "URL location where Jet.com can access an image of a color or fabric for a given merchant SKU. The images should be 1500 x 1500 pixels or larger, but anything 500 x 500 pixels or larger is acceptable. There is no limit to image size."
 		},
 		"alternate_images":{
 			"type":"array",
