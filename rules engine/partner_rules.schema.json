@@ -2,194 +2,196 @@
     "title": "PartnerRules",
     "type": "object",
     "additionalProperties" : false,
-    "properties": {
-    	"rule_id":{
-    		"type":"string",
-    		"required":true,
-    		"description":"The rule's unique ID
+        "properties": {
+        	"rule_id":{
+        		"type":"string",
+        		"required":true,
+        		"description":"The rule's unique ID
 
-    		* Should be a parameter
+        		* Should be a parameter
 
-    		"
-    	},
-    	"rule_name":{
-    		"type":"string",
-    		"required":true,
-    		"description":"This rule's current name to be set by the partner"
-    	},
-    	"merchant_id":{
-    		"type":"string",
-    		"required":true,
-    		"description":"The partner's unique ID"
-    	},
-    	"category_id":{
-    		"type":"string",
-    		"min":1000000,
-    		"description":"The Jet browse node ID that the base commission is being applied to"
-    	},
-    	"scheduled_run_time":{
-    		"$ref": "#/definitions/volume_adjustment_definition"
-    	},
-    	"rule_type":{
-    		"type":"string",
-    		"enum":[
-    			"returns",
-    			"distance",
-    			"email",
-    			"volume"
-    		],
-    		"description":"Defines the type of rule the partner will set
+        		"
+        	},
+        	"rule_name":{
+        		"type":"string",
+        		"required":true,
+        		"description":"This rule's current name to be set by the partner"
+        	},
+        	"merchant_id":{
+        		"type":"string",
+        		"required":true,
+        		"description":"The partner's unique ID"
+        	},
+        	"category_id":{
+        		"type":"string",
+        		"min":1000000,
+        		"description":"The Jet browse node ID that the base commission is being applied to"
+        	},
+        	"scheduled_run_time":{
+        		"$ref": "#/definitions/volume_adjustment_definition"
+        	},
+        	"rule_type":{
+        		"type":"string",
+        		"enum":[
+        			"returns",
+        			"distance",
+        			"email",
+        			"volume"
+        		],
+        		"description":"Defines the type of rule the partner will set
 
-    		#Logic
-    		* Only one type of rule (and corresponding properties) at a time
-    		* Be careful when editing rules that change type (delete old rules)
-    		"
-    	},
-    	"waive_returns_adjustment": {
-            "$ref": "#/definitions/simple_adjustment_definition"
+        		#Logic
+        		* Only one type of rule (and corresponding properties) at a time
+        		* Be careful when editing rules that change type (delete old rules)
+        		"
+        	},
+        	"waive_returns_adjustment": {
+                "$ref": "#/definitions/simple_adjustment_definition"
+            },
+            "opt_in_email_adjustment": {
+                "$ref": "#/definitions/simple_adjustment_definition"
+            },
+            "shipping_zones_adjustment": {
+                "$ref": "#/definitions/shipping_zones_adjustment_definition"
+            },
+            "volume_adjustment": {
+                "$ref": "#/definitions/volume_adjustment_definition"
+            }
         },
-        "opt_in_email_adjustment": {
-            "$ref": "#/definitions/simple_adjustment_definition"
-        },
-        "shipping_zones_adjustment": {
-            "$ref": "#/definitions/shipping_zones_adjustment_definition"
-        },
-        "volume_adjustment": {
-            "$ref": "#/definitions/volume_adjustment_definition"
-        },
-        
         "definitions": {
-        "scheduled_run_time_definition": {
-            "title": "ScheduledRunTime",
-            "additionalProperties" : false,
-            "description" : "The time by which a rule is run",
-            "type": "object",
-            "properties": {
-                "start_date_time":{
-                	"type":"string",
-                	"required":true,
-                	"description":"The starting date and time the rule is scheduled to run
+            "scheduled_run_time_definition": {
+                "title": "ScheduledRunTime",
+                "additionalProperties" : false,
+                "description" : "The time by which a rule is run",
+                "type": "object",
+                "properties": {
+                    "start_date_time":{
+                    	"type":"string",
+                    	"required":true,
+                    	"description":"The starting date and time the rule is scheduled to run
 
-                	#Valid Values
+                    	#Valid Values
 
-                	Date format: ISO...
+                    	Date format: ISO...
 
-                	"
-                },
-                "end_date_time":{
-                	"type":"string",
-                	"required":true,
-                	"description":"The ending date and time the rule is scheduled to run
+                    	"
+                    },
+                    "end_date_time":{
+                    	"type":"string",
+                    	"required":true,
+                    	"description":"The ending date and time the rule is scheduled to run
 
-                	#Valid Values
+                    	#Valid Values
 
-                	Date format: ISO...
+                    	Date format: ISO...
 
-                	"
-                },
-                "is_recurring":{
-                	"type":"boolean",
-                	"required":true,
-                	"description":"If true, this rule will be scheduled to run again at the same start and end date time"
-                },
-                "recurrence_type":{
-                	"type":"string",
-                	"enum":[
-                		"yearly",
-                		"monthly",
-                		"weekly",
-                		"daily"
-                	],
-                	"description":"Sets how often the rule will recur"
-                },
-                "recurrs_every":{
-                	"type":"string",
-                	"description":"If true, this rule will be scheduled to run again at the same start and end date time"
-                }
-
-            },
-        "simple_adjustment_definition": {
-            "title": "SimpleAdjustment",
-            "additionalProperties" : false,
-            "description" : "A definition for simple adjustment rule types",
-            "type": "object",
-            "properties": {
-                "adjustment": {
-                    "type": "number",
-                    "required": true,
-                    "description" : "The adjustment to the base commission in %"
+                    	"
+                    },
+                    "is_recurring":{
+                    	"type":"boolean",
+                    	"required":true,
+                    	"description":"If true, this rule will be scheduled to run again at the same start and end date time"
+                    },
+                    "recurrence_type":{
+                    	"type":"string",
+                    	"enum":[
+                    		"yearly",
+                    		"monthly",
+                    		"weekly",
+                    		"daily"
+                    	],
+                    	"description":"Sets how often the rule will recur"
+                    },
+                    "recurrs_every":{
+                    	"type":"string",
+                    	"description":"If true, this rule will be scheduled to run again at the same start and end date time"
+                    }
                 }
             },
-        "shipping_zones_adjustment_definition": {
-            "title": "ShippingZoneAdjustment",
-            "additionalProperties" : false,
-            "description" : "A definition for shipping adjustments",
-            "type": "object",
-            "properties": {
-                "shipping_zones":{
-                	"type":"array",
-                	"maxItems":7,
-                	"items":{
-	                	"$ref": "#/definitions/shipping_zone_array"
-	                }
-                },
-            }
-        },
-        "volume_adjustment_definition": {
-            "title": "VolumeAdjustment",
-            "additionalProperties" : false,
-            "description" : "A definition for volume adjustments",
-            "type": "object",
-            "properties": {
-                "fulfillment_node_id":{
-                    "type":"string",
-                    "description":"The fulfillment node ID that this rule is being set for"
-                },
-                "volume_bands":{
-                	"type":"array",
-                	"minItems":1,
-                	"items":{
-	                	"$ref": "#/definitions/volume_band_array"
-	                }
+            "simple_adjustment_definition": {
+                "title": "SimpleAdjustment",
+                "additionalProperties" : false,
+                "description" : "A definition for simple adjustment rule types",
+                "type": "object",
+                "properties": {
+                    "adjustment": {
+                        "type": "number",
+                        "required": true,
+                        "description" : "The adjustment to the base commission in %"
+                    }
                 }
-            }
-        },
-		"shipping_zone_array": {
-            "properties": {
-                "zone_id":{
-                	"type":"integer",
-                	"min":2,
-                	"max":8,
-                	"description":"The zone number that the rule will be set for"
-                },
-                "adjustment": {
-                    "type": "number",
-                    "required": true,
-                    "description" : "The adjustment to the base commission in %"
+            },
+            "shipping_zones_adjustment_definition": {
+                "title": "ShippingZoneAdjustment",
+                "additionalProperties" : false,
+                "description" : "A definition for shipping adjustments",
+                "type": "object",
+                "properties": {
+                    "shipping_zones":{
+                    	"type":"array",
+                    	"maxItems":7,
+                    	"items":{
+    	                	"$ref": "#/definitions/shipping_zone_array"
+    	                }
+                    }
                 }
-            }
-        },
-        "volume_band_array": {
-            "properties": {
-                "min_band":{
-                	"type":"number",
-                	"min":0,
-                	"description":"The lower bound of the pricing band"
-                },
-                "max_band": {
-                    "type": "number",
-                    "exlusiveMin":0,
-                    "description" : "The upper bound of the pricing band"
-                },
-                "volume_minimum": {
-                    "type": "number",
-                    "exlusiveMin":0,
-                    "description" : "The minimum number items needed to achieve the discount"
-                },
-                "adjustment": {
-                    "type": "number",
-                    "required": true,
-                    "description" : "The adjustment to the base commission in %"
+            },
+            "volume_adjustment_definition": {
+                "title": "VolumeAdjustment",
+                "additionalProperties" : false,
+                "description" : "A definition for volume adjustments",
+                "type": "object",
+                "properties": {
+                    "fulfillment_node_id":{
+                        "type":"string",
+                        "description":"The fulfillment node ID that this rule is being set for"
+                    },
+                    "volume_bands":{
+                    	"type":"array",
+                    	"minItems":1,
+                    	"items":{
+    	                	"$ref": "#/definitions/volume_band_array"
+    	                }
+                    }
+                }
+            },
+    		"shipping_zone_array": {
+                "properties": {
+                    "zone_id":{
+                    	"type":"integer",
+                    	"min":2,
+                    	"max":8,
+                    	"description":"The zone number that the rule will be set for"
+                    },
+                    "adjustment": {
+                        "type": "number",
+                        "required": true,
+                        "description" : "The adjustment to the base commission in %"
+                    }
+                }
+            },
+            "volume_band_array": {
+                "properties": {
+                    "min_band":{
+                    	"type":"number",
+                    	"min":0,
+                    	"description":"The lower bound of the pricing band"
+                    },
+                    "max_band": {
+                        "type": "number",
+                        "exlusiveMin":0,
+                        "description" : "The upper bound of the pricing band"
+                    },
+                    "volume_minimum": {
+                        "type": "number",
+                        "exlusiveMin":0,
+                        "description" : "The minimum number items needed to achieve the discount"
+                    },
+                    "adjustment": {
+                        "type": "number",
+                        "required": true,
+                        "description" : "The adjustment to the base commission in %"
+                    }
                 }
             }
         }

@@ -443,7 +443,7 @@
 		"ships_alone": {
 			"type": "boolean",
 			"description": "If this field is 'true', it indicates that this 'merchant SKU' will always ship on its own.    
-			A separate 'merchant_order' will always be placed for this 'merchant_SKU', one consequence of this will be that this merchant_sku will never contriube to any basket size fee adjustments with any other merhcant_skus."
+			A separate 'merchant_order' will always be placed for this 'merchant_SKU', one consequence of this will be that this merchant_sku will never contriube to any basket size fee adjustments with any other merchant_skus."
 		},
 		"attributes_node_specific" : {
 			"type" : "array",
@@ -454,11 +454,11 @@
 		},
 		"main_image_url": {
 			"type": "string",
-			"description": "URL location where Jet.com can access the image. Please provide at least 300 x 300 pixels. However, please provide the largest size available up to a file size of 1MB"
+			"description": "URL location where Jet.com can access the image. The images should be 1500 x 1500 pixels or larger. There is no limit to image size."
 		},
 		"swatch_image_url": {
 			"type": "string",
-			"description": "URL location where Jet.com can access an image of a color or fabric for a given merchant SKU. Please provide at least 300 x 300 pixels. However, please provide the largest size available up to a file size of 1MB"
+			"description": "URL location where Jet.com can access an image of a color or fabric for a given merchant SKU. The images should be 1500 x 1500 pixels or larger.  There is no limit to image size."
 		},
 		"alternate_images":{
 			"type":"array",

@@ -38,5 +38,7 @@
                 	"type":"number",
                 	"description":"The minimum adjustment for this particular rule type"
                 },
-            },
+            }
+        }
+    }
 }
