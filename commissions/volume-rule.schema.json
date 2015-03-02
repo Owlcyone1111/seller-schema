@@ -104,23 +104,25 @@
             "properties": {
                 "min_band":{
                 	"type":"number",
-                	"min":0,
+                	"minimum":0,
                 	"description":"The lower bound of the pricing band"
                 },
                 "max_band": {
                     "type": "number",
+                    "minimum":true,
                     "exlusiveMin":0,
                     "description" : "The upper bound of the pricing band"
                 },
                 "volume_minimum": {
                     "type": "number",
-                    "exlusiveMin":0,
+                    "exlusiveMinimum":true,
+                    "minimum":0,
                     "description" : "The minimum number items needed to achieve the discount"
                 },
                 "adjustment": {
                     "type": "number",
-                    "min":-1,
-                    "max":1,
+                    "minimum":-0.05,
+                    "maximum":0.3,
                     "required": true,
                     "description" : "The adjustment to the base commission as a decimal"
                 }
