@@ -1,0 +1,130 @@
+{
+    "title": "VolumeRule",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+    	"rule_id":{
+    		"type":"string",
+    		"required":true,
+    		"description":"The rule's unique ID assigned by Jet.com"
+    	},
+    	"rule_name":{
+    		"type":"string",
+    		"required":true,
+            "maxLength":50,
+    		"description":"This rule's current name to be set by the partner"
+    	},
+    	"merchant_id":{
+    		"type":"string",
+    		"required":true,
+    		"description":"The partner's unique ID assigned by Jet.com"
+    	},
+        "start_date_time":{
+            "type":"string",
+            "required":true,
+            "description":"The starting date and time the rule is scheduled to run
+
+            #Valid Values
+
+            The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on January 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"
+        },
+        "end_date_time":{
+            "type":"string",
+            "required":true,
+            "description":"The ending date and time the rule is scheduled to run
+
+            #Valid Values
+
+            The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on January 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"
+        },
+        "recurrence":{
+            "type":"boolean",
+            "required":true,
+            "description":"If true, this rule will be scheduled to run during according to the speifications provided in the recurrence_type"
+        },
+        "recurrence_type":{
+            "title": "RecurrenceTypeObject",
+            "type": "object",
+            "additionalProperties" : false,
+            "properties": {
+                "repeat_type":{
+                    "type":"string",  
+                    "enum":[
+                        "yearly",
+                        "monthly",
+                        "daily",
+                    ],                 
+                    "description":"How the rule is scheduled to repeat
+
+                    #Valid Values
+
+                    * year - the rule will run every year according to the repeat_interval 
+                    * month - the rule will run every month according to the repeat_interval 
+                    * daily - the rule will run daily according to the repeat_interval 
+                    
+                    "
+                },
+                "repeat_interval": {
+                    "type":"string",                   
+                    "description":"The interval that the variable commission rule should repeat. Values vary based on the repeat_type."
+                },
+                "repeat_on": {
+                    "type":"string",                   
+                    "description":"The moment that the variable commission rule should run according to the repeat_interval."
+                }
+            }
+        },
+        "type_volume": {
+            "type":"array",
+            "minItems":1,
+            "items" : {
+                "$ref":"#/definitions/type_shipping_array"
+            }
+        }
+    },
+    "definitions": {
+        "type_volume_array": {
+            "title": "TypeVolumeObject",
+            "type": "object",
+            "additionalProperties" : false,
+            "properties": {
+                "volume_bands":{
+                	"type":"array",
+                	"minItems":1,
+                	"items":{
+	                	"$ref": "#/definitions/volume_band_array"
+	                }
+                }
+            }
+        },
+        "volume_band_array": {
+            "title": "VolumeBandObject",
+            "type": "object",
+            "additionalProperties" : false,
+            "properties": {
+                "min_band":{
+                	"type":"number",
+                	"min":0,
+                	"description":"The lower bound of the pricing band"
+                },
+                "max_band": {
+                    "type": "number",
+                    "exlusiveMin":0,
+                    "description" : "The upper bound of the pricing band"
+                },
+                "volume_minimum": {
+                    "type": "number",
+                    "exlusiveMin":0,
+                    "description" : "The minimum number items needed to achieve the discount"
+                },
+                "adjustment": {
+                    "type": "number",
+                    "min":-1,
+                    "max":1,
+                    "required": true,
+                    "description" : "The adjustment to the base commission as a decimal"
+                }
+            }
+        }
+    }
+}
