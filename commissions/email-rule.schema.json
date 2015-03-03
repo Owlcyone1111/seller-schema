@@ -76,6 +76,8 @@
         },
         "type_email": {
             "type":"number",
+            "required":true,
+            "maximum":20,
             "description":"The USD amount to pay a customer for an email to use for marketing and promotions. Only valid if variable_commission_type is email."
         }
     }

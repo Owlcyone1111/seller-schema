@@ -76,6 +76,7 @@
         },
         "type_volume": {
             "type":"array",
+            "required":true,
             "minItems":1,
             "items" : {
                 "$ref":"#/definitions/type_shipping_array"
@@ -109,14 +110,14 @@
                 },
                 "max_band": {
                     "type": "number",
-                    "minimum":true,
-                    "exlusiveMin":0,
+                    "minimum":0,
+                    "exlusiveMin":true,
                     "description" : "The upper bound of the pricing band"
                 },
                 "volume_minimum": {
                     "type": "number",
-                    "exlusiveMinimum":true,
                     "minimum":0,
+                    "exlusiveMinimum":true,
                     "description" : "The minimum number items needed to achieve the discount"
                 },
                 "adjustment": {

@@ -76,6 +76,7 @@
         },
         "type_shipping": {
             "type":"array",
+            "required":true,
             "minItems":1,
             "items" : {
                 "$ref":"#/definitions/type_shipping_array"
