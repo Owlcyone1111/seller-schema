@@ -1,0 +1,12 @@
+{
+	"{merchantSku}" : { 
+		"relationship": "Variation",
+	    "variation_refinements" : 34,
+	    "children_skus" : [ "abcd", "efgh" ]
+	},
+	"{merchantSku}" : { 
+		"relationship": "Accessory",
+	    "variation_refinements" : 12,
+	    "children_skus" : [ "zyyx", "wvut" ]
+	}	
+}

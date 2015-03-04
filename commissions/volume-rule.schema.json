@@ -79,7 +79,7 @@
             "required":true,
             "minItems":1,
             "items" : {
-                "$ref":"#/definitions/type_shipping_array"
+                "$ref":"#/definitions/type_volume_array"
             }
         }
     },

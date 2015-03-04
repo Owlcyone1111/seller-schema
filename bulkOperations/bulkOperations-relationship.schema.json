@@ -1,0 +1,63 @@
+{
+    "$schema" : "http://json-schema.org/draft-03/schema",		
+	"title": "BulkOperationsRelationship",
+	"type": "object",
+    "additionalProperties" : false,		
+	"description": "This schema is used to set relationships for merchant SKUs.",
+	"properties": {
+	   "{merchantSku}": {
+			"required": true,
+			"description": "The merchant SKU that should be affected by the relationships in this object. The {merchantSKU} field should be the merchant SKU that is the parent in the relationship.",
+			"$ref":"#/definitions/merchant_sku_relationships"
+		}
+	},
+	"definitions":{
+        "merchant_sku_relationships":{
+            "title": "merchantSkuPrice",
+            "description": "The merchant SKU that should be affected by the relationships in this object. The {merchantSKU} field should be the merchant SKU that price is being updated for.",
+            "additionalProperties" : false,
+            "type": "object",
+            "properties":{
+                "relationship": {
+                    "type": "string",
+                    "enum" : ["Variation", "Accessory"],
+                    "required" : true,          
+                    "description": "Variation or Accessory
+
+                    #Logic
+
+                    This field is required if you are setting up a Variation relationship between a set merchant SKUs
+
+                    ##Valid Values
+
+                    *Variation
+
+                    *Accessory"
+                },
+                "variation_refinements": {
+                    "type": "number",
+                    "description": "The ID number for the variation that you get from our documentation
+
+                    This field should only be filled in if you are setting up a Variation relationship between a set merchant SKUs and you want to let Jet know what you would like to vary those merchant SKUs on. 
+                    
+                    #Valid Values
+
+                    The valid 'variation_refinements vary depending on the jet_browse_node_id, see category specific documentation for details"
+                },
+                "children_skus": {
+                    "type": "array",
+                    "required" : true,
+                    "items" : {
+                            "type" : "string",
+                            "description" : "merchant SKU"
+                        },
+                    "description": "The merchant SKUs that are a the child SKUs
+                        
+                    #Valid Values
+
+                    Must be a merchant SKU that you have sent us"
+                }
+            }
+        }
+	}
+}
