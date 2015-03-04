@@ -3,21 +3,11 @@
     "type": "object",
     "additionalProperties" : false,
     "properties": {
-    	"rule_id":{
-    		"type":"string",
-    		"required":true,
-    		"description":"The rule's unique ID assigned by Jet.com"
-    	},
     	"rule_name":{
     		"type":"string",
     		"required":true,
             "maxLength":50,
     		"description":"This rule's current name to be set by the partner"
-    	},
-    	"merchant_id":{
-    		"type":"string",
-    		"required":true,
-    		"description":"The partner's unique ID assigned by Jet.com"
     	},
         "start_date_time":{
             "type":"string",
