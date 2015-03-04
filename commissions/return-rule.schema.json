@@ -98,7 +98,7 @@
                 "adjustment": {
                     "type": "number",
                     "required": true,
-                    "minimum":-0.05,
+                    "minimum":0,
                     "maximum":0.3,
                     "description" : "The adjustment to the base commission as a decimal"
                 }

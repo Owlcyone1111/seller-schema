@@ -6,7 +6,7 @@
         "settlement_only" : {
             "type":"boolean",
             "required":true,
-            "description":"If true, the partner product is viewed by the Jet.com pricing alogrithm with at current base rate but base commission will be charged according to agrred to commissions in settlement"
+            "description":"If true, the partner product is viewed by the Jet.com pricing alogrithm at current base rate but base commission will be charged according to agreed to commissions in settlement"
         },
         "start_date":{
             "type": "string",
