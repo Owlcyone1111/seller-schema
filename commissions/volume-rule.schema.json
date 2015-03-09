@@ -3,12 +3,12 @@
     "type": "object",
     "additionalProperties" : false,
     "properties": {
-    	"rule_name":{
-    		"type":"string",
-    		"required":true,
+        "rule_name":{
+            "type":"string",
+            "required":true,
             "maxLength":50,
-    		"description":"This rule's current name to be set by the partner"
-    	},
+            "description":"This rule's current name to be set by the partner"
+        },
         "start_date_time":{
             "type":"string",
             "required":true,
@@ -79,12 +79,23 @@
             "type": "object",
             "additionalProperties" : false,
             "properties": {
+                "min_band":{
+                    "type":"number",
+                    "minimum":0,
+                    "description":"The lower bound of the pricing band"
+                },
+                "max_band": {
+                    "type": "number",
+                    "minimum":0,
+                    "exlusiveMin":true,
+                    "description" : "The upper bound of the pricing band"
+                },
                 "volume_bands":{
-                	"type":"array",
-                	"minItems":1,
-                	"items":{
-	                	"$ref": "#/definitions/volume_band_array"
-	                }
+                    "type":"array",
+                    "minItems":1,
+                    "items":{
+                        "$ref": "#/definitions/volume_band_array"
+                    }
                 }
             }
         },
@@ -93,17 +104,6 @@
             "type": "object",
             "additionalProperties" : false,
             "properties": {
-                "min_band":{
-                	"type":"number",
-                	"minimum":0,
-                	"description":"The lower bound of the pricing band"
-                },
-                "max_band": {
-                    "type": "number",
-                    "minimum":0,
-                    "exlusiveMin":true,
-                    "description" : "The upper bound of the pricing band"
-                },
                 "volume_minimum": {
                     "type": "number",
                     "minimum":0,
