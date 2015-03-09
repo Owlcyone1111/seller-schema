@@ -3,12 +3,12 @@
     "type": "object",
     "additionalProperties" : false,
     "properties": {
-    	"rule_name":{
-    		"type":"string",
-    		"required":true,
+        "rule_name":{
+            "type":"string",
+            "required":true,
             "maxLength":50,
-    		"description":"This rule's current name to be set by the partner"
-    	},
+            "description":"This rule's current name to be set by the partner"
+        },
         "start_date_time":{
             "type":"string",
             "required":true,
@@ -64,7 +64,7 @@
                 }
             }
         },
-    	"type_returns": {
+        "type_returns": {
             "type":"array",
             "required":true,
             "minItems":1,
@@ -80,7 +80,7 @@
             "additionalProperties" : false,
             "properties": {
                 "category_id":{
-                    "type":"string",
+                    "type":"integer",
                     "required":true,
                     "minimum":1000000,
                     "description":"The Jet browse node ID that the variable commission or rule is being applied to"
