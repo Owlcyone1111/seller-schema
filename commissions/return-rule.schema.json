@@ -30,7 +30,7 @@
         "recurrence":{
             "type":"boolean",
             "required":true,
-            "description":"If true, this rule will be scheduled to run during according to the speifications provided in the recurrence_type"
+            "description":"If true, this rule will be scheduled to run according to the specifications provided in the recurrence_type"
         },
         "recurrence_type":{
             "title": "RecurrenceTypeObject",
@@ -64,7 +64,7 @@
                 }
             }
         },
-        "type_returns": {
+        "adjustments": {
             "type":"array",
             "required":true,
             "minItems":1,

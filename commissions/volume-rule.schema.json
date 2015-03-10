@@ -30,7 +30,7 @@
         "recurrence":{
             "type":"boolean",
             "required":true,
-            "description":"If true, this rule will be scheduled to run during according to the speifications provided in the recurrence_type"
+            "description":"If true, this rule will be scheduled to run according to the specifications provided in the recurrence_type"
         },
         "recurrence_type":{
             "title": "RecurrenceTypeObject",
@@ -64,7 +64,7 @@
                 }
             }
         },
-        "type_volume": {
+        "volume_bands": {
             "type":"array",
             "required":true,
             "minItems":1,
@@ -81,18 +81,21 @@
             "properties": {
                 "min_band":{
                     "type":"number",
-                    "minimum":0,
+                    "minimum": 0,
+                    "required": true,
                     "description":"The lower bound of the pricing band"
                 },
                 "max_band": {
                     "type": "number",
-                    "minimum":0,
-                    "exlusiveMin":true,
+                    "minimum": 0,
+                    "required": true,
+                    "exclusiveMinimum":true,
                     "description" : "The upper bound of the pricing band"
                 },
-                "volume_bands":{
+                "adjustments":{
                     "type":"array",
-                    "minItems":1,
+                    "minItems": 1,
+                    "required": true,
                     "items":{
                         "$ref": "#/definitions/volume_band_array"
                     }
@@ -106,8 +109,9 @@
             "properties": {
                 "volume_minimum": {
                     "type": "number",
-                    "minimum":0,
-                    "exlusiveMinimum":true,
+                    "minimum": 0,
+                    "required": true,
+                    "exclusiveMinimum":true,
                     "description" : "The minimum number items needed to achieve the discount"
                 },
                 "adjustment": {

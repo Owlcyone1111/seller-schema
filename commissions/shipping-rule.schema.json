@@ -30,7 +30,7 @@
         "recurrence":{
             "type":"boolean",
             "required":true,
-            "description":"If true, this rule will be scheduled to run during according to the speifications provided in the recurrence_type"
+            "description":"If true, this rule will be scheduled to run according to the specifications provided in the recurrence_type"
         },
         "recurrence_type":{
             "title": "RecurrenceTypeObject",
@@ -64,7 +64,7 @@
                 }
             }
         },
-        "type_shipping": {
+        "categories": {
             "type":"array",
             "required":true,
             "minItems":1,
@@ -86,7 +86,8 @@
                     "description":"The Jet browse node ID that the variable commission or rule is being applied to"
                 },
                 "shipping_zones":{
-                    "type":"array",
+                    "type": "array",
+                    "required": true,
                     "minItems":1,
                     "maxItems":7,
                     "items":{
@@ -101,7 +102,8 @@
             "additionalProperties" : false,
             "properties": {
                 "zone_id":{
-                    "type":"integer",
+                    "type": "integer",
+                    "required": true,
                     "minimum":2,
                     "maximum":8,
                     "description":"The zone number that the variable commission or rule will be set for"
