@@ -441,7 +441,7 @@
                 "request_shipping_carrier": {
                     "type" : "string",
                     "required" : false,
-                    "enum" : ["UPS", "FedEx", "USPS"], 
+                    "enum" : ["UPS", "FedEx", "USPS", "OnTrac", "DHL", "Freight"], 
                     "description" : "The shipping carrier that is delivering the shipment 
 
                     #Valid Values
@@ -450,7 +450,14 @@
 
                     *'FedEx'
 
-                    *'USPS'"
+                    *'USPS'
+
+                    *'OnTrac'
+
+                    *'DHL'
+
+                    *'Freight'
+                    "
 
                 },
                 "request_shipment_method": {
