@@ -1,19 +1,19 @@
 {
     "$schema" : "http://json-schema.org/draft-03/schema",
-	"title": "Inventory",
-	"type": "object",
-	"description": "This schema is used to set inventory counts on merchant SKUs",
+    "title": "Inventory",
+    "type": "object",
+    "description": "This schema is used to set inventory counts on merchant SKUs",
     "additionalProperties" : false,
-	"properties": {
-		"fulfillment_nodes":{
-			"type":"array",
-			"items":{
-				"$ref":"#/definitions/fulfillment_nodes_inventory"
-			}
-		}
-	},
-	"definitions":{
-		"fulfillment_nodes_inventory": {
+    "properties": {
+        "fulfillment_nodes":{
+            "type":"array",
+            "items":{
+                "$ref":"#/definitions/fulfillment_nodes_inventory"
+            }
+        }
+    },
+    "definitions":{
+        "fulfillment_nodes_inventory": {
             "title": "FulfillmentNodeInventory",
             "additionalProperties" : false,
             "type": "object",
@@ -26,9 +26,10 @@
                 "quantity": {
                     "type": "integer",
                     "required" : true,
-                    "description" : "The quantity of inventory for the given SKU in a given fulfillment node"
+                    "description": "The quantity of inventory for the given SKU in a given fulfillment node",
+                    "minimum": 0
                 }
             }
         }
-	}
+    }
 }

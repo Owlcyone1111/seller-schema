@@ -8,12 +8,16 @@
 		"price": {
 			"type": "number",
 			"required": true,
-			"description": "The overall price that the merchant SKU is priced at"
+            "description": "The overall price that the merchant SKU is priced at",
+            "minimum": 0,
+            "exclusiveMinimum": true
 		},
 		"thor_current_price": {
 			"type": "number",
 			"required": true,
-			"description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED"
+			"description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED",
+            "minimum": 0,
+            "exclusiveMinimum": true
 		},
 		"fulfillment_nodes":{
 			"type":"array",
@@ -37,12 +41,16 @@
                 "fulfillment_node_price": {
                     "type": "number", 
                     "required": true,
-                    "description" : "The price of the merchant SKU at the fulfillment node level"
+                    "description" : "The price of the merchant SKU at the fulfillment node level",
+                    "minimum": 0,
+                    "exclusiveMinimum": true
                 },
                 "thor_current_price_node": {
 					"type": "number",
 					"required": true,
-					"description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED"
+					"description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED",
+                    "minimum": 0,
+                    "exclusiveMinimum": true
 				}
             }
         }
