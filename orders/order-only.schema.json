@@ -94,6 +94,24 @@
             #Valid Values
 
             The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"
+        },  
+        "order_ready_date": {
+            "type": "string",
+            "required": true,
+            "description" :  "The date the order was switched to 'ready' state
+
+            #Valid Values
+
+            The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"
+        }, 
+        "order_acknowledge_date": {
+            "type": "string",
+            "required": true,
+            "description" :  "The date the order was acknowledged by the partner
+
+            #Valid Values
+
+            The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"
         },       
         "order_transmission_date":{
             "type": "string",
@@ -661,6 +679,16 @@
 
                     Example: 2009-06-15T13:45:30.0000000-07:00
 
+                    "
+                },
+                "shipment_message_date": {
+                    "type": "string",
+                    "description" : "When Jet received the ship complete message from the Partner
+
+                    #Valid Values
+
+                    The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on Jan 1st 2015 would be '2015-01-01T21:00:00.0000000Z'
+                    
                     "
                 },
                 "response_shipment_method": {
