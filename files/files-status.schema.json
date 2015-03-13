@@ -30,7 +30,17 @@
         "received" : {
             "type" : "string",
             "required": true,
-            "description" : "Time when file was acknowledged by Jet.com"  
+            "description" : "Time when file was created in by Jet.com"  
+        },
+        "processing_start" : {
+            "type" : "string",
+            "required": true,
+            "description" : "Time when file started processing inside Jet.com"  
+        },
+        "processing_end" : {
+            "type" : "string",
+            "required": true,
+            "description" : "Time when file finished processing inside Jet.com"  
         },
         "status" : {
             "type" : "string",
