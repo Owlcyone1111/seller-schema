@@ -1,0 +1,70 @@
+{
+    "title" : "RegistrationComplete",
+    "type" : "object",
+    "additionalProperties" : false,
+    "properties" : {
+        "email": {
+            "type": "string",
+            "required": true,
+            "description" :  "The email used to register with"
+        },
+        "legal_name": {
+            "type": "string",
+            "required": true,
+            "description" : "The legal name the partner's business is registered with"
+        },
+        "display_name": {
+            "type": "string",
+            "required": true,
+            "description" : "The name the partner wants to be shown on Jet.com"
+        },
+        "dba_name": {
+            "type": "string",
+            "description" : "The name the partner uses to operate"
+        },
+        "tax_identification_number": {
+            "type": "integer",
+            "required": true,
+            "description" : "Partner's tax idenitification number"
+        },
+        "first_name": {
+            "type": "string",
+            "required": true,
+            "description" : "The first name of the person registering for the partner company"
+        },
+        "last_name": {
+            "type": "string",
+            "required": true,
+            "description" : "The last name of the person registering for the partner company"
+        },
+        "main_contact_phone_number": {
+            "type": "string",
+            "required": true,
+            "description" : "The main contact phone number for the partner company"
+        },
+        "address_one" : {
+            "type": "string",
+            "required": true,
+            "description" : "The main address of partner"   
+        },
+        "address_two" : {
+            "type": "string",
+            "description" : "A secondary description for the partner address"   
+        },
+        "city" : {
+            "type": "string",
+            "required": true,
+            "description" : "The city where the "   
+        },
+        "state" : {
+            "type": "string",
+            "required": true,
+            "description" : "The main address of partner"   
+        },
+        "zip_code" : {
+            "type": "string",
+            "required": true,
+            "description" : "The main address of partner"   
+        }
+    }
+}

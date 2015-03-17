@@ -1,0 +1,12 @@
+{
+    "title" : "RegistrationMerchantCreated",
+    "type" : "object",
+    "additionalProperties" : false,
+    "properties" : {
+    	"merchant_id": {
+            "type": "string",
+            "required":true,
+            "description" :  "The merchant_id (Jet's 32 character unique identifier) assigned to the newly created merchant"
+        }
+    }
+}
