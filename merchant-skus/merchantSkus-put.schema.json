@@ -8,12 +8,13 @@
 		"product_title": {
 			"type": "string",
 			"required": true,
+			"minLength" : 5,
 			"maxLength" : 500,
 			"description": "Short product description
 
 			#Valid Values
 
-			1 to 500 alphanumeric characters
+			5 to 500 alphanumeric characters
 
 			"
 		},
