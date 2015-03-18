@@ -488,7 +488,7 @@
 				"standard_product_code_type": {
 					"type": "string",
 					"required": true,
-					"enum" : ["UPC", "ISBN-13","ISBN-10", "EAN", "GTIN-14"],
+					"enum" : ["UPC-E", "UPC", "ISBN-13","ISBN-10", "EAN", "GTIN-14"],
 					"description": "Indicate the type of standard_product_code that was used.
 
 					#Valid Values
