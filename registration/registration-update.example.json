@@ -1,0 +1,19 @@
+{
+    "year_business_founded":2000,
+    "estimated_annual_revenue":"<$1M",
+    "number_of_skus_in_catalog":"0-499",
+    "number_of_fulfillment_nodes":"5-9",
+    "number_of_dropshippers":"1-9",
+    "number_of_dropshippers":"0",
+    "live_inventory":true,
+    "fulfillment_in_us":true,
+    "categories":[
+        "1000000",
+        "2000000",
+        "13000000"
+    ],
+    "other_names_in_marketplaces":[{
+        "name":"My Company",
+        "marketplace_name":"Amazon"
+    }]
+}

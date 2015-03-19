@@ -1,5 +1,5 @@
 {
-    "title" : "RegistrationComplete",
+    "title" : "RegistrationCreate",
     "type" : "object",
     "additionalProperties" : false,
     "properties" : {
@@ -25,7 +25,7 @@
         "tax_identification_number": {
             "type": "integer",
             "required": true,
-            "description" : "Partner's tax idenitification number"
+            "description" : "Partner's tax identification number"
         },
         "first_name": {
             "type": "string",
@@ -54,17 +54,17 @@
         "city" : {
             "type": "string",
             "required": true,
-            "description" : "The city where the "   
+            "description" : "The city for the partner address"   
         },
         "state" : {
             "type": "string",
             "required": true,
-            "description" : "The main address of partner"   
+            "description" : "The state for the partner address"   
         },
         "zip_code" : {
             "type": "string",
             "required": true,
-            "description" : "The main address of partner"   
+            "description" : "The zip code for the partner address"
         }
     }
 }

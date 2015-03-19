@@ -1,0 +1,168 @@
+{
+    "title" : "RegistrationComplete",
+    "type" : "object",
+    "additionalProperties" : false,
+    "properties" : {
+        "year_business_founded": {
+            "type": "integer",
+            "required": true,
+            "description" :  "The year the business was founded"
+        },
+        "estimated_annual_revenue":{
+            "type":"string",
+            "required":true,
+            "description":"The estimated amount your company makes in revenue in one year
+
+            #Valid Values
+            * '<$1M' - less than $1 million in estimated annual revenue
+            * '$1M-$5M' - between $1 million and $5 million in estimated annual revenue
+            * '$5M-$10M' - between $5 million and $10 million in estimated annual revenue
+            * '$10M-$50M' - between $10 million and $50 million in estimated annual revenue
+            * '$50M-$200M' - between $50 million and $200 million in estimated annual revenue
+            * '>$200M' - more than $200 million in estimated annual revenue
+            ",
+            "enum":[
+                "<$1M",
+                "$1M-$5M",
+                "$5M-$10M",
+                "$10M-$50M",
+                "$50M-$200M",
+                ">$200M"
+            ]
+        },
+        "number_of_skus_in_catalog":{
+            "type":"string",
+            "required":true,
+            "description":"Approximate number of SKUs in your product catalog
+
+            #Valid Values
+            * '0-499' 
+            * '500-4,999',
+            * '5,000-19,999',
+            * '20,000-49,999'
+            * '>50,000'
+
+            ",
+            "enum":[
+                "0-499",
+                "500-4,999",
+                "5,000-19,999",
+                "20,000-49,999",
+                ">50,000"
+            ]
+        },
+        "number_of_fulfillment_nodes":{
+            "type":"string",
+            "required":true,
+            "description":"Approximate number of fulfillment nodes you operate
+
+            #Valid Values
+            * '0'
+            * '1-4'
+            * '5-9'
+            * '10-19'
+            * '20-39'
+            * '>40'
+            ",
+            "enum":[
+                "0",
+                "1-4",
+                "5-9",
+                "10-19",
+                "20-39",
+                ">40"
+            ]
+        },
+        "number_of_dropshippers":{
+            "type":"string",
+            "required":true,
+            "description":"Approximate number of fulfillment nodes you operate
+
+            #Valid Values
+            * '0'
+            * '1-9'
+            * '10-24'
+            * '25-49'
+            * '50-99'
+            * '100-499'
+            * '500-999'
+            * '>1000'
+            ",
+            "enum":[
+                "0",
+                "1-9",
+                "10-24",
+                "25-49",
+                "50-99",
+                "100-499",
+                "500-999",
+                ">1000"
+            ]
+        },
+        "number_of_dropshippers":{
+            "type":"string",
+            "required":true,
+            "description":"Approximate number of fulfillment nodes you operate
+
+            #Valid Values
+            * '0'
+            * '1-9'
+            * '10-24'
+            * '25-49'
+            * '50-99'
+            * '100-499'
+            * '500-999'
+            * '>1000'
+            ",
+            "enum":[
+                "0",
+                "1-9",
+                "10-24",
+                "25-49",
+                "50-99",
+                "100-499",
+                "500-999",
+                ">1000"
+            ]
+        },
+        "live_inventory":{
+            "type":"boolean",
+            "required":true,
+            "description":"If true, the merchant can provide live inventory feeds on a per fulfillment center / dropshipper basis",
+        },
+        "fulfillment_in_us":{
+            "type":"boolean",
+            "required":true,
+            "description":"If true, the merchant has fulfillment centers and dropshippers in the US",
+        },
+        "categories":{
+            "type":"array",
+            "required":true,
+            "items":{
+                "type":"string",
+            },
+            "description":"Please enter the categories you sell in (the highest level category nodes -- ##,000,000)"
+        },
+        "other_names_in_marketplaces":{
+            "$ref":"#/definitions/other_names"
+        }
+    },
+    "definitions":{
+        "other_names":{
+            "title":"OtherNamesInMarketplaces",
+            "type":"object",
+            "properties":{
+                "name":{
+                    "type":"string",
+                    "required":true,
+                    "description":"The name you sell under in a marketplace"
+                },
+                "marketplace_name":{
+                    "type":"string",
+                    "required":true,
+                    "description":"The name of the marketplace where you use this name"
+                }
+            }
+        }
+    }
+}
