@@ -1,0 +1,117 @@
+{
+    "title": "ShippingRates",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+        "shipping_rate_type":{
+            "type":"string",
+            "required":true,
+            "enum":[
+                "Incremental",
+                "PriceBand"
+            ]
+        },
+        "incremental_type":{
+            "type":"string",
+            "enum":[
+                "PerPound",
+                "PerItem"
+            ]
+        },
+        "shipping_rates_incremental":{
+            "type":"array",
+            "description":"The shipping rates for all methods set up.
+
+            #Logic
+            * Can only work with shipping methods that are set up
+            ",
+            "items":{
+                "$ref":"#/definitions/shipping_rates_incremental_array"
+            }
+        },
+        "shipping_rates_price_band":{
+            "type":"array",
+            "description":"The shipping rates for all methods set up.
+
+            #Logic
+            * Can only work with shipping methods that are set up
+            ",
+            "items":{
+                "$ref":"#/definitions/shipping_rates_price_band_array"
+            }
+        }  
+
+    },
+    "definitions":{
+        "shipping_rates_incremental_array":{
+            "title":"ShippingRatesIncrementalArray",
+            "type":"object",
+            "properties":{
+                "service_level":{
+                    "type":"string",
+                    "required":true,
+                    "description":"The service levels or shipping methods this fulfillment node uses",
+                    }
+                },
+                "shipping_rate_per_order":{
+                    "type":"number",
+                    "minimum":0,
+                    "description":"Shipping amount charged per order"
+                },
+                "shipping_rate_per_incremental_type":{
+                    "type":"number",
+                    "minimum":0,
+                    "description":"Shipping amount charged per incremental unit
+
+                    #Logic
+                    * If incremental_type = PerPound, then incremental unit is pound
+                    * If incremental_type = PerItem, then incremental unit is item
+
+                    "
+                }
+            },
+        "shipping_rates_price_band_array"
+            "title":"ShippingRatesPriceBrandArray",
+            "type":"object",
+            "properties":{
+                "service_level":{
+                    "type":"string",
+                    "required":true,
+                    "description":"The service levels or shipping methods this fulfillment node uses",
+                    }
+                },
+                "price_bands":{
+                    "type":"array",
+                    "minItems":1,
+                    "items":{
+                        "type":"string",
+                        "description":"The price bands for this shipping method or service level",
+                        "$ref":"#/definitions/price_bands_array"
+                    }
+                }
+            }
+        },
+        "price_bands_array":{
+            "title":"PriceBandArray",
+            "type":"object",
+            "properties":{
+                "min_price_band":{
+                    "type":"number",
+                    "minimum":0,
+                    "description":"The minimum price for this band's shipping method or service level"
+                },
+                "max_price_band":{
+                    "type":"number",
+                    "minimum":0,
+                    "exclusiveMinimum":true,
+                    "description":"The maximum price for this band's shipping method or service level"
+                },
+                "shipping_rate":{
+                    "type":"number",
+                    "minimum":0,
+                    "description":"Shipping amount charged for this price band"
+                },
+            }
+        }
+    }
+}

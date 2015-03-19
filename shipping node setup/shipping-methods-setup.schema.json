@@ -1,0 +1,213 @@
+{
+    "title": "ShippingMethodSetup",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+        "node_shipping_service_level_type":{
+            "type":"string",
+            "required":true,
+            "enum":[
+                "General",
+                "Specific"
+            ]
+        },
+        "node_service_level_general":{
+            "type":"array",
+            "minItems":1,
+            "description":"The service levels this fulfillment node uses
+
+            #Logic
+
+            * If node_shipping_service_level_type = General, this field is required
+            ",
+            "items":{
+                "$ref":"#/definitions/node_service_level_general"
+            }
+        },
+        "node_service_level_specific":{
+            "type":"array",
+            "minItems":1,
+            "description":"The shipping methods this fulfillment node uses
+            
+            #Logic
+
+            * If node_shipping_service_level_type = Specific, this field is required
+            ",
+            "items":{
+                "$ref":"#/definitions/node_service_level_specific"
+            }
+        },
+        "node_service_level_amazon":{
+            "type":"array",
+            "minItems":1,
+            "items":{
+                "$ref":"#/definitions/node_service_level_amazon"
+            }
+        }
+    },
+    "definitions":{
+        "node_service_level_general":{
+            "title":"NodeGeneralServiceLevels",
+            "type":"object",
+            "properties":{
+                "general":{
+                    "type":"string",
+                    "required":true,
+                    "description":"The levels of service provided at this fulfillment node",
+                    "enum":[
+                        "Standard",
+                        "Expedited",
+                        "SecondDay",
+                        "NextDay",
+                        "Scheduled"
+                    ]
+                },
+                "shipping_pick_up_days":{
+                    "type":"array",
+                    "required":true,
+                    "items":{
+                        "$ref":"#/defintions/operating_days"
+                    }
+                },
+                "cut_off_time":{
+                    "type":"string",
+                    "required":true,
+                    "description":"The time an order needs to be received by in order to be processed and shipped out by the date promised."
+                },
+                "fulfillment_days":{
+                    "type":"integer",
+                    "required":true,
+                    "description":"The number of days it takes to process and ship an order"
+                },
+                "dropship_days_to_ship":{
+                    "type":"integer",
+                    "description":"The number of days it takes for the dropshipper ship an order"
+                }
+            }
+        },
+        "node_service_level_specific":{
+            "title":"NodeShippingMethods",
+            "type":"object",
+            "properties":{
+                "specific":{
+                    "type":"string",
+                    "required":true,
+                    "description":"The shipping methods supported by this fulfillment node"
+                },
+                "carrier" : {
+                    "type": "string",
+                    "required":true,
+                    "enum" : [
+                        "UPS",
+                        "USPS",
+                        "FedEx",
+                        "OnTrac",
+                        "",
+                    ],
+                    "description":"The carrier that will complete final delivery of the shipment."
+                },
+                "carrier_pick_up_days":{
+                    "type":"array",
+                    "required":true,
+                    "items":{
+                        "$ref":"#/defintions/operating_days"
+                    }
+                },
+                "cut_off_time":{
+                    "type":"string",
+                    "required":true,
+                    "description":"The time an order needs to be received by in order to be processed and shipped out by the date promised."
+                },
+                "fulfillment_days":{
+                    "type":"integer",
+                    "required":true,
+                    "description":"The number of days it takes to process and ship an order"
+                },
+                "dropship_days_to_ship":{
+                    "type":"integer",
+                    "description":"The number of days it takes for the dropshipper ship an order"
+                },
+                "truck_pull_time":{
+                    "type":"string",
+                    "required":true,
+                    "description":"The time of day the carrier arrives at the fulfillment nodes"
+                }
+            }
+        },
+        "node_service_level_amazon":{
+            "title":"NodeGeneralServiceLevels",
+            "type":"object",
+            "properties":{
+                "general":{
+                    "type":"string",
+                    "required":true,
+                    "description":"The levels of service provided at this fulfillment node",
+                    "enum":[
+                        "Standard",
+                        "Expedited",
+                        "Priority"
+                    ]
+                },
+                "shipping_pick_up_days":{
+                    "type":"array",
+                    "required":true,
+                    "items":{
+                        "$ref":"#/defintions/operating_days"
+                    }
+                },
+                "cut_off_time":{
+                    "type":"string",
+                    "required":true,
+                    "description":"The time an order needs to be received by in order to be processed and shipped out by the date promised."
+                },
+                "fulfillment_days":{
+                    "type":"integer",
+                    "required":true,
+                    "description":"The number of days it takes to process and ship an order"
+                }
+            }
+        },
+        "operating_days": {
+            "title": "OperatingDays",
+            "additionalProperties" : false,
+            "type": "object",
+            "properties": {
+                "operates_sunday":{
+                    "type":"boolean",
+                    "required":true,
+                    "description":"If true, this operates on Sunday"
+                },
+                "operates_monday":{
+                    "type":"boolean",
+                    "required":true,
+                    "description":"If true, this operates on Monday"
+                },
+                "operates_tuesday":{
+                    "type":"boolean",
+                    "required":true,
+                    "description":"If true, this operates on Tuesday"
+                },
+                "operates_wednesday":{
+                    "type":"boolean",
+                    "required":true,
+                    "description":"If true, this operates on Wednesday"
+                },
+                "operates_thursday":{
+                    "type":"boolean",
+                    "required":true,
+                    "description":"If true, this operates on Thursday"
+                },
+                "operates_friday":{
+                    "type":"boolean",
+                    "required":true,
+                    "description":"If true, this operates on Friday"
+                },
+                "operates_saturday":{
+                    "type":"boolean",
+                    "required":true,
+                    "description":"If true, this operates on Saturday"
+                }  
+            }
+        }
+    }
+}

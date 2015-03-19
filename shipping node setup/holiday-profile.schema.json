@@ -1,0 +1,75 @@
+{
+    "title": "HolidaysProfile",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+        "holidays":{
+            "type":"array",
+            "required":true,
+            "description":"The holidays this fulfillment node observes",
+            "items":{
+                "$ref":"#/definitions/holiday"
+            }
+        }
+    },
+    "definitions":{
+        "holiday":{
+            "title":"Holiday",
+            "type":"object",
+            "properties":{
+                "holiday_name":{
+                    "type":"string",
+                    "required":true,
+                    "description":"The name of the holiday"
+                },
+                "day_of_the_week":{
+                    "type":"integer",
+                    "minimum":1,
+                    "maximum":7,
+                    "description":"Day of the week the holiday takes place (Sunday = 1)"
+                },
+                "day_number":{
+                    "type":"integer",
+                    "required":true,
+                    "minimum":1,
+                    "maximum":31,
+                    "description":"Day of the month the holiday takes place on"
+                },
+                "direction":{
+                    "type":"boolean",
+                    "required":true,
+                    "description":"If true, in conjunction with a week number, this holiday is referenced starting from the end of the month (i.e. the holiday takes place the last nth week of the month)
+                    "
+                },
+                "repeats_yearly" : {
+                    "type":"boolean",
+                    "required":true,
+                    "description":"If true, this holiday repeats every year"
+                },
+                "month_number":{
+                    "type":"integer",
+                    "required":true,
+                    "minumum":1,
+                    "maximum":12,
+                    "description":"The number of the month the holiday takes place"
+                },
+                "week_number":{
+                    "type":"integer",
+                    "minumum":1,
+                    "maximum":5,
+                    "description":"The week the holiday takes place"
+                },
+                "weekend_rule_applied":{
+                    "type":"boolean",
+                    "required":true,
+                    "description":"If true, when the holiday is observed on the weekend, the holiday will be observed by the fulfillment node on the closest weekday"
+                },
+                "is_federal":{
+                    "type":"boolean",
+                    "required":true,
+                    "description":"If true, the holiday is a federal holiday"
+                }
+            }
+        }
+    }
+}

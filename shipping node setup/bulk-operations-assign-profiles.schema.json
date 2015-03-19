@@ -1,0 +1,15 @@
+{
+    "title": "BulkOperationsAssignProfiles",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+        "fulfillment_node_ids":{
+            "type":"array",
+            "required":true,
+            "items":{
+                "type":"string",
+                "description":"The fulfillment node IDs that are being assigned this profile"
+            }
+        }
+    }
+}

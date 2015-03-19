@@ -1,0 +1,105 @@
+{
+    "title": "FulfillmentNodeSetup",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+        "fulfillment_node_status":{
+            "required":true,
+            "type":"string",
+            "enum":[
+                "active",
+                "inactive"
+            ],
+            "description": "If active, the fulfillment node currently ships items"
+        },
+        "fulfillment_node_name":{
+            "type":"string",
+            "required":true,
+            "description":"The name of the fulfillment node 
+
+            #Logic
+
+            * Can't be duplicated
+
+            "
+        },
+        "readable_fulfillment_node_name":{
+            "type":"string",
+            "required":true,
+            "description":"The name of the fulfillment node"
+        },
+        "fulfilled_by_amazon":{
+            "type":"boolean",
+            "required":true,
+            "description":"If true, then merchant sets up fulfillment node for Amazon fulfillment"
+        },
+        "observes_daylight_savings":{
+            "type":"boolean",
+            "required":true,
+            "description":"If true, the fulfillment node observes daylight savings"
+        },
+        "time_zone":{
+            "type":"string",
+            "required":true,
+            "enum":[
+                "Eastern",
+                "Central",
+                "Arizona",
+                "Mountain",
+                "Pacific",
+                "Alaska",
+                "Hawaii"
+            ],
+            "description":"Please select the time zone in which your fulfillment zone operates
+
+            #Valid Values
+
+            * 'Eastern' - (GMT-05:00) Eastern Time (US & Canada)
+            * 'Central' - (GMT-06:00) Central Time (US & Canada)
+            * 'Arizona' - (GMT-07:00) Arizona
+            * 'Mountain' - (GMT-07:00) Mountain Time (US & Canada)
+            * 'Pacific' - (GMT-08:00) Pacific Time (US & Canada)
+            * 'Alaska' - (GMT-09:00) Alaska
+            * 'Hawaii' - (GMT-10:00) Hawaii
+            "
+        },
+        "location_address_1" : {
+            "type" : "string",
+            "description" : "The first address line for the fulfillment node."
+        },
+        "location_address_2" : {
+            "type" : "string",
+            "description" : "The second address line for the fulfillment node."
+        },
+        "location_city" : {
+            "type" : "string",
+            "description" : "The city, town, or village of the fulfillment node."
+        },
+        "location_state" : {
+            "type" : "string",
+            "description" : "The state of the fulfillment node."
+        },
+        "location_postal_code" : {
+            "type" : "string",
+            "description" : "The postal code for the fulfillment node."
+        },
+        "operating_days_profile":{
+            "type":"string",
+            "description":"The profile ID associated with when this fulfillment node operates"
+        },
+        "holidays_profile":{
+            "type":"string",
+            "description":"The profile ID associated with when this fulfillment node has holidays"
+        },
+        "service_type_profile":{
+            "type":"string",
+            "description":"The profile ID associated with what service levels and shipping methods this fulfillment node supports"
+        },
+        "tags":{
+            "type":"array",
+            "items":{
+                "type":"string"
+            }
+        }
+    }
+}

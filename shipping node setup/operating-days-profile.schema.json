@@ -1,0 +1,67 @@
+{
+    "title": "OperatingDaysProfile",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+        "fulfillment_node_operating_days":{
+            "required":true,
+            "type":"array",
+            "items":{
+                "$ref":"#/definitions/operating_days"
+            },
+            "description": "The days the fulfillment center operates"
+        },
+        "dropshipper_operating_days":{
+            "required":true,
+            "type":"array",
+            "items":{
+                "$ref":"#/definitions/operating_days"
+            },
+            "description": "The days the dropshipper operates"
+        }
+    },
+    "definitions":{
+        "operating_days": {
+            "title": "OperatingDays",
+            "additionalProperties" : false,
+            "type": "object",
+            "properties": {
+                "operates_sunday":{
+                    "type":"boolean",
+                    "required":true,
+                    "description":"If true, this operates on Sunday"
+                },
+                "operates_monday":{
+                    "type":"boolean",
+                    "required":true,
+                    "description":"If true, this operates on Monday"
+                },
+                "operates_tuesday":{
+                    "type":"boolean",
+                    "required":true,
+                    "description":"If true, this operates on Tuesday"
+                },
+                "operates_wednesday":{
+                    "type":"boolean",
+                    "required":true,
+                    "description":"If true, this operates on Wednesday"
+                },
+                "operates_thursday":{
+                    "type":"boolean",
+                    "required":true,
+                    "description":"If true, this operates on Thursday"
+                },
+                "operates_friday":{
+                    "type":"boolean",
+                    "required":true,
+                    "description":"If true, this operates on Friday"
+                },
+                "operates_saturday":{
+                    "type":"boolean",
+                    "required":true,
+                    "description":"If true, this operates on Saturday"
+                }  
+            }
+        }
+    }
+}

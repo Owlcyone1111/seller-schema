@@ -1,0 +1,36 @@
+#%RAML 0.8
+
+title: Shipping Node Setup
+description: The Shipping Node Setup API provides all methods for setting up fulfillment nodes.
+baseUri: https://merchant-api.jet.com/api/shipping_node
+version: v0.1
+protocols: [HTTPS]
+mediaType: application/json
+
+/shipping_node:
+    /create
+        post:
+            description: This method will create a merchant account 
+            body:
+                application/json:
+                    schema: !include registration-create.schema.json
+                    example: !include registration-create.example.json
+            responses:
+                200:
+                    body:
+                        application/json:
+                            schema: !include registration-merchantCreated.schema.json
+                            exmaple: !include registration-merchantCreated.example.json
+                404:
+                    description: The requested resource could not be found. 
+    /update:
+        put:
+            description: This method will update merchant properties
+            responses:
+                200:
+                    body:
+                        application/json:
+                            schema: !include registration-update.schema.json
+                            example: !include registration-update.example.json
+                404:
+                    description: The requested resource could not be found.       
