@@ -1,33 +1,34 @@
 {
-	"general_communication_info" :  [ {
-		
-		"information_type" : "listing status",
-		"contact_name" : "Douglas DeAngelo",
-		"contact_text_number" : "555-545-6789",
-		"contact_email": "dddeangelo@aafun.com"
+	"general_communication_info" :[
+		{
+			"information_type" : "listing status",
+			"contact_name" : "Douglas DeAngelo",
+			"contact_text_number" : "555-545-6789",
+			"contact_email": "dddeangelo@aafun.com"
 		},
 		{
-		"information_type" : "listing status",
-		"contact_name" : "Douglas DeAngelo",
-		"contact_text_number" : "555-545-6789",
-		"contact_email": "dddeangelo@aafun.com"
+			"information_type" : "listing status",
+			"contact_name" : "Douglas DeAngelo",
+			"contact_text_number" : "555-545-6789",
+			"contact_email": "dddeangelo@aafun.com"
 		}
-		],
-	
-	"merchant_order_communication" : [{
-		"shipping_location" : "NJ FC",
-		"merchant_order_alert_email" : "orderalert@aafun.com",
-		"merchant_order_alert_text" : "555-546-4532",
-		"merchant_order_cancel_alert_email" : "ordercancel@aafun.com",
-		"merchant_order_cancel_alert_text" : "555.546-4532"
-		}],
-	
-	"return_communication" : [{
-		"return_destination_name" : "NJ FC",
-		"return_alert_email" : "returns@aafun.com",
-		"return_alert_text" : "555-987-6545"
-		}]
-
-			
-
+	],
+	"merchant_order_communication" : [
+		{
+			"shipping_location" : "NJ FC",
+			"contact_name_order_alert" : "Douglas DeAngelo",
+			"merchant_order_alert_email" : "orderalert@aafun.com",
+			"merchant_order_alert_text" : "555-546-4532",
+			"contact_name_order_cancel_alert" : "Douglas DeAngelo",
+			"merchant_order_cancel_alert_email" : "ordercancel@aafun.com",
+			"merchant_order_cancel_alert_text" : "555.546-4532"
+		}
+	],
+	"return_communication" : [
+		{
+			"return_node_id" : "qcwkfeqkacweky6cr7i6i",
+			"return_alert_email" : "returns@aafun.com",
+			"return_alert_text" : "555-987-6545"
+		}
+	]
 }

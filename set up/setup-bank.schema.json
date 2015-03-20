@@ -3,35 +3,22 @@
 	"type" : "object",
 	"additionalProperties" : false,
 	"properties" : {
-
-		"bank_location_country" : {
-			"type": "string",
-			"required" : true,
-			"enum": ["United States of America"],
-			"description" : "The name of the country in which the bank is located.
-
-			#Valid Values
-
-			*-'United States of America'"
-			},
 		"bank_name" :{
 			"type" : "string",
-			"description" : "The name of the bank that account is located at"},
-		"bank_address" : {
-			"type" : "string",
-			"description" : "The bank's address"
-			},
+			"required":true,
+			"description" : "The name of the bank that account is located at"
+		},
 		"bank_routing_number" : {
 			"type" : "integer",
 			"required" : true,
 			"maxLength" : 9,
 			"minLength" : 9,
-			"description" : "The 9 digit routing number for your bank. (Federal ABA Number) Provide a routing number for Automated Clearing House (ARCH) or electronic funds transfers instead of wire transfers. PLease contact your bank for assistance."
-			} ,
+			"description" : "The 9 digit routing number for your bank. (Federal ABA Number) Provide a routing number for Automated Clearing House (ARCH) or electronic funds transfers instead of wire transfers. Please contact your bank for assistance."
+		},
 		"bank_account_number" : {
 			"type" : "integer",
 			"required" : true,
-			"description" : "The account number for you Bank. Your account must be enabled to received deposits through the Automated Clearing House (ARCH), Please contact your bank for asssistance."
+			"description" : "The account number for you Bank. Your account must be enabled to received deposits through the Automated Clearing House (ARCH), please contact your bank for asssistance."
 		},
 		"bank_account_holder_name" : {
 			"type" : "string",

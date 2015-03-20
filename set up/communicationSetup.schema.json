@@ -1,30 +1,29 @@
 {
-	"title": "communicationSetup",
+	"title": "CommunicationSetup",
 	"type": "object",
 	"additionalProperties" : false,
-    "description": "This schema is used to set up the email addresses and phone numbers for texts for jet to use for communicating with you for various reasons",
+    "description": "This schema is used to set up the email addresses and phone numbers for texts for Jet to use for communicating with you for various reasons",
 	"properties": {
 		"general_communication_info" : {
-        "type" : "array",
-        "description" : "Contact information for various types of commnications you may want for your organization",
-        "items" : {
-            "$ref" : "#/definitions/general_communication_info_type"
-            }
+            "type" : "array",
+            "description" : "Contact information for various types of communications you may want for your organization",
+            "items" : {
+                "$ref" : "#/definitions/general_communication_info_type"
+                }
         },
         "merchant_order_communication": {
-                "type" :"array",
-                "items":{
-				    "$ref": "#/definitions/shipping_location_communication_info"
-                }
+            "type" :"array",
+            "items":{
+			    "$ref": "#/definitions/shipping_location_communication_info"
+            }
 		},
     	"return_communication": {
-                "type" :"array",
-                "items":{
-                    "$ref": "#/definitions/return_destination_communication_info"
-                }
+            "type" :"array",
+            "items":{
+                "$ref": "#/definitions/return_destination_communication_info"
+            }
         }
     },
-
     "definitions": {
         "general_communication_info_type": {
             "type" : "object",
@@ -33,10 +32,12 @@
             "properties" : {
                 "information_type" :{
                     "type" : "string",
-                    "enum" : ["listing status","product questions" , "business updates","technical notifications"],
-                    "description" : "the type of contact that the phone number and email address is for
+                    "enum" : ["main contact", "customer service","listing status","product questions" , "business updates", "accounts receivable","technical notifications"],
+                    "description" : "The type of contact that the phone number and email address is for
 
                     #Valid Values
+
+                    *'main contact' - main contact for any general information
 
                     *'listing status' - listing status updates 
 
@@ -44,7 +45,7 @@
 
                     *'business update' - where you want business updates 
 
-                    *'technical notifications' - technical notifications and updates
+                    *'technical notifications' - technical notifications and updates regarding API and Portal status alerts
 
                     *'customer service' - direct line for Jet to contact you if we have customer service questions
 
@@ -53,17 +54,28 @@
 
                 "contact_name" : {
                     "type" : "string",
-                    "description" : "name of the person who will be contacted for imformation regarding the information type"
+                    "required":true,
+                    "description" : "Name of the person who will be contacted for imformation regarding the information type"
                 },
 
                 "contact_text_number" : {
                     "type" : "string",
-                    "description" : "phone number that should be texted with the information regarding the information type "
+                    "description" : "Phone number that should be texted with the information regarding the information type
+
+                    # Logic 
+                    * Either the phone number or email is required
+
+                    "
                 },
 
                 "contact_email" : {
                     "type" : "string",
-                    "description" : "email that should be sent the information regarding the information type "
+                    "description" : "Email that should be sent the information regarding the information type
+
+                    # Logic
+                    * Either the phone number or email is required
+
+                    "
                 }
             }
 
@@ -74,27 +86,55 @@
             "additionalProperties" : false,
             "properties": {
                 "shipping_location" :{
-                	"type": "string",
+                    "type": "string",
                 	"required": true,
-                	"description" : "name of the given merchant's 'ship from location'"
+                	"description" : "Fulfillment node ID of the given merchant's 'ship from location'"
+                },
+                "contact_name_order_alert":{
+                    "type":"string",
+                    "required":true,
+                    "description":"The name of the contact who will receive notifications about new orders"
                 },
                 "merchant_order_alert_email": {
                     "type": "string",
-                    "required": true,
-                    "description" : "Email address or addresses where you want merchant order alert emails sent"
+                    "description" : "Email address or addresses where you want merchant order alert emails sent
+
+                    #Logic
+                    * Either the phone number or email is required
+
+                    "
                 },
                 "merchant_order_alert_text": {
                     "type": "string",
-                    "description" : "phone number or phone numbers where you want merchant order alert texts sent"
+                    "description" : "Phone number or phone numbers where you want merchant order alert texts sent
+
+                    #Logic
+                    * Either the phone number or email is required
+
+                    "
+                },
+                "contact_name_order_cancel_alert":{
+                    "type":"string",
+                    "required":true,
+                    "description":"The name of the contact who will receive notifications about order cancel alerts"
                 },
                 "merchant_order_cancel_alert_email": {
                     "type": "string",
-                    "required": true,
-                    "description" : "Email address or addresses where you want merchant order cancel alerts sent"
+                    "description" : "Email address or addresses where you want merchant order cancel alerts sent
+
+                    #Logic
+                    * Either the phone number or email is required
+
+                    "
                 },
                 "merchant_order_cancel_alert_text": {
                     "type": "string",
-                       "description" : "phone number or phone numbers where you want merhcant order cancel alert texts sent"
+                    "description" : "Phone number or phone numbers where you want merchant order cancel alert texts sent
+
+                    #Logic
+                    * Either the phone number or email is required
+
+                   "
                 }
             }
         },
@@ -103,19 +143,26 @@
             "type": "object",
             "additionalProperties" : false,
             "properties": {
-                "return_destination_name" : {
+                "return_node_id" : {
                     "type": "string",
                     "required": true,
-                    "description" : "name of the given return location"
+                    "description" : "The ID of a specific return location"
                 },
                 "return_alert_email": {
                     "type": "string",
-                    "required": true,
-                    "description" : "Email address or addresses where you want merchant order alert emails sent"
+                    "description" : "Email address or addresses where you want merchant order alert emails sent
+
+                    #Logic
+                    * Either the phone number or email is required
+                    "
                 },
                 "return_alert_text": {
                     "type": "string",
-                    "description" : "phone number or phone numbers where you want merchant order alert texts sent"
+                    "description" : "Phone number or phone numbers where you want merchant order alert texts sent
+
+                    #Logic
+                    * Either the phone number or email is required
+                    "
                 }
             }
         }
