@@ -1,0 +1,10 @@
+{
+        "offer_free_returns":true,
+        "carrier":"UPS",
+        "account_number":"12356432",
+        "fulfillment_node_ids":[
+            "ioqby78nc1ui23hc381",
+            "3948chn29834nc19814"
+        ]
+    }
+}
