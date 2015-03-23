@@ -6,7 +6,8 @@
     "fulfillment_node_locations": [
     	{
             "returns_location_id": "ioqby78nc1ui23hc381",
-            "fulfillment_node_id": "3948chn29834nc19814"
+            "fulfillment_node_id": "3948chn29834nc19814",
+            "is_primary": true
     	}
     ],
     "other_locations": [
@@ -16,7 +17,8 @@
     		"address1": "123 Bloomfield Avenue",
     		"city": "Montclair",
     		"state": "NJ",
-    		"zip_code": "07042"
+    		"zip_code": "07042",
+    		"is_primary": false
     	}
     ]
 }
