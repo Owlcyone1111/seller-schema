@@ -20,7 +20,6 @@
         },
         "end_date_time":{
             "type":"string",
-            "required":true,
             "description":"The ending date and time the rule is scheduled to run
 
             #Valid Values

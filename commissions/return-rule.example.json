@@ -1,0 +1,22 @@
+{
+    "rule_name": "My Returns Rule",
+    "start_date_time": "2015-01-01T21:00:00.0000000Z",
+    "end_date_time":"2015-01-01T21:00:00.0000000Z",
+    "recurrence":true,
+    "recurrence_type":{
+        "repeat_type":"yearly",
+        "repeat_interval": "month",
+        "repeat_on": "1st"
+    },
+    "adjustments": 
+    [
+        {
+            "category_id":1000001,
+            "adjustment":0.01
+        },
+        {
+            "category_id":1000002,
+            "adjustment":0.05
+        }
+    ]
+}

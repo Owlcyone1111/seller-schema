@@ -1,0 +1,29 @@
+{
+    "rule_name": "Volume Rule",
+    "start_date_time": "2015-01-01T21:00:00.0000000Z",
+    "end_date_time":"2015-01-01T21:00:00.0000000Z",
+    "recurrence":true,
+    "recurrence_type":{
+        "repeat_type":"yearly",
+        "repeat_interval": "month",
+        "repeat_on": "1st"
+    },
+   "volume_bands":
+    [
+        {
+        "min_band":0,
+        "max_band":100,
+        "adjustments":[
+        {
+            "volume_minimum":3,
+            "adjustment":0.01
+        },
+        {
+            "volume_minimum":4,
+            "adjustment":0.02
+        }
+        ]
+        }    
+    ]
+
+}

@@ -1,0 +1,12 @@
+{
+    "rule_name": "Email Rule",
+    "start_date_time": "2015-01-01T21:00:00.0000000Z",
+    "end_date_time":"2015-01-01T21:00:00.0000000Z",
+    "recurrence":true,
+    "recurrence_type":{
+        "repeat_type":"yearly",
+        "repeat_interval": "month",
+        "repeat_on": "1st"
+    },
+   "amount":5
+}
