@@ -28,12 +28,83 @@
             * Only used when offer_free_returns = true
             "
         },
-        "fulfillment_node_ids":{
+        "zip_code": {
+            "type": "string",
+            "required": true,
+            "description": "The zip code associated with the carrier account"
+        },
+        "fulfillment_node_locations": {
             "type":"array",
             "required":true,
-            "items":{
-                "type":"string",
-                "description":"The fulfillment node IDs that use this account"
+            "description":"The returns locations that use this account that are fulfillment nodes",
+            "items": {
+                "$ref": "#/definitions/fulfillment_node_location"
+            }
+        },
+        "other_locations": {
+            "type": "array",
+            "required": true,
+            "description": "The returns locations that use this account that are not fulfillment nodes",
+            "items": {
+                "$ref": "#/definitions/other_location"
+            }
+        }
+    },
+    "definitions": {
+        "fulfillment_node_location": {
+            "title": "FulfillmentNodeReturnsLocation",
+            "type": "object",
+            "properties": {
+                "returns_location_id": {
+                    "type": "string",
+                    "required": true,
+                    "description": "The Jet-assigned unique ID of this returns locations"
+                },
+                "fulfillment_node_id": {
+                    "type": "string",
+                    "required": true,
+                    "description": "The Jet-assigned unique ID of the fulfillment node that is being mapped to this returns location"
+                }
+            }
+        },
+        "other_location": {
+            "title": "OtherReturnsLocation",
+            "type": "object",
+            "properties": {
+                "returns_location_id": {
+                    "type": "string",
+                    "required": true,
+                    "description": "The Jet-assigned unique ID of this returns locations"
+                },
+                "name": {
+                    "type": "string",
+                    "required": true,
+                    "description": "Friendly name of the returns location"
+                },
+                "address1": {
+                    "type": "string",
+                    "required": true,
+                    "description": "Line 1 of the returns location address"
+                },
+                "address2": {
+                    "type": "string",
+                    "description": "Line 2 of the returns location address"
+                },
+                "city": {
+                    "type": "string",
+                    "required": true,
+                    "description": "City of the returns location"
+                },
+                "state": {
+                    "type": "string",
+                    "required": true,
+                    "description": "State of the returns location"
+                },
+                "zip_code": {
+                    "type": "string",
+                    "required": true,
+                    "description": "Zip code of the returns location"
+                }
             }
         }
     }

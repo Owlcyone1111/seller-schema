@@ -1,10 +1,22 @@
 {
-        "offer_free_returns":true,
-        "carrier":"UPS",
-        "account_number":"12356432",
-        "fulfillment_node_ids":[
-            "ioqby78nc1ui23hc381",
-            "3948chn29834nc19814"
-        ]
-    }
+    "offer_free_returns": true,
+    "carrier": "UPS",
+    "account_number": "12356432",
+    "zip_code": "07042",
+    "fulfillment_node_locations": [
+    	{
+            "returns_location_id": "ioqby78nc1ui23hc381",
+            "fulfillment_node_id": "3948chn29834nc19814"
+    	}
+    ],
+    "other_locations": [
+    	{
+    		"returns_location_id": "ioqby78nc1ui23hc382",
+    		"name": "Jet Returns",
+    		"address1": "123 Bloomfield Avenue",
+    		"city": "Montclair",
+    		"state": "NJ",
+    		"zip_code": "07042"
+    	}
+    ]
 }
