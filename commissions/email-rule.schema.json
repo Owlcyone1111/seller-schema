@@ -26,6 +26,11 @@
 
             The UTC time as follows 'yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffff''Z' for example 5PM eastern daylight time on January 1st 2015 would be '2015-01-01T21:00:00.0000000Z'"
         },
+        "is_active":{
+            "type":"boolean",
+            "required":true,
+            "description":"If true, the rule will activate at the specified start time and deactive at the specified end time (if provided).  If false, the rule will never activate"
+        },
         "recurrence":{
             "type":"boolean",
             "required":true,
