@@ -11,8 +11,11 @@
         },
         "start_date_time":{
             "type":"string",
-            "required":true,
             "description":"The starting date and time the rule is scheduled to run
+
+            #Logic
+
+            Required if 'is_active' is true
 
             #Valid Values
 
