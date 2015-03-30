@@ -1,0 +1,13 @@
+{
+	"other_locations": [
+    	{
+    		"returns_location_id": "ioqby78nc1ui23hc382",
+    		"name": "Jet Returns",
+    		"address1": "123 Bloomfield Avenue",
+    		"city": "Montclair",
+    		"state": "NJ",
+    		"zip_code": "07042",
+    		"is_primary": false
+    	}
+    ]
+}

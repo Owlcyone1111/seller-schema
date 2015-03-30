@@ -1,0 +1,9 @@
+{
+	"fulfillment_node_locations": [
+    	{
+            "returns_location_id": "ioqby78nc1ui23hc381",
+            "fulfillment_node_id": "3948chn29834nc19814",
+            "is_primary": true
+    	}
+    ],
+}

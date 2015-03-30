@@ -1,0 +1,38 @@
+{	
+	"title": "SetupReturnsFulfillmentNodes",
+    "type": "object",
+    "additionalProperties" : false,
+	"properties":{
+		"fulfillment_node_locations": {
+            "type":"array",
+            "required":true,
+            "minItems":1,
+            "description":"The returns locations that use this account that are fulfillment nodes",
+            "items": {
+                "$ref": "#/definitions/fulfillment_node_location"
+            }
+        }
+    },
+    "definitions":{
+        "fulfillment_node_location": {
+            "title": "FulfillmentNodeReturnsLocation",
+            "type": "object",
+            "properties": {
+                "returns_location_id": {
+                    "type": "string",
+                    "description": "The Jet-assigned unique ID of this returns locations.  This only needs to be provided if you are updating a return location"
+                },
+                "fulfillment_node_id": {
+                    "type": "string",
+                    "required": true,
+                    "description": "The Jet-assigned unique ID of the fulfillment node that is being mapped to this returns location"
+                },
+                "is_primary": {
+                    "type": "boolean",
+                    "required": true,
+                    "description": "Is this the primary returns location?"
+                }
+            }
+        }
+    }
+}

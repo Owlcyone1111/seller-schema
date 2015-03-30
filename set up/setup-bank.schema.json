@@ -18,7 +18,7 @@
 		"bank_account_number" : {
 			"type" : "integer",
 			"required" : true,
-			"description" : "The account number for you Bank. Your account must be enabled to received deposits through the Automated Clearing House (ARCH), please contact your bank for asssistance."
+			"description" : "The account number for your bank. Your account must be enabled to received deposits through the Automated Clearing House (ARCH), please contact your bank for asssistance."
 		},
 		"bank_account_holder_name" : {
 			"type" : "string",
