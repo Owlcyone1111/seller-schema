@@ -1,0 +1,40 @@
+{
+	"title": "SetupAddress",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+        "name": {
+            "type": "string",
+            "required": true,
+            "description": "Friendly name of the address"
+        },
+        "address1": {
+            "type": "string",
+            "required": true,
+            "description": "Line 1 of the address"
+        },
+        "address2": {
+            "type": "string",
+            "description": "Line 2 of the address"
+        },
+        "city": {
+            "type": "string",
+            "required": true,
+            "description": "City of the address"
+        },
+        "state": {
+            "type": "string",
+            "minLength":2,
+            "maxLength":2,
+            "required": true,
+            "description": "State of the address"
+        },
+        "zip_code": {
+            "type": "string",
+            "minLength":5,
+            "maxLength":5,
+            "required": true,
+            "description": "Zip code of the address"
+        }
+	}
+}
