@@ -5,7 +5,7 @@
 	"state": "NJ",
 	"zip_code": "07042",
     "carrier": "UPS",
-    "account_number": "12356432",
-    "account_zip_code": "07042"
+    "carrier_account_number": "12356432",
+    "carrier_account_zip_code": "07042"
 
 }

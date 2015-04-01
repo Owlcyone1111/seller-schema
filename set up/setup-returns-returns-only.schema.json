@@ -48,7 +48,7 @@
             * Only used when offer_free_returns = true
             "
         },
-        "account_number":{
+        "carrier_account_number":{
             "type":"string",
             "description":"The carrier account that Jet can charge if the merchant provide free returns to its customers
 
@@ -56,7 +56,7 @@
             * Only used when offer_free_returns = true
             "
         },
-        "account_zip_code": {
+        "carrier_account_zip_code": {
             "type": "string",
             "minLength":5,
             "maxlength":5,
