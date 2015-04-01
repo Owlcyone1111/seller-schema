@@ -1,4 +1,6 @@
 {
     "fulfillment_node_id": "3948chn29834nc19814",
-    "is_primary": true
+    "carrier": "UPS",
+    "account_number": "12356432",
+    "account_zip_code": "07042"
 }

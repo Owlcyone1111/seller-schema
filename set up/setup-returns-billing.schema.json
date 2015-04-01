@@ -7,36 +7,6 @@
             "type":"boolean",
             "required":true,
             "description":"If true, the merchant offers free returns to customers"
-        },
-        "carrier":{
-            "type":"string",
-            "enum":[
-                "UPS",
-                "FedEx"
-            ],
-            "description":"The carrier the merchant uses for returns
-
-            #Logic
-            * Only used when offer_free_returns = true
-            "
-        },
-        "account_number":{
-            "type":"string",
-            "description":"The carrier account that Jet can charge if the merchant provide free returns to its customers
-
-            #Logic
-            * Only used when offer_free_returns = true
-            "
-        },
-        "zip_code": {
-            "type": "string",
-            "minLength":5,
-            "maxlength":5,
-            "description": "The zip code associated with the carrier account
-
-            #Logic
-            * Only used when offer_free_returns = true
-            "
         }
     }
 }

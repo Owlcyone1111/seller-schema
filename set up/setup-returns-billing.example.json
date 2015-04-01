@@ -1,6 +1,3 @@
 {
-    "offer_free_returns": true,
-    "carrier": "UPS",
-    "account_number": "12356432",
-    "zip_code": "07042"
+    "offer_free_returns": true
 }
