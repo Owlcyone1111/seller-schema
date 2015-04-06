@@ -3,23 +3,110 @@
     "type" : "object",
     "additionalProperties" : false,
     "properties" : {
-        "year_business_founded": {
-            "type": "integer",
-            "required": true,
-            "description" :  "The year the business was founded"
-        },
-        "estimated_annual_revenue":{
+        "business_structure":{
             "type":"string",
             "required":true,
-            "description":"The estimated amount your company makes in revenue in one year
+            "description":"How the business is structured
 
             #Valid Values
-            * '<$1M' - less than $1 million in estimated annual revenue
-            * '$1M-$5M' - between $1 million and $5 million in estimated annual revenue
-            * '$5M-$10M' - between $5 million and $10 million in estimated annual revenue
-            * '$10M-$50M' - between $10 million and $50 million in estimated annual revenue
-            * '$50M-$200M' - between $50 million and $200 million in estimated annual revenue
-            * '>$200M' - more than $200 million in estimated annual revenue
+            * SoleProprietor - SoleProprietor/Individual
+            * CCorp - C Corporation
+            * SCorp - S Corporation
+            * Partnership - 
+            * LLC - Limited Liability Company
+            * Trust/Estate - 
+
+            ",
+            "enum":[
+                "SoleProprietor",
+                "CCorp",
+                "SCorp",
+                "Partnership",
+                "LLC",
+                "Trust/Estate"
+            ]
+        },
+        "business_owner_first_name":{
+            "type":"string",
+            "description":"Business owner's first name
+
+            #Logic
+            * Required if business_structure = SoleProprietor
+            "
+        },
+        "business_owner_last_name":{
+            "type":"string",
+            "description":"Business owner's last name
+
+            #Logic
+            * Required if business_structure = SoleProprietor
+            "
+        },
+        "business_owner_ssn":{
+            "type":"string",
+            "description":"The social security number for the business owner
+
+            #Logic 
+            * Required if business_structure = SoleProprietor
+            ",
+            "minLength":9,
+            "maxLength":9
+        },
+        "address_one" : {
+            "type": "string",
+            "description" : "The main address of principal owner
+
+            #Logic 
+            * Required if business_structure = SoleProprietor
+            "   
+        },
+        "address_two" : {
+            "type": "string",
+            "description" : "A secondary description for the principal owner
+
+            #Logic 
+            * Required if business_structure = SoleProprietor
+            "   
+        },
+        "city" : {
+            "type": "string",
+            "description" : "The city for the principal owner
+
+            #Logic 
+            * Required if business_structure = SoleProprietor
+            "   
+        },
+        "state" : {
+            "type": "string",
+            "minlength":2,
+            "maxlength":2,
+            "description" : "The state for the principal owner (please abbreviate)
+
+            #Logic 
+            * Required if business_structure = SoleProprietor
+            "   
+        },
+        "zip_code" : {
+            "type": "string",
+            "minlength":5,
+            "maxlength":5,
+            "description" : "The zip code for the principal owner's address
+
+            #Logic 
+            * Required if business_structure = SoleProprietor
+            "
+        },
+        "estimated_annual_online_revenue":{
+            "type":"string",
+            "description":"The estimated amount the company makes in online revenue in one year
+
+            #Valid Values
+            * '<$1M' - less than $1 million in estimated annual online revenue
+            * '$1M-$5M' - between $1 million and $5 million in estimated annual online revenue
+            * '$5M-$10M' - between $5 million and $10 million in estimated annual online revenue
+            * '$10M-$50M' - between $10 million and $50 million in estimated annual online revenue
+            * '$50M-$200M' - between $50 million and $200 million in estimated annual online revenue
+            * '>$200M' - more than $200 million in estimated annual online revenue
             ",
             "enum":[
                 "<$1M",
@@ -32,8 +119,7 @@
         },
         "number_of_skus_in_catalog":{
             "type":"string",
-            "required":true,
-            "description":"Approximate number of SKUs in your product catalog
+            "description":"Approximate number of SKUs in the company's product catalog
 
             #Valid Values
             * '0-499' 
@@ -53,8 +139,7 @@
         },
         "number_of_fulfillment_nodes":{
             "type":"string",
-            "required":true,
-            "description":"Approximate number of fulfillment nodes you operate
+            "description":"Approximate number of fulfillment nodes the company operates
 
             #Valid Values
             * '0'
@@ -75,8 +160,7 @@
         },
         "number_of_dropshippers":{
             "type":"string",
-            "required":true,
-            "description":"Approximate number of fulfillment nodes you operate
+            "description":"Approximate number of dropshippers
 
             #Valid Values
             * '0'
@@ -99,68 +183,120 @@
                 ">1000"
             ]
         },
-        "number_of_dropshippers":{
-            "type":"string",
-            "required":true,
-            "description":"Approximate number of fulfillment nodes you operate
+        "use_fba":{
+            "type":"boolean",
+            "description":"If true, the company uses fulfilled by Amazon"
+        },
+        "physical_retail_presence":{
+            "type":"boolean",
+            "description":"If true, the company owns and operates physical retail stores"
+        },
+        "fulfill_from_retail":{
+            "type":"boolean",
+            "description":"If true, the company fulfills online orders from retail stores
 
-            #Valid Values
-            * '0'
-            * '1-9'
-            * '10-24'
-            * '25-49'
-            * '50-99'
-            * '100-499'
-            * '500-999'
-            * '>1000'
-            ",
-            "enum":[
-                "0",
-                "1-9",
-                "10-24",
-                "25-49",
-                "50-99",
-                "100-499",
-                "500-999",
-                ">1000"
-            ]
+            #Logic
+            * Required if physical_retail_presence is true
+            "
+        },
+        "in_store_pickup":{
+            "type":"boolean",
+            "description":"If true, the company offers in store pickup on online orders
+
+            #Logic
+            * Required if physical_retail_presence is true
+            "
         },
         "live_inventory":{
             "type":"boolean",
-            "required":true,
-            "description":"If true, the merchant can provide live inventory feeds on a per fulfillment center / dropshipper basis",
+            "description":"If true, the company can provide live inventory feeds on a per fulfillment center / dropshipper basis",
         },
-        "fulfillment_in_us":{
-            "type":"boolean",
-            "required":true,
-            "description":"If true, the merchant has fulfillment centers and dropshippers in the US",
+        "authorized_seller":{
+            "type":"string",
+            "enum":[
+                "Yes, for all products",
+                "Yes, for some products",
+                "No"
+            ],
+            "description":"Are you an authorized seller of your products?"
         },
-        "categories":{
+        "main_category":{
+            "type":"string",
+            "required":true,
+            "description":"The main category the company has for its product catalog"
+        },
+        "other_categories":{
             "type":"array",
-            "required":true,
+            "minItems":1,
             "items":{
                 "type":"string",
             },
             "description":"Please enter the categories you sell in (the highest level category nodes -- ##,000,000)"
         },
+        "used_products":{
+            "type":"string",
+            "description":"Does your company sell used products?",
+            "enum":[
+                "Yes, all products",
+                "Yes, some products",
+                "No"
+            ]
+        },
+        "ecommerce_domains":{
+            "type":"array",
+            "minItems":1,
+            "description":"The domain where you sell your products online",
+            "items":{
+                "type":"string"
+            }
+        },
         "other_names_in_marketplaces":{
-            "$ref":"#/definitions/other_names"
+            "type":"array",
+            "description":"The names the company uses to sell in other marketplaces",
+            "items":{
+                "$ref":"#/definitions/marketplaces"
+            }
+        },
+        "marketplace_integration":{
+            "type":"array",
+            "description":"The methods the company uses to integrate into marketplaces
+
+            #Valid Values
+            * APIIntegration - 
+            * ChannelAdvisor - 
+            * WebPortalManualManagement - 
+            * Other - A method of integration not specified here
+            * None - The company currently does not integrate with a marketplace
+
+            ",
+            "items":{
+                "type":"string",
+                "enum":[
+                    "APIIntegration",
+                    "ChannelAdvisor",
+                    "WebPortalManualManagement",
+                    "Other",
+                    "None"
+                ]
+            }
+        },
+        "jet_partner_experience":{
+            "type":"boolean",
+            "description":"If true, company might be asked to provide feedback on partner experience"
         }
     },
     "definitions":{
-        "other_names":{
-            "title":"OtherNamesInMarketplaces",
+        "marketplaces":{
+            "title":"Names in other marketplaces",
             "type":"object",
             "properties":{
-                "name":{
-                    "type":"string",
-                    "required":true,
-                    "description":"The name you sell under in a marketplace"
-                },
                 "marketplace_name":{
                     "type":"string",
-                    "required":true,
-                    "description":"The name of the marketplace where you use this name"
+                    "description":"The name of the marketplace the company sells in"
+                },
+                "name_in_marketplace":{
+                    "type":"string",
+                    "description":"The name you sell under in the marketplace"
                 }
             }
         }

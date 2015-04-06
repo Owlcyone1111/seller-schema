@@ -25,6 +25,8 @@
         "tax_identification_number": {
             "type": "integer",
             "required": true,
+            "minlength":9,
+            "maxlength":9,
             "description" : "Partner's tax identification number"
         },
         "first_name": {
@@ -59,10 +61,14 @@
         "state" : {
             "type": "string",
             "required": true,
-            "description" : "The state for the partner address"   
+            "minlength":2,
+            "maxlength":2,
+            "description" : "The state for the partner address (please abbreviate)"   
         },
         "zip_code" : {
             "type": "string",
+            "minlength":5,
+            "maxlength":5,
             "required": true,
             "description" : "The zip code for the partner address"
         }
