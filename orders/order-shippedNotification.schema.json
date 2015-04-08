@@ -10,6 +10,7 @@
         "shipments": {
             "type": "array",
             "required" : true,
+            "minItems": 1,
             "items": {
                 "$ref": "#/definitions/order_shipped_shipment"
             }
@@ -126,6 +127,7 @@
                 "shipment_items": {
                     "type": "array",
                     "required" : true,
+                    "minItems": 1,
                     "items": {
                         "$ref": "#/definitions/order_shipped_shipment_item"
                     }
