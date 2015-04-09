@@ -18,6 +18,20 @@ mediaType: application/json
                             example: !include settlement-links.example.json
                 404:
                     description: The requested resource could not be found.
+	/range:
+		get:
+			queryParameters:
+				start:
+				end:
+			description: This method will allow a merchant to retrieve the links to all settlement reports for the days range between start and end
+			responses:
+                200:
+                    body:
+                        application/json:
+                            schema: !include settlement-links.schema.json
+                            example: !include settlement-links.example.json
+                404:
+                    description: The requested resource could not be found.
     /report/{id}:
         get:
             description: This method will allow a merchant to retrieve a settlement report with summary level details for a provided Settlement ID
