@@ -8,6 +8,23 @@
             "required": true,
             "description" :  "The email used to register with"
         },
+        "third_party_type":{
+            "type":"string",
+            "description":"The third party market place integration platform the company is using.  If you are a merchant integrating directly with Jet, please leave this blank.
+
+            #Valid Values
+            * ChannelAdvisor
+            * CommerceHub
+            ",
+            "enum":[
+                "ChannelAdvisor",
+                "CommerceHub"
+            ]
+        },
+        "vip_code":{
+            "type":"string",
+            "description":"A registration code from the Retail Partners team to accelerate the registration process"
+        },
         "legal_name": {
             "type": "string",
             "required": true,
@@ -28,16 +45,6 @@
             "minlength":9,
             "maxlength":9,
             "description" : "Partner's tax identification number"
-        },
-        "first_name": {
-            "type": "string",
-            "required": true,
-            "description" : "The first name of the person registering for the partner company"
-        },
-        "last_name": {
-            "type": "string",
-            "required": true,
-            "description" : "The last name of the person registering for the partner company"
         },
         "main_contact_phone_number": {
             "type": "string",

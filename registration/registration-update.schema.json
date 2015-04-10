@@ -3,18 +3,28 @@
     "type" : "object",
     "additionalProperties" : false,
     "properties" : {
+        "first_name": {
+            "type": "string",
+            "required": true,
+            "description" : "The first name of the person registering for the partner company"
+        },
+        "last_name": {
+            "type": "string",
+            "required": true,
+            "description" : "The last name of the person registering for the partner company"
+        },
         "business_structure":{
             "type":"string",
             "required":true,
             "description":"How the business is structured
 
             #Valid Values
-            * SoleProprietor - SoleProprietor/Individual
-            * CCorp - C Corporation
-            * SCorp - S Corporation
-            * Partnership - 
-            * LLC - Limited Liability Company
-            * Trust/Estate - 
+            * 'SoleProprietor' - SoleProprietor/Individual
+            * 'CCorp' - C Corporation
+            * 'SCorp' - S Corporation
+            * 'Partnership' 
+            * 'LLC' - Limited Liability Company
+            * 'Trust/Estate'  
 
             ",
             "enum":[
@@ -52,12 +62,20 @@
             "minLength":9,
             "maxLength":9
         },
+        "address_id":{
+            "type":"string",
+            "description":"The address_id associated with the sole proprietor's address
+
+            #Logic
+            * Required if business_structure = SoleProprietor AND new address not provided
+            "
+        },
         "address_one" : {
             "type": "string",
             "description" : "The main address of principal owner
 
             #Logic 
-            * Required if business_structure = SoleProprietor
+            * Required if business_structure = SoleProprietor AND address_id not provided
             "   
         },
         "address_two" : {
@@ -65,7 +83,7 @@
             "description" : "A secondary description for the principal owner
 
             #Logic 
-            * Required if business_structure = SoleProprietor
+            * Required if business_structure = SoleProprietor AND address_id not provided
             "   
         },
         "city" : {
@@ -73,7 +91,7 @@
             "description" : "The city for the principal owner
 
             #Logic 
-            * Required if business_structure = SoleProprietor
+            * Required if business_structure = SoleProprietor AND address_id not provided
             "   
         },
         "state" : {
@@ -83,7 +101,7 @@
             "description" : "The state for the principal owner (please abbreviate)
 
             #Logic 
-            * Required if business_structure = SoleProprietor
+            * Required if business_structure = SoleProprietor AND address_id not provided
             "   
         },
         "zip_code" : {
@@ -93,7 +111,7 @@
             "description" : "The zip code for the principal owner's address
 
             #Logic 
-            * Required if business_structure = SoleProprietor
+            * Required if business_structure = SoleProprietor AND address_id not provided
             "
         },
         "estimated_annual_online_revenue":{
@@ -218,7 +236,13 @@
                 "Yes, for some products",
                 "No"
             ],
-            "description":"Are you an authorized seller of your products?"
+            "description":"Are you an authorized seller of your products?
+
+            #Valid Values
+            * Yes, all products 
+            * Yes, some products  
+            * No  
+            "
         },
         "main_category":{
             "type":"string",
@@ -235,7 +259,13 @@
         },
         "used_products":{
             "type":"string",
-            "description":"Does your company sell used products?",
+            "description":"Does your company sell used products?
+
+            #Valid Values
+            * Yes, all products 
+            * Yes, some products  
+            * No  
+            ",
             "enum":[
                 "Yes, all products",
                 "Yes, some products",
@@ -262,9 +292,9 @@
             "description":"The methods the company uses to integrate into marketplaces
 
             #Valid Values
-            * APIIntegration - 
-            * ChannelAdvisor - 
-            * WebPortalManualManagement - 
+            * APIIntegration - The company integrates directly with the marketplace via API
+            * ThirdParty - The company integrates with a third party integration platform (i.e. ChannelAdvisor or CommerceHub)
+            * WebPortalManualManagement - The company manages marketplace orders using an web portal management tool
             * Other - A method of integration not specified here
             * None - The company currently does not integrate with a marketplace
 
@@ -273,7 +303,7 @@
                 "type":"string",
                 "enum":[
                     "APIIntegration",
-                    "ChannelAdvisor",
+                    "ThirdParty",
                     "WebPortalManualManagement",
                     "Other",
                     "None"
