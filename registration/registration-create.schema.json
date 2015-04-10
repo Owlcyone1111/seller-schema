@@ -42,8 +42,8 @@
         "tax_identification_number": {
             "type": "integer",
             "required": true,
-            "minlength":9,
-            "maxlength":9,
+            "minimum":100000000,
+            "maximum":999999999,
             "description" : "Partner's tax identification number"
         },
         "main_contact_phone_number": {
