@@ -7,6 +7,72 @@
             "type":"boolean",
             "required":true,
             "description":"If true, the merchant offers free returns to customers"
+        },
+        "primary_billing_account":{
+            "required":true,
+            "$ref":"#/definitions/return_billing_account"
+        },
+        "locations_billing_accounts":{
+            "type":"array",
+            "description":"Specific accounts for each return location
+
+            #Logic
+            * If location_billing_accounts provided for a return location, it will override primary_billing_account
+            ",
+            "items":{
+                "$ref":"#/definitions/return_billing_account"
+            }
+        }
+    },
+    "definitions":{
+        "location_billing_account_definition":{
+            "title":"LocationBillingAccount",
+            "type":"object",
+            "properties":{
+                "return_location_id":{
+                    "type":"string",
+                    "description":"The Jet-assigned unique ID of this returns locations.  This only needs to be provided if you are updating a return location"
+                },
+                "return_billing_account":{
+                    "$ref":"#/definitions/return_billing_account"
+                }
+            }
+        },
+        "return_billing_account":{
+            "title":"ReturnsBillingAccount",
+            "type":"object",
+            "properties":{
+                "carrier":{
+                    "type":"string",
+                    "enum":[
+                        "UPS",
+                        "FedEx"
+                    ],
+                    "description":"The carrier the merchant uses for returns
+
+                    #Logic
+                    * Only used when offer_free_returns = true
+                    "
+                },
+                "carrier_account_number":{
+                    "type":"string",
+                    "description":"The carrier account that Jet can charge if the merchant provide free returns to its customers
+
+                    #Logic
+                    * Only used when offer_free_returns = true
+                    "
+                },
+                "carrier_account_zip_code": {
+                    "type": "string",
+                    "minLength":5,
+                    "maxlength":5,
+                    "description": "The zip code associated with the carrier account
+
+                    #Logic
+                    * Only used when offer_free_returns = true
+                    "
+                }
+            }
         }
     }
 }
