@@ -34,4 +34,16 @@ mediaType: application/json
                                 schema: !include registration-update.schema.json
                                 example: !include registration-update.example.json
                     404:
+                        description: The requested resource could not be found.
+    /status:
+        /{merchant_id}
+            get:
+                description: This method will return a merchant's application status
+                responses:
+                    200:
+                        body:
+                            application/json:
+                                schema: !include registration-status.schema.json
+                                example: !include registration-status.example.json
+                    404:
                         description: The requested resource could not be found.       

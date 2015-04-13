@@ -1,0 +1,25 @@
+{
+    "title" : "RegistrationStatus",
+    "type" : "object",
+    "additionalProperties" : false,
+    "properties" : {
+        "application_status": {
+            "type": "string",
+            "required": true,
+            "description" :  "The status of a merchant's application
+
+            #Valid Values
+            * pending - application has been submitted
+            * inReview - applicaton is being reviewed
+            * approved - application has been approved
+            * denied - application has been denied
+            ",
+            "enum":[
+                "pending",
+                "inReview",
+                "approved",
+                "denied"
+            ]
+        }
+    }
+}
