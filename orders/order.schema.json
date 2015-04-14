@@ -509,9 +509,9 @@
 
                    *'Scheduled'
 
-                   *'NextDay'
+                   *'Next Day'
 
-                   *'SecondDay'"
+                   *'Second Day'"
                 },
                 "request_ship_by": {
                     "type": "string",
