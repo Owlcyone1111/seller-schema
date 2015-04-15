@@ -11,7 +11,7 @@
         "start_date":{
             "type": "string",
             "required": true,
-            "description" : "The data/time when the base commissions should go into affect
+            "description" : "The data/time when the base commissions should go into effect
 
             #Valid Values
 
@@ -52,7 +52,7 @@
                     "required":true,
                     "minimum":0.0,
                     "maximum":0.3,
-                    "description":"Jet's the base commission that Jet will charge for selling products on Jet.com"
+                    "description":"Jet's base commission that Jet will charge for selling products on Jet.com"
                 }
             }
         }

@@ -19,9 +19,9 @@
 
             *'rejected - unfulfillable address' - The address requested cannot be shipped to
 
-            *'rejected - shipping method not supported' - The address requested cannot be shipped to
+            *'rejected - shipping method not supported' - The shipping method is not supported by Jet
 
-            *'rejected - ship from location not available' - The ship to location is invalid
+            *'rejected - ship from location not available' - The ship from location is invalid
 
             *'rejected - item level error' - The error occurred at the item level"
         },
