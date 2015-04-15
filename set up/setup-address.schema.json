@@ -19,14 +19,12 @@
         },
         "city": {
             "type": "string",
-            "required": true,
             "description": "City of the address"
         },
         "state": {
             "type": "string",
             "minLength":2,
             "maxLength":2,
-            "required": true,
             "description": "State of the address"
         },
         "zip_code": {
