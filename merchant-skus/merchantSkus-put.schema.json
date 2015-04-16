@@ -266,7 +266,7 @@
 
 			#Array Limitation
 
-			Maximum 4 elements of the 'cpsia_cautionary_statements' array"
+			Maximum 7 elements of the 'cpsia_cautionary_statements' array"
 		},
 		"country_of_origin": {
 			"type": "string",
