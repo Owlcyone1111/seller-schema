@@ -8,11 +8,6 @@
             "required":true,
             "description" :  "The merchant_id (Jet's 32 character unique identifier) assigned to the newly created merchant"
         },
-        "address_id" : {
-            "type":"string",
-            "required":true,
-            "description":"The address_id (Jet's 32 character unique identifier) assigned to the newly created address"
-        },
         "is_vip" : {
             "type":"boolean",
             "required":true,
