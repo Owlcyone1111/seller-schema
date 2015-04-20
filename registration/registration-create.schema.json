@@ -46,17 +46,17 @@
             "maximum":999999999,
             "description" : "Partner's tax identification number"
         },
-        "main_contact_phone_number": {
+        "phone_number": {
             "type": "string",
             "required": true,
             "description" : "The main contact phone number for the partner company"
         },
-        "address_one" : {
+        "address1" : {
             "type": "string",
             "required": true,
             "description" : "The main address of partner"   
         },
-        "address_two" : {
+        "address2" : {
             "type": "string",
             "description" : "A secondary description for the partner address"   
         },

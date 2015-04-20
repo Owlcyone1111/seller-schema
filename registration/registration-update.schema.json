@@ -149,7 +149,7 @@
         },
         "live_inventory":{
             "type":"boolean",
-            "description":"If true, the company can provide live inventory feeds on a per fulfillment center / dropshipper basis",
+            "description":"If true, the company can provide live inventory feeds on a per fulfillment center / dropshipper basis"
         },
         "authorized_seller":{
             "type":"string",
@@ -175,7 +175,7 @@
             "type":"array",
             "minItems":1,
             "items":{
-                "type":"string",
+                "type":"string"
             },
             "description":"Please enter the categories you sell in (the highest level category nodes -- ##,000,000)"
         },
