@@ -169,15 +169,104 @@
         "main_category":{
             "type":"string",
             "required":true,
-            "description":"The main category the company has for its product catalog"
+            "description":"The main category the company has for its product catalog
+
+            #Valid Values
+
+            * Books & Other Media
+            * Baby
+            * Appliances
+            * Automotive Parts & Accessories
+            * Arts, Crafts & Hobbies
+            * Health & Beauty
+            * Industrial & Scientific
+            * Toys & Games
+            * Clothing, Shoes & Accessories
+            * Electronics
+            * Pet Supplies
+            * Office Products
+            * Home & Garden
+            * Grocery
+            * Jewelry & Watches
+            * Sporting Goods
+            * Furniture
+            * Tools & Home Improvement
+            * Video Games
+
+            ",
+            "enum":[
+                "Books & Other Media",
+                "Baby",
+                "Appliances",
+                "Automotive Parts & Accessories",
+                "Arts, Crafts & Hobbies",
+                "Health & Beauty",
+                "Industrial & Scientific",
+                "Toys & Games",
+                "Clothing, Shoes & Accessories",
+                "Electronics",
+                "Pet Supplies",
+                "Office Products",
+                "Home & Garden",
+                "Grocery",
+                "Jewelry & Watches",
+                "Sporting Goods",
+                "Furniture",
+                "Tools & Home Improvement",
+                "Video Games"
+            ]
         },
         "other_categories":{
             "type":"array",
             "minItems":1,
             "items":{
-                "type":"string"
+                "type":"string",
+                "enum":[
+                    "Books & Other Media",
+                    "Baby",
+                    "Appliances",
+                    "Automotive Parts & Accessories",
+                    "Arts, Crafts & Hobbies",
+                    "Health & Beauty",
+                    "Industrial & Scientific",
+                    "Toys & Games",
+                    "Clothing, Shoes & Accessories",
+                    "Electronics",
+                    "Pet Supplies",
+                    "Office Products",
+                    "Home & Garden",
+                    "Grocery",
+                    "Jewelry & Watches",
+                    "Sporting Goods",
+                    "Furniture",
+                    "Tools & Home Improvement",
+                    "Video Games"
+                ]
             },
-            "description":"Please enter the categories you sell in (the highest level category nodes -- ##,000,000)"
+            "description":"Please enter the other categories you sell in 
+
+            #Valid Values
+
+            * Books & Other Media
+            * Baby
+            * Appliances
+            * Automotive Parts & Accessories
+            * Arts, Crafts & Hobbies
+            * Health & Beauty
+            * Industrial & Scientific
+            * Toys & Games
+            * Clothing, Shoes & Accessories
+            * Electronics
+            * Pet Supplies
+            * Office Products
+            * Home & Garden
+            * Grocery
+            * Jewelry & Watches
+            * Sporting Goods
+            * Furniture
+            * Tools & Home Improvement
+            * Video Games
+            "
         },
         "used_products":{
             "type":"string",

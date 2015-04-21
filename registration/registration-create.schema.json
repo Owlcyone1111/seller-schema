@@ -40,10 +40,10 @@
             "description" : "The name the partner uses to operate"
         },
         "tax_identification_number": {
-            "type": "integer",
+            "type": "string",
             "required": true,
-            "minimum":100000000,
-            "maximum":999999999,
+            "minlength":9,
+            "maxlength":9,
             "description" : "Partner's tax identification number"
         },
         "phone_number": {
