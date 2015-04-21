@@ -118,8 +118,13 @@
                     "type": "number",
                     "minimum": 0,
                     "required": true,
-                    "exclusiveMinimum":true,
                     "description" : "The minimum number items needed to achieve the discount"
+                },
+                "volume_maximum":{
+                    "type":"number",
+                    "minimum":0,
+                    "exclusiveMinimum":true,
+                    "description":"This is field is for internal-use only.  The maximum number of items needed to achieve the discount."
                 },
                 "adjustment": {
                     "type": "number",
