@@ -27,6 +27,22 @@
             *'true' - The merchant agrees to wholly pay the return charge to Jet.com from the return notification
 
             *'false' - The merchant disagrees with the return charge and will enter a disputed charge with Jet.com"
+        },
+        "return_charge_feedback":{
+            "type":"string",
+            "enum":[
+                "notMerchantError",
+                "outsideMerchantPolicy",
+                "other"
+            ],
+            "description":"The reason the merchant deos not agree to the return charge for the return notification
+
+
+            #Valid Values
+            * 'notMerchantError' - The merchant disagrees that it was their (or their agent's) error that caused this return
+            * 'outsideMerchantPolicy' - The merchant disagrees that paying for this return charge mirrors their existing policy.  This should only apply to returns for correct, non-damaged, non-defective items.
+            * 'other' - Please give additional information in the notes field
+            "
         }
     },
     "definitions": {
