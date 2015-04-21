@@ -3,16 +3,6 @@
     "type" : "object",
     "additionalProperties" : false,
     "properties" : {
-        "first_name": {
-            "type": "string",
-            "required": true,
-            "description" : "The first name of the person registering for the partner company"
-        },
-        "last_name": {
-            "type": "string",
-            "required": true,
-            "description" : "The last name of the person registering for the partner company"
-        },
         "business_structure":{
             "type":"string",
             "required":true,
