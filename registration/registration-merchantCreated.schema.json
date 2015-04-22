@@ -3,15 +3,10 @@
     "type" : "object",
     "additionalProperties" : false,
     "properties" : {
-    	"merchant_id": {
+        "merchant_id": {
             "type": "string",
             "required":true,
             "description" :  "The merchant_id (Jet's 32 character unique identifier) assigned to the newly created merchant"
-        },
-        "is_vip" : {
-            "type":"boolean",
-            "required":true,
-            "description":"If true, the merchant created is a VIP"
         }
     }
 }
