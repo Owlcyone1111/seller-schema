@@ -1,0 +1,79 @@
+{
+    "title": "ReturnsExceptions",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+        "time_to_return":{
+            "type":"integer",
+            "minimum":0,
+            "description":"The number of days after purchase a customer can return the item"
+        },
+        "returns_locations": {
+            "type": "array",
+            "items": {
+                "$ref":"#/definitions/return_location_array"
+            }
+        }
+    },
+    "definitions":{
+        "return_location_array":{
+            "title": "ReturnsLocations",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "returns_location_id": {
+                    "type": "string",
+                    "description": "Jet's unique ID for a given fulfillment node"
+                },
+                "returns_exceptions": {
+                    "$ref": "#/definitions/returns_exception_array"
+                }
+            }
+        },
+        "returns_exception_array": {
+            "type": "array",
+            "items": {
+                "title": "ReturnsExceptionItem",
+                "type": "object",
+                "additionalProperties": false,
+                "description": "Returns exception of particular fulfillment node",
+                "properties": {
+                    "service_level": {
+                        "type": "string",
+                        "enum": [ "Standard", "Expedited", "Scheduled", "NextDay", "SecondDay"],
+                        "description": "Generic descriptions of shipment delivery times
+
+                        #Logic 
+                        This field should be used if you are defining your shipping options by service_level 
+                        
+                        #Valid Values 
+                        *Standard
+                        *Expedited 
+                        *Scheduled
+                        *NextDay 
+                        *SecondDay"
+                    },
+                    "shipping_method": {
+                        "type": "string",
+                        "description": "A specific shipping method e.g. UPS Ground, UPS Next Day Air, FedEx Home
+
+                        #Logic 
+                        This should be used if you want the change to apply to a specific shipping_method.  If shipping_carrier is populated, this field will be ignored. Use this field if you are defining your shipping
+                        options by 'shipping_method' "
+
+                    },
+                    "returns_exception_type": {
+                        "type": "string",
+                        "enum": ["restricted","exclusive"],
+                        "description": "Indicates if you want the product to be shipped exclusively (only with) or restrictively (not including) 
+
+                        #Valid Values
+                        * restricted - The product cannot be shipped using the shipping method or shipping level provided
+                        * exclusive - The product should only be shipped using the shipping method or shipping level provided
+                        "
+                    }
+                }
+            }
+        }
+    }
+}
