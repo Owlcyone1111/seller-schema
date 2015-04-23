@@ -310,10 +310,6 @@
                     "None"
                 ]
             }
-        },
-        "jet_partner_experience":{
-            "type":"boolean",
-            "description":"If true, company might be asked to provide feedback on partner experience"
         }
     },
     "definitions":{
