@@ -25,9 +25,9 @@
             If an alt_order_id has been associated with the merchant_order_id via the order accept message this will be passed as well.
             "
         },
-        "hashed_email" : {
+        "hash_email" : {
             "type": "string",
-            "description" : "The fake email hash to be used as the customer email address"
+            "description" : "The an email hash assigned by Jet to be used as the customer email address"
         },
         "status" : {
             "type" : "string",
