@@ -5,6 +5,7 @@
     "order_placed_date" : "2014-07-24T17:00:00.0000000Z",
     "order_transmission_date" : "2014-07-24T17:01:00.0000000Z",
     "status" : "created",
+    "hashed_email" : "aj45894Ifklsdjfkdshfioweiorjfiurser93djfh@customer.jet.com",
     "buyer": {
         "name": "Tony Stark",
         "phone_number": "555-999-9999"

@@ -94,7 +94,17 @@
                 "alt_order_item_id" : {
                     "type": "string",
                     "required": false,
-                    "description" : "The Merchant Order Item ID given to Jet during the order acknowledgment by the merchant"
+                    "description" : "The Merchant Order Item ID given to Jet during the order acknowledgment or shipped message by the merchant"
+                },
+                "merchant_order_id" : {
+                    "type": "string",
+                    "required": false,
+                    "description" : "The Merchant Order ID assigned to an order by Jet.  This can be found in the Orders API."
+                },
+                "alt_order_id" : {
+                    "type": "string",
+                    "required": false,
+                    "description" : "The Merchant Order ID given to Jet during the order acknowledgment or shipped message by the merchant"
                 },
                 "fulfillment_method" : {
                     "type": "string",

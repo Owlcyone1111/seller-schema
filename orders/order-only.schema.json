@@ -17,7 +17,6 @@
             "type": "string",
             "description" : "The fulfillment node that the order should be shipped from"
         },
-        
         "alt_order_id": {
             "type": "string",
             "description" : "Optional Merchant supplied order ID. 
@@ -25,7 +24,11 @@
 
             If an alt_order_id has been associated with the merchant_order_id via the order accept message this will be passed as well.
             "
-        },        
+        },    
+        "hashed_email" : {
+            "type": "string",
+            "description" : "The fake email hash to be used as the customer email address"
+        },    
         "status" : {
             "type" : "string",
             "required" : true,
