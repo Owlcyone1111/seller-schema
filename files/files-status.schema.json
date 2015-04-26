@@ -48,7 +48,8 @@
             "enum" : [
                             "Acknowledged",
                             "Processed successfully",
-                            "Processed with errors"
+                            "Processed with errors",
+                            "Processing"
                         ],
             "description" : "Status of processing hy Jet.com.
             #Valid Values:
