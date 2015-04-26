@@ -16,6 +16,7 @@ mediaType: application/json
                     application/json:
                         schema: !include links.schema.json
                         example: !include links.example.json
+            401:
             404:
     /bystatus/{MerchantSkuStatus}/{StartPoint}/{ResultsToReturn}:
         get:
@@ -27,6 +28,7 @@ mediaType: application/json
                         application/json:
                             schema: !include merchantSkus-returnByStatus.schema.json
                             example: !include merchantSkus-returnByStatus.example.json
+                401:
                 404:
     /{id}:
         get:
@@ -37,6 +39,7 @@ mediaType: application/json
                         application/json:
                             schema: !include merchantSkus-get.schema.json
                             example: !include merchantSkus-get.example.json
+                401:
                 404:
         put:
             description: This method will create/update the specified merchant SKU
@@ -48,7 +51,8 @@ mediaType: application/json
                 201:
                 204:
                 400:
-                409:
+                401:
+                404:
         /relationship:
             put:
                 description: This method updates variation relationships between merchant SKUs
@@ -60,7 +64,8 @@ mediaType: application/json
                     201:
                     204:
                     400:
-                    409:
+                    401:
+                    404:
         /inventory:
             get:
                 description: This method retrieves fulfillment node-level inventory data for the specified merchant SKU
@@ -70,6 +75,8 @@ mediaType: application/json
                             application/json:
                                 schema: !include merchantSkus-inventory.schema.json
                             example: !include merchantSkus-inventory.example.json
+                    400:
+                    401:
                     404:
             put:
                 description: This method updates fulfillment node-level inventory data for the specified merchant SKU
@@ -81,20 +88,19 @@ mediaType: application/json
                    201:
                    204:
                    400:
-                   409:
+                   401:
+                   404:
         /price:
             get:
                 description: This method retrieves pricing data for the specified merchant SKU
-                body:
-                    application/json:
-                        schema: !include merchantSkus-price.schema.json
-                        example: !include merchantSkus-price.example.json
                 responses:
                     200:
                         body:
                         application/json:
                             schema: !include merchantSkus-price.schema.json
                             example: !include merchantSkus-price.example.json
+                    400:
+                    401:
                     404:
             put:
                 description: This method updates price data for the specified merchant SKU
@@ -106,7 +112,8 @@ mediaType: application/json
                    201:
                    204:
                    400:
-                   409:
+                   401:
+                   404:   
         /image:
             put:
                 description: This method is used to provide the links to all images that should be shown to the customer for the merchant SKU
@@ -118,7 +125,8 @@ mediaType: application/json
                     201:
                     204:
                     400:
-                    409:
+                    401:
+                    404:
             delete:
                     description: This method deletes any images that were provided to Jet.com
                     body:
@@ -128,6 +136,7 @@ mediaType: application/json
                     responses:
                         204:
                         400:
+                        401:
                         404:
         /shippingexception:
             put:
@@ -140,4 +149,5 @@ mediaType: application/json
                     201:
                     204:
                     400:
-                    409:
+                    401:
+                    404:
