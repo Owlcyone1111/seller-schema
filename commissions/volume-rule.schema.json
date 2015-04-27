@@ -115,7 +115,7 @@
             "additionalProperties" : false,
             "properties": {
                 "volume_minimum": {
-                    "type": "number",
+                    "type": "integer",
                     "minimum": 0,
                     "required": true,
                     "description" : "The minimum number items needed to achieve the discount"
