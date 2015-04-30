@@ -8,16 +8,16 @@
             "required":true,
             "description":"If true, the merchant offers free returns to customers"
         },
-        "primary_billing_account":{
-            "required":true,
+        "default_billing_account":{
+            "required":false,
             "$ref":"#/definitions/return_billing_account"
         },
         "locations_billing_accounts":{
             "type":"array",
-            "description":"Specific accounts for each return location
+            "description":"Specific accounts for each return location"
 
             #Logic
-            * If location_billing_accounts provided for a return location, it will override primary_billing_account
+            * If location_billing_accounts provided for a return location, it will override default_billing_account
             ",
             "items":{
                 "$ref":"#/definitions/return_billing_account"

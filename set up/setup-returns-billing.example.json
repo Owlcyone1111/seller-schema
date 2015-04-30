@@ -1,3 +1,26 @@
 {
-    "offer_free_returns": true
+    "offer_free_returns": true,
+	"default_billing_account" : {
+		"carrier" : "UPS",
+		"carrier_account_number" : "123456789",
+		"carrier_account_zip_code" : "12345"
+	},
+	"locations_billing_accounts": [
+		{
+			"return_location_id" : "123456789",
+			"return_billing_account" : {
+				"carrier" : "UPS",
+				"carrier_account_number" : "123456789",
+				"carrier_account_zip_code" : "12345"
+			}
+		},
+		{
+			"return_location_id" : "9876543",
+			"return_billing_account" : {
+				"carrier" : "FedEx",
+				"carrier_account_number" : "123456789",
+				"carrier_account_zip_code" : "54321"
+			}
+		}
+	]	
 }
