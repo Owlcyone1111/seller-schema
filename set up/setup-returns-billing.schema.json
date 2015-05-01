@@ -9,12 +9,11 @@
             "description":"If true, the merchant offers free returns to customers"
         },
         "default_billing_account":{
-            "required":false,
             "$ref":"#/definitions/return_billing_account"
         },
         "locations_billing_accounts":{
             "type":"array",
-            "description":"Specific accounts for each return location"
+            "description":"Specific accounts for each return location
 
             #Logic
             * If location_billing_accounts provided for a return location, it will override default_billing_account
@@ -31,7 +30,7 @@
             "properties":{
                 "return_location_id":{
                     "type":"string",
-                    "description":"The Jet-assigned unique ID of this returns locations.  This only needs to be provided if you are updating a return location"
+                    "description":"The Jet-assigned unique ID of this returns locations."
                 },
                 "return_billing_account":{
                     "$ref":"#/definitions/return_billing_account"
@@ -44,6 +43,7 @@
             "properties":{
                 "carrier":{
                     "type":"string",
+                    "required":true,
                     "enum":[
                         "UPS",
                         "FedEx"
@@ -56,6 +56,7 @@
                 },
                 "carrier_account_number":{
                     "type":"string",
+                    "required":true,
                     "description":"The carrier account that Jet can charge if the merchant provide free returns to its customers
 
                     #Logic
@@ -64,6 +65,7 @@
                 },
                 "carrier_account_zip_code": {
                     "type": "string",
+                    "required":true,
                     "minLength":5,
                     "maxlength":5,
                     "description": "The zip code associated with the carrier account
