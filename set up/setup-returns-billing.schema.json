@@ -19,24 +19,21 @@
             * If location_billing_accounts provided for a return location, it will override default_billing_account
             ",
             "items":{
-                "$ref":"#/definitions/return_billing_account"
+				"title":"location_billing",
+				"type":"object",
+				"properties" : {
+					"return_location_id":{
+						"type":"string",
+						"description":"The Jet-assigned unique ID of this returns locations."
+					},
+					"return_billing_account":{
+						"$ref":"#/definitions/return_billing_account"
+					}
+				}				
             }
         }
     },
     "definitions":{
-        "location_billing_account_definition":{
-            "title":"LocationBillingAccount",
-            "type":"object",
-            "properties":{
-                "return_location_id":{
-                    "type":"string",
-                    "description":"The Jet-assigned unique ID of this returns locations."
-                },
-                "return_billing_account":{
-                    "$ref":"#/definitions/return_billing_account"
-                }
-            }
-        },
         "return_billing_account":{
             "title":"ReturnsBillingAccount",
             "type":"object",
