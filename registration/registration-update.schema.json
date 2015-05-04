@@ -3,6 +3,25 @@
     "type" : "object",
     "additionalProperties" : false,
     "properties" : {
+        "seller_type":{
+            "type":"string",
+            "enum":[
+                "Retailer",
+                "Distributor",
+                "Manufacturer",
+                "Other"
+            ],
+            "description":"The type of seller you are
+
+            #Valid Values
+
+            * Retailer  
+            * Distributor 
+            * Manufacturer
+            * Other
+
+            "
+        },
         "business_structure":{
             "type":"string",
             "required":true,
@@ -306,10 +325,13 @@
                     "APIIntegration",
                     "ThirdParty",
                     "WebPortalManualManagement",
-                    "Other",
-                    "None"
+                    "Other"
                 ]
             }
+        },
+        "other_integration":{
+            "type":"string",
+            "description":"If the partner selects 'other' for marketplace integration, this field is required."
         }
     },
     "definitions":{
