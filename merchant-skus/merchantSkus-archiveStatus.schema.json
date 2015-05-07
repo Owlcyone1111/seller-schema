@@ -1,0 +1,14 @@
+{
+	"$schema" : "http://json-schema.org/draft-03/schema",
+	"title": "MerchantSkuArchiveStatus",
+	"type": "object",
+	"description": "This schema represents a merchant SKU",
+    "additionalProperties" : false,
+	"properties": {
+		"is_archived": {
+			"type": "boolean",
+			"required": true,
+			"description": "Indicates whether the specified sku is archived"
+        }
+	}
+}
