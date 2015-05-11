@@ -1,0 +1,8 @@
+{
+	"{merchantSku}" : {
+		"is_archived": true
+	},
+	"{merchantSku}" : {
+		"is_archived": false 
+	}	
+}
