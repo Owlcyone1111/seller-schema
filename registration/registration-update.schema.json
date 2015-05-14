@@ -132,6 +132,25 @@
                 ">1000"
             ]
         },
+        "percentage_dropshiped":{
+            "type":"string",
+            "description":"Approximate percentage of fulfillment that is dropshipped
+
+            #Valid Values
+            * '<10%'
+            * '11%-30%'
+            * '31%-50%'
+            * '51%-75%'
+            * '>75%'
+            ",
+            "enum":[
+                "<10%",
+                "11%-30%",
+                "31%-50%",
+                "51%-75%",
+                ">75%"
+            ]
+        },
         "use_fba":{
             "type":"boolean",
             "description":"If true, the company uses fulfilled by Amazon"
@@ -294,7 +313,6 @@
         },
         "ecommerce_domains":{
             "type":"array",
-            "minItems":1,
             "description":"The domain where you sell your products online",
             "items":{
                 "type":"string"
