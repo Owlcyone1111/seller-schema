@@ -132,9 +132,9 @@
                 ">1000"
             ]
         },
-        "percentage_dropshiped":{
+        "percent_of_orders_dropshipped":{
             "type":"string",
-            "description":"Approximate percentage of fulfillment that is dropshipped
+            "description":"Approximate percentage of orders that are dropshipped
 
             #Valid Values
             * '<10%'
