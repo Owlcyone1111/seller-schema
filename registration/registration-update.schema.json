@@ -314,6 +314,7 @@
         "ecommerce_domains":{
             "type":"array",
             "description":"The domain where you sell your products online",
+            "minItems":1,
             "items":{
                 "type":"string"
             }
