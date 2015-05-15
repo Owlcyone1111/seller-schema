@@ -22,7 +22,8 @@
 			*Accessory"
 		},
 		"variation_refinements": {
-			"type": "number",
+			"type": "integer",
+			"minimum":0,
 			"description": "The ID number for the variation that you get from our documentation
 
 			This field should only be filled in if you are setting up a Variation relationship between a set merchant SKUs and you want to let Jet know what you would like to vary those merchant SKUs on. 

@@ -1,15 +1,14 @@
 {
 	"product_title": "My Product",
-	"jet_browse_node_id": 100,
-	"product_status" : "Available For Purchase",
-	"jet_retail_sku" : "ac62a44553734370b7ec90ee320f6eca",
+	"jet_browse_node_id": 1000000,
 	"standard_product_codes" : [
 		{	
 			"standard_product_code": "123456789012",
 			"standard_product_code_type": "UPC"
 		}
 	],
-	"multipack_quantity": 6,
+	"product_status":"Available for Purchase",
+	"multipack_quantity": 1,
 	"brand": "My Product's Brand",
 	"manufacturer": "My Product's Manufacturer",
 	"mfr_part_number": "AB-9874",
@@ -70,8 +69,5 @@
 			"image_slot_id" : 2,
 			"image_url" : "http://www.mydomain.com/images/myImage.png"
 		}
-	],
-	"relationship": "Variation",
-    "variation_refinements" : 1234,
-    "children_skus" : [ "abcd", "efgh" ]
+	]	
 }
