@@ -20,6 +20,7 @@
 		},
 		"jet_browse_node_id": {
 			"type": "integer",
+			"minimum":1000000,
 			"description": "The unique ID that defines where the product will be found in the Jet.com browse structure
 
 			#Valid Values
@@ -27,10 +28,6 @@
 			This must be a valid jet_browse_node_id
 
 			"
-		},
-		"jet_retail_sku":{
-			"type":"string",
-			"description":"The unique ID for an individually selectable product for sale on Jet.com."
 		},
 		"amazon_item_type_keyword":{
 			"type":"string",
@@ -67,6 +64,7 @@
 			"type": "integer",
 			"required": true,
 			"minimum" : 1,
+			"maximum": 24,
 			"description": "Number of items with the given Standard Product Code that makes up your merchant SKU
 
 			"
@@ -447,15 +445,18 @@
             "type": "object",
             "properties": {
             	"attribute_id" : {
-				"type" : "integer",
-				"description" : "The node attribute ID number that you get from Jet provided documentation that corresponds with the attribute you are passing"
+					"type" : "integer",
+					"minimum":1,
+					"description" : "The node attribute ID number that you get from Jet provided documentation that corresponds with the attribute you are passing"
 				},
 				"attribute_value" : {
 					"type" : "string",
+					"minLength":1,
 					"description" : "The value for the attribute. For example, if the attribute is size you may pass 'large' or if the the attribute is weight, you may pass '22'. For attributes like weight the unit will be passed in the next field."
 				},
 				"attribute_value_unit" : {
 					"type" : "string",
+					"minLength":1,
 					"description" : "If the attribute_value requires a unit, then you pass the unit here."
 				}
             }

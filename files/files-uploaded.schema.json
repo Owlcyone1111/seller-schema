@@ -14,7 +14,8 @@
                             "MerchantSKUs",
                             "Inventory",
                             "Price",
-                            "Relationship"
+                            "Relationship",
+                            "Archive"
                         ],
             "description" : "Type of the file uploaded.
             #Valid values:
@@ -22,6 +23,7 @@
             * Inventory
             * Price
             * Relationship
+            * Archive
             "
         },
         "file_name" : {

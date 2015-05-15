@@ -1,0 +1,29 @@
+{
+    "$schema" : "http://json-schema.org/draft-03/schema",		
+	"title": "BulkOperationsArchive",
+	"type": "object",
+    "additionalProperties" : false,		
+	"description": "This schema is used to archive/resurrect merchant SKUs.",
+	"properties": {
+		"{merchantSku}": {
+			"required": true,
+			"description": "The merchant SKU that is either being archived or resurrected.",
+			"$ref":"#/definitions/merchant_sku_archive"
+		}
+	},
+	"definitions":{
+        "merchant_sku_archive": {
+            "title": "merchantSkuArchive",
+            "description": "The merchant SKU that is either being archived or resurrected.",
+            "additionalProperties" : false,
+            "type": "object",
+            "properties": {
+                "is_archived": {
+					"type": "boolean",
+					"required": true,
+					"description": "A boolean indicating whether the merchant SKU is being archived (true) or resurrected (false)."
+				}
+            }
+        }
+	}
+}

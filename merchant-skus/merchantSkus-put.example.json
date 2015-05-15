@@ -1,14 +1,13 @@
 {
 	"product_title": "My Product",
-	"jet_browse_node_id": 100,
-	"jet_retail_sku" : "XHDIFF-0101",
+	"jet_browse_node_id": 1000000,
 	"standard_product_codes" : [
 		{	
 			"standard_product_code": "123456789012",
 			"standard_product_code_type": "UPC"
 		}
 	],
-	"multipack_quantity": 6,
+	"multipack_quantity": 1,
 	"brand": "My Product's Brand",
 	"manufacturer": "My Product's Manufacturer",
 	"mfr_part_number": "AB-9874",

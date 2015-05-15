@@ -3,6 +3,25 @@
     "type" : "object",
     "additionalProperties" : false,
     "properties" : {
+        "seller_type":{
+            "type":"string",
+            "enum":[
+                "Retailer",
+                "Distributor",
+                "Manufacturer",
+                "Other"
+            ],
+            "description":"The type of seller you are
+
+            #Valid Values
+
+            * Retailer  
+            * Distributor 
+            * Manufacturer
+            * Other
+
+            "
+        },
         "business_structure":{
             "type":"string",
             "required":true,
@@ -111,6 +130,25 @@
                 "100-499",
                 "500-999",
                 ">1000"
+            ]
+        },
+        "percent_of_orders_dropshipped":{
+            "type":"string",
+            "description":"Approximate percentage of orders that are dropshipped
+
+            #Valid Values
+            * '<10%'
+            * '11%-30%'
+            * '31%-50%'
+            * '51%-75%'
+            * '>75%'
+            ",
+            "enum":[
+                "<10%",
+                "11%-30%",
+                "31%-50%",
+                "51%-75%",
+                ">75%"
             ]
         },
         "use_fba":{
@@ -275,8 +313,8 @@
         },
         "ecommerce_domains":{
             "type":"array",
-            "minItems":1,
             "description":"The domain where you sell your products online",
+            "minItems":1,
             "items":{
                 "type":"string"
             }
@@ -306,10 +344,13 @@
                     "APIIntegration",
                     "ThirdParty",
                     "WebPortalManualManagement",
-                    "Other",
-                    "None"
+                    "Other"
                 ]
             }
+        },
+        "other_integration":{
+            "type":"string",
+            "description":"If the partner selects 'other' for marketplace integration, this field is required."
         }
     },
     "definitions":{
