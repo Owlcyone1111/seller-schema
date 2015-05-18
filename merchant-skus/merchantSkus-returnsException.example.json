@@ -1,11 +1,12 @@
 {
     "time_to_return": 5,
-    "return_location_ids": [
-        "121nuh23co132uign5c1o",
-        "132c5nh18023c5132m4c5"
+	"return_location_ids": [
+        "9046335c27d146ee94b23ef61d8959bc",
+        "e3100213167d4abaa43a1c1dd6e4dc04"
      ],
-     "return_shipping_method":[
-        "UPS ground",
-        "FedEx ground"
+     "return_shipping_methods":[
+        "UPS Ground",
+		"UPS SurePost",
+		"FedEx 2 Day"
     ]
 }

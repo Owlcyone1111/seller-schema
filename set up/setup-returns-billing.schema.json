@@ -23,6 +23,7 @@
 				"type":"object",
 				"properties" : {
 					"return_location_id":{
+						"required":true,
 						"type":"string",
 						"description":"The Jet-assigned unique ID of this returns locations."
 					},
