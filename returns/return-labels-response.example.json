@@ -1,16 +1,36 @@
 {
-    "merchant_order_id":"1923m4c192834cm1234",
-    "return_items":[
+  "merchant_order_id": "9b13bdd68c314d1b9c8b93277dea4da1",
+  "return_items": [
     {
-    	"is_thor_return":false,
-       	"merchant_order_item_id":"3inh18379c78431c5134",
-       	"address1":"123 Jet Lane",
-       	"city":"Montclair",
-       	"state":"NJ",
-       	"zip_code":"12452"
+      "merchant_order_item_id": "8f5ae15b6b414b00a1b9d6ad99166a00",
+      "is_thor_return": false,
+      "addresses": [
+        {
+          "city": "test",
+          "state": "test",
+          "zip_code": "12345",
+          "address1": "address1"
+        }
+      ],
+      "return_shipping_methods" : [
+        "UPS Ground",
+        "UPS SurePost",
+        "FedEx 2 Day"
+      ]
     },
     {
-    	"is_thor_return":true
+      "merchant_order_item_id": "8f5ae15b6b414b00a1b9d6ad99166a01",
+      "is_thor_return": false,
+      "addresses":[
+        {
+          "address1": "address1",
+          "address2": "address2",
+          "city": "test",
+          "state": "test",
+          "zip_code": "12345"
+        }
+      ],
+      "return_shipping_methods" : []
     }
-    ]    
+  ]
 }
