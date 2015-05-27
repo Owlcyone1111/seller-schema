@@ -15,18 +15,16 @@
 
 			This field is required if you are setting up a Variation relationship between a set merchant SKUs
 
-			##Valid Values
+			#Valid Values
 
-			*Variation
+			* Variation
 
-			*Accessory"
+			* Accessory"
 		},
 		"variation_refinements": {
 			"type": "integer",
-			"minimum":0,
-			"description": "The ID number for the variation that you get from our documentation
-
-			This field should only be filled in if you are setting up a Variation relationship between a set merchant SKUs and you want to let Jet know what you would like to vary those merchant SKUs on. 
+			"minimum":1,
+			"description": "The attribute ID associated with the characteristic the parent-children SKUs relate on
 			
 			#Valid Values
 
@@ -35,6 +33,7 @@
 		"children_skus": {
 			"type": "array",
 			"required" : true,
+			"minItems":1,
 			"items" : {
 					"type" : "string",
 					"description" : "merchant SKU"
@@ -43,7 +42,7 @@
 				
 			#Valid Values
 
-			Must be a merchant SKU that you have sent us"
+			Must be an uploaded merchant SKU"
 		}
 	}
 }
