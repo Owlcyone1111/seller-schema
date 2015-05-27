@@ -294,17 +294,18 @@
 
             #Valid Values
             * APIIntegration - The company integrates directly with the marketplace via API
-            * ThirdParty - The company integrates with a third party integration platform (i.e. ChannelAdvisor or CommerceHub)
+            * ChannelAdvisor - The company integrates with ChannelAdvisor
+            * CommerceHub - The company integrates with CommerceHub
             * WebPortalManualManagement - The company manages marketplace orders using an web portal management tool
             * Other - A method of integration not specified here
-            * None - The company currently does not integrate with a marketplace
 
             ",
             "items":{
                 "type":"string",
                 "enum":[
                     "APIIntegration",
-                    "ThirdParty",
+                    "ChannelAdvisor",
+                    "CommerceHub",
                     "WebPortalManualManagement",
                     "Other"
                 ]
