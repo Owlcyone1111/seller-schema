@@ -3,8 +3,8 @@
     "estimated_annual_online_revenue":"<$1M",
     "number_of_skus_in_catalog":"0-499",
     "number_of_fulfillment_nodes":"5-9",
-    "number_of_dropshippers":"1-9",
-    "number_of_dropshippers":"0",
+    "number_of_dropshippers":"1",
+    "number_of_dropshippers":"10",
     "main_category":"Books & Other Media",
     "other_categories":[
         "Baby"

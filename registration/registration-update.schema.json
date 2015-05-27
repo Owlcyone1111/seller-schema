@@ -88,49 +88,11 @@
         },
         "number_of_fulfillment_nodes":{
             "type":"string",
-            "description":"Approximate number of fulfillment nodes the company operates
-
-            #Valid Values
-            * '0'
-            * '1-4'
-            * '5-9'
-            * '10-19'
-            * '20-39'
-            * '>40'
-            ",
-            "enum":[
-                "0",
-                "1-4",
-                "5-9",
-                "10-19",
-                "20-39",
-                ">40"
-            ]
+            "description":"Approximate number of fulfillment nodes the company operates"
         },
         "number_of_dropshippers":{
             "type":"string",
-            "description":"Approximate number of dropshippers
-
-            #Valid Values
-            * '0'
-            * '1-9'
-            * '10-24'
-            * '25-49'
-            * '50-99'
-            * '100-499'
-            * '500-999'
-            * '>1000'
-            ",
-            "enum":[
-                "0",
-                "1-9",
-                "10-24",
-                "25-49",
-                "50-99",
-                "100-499",
-                "500-999",
-                ">1000"
-            ]
+            "description":"Approximate number of dropshippers"
         },
         "percent_of_orders_dropshipped":{
             "type":"string",
