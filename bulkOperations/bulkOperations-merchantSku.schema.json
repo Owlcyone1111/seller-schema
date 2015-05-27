@@ -448,8 +448,12 @@
 					"items":{
 						"$ref":"#/definitions/alternate_images"
 					}
+				},
+				"ormd":{
+					"type":"boolean",
+					"description":"If true, the SKU contains limited hazardous material that make it unsafe to ship using certain shipping methods"
 				}
-			}
+			}	
 		},		
 		"attribute" : {
 			"title": "SkuAttribute",
