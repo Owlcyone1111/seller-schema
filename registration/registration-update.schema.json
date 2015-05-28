@@ -22,7 +22,7 @@
 
             "
         },
-        "business_structure":{
+        "type_of_business":{
             "type":"string",
             "required":true,
             "description":"How the business is structured
