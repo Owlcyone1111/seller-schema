@@ -328,7 +328,7 @@
                     "description" : "Provide additional information about why the item was refunded for lower than the full amount."
                 },
                 "refund_amount" : {
-                    "title" : "price_adjustment",
+                    "title" : "RefundAmount",
                     "type" : "object",
                     "additionalProperties" : false,
                     "properties" : {
