@@ -1,5 +1,5 @@
 {
-    "business_structure":"LLC",
+    "type_of_business":"LLC",
     "estimated_annual_online_revenue":"<$1M",
     "number_of_skus_in_catalog":"0-499",
     "number_of_fulfillment_nodes":"5-9",

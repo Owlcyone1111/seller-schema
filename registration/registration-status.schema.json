@@ -13,12 +13,14 @@
             * inReview - applicaton is being reviewed
             * approved - application has been approved
             * denied - application has been denied
+            * new - application is waiting to be assigned
             ",
             "enum":[
                 "pending",
                 "inReview",
                 "approved",
-                "denied"
+                "denied",
+                "new"
             ]
         }
     }
