@@ -28,7 +28,7 @@
             "description":"How the business is structured
 
             #Valid Values
-            * 'SoleProprietor/Individual'
+            * 'Sole Proprietor/Individual'
             * 'C Corporation'
             * 'S Corporation'
             * 'Partnership' 
@@ -37,7 +37,7 @@
 
             ",
             "enum":[
-                "SoleProprietor/Individual",
+                "Sole Proprietor/Individual",
                 "C Corporation",
                 "S Corporation",
                 "Partnership",
