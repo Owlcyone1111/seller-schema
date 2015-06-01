@@ -28,20 +28,20 @@
             "description":"How the business is structured
 
             #Valid Values
-            * 'SoleProprietor' - SoleProprietor/Individual
-            * 'CCorp' - C Corporation
-            * 'SCorp' - S Corporation
+            * 'SoleProprietor/Individual'
+            * 'C Corporation'
+            * 'S Corporation'
             * 'Partnership' 
-            * 'LLC' - Limited Liability Company
+            * 'Limited Liability Company'
             * 'Trust/Estate'  
 
             ",
             "enum":[
-                "SoleProprietor",
-                "CCorp",
-                "SCorp",
+                "SoleProprietor/Individual",
+                "C Corporation",
+                "S Corporation",
                 "Partnership",
-                "LLC",
+                "Limited Liability Company",
                 "Trust/Estate"
             ]
         },
