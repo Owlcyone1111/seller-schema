@@ -1,0 +1,53 @@
+{
+    "$schema" : "http://json-schema.org/draft-03/schema",		
+	"title": "Variation",
+	"type": "object",
+    "additionalProperties" : false,		
+	"description": "This schema is used to set variation relationships for merchant SKUs",
+	"properties": {		
+		"relationship": {
+			"type": "string",
+			"enum" : ["Variation", "Accessory"],
+			"required" : true,			
+			"description": "Variation or Accessory
+
+			#Logic
+
+			This field is required if you are setting up a Variation relationship between a set merchant SKUs
+
+			#Valid Values
+
+			* Variation
+
+			* Accessory"
+		},
+		"variation_refinements": {
+			"type": "array",
+			"required" : true,
+			"minimum": 1,
+			"items" : {
+				"type" : "integer",
+				"description" : "Jet Attribute IDs"
+			},
+			"description": "The attribute IDs associated with the characteristic the parent-children SKUs relate on
+			
+			#Valid Values
+
+			A Jet attribute or attributes that were uploaded for the products associated with the variation"
+		},
+		"children_skus": {
+			"type": "array",
+			"required" : true,
+			"minItems": 1,
+			"items" : {
+				"type" : "string",
+				"description" : "merchant SKU"
+			},
+			"description": "The merchant SKUs that are a the child SKUs
+				
+			#Valid Values
+
+			Must be an uploaded merchant SKU"
+		}
+	}
+}
