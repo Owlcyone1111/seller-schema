@@ -54,3 +54,15 @@ mediaType: application/json
             201:
             401:
             404:
+/File Template - Archive: 
+    put:
+        description: This file example shows how to create upload multiple Merchant SKUs         
+        body:
+            application/json:
+                schema: !include bulkOperations-archive.schema.json
+                example: !include bulkOperations-archive.example.json
+        responses:
+            200:
+            201:
+            401:
+            404:
