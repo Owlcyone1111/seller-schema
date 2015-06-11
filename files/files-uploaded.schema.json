@@ -11,12 +11,12 @@
             "type": "string",
             "required": true,
             "enum" : [
-                            "MerchantSKUs",
-                            "Inventory",
-                            "Price",
-                            "Relationship",
-                            "Archive"
-                        ],
+                "MerchantSKUs",
+                "Inventory",
+                "Price",
+                "Relationship",
+                "Archive"
+            ],
             "description" : "Type of the file uploaded.
             #Valid values:
             * MerchantSKUs

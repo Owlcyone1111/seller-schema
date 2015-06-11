@@ -13,13 +13,17 @@
             "enum" : [
                             "MerchantSKUs",
                             "Inventory",
-                            "Price"
+                            "Price",
+                            "Relationship",
+                            "Archive"
                         ],
             "description" : "Type of the file uploaded.
             #Valid Values:
             * MerchantSKUs
             * Inventory
             * Price
+            * Relationship
+            * Archive
             "
         },
         "file_name" : {
