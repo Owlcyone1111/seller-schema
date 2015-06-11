@@ -23,5 +23,7 @@
 	}],
 	"shipping_carrier" : "UPS",
 	"tracking_number" : "1Z23W456123345890",
-	"merchant_return_charge" : 5.00
+	"merchant_return_charge" : 5.00,
+	"agree_to_return_charge" : false,
+	"return_charge_feedback":"notMerchantError"
 }

@@ -43,7 +43,11 @@
             * 'outsideMerchantPolicy' - The merchant disagrees that paying for this return charge mirrors their existing policy.  This should only apply to returns for correct, non-damaged, non-defective items.
             * 'other' - Please give additional information in the notes field
             "
-        }
+        },
+        "notes":{
+            "type" : "string",
+            "description" : "Provide additional information about why you do not agree to the return charge."
+        },
     },
     "definitions": {
         "order_return_refund_item": {

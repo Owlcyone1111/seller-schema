@@ -16,5 +16,6 @@
 			}
 		}
 	],
-	"agree_to_return_charge" : true
+	"agree_to_return_charge" : false,
+	"return_charge_feedback":"notMerchantError"
 }
