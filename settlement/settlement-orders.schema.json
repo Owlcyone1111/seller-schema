@@ -21,28 +21,24 @@
 				"$ref":"#/definitions/settlement_order_report_details"
 			}
 		},
-        "settlement_status":{
-            "required":true,
-            "type":"string",
-            "enum":[
-                "submitted",
-                "originated",
-                "rejected"
-            ],
-            "description":"The status of the settlement
+        "settlement_state": {
+            "type": "string",
+            "required": true,
+            "enum" : ["deposited", "submitted", "rejected"], 
+            "description": "The status of the current settlement
 
             #Valid Values
-            * 'submitted' - Jet submitted the payment for execution
-            * 'originated' - Payment advise was sent to your bank.  It may take 1-3 days to process.
-            * 'rejected' - Payment didn't come through
 
+            * submitted - The payment has been submitted to your bank and is awaiting deposit
+            * deposited - The payment has been deposited to your bank
+            * rejected - The payment was rejected by your bank.  Please check your deposit information.
             "
         },
         "submitted_date":{
             "type":"string",
             "description":"The date the payment was submitted to the bank"
         },
-        "originated_date":{
+        "deposited_date":{
             "type":"string",
             "description":"The date the payment advice was sent to your bank"
         },
@@ -68,12 +64,12 @@
                     "required": true,
                     "description" : "The merchant price of the product"
                 },
-                "jet_variable_commission": {
+                "variable_commission": {
                     "type": "number",
                     "required": true,
                     "description" : "The variable commission charged by Jet or paid to the merchant"
                 },
-                "fixed_commission": {
+                "base_commission": {
                     "type": "number",
                     "required": true,
                     "description" : "The fixed commision for a sale"
@@ -152,12 +148,12 @@
                     "required": true,
                     "description" : "The merchant price of the product"
                 },
-                "jet_variable_commission": {
+                "variable_commission": {
                     "type": "number",
                     "required": true,
                     "description" : "The variable commission charged by Jet or paid to the merchant"
                 },
-                "fixed_commission": {
+                "base_commission": {
                     "type": "number",
                     "required": true,
                     "description" : "The fixed commision for a sale"

@@ -18,11 +18,22 @@
 
             #Valid Values
 
-            * submitted - the payment has been submitted to your bank and is awaiting deposited
-            * deposited - the payment has been deposited to your bank
-            * rejected - the payment was rejected by your bank.  Please check your deposit information.
-
+            * submitted - The payment has been submitted to your bank and is awaiting deposit
+            * deposited - The payment has been deposited to your bank
+            * rejected - The payment was rejected by your bank.  Please check your deposit information.
             "
+        },
+        "submitted_date":{
+            "type":"string",
+            "description":"The date the payment was submitted to the bank"
+        },
+        "deposited_date":{
+            "type":"string",
+            "description":"The date the payment advice was sent to your bank"
+        },
+        "rejected_date":{
+            "type":"string",
+            "description":"The date the payment was rejected for whatever reason"
         },
 		"currency": {
 			"type": "string",
@@ -96,15 +107,15 @@
                     "required": true,
                     "description" : "The merchant price of the product"
                 },
-                "jet_variable_commission": {
+                "variable_commission": {
                     "type": "number",
                     "required": true,
                     "description" : "The variable commission charged by Jet or paid to the merchant"
                 },
-                "fixed_commission": {
+                "base_commission": {
                     "type": "number",
                     "required": true,
-                    "description" : "The fixed commision for a sale"
+                    "description" : "The base commission for a sale"
                 },
                 "tax": {
                     "type": "number",
@@ -148,15 +159,15 @@
                     "required": true,
                     "description" : "The merchant price of the product being refunded to the customer"
                 },
-                "jet_variable_commission": {
+                "variable_commission": {
                     "type": "number",
                     "required": true,
                     "description" : "The variable commission that was paid to the merchant or charged by jet"
                 },
-                "fixed_commission": {
+                "base_commission": {
                     "type": "number",
                     "required": true,
-                    "description" : "The refunded fixed commision for a sale"
+                    "description" : "The refunded base commission for a sale"
                 },
                 "tax": {
                     "type": "number",

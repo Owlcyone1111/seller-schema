@@ -1,10 +1,13 @@
 {	
 	"currency" : "dollars",
 	"return_balance" : -315.62,
+	"settlement_state" : "deposited",
+    "submitted_date":"2014-07-25T23:59:59.9999999Z",
+    "deposited_date":"2014-07-26T23:59:59.9999999Z",
 	"return_balance_details" : {
 		"merchant_price" : -325.72,
-		"jet_variable_commission" : 32.57,
-		"fixed_commission" : 13.03,
+		"variable_commission" : 32.57,
+		"base_commission" : 13.03,
 		"tax" : -28.50,
 		"shipping_tax" : -7.00,
 		"merchant_return_charge" : 0.00,
@@ -19,8 +22,8 @@
 			"alt_order_item_id" : "123456789",
 			"return_location" : "merchant",
 			"merchant_price" : -325.72,
-			"jet_variable_commission" : 32.57,
-			"fixed_commission" : 13.03,
+			"variable_commission" : 32.57,
+			"base_commission" : 13.03,
 			"tax" : 117.03,
 			"shipping_tax" : 19.60,
 			"tax_info" : {
