@@ -139,7 +139,7 @@
             "additionalProperties" : false,
             "type": "object",
             "properties": {
-                 "shipment_item_id": {
+                "shipment_item_id": {
                     "type": "string",
                     "description" : "Jet's unique identifier for an item in a shipment. This is defined by Jet"
                 },
@@ -161,6 +161,44 @@
                     "type": "integer",
                     "minimum":0,
                     "description" : "Quantity of the given SKU that was cancelled in the given shipment"
+                },
+                "return_id":{
+                    "type":"string",
+                    "description": "If returned, the RMA # in your system associated with this order item"
+                },
+                "return_location":{
+                    "title":"ReturnLocation",
+                    "type":"object",
+                    "description":"The return location ",
+                    "properties":{
+                        "address1":{
+                            "type":"string",
+                            "required":true,
+                            "description":"The first address line for the return location"
+                        },
+                        "address2":{
+                            "type":"string",
+                            "required":false,
+                            "description":"The second address line for the return location"
+                        },
+                        "city":{
+                            "type":"string",
+                            "required":true,
+                            "description":"The city, town, or village of the return location"
+                        },
+                        "state":{
+                            "type":"string",
+                            "required":true,
+                            "description":"The state of the return location"
+                        },
+                        "zip_code":{
+                            "type":"string",
+                            "required":true,
+                            "minLength":5,
+                            "maxLength":5,
+                            "description":"The postal code for the return location"
+                        }
+                    }
                 }
             }
         }

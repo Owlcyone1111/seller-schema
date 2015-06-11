@@ -4,6 +4,8 @@
     "fulfillment_node" : "EIDIDSNKDSFDKSJDKJSDJKFJF",
     "order_placed_date" : "2014-07-24T17:00:00.0000000Z",
     "order_transmission_date" : "2014-07-24T17:01:00.0000000Z",
+    "order_ready_date" : "2014-07-24T20:00:00.0000000Z",
+    "order_acknowledge_date" : "2014-07-24T20:01:00.0000000Z",
     "status" : "created",
     "hash_email" : "aj45894Ifklsdjfkdshfioweiorjfiurser93djfh@customer.jet.com",
     "buyer": {
