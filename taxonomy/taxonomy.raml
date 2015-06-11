@@ -7,7 +7,7 @@ version: v0.1
 protocols: [HTTPS]
 mediaType: application/json
 
-/links/{version}:
+/links/{version}?limit={limit}&offset={offset}:
         get:
             description: This method retrieves the URLs to all Jet Nodes that are currently active in the Jet.com browse tree
             responses:
