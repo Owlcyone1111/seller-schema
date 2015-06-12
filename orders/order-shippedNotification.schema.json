@@ -94,7 +94,7 @@
                         "Prestige",
                         "Spee Dee",
                         "Lone Star",
-                        "Other",
+                        "Other"
                     ],
                     "description" : "The carrier that will complete final delivery of the shipment.   The tracking number should be for this carrier. Must be one of the valid values.
 
