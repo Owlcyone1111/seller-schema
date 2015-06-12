@@ -166,6 +166,12 @@
                     "type":"string",
                     "description": "If returned, the RMA # in your system associated with this order item"
                 },
+                "days_to_return":{
+                    "type":"integer",
+                    "minimum":0,
+                    "maximum":30,
+                    "description":"The number of days the customer has to return the shipment item"
+                },
                 "return_location":{
                     "title":"ReturnLocation",
                     "type":"object",
