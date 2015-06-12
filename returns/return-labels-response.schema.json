@@ -22,6 +22,31 @@
             "title": "GenerateReturnsLabels",
             "type": "object",
             "properties": {
+				"return_id_information":{
+					"type":"object",
+					"title":"return_id_information"
+					"required":true,
+					"properties":{
+						"return_id":{
+							"type":"string",
+							"description":"The return id for the label
+							#Logic 
+							1. If RMA_number exists then this is used
+							2. If alt_order_id exists then this is used
+							3. Use reference_order_id
+							",
+							"required":true
+						},
+						"return_id_type":{
+							"type":"string",
+							"enum":[
+								"RMA_number",
+								"alt_order_id",
+								"reference_order_id"
+							]
+						}
+					}
+				}
                 "merchant_order_item_id":{
                     "type":"string",
                     "required":true,

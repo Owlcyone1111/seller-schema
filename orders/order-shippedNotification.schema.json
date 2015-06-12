@@ -162,7 +162,7 @@
                     "minimum":0,
                     "description" : "Quantity of the given SKU that was cancelled in the given shipment"
                 },
-                "return_id":{
+                "RMA_number":{
                     "type":"string",
                     "description": "If returned, the RMA # in your system associated with this order item"
                 },
