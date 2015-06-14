@@ -1,5 +1,5 @@
 {
-    "alt_order_id" : "123455",
+    "alt_order_id" : "12345",
     "shipments": [
         {
             "alt_shipment_id" : "11223344",
@@ -16,7 +16,32 @@
                     "alt_shipment_item_id": "129900120",
                     "merchant_sku": "15a1010",
                     "response_shipment_sku_quantity": 1,
-                    "response_shipment_cancel_qty":1
+                    "response_shipment_cancel_qty":1,
+					"RMA_number" : "abcdef",
+					"days_to_return" : 30,
+					"return_location":{
+						"address1" : "123 Fake Street",
+						"address2" : "",
+						"city" : "Fake",
+						"state" : "NJ",
+						"zip_code" : "12345"
+					}
+                },
+				{
+                    "shipment_item_id": "76-s2507-i1811",
+                    "alt_shipment_item_id": "129900121",
+                    "merchant_sku": "15a1011",
+                    "response_shipment_sku_quantity": 1,
+                    "response_shipment_cancel_qty":1,
+					"RMA_number" : "zzzz",
+					"days_to_return" : 30,
+					"return_location":{
+						"address1" : "123 Fake Street",
+						"address2" : "",
+						"city" : "Fake",
+						"state" : "NJ",
+						"zip_code" : "12345"
+					}
                 }
             ]
         }
