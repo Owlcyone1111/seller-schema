@@ -1,208 +1,230 @@
 {
     "title": "OrderShippedNotification",
     "type": "object",
-    "additionalProperties" : false,
-    "properties": {          
+    "additionalProperties": false,
+    "properties": {
         "alt_order_id": {
             "type": "string",
-            "description" : "Optional merchant supplied order ID.  Jet will map this ID to Jet's order_id and you can then use this ID in subsequent messages relating to this order."
-            },
+            "description": "Optional merchant supplied order ID.  Jet will map this ID to Jet's order_id and you can then use this ID in subsequent messages relating to this order."
+        },
         "shipments": {
             "type": "array",
-            "required" : true,
+            "required": true,
             "minItems": 1,
             "items": {
-                "$ref": "#/definitions/order_shipped_shipment"
-            }
-        }
-    },
-    "definitions": {
-        "order_shipped_shipment": {
-            "title": "OrderShippedShipment",
-            "additionalProperties" : false,
-            "type": "object",
-            "properties": {
-                "shipment_id": {
-                    "type": "string",
-                    "description" : "Jet's unique ID for a given shipment.  This is defined by Jet."
-                    
-                },
-                "alt_shipment_id": {
-                    "type": "string",
-                    "description" : "Optional merchant supplied shipment ID.  Jet will map this ID to the Jet's shipment_id and you can then use this ID in subsequent messages relating to this shipment."
-                },
-                "shipment_tracking_number": {
-                    "type": "string",
-                    "minLength":3,
-                    "description" : "Packaging tracking number that the carrier is using"
-                },
-                "response_shipment_date": {
-                    "type": "string",
-                    "description" : "Date/Time that a given shipment was shipped
+                "title": "order_shipped_shipment",
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "shipment_id": {
+                        "type": "string",
+                        "description": "Jet's unique ID for a given shipment.  This is defined by Jet."
+                    },
+                    "alt_shipment_id": {
+                        "type": "string",
+                        "description": "Optional merchant supplied shipment ID.  Jet will map this ID to the Jet's shipment_id and you can then use this ID in subsequent messages relating to this shipment."
+                    },
+                    "shipment_tracking_number": {
+                        "type": "string",
+                        "minLength": 3,
+                        "description": "Packaging tracking number that the carrier is using"
+                    },
+                    "response_shipment_date": {
+                        "type": "string",
+                        "description": "Date/Time that a given shipment was shipped
 
-                    #Valid Values
+                        #Valid Values
 
-                    This date should be in ISO 8601 format: yyyy-MM-ddTHH:mm:ss.fffffff-HH:MM
+                        This date
+                        should be
+                        in ISO
+                        8601 format
+                        : yyyy-MM-ddTHH
+                        : mm
+                        : ss.fffffff-HH
+                        : MM
 
-                    Example: 2009-06-15T13:45:30.0000000-07:00
+                        Example: 2009-06-15T13
+                        : 45
+                        : 30.0000000-07
+                        : 00
 
-                    "
-                },
-                "response_shipment_method": {
-                    "type": "string",
-                    "description" : "Shipping method used for the given shipment
+                        "
+                    },
+                    "response_shipment_method": {
+                        "type": "string",
+                        "description": "Shipping method used for the given shipment
 
-                    #Valid Values
+                        #Valid Values
 
-                    List of ShippingMethods set up by you"
-                },
-                "expected_delivery_date": {
-                    "type": "string",
-                    "description" : "Date/Time that the shipment is expected to be delivered to the customer
+                        List of
+                        ShippingMethods set
+                        up by
+                        you"
+                    },
+                    "expected_delivery_date": {
+                        "type": "string",
+                        "description": "Date/Time that the shipment is expected to be delivered to the customer
 
-                    #Valid Values
+                        #Valid Values
 
-                    This date should be in ISO 8601 format: yyyy-MM-ddTHH:mm:ss.fffffff-HH:MM
+                        This date
+                        should be
+                        in ISO
+                        8601 format
+                        : yyyy-MM-ddTHH
+                        : mm
+                        : ss.fffffff-HH
+                        : MM
 
-                    Example: 2009-06-15T13:45:30.0000000-07:00
+                        Example: 2009-06-15T13
+                        : 45
+                        : 30.0000000-07
+                        : 00
 
-                    "
-                },
-                "ship_from_zip_code": {
-                    "type": "string",
-                    "description" : "The zip code of the locations from which the customer shipment is being shipped",
-                    "minLength":5,
-                    "maxLength":5
-                },
-                "carrier" : {
-                    "type": "string",
-                    "enum" : [
-                        "UPS",
-                        "USPS",
-                        "FedEx",
-                        "OnTrac",
-                        "Laser Ship",
-                        "A1",
-                        "Eastern Connection",
-                        "UDS",
-                        "UES",
-                        "CEVA",
-                        "ABF",
-                        "DHL",
-                        "APEX",
-                        "Pilot",
-                        "Prestige",
-                        "Spee Dee",
-                        "Lone Star",
-                        "Other",
-                    ],
-                    "description" : "The carrier that will complete final delivery of the shipment.   The tracking number should be for this carrier. Must be one of the valid values.
+                        "
+                    },
+                    "ship_from_zip_code": {
+                        "type": "string",
+                        "description": "The zip code of the locations from which the customer shipment is being shipped",
+                        "minLength": 5,
+                        "maxLength": 5
+                    },
+                    "carrier": {
+                        "type": "string",
+                        "enum": [
+                            "UPS",
+                            "USPS",
+                            "FedEx",
+                            "OnTrac",
+                            "Laser Ship",
+                            "A1",
+                            "Eastern Connection",
+                            "UDS",
+                            "UES",
+                            "CEVA",
+                            "ABF",
+                            "DHL",
+                            "APEX",
+                            "Pilot",
+                            "Prestige",
+                            "Spee Dee",
+                            "Lone Star",
+                            "Other"
+                        ],
+                        "description": "The carrier that will complete final delivery of the shipment.   The tracking number should be for this carrier. Must be one of the valid values.
 
-                    #Valid Values
+                        #Valid Values
 
-                    * 'UPS'
-                    * 'USPS'
-                    * 'FedEx'
-                    * 'OnTrac'
-                    * 'Laser Ship'
-                    * 'A1'
-                    * 'Eastern Connection'
-                    * 'UDS' - United Delivery Service
-                    * 'UES' - United Express System
-                    * 'CEVA'
-                    * 'ABF'
-                    * 'DHL'
-                    * 'APEX'
-                    * 'Pilot'
-                    * 'Prestige'
-                    * 'Spee Dee'
-                    * 'Lone Star'
-                    * 'Other' - Any carrier not listed above
-                    "
-                },
-                "carrier_pick_up_date" : {
-                    "type": "string",
-                    "description" : "Date/Time that the carrier pick up the customer shipment from the facility where the shipment originated"
-                },
-                "shipment_items": {
-                    "type": "array",
-                    "required" : true,
-                    "minItems": 1,
-                    "items": {
-                        "$ref": "#/definitions/order_shipped_shipment_item"
-                    }
-                }
-            }
-        },
-        "order_shipped_shipment_item": {
-            "title": "OrderShippedShipmentItem",
-            "additionalProperties" : false,
-            "type": "object",
-            "properties": {
-                "shipment_item_id": {
-                    "type": "string",
-                    "description" : "Jet's unique identifier for an item in a shipment. This is defined by Jet"
-                },
-                "alt_shipment_item_id": {
-                    "type": "string",
-                    "description" : "Optional seller supplied ID for an item in a specific shipment.  If this value is specified with Jet's shipment_item_id, Jet will map the two IDs and you can then use your own shipment item ID for subsequent feeds relating to that order item."
-                },
-                "merchant_sku": {
-                    "type": "string",
-                    "required" : true,
-                    "description" : "The merchant SKU that is in the given shipment"
-                },
-                "response_shipment_sku_quantity": {
-                    "type": "integer",
-                    "minimum":0,
-                    "description" : "Quantity of the given SKU that was shipped in the given shipment"
-                },
-                "response_shipment_cancel_qty": {
-                    "type": "integer",
-                    "minimum":0,
-                    "description" : "Quantity of the given SKU that was cancelled in the given shipment"
-                },
-                "return_id":{
-                    "type":"string",
-                    "description": "If returned, the RMA # in your system associated with this order item"
-                },
-                "days_to_return":{
-                    "type":"integer",
-                    "minimum":0,
-                    "maximum":30,
-                    "description":"The number of days the customer has to return the shipment item"
-                },
-                "return_location":{
-                    "title":"ReturnLocation",
-                    "type":"object",
-                    "description":"The return location ",
-                    "properties":{
-                        "address1":{
-                            "type":"string",
-                            "required":true,
-                            "description":"The first address line for the return location"
-                        },
-                        "address2":{
-                            "type":"string",
-                            "required":false,
-                            "description":"The second address line for the return location"
-                        },
-                        "city":{
-                            "type":"string",
-                            "required":true,
-                            "description":"The city, town, or village of the return location"
-                        },
-                        "state":{
-                            "type":"string",
-                            "required":true,
-                            "description":"The state of the return location"
-                        },
-                        "zip_code":{
-                            "type":"string",
-                            "required":true,
-                            "minLength":5,
-                            "maxLength":5,
-                            "description":"The postal code for the return location"
+                        * 'UPS'
+                        * 'USPS'
+                        * 'FedEx'
+                        * 'OnTrac'
+                        * 'Laser
+                        Ship' *
+                        'A1' *
+                        'Eastern Connection'
+                        * 'UDS'
+                        - United
+                        Delivery Service
+                        * 'UES'
+                        - United
+                        Express System
+                        * 'CEVA'
+                        * 'ABF'
+                        * 'DHL'
+                        * 'APEX'
+                        * 'Pilot'
+                        * 'Prestige'
+                        * 'Spee
+                        Dee' *
+                        'Lone Star'
+                        * 'Other'
+                        - Any
+                        carrier not
+                        listed above
+                        "
+                    },
+                    "carrier_pick_up_date": {
+                        "type": "string",
+                        "description": "Date/Time that the carrier pick up the customer shipment from the facility where the shipment originated"
+                    },
+                    "shipment_items": {
+                        "type": "array",
+                        "required": true,
+                        "minItems": 1,
+                        "items": {
+                            "title": "order_shipment_item",
+                            "type": "object",
+                            "properties": {
+                                "shipment_item_id": {
+                                    "type": "string",
+                                    "description": "Jet's unique identifier for an item in a shipment. This is defined by Jet"
+                                },
+                                "alt_shipment_item_id": {
+                                    "type": "string",
+                                    "description": "Optional seller supplied ID for an item in a specific shipment.  If this value is specified with Jet's shipment_item_id, Jet will map the two IDs and you can then use your own shipment item ID for subsequent feeds relating to that order item."
+                                },
+                                "merchant_sku": {
+                                    "type": "string",
+                                    "required": true,
+                                    "description": "The merchant SKU that is in the given shipment"
+                                },
+                                "response_shipment_sku_quantity": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "description": "Quantity of the given SKU that was shipped in the given shipment"
+                                },
+                                "response_shipment_cancel_qty": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "description": "Quantity of the given SKU that was cancelled in the given shipment"
+                                },
+                                "RMA_number": {
+                                    "type": "string",
+                                    "description": "If returned, the RMA # in your system associated with this order item"
+                                },
+                                "days_to_return": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 30,
+                                    "description": "The number of days the customer has to return the shipment item"
+                                },
+                                "return_location": {
+                                    "title": "ReturnLocation",
+                                    "type": "object",
+                                    "description": "The return location ",
+                                    "properties": {
+                                        "address1": {
+                                            "type": "string",
+                                            "required": true,
+                                            "description": "The first address line for the return location"
+                                        },
+                                        "address2": {
+                                            "type": "string",
+                                            "required": false,
+                                            "description": "The second address line for the return location"
+                                        },
+                                        "city": {
+                                            "type": "string",
+                                            "required": true,
+                                            "description": "The city, town, or village of the return location"
+                                        },
+                                        "state": {
+                                            "type": "string",
+                                            "required": true,
+                                            "description": "The state of the return location"
+                                        },
+                                        "zip_code": {
+                                            "type": "string",
+                                            "required": true,
+                                            "minLength": 5,
+                                            "maxLength": 5,
+                                            "description": "The postal code for the return location"
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
