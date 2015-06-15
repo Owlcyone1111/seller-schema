@@ -10,10 +10,7 @@
 		"base_commission" : -120.37,
 		"tax" : 351.09,
 		"shipping_revenue" : 672.00,
-		"shipping_tax" : 58.80,
-		"shipping_charge" : 0.00,
-		"fulfillment_fee" : 0.00,
-		"product_cost" : 0.00		
+		"shipping_tax" : 58.80	
 	},
 	"order_item_balance_details" : [
 		{
@@ -21,7 +18,6 @@
 			"alt_order_item_id" : "123456789",
 			"order_id" : "1e9b536f0d41472ea26a43faa442b0e8",
 			"alt_order_id" : "1123456789",
-			"fulfillment_method" : "merchant",
 			"merchant_price" : 1337.48,
 			"variable_commission" : -133.75,
 			"base_commission" : -40.12,
@@ -94,10 +90,7 @@
 	                "county_amount":0.04,
 	                "state_amount": 0.03
 	            }
-	        },
-			"shipping_charge" : 0.00,
-			"fulfillment_fee" : 0.00,
-			"product_cost" : 0.00			 
+	        }		 
 		},
 		{
 			"order_item_id" : "8feb6d8bcfd34fa98467da177bde3c9a",
@@ -175,10 +168,7 @@
 	                "county_amount":0.04,
 	                "state_amount": 0.03
 	            }
-	        },
-			"shipping_charge" : 0.00,
-			"fulfillment_fee" : 0.00,
-			"product_cost" : 0.00			 
+	        }		 
 		},
 		{
 			"order_item_id" : "f7bbba9039a24d7fb4bc26c38e9c4c27",
@@ -256,10 +246,7 @@
 	                "county_amount":0.04,
 	                "state_amount": 0.03
 	            }
-	        },
-			"shipping_charge" : 0.00,
-			"fulfillment_fee" : 0.00,
-			"product_cost" : 0.00	
+	        }	
 		}
 	]
 }

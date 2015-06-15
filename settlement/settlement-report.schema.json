@@ -131,22 +131,7 @@
                     "type": "number",
                     "required": true,
                     "description" : "The tax charged on shipped revenue"
-                },                                                
-                "shipping_charge": {
-                    "type": "number",
-                    "required": true,
-                    "description" : "If the item is sold via DBJ (Distributed By Jet), then this is the charge for shipping the item to the customer"
-                },
-                "fulfillment_fee": {
-                    "type": "number",
-                    "required": true,
-                    "description" : "If the item is sold via DBJ (Distributed By Jet), then this is the charge for Jet to fulfill the customer order"
-                },
-                "product_cost": {
-                    "type": "number",
-                    "required": true,
-                    "description" : "If the item is sold via DBJ (Distributed By Jet), then this is the all in cost of the product sold to the customer"
-                }                
+                }              
             }
         },
         "settlement_report_return_details": {
@@ -188,12 +173,7 @@
                     "type": "number",
                     "required": true,
                     "description" : "If the item is being returned to Jet fulfillment center, then this is processing fee charged by Jet"
-                },
-                "product_cost": {
-                    "type": "number",
-                    "required": true,
-                    "description" : "If the item is sold via DBJ (Distributed By Jet), then this is cost of the product that will be returned to the merchant"
-                }                
+                }               
             }
         }
 	}

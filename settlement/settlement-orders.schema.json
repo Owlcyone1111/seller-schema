@@ -88,22 +88,7 @@
                     "type": "number",
                     "required": true,
                     "description" : "The tax charged on shipped revenue"
-                }, 
-                "shipping_charge": {
-                    "type": "number",
-                    "required": true,
-                    "description" : "If the item is sold via DBJ (Distributed By Jet), then this is the charge for shipping the item to the customer"
-                },
-                "fulfillment_fee": {
-                    "type": "number",
-                    "required": true,
-                    "description" : "If the item is sold via DBJ (Distributed By Jet), then this is the charge for Jet to fulfill the customer order"
-                },
-                "product_cost": {
-                    "type": "number",
-                    "required": true,
-                    "description" : "If the item is sold via DBJ (Distributed By Jet), then this is the all in cost of the product sold to the customer"
-                }                
+                }          
             }
         },
         "settlement_order_report_item_details": {
@@ -203,22 +188,7 @@
                             "$ref": "#/definitions/settlement_amounts"
                         }
                     }
-                },                                                      
-                "shipping_charge": {
-                    "type": "number",
-                    "required": true,
-                    "description" : "If the item is sold via DBJ (Distributed By Jet), then this is the charge for shipping the item to the customer"
-                },
-                "fulfillment_fee": {
-                    "type": "number",
-                    "required": true,
-                    "description" : "If the item is sold via DBJ (Distributed By Jet), then this is the charge for Jet to fulfill the customer order"
-                },
-                "product_cost": {
-                    "type": "number",
-                    "required": true,
-                    "description" : "If the item is sold via DBJ (Distributed By Jet), then this is the all in cost of the product sold to the customer"
-                }                
+                }               
             }
         },
         "settlement_tax_jurisdictions" : {

@@ -98,12 +98,7 @@
                     "type": "number",
                     "required": true,
                     "description" : "If the item is being returned to Jet fulfillment center, then this is processing fee charged by Jet"
-                },
-                "product_cost": {
-                    "type": "number",
-                    "required": true,
-                    "description" : "If the item is sold via DBJ (Distributed By Jet), then this is cost of the product that will be returned to the merchant"
-                }                
+                }             
             }
         },
         "settlement_return_item_details_report": {
@@ -209,12 +204,7 @@
                     "type": "number",
                     "required": true,
                     "description" : "If the item is being returned to Jet fulfillment center, then this is processing fee charged by Jet"
-                },
-                "product_cost": {
-                    "type": "number",
-                    "required": true,
-                    "description" : "If the item is sold via DBJ (Distributed By Jet), then this is cost of the product that will be returned to the merchant"
-                }                
+                }              
             }
         },
         "settlement_tax_jurisdictions" : {

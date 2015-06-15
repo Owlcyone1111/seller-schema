@@ -15,8 +15,7 @@
 		"shipping_revenue" : 672.00,
 		"shipping_tax" : 58.80,
 		"shipping_charge" : 0.00,
-		"fulfillment_fee" : 0.00,
-		"product_cost" : 0.00		
+		"fulfillment_fee" : 0.00		
 	},
 	"order_balance" : 4572.72,
 	"return_balance_details" : {
@@ -26,8 +25,7 @@
 		"tax" : -28.50,
 		"shipping_tax" : -7.00,
 		"merchant_return_charge" : 0.00,
-		"return_processing_fee" : 0.00,
-		"product_cost" : 0.00		
+		"return_processing_fee" : 0.00	
 	},
 	"return_balance" : -315.62,
 	"jet_adjustment" : 0.00,
