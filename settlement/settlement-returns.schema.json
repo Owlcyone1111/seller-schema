@@ -89,11 +89,6 @@
                     "required": true,
                     "description" : "Any charges for the return that the merchant is required to pay"
                 },
-                "return_shipping_charge": {
-                    "type": "number",
-                    "required": true,
-                    "description" : "Any charges for return shipping that the merchant is required to pay"
-                },
                 "return_processing_fee": {
                     "type": "number",
                     "required": true,
@@ -120,19 +115,6 @@
                     "type": "string",
                     "required": false,
                     "description" : "The Merchant Order Item ID given to Jet during the order acknowledgment by the merchant"
-                },
-                "return_location" : {
-                    "type": "string",
-                    "required": false,
-                    "enum" : ["merchant", "jet"], 
-                    "description" : "Determines where the 
-
-                    #Valid Values
-
-                    * merchant - the return was sent to a merchant's return center or the merchant's drop shipper.
-                    * jet - the returned item was sent to a Jet fulfillment center to process the return    
-
-                    "
                 },
                 "merchant_price": {
                     "type": "number",
@@ -194,11 +176,6 @@
                     "type": "number",
                     "required": true,
                     "description" : "Any charges for the return that the merchant is required to pay"
-                },
-                "return_shipping_charge": {
-                    "type": "number",
-                    "required": true,
-                    "description" : "Any charges for return shipping that the merchant is required to pay"
                 },
                 "return_processing_fee": {
                     "type": "number",

@@ -24,8 +24,7 @@
 		"base_commission" : 13.03,
 		"tax" : -28.50,
 		"shipping_tax" : -7.00,
-		"merchant_return_charge" : 0.00,
-		"return_processing_fee" : 0.00	
+		"merchant_return_charge" : 0.00
 	},
 	"return_balance" : -315.62,
 	"jet_adjustment" : 0.00,

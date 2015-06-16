@@ -116,18 +116,6 @@
                     "required": false,
                     "description" : "The Merchant Order ID given to Jet during the order acknowledgment or shipped message by the merchant"
                 },
-                "fulfillment_method" : {
-                    "type": "string",
-                    "required": false,
-                    "enum" : ["merchant", "dbj"], 
-                    "description" : "How the order was fulfilled. 
-
-                    #Valid Values
-
-                    * merchant - the merchant fulfilled and shipped the order through self operated fulfillment center or drop shippers   
-
-                    "
-                },
                 "merchant_price": {
                     "type": "number",
                     "required": true,
