@@ -24,6 +24,10 @@
 
             If an alt_order_id has been associated with the merchant_order_id via the order accept message this will be passed as well.
             "
+        },
+        "has_shipments" : {
+            "type": "boolean",
+            "description" : "Determines whether Jet broke the order into shipments (this should always be false for order-only)."
         },    
         "hash_email" : {
             "type": "string",
@@ -109,7 +113,6 @@
         }, 
         "order_acknowledge_date": {
             "type": "string",
-            "required": true,
             "description" :  "The date the order was acknowledged by the partner
 
             #Valid Values
@@ -336,6 +339,10 @@
                     "required": true,
                     "description" : "The merchant SKU that is in the given merchant order"
                 },
+                "adjustment_reason": {
+                    "type": "string",
+                    "description" : "This field is not used at this time"
+                },
                 "request_order_quantity": {
                     "type": "integer",
                     "required": true,
@@ -450,7 +457,6 @@
                 "request_shipping_carrier": {
                     "type" : "string",
                     "required" : false,
-                    "enum" : ["UPS", "FedEx", "USPS", "OnTrac", "DHL", "Freight"], 
                     "description" : "The shipping carrier that is delivering the shipment 
 
                     #Valid Values
@@ -541,14 +547,14 @@
                 "adjustment_type": {
                     "type": "string",
                     "required" : false,
-                    "enum" : ["item","allocated basket"],
+                    "enum" : ["item","allocated_basket"],
                     "description" : "The type of discount being given whether it is directly attributed to the item or allocated from a basket level discount
 
                     #Valid Values
 
                     *'item'
 
-                    *'allocated basket'
+                    *'allocated_basket'
 
                     "
                 },
