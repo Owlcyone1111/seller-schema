@@ -96,27 +96,24 @@
                 "shipment_items": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/order_shipment_item"
+                        "title": "OrderShipmentItem",
+                        "additionalProperties" : false,
+                        "type": "object",
+                        "properties": {
+                            "merchant_sku": {
+                                "type": "string",
+                                "description" : "Merchant's unique identifier for a product"
+                            },
+                            "shipment_item_id": {
+                                "type": "string",
+                                "description" : "Jet's unique identifier for an item in a shipment.  This is defined by Jet"
+                            },
+                            "alt_shipment_item_id": {
+                                "type": "string",
+                                "description" : "Optional seller supplied ID for an item in a specific shipment.  If this value is specified with Jet's shipment_item_id, Jet will map the two IDs and you can then use your own shipment item ID for subsequent feeds relating to that order item."
+                            }
+                        }
                     }
-                }
-            }
-        },
-        "order_shipment_item": {
-            "title": "OrderShipmentItem",
-            "additionalProperties" : false,
-            "type": "object",
-            "properties": {
-                "merchant_sku": {
-                    "type": "string",
-                    "description" : "Merchant's unique identifier for a product"
-                },
-                "shipment_item_id": {
-                    "type": "string",
-                    "description" : "Jet's unique identifier for an item in a shipment.  This is defined by Jet"
-                },
-                "alt_shipment_item_id": {
-                    "type": "string",
-                    "description" : "Optional seller supplied ID for an item in a specific shipment.  If this value is specified with Jet's shipment_item_id, Jet will map the two IDs and you can then use your own shipment item ID for subsequent feeds relating to that order item."
                 }
             }
         }
