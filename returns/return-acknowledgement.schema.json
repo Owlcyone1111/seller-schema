@@ -33,11 +33,11 @@
 			"type" : "array",
 			"required": false,
 			"items" : {
-        		"$ref" : "#/defintions/return_to_location"
+        		"$ref" : "#/definitions/return_to_location"
 			}
 		}
 	},
-	"defintions" : {
+	"definitions" : {
 		"return_to_location" : {
         	"title" : "ReturnToLocation",
             "type" : "object",

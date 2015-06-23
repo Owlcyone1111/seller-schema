@@ -47,7 +47,7 @@
         "notes":{
             "type" : "string",
             "description" : "Provide additional information about why you do not agree to the return charge."
-        },
+        }
     },
     "definitions": {
         "order_return_refund_item": {
@@ -86,55 +86,55 @@
                     Required to indicate the quantity of the given item to be refunded to the customer."
                 },
                 "return_refund_feedback" : {
-                	"type" : "string",
-                	"enum" : [
-                				"customer opened item",
-                				"not shipped in original packaging",
-                				"item damaged",
-                				"other"
-                				],
-                	"description" : "The reason this refund is less than the full amount 
+                    "type" : "string",
+                    "enum" : [
+                                "customer opened item",
+                                "not shipped in original packaging",
+                                "item damaged",
+                                "other"
+                                ],
+                    "description" : "The reason this refund is less than the full amount 
 
-                	#Valid Values
+                    #Valid Values
 
-                	*'customer opened item' 
+                    *'customer opened item' 
 
-                	*'not shipped in original packaging' 
+                    *'not shipped in original packaging' 
 
-                	*'item damaged' - should only be used if the reason for the return was not that it was damaged when the customer received it 
-                	
-                	*'other' - please give additional information in the notes field"
+                    *'item damaged' - should only be used if the reason for the return was not that it was damaged when the customer received it 
+                    
+                    *'other' - please give additional information in the notes field"
                 },
                 "notes" :{
                     "type" : "string",
                     "description" : "Provide additional information about why the item was refunded for lower than the full amount"
                 },
                 "refund_amount" : {
-                	"title" : "price_adjustment",
-                	"type" : "object",
-                	"additionalProperties" : false,
+                    "title" : "price_adjustment",
+                    "type" : "object",
+                    "additionalProperties" : false,
                     "properties" : {
-                		"principal" : {
-                			"type" : "number",
+                        "principal" : {
+                            "type" : "number",
                             "required":true,
-                			"description" : "Amount to be refunded for the given item in USD associated with the item itself. This should be the total cost for this item not the unit cost"
-                		},
-                		"tax" : {
-                			"type" : "number",
+                            "description" : "Amount to be refunded for the given item in USD associated with the item itself. This should be the total cost for this item not the unit cost"
+                        },
+                        "tax" : {
+                            "type" : "number",
                             "required":true,
-                			"description" : "Amount to be refunded for the given item in USD associated with tax that was charged for the item"
-                		},
-                		"shipping_cost" : {
-                			"type" : "number",
+                            "description" : "Amount to be refunded for the given item in USD associated with tax that was charged for the item"
+                        },
+                        "shipping_cost" : {
+                            "type" : "number",
                             "required":true,
-                			"description" : "Amount to be refunded for the given item in USD associated with the shipping cost that was allocated to this item"
-                		},
-                		"shipping_tax" : {
-                			"type" : "number",
+                            "description" : "Amount to be refunded for the given item in USD associated with the shipping cost that was allocated to this item"
+                        },
+                        "shipping_tax" : {
+                            "type" : "number",
                             "required":true,
-                			"description" : "Amount to be refunded for the given item in USD associated with the tax that was charged on shipping"
-                		}
-                	}
+                            "description" : "Amount to be refunded for the given item in USD associated with the tax that was charged on shipping"
+                        }
+                    }
                 }
             }
         }
