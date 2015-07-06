@@ -15,7 +15,9 @@
                 "Inventory",
                 "Price",
                 "Relationship",
-                "Archive"
+                "Archive",
+                "ShippingException",
+                "ReturnsException"
             ],
             "description" : "Type of the file uploaded.
             #Valid values:
@@ -24,6 +26,8 @@
             * Price
             * Relationship
             * Archive
+            * ShippingException
+            * ReturnsException
             "
         },
         "file_name" : {
