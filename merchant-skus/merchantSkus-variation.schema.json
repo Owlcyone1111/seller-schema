@@ -24,9 +24,10 @@
 		"variation_refinements": {
 			"type": "array",
 			"required" : true,
-			"minimum": 1,
+			"minItems": 1,
 			"items" : {
-				"type" : "integer",
+                "type": "integer",
+                "minimum": 1,
 				"description" : "Jet Attribute IDs"
 			},
 			"description": "The attribute IDs associated with the characteristic the parent-children SKUs relate on
