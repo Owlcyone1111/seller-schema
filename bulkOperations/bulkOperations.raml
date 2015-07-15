@@ -9,7 +9,7 @@ mediaType: application/json
 
 /File Template - MerchantSKUs:
     put:
-        description: This file example shows how to create upload multiple Merchant SKUs         
+        description: This file example shows how to upload multiple Merchant SKUs         
         body:
             application/json:
                 schema: !include bulkOperations-merchantSku.schema.json
@@ -20,7 +20,7 @@ mediaType: application/json
             404:
 /File Template - Inventory: 
     put:
-        description: This file example shows how to create upload multiple Merchant SKUs         
+        description: This file example shows how to upload inventory for multiple Merchant SKUs         
         body:
             application/json:
                 schema: !include bulkOperations-inventory.schema.json
@@ -32,7 +32,7 @@ mediaType: application/json
             404:
 /File Template - Price: 
     put:
-        description: This file example shows how to create upload multiple Merchant SKUs         
+        description: This file example shows how to upload price for multiple Merchant SKUs         
         body:
             application/json:
                 schema: !include bulkOperations-price.schema.json
@@ -44,7 +44,7 @@ mediaType: application/json
             404:
 /File Template - Relationship: 
     put:
-        description: This file example shows how to create upload multiple Merchant SKUs         
+        description: This file example shows how to relate multiple Merchant SKUs to each other        
         body:
             application/json:
                 schema: !include bulkOperations-relationship.schema.json
@@ -56,11 +56,23 @@ mediaType: application/json
             404:
 /File Template - Archive: 
     put:
-        description: This file example shows how to create upload multiple Merchant SKUs         
+        description: This file example shows how to archive multiple Merchant SKUs         
         body:
             application/json:
                 schema: !include bulkOperations-archive.schema.json
                 example: !include bulkOperations-archive.example.json
+        responses:
+            200:
+            201:
+            401:
+            404:
+/File Template - ShippingException: 
+    put:
+        description: This file example shows how to set shipping exceptions for multiple Merchant SKUs         
+        body:
+            application/json:
+                schema: !include bulkOperations-shippingException.schema.json
+                example: !include bulkOperations-shippingException.example.json
         responses:
             200:
             201:

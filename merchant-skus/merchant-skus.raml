@@ -151,3 +151,16 @@ mediaType: application/json
                     400:
                     401:
                     404:
+        /status/archive:
+            put:
+                description: This method archives a specified merchant SKU
+                body:
+                    application/json:
+                        schema: !include merchantSkus-archiveStatus.schema.json
+                        example: !include merchantSkus-archiveStatus.example.json
+                responses:
+                    201:
+                    204:
+                    400:
+                    401:
+                    404:

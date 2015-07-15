@@ -348,11 +348,11 @@
 
 					#Valid Values
 
-					*'101' = no restrictions on product based pricing
+					*'101' = Default: no restrictions on product based pricing
 
-					*'102' = Jet member savings on product only visible to logged in Jet members
+					*'102' = MAP Pricing: Jet member savings on product only visible to logged in Jet members
 
-					*'103' = Jet member savings never applied to product"
+					*'103' = Minimum Selling Price: Jet member savings never applied to product"
 				},	
 				"product_tax_code": {
 					"type": "string",
@@ -452,7 +452,15 @@
 				"ormd":{
 					"type":"boolean",
 					"description":"If true, the SKU contains limited hazardous material that make it unsafe to ship using certain shipping methods"
-				}
+				},
+				"buy_url":{
+					"type":"string",
+					"description":"The buy URL where this product is located."
+				},
+				"is_freight":{
+					"type":"boolean",
+					"description":"If true, it indicates that this product is going to be shipped freight but is NOT an indication that it will be priced and shipped freight. This must be done through shipping exceptions"
+				}	
 			}	
 		},		
 		"attribute" : {
@@ -461,8 +469,8 @@
 	        "type": "object",
 	        "properties": {
 	        	"attribute_id" : {
-				"type" : "integer",
-				"description" : "The node attribute ID number that you get from Jet provided documentation that corresponds with the attribute you are passing"
+					"type" : "integer",
+					"description" : "The node attribute ID number that you get from Jet provided documentation that corresponds with the attribute you are passing"
 				},
 				"attribute_value" : {
 					"type" : "string",

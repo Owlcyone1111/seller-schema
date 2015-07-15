@@ -1,0 +1,83 @@
+{
+	"{merchant_sku}":{
+		"fulfillment_nodes": [
+			{
+				"fulfillment_node_id" : "ab489c921752492ea40b492d73cbf7c0",
+				"shipping_exceptions" :  [
+					{
+
+						"service_level": "Standard",
+						"override_type": "Additional charge",
+						"shipping_charge_amount": 3.25,
+						"shipping_exception_type": "restricted"
+					},
+					{
+						"shipping_method": "UPS Ground",
+						"override_type": "Additional charge",
+						"shipping_charge_amount": 3.25,
+						"shipping_exception_type": "exclusive"
+					}
+				]
+			},
+			{
+				"fulfillment_node_id" : "f71eab56c3fc4e74a1c2c323d161b290",
+				"shipping_exceptions" :  [
+					{
+
+						"shipping_method": "UPS Ground",
+						"override_type": "Additional charge",
+						"shipping_charge_amount": 3.25,
+						"shipping_exception_type": "restricted"
+					},
+					{
+						"service_level": "Standard",
+						"override_type": "Additional charge",
+						"shipping_charge_amount": 3.25,
+						"shipping_exception_type": "exclusive"
+					}
+				]
+			}
+		]
+	},
+	"{merchant_sku}":
+	{
+		"fulfillment_nodes": [
+			{
+				"fulfillment_node_id" : "f71eab56c3fc4e74a1c2c323d161b290",
+				"shipping_exceptions" :  [
+					{
+
+						"service_level": "Standard",
+						"override_type": "Additional charge",
+						"shipping_charge_amount": 3.25,
+						"shipping_exception_type": "restricted"
+					},
+					{
+						"shipping_method": "UPS Ground",
+						"override_type": "Additional charge",
+						"shipping_charge_amount": 3.25,
+						"shipping_exception_type": "exclusive"
+					}
+				]
+			},
+			{
+				"fulfillment_node_id" : "18f5d007c07348e7a40ada7484c86a66",
+				"shipping_exceptions" :  [
+					{
+
+						"shipping_method": "UPS Ground",
+						"override_type": "Additional charge",
+						"shipping_charge_amount": 3.25,
+						"shipping_exception_type": "restricted"
+					},
+					{
+						"service_level": "Standard",
+						"override_type": "Additional charge",
+						"shipping_charge_amount": 3.25,
+						"shipping_exception_type": "exclusive"
+					}
+				]
+			}
+		]
+	}
+}
