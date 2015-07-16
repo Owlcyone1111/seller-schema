@@ -49,7 +49,7 @@
                     "enum":[
                         "yearly",
                         "monthly",
-                        "daily",
+                        "daily"
                     ],                 
                     "description":"How the rule is scheduled to repeat
 

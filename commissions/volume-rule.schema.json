@@ -49,7 +49,7 @@
                     "enum":[
                         "yearly",
                         "monthly",
-                        "daily",
+                        "daily"
                     ],                 
                     "description":"How the rule is scheduled to repeat
 
@@ -94,9 +94,8 @@
                 },
                 "max_band": {
                     "type": "number",
-                    "minimum": 0,
                     "required": true,
-                    "exclusiveMinimum":true,
+                    "exclusiveMinimum": 0,
                     "description" : "The upper bound of the pricing band"
                 },
                 "adjustments":{
@@ -104,28 +103,25 @@
                     "minItems": 1,
                     "required": true,
                     "items":{
-                        "$ref": "#/definitions/volume_band_array"
+                        "title": "VolumeBandObject",
+                        "type": "object",
+                        "additionalProperties" : false,
+                        "properties": {
+                            "volume_minimum": {
+                                "type": "integer",
+                                "minimum": 0,
+                                "required": true,
+                                "description" : "The minimum number items needed to achieve the discount"
+                            },
+                            "adjustment": {
+                                "type": "number",
+                                "minimum":0,
+                                "maximum":0.3,
+                                "required": true,
+                                "description" : "The adjustment to the base commission as a decimal"
+                            }
+                        }
                     }
-                }
-            }
-        },
-        "volume_band_array": {
-            "title": "VolumeBandObject",
-            "type": "object",
-            "additionalProperties" : false,
-            "properties": {
-                "volume_minimum": {
-                    "type": "integer",
-                    "minimum": 0,
-                    "required": true,
-                    "description" : "The minimum number items needed to achieve the discount"
-                },
-                "adjustment": {
-                    "type": "number",
-                    "minimum":0,
-                    "maximum":0.3,
-                    "required": true,
-                    "description" : "The adjustment to the base commission as a decimal"
                 }
             }
         }
