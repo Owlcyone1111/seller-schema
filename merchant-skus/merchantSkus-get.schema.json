@@ -514,10 +514,6 @@
 		"buy_url":{
 			"type":"string",
 			"description":"The buy URL where this product is located."
-		},
-		"is_freight":{
-			"type":"boolean",
-			"description":"If true, it indicates that this product is going to be shipped freight but is NOT an indication that it will be priced and shipped freight. This must be done through shipping exceptions"
 		}		
 	},
 	"definitions": {
