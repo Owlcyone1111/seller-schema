@@ -1,42 +1,42 @@
 {
-    "title" : "RefundStatus",
-    "type" : "object",
-    "additionalProperties" : false,
-    "properties" : {
-        "reference_refund_authorization_id" :{
+    "title": "RefundStatus",
+    "type": "object",
+    "properties": {
+        "refund_authorization_id": {
             "type": "string",
             "required": true,
-            "description" :  "Jet's human readable refund authorization number that may have a small chance of collision overtime."
+            "description": "Jet's human readable return authorization number that may have a small chance of collision overtime."
         },
-        "refund_status":{
-            "required":true,
-            "type":"string",
+        "refund_status": {
+            "required": true,
+            "type": "string",
             "description": "Jet's return message for whether the refund was accepted.",
-            "enum":[
+            "enum": [
+                "created",
+                "processing",
                 "accepted",
                 "rejected - refund conflicts with returns policy",
-                "rejected - customer card not valid",
-                "rejected - other"
+                "rejected - customer card not valid"
             ]
         },
-    	"merchant_order_id": {
-            "type": "string",
-            "required":true,
-            "description" :  "Jet's unique ID for a given merchant order."
-        },
-        "reference_merchant_order_id" :{
+        "merchant_order_id": {
             "type": "string",
             "required": true,
-            "description" :  "Jet's human readable merchant order ID that may have a small chance of collision overtime."
+            "description": "Jet's unique ID for a given merchant order."
+        },
+        "reference_order_id": {
+            "type": "string",
+            "required": true,
+            "description": "Jet's human readable merchant order ID that may have a small chance of collision overtime."
         },
         "alt_order_id": {
             "type": "string",
-            "description" : "Optional merchant supplied order ID."
-        },     
+            "description": "Optional merchant supplied order ID."
+        },
         "items": {
             "type": "array",
             "minItems": 1,
-            "required":true,
+            "required": true,
             "items": {
                 "$ref": "#/definitions/order_refund_item"
             }
@@ -81,7 +81,6 @@
                                 "no longer need/want",
                                 "better price available",
                                 "unauthorized purchase",
-                                "unwanted gift",
                                 "package never arrived",
                                 "package arrived later than promised delivery date",
                                 "item was different than website description",
@@ -89,10 +88,9 @@
                                 "item is defective/does not work properly",
                                 "item is damaged/broken",
                                 "accidental order",
-                                "received wrong item than what was ordered",
-                                "wrong quantity received"
+                                "received wrong item than what was ordered"
                                 ],
-                    "description" : "The reason this return was initiated. 
+                    "description" : "The reason this refund was initiated. 
 
                     #Valid Values
 
@@ -101,8 +99,6 @@
                     *'better price available'
                     
                     *'unauthorized purchase'
-
-                    *'unwanted gift'
                     
                     *'package never arrived'
                     

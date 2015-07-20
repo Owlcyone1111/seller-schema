@@ -3,19 +3,6 @@
     "type" : "object",
     "additionalProperties" : false,
     "properties" : {
-    	"merchant_order_id": {
-            "type": "string",
-            "required":true,
-            "description" :  "Jet's unique ID for a given merchant order."
-        },
-        "alt_order_id": {
-            "type": "string",
-            "description" : "Optional merchant supplied order ID."
-        },   
-        "alt_refund_id": {
-            "type": "string",
-            "description" : "Optional merchant supplied refund/return ID."
-        },   
         "items": {
             "type": "array",
             "minItems": 1,
@@ -33,17 +20,12 @@
             "properties": {
                 "order_item_id": {
                     "type": "string",
-                    "required":true,
                     "description" : "Jet's unique identifier for an item in a merchant order."
                 },
                 "alt_order_item_id": {
                     "type": "string",
-                    "description" : "Required if returning/refunding an item. If an alt_order_item_id has been associated with the order_item_id via the order accept message, this may be passed instead of the order_item_id field."
+                    "description" : "If an alt_order_item_id has been associated with the order_item_id via the order accept message, this may be passed instead of the order_item_id field."
                 },
-                "alt_refund_item_id": {
-                    "type": "string",
-                    "description" : "Optional merchant supplied item refund/return ID."
-                },  
                 "total_quantity_returned" : {
                     "type" : "integer",
                     "description" : "Quanitity of the given item that was cancelled.
