@@ -9,8 +9,8 @@
     "error_count" : 1,
     "error_url" : "https://jetupload.blob.core.windows.net/merchant-files-results/dca10a71128940bf80aca9edee52e7cd",
     "error_excerpt" : [
-    "Position 12, 14: Error: parsing sky 'ABCD' You must supply either an ASIN, at least one standard product code, or a brand and a manufacturer part number",
-    "Position 185, 1: Error: parsing sky 'EFGH' start_selling_date is not a valid date.",
-    "Position 385, 1: Error: parsing sky 'EFGH' Invalid UPC Code."
+        "Position 12, 14: Error: parsing sky 'ABCD' You must supply either an ASIN, at least one standard product code, or a brand and a manufacturer part number",
+        "Position 185, 1: Error: parsing sky 'EFGH' start_selling_date is not a valid date.",
+        "Position 385, 1: Error: parsing sky 'EFGH' Invalid UPC Code."
     ]
 }
