@@ -5,8 +5,6 @@
         "e3100213167d4abaa43a1c1dd6e4dc04"
      ],
      "return_shipping_methods":[
-        "UPS Ground",
-		"UPS SurePost",
-		"FedEx 2 Day"
+        "UPS Ground"
     ]
 }

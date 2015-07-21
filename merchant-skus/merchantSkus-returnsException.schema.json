@@ -9,7 +9,7 @@
             "maximum":30,
             "description":"The number of days after purchase a customer can return the item"
         },
-        "return_location_ids": {
+        "return_location_ids":{
             "type": "array",
             "description": "Jet's unique ID for a given returns location",
             "items":{
@@ -22,40 +22,14 @@
 
             #Valid Values
             * 'UPS Ground'
-            * 'UPS 3 Day Select'
-            * 'UPS 2nd Day Air'
-            * 'UPS Next Day Air'
-            * 'UPS 2nd Day Air AM'
-            * 'UPS Next Day Air Saver'
-            * 'UPS SurePost'
-            * 'UPS Mail Innovations'
             * 'FedEx Ground'
-            * 'FedEx Home Delivery'
-            * 'FedEx Express Saver'
-            * 'FedEx 2 Day'
-            * 'FedEx Standard Overnight'
-            * 'FedEx Priority Overnight'
-            * 'FedEx First Overnight'
-            * 'FedEx Smart Post'",
+            * 'Freight'",
             "items":{
                 "type":"string",
                 "enum":[
                     "UPS Ground",
-                    "UPS 3 Day Select",
-                    "UPS 2nd Day Air",
-                    "UPS Next Day Air",
-                    "UPS 2nd Day Air AM",
-                    "UPS Next Day Air Saver",
-                    "UPS SurePost",
-                    "UPS Mail Innovations",
                     "FedEx Ground",
-                    "FedEx Home Delivery",
-                    "FedEx Express Saver",
-                    "FedEx 2 Day",
-                    "FedEx Standard Overnight",
-                    "FedEx Priority Overnight",
-                    "FedEx First Overnight",
-                    "FedEx Smart Post"                  
+                    "Freight"                 
                 ]
             }
         }
