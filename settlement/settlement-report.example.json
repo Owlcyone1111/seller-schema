@@ -3,7 +3,8 @@
 	"settlement_state" : "deposited",
     "submitted_date":"2014-07-25T23:59:59.9999999Z",
     "deposited_date":"2014-07-26T23:59:59.9999999Z", 
-	"currency" : "dollars", 
+	"currency" : "dollars",
+	"return_processing_fee":0.0,
 	"unavailable_balance" : 4102.20,
 	"settlement_period_start" : "2014-07-24T00:00:00.0000000Z",
 	"settlement_period_end" : "2014-07-24T23:59:59.9999999Z",
@@ -13,9 +14,7 @@
 		"base_commission" : -120.37,
 		"tax" : 351.09,
 		"shipping_revenue" : 672.00,
-		"shipping_tax" : 58.80,
-		"shipping_charge" : 0.00,
-		"fulfillment_fee" : 0.00		
+		"shipping_tax" : 58.80	
 	},
 	"order_balance" : 4572.72,
 	"return_balance_details" : {
@@ -24,7 +23,8 @@
 		"base_commission" : 13.03,
 		"tax" : -28.50,
 		"shipping_tax" : -7.00,
-		"merchant_return_charge" : 0.00
+		"merchant_return_charge" : 0.00,
+		"return_processing_fee":0.00
 	},
 	"return_balance" : -315.62,
 	"jet_adjustment" : 0.00,
