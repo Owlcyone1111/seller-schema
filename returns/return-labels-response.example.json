@@ -4,30 +4,36 @@
     {
       "merchant_order_item_id": "8f5ae15b6b414b00a1b9d6ad99166a00",
       "is_thor_return": false,
+      "return_id_information":{
+        "return_id":"11231475120",
+        "return_id_type":"reference_order_id"
+        },
       "addresses": [
         {
-          "city": "test",
-          "state": "test",
-          "zip_code": "12345",
-          "address1": "address1"
+          "address1": "address1",
+          "city": "Somewhere",
+          "state": "NY",
+          "zip_code": "12345"
         }
       ],
       "return_shipping_methods" : [
-        "UPS Ground",
-        "UPS SurePost",
-        "FedEx 2 Day"
+        "UPS Ground"
       ]
     },
     {
       "merchant_order_item_id": "8f5ae15b6b414b00a1b9d6ad99166a01",
       "is_thor_return": false,
+      "return_id_information":{
+        "return_id":"879183741314",
+        "return_id_type":"reference_order_id"
+        },
       "addresses":[
         {
           "address1": "address1",
           "address2": "address2",
-          "city": "test",
-          "state": "test",
-          "zip_code": "12345"
+          "city": "New York",
+          "state": "NY",
+          "zip_code": "10001"
         }
       ],
       "return_shipping_methods" : []

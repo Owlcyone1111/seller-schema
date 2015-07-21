@@ -35,19 +35,9 @@
 
                         #Valid Values
 
-                        This date
-                        should be
-                        in ISO
-                        8601 format
-                        : yyyy-MM-ddTHH
-                        : mm
-                        : ss.fffffff-HH
-                        : MM
+                        This date should be in ISO 8601 format: yyyy-MM-ddTHH:mm:ss.fffffff-HH:MM
 
-                        Example: 2009-06-15T13
-                        : 45
-                        : 30.0000000-07
-                        : 00
+                        Example: 2009-06-15T13:45:30.0000000-07:00
 
                         "
                     },
@@ -57,10 +47,7 @@
 
                         #Valid Values
 
-                        List of
-                        ShippingMethods set
-                        up by
-                        you"
+                        List of ShippingMethods set up by you"
                     },
                     "expected_delivery_date": {
                         "type": "string",
@@ -68,19 +55,9 @@
 
                         #Valid Values
 
-                        This date
-                        should be
-                        in ISO
-                        8601 format
-                        : yyyy-MM-ddTHH
-                        : mm
-                        : ss.fffffff-HH
-                        : MM
+                        This date should be in ISO 8601 format: yyyy-MM-ddTHH:mm:ss.fffffff-HH:MM
 
-                        Example: 2009-06-15T13
-                        : 45
-                        : 30.0000000-07
-                        : 00
+                        Example: 2009-06-15T13:45:30.0000000-07:00
 
                         "
                     },
@@ -120,29 +97,20 @@
                         * 'USPS'
                         * 'FedEx'
                         * 'OnTrac'
-                        * 'Laser
-                        Ship' *
-                        'A1' *
-                        'Eastern Connection'
-                        * 'UDS'
-                        - United
-                        Delivery Service
-                        * 'UES'
-                        - United
-                        Express System
+                        * 'Laser Ship' 
+                        * 'A1' 
+                        * 'Eastern Connection'
+                        * 'UDS' - United Delivery Service
+                        * 'UES' - United Express System
                         * 'CEVA'
                         * 'ABF'
                         * 'DHL'
                         * 'APEX'
                         * 'Pilot'
                         * 'Prestige'
-                        * 'Spee
-                        Dee' *
-                        'Lone Star'
-                        * 'Other'
-                        - Any
-                        carrier not
-                        listed above
+                        * 'Spee Dee' 
+                        * 'Lone Star'
+                        * 'Other' - Any carrier not listed above
                         "
                     },
                     "carrier_pick_up_date": {
