@@ -1,0 +1,15 @@
+{
+    "title": "RefundLinks",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+    	"sku_urls": {
+    		"type": "array",
+    		"description": "List of URLs",
+    		"items": {
+    			"type": "string",
+    			"description": "The unique resource URL"
+    		}
+    	}
+    }
+}

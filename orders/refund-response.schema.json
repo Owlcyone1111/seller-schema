@@ -13,11 +13,11 @@
             "type":"string",
             "description": "Jet's return message for whether the refund was accepted.",
             "enum":[
+                "created",
                 "accepted",
                 "processing",
                 "rejected - refund conflicts with returns policy",
-                "rejected - customer card not valid",
-                "rejected - other"
+                "rejected - customer card not valid"
             ]
         },
     }

@@ -8,23 +8,19 @@ protocols: [HTTPS]
 mediaType: application/json
 
 /refunds:
-    /create
-        post:
-            description: This method will create a refund in Jet.com's system and return a refund authorization ID in a message
-            body:
-                application/json:
-                    schema: !include refund.schema.json
-                    example: !include refund.example.json
+    state/{id}:
+        get:
+            description: This method provides the current status of the refund and all information associated with processing the merchant refund
             responses:
                 200:
                     body:
                         application/json:
-                            schema: !include refund-response.schema.json
-                            exmaple: !include refund-response.example.json
+                            schema: !include refund-status.schema.json
+                            example: !include refund-status.example.json
                 404:
                     description: The requested resource could not be found. 
-    /{id}:
-        get:
+    list/{status}:      
+            get:
             description: This method provides the current status of the refund and all information associated with processing the merchant refund
             responses:
                 200:

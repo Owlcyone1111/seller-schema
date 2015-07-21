@@ -1,6 +1,4 @@
 {
-	"merchant_order_id" : "9b13bdd68c314d1b9c8b93277dea4da1",
-	"alt_order_id" : "12345678",
 	"items" : [{
 		"order_item_id" : "1123456789",
 		"alt_order_item_id" : "A1223456",
