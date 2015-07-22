@@ -35,14 +35,19 @@
                     *Accessory"
                 },
                 "variation_refinements": {
-                    "type": "number",
-                    "description": "The ID number for the variation that you get from our documentation
-
-                    This field should only be filled in if you are setting up a Variation relationship between a set merchant SKUs and you want to let Jet know what you would like to vary those merchant SKUs on. 
+                    "type": "array",
+                    "required" : true,
+                    "minItems": 1,
+                    "items" : {
+                        "type": "integer",
+                        "minimum": 1,
+                        "description" : "Jet Attribute IDs"
+                    },
+                    "description": "The attribute IDs associated with the characteristic the parent-children SKUs relate on
                     
                     #Valid Values
 
-                    The valid 'variation_refinements vary depending on the jet_browse_node_id, see category specific documentation for details"
+                    A Jet attribute or attributes that were uploaded for the products associated with the variation"
                 },
                 "children_skus": {
                     "type": "array",
