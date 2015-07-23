@@ -1,5 +1,6 @@
 {
 	"relationship": "Variation",
+	"group_title" : "Free & Clear Baby Diapers, Super Jumbo",
     "variation_refinements" : [ 2 , 4 ],
     "children_skus" : [ "abcd", "efgh" ]
 }
