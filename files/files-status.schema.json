@@ -16,9 +16,11 @@
                             "Price",
                             "Relationship",
                             "Archive",
-                            "ShippingException"
+                            "ShippingException",
+                            "ReturnsException"
                         ],
             "description" : "Type of the file uploaded.
+            
             #Valid Values:
             * MerchantSKUs
             * Inventory
@@ -26,6 +28,7 @@
             * Relationship
             * Archive
             * ShippingException
+            * ReturnsException
             "
         },
         "file_name" : {

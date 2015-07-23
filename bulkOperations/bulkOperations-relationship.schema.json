@@ -13,7 +13,7 @@
 	},
 	"definitions":{
         "merchant_sku_relationships":{
-            "title": "merchantSkuPrice",
+            "title": "MerchantSKURelationships",
             "description": "The merchant SKU that should be affected by the relationships in this object. The {merchantSKU} field should be the merchant SKU that price is being updated for.",
             "additionalProperties" : false,
             "type": "object",
