@@ -1,0 +1,14 @@
+{
+	"{merchantSku}" : { 
+		"relationship": "Variation",
+		"group_title" : "Free & Clear Baby Diapers, Super Jumbo",
+	    "variation_refinements" :[34, 129],
+	    "children_skus" : [ "abcd", "efgh" ]
+	},
+	"{merchantSku}" : { 
+		"relationship": "Accessory",
+		"group_title" : "Free & Clear Baby Diapers, Super Jumbo",
+	    "variation_refinements" :[12,13],
+	    "children_skus" : [ "zyyx", "wvut" ]
+	}	
+}
