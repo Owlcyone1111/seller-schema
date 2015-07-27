@@ -1,4 +1,6 @@
 {
+  "merchant_name":"Jet.com",
+  "merchant_phone_number":"123-123-1234",
   "merchant_order_id": "9b13bdd68c314d1b9c8b93277dea4da1",
   "return_items": [
     {

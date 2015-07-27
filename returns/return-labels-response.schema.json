@@ -3,6 +3,16 @@
     "type": "object",
     "additionalProperties" : false,
     "properties":{
+        "merchant_name":{
+            "type":"string",
+            "description":"The name of the merchant",
+            "required":true
+        },
+        "merchant_phone_number":{
+            "type":"string",
+            "description":"The merchant's phone number",
+            "required":true
+        },
         "merchant_order_id":{
             "type":"string",
             "required":true,
