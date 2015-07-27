@@ -26,7 +26,8 @@
                  "acknowledged",
                  "refund customer without return",
                  "completed by merchant",
-                 "jet refunded"
+                 "jet refunded",
+                 "inprogress"
              ],
             "description": "Current status of the return.
 
@@ -37,6 +38,7 @@
             * 'refund customer without return' - The merchant acknowledges the return and authorizes Jet to refund the customer without the return being complete
             * 'completed by merchant' - The item was received by the merchant and the return is now complete
             * 'jet refunded' - Jet refunded the customer without the item being returned.  This may be used for damaged consumable products or other items where the return should not be sent back to the merchant.
+            * 'inprogress' - The return is in progress 
 
             "
         }, 
@@ -189,19 +191,19 @@
                         "type" : "string",
                         "required":true,
                         "enum" : [
-                                "no longer need/want",
-                                "better price available",
-                                "unauthorized purchase",
-                                "unwanted gift",
-                                "package never arrived",
-                                "package arrived later than promised delivery date",
-                                "item was different than website description",
-                                "shipping box and item are both damaged",
-                                "item is defective/does not work properly",
-                                "item is damaged/broken",
-                                "accidental order",
-                                "received wrong item than what was ordered",
-                                "wrong quantity received"
+                            "no longer need/want",
+                            "better price available",
+                            "unauthorized purchase",
+                            "unwanted gift",
+                            "package never arrived",
+                            "package arrived later than promised delivery date",
+                            "item was different than website description",
+                            "shipping box and item are both damaged",
+                            "item is defective/does not work properly",
+                            "item is damaged/broken",
+                            "accidental order",
+                            "received wrong item than what was ordered",
+                            "wrong quantity received"
                         ],
                         "description" : "The reason this return was initiated. 
 

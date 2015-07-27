@@ -41,6 +41,7 @@
 						},
 						"return_id_type":{
 							"type":"string",
+                            "required":true,
 							"enum":[
 								"RMA_number",
 								"alt_order_id",
@@ -111,7 +112,7 @@
                         "type":"string",
                         "enum":[
                             "FedEx Ground",
-                            "UPS Ground"
+                            "UPS Ground",
                             "Freight"                 
                         ]
                     }
