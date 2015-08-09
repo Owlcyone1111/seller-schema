@@ -1,15 +1,6 @@
 {
-    "title": "RefundLinks",
-    "type": "object",
-    "additionalProperties" : false,
-    "properties": {
-    	"sku_urls": {
-    		"type": "array",
-    		"description": "List of URLs",
-    		"items": {
-    			"type": "string",
-    			"description": "The unique resource URL"
-    		}
-    	}
-    }
+    "sku_urls":[
+    	"refunds/1289076123041324",
+		"refunds/9087132460512356"    	
+    ]
 }

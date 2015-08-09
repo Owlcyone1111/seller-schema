@@ -19,7 +19,7 @@ mediaType: application/json
                             example: !include refund-status.example.json
                 404:
                     description: The requested resource could not be found. 
-    list/{status}:      
+    {status}:      
         get:
             description: This method provides the current status of the refund and all information associated with processing the merchant refund
             responses:
@@ -30,7 +30,7 @@ mediaType: application/json
                             example: !include refund-links.example.json
                 404:
                     description: The requested resource could not be found.
-    {id}:
+    {id}/{alt_refund_id}:
         put:
             description: This method will create a refund in Jet.com's system and return a refund authorization ID in a message
             body:
