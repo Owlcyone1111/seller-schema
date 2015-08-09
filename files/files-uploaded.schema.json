@@ -17,7 +17,8 @@
                 "Relationship",
                 "Archive",
                 "ShippingException",
-                "ReturnsException"
+                "ReturnsException",
+                "Variation"
             ],
             "description" : "Type of the file uploaded.
             #Valid values:
@@ -28,6 +29,7 @@
             * Archive
             * ShippingException
             * ReturnsException
+            * Variation
             "
         },
         "file_name" : {
