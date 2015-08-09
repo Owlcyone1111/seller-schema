@@ -70,11 +70,15 @@
                 "total_quantity_returned" : {
                     "type" : "integer",
                     "required" : true,
-                    "description" : "Quanitity of the given item that was returned
+                    "description" : "Quanitity of the given item that was returned for this order item in this message
 
                     #Logic
 
-                    Required to indicate the total quantity of units returned for the order item.  This quantity should only include the units that were returned. Any cancelled items should not be included if the items were cancelled before the return"
+                    * Required to indicate the total quantity of units returned for the order item in this message.  
+                    * This quantity should only include the units that were returned. 
+                    * Any cancelled items should not be included if the items were cancelled before the return.
+                    * 
+                    "
                 },
                 "order_return_refund_qty" : {
                     "type" : "integer",
