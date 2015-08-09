@@ -150,7 +150,7 @@
                                 },
                                 "RMA_number": {
                                     "type": "string",
-                                    "description": "If returned, the RMA # in your system associated with this order item"
+                                    "description": "The RMA # in your system associated with this order item if returned"
                                 },
                                 "days_to_return": {
                                     "type": "integer",
