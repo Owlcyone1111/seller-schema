@@ -10,17 +10,6 @@
 			"required": true,
 			"description": "The currency that all monetary values are represented in for the settlement report retrieved"
 		},
-        "order_balance": {
-            "type": "number",
-            "required": true,
-            "description": "The total value of orders that is settled in this settlement report"
-        },
-		"order_balance_details":{
-			"required": true,
-			"items":{
-				"$ref":"#/definitions/settlement_order_report_details"
-			}
-		},
         "settlement_state": {
             "type": "string",
             "required": true,
@@ -44,14 +33,20 @@
         },
         "rejected_date":{
             "type":"string",
-            "description":"The date the payment was rejected fro whatever reason"
+            "description":"The date the payment was rejected for whatever reason"
         },
-        "order_item_balance_details":{
+        "total_order_balance": {
+            "type": "number",
             "required": true,
-            "items":{
-                "$ref":"#/definitions/settlement_order_report_item_details"
-            }
-        }
+            "description": "The total value of orders that is settled in this settlement report"
+        },
+		"total_order_balance_details":{
+			"required": true,
+            "type":"array",
+			"items":{
+				"$ref":"#/definitions/settlement_order_report_details"
+			}
+		}
 	},
 	"definitions":{
         "settlement_order_report_details": {
@@ -59,36 +54,53 @@
             "additionalProperties" : false,
             "type": "object",
             "properties": {
+                "order_id":{
+                    "type":"string",
+                    "required":true,
+                    "description": "The Jet-given order ID associated with this order"
+                },
+                "alt_order_id":{
+                    "type":"string",
+                    "required":true,
+                    "description":"The optional merchant-provided order ID associated with an order"
+                },
                 "merchant_price": {
                     "type": "number",
                     "required": true,
-                    "description" : "The merchant price of the product"
+                    "description" : "The merchant price of the product for the order"
                 },
                 "variable_commission": {
                     "type": "number",
                     "required": true,
-                    "description" : "The variable commission charged by Jet or paid to the merchant"
+                    "description" : "The variable commission charged by Jet or paid to the merchant for the order"
                 },
                 "base_commission": {
                     "type": "number",
                     "required": true,
-                    "description" : "The fixed commision for a sale"
+                    "description" : "The base commision charged for the order"
                 },
                 "tax": {
                     "type": "number",
                     "required": true,
-                    "description" : "The tax charged to the customer for buying the item"
+                    "description" : "The tax charged to the customer for the order"
                 },
                 "shipping_revenue": {
                     "type": "number",
                     "required": true,
-                    "description" : "The shipping revenue charged to the customer for buying the item"
+                    "description" : "The shipping revenue charged to the customer for the order"
                 },
                 "shipping_tax": {
                     "type": "number",
                     "required": true,
                     "description" : "The tax charged on shipped revenue"
-                }          
+                },
+                "order_item_balance_details":{
+                    "required": true,
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/settlement_order_report_item_details"
+                    }
+                }    
             }
         },
         "settlement_order_report_item_details": {

@@ -10,23 +10,18 @@
 			"required": true,
 			"description": "The currency that all monetary values are represented in for the settlement report retrieved"
 		},
-        "return_balance": {
+        "total_return_balance": {
             "type": "number",
             "required": true,
             "description": "The total value of returns that is settled in this settlement report"
         },
-		"return_balance_details":{
+		"total_return_balance_details":{
 			"required": true,
+            "type":"array",
 			"items":{
 				"$ref":"#/definitions/settlement_return_details_report"
 			}
 		},
-        "return_item_balance_details":{
-            "required": true,
-            "items":{
-                "$ref":"#/definitions/settlement_return_item_details_report"
-            }
-        },
         "settlement_state": {
             "type": "string",
             "required": true,
@@ -93,6 +88,13 @@
                     "type": "number",
                     "required": true,
                     "description" : "If the item is being returned to Jet fulfillment center, then this is processing fee charged by Jet"
+                },
+                "return_item_balance_details":{
+                    "required": true,
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/settlement_return_item_details_report"
+                    }
                 }             
             }
         },

@@ -4,7 +4,6 @@
     "submitted_date":"2014-07-25T23:59:59.9999999Z",
     "deposited_date":"2014-07-26T23:59:59.9999999Z", 
 	"currency" : "dollars",
-	"return_processing_fee":0.0,
 	"unavailable_balance" : 4102.20,
 	"settlement_period_start" : "2014-07-24T00:00:00.0000000Z",
 	"settlement_period_end" : "2014-07-24T23:59:59.9999999Z",
@@ -24,9 +23,10 @@
 		"tax" : -28.50,
 		"shipping_tax" : -7.00,
 		"merchant_return_charge" : 0.00,
-		"return_processing_fee":0.00
+		"return_processing_fee" : 0.00
 	},
 	"return_balance" : -315.62,
 	"jet_adjustment" : 0.00,
-	"settlement_value" : 4257.10
+	"settlement_value" : 4257.10,
+
 }
