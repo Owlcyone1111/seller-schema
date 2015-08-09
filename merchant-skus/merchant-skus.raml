@@ -1,6 +1,6 @@
 #%RAML 0.8
 title: Products
-description: This API provides information about all methods that affect merchant SKU set up, price, inventory, and shipping exceptions.   Explanations about the flow of information between methods in this API can be found in the API Explanations tab under the Products section.  When looking at the methods for this schema, please ignore "?subscription-key= Your subscription key" in any URLs.
+description: This API provides information about all methods that affect merchant SKU set up, price, inventory, shipping exceptions, returns exceptions, and variations.  Explanations about the flow of information between methods in this API can be found in the API Explanations tab under the Products section.  When looking at the methods for this schema, please ignore "?subscription-key= Your subscription key" in any URLs.
 baseUri: https://merchant-api.jet.com/api
 version: v0.1
 protocols: [HTTPS]
@@ -53,7 +53,7 @@ mediaType: application/json
                 400:
                 401:
                 404:
-        /relationship:
+        /variation:
             put:
                 description: This method updates variation relationships between merchant SKUs
                 body:
@@ -145,6 +145,19 @@ mediaType: application/json
                     application/json:
                         schema: !include merchantSkus-shippingException.schema.json
                         example: !include merchantSkus-shippingException.example.json
+                responses:
+                    201:
+                    204:
+                    400:
+                    401:
+                    404:
+        /returnsexception:
+            put:
+                description: This method updates returns exception data for the specified merchant SKU
+                body:
+                    application/json:
+                        schema: !include merchantSkus-returnsexception.schema.json
+                        example: !include merchantSkus-returnsexception.example.json
                 responses:
                     201:
                     204:

@@ -58,6 +58,7 @@
 			"attribute_value" : "blue"
 		}
 	],
+	"variation_refinements":[1,2],
 	"main_image_url" : "http://www.mydomain.com/images/myImage.png",
 	"swatch_image_url" : "http://www.mydomain.com/images/myImage.png",
 	"alternate_images" : [
