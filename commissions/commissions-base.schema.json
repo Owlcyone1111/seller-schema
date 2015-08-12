@@ -19,7 +19,6 @@
         },
         "end_date":{
             "type": "string",
-            "required": true,
             "description" : "The data/time when the base commissions are no longer applicable, if null this rate does not expire
 
             #Valid Values
