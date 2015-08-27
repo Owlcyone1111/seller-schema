@@ -22,29 +22,6 @@
 
             "
         },
-        "type_of_business":{
-            "type":"string",
-            "required":true,
-            "description":"How the business is structured
-
-            #Valid Values
-            * 'Sole Proprietor/Individual'
-            * 'C Corporation'
-            * 'S Corporation'
-            * 'Partnership' 
-            * 'Limited Liability Company'
-            * 'Trust/Estate'  
-
-            ",
-            "enum":[
-                "Sole Proprietor/Individual",
-                "C Corporation",
-                "S Corporation",
-                "Partnership",
-                "Limited Liability Company",
-                "Trust/Estate"
-            ]
-        },
         "estimated_annual_online_revenue":{
             "type":"string",
             "description":"The estimated amount the company makes in online revenue in one year
