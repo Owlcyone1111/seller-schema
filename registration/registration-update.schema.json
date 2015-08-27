@@ -311,6 +311,94 @@
                 ]
             }
         },
+        "map_or_rpm_policy":{
+            "type":"string",
+            "required":true,
+            "description":"Do your products adhere to MAP or RPM policies?
+
+            #Valid Values
+            * Yes, all products
+            * Yes, some products
+            * No
+            * Don’t know 
+            ",
+            "enum":[
+                "Yes, all products",
+                "Yes, some products",
+                "No",
+                "Don’t know"
+            ]
+        },
+        "days_to_ship":{
+            "type":"string",
+            "required":true,
+            "description":"How long does it take for you to ship most orders?
+
+            #Valid Values
+            * Same business day
+            * 1 business day
+            * 2 business days
+            * 3 business days
+            * 4 business days
+            * 5+ business days
+            ",
+            "enum":[
+                "Same business day",
+                "1 business day",
+                "2 business days",
+                "3 business days",                
+                "4 business days",
+                "5+ business days"
+            ]
+        },
+        "deliver_within_5_days":{
+            "type":"string",
+            "required":true,
+            "description":"Can you deliver orders to the contiguous US within 5 days?
+
+            #Valid Values
+            * Yes, always
+            * Yes, sometimes
+            * No
+            ",
+            "enum":[
+                "Yes, always",
+                "Yes, sometimes",
+                "No"
+            ]
+        },
+        "ship_via_freight":{
+            "type":"string",
+            "required":true,
+            "description":"Do you ship your products via freight carrier?
+
+            #Valid Values
+            * Yes, always
+            * Yes, sometimes
+            * No
+            ",
+            "enum":[
+                "Yes, always",
+                "Yes, sometimes",
+                "No"
+            ]
+        },
+        "returns_policy":{
+            "type":"string",
+            "required":true,
+            "description":"What is your returns policy, by policy or practice?
+
+            #Valid Values
+            * Free returns shipping
+            * Customer pays for returns shipping
+            * Other / not applicable
+            ",
+            "enum":[
+                "Free returns shipping",
+                "Customer pays for returns shipping",
+                "Other / not applicable"
+            ]
+        },
         "other_integration":{
             "type":"string",
             "description":"If the partner selects 'other' for marketplace integration, this field is required."
