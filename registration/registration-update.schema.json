@@ -159,7 +159,7 @@
             * Furniture
             * Tools & Home Improvement
             * Video Games
-
+            * Household Products
             ",
             "enum":[
                 "Books & Other Media",
@@ -180,7 +180,8 @@
                 "Sporting Goods",
                 "Furniture",
                 "Tools & Home Improvement",
-                "Video Games"
+                "Video Games",
+                "Household Products"
             ]
         },
         "other_categories":{
@@ -207,7 +208,8 @@
                     "Sporting Goods",
                     "Furniture",
                     "Tools & Home Improvement",
-                    "Video Games"
+                    "Video Games",
+                    "Household Products"
                 ]
             },
             "description":"Please enter the other categories you sell in 
@@ -233,6 +235,7 @@
             * Furniture
             * Tools & Home Improvement
             * Video Games
+            * Household Products
             "
         },
         "used_products":{
