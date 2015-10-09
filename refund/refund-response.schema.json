@@ -11,7 +11,16 @@
         "refund_status":{
             "required":true,
             "type":"string",
-            "description": "Jet's return message for whether the refund was accepted.",
+            "description": "Jet's return message for whether the refund was accepted.
+
+            #Valid Values
+            * 'created' - Refund is created in our system
+            * 'processing' - Refund is processing in our system
+            * 'accepted' - Refund has been completed
+            * 'rejected - refund conflicts with returns policy'
+            * 'rejected - customer card not valid' 
+
+            ",
             "enum":[
                 "created",
                 "accepted",

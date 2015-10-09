@@ -37,8 +37,9 @@
         "item_fees": 2.01,
         "fee_adjustments": [
             {
-                "adjustment_name": "itemPrice",
-                "adjustment_type": "item",
+                "adjustment_name": "",
+                "adjustment_type": "base",
+                "commission_id":"",
                 "value": 1.20
             }
         ],
@@ -126,8 +127,9 @@
             "item_fees": 2.01,
             "fee_adjustments": [
                 {
-                    "adjustment_name": "itemPrice",
-                    "adjustment_type": "item",
+                    "adjustment_name": "",
+                    "adjustment_type": "base",
+                    "commission_id":"",
                     "value": 1.20
                 }
             ],

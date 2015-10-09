@@ -542,19 +542,35 @@
                 "adjustment_name": {
                     "type": "string",
                     "required" : false,
-                    "description" : "Name of the discount being given"
+                    "description" : "Name of the discount being given -- value no longer needed"
+                },
+                "commission_id":{
+                    "type":"string",
+                    "required":true,
+                    "description":"The commission ID associated with the adjustment type.
+
+                    #Logic
+
+                    * If adjustment_type = 'base', field will be blank
+                    "
                 },
                 "adjustment_type": {
                     "type": "string",
                     "required" : false,
-                    "enum" : ["item","allocated_basket"],
-                    "description" : "The type of discount being given whether it is directly attributed to the item or allocated from a basket level discount
+                    "enum" : ["volume","base","distance", "returns","email"],
+                    "description" : "The type of discount being given
 
                     #Valid Values
 
-                    *'item'
+                    * 'base' - The commission adjustment applied to this order item is a base commission
 
-                    *'allocated_basket'
+                    * 'volume' - The commission adjustment applied to this order item is due to a basket-building rule (volume discount)
+
+                    * 'distance' - The commission adjustment applied to this order item is due to the shipping distance rule
+
+                    * 'email' - The commission adjustment applied to this order item is due to the email-opt-in rule
+
+                    * 'returns' - The commission adjustment applied to this order item is due to the waive returns rule   
 
                     "
                 },

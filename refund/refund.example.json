@@ -1,5 +1,4 @@
 {
-	"alt_refund_id":"12435123",
 	"items" : [{
 		"order_item_id" : "1123456789",
 		"alt_order_item_id" : "A1223456",
@@ -14,6 +13,5 @@
 			"shipping_cost" : 1.00,
 			"shipping_tax" : 0.07
 		}
-
 	}]
 }

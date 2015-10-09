@@ -111,13 +111,6 @@
                 },
                 "return_shipping_methods":{
                     "type":"array",
-                    "description":"The return shipping methods specified in the event of a returns exception
-
-                    #Valid Values
-                    * 'FedEx Ground'
-                    * 'UPS Ground'
-                    * 'Freight'
-                    ",
                     "items":{
                         "type":"string",
                         "enum":[
@@ -125,7 +118,13 @@
                             "UPS Ground",
                             "Freight"                 
                         ]
-                    }
+                    },
+                    "description": "The return shipping methods specified in the event of a returns exception
+
+                    #Valid Values
+                    * 'FedEx Ground'
+                    * 'UPS Ground'
+                    * 'Freight'"
                 }
             }
         }
