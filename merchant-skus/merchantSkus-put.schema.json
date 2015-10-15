@@ -71,7 +71,7 @@
 		},
 		"brand": {
 			"type": "string",
-			"maxLength" : 50,
+			"maxLength" : 100,
 			"description": "Brand of the merchant SKU
 
 			#Valid Values

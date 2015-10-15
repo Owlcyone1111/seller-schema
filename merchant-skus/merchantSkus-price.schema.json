@@ -14,11 +14,22 @@
 		},
 		"thor_current_price": {
 			"type": "number",
-			"required": true,
 			"description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED",
             "minimum": 0,
             "exclusiveMinimum": true
 		},
+        "thor_price_floor": {
+            "type": "number",
+            "description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED",
+            "minimum": 0,
+            "exclusiveMinimum": true
+        },
+        "thor_price_ceiling": {
+            "type": "number",
+            "description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED",
+            "minimum": 0,
+            "exclusiveMinimum": true
+        },
 		"fulfillment_nodes":{
 			"type":"array",
 			"required":false,
@@ -50,7 +61,19 @@
 					"description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED",
                     "minimum": 0,
                     "exclusiveMinimum": true
-				}
+				},
+                "thor_price_floor_node": {
+                    "type": "number",
+                    "description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED",
+                    "minimum": 0,
+                    "exclusiveMinimum": true
+                },
+                "thor_price_ceiling_node": {
+                    "type": "number",
+                    "description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED",
+                    "minimum": 0,
+                    "exclusiveMinimum": true
+        },
             }
         }
 	}

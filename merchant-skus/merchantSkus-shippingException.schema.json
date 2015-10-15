@@ -85,6 +85,11 @@
                         * restricted - The product cannot be shipped using the shipping method or shipping level provided
                         * exclusive - The product should only be shipped using the shipping method or shipping level provided
                         "
+                    },
+                    "per_unit":{
+                        "type":"boolean",
+                        "required":true,
+                        "description":"If true, the shipping charge amount will be applied per unit.  Otherwise, the default will divide shipping cost evenly among the number of units ordered"
                     }
                 }
             }

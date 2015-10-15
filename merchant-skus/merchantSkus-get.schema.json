@@ -28,7 +28,7 @@
 
 			"
 		},
-		"product_status" : {
+		"status" : {
 			"type" : "string",
 			"description" : "The products status after a merchant SKU is uploaded to Jet.com.
 
@@ -42,7 +42,7 @@
 
 			 "
 		},
-		"product_sub_status" : {
+		"sub_status" : {
 			"type": "array",
 			"items": {
 				"type": "string"
@@ -101,7 +101,7 @@
 		},
 		"brand": {
 			"type": "string",
-			"maxLength" : 50,
+			"maxLength" : 100,
 			"description": "Brand of the merchant SKU
 
 			#Valid Values
