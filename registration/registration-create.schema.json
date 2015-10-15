@@ -88,6 +88,29 @@
             "maxlength":5,
             "required": true,
             "description" : "The zip code for the partner address"
+        },
+        "type_of_business":{
+            "type":"string",
+            "required":true,
+            "description":"How the business is structured
+
+            #Valid Values
+            * 'Sole Proprietor/Individual'
+            * 'C Corporation'
+            * 'S Corporation'
+            * 'Partnership' 
+            * 'Limited Liability Company'
+            * 'Trust/Estate'  
+
+            ",
+            "enum":[
+                "Sole Proprietor/Individual",
+                "C Corporation",
+                "S Corporation",
+                "Partnership",
+                "Limited Liability Company",
+                "Trust/Estate"
+            ]
         }
     }
 }
