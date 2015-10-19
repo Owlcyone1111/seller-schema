@@ -1,80 +1,74 @@
 {
-    "$schema" : "http://json-schema.org/draft-03/schema",		
-	"title": "Price",
-	"type": "object",
-    "additionalProperties" : false,		
-	"description": "This schema is used to set prices for merchant SKUs.  An overall price must be set for the product.  You can also refine a price further by setting the price at the fulfillment node level.",
-	"properties": {
-		"price": {
-			"type": "number",
-			"required": true,
-            "description": "The overall price that the merchant SKU is priced at",
-            "minimum": 0,
-            "exclusiveMinimum": true
-		},
-		"thor_current_price": {
-			"type": "number",
-			"description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED",
-            "minimum": 0,
-            "exclusiveMinimum": true
-		},
-        "thor_price_floor": {
-            "type": "number",
-            "description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED",
-            "minimum": 0,
-            "exclusiveMinimum": true
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "title": "Price",
+  "type": "object",
+  "additionalProperties": false,
+  "description": "This schema is used to set prices for merchant SKUs.  An overall price must be set for the product.  You can also refine a price further by setting the price at the fulfillment node level.",
+  "properties": {
+    "price": {
+      "type": "number",
+      "required": true,
+      "description": "The overall price that the merchant SKU is priced at",
+      "exclusiveMinimum": 0
+    },
+    "thor_current_price": {
+      "type": "number",
+      "description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED",
+      "exclusiveMinimum": 0
+    },
+    "thor_price_floor": {
+      "type": "number",
+      "description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED",
+      "minimum": 0,
+      "exclusiveMinimum": true
+    },
+    "thor_price_ceiling": {
+      "type": "number",
+      "description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED",
+      "minimum": 0,
+      "exclusiveMinimum": true
+    },
+    "fulfillment_nodes": {
+      "type": "array",
+      "required": false,
+      "items": {
+        "$ref": "#/definitions/fulfillment_node_prices"
+      }
+    }
+  },
+  "definitions": {
+    "fulfillment_node_prices": {
+      "title": "FulfillmentNodePrice",
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "fulfillment_node_id": {
+          "type": "string",
+          "required": true,
+          "description": "The fulfillment node assigned in the Jet Merchant Portal for a merchant fulfillment node"
         },
-        "thor_price_ceiling": {
-            "type": "number",
-            "description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED",
-            "minimum": 0,
-            "exclusiveMinimum": true
+        "fulfillment_node_price": {
+          "type": "number",
+          "required": true,
+          "description": "The price of the merchant SKU at the fulfillment node level",
+          "exclusiveMinimum": 0
         },
-		"fulfillment_nodes":{
-			"type":"array",
-			"required":false,
-			"items":{
-				"$ref":"#/definitions/fulfillment_node_prices"
-			}
-		}
-	},
-	"definitions":{
-        "fulfillment_node_prices": {
-            "title": "FulfillmentNodePrice",
-            "additionalProperties" : false,
-            "type": "object",
-            "properties": {
-                "fulfillment_node_id": {
-                    "type": "string",
-                    "required": true,
-                    "description" : "The fulfillment node assigned in the Jet Merchant Portal for a merchant fulfillment node"
-                },
-                "fulfillment_node_price": {
-                    "type": "number", 
-                    "required": true,
-                    "description" : "The price of the merchant SKU at the fulfillment node level",
-                    "minimum": 0,
-                    "exclusiveMinimum": true
-                },
-                "thor_current_price_node": {
-					"type": "number",
-					"description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED",
-                    "minimum": 0,
-                    "exclusiveMinimum": true
-				},
-                "thor_price_floor_node": {
-                    "type": "number",
-                    "description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED",
-                    "minimum": 0,
-                    "exclusiveMinimum": true
-                },
-                "thor_price_ceiling_node": {
-                    "type": "number",
-                    "description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED",
-                    "minimum": 0,
-                    "exclusiveMinimum": true
+        "thor_current_price_node": {
+          "type": "number",
+          "description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED",
+          "exclusiveMinimum": 0
         },
-            }
+        "thor_price_floor_node": {
+          "type": "number",
+          "description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED",
+          "exclusiveMinimum": 0
+        },
+        "thor_price_ceiling_node": {
+          "type": "number",
+          "description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED",
+          "exclusiveMinimum": 0
         }
-	}
+      }
+    }
+  }
 }
