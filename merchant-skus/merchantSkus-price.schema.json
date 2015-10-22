@@ -20,13 +20,13 @@
       "type": "number",
       "description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED",
       "minimum": 0,
-      "exclusiveMinimum": true
+      "exclusiveMinimum": 0
     },
     "thor_price_ceiling": {
       "type": "number",
       "description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED",
       "minimum": 0,
-      "exclusiveMinimum": true
+      "exclusiveMinimum": 0
     },
     "fulfillment_nodes": {
       "type": "array",
