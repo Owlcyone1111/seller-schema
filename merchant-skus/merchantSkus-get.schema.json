@@ -531,7 +531,62 @@
 		"buy_url":{
 			"type":"string",
 			"description":"The buy URL where this product is located."
-		}		
+		},
+		"fulfillment_nodes": {
+            "type": "array",
+            "items": {
+                "title": "ShippingExceptionNodeArray",
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "fulfillment_node_id": {
+                        "type": "string",
+                        "description": "Jet's unique ID for a given fulfillment node"
+                    },
+                    "shipping_exceptions": {
+                        "$ref": "#/definitions/shipping_exception_array"
+                    }
+                }
+            }
+        },
+        "correlation_id":{
+        	"type":"string",
+        	"description":"The ID associated with a pricing control message"
+        },
+        "price":{
+        	"type":"number",
+        	"description":"The price for the merchant SKU"
+        },
+        "time_to_return":{
+            "type":"integer",
+            "minimum":0,
+            "maximum":30,
+            "description":"The number of days after purchase a customer can return the item"
+        },
+        "return_location_ids":{
+            "type": "array",
+            "description": "Jet's unique ID for a given returns location",
+            "items":{
+                "type":"string"
+            }
+        },
+        "return_shipping_methods": {
+            "type": "array",
+            "description": "A specific shipping method e.g. UPS Ground, UPS Next Day Air, FedEx Home
+
+            #Valid Values
+            * 'UPS Ground'
+            * 'FedEx Ground'
+            * 'Freight'",
+            "items":{
+                "type":"string",
+                "enum":[
+                    "UPS Ground",
+                    "FedEx Ground",
+                    "Freight"                 
+                ]
+            }
+        }		
 	},
 	"definitions": {
 		"attribute" : {
@@ -619,6 +674,76 @@
                     "type": "string", 
                     "required": true,
                     "description" : "The absolute location where Jet.com can retrieve the image"
+                }
+            }
+        },
+        "shipping_exception_array": {
+            "type": "array",
+            "items": {
+                "title": "ShippingExceptionItem",
+                "type": "object",
+                "additionalProperties": false,
+                "description": "Shipping exception of particular fulfillment node",
+                "properties": {
+                    "service_level": {
+                        "type": "string",
+                        "enum": [ "Standard", "Expedited", "Scheduled", "NextDay", "SecondDay" ],
+                        "description": "Generic descriptions of shipment delivery times
+
+                        #Logic 
+                        This field should be used if you are defining your shipping options by service_level 
+                        
+                        #Valid Values 
+                        *Standard
+                        *Expedited 
+                        *Scheduled
+                        *NextDay 
+                        *SecondDay"
+                    },
+                    "shipping_method": {
+                        "type": "string",
+                        "description": "A specific shipping method e.g. UPS Ground, UPS Next Day Air, FedEx Home
+
+                        #Logic 
+                        This should be used if you want the change to apply to a specific shipping_method.  If shipping_carrier is populated, this field will be ignored. Use this field if you are defining your shipping
+                        options by 'shipping_method' "
+
+                    },
+                    "override_type": {
+                        "type": "string",
+                        "enum": [ "Additional charge", "Override charge" ],
+                        "description": "The type of shipping override, \"Additional charge\" or \"Override charge\" (Override Charge could be used to lower shipping)
+
+                        #Valid Values
+
+                        *'Additional charge' - A charge that is added to the default shipping charge 
+                        *'Override charge' - A charge that overrides the default shipping charge"
+                    },
+                    "shipping_charge_amount": {
+                        "type": "number",
+                        "minimum":0,
+                        "description": "The amount added to your default shipping charge when \"OverrideType\"= \"Additional charge\" and the total amount charged when \"OverrideType\" =  \"Override charge\"
+
+                        #Logic 
+                        
+                        This field is required if override_type is populated
+                        "
+                    },
+                    "shipping_exception_type": {
+                        "type": "string",
+                        "enum": ["restricted","exclusive"],
+                        "description": "Indicates if you want the product to be shipped exclusively (only with) or restrictively (not including) via the shipping level of shipping method provided
+
+                        #Valid Values
+                        * restricted - The product cannot be shipped using the shipping method or shipping level provided
+                        * exclusive - The product should only be shipped using the shipping method or shipping level provided
+                        "
+                    },
+                    "per_unit":{
+                        "type":"boolean",
+                        "required":true,
+                        "description":"If true, the shipping charge amount will be applied per unit.  Otherwise, the default will divide shipping cost evenly among the number of units ordered"
+                    }
                 }
             }
         }

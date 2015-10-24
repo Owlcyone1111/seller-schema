@@ -1,74 +1,109 @@
 {
-	"product_title": "My Product",
-	"jet_browse_node_id": 1000000,
-	"standard_product_codes" : [
-		{	
-			"standard_product_code": "123456789012",
-			"standard_product_code_type": "UPC"
-		}
-	],
-	"product_status":"Available for Purchase",
-	"multipack_quantity": 1,
-	"brand": "My Product's Brand",
-	"manufacturer": "My Product's Manufacturer",
-	"mfr_part_number": "AB-9874",
-	"product_description": "This is a terrific product that everyone should own.",
-	"bullets": [
-		"This is bullet line 1",
-		"This is bullet line 2"
-	],
-	"number_units_for_price_per_unit": 1,
-	"type_of_unit_for_price_per_unit": "each",
-	"shipping_weight_pounds": 10,
-	"package_length_inches": 12,
-	"package_width_inches": 12,
-	"package_height_inches": 12,
-	"display_length_inches": 15,
-	"display_width_inches": 12,
-	"display_height_inches": 14,
-	"prop_65": true,
-	"legal_disclaimer_description": "Legal stuff goes here",
-	"cpsia_cautionary_statements": [
-		"choking hazard balloon",
-		"choking hazard small parts"
-	],
-	"country_of_origin": "U.S.A.",
-	"safety_warning": "warning text goes here",
-	"start_selling_date": "1988-01-01T01:43:30.0000000-07:00",
-	"fulfillment_time": 1,
-	"msrp": 6.99,
-	"map_price": 6.49,
-	"map_implementation" : "101",
-	"product_tax_code": "123",
-	"no_return_fee_adjustment": 0.01,
-	"exclude_from_fee_adjustments": false,
-	"ships_alone":false,
-	"attributes_node_specific" : [
-		{
-			"attribute_id" : 95,
-			"attribute_value" : "80",
-			"attribute_value_unit" : "count"
-		},
-		{
-			"attribute_id" : 119,
-			"attribute_value" : "aqua"
-		},
-		{
-			"attribute_id" : 2,
-			"attribute_value" : "blue"
-		}
-	],
-	"variation_refinements":[1,2],
-	"main_image_url" : "http://www.mydomain.com/images/myImage.png",
-	"swatch_image_url" : "http://www.mydomain.com/images/myImage.png",
-	"alternate_images" : [
-		{
-			"image_slot_id" : 1,
-			"image_url" : "http://www.mydomain.com/images/myImage.png"
-		},
-		{
-			"image_slot_id" : 2,
-			"image_url" : "http://www.mydomain.com/images/myImage.png"
-		}
-	]	
+  "alternate_images": [
+    {
+      "image_slot_id": 1,
+      "image_url": "http://www.mydomain.com/images/myImage.png"
+    },
+    {
+      "image_slot_id": 2,
+      "image_url": "http://www.mydomain.com/images/myImage.png"
+    }
+  ],
+  "attributes_node_specific": [
+    {
+      "attribute_id": 95,
+      "attribute_value": "80",
+      "attribute_value_unit": "count"
+    },
+    {
+      "attribute_id": 119,
+      "attribute_value": "aqua"
+    },
+    {
+      "attribute_id": 2,
+      "attribute_value": "blue"
+    }
+  ],
+  "brand": "My Product's Brand",
+  "bullets": [
+    "This is bullet line 1",
+    "This is bullet line 2"
+  ],
+  "country_of_origin": "U.S.A.",
+  "cpsia_cautionary_statements": [
+    "choking hazard balloon",
+    "choking hazard small parts"
+  ],
+  "display_height_inches": 14,
+  "display_length_inches": 15,
+  "display_width_inches": 12,
+  "exclude_from_fee_adjustments": false,
+  "fulfillment_time": 1,
+  "jet_browse_node_id": 1000000,
+  "legal_disclaimer_description": "Legal stuff goes here",
+  "main_image_url": "http://www.mydomain.com/images/myImage.png",
+  "manufacturer": "My Product's Manufacturer",
+  "map_implementation": "101",
+  "map_price": 6.49,
+  "mfr_part_number": "AB-9874",
+  "msrp": 6.99,
+  "multipack_quantity": 1,
+  "no_return_fee_adjustment": 0.01,
+  "number_units_for_price_per_unit": 1,
+  "package_height_inches": 12,
+  "package_length_inches": 12,
+  "package_width_inches": 12,
+  "product_description": "This is a terrific product that everyone should own.",
+  "product_tax_code": "123",
+  "product_title": "My Product",
+  "prop_65": true,
+  "safety_warning": "warning text goes here",
+  "shipping_weight_pounds": 10,
+  "ships_alone": false,
+  "standard_product_codes": [
+    {
+      "standard_product_code": "123456789012",
+      "standard_product_code_type": "UPC"
+    }
+  ],
+  "swatch_image_url": "http://www.mydomain.com/images/myImage.png",
+  "type_of_unit_for_price_per_unit": "each",
+  "price": 29.99,
+  "inventory_by_fulfillment_node": [
+    {
+      "fulfillment_node_id": "f1dfb5d49c74466eae74133bef28a60a",
+      "quantity": 1
+    }
+  ],
+  "relationship": "Variation",
+  "children_skus": [
+    {
+      "merchant_sku_id": "3e11d939a8bb41e2b6ec0e2c52d547a9",
+      "merchant_sku": "fake"
+    }
+  ],
+  "variation_refinements": [
+    23,
+    4
+  ],
+  "fulfillment_nodes": [
+    {
+      "fulfillment_node_id": "f1dfb5d49c74466eae74133bef28a60a",
+      "shipping_exceptions": [
+        {
+          "override_type": "Additional charge",
+          "shipping_exception_type": "restricted",
+          "service_level": "SecondDay",
+          "shipping_charge_amount": 3.25
+        }
+      ]
+    }
+  ],
+  "return_location_ids": [
+    "2a9b9e9cc31f488296d52d161a8231de"
+  ],
+  "time_to_return": 5,
+  "return_shipping_methods": [
+    "UPS Ground"
+  ]
 }
