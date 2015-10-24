@@ -70,47 +70,90 @@
                     "carrier": {
                         "type": "string",
                         "enum": [
-                            "UPS",
-                            "USPS",
                             "FedEx",
+                            "FedEx SmartPost",
+                            "FedEx Freight",
+                            "UPS",
+                            "UPS Freight",
+                            "UPS Mail Innovations",
+                            "UPS SurePost",
                             "OnTrac",
-                            "Laser Ship",
-                            "A1",
-                            "Eastern Connection",
-                            "UDS",
-                            "UES",
-                            "CEVA",
-                            "ABF",
+                            "OnTrac Direct Post",
                             "DHL",
+                            "DHL Global Mail",
+                            "USPS",
+                            "CEVA",
+                            "Laser Ship",
+                            "Spee Dee",
+                            "A Duie Pyle",
+                            "A1",
+                            "ABF",
                             "APEX",
+                            "Averitt ",
+                            "Dynamex",
+                            "Eastern Connection",
+                            "Ensenda",
+                            "Estes",
+                            "Land Air Express",
+                            "Lone Star",
+                            "Meyer",
+                            "New Penn",
                             "Pilot",
                             "Prestige",
-                            "Spee Dee",
-                            "Lone Star",
+                            "RBF",
+                            "Reddaway",
+                            "RL Carriers",
+                            "Roadrunner",
+                            "Southeastern Freight",
+                            "UDS",
+                            "UES",
+                            "YRC",
                             "Other"
+
                         ],
                         "description": "The carrier that will complete final delivery of the shipment.   The tracking number should be for this carrier. Must be one of the valid values.
 
                         #Valid Values
 
-                        * 'UPS'
-                        * 'USPS'
                         * 'FedEx'
+                        * 'FedEx SmartPost'
+                        * 'FedEx Freight'
+                        * 'UPS'
+                        * 'UPS Freight'
+                        * 'UPS Mail Innovations'
+                        * 'UPS SurePost'
                         * 'OnTrac'
-                        * 'Laser Ship' 
-                        * 'A1' 
-                        * 'Eastern Connection'
-                        * 'UDS' - United Delivery Service
-                        * 'UES' - United Express System
-                        * 'CEVA'
-                        * 'ABF'
+                        * 'OnTrac Direct Post'
                         * 'DHL'
+                        * 'DHL Global Mail'
+                        * 'USPS'
+                        * 'CEVA'
+                        * 'Laser Ship'
+                        * 'Spee Dee'
+                        * 'A Duie Pyle'
+                        * 'A1'
+                        * 'ABF'
                         * 'APEX'
+                        * 'Averitt '
+                        * 'Dynamex'
+                        * 'Eastern Connection'
+                        * 'Ensenda'
+                        * 'Estes'
+                        * 'Land Air Express'
+                        * 'Lone Star'
+                        * 'Meyer'
+                        * 'New Penn'
                         * 'Pilot'
                         * 'Prestige'
-                        * 'Spee Dee' 
-                        * 'Lone Star'
-                        * 'Other' - Any carrier not listed above
+                        * 'RBF'
+                        * 'Reddaway'
+                        * 'RL Carriers'
+                        * 'Roadrunner'
+                        * 'Southeastern Freight'
+                        * 'UDS' - United Delivery Service
+                        * 'UES' - United Express System
+                        * 'YRC'
+                        * 'Other' - Any carrier not listed above (please email shipping@jet.com if you would like a carrier added to this list)
                         "
                     },
                     "carrier_pick_up_date": {
