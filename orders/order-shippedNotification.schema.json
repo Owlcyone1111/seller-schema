@@ -31,34 +31,26 @@
                     },
                     "response_shipment_date": {
                         "type": "string",
+						"format" : "date-time",
                         "description": "Date/Time that a given shipment was shipped
-
                         #Valid Values
-
                         This date should be in ISO 8601 format: yyyy-MM-ddTHH:mm:ss.fffffff-HH:MM
-
                         Example: 2009-06-15T13:45:30.0000000-07:00
-
                         "
                     },
                     "response_shipment_method": {
                         "type": "string",
                         "description": "Shipping method used for the given shipment
-
                         #Valid Values
-
                         List of ShippingMethods set up by you"
                     },
                     "expected_delivery_date": {
                         "type": "string",
+						"format" : "date-time",
                         "description": "Date/Time that the shipment is expected to be delivered to the customer
-
                         #Valid Values
-
                         This date should be in ISO 8601 format: yyyy-MM-ddTHH:mm:ss.fffffff-HH:MM
-
                         Example: 2009-06-15T13:45:30.0000000-07:00
-
                         "
                     },
                     "ship_from_zip_code": {
@@ -112,9 +104,7 @@
 
                         ],
                         "description": "The carrier that will complete final delivery of the shipment.   The tracking number should be for this carrier. Must be one of the valid values.
-
                         #Valid Values
-
                         * 'FedEx'
                         * 'FedEx SmartPost'
                         * 'FedEx Freight'
@@ -158,6 +148,7 @@
                     },
                     "carrier_pick_up_date": {
                         "type": "string",
+						"format" : "date-time",
                         "description": "Date/Time that the carrier pick up the customer shipment from the facility where the shipment originated"
                     },
                     "shipment_items": {
