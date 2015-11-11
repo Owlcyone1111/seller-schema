@@ -160,6 +160,8 @@
             * Tools & Home Improvement
             * Video Games
             * Household Products
+            * Seasonal, Holiday & Party
+
             ",
             "enum":[
                 "Books & Other Media",
@@ -181,7 +183,8 @@
                 "Furniture",
                 "Tools & Home Improvement",
                 "Video Games",
-                "Household Products"
+                "Household Products",
+                "Seasonal, Holiday & Party"
             ]
         },
         "other_categories":{
@@ -209,7 +212,8 @@
                     "Furniture",
                     "Tools & Home Improvement",
                     "Video Games",
-                    "Household Products"
+                    "Household Products",
+                    "Seasonal, Holiday & Party"
                 ]
             },
             "description":"Please enter the other categories you sell in 
@@ -236,6 +240,7 @@
             * Tools & Home Improvement
             * Video Games
             * Household Products
+            * Seasonal, Holiday & Party
             "
         },
         "used_products":{
