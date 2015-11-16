@@ -76,7 +76,7 @@
 
 			#Valid Values
 
-			1 to 50 characters
+			1 to 100 characters
 
 			#Logic
 
@@ -86,12 +86,12 @@
 		},
 		"manufacturer": {
 			"type": "string",
-			"maxLength" : 50,
+			"maxLength" : 100,
 			"description": "Manufacturer of the merchant SKU
 
 			#Valid Values
 
-			1 to 50 characters
+			1 to 100 characters
 
 			"
 		},
