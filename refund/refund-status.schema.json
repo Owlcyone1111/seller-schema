@@ -23,7 +23,9 @@
             * 'processing' - Refund is processing in our system
             * 'accepted' - Refund has been completed
             * 'rejected - refund conflicts with returns policy'
-            * 'rejected - customer card not valid' 
+            * 'rejected - customer card not valid'
+            * 'rejected - transaction not yet settled'
+            * 'rejected - already refunded'
 
             ",
             "enum": [
@@ -31,7 +33,9 @@
                 "processing",
                 "accepted",
                 "rejected - refund conflicts with returns policy",
-                "rejected - customer card not valid"
+                "rejected - customer card not valid",
+                "rejected - transaction not yet settled",
+                "rejected - already refunded"
             ]
         },
         "merchant_order_id": {
