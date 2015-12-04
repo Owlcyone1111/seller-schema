@@ -4,13 +4,6 @@
 			"fulfillment_node_id" : "XISNDKSANDSFNCSJKFDNFKJHFJD",
 			"shipping_exceptions" :  [
 				{
-
-					"service_level": "Standard",
-					"override_type": "Additional charge",
-					"shipping_charge_amount": 3.25,
-					"shipping_exception_type": "restricted"
-				},
-				{
 					"shipping_method": "UPS Ground",
 					"override_type": "Additional charge",
 					"shipping_charge_amount": 3.25,
@@ -29,10 +22,10 @@
 					"shipping_exception_type": "restricted"
 				},
 				{
-					"service_level": "Standard",
+					"service_level": "FedEx Ground",
 					"override_type": "Additional charge",
 					"shipping_charge_amount": 3.25,
-					"shipping_exception_type": "exclusive"
+					"shipping_exception_type": "restricted"
 				}
 			]
 		}

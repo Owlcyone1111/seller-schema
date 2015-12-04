@@ -49,15 +49,72 @@
                     },
                     "shipping_method": {
                         "type": "string",
+                        "enum":[
+                         "DHL Global Mail",
+                         "FedEx 2 Day",
+                         "FedEx Express Saver",
+                         "FedEx First Overnight",
+                         "FedEx Ground",
+                         "FedEx Home Delivery",
+                         "FedEx Priority Overnight",
+                         "FedEx Smart Post",
+                         "FedEx Standard Overnight",
+                         "Freight",
+                         "Ontrac Ground",
+                         "UPS 2nd Day Air AM",
+                         "UPS 2nd Day Air",
+                         "UPS 3 Day Select",
+                         "UPS Ground",
+                         "UPS Mail Innovations",
+                         "UPS Next Day Air Saver",
+                         "UPS Next Day Air",
+                         "UPS SurePost",
+                         "USPS First Class Mail",
+                         "USPS Media Mail",
+                         "USPS Priority Mail Express",
+                         "USPS Priority Mail",
+                         "USPS Standard Post"
+
+                        ],
                         "description": "A specific shipping method e.g. UPS Ground, UPS Next Day Air, FedEx Home
 
-                        #Logic 
+                        # Logic 
                         This should be used if you want the change to apply to a specific shipping_method.  If shipping_carrier is populated, this field will be ignored. Use this field if you are defining your shipping
-                        options by 'shipping_method' "
+                        options by 'shipping_method' 
+
+                        # Valid Values
+
+                        'DHL Global Mail',
+                        'FedEx 2 Day',
+                        'FedEx Express Saver',
+                        'FedEx First Overnight',
+                        'FedEx Ground',
+                        'FedEx Home Delivery',
+                        'FedEx Priority Overnight',
+                        'FedEx Smart Post',
+                        'FedEx Standard Overnight',
+                        'Freight',
+                        'Ontrac Ground',
+                        'UPS 2nd Day Air AM',
+                        'UPS 2nd Day Air',
+                        'UPS 3 Day Select',
+                        'UPS Ground',
+                        'UPS Mail Innovations',
+                        'UPS Next Day Air Saver',
+                        'UPS Next Day Air',
+                        'UPS SurePost',
+                        'USPS First Class Mail',
+                        'USPS Media Mail',
+                        'USPS Priority Mail Express',
+                        'USPS Priority Mail',
+                        'USPS Standard Post'
+
+                        "
 
                     },
                     "override_type": {
                         "type": "string",
+                        "required":true,
                         "enum": [ "Additional charge", "Override charge" ],
                         "description": "The type of shipping override, \"Additional charge\" or \"Override charge\" (Override Charge could be used to lower shipping)
 
@@ -68,6 +125,7 @@
                     },
                     "shipping_charge_amount": {
                         "type": "number",
+                        "required":true,
                         "minimum":0,
                         "description": "The amount added to your default shipping charge when \"OverrideType\"= \"Additional charge\" and the total amount charged when \"OverrideType\" =  \"Override charge\"
 
@@ -78,6 +136,7 @@
                     },
                     "shipping_exception_type": {
                         "type": "string",
+                        "required":true,
                         "enum": ["restricted","exclusive"],
                         "description": "Indicates if you want the product to be shipped exclusively (only with) or restrictively (not including) via the shipping level of shipping method provided
 
@@ -85,11 +144,6 @@
                         * restricted - The product cannot be shipped using the shipping method or shipping level provided
                         * exclusive - The product should only be shipped using the shipping method or shipping level provided
                         "
-                    },
-                    "per_unit":{
-                        "type":"boolean",
-                        "required":true,
-                        "description":"If true, the shipping charge amount will be applied per unit.  Otherwise, the default will divide shipping cost evenly among the number of units ordered"
                     }
                 }
             }
