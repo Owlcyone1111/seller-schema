@@ -277,7 +277,7 @@
 		},
 		"safety_warning": {
 			"type": "string",
-			"maxLength" : 500,
+			"maxLength" : 2000,
 			"description": "If applicable, use to supply any associated warnings for your product.
 
 			#Valid Values
@@ -458,11 +458,13 @@
 				"attribute_value" : {
 					"type" : "string",
 					"minLength":1,
+					"maxlength":100,
 					"description" : "The value for the attribute. For example, if the attribute is size you may pass 'large' or if the the attribute is weight, you may pass '22'. For attributes like weight the unit will be passed in the next field."
 				},
 				"attribute_value_unit" : {
 					"type" : "string",
 					"minLength":1,
+					"maxlength":100,
 					"description" : "If the attribute_value requires a unit, then you pass the unit here."
 				}
             }

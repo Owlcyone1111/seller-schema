@@ -34,10 +34,11 @@
 
 			#Valid Values 
 
-			* Rejected - The SKU is missing required values
-			* Processing - The SKU is current being processed in Jet's product catalog
-			* Listing Data Needed - More data is needed to list the product on Jet.com
-			* Ready To List - The product can be listed on Jet.com and requires inventory
+			* Archived - The SKU is 'inactive' and is not available for purchase on Jet.com.  All updated to this SKU will be ignored.
+			* Excluded - The SKU is not able to be sold on Jet.com.  Please see Partner Policy for more details on SKUs accepted
+			* Unauthorized - The SKU is not authorized to be sold
+			* Under Jet Review - The SKU is current being processed in Jet's product catalog
+			* Missing Listing Data - More data is needed to list the product on Jet.com
 			* Available For Purchase - The product is listed on Jet.com and can be purchased by a customer
 
 			 "
@@ -51,9 +52,18 @@
 
 			#Valid Values
 
-			* Image Needed - A main image is needed to list the product on Jet.com
-			* Price Needed - A price is needed to list the product on Jet.com
-			* Attribute Data Needed - Additional preferred attributes are requested but not required (the product can be listed without clearing this sub status)
+			* Additional SKU ID needed - we need a UPC, ASIN, GTIN, etc. to identify a SKU
+			* Incorrect multipack quantity - based on our matching algorithm, the product offer may have the incorrect multipack quantity
+			* Invalid category - the category provided does not exist or needs to be mapped to a more specific category
+			* Invalid SKU identifier
+			* Missing attribute value
+			* Missing brand
+			* Missing category
+			* Missing image
+			* Missing price
+			* Missing shipping weight
+			* Missing title
+			* Missing variation information
 
 			"
 		},
@@ -72,7 +82,7 @@
 		"standard_product_codes" : {
 			"type" : "array",
 			"minItems" : 1,
-			"description" : "The barcode or barcode that is associated with the product
+			"description" : "The barcode or barcodes that is associated with the product
 
 			#Logic
 
@@ -307,7 +317,7 @@
 		},
 		"safety_warning": {
 			"type": "string",
-			"maxLength" : 500,
+			"maxLength" : 2000,
 			"description": "If applicable, use to supply any associated warnings for your product.
 
 			#Valid Values
@@ -486,7 +496,6 @@
 		},
 		"group_title": {
 			"type": "string",
-			"required": true,
 			"minLength" : 5,
 			"maxLength" : 500,
 			"description": "The title of the product group.  This should not included attributes.
@@ -515,8 +524,18 @@
 		"children_skus": {
 			"type": "array",
 			"items" : {
-					"type" : "string",
-					"description" : "merchant SKU"
+					"type" : "object",
+					"description" : "merchant SKU",
+					"properties":{
+						"merchant_sku_id":{
+							"type":"string",
+							"description":"The Jet-generated merchant SKU ID associated with the SKU"
+						},
+						"merchant_sku":{
+							"type":"string",
+							"description":"The user-defined merchant SKU associated with the product offer"
+						}
+					}
 				},
 			"description": "The merchant SKUs that are a the child SKUs
 				
@@ -602,11 +621,13 @@
 				"attribute_value" : {
 					"type" : "string",
 					"minLength":1,
+					"maxLength":100,
 					"description" : "The value for the attribute. For example, if the attribute is size you may pass 'large' or if the the attribute is weight, you may pass '22'. For attributes like weight, the unit will be passed in the next field"
 				},
 				"attribute_value_unit" : {
 					"type" : "string",
 					"minLength":1,
+					"maxLength":100,
 					"description" : "If the attribute_value requires a unit, then you pass the unit here."
 				}
             }
@@ -711,6 +732,7 @@
                     },
                     "override_type": {
                         "type": "string",
+                        "required":true,
                         "enum": [ "Additional charge", "Override charge" ],
                         "description": "The type of shipping override, \"Additional charge\" or \"Override charge\" (Override Charge could be used to lower shipping)
 
@@ -721,6 +743,7 @@
                     },
                     "shipping_charge_amount": {
                         "type": "number",
+                        "required":true,
                         "minimum":0,
                         "description": "The amount added to your default shipping charge when \"OverrideType\"= \"Additional charge\" and the total amount charged when \"OverrideType\" =  \"Override charge\"
 
@@ -731,6 +754,7 @@
                     },
                     "shipping_exception_type": {
                         "type": "string",
+                        "required":true,
                         "enum": ["restricted","exclusive"],
                         "description": "Indicates if you want the product to be shipped exclusively (only with) or restrictively (not including) via the shipping level of shipping method provided
 
@@ -738,11 +762,6 @@
                         * restricted - The product cannot be shipped using the shipping method or shipping level provided
                         * exclusive - The product should only be shipped using the shipping method or shipping level provided
                         "
-                    },
-                    "per_unit":{
-                        "type":"boolean",
-                        "required":true,
-                        "description":"If true, the shipping charge amount will be applied per unit.  Otherwise, the default will divide shipping cost evenly among the number of units ordered"
                     }
                 }
             }

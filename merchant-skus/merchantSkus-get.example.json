@@ -69,12 +69,6 @@
   "swatch_image_url": "http://www.mydomain.com/images/myImage.png",
   "type_of_unit_for_price_per_unit": "each",
   "price": 29.99,
-  "inventory_by_fulfillment_node": [
-    {
-      "fulfillment_node_id": "f1dfb5d49c74466eae74133bef28a60a",
-      "quantity": 1
-    }
-  ],
   "relationship": "Variation",
   "children_skus": [
     {
