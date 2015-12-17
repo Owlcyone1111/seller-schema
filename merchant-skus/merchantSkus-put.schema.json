@@ -282,7 +282,7 @@
 
 			#Valid Values
 
-			Maximum of 500 characters"
+			Maximum of 2000 characters"
 		},
 		"start_selling_date": {
 			"type": "string",
