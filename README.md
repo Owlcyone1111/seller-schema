@@ -1,6 +1,6 @@
 # Partner Api Schema and tools
 
-Partner API schema is a dialect of [Json Schema](http://json-schema.org/). It was implemented as Jet-specific replacement for excellent (Json.NET Schema)[http://www.newtonsoft.com/jsonschema]
+Partner API schema is a dialect of [Json Schema](http://json-schema.org/). It was implemented as Jet-specific replacement for excellent [Json.NET Schema](http://www.newtonsoft.com/jsonschema)
 
 List of differences from standard and limitations:
 
