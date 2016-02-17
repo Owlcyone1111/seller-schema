@@ -81,7 +81,7 @@
                             "A1",
                             "ABF",
                             "APEX",
-                            "Averitt ",
+                            "Averitt",
                             "Dynamex",
                             "Eastern Connection",
                             "Ensenda",
@@ -100,11 +100,15 @@
                             "UDS",
                             "UES",
                             "YRC",
+                            "GSO",
+                            "A&M Trucking",
+                            "SAIA Freight",
                             "Other"
 
                         ],
                         "description": "The carrier that will complete final delivery of the shipment.   The tracking number should be for this carrier. Must be one of the valid values.
-                        #Valid Values
+                        
+                        # Valid Values
                         * 'FedEx'
                         * 'FedEx SmartPost'
                         * 'FedEx Freight'
@@ -124,7 +128,7 @@
                         * 'A1'
                         * 'ABF'
                         * 'APEX'
-                        * 'Averitt '
+                        * 'Averitt'
                         * 'Dynamex'
                         * 'Eastern Connection'
                         * 'Ensenda'
@@ -143,6 +147,9 @@
                         * 'UDS' - United Delivery Service
                         * 'UES' - United Express System
                         * 'YRC'
+                        * 'GSO',
+                        * 'A&M Trucking',
+                        * 'SAIA Freight',
                         * 'Other' - Any carrier not listed above (please email shipping@jet.com if you would like a carrier added to this list)
                         "
                     },
