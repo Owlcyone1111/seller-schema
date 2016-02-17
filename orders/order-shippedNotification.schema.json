@@ -77,6 +77,7 @@
                             "CEVA",
                             "Laser Ship",
                             "Spee Dee",
+                            "A&M Trucking",
                             "A Duie Pyle",
                             "A1",
                             "ABF",
@@ -86,6 +87,7 @@
                             "Eastern Connection",
                             "Ensenda",
                             "Estes",
+                            "GSO",
                             "Land Air Express",
                             "Lone Star",
                             "Meyer",
@@ -96,6 +98,7 @@
                             "Reddaway",
                             "RL Carriers",
                             "Roadrunner",
+                            "SAIA Freight",
                             "Southeastern Freight",
                             "UDS",
                             "UES",
@@ -124,6 +127,7 @@
                         * 'CEVA'
                         * 'Laser Ship'
                         * 'Spee Dee'
+                        * 'A&M Trucking'
                         * 'A Duie Pyle'
                         * 'A1'
                         * 'ABF'
@@ -133,6 +137,7 @@
                         * 'Eastern Connection'
                         * 'Ensenda'
                         * 'Estes'
+                        * 'GSO'
                         * 'Land Air Express'
                         * 'Lone Star'
                         * 'Meyer'
@@ -143,6 +148,7 @@
                         * 'Reddaway'
                         * 'RL Carriers'
                         * 'Roadrunner'
+                        * 'SAIA Freight'
                         * 'Southeastern Freight'
                         * 'UDS' - United Delivery Service
                         * 'UES' - United Express System
