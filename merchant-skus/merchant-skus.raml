@@ -6,7 +6,7 @@ version: v0.1
 protocols: [HTTPS]
 mediaType: application/json
 
-/merchant-skus/?offset={offset}&limit={limit}:
+/merchant-skus:
     get:
         description: This method will list all merchant SKU links.  The variable {offset} refers to the starting location on the page and {limit} refers to the number of results returned.  If no {offset} or {limit} are specified, the first 1,000 SKUs are returned
         responses:

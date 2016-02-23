@@ -89,7 +89,7 @@
                     
                     *'received wrong item than what was ordered'
 
-                    *'wrong quantity received"
+                    *'wrong quantity received'"
                 },
                 "refund_feedback" : {
                     "type" : "string",

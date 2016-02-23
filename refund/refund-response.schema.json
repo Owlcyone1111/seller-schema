@@ -31,6 +31,7 @@
                 "rejected - customer card not valid",
                 "rejected - transaction not yet settled",
                 "rejected - already refunded"
+                // rejected other
             ]
         }
     }

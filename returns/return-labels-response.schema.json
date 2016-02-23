@@ -60,6 +60,11 @@
 						}
 					}
 				},
+                "product_title":{
+                    "type":"string",
+                    "required":true,
+                    "description":"The product title for the SKU"
+                },
                 "merchant_order_item_id":{
                     "type":"string",
                     "required":true,
