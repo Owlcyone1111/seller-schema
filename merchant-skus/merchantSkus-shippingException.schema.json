@@ -34,7 +34,7 @@
                 "properties": {
                     "service_level": {
                         "type": "string",
-                        "enum": [ "Standard", "Expedited", "Scheduled", "Next Day", "Second Day" ],
+                        "enum": [ "Standard", "Expedited", "Scheduled (freight)", "Next Day", "Second Day" ],
                         "description": "Generic descriptions of shipment delivery times
 
                         #Logic 

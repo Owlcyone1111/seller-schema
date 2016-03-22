@@ -8,6 +8,9 @@
             "required" : true,
             "description" : "Fulfillment node Id as provided by Jet"
             },
+        "ship_to_location":{
+            "$ref":"#/definitions/address"
+        },
     	"items": {
             "type": "array",
             "minItems": 1,
@@ -36,5 +39,39 @@
                 }
     		}
     	}
+    },
+    "definitions":{
+        "address": {
+            "title": "Address",
+            "additionalProperties" : false,
+            "type": "object",
+            "properties": {
+                "address1": {
+                    "type": "string",
+                    "required": true,
+                    "description" : "Line 1 of the address"
+                },
+                "address2": {
+                    "type": "string", 
+                    "required": false,
+                    "description" : "line 2 of the address"
+                },
+                "city": {
+                    "type": "string",
+                    "required": true,
+                    "description" : "city of the address"
+                },
+                "state": {
+                    "type": "string",
+                    "required": true,
+                    "description" : "state of the address"
+                },
+                "zip_code": {
+                    "type": "string",
+                    "required": true,
+                    "description" : "zip code of the address"
+                }
+            }
+        }
     }
 }
