@@ -1,0 +1,39 @@
+{
+	"title": "TaxCategoryRule",
+	"type": "object",
+	"additionalProperties" : false,
+    "description": "The category default tax code chosen",
+	"properties":{
+        "tax_category_rules":{
+            "type":"array",
+            "description":"The default tax code chosen for each category",
+            "items":{
+                "$ref":"#/definition/tax_category"
+            }
+        }
+    },
+    "definition":{
+        "tax_category":{
+            "type":"object",
+            "additionalProperties":false,
+            "properties": {
+                "category_name":{
+                    "type":"string",
+                    "required":true,
+                    "description":"The name of the category"
+                    //probably don't need to write this to the table, but we can join on the category table to get the name
+                },
+                "category_id":{
+                    "type":"integer",
+                    "required":true,
+                    "description":"The category ID for the node"
+                },
+                "tax_code":{
+                    "type":"string",
+                    "required":true,
+                    "description":"The default tax code set for this category"
+                }
+            }
+        }
+    }
+}

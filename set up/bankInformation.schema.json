@@ -1,0 +1,36 @@
+{
+	"title": "BankAccountInformation",
+	"type": "object",
+	"additionalProperties" : false,
+    "description": "The bank information for this merchant account",
+	"properties": {
+		"bank_name":{
+            "type":"string",
+            "required":true,
+            "description":"The name of your bank",
+            "minLength":1,
+            "maxLength":50
+        },
+        "routing_number":{
+            "type":"string",
+            "required":true,
+            "minLength":1,
+            "maxLength":20,
+            "description":"The routing number for this bank account"
+        },
+        "bank_account_holder":{
+            "type":"string",
+            "required":true,
+            "description":"The person/entity whose name is on the account",
+            "minLength":1,
+            "maxLength":50
+        },
+        "encrypted_account_number":{
+            "type":"string",
+            "required":true,
+            "description":"The encrypted account number for this bank",
+            "minLength":1,
+            "maxLength":100
+        }  
+    }
+}

@@ -1,0 +1,53 @@
+{
+	"title": "TaxCollection",
+	"type": "object",
+	"additionalProperties" : false,
+    "description": "The tax collection settings for this merchant account",
+    "properties":{
+        "tax_collection":{
+            "type":"array",
+            "description":"The tax collection settings for this SKU",
+            "items":{
+                "$ref":"#/definition/tax_collection_settings"
+            }
+        }
+    },
+    "definition":{
+        "tax_collection_settings":{
+            "type":"object",
+            "additionalProperties":false,
+        	"properties": {
+        		"state":{
+                    "type":"string",
+                    "description":"The name of the state for the tax collection"
+                    //do we want to have an enumerated list of state codes?
+                },
+                "state_tax":{
+                    "type":"boolean",
+                    "required":true,
+                    "description":"If true, the retailer collects state tax for this state"
+                },
+                "shipping_and_handling_tax":{
+                    "type":"boolean",
+                    "required":true,
+                    "description":"If true, the retailer charges tax on shipping and handling"
+                    // should figure out if this would even be necessary given the new workflow for is_seller_of_record; price_use_for_tax_calculation
+                },
+                "gift_wrap_tax":{
+                    "type":"boolean",
+                    "required":true,
+                    "description":"If true, this retailer taxes gift wrap"
+                },
+                "counties":{
+                    "type":"array",
+                    "description":"The counties if home rule exception apply",
+                    "items":{
+                        "minLength":1,
+                        "maxLength":500,
+                        "type":"string"
+                    }
+                }
+            }
+        }
+    }
+}

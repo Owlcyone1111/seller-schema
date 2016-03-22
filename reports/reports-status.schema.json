@@ -1,0 +1,64 @@
+{
+    "title": "ReportStatus",
+    "type": "object",
+    "properties": {
+        "report_url":{
+            "type": "string",
+            "required": true,
+            "description" : "URL where the report file can be downloaded"
+        },
+        "report_status":{
+            "type":"string",
+            "required":true,
+            "enum":[
+                "Requested",
+                "Ready",
+                "Expired"
+            ],
+            "description":"The status of the report
+
+            # Valid Values
+            * Requested - This report has been requested
+            * Ready - This report is ready for download
+            * Expired - This report is expired.  Please request a new report of this type
+           "
+        },
+        "report_type": {
+            "type": "string",
+            "required": true,
+            "enum" : [
+                "ProductStatus"
+            ],
+            "description" : "Type of report that was requested
+            
+            # Valid Values:
+            * ProductStatus
+            "
+        },
+        "report_requested_date" : {
+            "type" : "string",
+            "required": true,
+            "description" : "The date-time the report was requested"
+        },
+        "report_generating_start_date" : {
+            "type" : "string",
+            "required": true,
+            "description" : "The date-time the report began generating"
+        },
+        "report_ready_date" : {
+            "type" : "string",
+            "required": true,
+            "description" : "The date-time the report became ready to download"
+        },
+        "expiration" : {
+            "type" : "string",
+            "required": true,
+            "description" : "The date-time the report will expire.  If expired, please request another report"
+        },
+        "jet_report_id" : {
+            "type" : "string",
+            "required":true,
+            "description" : "An identification assigned by Jet to track the report.  This identification retrieves the report upload details"
+        }
+    } 
+}
