@@ -1,5 +1,12 @@
 {
     "fulfillment_node" : "f670d2c5c326464a9253a848553e62c3",
+    "ship_to_location":{
+    	"address1":"A new address",
+    	"address2":"ATTN: Nick Boccardi",
+    	"city":"Hoboken",
+    	"state":"NJ",
+    	"zip_code":"07030"
+    },
 	"items": [
 		{ "sku" : "ABC", "order_quantity" : 5},
 		{ "sku" : "DEF", "order_quantity" : 5, "order_cancel_quantity" : 2}
