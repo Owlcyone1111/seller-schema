@@ -51,6 +51,11 @@
 		"suggested_tax_code": {
 			"type" : "string",
 			"description" : "The suggested tax code related to the Jet node"
+		},
+		"active":{
+			"type":"boolean",
+			"required":true,
+			"description":"If true, this is an active category on Jet.com.  Categories that are not active can still be mapped to; however, they will be remapped to an active node upon entering the catalog. In this way, Jet's taxonomy is backwards compatible"
 		}
 	}
 }
