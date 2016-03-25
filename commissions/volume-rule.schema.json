@@ -94,8 +94,6 @@
                 },
                 "max_band": {
                     "type": "number",
-                    "required": true,
-                    "exclusiveMinimum": 0,
                     "description" : "The upper bound of the pricing band"
                 },
                 "adjustments":{
