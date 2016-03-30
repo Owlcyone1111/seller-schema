@@ -190,53 +190,62 @@
                         "type" : "string",
                         "required":true,
                         "enum" : [
-                            "No longer want this item",
-                            "Received the wrong item",
-                            "Website description is inaccurate",
+                            "no longer need/want",
+                            "better price available",
+                            "unauthorized purchase",
+                            "unwanted gift",
+                            "package never arrived",
+                            "package arrived later than promised delivery date",
+                            "item was different than website description",
+                            "shipping box and item are both damaged",
+                            "item is defective/does not work properly",
+                            "item is damaged/broken",
+                            "accidental order",
+                            "received wrong item than what was ordered",
+                            "wrong quantity received",
                             "Product is defective / does not work",
+                            "Item is missing parts / accessories",
+                            "Item is refurbished",
+                            "Item is expired",
+                            "Website description is inaccurate",
+                            "Package arrived after estimated delivery date",
+                            "Return to Sender - damaged, undeliverable, refused",
+                            "Return to Sender - lost in transit only",
                             "Item arrived damaged - box intact",
                             "Item arrived damaged - box damaged",
+                            "No longer want this item",
+                            "Received the wrong item",
                             "Package never arrived",
                             "Package arrived late",
                             "Wrong quantity received",
-                            "Better price found elsewhere",
                             "Unwanted gift",
                             "Accidental order",
                             "Unauthorized purchase",
-                            "Item is missing parts / accessories",
-                            "Return to Sender - damaged, undeliverable, refused",
-                            "Return to Sender - lost in transit only",
-                            "Item is refurbished",
-                            "Item is expired",
-                            "Package arrived after estimated delivery date",
-                            "Food is moldy, bruised, squished",
-                            "Food is contaminated"
+                            "Better price found elsewhere"
                         ],
-                        "description" : "The reason this return was initiated. 
+                        "description" : "The reason the customer initiated the return. 
 
-                        # Valid Values
+                        #Valid Values
 
-                        * 'No longer want this item',
-                        * 'Received the wrong item',
-                        * 'Website description is inaccurate',
-                        * 'Product is defective / does not work',
-                        * 'Item arrived damaged - box intact',
-                        * 'Item arrived damaged - box damaged',
-                        * 'Package never arrived',
-                        * 'Package arrived late',
-                        * 'Wrong quantity received',
-                        * 'Better price found elsewhere',
-                        * 'Unwanted gift',
-                        * 'Accidental order',
-                        * 'Unauthorized purchase',
-                        * 'Item is missing parts / accessories',
-                        * 'Return to Sender - damaged, undeliverable, refused',
-                        * 'Return to Sender - lost in transit only',
-                        * 'Item is refurbished',
-                        * 'Item is expired',
-                        * 'Package arrived after estimated delivery date',
-                        * 'Food is moldy, bruised, squished',
-                        * 'Food is contaminated'
+                        * Product is defective / does not work
+                        * Item is missing parts / accessories
+                        * Item is refurbished
+                        * Item is expired
+                        * Website description is inaccurate
+                        * Package arrived after estimated delivery date
+                        * Return to Sender - damaged, undeliverable, refused
+                        * Return to Sender - lost in transit only
+                        * Item arrived damaged - box intact
+                        * Item arrived damaged - box damaged
+                        * No longer want this item
+                        * Received the wrong item
+                        * Package never arrived
+                        * Package arrived late
+                        * Wrong quantity received
+                        * Unwanted gift
+                        * Accidental order
+                        * Unauthorized purchase
+                        * Better price found elsewhere
                         "
                     },
                     "requested_refund_amount" : {
