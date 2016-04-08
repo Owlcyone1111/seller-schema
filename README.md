@@ -4,8 +4,8 @@ Partner API schema is a dialect of [Json Schema](http://json-schema.org/). It wa
 
 List of differences from standard and limitations:
 
-* `exclusiveMinimum` and `exclusiveMaximum` are decimals and not booleans, they can me used instead of combination, e.g., `exclusiveMaximum = 5` instead of `exclusiveMaximum = true, maximum = 5`
-* Cross-refenreces in `definitions` are not allowed
+* `exclusiveMinimum` and `exclusiveMaximum` are decimals and not booleans, they can be used instead of combination, e.g., `exclusiveMaximum = 5` instead of `exclusiveMaximum = true, maximum = 5`
+* Cross-refenreces in `definitions` are not allowed 
 * `string` type supports `format` with following values
    * `date-time` - date is expected to be in ISO 8601 format `yyyy-MM-ddTHH:mm:ss.fffffff-HH:MM`
    *  `uri` -  absolute uri
