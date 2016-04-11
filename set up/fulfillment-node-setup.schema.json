@@ -1,0 +1,69 @@
+{
+    "title": "FulfillmentNodeSetup",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+        "fulfillment_node_name":{
+            "type":"string",
+            "required":true,
+            "description":"The name of this fulfillment node"
+        },
+        "fulfillment_node_type":{
+            "type":"string",
+            "required":true,
+            "description":"The type of fulfillment node that describes this fulfillment node
+
+            # Valid Values
+            * 'merchantOperated' - this fulfillment node is owned and operated by the merchantOperated
+            * 'dropshipper' - this fulfillment node is not operated 
+            * 'FBA' - this node designates the node as 'Fulfilled by Amazon'; only one node of this type is required
+
+
+            ",
+            "enum":[
+                "merchantOperated",
+                "dropshipper",
+                "FBA"
+            ]
+        },
+        "time_zone":{
+            "type":"string",
+            "required":true,
+            "enum":[
+                "Eastern Standard Time",
+                "Central Standard Time",
+                "U.S. Mountain Standard Time",
+                "Mountain Standard Time",
+                "Pacific Standard Time",
+                "Alaskan Standard Time",
+                "Hawaiian Standard Time"
+            ],
+            "description":"Please select the time zone in which your fulfillment zone operates
+
+            #Valid Values
+
+            * 'Eastern Standard Time - (GMT-05:00) Eastern Standard Time
+            * 'Central Standard Time' - (GMT-06:00) Central Standard Time
+            * 'U.S. Mountain Standard Time' - (GMT-07:00) US Mountain Standard Time
+            * 'Mountain Standard Time' - (GMT-07:00) Mountain Standard Time
+            * 'Pacific Standard Time' - (GMT-08:00) Pacific Standard Time
+            * 'Alaskan Standard Time' - (GMT-09:00) Alaskan Standard Time
+            * 'Hawaiian Standard Time' - (GMT-10:00) Hawaiian Standard Time
+            "
+        },
+        "use_jet_ship_rates":{
+            "type":"boolean",
+            "required":true,
+            "description":"If true, retailer can use Jet ship rates instead of own ship rates
+
+            # Logic
+
+            * 'can_use_jet_ship_rates' on retailer account must be true for retailer to configure account with 'use_jet_ship_rates' = true
+            "
+        },
+        "address_id":{
+            "type":"string",
+            "description":"The address_id associated with an address for this fulfillment location"
+        }
+    }
+}

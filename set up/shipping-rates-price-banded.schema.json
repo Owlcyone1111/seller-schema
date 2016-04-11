@@ -1,0 +1,42 @@
+{
+    "title": "ShippingRatesPriceBanded",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+        "shipping_rates_price_banded":{
+            "type":"array",
+            "minItems":1,
+            "items":{
+                "$ref":"#/definitions/shipping_rates_price_band_array"
+            },
+            "description":"The shipping rates for the service_level or shipping_method provided"
+        }
+    },
+    "definitions":{
+        "shipping_rates_price_band_array":{
+            "title":"ShippingRatesPriceBrandArray",
+            "type":"object",
+            "properties":{
+                "min_price_band":{
+                    "type":"number",
+                    "required":true,
+                    "minimum":0,
+                    "description":"The minimum price for this band's shipping method or service level"
+                },
+                "max_price_band":{
+                    "type":"number",
+                    "required":true,
+                    "minimum":0,
+                    "exclusiveMinimum":true,
+                    "description":"The maximum price for this band's shipping method or service level"
+                },
+                "shipping_amount":{
+                    "type":"number",
+                    "required":true,
+                    "minimum":0,
+                    "description":"Shipping amount charged for this price band"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "title": "FederalHolidays",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+        "federal_holidays":{
+            "type":"array",
+            "required":true,
+            "description":"Federal holidays this fulfillment node does NOT operate on
+
+            # Valid Values:
+            * 'New Year's Day'
+            * 'Martin Luther King Day'
+            * 'President's Day'
+            * 'Memorial Day'
+            * '4th of July'
+            * 'Labor Day'
+            * 'Thanksgiving'
+            * 'Christmas'
+            ",
+            "items":{
+                "type":"string",
+                "enum":[
+                    "New Year's Day"
+                    "Martin Luther King Day"
+                    "President's Day"
+                    "Memorial Day"
+                    "4th of July"
+                    "Labor Day"
+                    "Thanksgiving"
+                    "Christmas"
+                ]            
+            }
+        }
+    }
+}

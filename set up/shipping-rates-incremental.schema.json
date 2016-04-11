@@ -1,0 +1,44 @@
+{
+    "title": "ShippingRatesIncremental",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+        "shipping_rates_incremental":{
+            "type":"object",
+            "$ref":"#/definitions/shipping_rates_incremental",
+            "description":"The shipping rates for the service_level or shipping_method provided"
+        }
+    },
+    "definitions":{
+        "shipping_rates_incremental":{
+            "type":"object",
+            "title":"",
+            "properties":{
+                "incremental_type":{
+                    "type":"string",
+                    "required":true,
+                    "enum":[
+                        "PerPound",
+                        "PerItem"
+                    ]
+                },
+                "shipping_rate_per_order":{
+                    "type":"number",
+                    "required":true,
+                    "minimum":0,
+                    "description":"Shipping amount charged per order"
+                },
+                "shipping_rate_per_incremental_type":{
+                    "type":"number",
+                    "required":true,
+                    "minimum":0,
+                    "description":"Shipping amount charged per incremental unit
+
+                    * If incremental_type = 'PerPound', then incremental unit is pound
+                    * If incremental_type = 'PerItem', then incremental unit is item
+                    "
+                }
+            }
+        }
+    }
+}

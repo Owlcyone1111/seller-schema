@@ -1,0 +1,63 @@
+{
+    "title": "FulfillmentNodeShippingConfiguration",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+    	"carrier_pickup_days":{
+            "type":"array",
+            "required":true,
+            "description":"The days the carrier picks up shipments
+
+            # Valid Values
+
+            * 'Monday',
+            * 'Tuesday',
+            * 'Wednesday',
+            * 'Thursday',
+            * 'Friday',
+            * 'Saturday',
+            * 'Sunday'
+            ",
+            "items":{
+                "type":"string",
+                "enum":[
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday"
+                ],
+            }
+        },
+        "order_cutoff_time":{
+            "type":"string",
+            "required":true,
+            "minLength":5,
+            "maxLength":5,
+            "description":"For the given service_level or shipping_method, if an order is received before the 'order_cutoff_time', it will take 'n' days_to_fulfill the order
+
+            # Valid Values
+            * Time format must be recieved on a 24 hour clock in the local time this fulfillment node operates 'hh:mm'
+            "
+        },
+        "days_to_fulfill":{
+            "type":"integer",
+            "required":true,
+            "minimum":0,
+            "description":"The number of business days it will take to fulfill this item if received by the 'order_cutoff_time'"
+        },
+        "last_pickup_time":{
+            "type":"string",
+            "required":true,
+            "minLength":5,
+            "maxLength":5,
+            "description":"The time of day the carrier comes to pick up the shipments
+
+            # Valid Values
+            * Time format must be recieved on a 24 hour clock in the local time this fulfillment node operates 'hh:mm'
+            ",
+        }
+    }
+}

@@ -1,0 +1,64 @@
+{
+    "title": "OperatingDays",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+        "operating_days":{
+            "required":true,
+            "type":"array",
+            "items":{
+                "type":"string",
+                "enum":[
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday"
+                ]
+            },
+            "description": "The days the fulfillment center operates
+
+            # Valid Values:
+            * 'Monday'
+            * 'Tuesday'
+            * 'Wednesday'
+            * 'Thursday'
+            * 'Friday'
+            * 'Saturday'
+            * 'Sunday'
+            "
+        },
+        "dropshipper_operating_days":{
+            "type":"array",
+            "items":{
+                "type":"string",
+                "enum":[
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday"
+                ]
+            },
+            "description": "The days the fulfillment center operates
+
+            # Logic 
+
+            * If fulfillment_node_type = 'dropshipper', this field is required.
+
+            # Valid Values:
+            * 'Monday'
+            * 'Tuesday'
+            * 'Wednesday'
+            * 'Thursday'
+            * 'Friday'
+            * 'Saturday'
+            * 'Sunday'
+            "
+        }
+    }
+}
