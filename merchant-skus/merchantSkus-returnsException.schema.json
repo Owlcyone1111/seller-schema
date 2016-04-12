@@ -32,6 +32,97 @@
                     "Freight"                 
                 ]
             }
+        },
+        "returns_exception_overrides":{
+            "type":"array",
+            "description":"Returns exception overrides broken down by customer_return_reason.  If not all reasons are provided, the default will be used",
+            "items":{
+                "$ref":"#/definitions/"
+            }
+        }
+    },
+    "definitions":{
+        "returns_exception_override":{
+            "title": "ReturnsExceptionOverride",
+            "type": "object",
+            "additionalProperties" : false,
+            "properties": {
+                "customer_return_reason":{
+                    "type":"string",
+                    "description":"The reason the customer returned the item
+
+                    # Valid Values
+
+                    * 'Product is defective / does not work',
+                    * 'Item is missing parts / accessories',
+                    * 'Item is refurbished',
+                    * 'Item is expired',
+                    * 'Website description is inaccurate',
+                    * 'Package arrived after estimated delivery date',
+                    * 'Item arrived damaged - box intact',
+                    * 'Item arrived damaged - box damaged',
+                    * 'No longer want this item',
+                    * 'Received the wrong item',
+                    * 'Package never arrived',
+                    * 'Package arrived late',
+                    * 'Wrong quantity received',
+                    * 'Unwanted gift',
+                    * 'Accidental order',
+                    * 'Unauthorized purchase',
+                    * 'Better price found elsewhere'
+
+                    ",
+                    "enum":[
+                        "Product is defective / does not work",
+                        "Item is missing parts / accessories",
+                        "Item is refurbished",
+                        "Item is expired",
+                        "Website description is inaccurate",
+                        "Package arrived after estimated delivery date",
+                        "Item arrived damaged - box intact",
+                        "Item arrived damaged - box damaged",
+                        "No longer want this item",
+                        "Received the wrong item",
+                        "Package never arrived",
+                        "Package arrived late",
+                        "Wrong quantity received",
+                        "Unwanted gift",
+                        "Accidental order",
+                        "Unauthorized purchase",
+                        "Better price found elsewhere"
+                    ]
+                },
+                "time_to_return":{
+                    "type":"integer",
+                    "minimum":0,
+                    "maximum":30,
+                    "description":"The number of days after purchase a customer can return the item"
+                },
+                "return_location_ids":{
+                    "type": "array",
+                    "description": "Jet's unique ID for a given returns location",
+                    "items":{
+                        "type":"string"
+                    }
+                },
+                "return_shipping_methods": {
+                    "type": "array",
+                    "description": "A specific shipping method e.g. UPS Ground, UPS Next Day Air, FedEx Home
+
+                    #Valid Values
+                    * 'UPS Ground'
+                    * 'FedEx Ground'
+                    * 'Freight'",
+                    "items":{
+                        "type":"string",
+                        "enum":[
+                            "UPS Ground",
+                            "FedEx Ground",
+                            "Freight"                 
+                        ]
+                    }
+                }
+            }
         }
     }
 }

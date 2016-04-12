@@ -1,10 +1,23 @@
 {
-    "time_to_return": 5,
-	"return_location_ids": [
-        "9046335c27d146ee94b23ef61d8959bc",
-        "e3100213167d4abaa43a1c1dd6e4dc04"
-     ],
-     "return_shipping_methods":[
-        "UPS Ground"
-    ]
+  "time_to_return": 5,
+  "return_location_ids": [
+    "9046335c27d146ee94b23ef61d8959bc",
+    "e3100213167d4abaa43a1c1dd6e4dc04"
+  ],
+  "return_shipping_methods": [
+    "Freight"
+  ],
+  "returns_exception_overrides":[
+  	{
+  		"customer_return_reason":"No longer want item",
+  		"time_to_return": 5,
+	  	"return_location_ids": [
+		    "9046335c27d146ee94b23ef61d8959bc",
+		    "e3100213167d4abaa43a1c1dd6e4dc04"
+		],
+		"return_shipping_methods": [
+		    "Freight"
+	  	]
+	}
+  ]
 }

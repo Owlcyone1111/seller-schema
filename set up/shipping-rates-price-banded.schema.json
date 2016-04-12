@@ -3,7 +3,7 @@
     "type": "object",
     "additionalProperties" : false,
     "properties": {
-        "shipping_rates_price_banded":{
+        "price_bands":{
             "type":"array",
             "minItems":1,
             "items":{

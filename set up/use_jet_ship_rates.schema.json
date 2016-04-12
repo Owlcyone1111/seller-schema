@@ -1,0 +1,22 @@
+{
+    "title": "UseJetShipRatesFulfillmentNode",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+        "use_jet_ship_rates":{
+            "type":"boolean",
+            "required":true,
+            "description":"If true, retailer can use Jet ship rates instead of own ship rates
+
+            # Logic
+
+            * 'can_use_jet_ship_rates' on retailer account must be true for retailer to configure account with 'use_jet_ship_rates' = true
+            "
+        },
+        "merchant_fulfillment_cost":{
+            "type":"number",
+            "description":"If 'use_jet_ship_rates' is true, this is the amount Jet will pay to the retailer for shipping the order",
+            "miniumum":0
+        }
+    }
+}

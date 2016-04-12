@@ -17,8 +17,6 @@
             * 'merchantOperated' - this fulfillment node is owned and operated by the merchantOperated
             * 'dropshipper' - this fulfillment node is not operated 
             * 'FBA' - this node designates the node as 'Fulfilled by Amazon'; only one node of this type is required
-
-
             ",
             "enum":[
                 "merchantOperated",
@@ -49,16 +47,6 @@
             * 'Pacific Standard Time' - (GMT-08:00) Pacific Standard Time
             * 'Alaskan Standard Time' - (GMT-09:00) Alaskan Standard Time
             * 'Hawaiian Standard Time' - (GMT-10:00) Hawaiian Standard Time
-            "
-        },
-        "use_jet_ship_rates":{
-            "type":"boolean",
-            "required":true,
-            "description":"If true, retailer can use Jet ship rates instead of own ship rates
-
-            # Logic
-
-            * 'can_use_jet_ship_rates' on retailer account must be true for retailer to configure account with 'use_jet_ship_rates' = true
             "
         },
         "address_id":{
