@@ -50,7 +50,7 @@
                     "type":"number",
                     "required":true,
                     "minimum":0.0,
-                    "maximum":0.3,
+                    "maximum":0.7,
                     "description":"Jet's base commission that Jet will charge for selling products on Jet.com"
                 }
             }
