@@ -1,0 +1,17 @@
+{
+    "title": "ReturnsAccountSetup",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+        "free_returns":{
+            "type":"boolean",
+            "required":true,
+            "description":"If true, the retailer offers free returns"
+        },
+        "charge_carrier_directly":{
+            "type":"boolean",
+            "required":true,
+            "description":"If true, the retailer wants us to charge their carrier account directly"
+        }
+    }
+}

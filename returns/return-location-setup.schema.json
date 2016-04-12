@@ -1,0 +1,58 @@
+{
+    "title": "ReturnLocationSetup",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+        "address_id":{
+            "type":"string",
+            "required":true,
+            "description":"The address associated with the return location"
+        },
+        "return_location_name":{
+            "type":"string",
+            "required":true,
+            "description":"The retailer's internal name for the return location"
+        },
+        "return_location_display_name":{
+            "type":"string",
+            "required":true,
+            "description":"The location name the retailer would like to display on the label"
+        },
+        "recipient":{
+            "type":"string",
+            "required":true,
+            "description":"The person or department who would be recieving returns.  Will be prefaced by 'ATTN'"
+        },
+        "company":{
+            "type":"string",
+            "required":true,
+            "description":"The company that will be receiving the packages (if different than the retailer itself"
+        },
+        "carrier":{
+            "type":"string",
+            "description":"The carrier who the retailer has an account with
+
+            # Logic
+            * Required if charge_carrier_directly is true
+            "
+        },
+        "account_number":{
+            "type":"string",
+            "description":"The account number the retailer would like charged if there is a return
+
+            # Logic
+            * Required if charge_carrier_directly is true
+            "
+        },
+        "carrier_zip_code":{
+            "type":"string",
+            "minLength":5,
+            "maxLength":5,
+            "description":"The zip code associated with the retailer's carrier account
+
+            # Logic
+            * Required if charge_carrier_directly is true
+            "
+        }
+    }
+}
