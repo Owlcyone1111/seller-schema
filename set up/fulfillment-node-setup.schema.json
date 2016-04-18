@@ -3,7 +3,7 @@
     "type": "object",
     "additionalProperties" : false,
     "properties": {
-        "fulfillment_node_name":{
+        "name":{
             "type":"string",
             "required":true,
             "description":"The name of this fulfillment node"
@@ -16,7 +16,7 @@
             # Valid Values
             * 'merchantOperated' - this fulfillment node is owned and operated by the merchantOperated
             * 'dropshipper' - this fulfillment node is not operated 
-            * 'FBA' - this node designates the node as 'Fulfilled by Amazon'; only one node of this type is required
+            * 'FBA' - this node designates the node as 'Fulfilled by Amazon'; only one node of this type is allowed
             ",
             "enum":[
                 "merchantOperated",

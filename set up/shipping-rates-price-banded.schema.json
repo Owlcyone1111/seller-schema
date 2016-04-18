@@ -3,7 +3,7 @@
     "type": "object",
     "additionalProperties" : false,
     "properties": {
-        "price_bands":{
+        "fulfillment_node_shipping_rates_price_banded":{
             "type":"array",
             "minItems":1,
             "items":{
@@ -17,18 +17,11 @@
             "title":"ShippingRatesPriceBrandArray",
             "type":"object",
             "properties":{
-                "min_price_band":{
+                "band_max_price":{
                     "type":"number",
                     "required":true,
                     "minimum":0,
-                    "description":"The minimum price for this band's shipping method or service level"
-                },
-                "max_price_band":{
-                    "type":"number",
-                    "required":true,
-                    "minimum":0,
-                    "exclusiveMinimum":true,
-                    "description":"The maximum price for this band's shipping method or service level"
+                    "description":"The maximum price for this band's shipping method or service level.  This value is inclusive"
                 },
                 "shipping_amount":{
                     "type":"number",

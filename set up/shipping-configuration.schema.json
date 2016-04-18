@@ -57,7 +57,7 @@
 
             # Valid Values
             * Time format must be recieved on a 24 hour clock in the local time this fulfillment node operates 'hh:mm'
-            ",
+            "
         }
     }
 }

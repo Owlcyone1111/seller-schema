@@ -3,7 +3,7 @@
     "type": "object",
     "additionalProperties" : false,
     "properties": {
-        "incremental_type":{
+        "shipping_rate_incremental_type":{
             "type":"string",
             "required":true,
             "enum":[
@@ -11,13 +11,13 @@
                 "PerItem"
             ]
         },
-        "shipping_rate_per_order":{
+        "per_order":{
             "type":"number",
             "required":true,
             "minimum":0,
             "description":"Shipping amount charged per order"
         },
-        "shipping_rate_per_incremental_type":{
+        "per_incremental_type":{
             "type":"number",
             "required":true,
             "minimum":0,
