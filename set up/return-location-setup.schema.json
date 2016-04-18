@@ -13,20 +13,15 @@
             "required":true,
             "description":"The retailer's internal name for the return location"
         },
-        "return_location_display_name":{
+        "return_label_recipient_name":{
             "type":"string",
             "required":true,
-            "description":"The location name the retailer would like to display on the label"
+            "description":"The return lab"
         },
-        "recipient":{
+        "return_label_recipient_company":{
             "type":"string",
             "required":true,
-            "description":"The person or department who would be recieving returns.  Will be prefaced by 'ATTN'"
-        },
-        "company":{
-            "type":"string",
-            "required":true,
-            "description":"The company that will be receiving the packages (if different than the retailer itself"
+            "description":"The company the retailer would like listed on the returns label."
         },
         "carrier":{
             "type":"string",

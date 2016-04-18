@@ -11,7 +11,7 @@
         "charge_carrier_directly":{
             "type":"boolean",
             "required":true,
-            "description":"If true, the retailer wants us to charge their carrier account directly"
+            "description":"If true, the retailer wants Jet to charge their carrier account directly"
         }
     }
 }
