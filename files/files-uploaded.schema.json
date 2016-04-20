@@ -12,6 +12,7 @@
             "required": true,
             "enum" : [
                 "MerchantSKUs",
+                "MerchantSKUsOffer",
                 "Inventory",
                 "Price",
                 "Relationship",
@@ -23,6 +24,7 @@
             "description" : "Type of the file uploaded.
             #Valid values:
             * MerchantSKUs
+            * MerchantSKUsOffer
             * Inventory
             * Price
             * Relationship
