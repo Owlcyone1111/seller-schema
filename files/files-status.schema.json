@@ -11,19 +11,21 @@
             "type": "string",
             "required": true,
             "enum" : [
-                "MerchantSKUs",
-                "Inventory",
-                "Price",
-                "Relationship",
-                "Archive",
-                "ShippingException",
-                "ReturnsException",
-                "Variation"
-            ],
+                            "MerchantSKUs",
+                            "MerchantSKUsOffer",
+                            "Inventory",
+                            "Price",
+                            "Relationship",
+                            "Archive",
+                            "ShippingException",
+                            "ReturnsException",
+                            "Variation"
+                        ],
             "description" : "Type of the file uploaded.
             
             #Valid Values:
             * MerchantSKUs
+            * MerchantSKUsOffer
             * Inventory
             * Price
             * Relationship
