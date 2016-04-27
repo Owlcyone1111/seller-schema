@@ -1,0 +1,56 @@
+{
+	"title":"ReturnLabelRequest",
+	"type":"object",
+	"additionalProperties":false,
+	"properties":{
+		"merchant_id":{
+			"type":"string",
+			"required":true,
+			"minLength":32,
+			"maxLength":32,
+			"description":"The merchant ID for the label requested"
+		},
+		"merchant_order_id":{
+			"type":"string",
+			"required":true,
+			"minLength":32,
+			"maxLength":32,
+			"description":"The merchant order ID for the item being returned"
+		},
+		"merchant_order_item_ids":{
+			"type":"array",
+			"required":true,
+			"description":"The merchant order item IDs for the items being returned",
+			"minItems":1,
+			"items":{
+				"type":"string",
+				"minLength":32,
+				"maxLength":32
+			}
+		},
+		"reason":{
+			"type":"string",
+			"required":false,
+			"description":"The reason the customer returned the item",
+			"enum":[
+				"Product is defective / does not work",
+                "Item is missing parts / accessories",
+                "Item is refurbished",
+                "Item is expired",
+                "Website description is inaccurate",
+                "Package arrived after estimated delivery date",
+                "Item arrived damaged - box intact",
+                "Item arrived damaged - box damaged",
+                "No longer want this item",
+                "Received the wrong item",
+                "Package never arrived",
+                "Package arrived late",
+                "Wrong quantity received",
+                "Unwanted gift",
+                "Accidental order",
+                "Unauthorized purchase",
+                "Better price found elsewhere"
+			]
+		}
+	}
+}
