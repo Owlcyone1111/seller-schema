@@ -1,0 +1,444 @@
+﻿{
+  "$schema" : "http://json-schema.org/draft-03/schema",
+  "title": "MerchantSkuOffer",
+  "type": "object",
+  "description": "This schema represents a merchant SKU",
+    "additionalProperties" : false,
+  "properties": {
+    "product_title": {
+      "type": "string",
+      "required": true,
+      "minLength" : 5,
+      "maxLength" : 500,
+      "description": "Short product description
+      #Valid Values
+      5 to 500 alphanumeric characters
+      "
+    },
+    "jet_browse_node_id": {
+      "type": "integer",
+      "minimum":1000000,
+      "description": "The unique ID that defines where the product will be found in the Jet.com browse structure
+      #Valid Values
+      This must be a valid jet_browse_node_id
+      "
+    },
+    "amazon_item_type_keyword":{
+      "type":"string",
+      "description":"ItemType allows customers to find your products as they browse to the most specific item types.  Please use the exact selling from Amazon's browse tree guides"
+    },
+    "category_path":{
+      "type":"string",
+      "description":"A category path using your own product taxonomy"
+    },
+    "standard_product_codes" : {
+      "type" : "array",
+      "minItems" : 1,
+      "description" : "The barcode or barcode that is associated with the product
+      #Logic
+      At least one of the following must be provided for each merchant SKU: Standard Product Code (UPC, GTIN-14 etc.), ASIN, or Brand and Manufacturer Part Number",
+      "items" : {
+        "$ref": "#/definitions/product_codes"       
+      }
+
+    },  
+    "ASIN" : {
+      "type": "string",
+      "description" : "Amazon standard identification number for this merchant SKU if available. 
+      #Logic
+      At least one of the following must be provided for each merchant SKU: Standard Product Code (UPC, GTIN-14 etc.), ASIN, or Brand and Manufacturer Part Number",
+      "maxLength" : 10,
+      "minLength" : 10
+    },
+    "multipack_quantity": {
+      "type": "integer",
+      "required": true,
+      "minimum" : 1,
+      "maximum": 128,
+      "description": "Number of items with the given Standard Product Code that makes up your merchant SKU
+      "
+    },
+      "brand": {
+        "type": "string",
+        "minLength" :  1,
+        "maxLength" : 100,
+        "description": "Brand of the merchant SKU
+        #Valid Values
+        1 to 100 characters
+        #Logic
+        At least one of the following must be provided for each merchant SKU: Standard Product Code (UPC, GTIN-14 etc.), ASIN, or Brand and Manufacturer Part Number
+        "
+      },
+    "manufacturer": {
+      "type": "string",
+      "maxLength" : 100,
+      "description": "Manufacturer of the merchant SKU
+      #Valid Values
+      1 to 100 characters
+      "
+    },
+    "mfr_part_number": {
+      "type": "string",
+      "maxLength" : 50,
+      "description": "Part number provided by the original manufacturer of the merchant SKU
+      #Valid Values
+      Maximum of 50 characters
+      #Logic
+      At least one of the following must be provided for each merchant SKU: Standard Product Code (UPC, GTIN-14 etc.), ASIN, or Brand and Manufacturer Part Number
+      "
+    },
+    "product_description": {
+      "type": "string",
+      "maxLength" : 2000,
+      "description": "Long description of the merchant SKU
+      #Valid Values
+      1 to 2000 characters
+      "
+    },
+    "bullets": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength" : 500
+      },
+      "maxItems" : 5,
+      "description": "Merchant SKU feature description
+      #Valid Values
+      Maximum of 500 characters each
+      #Array Limitation
+      Maximum 5 elements of the 'bullets' array"
+    },
+    "number_units_for_price_per_unit": {
+      "type": "number",
+      "minimum" : 0.0,
+      "description": "For Price Per Unit calculations, the number of units included in the merchant SKU. The unit of measure must be specified in order to indicate what is being measured by the unit-count."
+    },
+    "type_of_unit_for_price_per_unit": {
+      "type": "string",
+      "description": "The type_of_unit_for_price_per_unit attribute is a label for the number_units_for_price_per_unit. The price per unit can then be constructed by dividing the selling price by the number of units and appending the text \"per unit value.\" For example, for a six-pack of soda, number_units_for_price_per_unit= 6, type_of_unit_for_price_per_unit= can, price per unit = price per can."
+    },
+    "shipping_weight_pounds": {
+      "type": "number",
+      "minimum" : 0.01,
+      "description": "Weight of the merchant SKU when in its shippable configuration
+      #Valid Values
+      A number with 2 decimals
+      "
+    },
+    "package_length_inches": {
+      "type": "number",
+      "minimum" : 0.01,
+      "description": "Length of the merchant SKU when in its shippable configuration
+      #Valid Values
+      A number with 2 decimals
+      "
+    },
+    "package_width_inches": {
+      "type": "number",
+      "minimum" : 0.01,
+      "description": "Width of the merchant SKU when in its shippable configuration
+      #Valid Values
+      A number with 2 decimals"
+    },
+    "package_height_inches": {
+      "type": "number",
+      "minimum" : 0.01,
+      "description": "Height of the merchant SKU when in its shippable configuration
+      #Valid Values
+      A number with 2 decimals"
+    },
+    "display_length_inches": {
+      "type": "number",
+      "minimum" : 0.01,
+      "description": "Length of the merchant SKU when in its fully assembled/usable condition
+      #Valid Values
+      A number with 2 decimals
+      "
+    },
+    "display_width_inches": {
+      "type": "number",
+      "minimum" : 0.01,
+      "description": "Width of the merchant SKU when in its fully assembled/usable condition
+      #Valid Values
+      A number with 2 decimals"
+    },
+    "display_height_inches": {
+      "type": "number",
+      "minimum" : 0.01,
+      "description": "Height of the merchant SKU when in its fully assembled/usable condition
+      #Valid Values
+      A number with 2 decimals"
+    },
+    "prop_65": {
+      "type": "boolean",
+      "description": "You must tell us if your product is subject to Proposition 65 rules and regulations.  Proposition 65 requires merchants to provide California consumers with special warnings for products that contain chemicals known to cause cancer, birth defects, or other reproductive harm, if those products expose consumers to such materials above certain threshold levels.  The default value for this is \"false,\" so if you do not populate this column, we will assume your product is not subject to this rule.  Please view this website for more information: http://www.oehha.ca.gov/."
+    },
+    "legal_disclaimer_description": {
+      "type": "string",
+      "maxLength" : 500,
+      "description": "Any legal language required to be displayed with the product.
+      #Valid Values
+      Maximum of 500 characters"
+    },
+    "cpsia_cautionary_statements": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum" : [
+              "choking hazard balloon",
+              "choking hazard contains a marble",
+              "choking hazard contains a small ball",
+              "choking hazard is a marble",
+              "choking hazard is a small ball",
+              "choking hazard small parts",
+              "no warning applicable"
+            ]
+      },      
+      "maxItems" : 7,
+      "description": "Use this field to indicate if a cautionary statement relating to the choking hazards of children's toys and games applies to your product.  These cautionary statements are defined in Section 24 of the Federal Hazardous Substances Act and Section 105 of the Consumer Product Safety Improvement Act of 2008.  They must be displayed on the product packaging and in certain online and catalog advertisements.  You are responsible for determining if a cautionary statement applies to the product.  This can be verified by contacting the product manufacturer or checking the product packaging.   Cautionary statements that you select will be displayed on the product detail page.  If no cautionary statement applies to the product, select \"no warning applicable\".
+      #Valid Values
+      *choking hazard balloon
+      *choking hazard contains a marble
+      *choking hazard contains a small ball
+      *choking hazard is a marble
+      *choking hazard is a small ball
+      *choking hazard small parts
+      *no warning applicable
+      #Array Limitation
+      Maximum 7 elements of the 'cpsia_cautionary_statements' array"
+    },
+    "country_of_origin": {
+      "type": "string",
+      "maxLength" : 50,
+      "description": "The country that the item was manufactured in.
+      #Valid Values
+      Maximum of 50 characters"
+    },
+    "safety_warning": {
+      "type": "string",
+      "maxLength" : 2000,
+      "description": "If applicable, use to supply any associated warnings for your product.
+      #Valid Values
+      Maximum of 2000 characters"
+    },
+    "start_selling_date": {
+      "type": "string",
+      "description": "If updating merchant SKU that has quantity = 0  at all FCs, date that the inventory in this message should be available for sale on Jet.com.  
+      #Logic
+      You should only use this field if the quantity for the merchant SKU is 0 at all merchant_fcs.  This date should be in ISO 8601 format: yyyy-MM-ddTHH:mm:ss.fffffff-HH:MM
+            Example: 1988-01-01T01:43:30.0000000-07:00"
+    },
+    "fulfillment_time": {
+      "type": "integer",
+      "minimum" : 0,
+      "description": "Number of business days from receipt of an order for the given merchant SKU until it will be shipped (only populate if it is different than your account default).
+      #Valid Values
+      0 = ships the day the OrderMessage is received
+      1 = ships one business day after the 'merchant_order' is received
+      2= ships two business days after the 'merchant_order' is received
+      N = ships N business days after the 'merchant_order' is received"
+    },
+    "msrp": {
+      "type": "number",
+      "minimum" : 0.01,
+      "description": "Manufacturer's suggested retail price or list price for the product.
+      #Valid Values
+      A number with up to 18 digits allowed to the left of the decimal point and 2 digits to the right of the decimal point. Commas or currency symbols are not allowed."
+    },
+    "map_price": {
+      "type": "number",
+      "minimum" : 0.01,
+      "description": "Retailer price for the product for which member savings will be applied (if applicable, see map_implementation)
+      #Valid Values
+      A number up to 9 digits in total, which consists of up to 7 digits to the left of the decimal point and 2 digits to the right of the decimal point.  Commas or currency symbols are not allowed."
+    },
+    "map_implementation":{
+      "type": "string",
+      "enum" : ["type0","type1","type2","type3","type4","101","102","103"],
+      "description": "The type of rule that indicates how Jet member savings are allowed to be applied to an item’s base price (which is referred to as map_price in the API documentation)
+      #Valid Values
+      *'101' = Default: no restrictions on product based pricing
+      *'102' = MAP Pricing: Jet member savings on product only visible to logged in Jet members
+      *'103' = Minimum Selling Price: Jet member savings never applied to product"
+    },  
+    "product_tax_code": {
+      "type": "string",
+      "description": "Jet's standard code for the tax properties of a given product.
+      #Valid Values
+      *'Adult Diapers'
+      *'Athletic Clothing'
+      *'Baby Supplies'
+      *'Bandages and First Aid Kits'
+      *'Bathing Suits'
+      *'Beverages with 51 to 99 Percent Juice'
+      *'Bottled Water Plain'
+      *'Braces and Supports'
+      *'Breast Pumps'
+      *'Candy'
+      *'Candy with Flour'
+      *'Car Seats'
+      *'Carbonated Soft Drinks'
+      *'Contact Lens Solution'
+      *'Contraceptives'
+      *'Costumes'
+      *'Diabetic Supplies'
+      *'Dietary Supplements'
+      *'Disposable Infant Diapers'
+      *'Disposable Wipes'
+      *'Drinks under 50 Percent Juice'
+      *'Durable Medical Equipment'
+      *'Feminine Hygiene Products'
+      *'Fluoride Toothpaste'
+      *'General Clothing'
+      *'General Grocery Items'
+      *'Generic Taxable Product'
+      *'Handkerchiefs'
+      *'Helmets'
+      *'Infant Clothing'
+      *'Medicated Personal Care Items'
+      *'Mobility Equipment'
+      *'Non Taxable Product'
+      *'Non-Motorized Boats'
+      *'Oral Care Products'
+      *'OTC Medication'
+      *'OTC Pet Meds'
+      *'Paper Products'
+      *'Pet Foods'
+      *'Safety Clothing'
+      *'Shoe Insoles'
+      *'Smoking Cessation'
+      *'Sparkling Water'
+      *'SPF Suncare Products'
+      *'Sweatbands'
+      *'Thermometers'
+      *'Toilet Paper'
+    "
+    },
+    "no_return_fee_adjustment": {
+      "type": "number",
+      "description": "Overides the category level setting for this fee adjustment; this is the increase in commision you are willing to pay on this product if the customer waives their ability to return it.  
+      If you want to increase the commission you are willing to pay from a base rate of 15% to 17%, then you should enter '0.02'
+      #Valid Values
+      A mumber with up to 1 digit allowed to the left of the deimal point and 2 digits to the right of the decimal point."
+    },
+    "exclude_from_fee_adjustments": {
+      "type": "boolean",
+      "description": "This SKU will not be subject to any fee adjustment rules that are set up if this field is 'true'"
+    },
+    "ships_alone": {
+      "type": "boolean",
+      "description": "If this field is 'true', it indicates that this 'merchant SKU' will always ship on its own.    
+      A separate 'merchant_order' will always be placed for this 'merchant_SKU', one consequence of this will be that this merchant_sku will never contriube to any basket size fee adjustments with any other merchant_skus."
+    },
+    "attributes_node_specific" : {
+      "type" : "array",
+      "maxItems" : 10,
+      "items" : {
+        "$ref": "#/definitions/attribute"       
+      }
+    },
+      "main_image_url": {
+        "type": "string",
+        "minLength": 1,
+        "description": "URL location where Jet.com can access the image. The images should be 1500 x 1500 pixels or larger, but anything 500 x 500 pixels or larger is acceptable.  There is no limit to image size."
+      },
+    "swatch_image_url": {
+      "type": "string",
+      "description": "URL location where Jet.com can access an image of a color or fabric for a given merchant SKU. The images should be 1500 x 1500 pixels or larger, but anything 500 x 500 pixels or larger is acceptable.  There is no limit to image size."
+    },
+    "alternate_images":{
+      "type":"array",
+      "items":{
+        "$ref":"#/definitions/alternate_images"
+      }
+    },
+    "ormd":{
+      "type":"boolean",
+      "description":"If true, the SKU contains limited hazardous material that make it unsafe to ship using certain shipping methods"
+    },
+    "buy_url":{
+      "type":"string",
+      "description":"The buy URL where this product is located."
+    } 
+  },
+  "definitions": {
+    "attribute" : {
+      "title": "SkuAttribute",
+            "additionalProperties" : false,
+            "type": "object",
+            "properties": {
+              "attribute_id" : {
+          "type" : "integer",
+          "minimum":1,
+          "description" : "The node attribute ID number that you get from Jet provided documentation that corresponds with the attribute you are passing"
+        },
+        "attribute_value" : {
+          "type" : "string",
+          "minLength":1,
+          "maxlength":100,
+          "description" : "The value for the attribute. For example, if the attribute is size you may pass 'large' or if the the attribute is weight, you may pass '22'. For attributes like weight the unit will be passed in the next field."
+        },
+        "attribute_value_unit" : {
+          "type" : "string",
+          "minLength":1,
+          "maxlength":100,
+          "description" : "If the attribute_value requires a unit, then you pass the unit here."
+        }
+            }
+    },
+    "product_codes" : {
+      "title" : "ProductCodes",
+      "additionalProperties" : false,
+      "type" : "object",
+      "properties" : {
+        "standard_product_code": {
+          "type": "string",
+          "required": true,
+          "maxLength" : 14,
+          "description": "A standard, unique identifier for a product.  ISBN-10, ISBN-13, UPC, EAN and GTIN-14 are accepted.
+          #Valid Values
+          *If standard_product_code_type is'UPC' - must be 12 digits
+          *If standard_product_code_type is 'ISBN-13' - must be 13 digits
+          *If standard_product_code_type is 'ISBN-10' - must be 10 digits
+          *If standard_product_code_type is 'EAN' - must be 13 digits
+          *If standard_product_code_type is 'GTIN-14' - must be 14 digits
+          "
+        },
+        "standard_product_code_type": {
+          "type": "string",
+          "required": true,
+          "enum" : ["UPC-E", "UPC", "ISBN-13","ISBN-10", "EAN", "GTIN-14", "PLU"],
+          "description": "Indicate the type of standard_product_code that was used.
+          #Valid Values
+          *UPC
+          *ISBN-13
+          *ISBN-10
+          *EAN
+          *GTIN-14
+          *PLU
+          "
+        }
+      }
+    },
+    "alternate_images": {
+            "title": "AlternateImages",
+            "additionalProperties" : false,
+            "type": "object",
+            "properties": {
+                "image_slot_id": {
+                    "type": "integer",
+                    "required": true,
+                    "minimum" : 1,
+                    "maximum" : 8,
+                    "description" : "The slot that the alternate image should be uploaded to.  Jet.com supports up to 8 images (or 8 image slots)."
+                },
+                "image_url": {
+                    "type": "string", 
+                    "minLength": 1,
+                    "required": true,
+                    "description" : "The absolute location where Jet.com can retrieve the image"
+                }
+            }
+        }
+  }
+}

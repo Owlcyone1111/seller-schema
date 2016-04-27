@@ -11,22 +11,16 @@
 			"minLength" : 5,
 			"maxLength" : 500,
 			"description": "Short product description
-
 			#Valid Values
-
 			5 to 500 alphanumeric characters
-
 			"
 		},
 		"jet_browse_node_id": {
 			"type": "integer",
 			"minimum":1000000,
 			"description": "The unique ID that defines where the product will be found in the Jet.com browse structure
-
 			#Valid Values
-
 			This must be a valid jet_browse_node_id
-
 			"
 		},
 		"amazon_item_type_keyword":{
@@ -41,9 +35,7 @@
 			"type" : "array",
 			"minItems" : 1,
 			"description" : "The barcode or barcode that is associated with the product
-
 			#Logic
-
 			At least one of the following must be provided for each merchant SKU: Standard Product Code (UPC, GTIN-14 etc.), ASIN, or Brand and Manufacturer Part Number",
 			"items" : {
 				"$ref": "#/definitions/product_codes"				
@@ -53,9 +45,7 @@
 		"ASIN" : {
 			"type": "string",
 			"description" : "Amazon standard identification number for this merchant SKU if available. 
-
 			#Logic
-
 			At least one of the following must be provided for each merchant SKU: Standard Product Code (UPC, GTIN-14 etc.), ASIN, or Brand and Manufacturer Part Number",
 			"maxLength" : 10,
 			"minLength" : 10
@@ -66,59 +56,44 @@
 			"minimum" : 1,
 			"maximum": 128,
 			"description": "Number of items with the given Standard Product Code that makes up your merchant SKU
-
 			"
 		},
-		"brand": {
-			"type": "string",
-			"maxLength" : 100,
-			"description": "Brand of the merchant SKU
-
-			#Valid Values
-
-			1 to 100 characters
-
-			#Logic
-
-			At least one of the following must be provided for each merchant SKU: Standard Product Code (UPC, GTIN-14 etc.), ASIN, or Brand and Manufacturer Part Number
-
-			"
-		},
+	    "brand": {
+	      "type": "string",
+	      "required": true,
+	      "minLength" :  1,
+				"maxLength" : 100,
+				"description": "Brand of the merchant SKU
+				#Valid Values
+				1 to 100 characters
+				#Logic
+				At least one of the following must be provided for each merchant SKU: Standard Product Code (UPC, GTIN-14 etc.), ASIN, or Brand and Manufacturer Part Number
+				"
+	    },
 		"manufacturer": {
 			"type": "string",
 			"maxLength" : 100,
 			"description": "Manufacturer of the merchant SKU
-
 			#Valid Values
-
 			1 to 100 characters
-
 			"
 		},
 		"mfr_part_number": {
 			"type": "string",
 			"maxLength" : 50,
 			"description": "Part number provided by the original manufacturer of the merchant SKU
-
 			#Valid Values
-
 			Maximum of 50 characters
-
 			#Logic
-
 			At least one of the following must be provided for each merchant SKU: Standard Product Code (UPC, GTIN-14 etc.), ASIN, or Brand and Manufacturer Part Number
-
 			"
 		},
 		"product_description": {
 			"type": "string",
 			"maxLength" : 2000,
 			"description": "Long description of the merchant SKU
-
 			#Valid Values
-
 			1 to 2000 characters
-
 			"
 		},
 		"bullets": {
@@ -129,13 +104,9 @@
 			},
 			"maxItems" : 5,
 			"description": "Merchant SKU feature description
-
 			#Valid Values
-
 			Maximum of 500 characters each
-
 			#Array Limitation
-
 			Maximum 5 elements of the 'bullets' array"
 		},
 		"number_units_for_price_per_unit": {
@@ -151,69 +122,52 @@
 			"type": "number",
 			"minimum" : 0.01,
 			"description": "Weight of the merchant SKU when in its shippable configuration
-
 			#Valid Values
-
 			A number with 2 decimals
-
 			"
 		},
 		"package_length_inches": {
 			"type": "number",
 			"minimum" : 0.01,
 			"description": "Length of the merchant SKU when in its shippable configuration
-
 			#Valid Values
-
 			A number with 2 decimals
-
 			"
 		},
 		"package_width_inches": {
 			"type": "number",
 			"minimum" : 0.01,
 			"description": "Width of the merchant SKU when in its shippable configuration
-
 			#Valid Values
-
 			A number with 2 decimals"
 		},
 		"package_height_inches": {
 			"type": "number",
 			"minimum" : 0.01,
 			"description": "Height of the merchant SKU when in its shippable configuration
-
 			#Valid Values
-
 			A number with 2 decimals"
 		},
 		"display_length_inches": {
 			"type": "number",
 			"minimum" : 0.01,
 			"description": "Length of the merchant SKU when in its fully assembled/usable condition
-
 			#Valid Values
-
 			A number with 2 decimals
-
 			"
 		},
 		"display_width_inches": {
 			"type": "number",
 			"minimum" : 0.01,
 			"description": "Width of the merchant SKU when in its fully assembled/usable condition
-
 			#Valid Values
-
 			A number with 2 decimals"
 		},
 		"display_height_inches": {
 			"type": "number",
 			"minimum" : 0.01,
 			"description": "Height of the merchant SKU when in its fully assembled/usable condition
-
 			#Valid Values
-
 			A number with 2 decimals"
 		},
 		"prop_65": {
@@ -224,9 +178,7 @@
 			"type": "string",
 			"maxLength" : 500,
 			"description": "Any legal language required to be displayed with the product.
-
 			#Valid Values
-
 			Maximum of 500 characters"
 		},
 		"cpsia_cautionary_statements": {
@@ -245,107 +197,75 @@
 			},			
 			"maxItems" : 7,
 			"description": "Use this field to indicate if a cautionary statement relating to the choking hazards of children's toys and games applies to your product.  These cautionary statements are defined in Section 24 of the Federal Hazardous Substances Act and Section 105 of the Consumer Product Safety Improvement Act of 2008.  They must be displayed on the product packaging and in certain online and catalog advertisements.  You are responsible for determining if a cautionary statement applies to the product.  This can be verified by contacting the product manufacturer or checking the product packaging.   Cautionary statements that you select will be displayed on the product detail page.  If no cautionary statement applies to the product, select \"no warning applicable\".
-
 			#Valid Values
-
 			*choking hazard balloon
-
 			*choking hazard contains a marble
-
 			*choking hazard contains a small ball
-
 			*choking hazard is a marble
-
 			*choking hazard is a small ball
-
 			*choking hazard small parts
-
 			*no warning applicable
-
 			#Array Limitation
-
 			Maximum 7 elements of the 'cpsia_cautionary_statements' array"
 		},
 		"country_of_origin": {
 			"type": "string",
 			"maxLength" : 50,
 			"description": "The country that the item was manufactured in.
-
 			#Valid Values
-
 			Maximum of 50 characters"
 		},
 		"safety_warning": {
 			"type": "string",
 			"maxLength" : 2000,
 			"description": "If applicable, use to supply any associated warnings for your product.
-
 			#Valid Values
-
 			Maximum of 2000 characters"
 		},
 		"start_selling_date": {
 			"type": "string",
 			"description": "If updating merchant SKU that has quantity = 0  at all FCs, date that the inventory in this message should be available for sale on Jet.com.  
-
 			#Logic
-
 			You should only use this field if the quantity for the merchant SKU is 0 at all merchant_fcs.  This date should be in ISO 8601 format: yyyy-MM-ddTHH:mm:ss.fffffff-HH:MM
-
             Example: 1988-01-01T01:43:30.0000000-07:00"
 		},
 		"fulfillment_time": {
 			"type": "integer",
 			"minimum" : 0,
 			"description": "Number of business days from receipt of an order for the given merchant SKU until it will be shipped (only populate if it is different than your account default).
-
 			#Valid Values
-
 			0 = ships the day the OrderMessage is received
-
 			1 = ships one business day after the 'merchant_order' is received
-
 			2= ships two business days after the 'merchant_order' is received
-
 			N = ships N business days after the 'merchant_order' is received"
 		},
 		"msrp": {
 			"type": "number",
 			"minimum" : 0.01,
 			"description": "Manufacturer's suggested retail price or list price for the product.
-
 			#Valid Values
-
 			A number with up to 18 digits allowed to the left of the decimal point and 2 digits to the right of the decimal point. Commas or currency symbols are not allowed."
 		},
 		"map_price": {
 			"type": "number",
 			"minimum" : 0.01,
 			"description": "Retailer price for the product for which member savings will be applied (if applicable, see map_implementation)
-
 			#Valid Values
-
 			A number up to 9 digits in total, which consists of up to 7 digits to the left of the decimal point and 2 digits to the right of the decimal point.  Commas or currency symbols are not allowed."
 		},
 		"map_implementation":{
 			"type": "string",
 			"enum" : ["type0","type1","type2","type3","type4","101","102","103"],
 			"description": "The type of rule that indicates how Jet member savings are allowed to be applied to an item’s base price (which is referred to as map_price in the API documentation)
-
 			#Valid Values
-
 			*'101' = Default: no restrictions on product based pricing
-
 			*'102' = MAP Pricing: Jet member savings on product only visible to logged in Jet members
-
 			*'103' = Minimum Selling Price: Jet member savings never applied to product"
 		},	
 		"product_tax_code": {
 			"type": "string",
 			"description": "Jet's standard code for the tax properties of a given product.
-
 			#Valid Values
-
 			*'Adult Diapers'
 			*'Athletic Clothing'
 			*'Baby Supplies'
@@ -398,11 +318,8 @@
 		"no_return_fee_adjustment": {
 			"type": "number",
 			"description": "Overides the category level setting for this fee adjustment; this is the increase in commision you are willing to pay on this product if the customer waives their ability to return it.  
-
 			If you want to increase the commission you are willing to pay from a base rate of 15% to 17%, then you should enter '0.02'
-
 			#Valid Values
-
 			A mumber with up to 1 digit allowed to the left of the deimal point and 2 digits to the right of the decimal point."
 		},
 		"exclude_from_fee_adjustments": {
@@ -421,10 +338,12 @@
 				"$ref": "#/definitions/attribute"				
 			}
 		},
-		"main_image_url": {
-			"type": "string",
-			"description": "URL location where Jet.com can access the image. The images should be 1500 x 1500 pixels or larger, but anything 500 x 500 pixels or larger is acceptable.  There is no limit to image size."
-		},
+	    "main_image_url": {
+	      "type": "string",
+	      "minLength": 1,
+	      "required": true,
+	      "description": "URL location where Jet.com can access the image. The images should be 1500 x 1500 pixels or larger, but anything 500 x 500 pixels or larger is acceptable.  There is no limit to image size."
+	    },
 		"swatch_image_url": {
 			"type": "string",
 			"description": "URL location where Jet.com can access an image of a color or fabric for a given merchant SKU. The images should be 1500 x 1500 pixels or larger, but anything 500 x 500 pixels or larger is acceptable.  There is no limit to image size."
@@ -479,40 +398,27 @@
 					"required": true,
 					"maxLength" : 14,
 					"description": "A standard, unique identifier for a product.  ISBN-10, ISBN-13, UPC, EAN and GTIN-14 are accepted.
-
 					#Valid Values
-
 					*If standard_product_code_type is'UPC' - must be 12 digits
-
 					*If standard_product_code_type is 'ISBN-13' - must be 13 digits
-
 					*If standard_product_code_type is 'ISBN-10' - must be 10 digits
-
 					*If standard_product_code_type is 'EAN' - must be 13 digits
-
 					*If standard_product_code_type is 'GTIN-14' - must be 14 digits
-
 					"
 				},
 				"standard_product_code_type": {
 					"type": "string",
 					"required": true,
-					"enum" : ["UPC-E", "UPC", "ISBN-13","ISBN-10", "EAN", "GTIN-14"],
+					"enum" : ["UPC-E", "UPC", "ISBN-13","ISBN-10", "EAN", "GTIN-14", "PLU"],
 					"description": "Indicate the type of standard_product_code that was used.
-
 					#Valid Values
-
 					*UPC
-
 					*ISBN-13
-
 					*ISBN-10
-
 					*EAN
-
 					*GTIN-14
-
-					"
+					*PLU
+          "
 				}
 			}
 		},
@@ -530,6 +436,7 @@
                 },
                 "image_url": {
                     "type": "string", 
+                    "minLength": 1,
                     "required": true,
                     "description" : "The absolute location where Jet.com can retrieve the image"
                 }
