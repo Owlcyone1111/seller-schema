@@ -7,6 +7,7 @@
   "return_shipping_methods": [
     "Freight"
   ],
+  "refund_without_return":false,
   "returns_exception_overrides":[
   	{
   		"customer_return_reason":"No longer want item",
