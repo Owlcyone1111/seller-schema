@@ -1,0 +1,24 @@
+{
+    "title": "BulkReportOrderRequest",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+        "order_status":{
+            "type":"string",
+            "required":true,
+            "description":"The status of the orders the retailer would like to pull",
+            "enum":[
+                "created",
+                "ready",
+                "acknowledged",
+                "inprogress",
+                "complete"
+            ]
+        },
+        "days_from_today":{
+            "type":"integer",
+            "description":"The number of days from today the retailer would like to pull orders from.  If not provided, will pull the default of 180 days",
+            "minimum":0
+        }
+    }
+}
