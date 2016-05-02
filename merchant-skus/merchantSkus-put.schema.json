@@ -255,7 +255,7 @@
 		},
 		"map_implementation":{
 			"type": "string",
-			"enum" : ["type0","type1","type2","type3","type4","101","102","103"],
+			"enum" : ["101","102","103"],
 			"description": "The type of rule that indicates how Jet member savings are allowed to be applied to an item’s base price (which is referred to as map_price in the API documentation)
 			#Valid Values
 			*'101' = Default: no restrictions on product based pricing
