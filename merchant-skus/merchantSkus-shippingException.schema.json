@@ -37,9 +37,12 @@
                         "enum": [ 
                             "Standard",
                             "Expedited",
+                            "Priority"
                             "Scheduled (freight)",
                             "Next Day",
-                            "Second Day"],
+                            "Second Day",
+                            "5 to 10 Day"
+                            ],
                         "description": "Generic descriptions of shipment delivery times
 
                         # Logic 
@@ -48,6 +51,7 @@
                         # Valid Values 
                         * 'Standard'
                         * 'Expedited' 
+                        * 'Priority'
                         * 'Scheduled (freight)'
                         * 'Next Day' 
                         * 'Second Day'"
