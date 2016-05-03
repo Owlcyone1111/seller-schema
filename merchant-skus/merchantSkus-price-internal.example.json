@@ -1,0 +1,16 @@
+{
+	"price" : 29.99,
+	"thor_current_price": 35.99,
+	"fulfillment_nodes" : [
+		{
+			"fulfillment_node_id" : "XISNDKSANDSFNCSJKFDNFKJHFJD",
+			"fulfillment_node_price" : 29.99,
+			"thor_current_price_node": 32.99
+		},
+		{
+			"fulfillment_node_id" : "AKSDKDJIJDISJFIDFJIDSIFFISI",
+			"fulfillment_node_price" : 30.50,
+			"thor_current_price_node" : 25.99
+		}
+	]	
+}
