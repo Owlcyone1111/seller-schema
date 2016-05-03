@@ -1,0 +1,47 @@
+{
+    "title": "AccountConfiguration",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+        "seller_type":{
+            "type":"string",
+            "required":true,
+            "description":"The type of seller account this is",
+            "enum":[
+                "Retailer",
+                "Brand",
+                "Distributor"
+            ]
+        },
+        "integration_type":{
+            "type":"string",
+            "required":true,
+            "description":"The type of integration this account uses",
+            "enum":[
+                "Full",
+                "Light",
+                "JetCustom"
+            ]
+        },
+        "third_party_type":{
+            "type":"string",
+            "required":true,
+            "description":"Type of account configuration",
+            "enum":[
+                "Direct",
+                "ChannelAdvisor",
+                "CommerceHub"
+            ]
+        },
+        "accepts_return":{
+            "type":"boolean",
+            "required":true,
+            "description":"If true, this retailer account accepts returns to their facilities.  Should be default and only overrides in special cases"
+        },
+        "can_use_jet_ship_rates":{
+            "type":"boolean",
+            "required":true,
+            "description:":"If true, this retailer account can use Jet's shipping rates"
+        }
+    }
+}

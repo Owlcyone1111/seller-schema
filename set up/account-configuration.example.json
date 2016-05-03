@@ -1,0 +1,7 @@
+{
+    "seller_type":"Distributor",
+    "integration_type":"Full",
+    "third_party_type":"Direct",
+    "accepts_return":true,
+    "can_use_jet_ship_rates":true,
+}
