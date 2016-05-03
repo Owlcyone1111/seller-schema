@@ -21,11 +21,6 @@
       "description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED",
       "exclusiveMinimum": 0
     },
-    "estimated_shipping_cost":{
-      "type": "number",
-      "description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED",
-      "exclusiveMinimum": 0
-    },
     "thor_price_floor": {
       "type": "number",
       "description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED",
@@ -63,22 +58,7 @@
           "description": "The price of the merchant SKU at the fulfillment node level",
           "exclusiveMinimum": 0
         },
-        "thor_current_price_node": {
-          "type": "number",
-          "description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED",
-          "exclusiveMinimum": 0
-        },
-        "thor_price_floor_node": {
-          "type": "number",
-          "description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED",
-          "exclusiveMinimum": 0
-        },
         "estimated_shipping_cost_node":{
-          "type": "number",
-          "description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED",
-          "exclusiveMinimum": 0
-        },
-        "thor_price_ceiling_node": {
           "type": "number",
           "description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED",
           "exclusiveMinimum": 0

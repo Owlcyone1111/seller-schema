@@ -1,16 +1,19 @@
 {
 	"price" : 29.99,
 	"thor_current_price": 35.99,
+	"thor_price_floor":25,
+	"thor_price_ceiling":40,
+	"replacement_cost":25,
 	"fulfillment_nodes" : [
 		{
 			"fulfillment_node_id" : "XISNDKSANDSFNCSJKFDNFKJHFJD",
 			"fulfillment_node_price" : 29.99,
-			"thor_current_price_node": 32.99
+			"estimated_shipping_cost_node": 32.99
 		},
 		{
 			"fulfillment_node_id" : "AKSDKDJIJDISJFIDFJIDSIFFISI",
 			"fulfillment_node_price" : 30.50,
-			"thor_current_price_node" : 25.99
+			"estimated_shipping_cost_node" : 25.99
 		}
 	]	
 }
