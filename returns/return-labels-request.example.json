@@ -1,9 +1,14 @@
 {
 	"merchant_id":"ab0cc62dc51a40d998a7f0df19e14fac",
 	"merchant_order_id":"f4b263b65cb74136870e1d8935986e2b",
-	"merchant_order_item_ids":[
-		"7af482ec11d349a589a95d13a59a719f",
-		"88ea907c9c184575bdf7fda1e21deaff"
-	],
-	"reason":"Package arrived late"
+	"return_request_items":[
+		{
+			"merchant_order_item_id":"7af482ec11d349a589a95d13a59a719f",
+			"customer_return_reason":"Package arrived late"
+		},
+		{
+			"merchant_order_item_id":"88ea907c9c184575bdf7fda1e21deaff",
+			"customer_return_reason":"Item is expired"
+		}
+	]
 }
