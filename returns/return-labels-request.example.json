@@ -4,11 +4,11 @@
 	"return_request_items":[
 		{
 			"merchant_order_item_id":"7af482ec11d349a589a95d13a59a719f",
-			"customer_return_reason":"Package arrived late"
+			"customer_return_reason":1
 		},
 		{
 			"merchant_order_item_id":"88ea907c9c184575bdf7fda1e21deaff",
-			"customer_return_reason":"Item is expired"
+			"customer_return_reason":2
 		}
 	]
 }

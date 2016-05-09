@@ -35,7 +35,7 @@
         },
         "refund_without_return": {
             "type": "boolean",
-            "description": "If true, Jet will refund the customer for this item without requesting the customer to return the item.  "
+            "description": "If true, Jet will refund the customer for this item without requesting the customer to return the item."
         },
         "returns_exception_overrides":{
             "type":"array",
@@ -46,54 +46,15 @@
         }
     },
     "definitions":{
-        "returns_exception_override":{
-            "title": "ReturnsExceptionOverride",
+        "returns_exception_by_reason":{
+            "title": "Overrides_by_return_reason",
             "type": "object",
             "additionalProperties" : false,
             "properties": {
                 "customer_return_reason":{
-                    "type":"string",
-                    "description":"The reason the customer returned the item
-
-                    # Valid Values
-
-                    * 'Product is defective / does not work',
-                    * 'Item is missing parts / accessories',
-                    * 'Item is refurbished',
-                    * 'Item is expired',
-                    * 'Website description is inaccurate',
-                    * 'Package arrived after estimated delivery date',
-                    * 'Item arrived damaged - box intact',
-                    * 'Item arrived damaged - box damaged',
-                    * 'No longer want this item',
-                    * 'Received the wrong item',
-                    * 'Package never arrived',
-                    * 'Package arrived late',
-                    * 'Wrong quantity received',
-                    * 'Unwanted gift',
-                    * 'Accidental order',
-                    * 'Unauthorized purchase',
-                    * 'Better price found elsewhere'
-                    ",
-                    "enum":[
-                        "Product is defective / does not work",
-                        "Item is missing parts / accessories",
-                        "Item is refurbished",
-                        "Item is expired",
-                        "Website description is inaccurate",
-                        "Package arrived after estimated delivery date",
-                        "Item arrived damaged - box intact",
-                        "Item arrived damaged - box damaged",
-                        "No longer want this item",
-                        "Received the wrong item",
-                        "Package never arrived",
-                        "Package arrived late",
-                        "Wrong quantity received",
-                        "Unwanted gift",
-                        "Accidental order",
-                        "Unauthorized purchase",
-                        "Better price found elsewhere"
-                    ]
+                    "type":"integer",
+                    "description":"The reason the customer returned the item",
+                    "minimum":0
                 },
                 "refund_without_return": {
                     "type": "boolean",
