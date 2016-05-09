@@ -37,7 +37,7 @@
                         "enum": [ 
                             "Standard",
                             "Expedited",
-                            "Priority"
+                            "Priority",
                             "Scheduled (freight)",
                             "Next Day",
                             "Second Day",
@@ -47,7 +47,8 @@
                             ],
                         "description": "Generic descriptions of shipment delivery times
 
-                        # Logic 
+                        # Logic
+                         
                         This field should be used if you are defining your shipping options by service_level 
                         
                         # Valid Values 

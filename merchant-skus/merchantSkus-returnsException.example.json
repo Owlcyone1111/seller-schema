@@ -10,7 +10,7 @@
   "refund_without_return":false,
   "returns_exception_by_reason":[
     	{
-    		"customer_return_reason_code":1,
+    		"customer_return_reason":1,
   	  	"return_location_ids": [
   		    "9046335c27d146ee94b23ef61d8959bc",
   		    "e3100213167d4abaa43a1c1dd6e4dc04"
