@@ -53,6 +53,7 @@
             "properties": {
                 "customer_return_reason":{
                     "type":"integer",
+                    "required":true,
                     "description":"The reason the customer returned the item",
                     "enum":[1,2,3,4,5,6,7,9,10,13,14,15,16,17,18],
                     "minimum":1
