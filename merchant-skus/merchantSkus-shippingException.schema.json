@@ -41,7 +41,9 @@
                             "Scheduled (freight)",
                             "Next Day",
                             "Second Day",
-                            "5 to 10 Day"
+                            "5 to 10 Day",
+                            "11 to 20 Day",
+                            "Scheduled (freight 11 to 20 day)"
                             ],
                         "description": "Generic descriptions of shipment delivery times
 
