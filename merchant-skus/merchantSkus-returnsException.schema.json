@@ -37,16 +37,16 @@
             "type": "boolean",
             "description": "If true, Jet will refund the customer for this item without requesting the customer to return the item."
         },
-        "returns_exception_overrides":{
+        "returns_exception_by_reason":{
             "type":"array",
             "description":"Returns exception overrides broken down by customer_return_reason.  A retailer would be able to configure the same fields   If not all reasons are provided, the default will be used",
             "items":{
-                "$ref":"#/definitions/returns_exception_override"
+                "$ref":"#/definitions/returns_exception_by_customer_reason"
             }
         }
     },
     "definitions":{
-        "returns_exception_by_reason":{
+        "returns_exception_by_customer_reason":{
             "title": "Overrides_by_return_reason",
             "type": "object",
             "additionalProperties" : false,
@@ -54,7 +54,8 @@
                 "customer_return_reason":{
                     "type":"integer",
                     "description":"The reason the customer returned the item",
-                    "minimum":0
+                    "enum":[1,2,3,4,5,6,7,9,10,13,14,15,16,17,18],
+                    "minimum":1
                 },
                 "refund_without_return": {
                     "type": "boolean",
