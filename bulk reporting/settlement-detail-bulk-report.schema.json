@@ -1,0 +1,12 @@
+{
+  "title": "SettlementDetails",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "settlement_id": {
+      "type": "string",
+      "required": true,
+      "description": "The settlement id to create a report for"
+    }
+  }
+}
