@@ -1,0 +1,15 @@
+{
+    "$schema": "http://json-schema.org/draft-03/schema",
+    "title": "OrderTag",
+    "type": "object",
+    "additionalProperties": false,
+    "description": "This object is used to tag an order",
+    "properties": {
+        "tag":{
+            "required":true,
+            "type":"string",
+            "maxLength":50,
+            "description":"A characteristic of an order"
+        }   
+    }
+}
