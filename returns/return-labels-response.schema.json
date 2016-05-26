@@ -18,6 +18,16 @@
             "required":true,
             "description":"The order ID associated with the orders you want to return"
         },
+        "merchant_accepts_returns":{
+            "type":"boolean",
+            "required":true,
+            "description":"If true, the merchant accepts returns.  If false, the merchant does not, and the item should be liquidated"
+        },
+        "merchant_free_returns":{
+            "type":"boolean",
+            "required":true,
+            "description":"If true, the merchant offers free returns."
+        },
         "return_items":{
             "required": true,
             "type":"array",
