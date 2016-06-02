@@ -2,85 +2,85 @@
     "title": "TestOrderSeed",
     "type": "object",
     "additionalProperties" : false,
-    "properties": {
-        "customer_reference_order_id":{
-            "type":"string",
-            "description":"The customer reference order ID for a particular order"
-        },
-        "fulfillment_node" : {
-            "type" : "string",
-            "required" : true,
-            "description" : "Fulfillment node ID as provided by Jet"
-        },
-        "buyer":{
-            "type":"object",
-            "description":"The buyer information",
-            "properties":{
-                "name":{
-                    "type":"string",
-                    "description":"The name of the buyer"
-                },
-                "phone_number":{
-                    "type":"string",
-                    "description":"The phone number of the buyer"
-                }
-            }
-
-        },
-        "request_shipping_method":{
-            "type":"string",
-            "description":"The service level requested for this order",
-            "enum":[
-                 "DHL Global Mail",
-                 "FedEx 2 Day",
-                 "FedEx Express Saver",
-                 "FedEx First Overnight",
-                 "FedEx Ground",
-                 "FedEx Home Delivery",
-                 "FedEx Priority Overnight",
-                 "FedEx Smart Post",
-                 "FedEx Standard Overnight",
-                 "Freight",
-                 "Ontrac Ground",
-                 "UPS 2nd Day Air AM",
-                 "UPS 2nd Day Air",
-                 "UPS 3 Day Select",
-                 "UPS Ground",
-                 "UPS Mail Innovations",
-                 "UPS Next Day Air Saver",
-                 "UPS Next Day Air",
-                 "UPS SurePost",
-                 "USPS First Class Mail",
-                 "USPS Media Mail",
-                 "USPS Priority Mail Express",
-                 "USPS Priority Mail",
-                 "USPS Standard Post"
-            ]
-        },
-        "request_service_level":{
-            "type":"string",
-            "description":"The service level requested for this order.",
-            "enum": [ 
-                "Standard",
-                "Expedited",
-                "Scheduled (freight)",
-                "Next Day",
-                "Second Day"
-            ]
-        },
-        "ship_to_location":{
-            "$ref":"#/definitions/address"
-        },
-    	"items": {
-            "type": "array",
-            "minItems": 1,
-            "required" : true,
-    		"description": "List of test order items",
-    		"items": {
-    			"#/definitions/test_order_object"
-    		}
-    	}
+  "properties": {
+    "customer_reference_order_id": {
+      "type": "string",
+      "description": "The customer reference order ID for a particular order"
     },
+    "fulfillment_node": {
+      "type": "string",
+      "required": true,
+      "description": "Fulfillment node ID as provided by Jet"
+    },
+    "buyer": {
+      "type": "object",
+      "description": "The buyer information",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the buyer"
+        },
+        "phone_number": {
+          "type": "string",
+          "description": "The phone number of the buyer"
+        }
+      }
+
+    },
+    "request_shipping_method": {
+      "type": "string",
+      "description": "The service level requested for this order",
+      "enum": [
+        "DHL Global Mail",
+        "FedEx 2 Day",
+        "FedEx Express Saver",
+        "FedEx First Overnight",
+        "FedEx Ground",
+        "FedEx Home Delivery",
+        "FedEx Priority Overnight",
+        "FedEx Smart Post",
+        "FedEx Standard Overnight",
+        "Freight",
+        "Ontrac Ground",
+        "UPS 2nd Day Air AM",
+        "UPS 2nd Day Air",
+        "UPS 3 Day Select",
+        "UPS Ground",
+        "UPS Mail Innovations",
+        "UPS Next Day Air Saver",
+        "UPS Next Day Air",
+        "UPS SurePost",
+        "USPS First Class Mail",
+        "USPS Media Mail",
+        "USPS Priority Mail Express",
+        "USPS Priority Mail",
+        "USPS Standard Post"
+      ]
+    },
+    "request_service_level": {
+      "type": "string",
+      "description": "The service level requested for this order.",
+      "enum": [
+        "Standard",
+        "Expedited",
+        "Scheduled (freight)",
+        "Next Day",
+        "Second Day"
+      ]
+    },
+    "ship_to_location": {
+      "$ref": "#/definitions/address"
+    },
+    "items": {
+      "type": "array",
+      "minItems": 1,
+      "required": true,
+      "description": "List of test order items",
+      "items": {
+        "$ref":"#/definitions/test_order_object"
+      }
+    }
+  },
     "definitions":{
         "test_order_object":{
             "type": "object",         
