@@ -3,10 +3,29 @@
     "type": "object",
     "additionalProperties" : false,
     "properties": {
+        "customer_reference_order_id":{
+            "type":"string",
+            "description":"The customer reference order ID for a particular order"
+        },
         "fulfillment_node" : {
             "type" : "string",
             "required" : true,
-            "description" : "Fulfillment node Id as provided by Jet"
+            "description" : "Fulfillment node ID as provided by Jet"
+        },
+        "buyer":{
+            "type":"object",
+            "description":"The buyer information",
+            "properties":{
+                "name":{
+                    "type":"string",
+                    "description":"The name of the buyer"
+                },
+                "phone_number":{
+                    "type":"string",
+                    "description":"The phone number of the buyer"
+                }
+            }
+
         },
         "request_shipping_method":{
             "type":"string",
