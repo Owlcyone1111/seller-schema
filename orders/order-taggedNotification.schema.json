@@ -1,0 +1,14 @@
+{
+    "title": "OrderTaggedNotification",
+    "type": "object",
+    "additionalProperties": false,
+    "description":  "This object is used to tag an order.",
+    "properties": {
+        "tag": {
+            "type": "string",
+            "maxLength":  50,
+            "description": "A characteristic of an order.",
+            "required": true
+        }
+    }
+}
