@@ -23,8 +23,6 @@
 				},
 				{
 					"service_level": "Standard",
-					"override_type": "Additional charge",
-					"shipping_charge_amount": 3.25,
 					"shipping_exception_type": "restricted"
 				}
 			]
