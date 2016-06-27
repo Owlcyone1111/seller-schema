@@ -11,6 +11,28 @@
       "description": "The overall price that the merchant SKU is priced at",
       "exclusiveMinimum": 0
     },
+    "replacement_cost":{
+      "type": "number",
+      "description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED",
+      "exclusiveMinimum": 0
+    }, 
+    "thor_current_price": {
+      "type": "number",
+      "description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED",
+      "exclusiveMinimum": 0
+    },
+    "thor_price_floor": {
+      "type": "number",
+      "description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED",
+      "minimum": 0,
+      "exclusiveMinimum": 0
+    },
+    "thor_price_ceiling": {
+      "type": "number",
+      "description": "THIS IS A FIELD ONLY USED BY JET.COM. ANY VALUE UPLOADED WILL BE IGNORED",
+      "minimum": 0,
+      "exclusiveMinimum": 0
+    },
     "fulfillment_nodes": {
       "type": "array",
       "required": false,
