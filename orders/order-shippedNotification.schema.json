@@ -107,7 +107,11 @@
                             "GSO",
                             "A&M Trucking",
                             "SAIA Freight",
-                            "Other"
+                            "Other",
+                            "Old Dominion", 
+                            "Parcel" 
+                            
+
 
                         ],
                         "description": "The carrier that will complete final delivery of the shipment.   The tracking number should be for this carrier. Must be one of the valid values.
