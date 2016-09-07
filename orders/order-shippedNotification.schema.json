@@ -110,7 +110,7 @@
                             "Other",
                             "Old Dominion", 
                             "Parcel",
-                            "Convey Decisioned LTL",
+                            "Convey",
                             "JetExpress"
                             
 
@@ -164,6 +164,10 @@
                         * 'A&M Trucking',
                         * 'SAIA Freight',
                         * 'Other' - Any carrier not listed above (please email shipping@jet.com if you would like a carrier added to this list)
+                        * 'Old Dominion', 
+                        * 'Parcel',
+                        * 'Convey',
+                        * 'JetExpress'
                         "
                     },
                     "carrier_pick_up_date": {

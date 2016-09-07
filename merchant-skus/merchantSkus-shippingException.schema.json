@@ -85,7 +85,8 @@
                          "USPS Media Mail",
                          "USPS Priority Mail Express",
                          "USPS Priority Mail",
-                         "USPS Standard Post"
+                         "USPS Standard Post",
+                         "ConveyDecisioning"
                         ],
                         "description": "A specific shipping method e.g. UPS Ground, UPS Next Day Air, FedEx Home
 
@@ -118,7 +119,8 @@
                         'USPS Media Mail',
                         'USPS Priority Mail Express',
                         'USPS Priority Mail',
-                        'USPS Standard Post'
+                        'USPS Standard Post',
+                        'ConveyDecisioning'
                         "
 
                     },
