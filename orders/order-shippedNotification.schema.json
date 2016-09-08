@@ -110,7 +110,7 @@
                             "Other",
                             "Old Dominion", 
                             "Parcel",
-                            "Convey",
+                            "ConveyDecisioning",
                             "JetExpress"
                             
 
@@ -166,7 +166,7 @@
                         * 'Other' - Any carrier not listed above (please email shipping@jet.com if you would like a carrier added to this list)
                         * 'Old Dominion', 
                         * 'Parcel',
-                        * 'Convey',
+                        * 'ConveyDecisioning',
                         * 'JetExpress'
                         "
                     },
