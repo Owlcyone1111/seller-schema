@@ -15,5 +15,5 @@ List of differences from standard and limitations:
 * `additionalProperties` is `false` by default 
 * `title` and `properties` are required in `object` definition
 
-Please visit https://developer.jet.com for more information on particualr schemas.
+Please visit https://developer.jet.com for more information on particular schemas.
 
