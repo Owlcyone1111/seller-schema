@@ -71,6 +71,11 @@
             * Processed with errors - There were errors while processing the file.  They are reported in 'details' field.
             "        
         },
+        "total_processed":{
+            "type":"integer",
+            "required":true,
+            "description":"The total number of SKUs processed in the direction"
+        },
         "error_count" : {
             "type": "integer",
             "required": true,
