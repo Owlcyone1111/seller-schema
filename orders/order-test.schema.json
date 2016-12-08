@@ -3,6 +3,14 @@
     "type": "object",
     "additionalProperties" : false,
   "properties": {
+    "status":{
+      "type":"string",
+      "description":"The status the retailer would like the order to start in",
+      "enum":[
+        "created",
+        "ready"
+      ]
+    },
     "customer_reference_order_id": {
       "type": "string",
       "description": "The customer reference order ID for a particular order"
